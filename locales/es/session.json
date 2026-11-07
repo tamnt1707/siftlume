@@ -1,0 +1,56 @@
+{
+  "refine": {
+    "shorter": "Más corto",
+    "moreDetail": "Más detalle",
+    "actionItems": "Tareas",
+    "timeline": "Cronología",
+    "simpler": "Más sencillo"
+  },
+  "summarizeAgain": "Resumir de nuevo",
+  "summarizeAgainTitle": "Resumir de nuevo con el modelo seleccionado",
+  "fullPage": "Página completa",
+  "fullPageTitle": "Abrir este resumen en una pestaña a página completa",
+  "truncated": "Contenido largo: solo se envió el principio (el límite está en Ajustes).",
+  "summarizing": "Resumiendo…",
+  "updating": "Actualizando el resumen…",
+  "thinking": "Pensando…",
+  "noSummary": "Todavía no hay resumen. Empieza de nuevo con otra fuente.",
+  "refinePlaceholder": "Cambia el resumen… (p. ej., añade una tabla comparativa)",
+  "apply": "Aplicar",
+  "questions": "Preguntas",
+  "questionsEmpty": "Pregunta lo que quieras sobre esta página. Las respuestas solo usan la fuente.",
+  "askPlaceholder": "Pregunta lo que quieras sobre esto…",
+  "ask": "Preguntar",
+  "toast": {
+    "highlightOnlyWeb": "Resaltar solo funciona cuando la fuente es una página web abierta.",
+    "highlighted": "Resaltado en la página.",
+    "quoteNotFound": "No se encontró esa cita en la página.",
+    "tabGone": "La pestaña original se cerró o cambió de página.",
+    "copied": "Copiado."
+  },
+  "warnings": {
+    "invalidUi_one": "El modelo generó {{count}} instrucción de interfaz no válida; se muestra lo que se pudo renderizar.",
+    "invalidUi_many": "El modelo generó {{count}} instrucciones de interfaz no válidas; se muestra lo que se pudo renderizar.",
+    "invalidUi_other": "El modelo generó {{count}} instrucciones de interfaz no válidas; se muestra lo que se pudo renderizar.",
+    "textInstead": "El modelo respondió con texto en lugar de una interfaz."
+  },
+  "genui": {
+    "errors_one": "{{count}} error al mostrar esta vista",
+    "errors_many": "{{count}} errores al mostrar esta vista",
+    "errors_other": "{{count}} errores al mostrar esta vista",
+    "showInPage": "Ver en la página",
+    "copy": "Copiar",
+    "minRead_one": "{{count}} min de lectura",
+    "minRead_many": "{{count}} min de lectura",
+    "minRead_other": "{{count}} min de lectura",
+    "drawing": "Dibujando el diagrama…",
+    "diagramFailed": "No se pudo dibujar este diagrama"
+  },
+  "refineHint": {
+    "shorter": "Deja solo los puntos más importantes.",
+    "moreDetail": "Añade los hechos, cifras y argumentos que faltan.",
+    "actionItems": "Añade una lista de cosas concretas que hacer o decidir.",
+    "timeline": "Añade una cronología de fechas, hechos o etapas clave.",
+    "simpler": "Reescribe con palabras sencillas y explica la jerga."
+  }
+}

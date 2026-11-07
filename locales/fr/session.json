@@ -1,0 +1,56 @@
+{
+  "refine": {
+    "shorter": "Plus court",
+    "moreDetail": "Plus de détails",
+    "actionItems": "Actions à mener",
+    "timeline": "Chronologie",
+    "simpler": "Plus simple"
+  },
+  "summarizeAgain": "Résumer à nouveau",
+  "summarizeAgainTitle": "Résumer à nouveau avec le modèle sélectionné",
+  "fullPage": "Pleine page",
+  "fullPageTitle": "Ouvrir ce résumé dans un onglet pleine page",
+  "truncated": "Contenu long : seul le début a été envoyé (la limite se règle dans les paramètres).",
+  "summarizing": "Résumé en cours…",
+  "updating": "Mise à jour du résumé…",
+  "thinking": "Réflexion…",
+  "noSummary": "Pas encore de résumé. Recommencez avec une nouvelle source.",
+  "refinePlaceholder": "Modifier le résumé… (ex. : ajouter un tableau comparatif)",
+  "apply": "Appliquer",
+  "questions": "Questions",
+  "questionsEmpty": "Posez n’importe quelle question sur cette page. Les réponses s’appuient uniquement sur la source.",
+  "askPlaceholder": "Posez une question sur ce contenu…",
+  "ask": "Demander",
+  "toast": {
+    "highlightOnlyWeb": "Le surlignage ne fonctionne que si la source est une page web ouverte.",
+    "highlighted": "Surligné dans la page.",
+    "quoteNotFound": "Citation introuvable dans la page.",
+    "tabGone": "L’onglet d’origine a été fermé ou a changé de page.",
+    "copied": "Copié."
+  },
+  "warnings": {
+    "invalidUi_one": "Le modèle a produit {{count}} instruction d’interface invalide ; affichage de ce qui a pu être rendu.",
+    "invalidUi_many": "Le modèle a produit {{count}} instructions d’interface invalides ; affichage de ce qui a pu être rendu.",
+    "invalidUi_other": "Le modèle a produit {{count}} instructions d’interface invalides ; affichage de ce qui a pu être rendu.",
+    "textInstead": "Le modèle a répondu par du texte au lieu d’une interface."
+  },
+  "genui": {
+    "errors_one": "{{count}} erreur lors de l’affichage de cette vue",
+    "errors_many": "{{count}} erreurs lors de l’affichage de cette vue",
+    "errors_other": "{{count}} erreurs lors de l’affichage de cette vue",
+    "showInPage": "Voir dans la page",
+    "copy": "Copier",
+    "minRead_one": "{{count}} min de lecture",
+    "minRead_many": "{{count}} min de lecture",
+    "minRead_other": "{{count}} min de lecture",
+    "drawing": "Dessin du diagramme…",
+    "diagramFailed": "Impossible de dessiner ce diagramme"
+  },
+  "refineHint": {
+    "shorter": "Garder uniquement les points essentiels.",
+    "moreDetail": "Ajouter les faits, chiffres et arguments manquants.",
+    "actionItems": "Ajouter une liste de choses concrètes à faire ou à décider.",
+    "timeline": "Ajouter une chronologie des dates, événements ou étapes clés.",
+    "simpler": "Réécrire avec des mots simples et expliquer le jargon."
+  }
+}

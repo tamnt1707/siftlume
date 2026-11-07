@@ -1,0 +1,12 @@
+{
+  "title": "要摘要什麼?",
+  "summarizePage": "摘要此頁面",
+  "reading": "讀取中…",
+  "cannotRead": "無法讀取此頁面",
+  "or": "或",
+  "pastePlaceholder": "在此貼上文字…",
+  "summarizeText": "摘要文字",
+  "dropTitle": "拖放檔案或點擊上傳",
+  "dropFormats": "PDF、CSV、Markdown、TXT、HTML、JSON",
+  "pageHint": "若要摘要網頁,請在該頁面點擊擴充功能圖示,或按右鍵選擇「摘要此頁面」。"
+}

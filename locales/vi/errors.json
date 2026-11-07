@@ -1,0 +1,38 @@
+{
+  "requestExpired": "Yêu cầu này đã hết hạn. Hãy bắt đầu lại từ biểu tượng tiện ích.",
+  "notInHistory": "Bản tóm tắt này không còn trong lịch sử.",
+  "nothingToSummarize": "Không có gì để tóm tắt.",
+  "config": {
+    "baseUrl": "Hãy đặt Base URL cho nhà cung cấp tuỳ chỉnh trong Cài đặt.",
+    "apiKey": "Hãy thêm API key {{provider}} trong Cài đặt.",
+    "model": "Hãy chọn một model trong Cài đặt."
+  },
+  "llm": {
+    "stopped": "Đã dừng.",
+    "localRefused": "Máy chủ cục bộ từ chối yêu cầu (HTTP 403). Mở Cài đặt và bấm Lưu để cấp quyền truy cập, rồi thử lại.",
+    "keyRejected": "API key bị từ chối. Hãy kiểm tra trong Cài đặt.",
+    "accessDenied": "Truy cập bị từ chối (HTTP 403): key có thể không có quyền dùng model này.",
+    "notFound": "Không tìm thấy model hoặc endpoint. Hãy kiểm tra tên model và Base URL.",
+    "rateLimited": "Bị giới hạn tần suất hoặc hết hạn mức. Hãy thử lại sau hoặc đổi model.",
+    "network": "Không kết nối được tới nhà cung cấp (mạng, CORS, hoặc thiếu quyền truy cập tên miền API). Hãy lưu lại Cài đặt."
+  },
+  "models": {
+    "baseUrlRequired": "Cần có Base URL.",
+    "unreachable": "Không kết nối được tới nhà cung cấp. Hãy kiểm tra Base URL, mạng, hoặc máy chủ cục bộ đã chạy chưa.",
+    "keyRejected": "API key bị từ chối.",
+    "forbidden": "Truy cập bị từ chối (HTTP 403). Với máy chủ cục bộ, hãy bấm Lưu để cấp quyền truy cập.",
+    "http": "Nhà cung cấp trả về HTTP {{status}}."
+  },
+  "page": {
+    "noTab": "Tab gốc đã bị đóng.",
+    "restricted": "Trình duyệt không cho phép tiện ích đọc trang này.",
+    "pdfDownload": "Không tải được PDF. Hãy lưu file về máy rồi tải lên.",
+    "pdfStatus": "Không tải được PDF (HTTP {{status}}).",
+    "noAccess": "Không còn quyền truy cập trang đó. Hãy mở tiện ích trên trang và thử lại.",
+    "readFailed": "Không đọc được nội dung trang.",
+    "noText": "Trang này không có văn bản để tóm tắt."
+  },
+  "file": {
+    "unsupported": "Không hỗ trợ loại file “{{type}}”. Hỗ trợ: PDF, CSV, MD, TXT, HTML, JSON."
+  }
+}

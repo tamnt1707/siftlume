@@ -1,0 +1,43 @@
+{
+  "appName": "AI Summarizer",
+  "actions": {
+    "new": "New",
+    "newSummary": "New summary",
+    "history": "History",
+    "settings": "Settings",
+    "delete": "Delete",
+    "dismiss": "Dismiss",
+    "openSettings": "Open Settings",
+    "stop": "Stop"
+  },
+  "kind": {
+    "webpage": "Web page",
+    "text": "Text",
+    "pdf": "PDF",
+    "csv": "CSV",
+    "markdown": "Markdown"
+  },
+  "kindShort": {
+    "webpage": "Web",
+    "text": "Text",
+    "pdf": "PDF",
+    "csv": "CSV",
+    "markdown": "MD"
+  },
+  "history": {
+    "empty": "No history yet.",
+    "questions_one": "{{count}} question",
+    "questions_other": "{{count}} questions"
+  },
+  "model": {
+    "label": "Model",
+    "switcherTitle": "Model used for new summaries and answers",
+    "searchPlaceholder": "Search models…",
+    "noResults": "No models found.",
+    "manage": "Manage models in Settings"
+  },
+  "readingPage": "Reading the page…",
+  "pastedText": "Pasted text",
+  "selection": "Selection",
+  "selectionOf": "Selection: {{title}}"
+}

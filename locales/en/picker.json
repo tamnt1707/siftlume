@@ -1,0 +1,12 @@
+{
+  "title": "What should I summarize?",
+  "summarizePage": "Summarize this page",
+  "reading": "Reading…",
+  "cannotRead": "This page cannot be read",
+  "or": "or",
+  "pastePlaceholder": "Paste text here…",
+  "summarizeText": "Summarize text",
+  "dropTitle": "Drop a file or click to upload",
+  "dropFormats": "PDF, CSV, Markdown, TXT, HTML, JSON",
+  "pageHint": "To summarize a web page, click the extension icon on that page, or right-click and choose “Summarize this page”."
+}

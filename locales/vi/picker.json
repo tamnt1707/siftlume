@@ -1,0 +1,12 @@
+{
+  "title": "Bạn muốn tóm tắt gì?",
+  "summarizePage": "Tóm tắt trang này",
+  "reading": "Đang đọc…",
+  "cannotRead": "Không thể đọc trang này",
+  "or": "hoặc",
+  "pastePlaceholder": "Dán văn bản vào đây…",
+  "summarizeText": "Tóm tắt văn bản",
+  "dropTitle": "Thả file vào đây hoặc bấm để tải lên",
+  "dropFormats": "PDF, CSV, Markdown, TXT, HTML, JSON",
+  "pageHint": "Để tóm tắt một trang web, hãy bấm biểu tượng tiện ích trên trang đó, hoặc chuột phải và chọn “Tóm tắt trang này”."
+}

@@ -1,0 +1,116 @@
+{
+  "title": "设置",
+  "intro": "使用你自己的 API 密钥。请求直接从浏览器发送到服务商,不经过任何中间服务器。",
+  "provider": {
+    "heading": "1. 服务商",
+    "connected": "已连接"
+  },
+  "connect": {
+    "heading": "2. 连接",
+    "apiKey": "API 密钥",
+    "optional": "(可选)",
+    "keyPlaceholder": "粘贴你的 {{provider}} 密钥",
+    "keyOptionalPlaceholder": "不需要时可留空",
+    "show": "显示",
+    "hide": "隐藏",
+    "getKey": "获取 {{provider}} 密钥",
+    "baseUrl": "Base URL",
+    "ollamaHint": "请确保 Ollama 正在运行(ollama serve)。点击保存以授予访问权限,然后选择支持对话的模型。",
+    "lmstudioHint": "在 LM Studio 中启动本地服务器(Developer → Start server)并启用 CORS。"
+  },
+  "model": {
+    "heading": "3. 模型",
+    "searchPlaceholder": "搜索或选择模型",
+    "idPlaceholder": "模型 ID,或加载列表",
+    "loading": "加载中…",
+    "refresh": "刷新",
+    "load": "加载模型列表",
+    "available_other": "共 {{count}} 个可用模型"
+  },
+  "summary": {
+    "showIn": "结果显示位置",
+    "displaySidepanel": "侧边栏",
+    "displayTab": "新标签页(全页)",
+    "displayTabHint": "在页面旁打开新标签页,显示全宽的交互式摘要。",
+    "displaySidepanelHint": "摘要显示在侧边栏中,紧挨着你正在阅读的页面。",
+    "outputLanguage": "摘要语言",
+    "sameAsSource": "与原文相同",
+    "length": "长度",
+    "lengths": {
+      "short": "简短",
+      "medium": "适中",
+      "detailed": "详细"
+    },
+    "customInstructions": "自定义指令",
+    "customPlaceholder": "例如:侧重技术细节。始终包含“为何重要”部分。",
+    "lengthHints": {
+      "short": "TL;DR 和最多 3 个要点。适合快速浏览。",
+      "medium": "TL;DR、关键数据、3–6 个要点和可折叠的细节。推荐的默认设置。",
+      "detailed": "涵盖所有重要内容,深入部分折叠显示。"
+    },
+    "alwaysInclude": "始终包含",
+    "alwaysIncludeHint": "应用于每一份新摘要。之后也可以通过摘要下方的按钮添加。",
+    "styles": {
+      "actionItems": {
+        "title": "行动项",
+        "desc": "一份简短清单,列出你可以做或需要决定的具体事项。原文没有可执行内容时会省略。"
+      },
+      "timeline": {
+        "title": "时间线",
+        "desc": "按顺序列出关键日期、事件或阶段。原文没有先后顺序时会省略。"
+      },
+      "simpler": {
+        "title": "新手友好",
+        "desc": "通俗用词、简短句子,并简要解释每个专业术语。"
+      }
+    }
+  },
+  "appearance": {
+    "uiLanguage": "界面语言",
+    "uiLanguageAuto": "跟随浏览器({{language}})",
+    "colors": "颜色",
+    "custom": "自定义",
+    "colorPreset": "配色方案",
+    "pen": "笔(强调色)",
+    "highlighter": "荧光笔",
+    "mode": "模式",
+    "modes": {
+      "system": "跟随系统",
+      "light": "浅色",
+      "dark": "深色"
+    },
+    "corners": "圆角",
+    "cornerStyles": {
+      "soft": "圆润",
+      "square": "方正"
+    },
+    "readingFont": "正文字体",
+    "fonts": {
+      "serif": "衬线",
+      "sans": "无衬线"
+    },
+    "preview": "预览",
+    "previewTitle": "城市屋顶正在变得更凉爽",
+    "previewTldr": "白色屋顶可让夏季室内温度最多降低 4°C。",
+    "previewNum1": "室内更凉爽",
+    "previewNum2": "节省能耗"
+  },
+  "advanced": {
+    "maxChars": "发送给模型的最大字符数",
+    "privacy": "密钥仅保存在此浏览器中(chrome.storage.local),永远不会同步。"
+  },
+  "footer": {
+    "save": "保存",
+    "saved": "已保存 ✓",
+    "cancel": "取消",
+    "done": "完成"
+  },
+  "permissionDenied": "API 域名的访问权限被拒绝。",
+  "savedNoPermission": "已保存,但 API 域名的访问权限被拒绝,请求可能会失败。",
+  "tabs": {
+    "ai": "AI 模型",
+    "summary": "摘要",
+    "appearance": "外观",
+    "advanced": "高级"
+  }
+}

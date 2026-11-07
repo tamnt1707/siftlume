@@ -1,0 +1,38 @@
+{
+  "requestExpired": "此请求已过期。请从扩展图标重新开始。",
+  "notInHistory": "此摘要已不在历史记录中。",
+  "nothingToSummarize": "没有可摘要的内容。",
+  "config": {
+    "baseUrl": "请在设置中为自定义服务商填写 Base URL。",
+    "apiKey": "请在设置中添加 {{provider}} 的 API 密钥。",
+    "model": "请在设置中选择模型。"
+  },
+  "llm": {
+    "stopped": "已停止。",
+    "localRefused": "本地服务器拒绝了请求(HTTP 403)。请打开设置并点击保存以授予访问权限,然后重试。",
+    "keyRejected": "API 密钥被拒绝。请在设置中检查。",
+    "accessDenied": "访问被拒绝(HTTP 403):该密钥可能无权使用此模型。",
+    "notFound": "找不到模型或端点。请检查模型名称和 Base URL。",
+    "rateLimited": "触发速率限制或额度已用完。请稍后再试或更换模型。",
+    "network": "无法连接到服务商(网络、CORS 或缺少 API 域名权限)。请重新保存设置。"
+  },
+  "models": {
+    "baseUrlRequired": "需要填写 Base URL。",
+    "unreachable": "无法连接到服务商。请检查 Base URL、网络,或本地服务器是否已启动。",
+    "keyRejected": "API 密钥被拒绝。",
+    "forbidden": "访问被拒绝(HTTP 403)。如为本地服务器,请点击保存以授予访问权限。",
+    "http": "服务商返回了 HTTP {{status}}。"
+  },
+  "page": {
+    "noTab": "原标签页已关闭。",
+    "restricted": "浏览器不允许扩展读取此页面。",
+    "pdfDownload": "无法下载 PDF。请保存文件后再上传。",
+    "pdfStatus": "无法下载 PDF(HTTP {{status}})。",
+    "noAccess": "已无法访问该页面。请在页面上打开扩展后重试。",
+    "readFailed": "无法读取页面内容。",
+    "noText": "此页面没有可摘要的文本。"
+  },
+  "file": {
+    "unsupported": "不支持的文件类型“{{type}}”。支持:PDF、CSV、MD、TXT、HTML、JSON。"
+  }
+}

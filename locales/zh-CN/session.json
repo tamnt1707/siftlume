@@ -1,0 +1,50 @@
+{
+  "refine": {
+    "shorter": "更简短",
+    "moreDetail": "更详细",
+    "actionItems": "行动项",
+    "timeline": "时间线",
+    "simpler": "更易懂"
+  },
+  "summarizeAgain": "重新摘要",
+  "summarizeAgainTitle": "使用所选模型重新摘要",
+  "fullPage": "全页",
+  "fullPageTitle": "在全页标签页中打开此摘要",
+  "truncated": "内容较长:仅发送了开头部分(上限可在设置中调整)。",
+  "summarizing": "正在摘要…",
+  "updating": "正在更新摘要…",
+  "thinking": "思考中…",
+  "noSummary": "还没有摘要。请从新的来源重新开始。",
+  "refinePlaceholder": "修改摘要…(例如:添加对比表)",
+  "apply": "应用",
+  "questions": "问题",
+  "questionsEmpty": "可以就此页面提出任何问题。回答仅基于原文内容。",
+  "askPlaceholder": "就此内容提问…",
+  "ask": "提问",
+  "toast": {
+    "highlightOnlyWeb": "仅当来源是已打开的网页时才能高亮。",
+    "highlighted": "已在页面中高亮。",
+    "quoteNotFound": "在页面中找不到这段引文。",
+    "tabGone": "原标签页已关闭或已跳转到其他页面。",
+    "copied": "已复制。"
+  },
+  "warnings": {
+    "invalidUi_other": "模型生成了 {{count}} 条无效的界面语句;仅显示可渲染的部分。",
+    "textInstead": "模型以文本而非界面作答。"
+  },
+  "genui": {
+    "errors_other": "此视图运行时出现 {{count}} 个错误",
+    "showInPage": "在页面中显示",
+    "copy": "复制",
+    "minRead_other": "阅读约 {{count}} 分钟",
+    "drawing": "正在绘制图表…",
+    "diagramFailed": "无法绘制此图表"
+  },
+  "refineHint": {
+    "shorter": "只保留最重要的要点。",
+    "moreDetail": "补充遗漏的事实、数据和论点。",
+    "actionItems": "添加一份具体可做或需决定事项的清单。",
+    "timeline": "添加关键日期、事件或阶段的时间线。",
+    "simpler": "用通俗的语言改写并解释术语。"
+  }
+}

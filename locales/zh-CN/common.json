@@ -1,0 +1,42 @@
+{
+  "appName": "AI Summarizer",
+  "actions": {
+    "new": "新建",
+    "newSummary": "新摘要",
+    "history": "历史记录",
+    "settings": "设置",
+    "delete": "删除",
+    "dismiss": "关闭",
+    "openSettings": "打开设置",
+    "stop": "停止"
+  },
+  "kind": {
+    "webpage": "网页",
+    "text": "文本",
+    "pdf": "PDF",
+    "csv": "CSV",
+    "markdown": "Markdown"
+  },
+  "kindShort": {
+    "webpage": "网页",
+    "text": "文本",
+    "pdf": "PDF",
+    "csv": "CSV",
+    "markdown": "MD"
+  },
+  "history": {
+    "empty": "暂无历史记录。",
+    "questions_other": "{{count}} 个问题"
+  },
+  "model": {
+    "label": "模型",
+    "switcherTitle": "用于新摘要和回答的模型",
+    "searchPlaceholder": "搜索模型…",
+    "noResults": "未找到模型。",
+    "manage": "在设置中管理模型"
+  },
+  "readingPage": "正在读取页面…",
+  "pastedText": "粘贴的文本",
+  "selection": "选中内容",
+  "selectionOf": "选中内容:{{title}}"
+}

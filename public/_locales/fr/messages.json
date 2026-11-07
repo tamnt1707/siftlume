@@ -1,0 +1,25 @@
+{
+  "extName": {
+    "message": "AI Summarizer",
+    "description": "Extension name (brand, not translated)"
+  },
+  "extDescription": {
+    "message": "Résumez pages web, textes et fichiers (PDF, CSV, Markdown) en synthèses visuelles et interactives. Utilisez votre propre clé de LLM."
+  },
+  "actionTitle": {
+    "message": "Ouvrir AI Summarizer",
+    "description": "Toolbar icon tooltip"
+  },
+  "commandOpen": {
+    "message": "Ouvrir AI Summarizer",
+    "description": "Keyboard shortcut description"
+  },
+  "menuSummarizePage": {
+    "message": "Résumer cette page",
+    "description": "Context menu on a page"
+  },
+  "menuSummarizeSelection": {
+    "message": "Résumer la sélection",
+    "description": "Context menu on selected text"
+  }
+}

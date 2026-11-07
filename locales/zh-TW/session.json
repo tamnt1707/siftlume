@@ -1,0 +1,50 @@
+{
+  "refine": {
+    "shorter": "更精簡",
+    "moreDetail": "更詳細",
+    "actionItems": "待辦事項",
+    "timeline": "時間軸",
+    "simpler": "更易懂"
+  },
+  "summarizeAgain": "重新摘要",
+  "summarizeAgainTitle": "使用目前選擇的模型重新摘要",
+  "fullPage": "全頁",
+  "fullPageTitle": "在全頁分頁中開啟此摘要",
+  "truncated": "內容較長:只傳送了開頭部分(上限可在設定中調整)。",
+  "summarizing": "摘要中…",
+  "updating": "正在更新摘要…",
+  "thinking": "思考中…",
+  "noSummary": "尚無摘要。請從新的來源重新開始。",
+  "refinePlaceholder": "修改摘要…(例如:加入比較表)",
+  "apply": "套用",
+  "questions": "問題",
+  "questionsEmpty": "可以針對此頁面提出任何問題。回答只會根據原文內容。",
+  "askPlaceholder": "針對此內容提問…",
+  "ask": "提問",
+  "toast": {
+    "highlightOnlyWeb": "只有在來源是已開啟的網頁時才能醒目標示。",
+    "highlighted": "已在頁面中醒目標示。",
+    "quoteNotFound": "在頁面中找不到這段引文。",
+    "tabGone": "原分頁已關閉或已前往其他頁面。",
+    "copied": "已複製。"
+  },
+  "warnings": {
+    "invalidUi_other": "模型產生了 {{count}} 條無效的介面敘述;僅顯示可呈現的部分。",
+    "textInstead": "模型以文字而非介面回答。"
+  },
+  "genui": {
+    "errors_other": "此檢視執行時發生 {{count}} 個錯誤",
+    "showInPage": "在頁面中顯示",
+    "copy": "複製",
+    "minRead_other": "約 {{count}} 分鐘閱讀",
+    "drawing": "正在繪製圖表…",
+    "diagramFailed": "無法繪製此圖表"
+  },
+  "refineHint": {
+    "shorter": "只保留最重要的重點。",
+    "moreDetail": "補充遺漏的事實、數據與論點。",
+    "actionItems": "加入一份具體可做或需決定事項的清單。",
+    "timeline": "加入關鍵日期、事件或階段的時間軸。",
+    "simpler": "用淺白的文字改寫並解釋術語。"
+  }
+}

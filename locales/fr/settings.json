@@ -1,0 +1,118 @@
+{
+  "title": "Paramètres",
+  "intro": "Utilisez votre propre clé. Les requêtes partent directement de votre navigateur vers le fournisseur, sans serveur intermédiaire.",
+  "provider": {
+    "heading": "1. Fournisseur",
+    "connected": "Connecté"
+  },
+  "connect": {
+    "heading": "2. Connexion",
+    "apiKey": "Clé d’API",
+    "optional": "(facultatif)",
+    "keyPlaceholder": "Collez votre clé {{provider}}",
+    "keyOptionalPlaceholder": "Laissez vide si inutile",
+    "show": "Afficher",
+    "hide": "Masquer",
+    "getKey": "Obtenir une clé {{provider}}",
+    "baseUrl": "URL de base",
+    "ollamaHint": "Vérifiez qu’Ollama est lancé (ollama serve). Cliquez sur Enregistrer pour autoriser l’accès, puis choisissez un modèle compatible chat.",
+    "lmstudioHint": "Démarrez le serveur local dans LM Studio (Developer → Start server) et activez CORS."
+  },
+  "model": {
+    "heading": "3. Modèle",
+    "searchPlaceholder": "Rechercher ou choisir un modèle",
+    "idPlaceholder": "ID du modèle, ou chargez la liste",
+    "loading": "Chargement…",
+    "refresh": "Actualiser",
+    "load": "Charger les modèles",
+    "available_one": "{{count}} modèle disponible",
+    "available_many": "{{count}} modèles disponibles",
+    "available_other": "{{count}} modèles disponibles"
+  },
+  "summary": {
+    "showIn": "Afficher les résultats dans",
+    "displaySidepanel": "Panneau latéral",
+    "displayTab": "Nouvel onglet (pleine page)",
+    "displayTabHint": "Un nouvel onglet s’ouvre à côté de la page avec un résumé interactif pleine largeur.",
+    "displaySidepanelHint": "Le résumé s’ouvre dans le panneau latéral, à côté de la page que vous lisez.",
+    "outputLanguage": "Langue du résumé",
+    "sameAsSource": "Identique à la source",
+    "length": "Longueur",
+    "lengths": {
+      "short": "Court",
+      "medium": "Moyen",
+      "detailed": "Détaillé"
+    },
+    "customInstructions": "Instructions personnalisées",
+    "customPlaceholder": "ex. : Mettre l’accent sur les détails techniques. Toujours inclure une section « Pourquoi c’est important ».",
+    "lengthHints": {
+      "short": "TL;DR et jusqu’à 3 points clés. Idéal pour un coup d’œil.",
+      "medium": "TL;DR, chiffres clés, 3 à 6 points et détails repliés. Un bon réglage par défaut.",
+      "detailed": "Tout l’essentiel, avec l’approfondissement dans des sections repliées."
+    },
+    "alwaysInclude": "Toujours inclure",
+    "alwaysIncludeHint": "S’applique à chaque nouveau résumé. Vous pouvez aussi l’ajouter ensuite avec les boutons sous le résumé.",
+    "styles": {
+      "actionItems": {
+        "title": "Actions à mener",
+        "desc": "Une courte liste de choses concrètes à faire ou à décider. Omise si la source n’a rien d’actionnable."
+      },
+      "timeline": {
+        "title": "Chronologie",
+        "desc": "Les dates, événements ou étapes clés dans l’ordre. Omise si la source n’a pas de séquence."
+      },
+      "simpler": {
+        "title": "Pour débutants",
+        "desc": "Des mots simples, des phrases courtes et une brève explication de chaque terme technique."
+      }
+    }
+  },
+  "appearance": {
+    "uiLanguage": "Langue de l’interface",
+    "uiLanguageAuto": "Langue du navigateur ({{language}})",
+    "colors": "Couleurs",
+    "custom": "Personnalisé",
+    "colorPreset": "Palette",
+    "pen": "Stylo (accent)",
+    "highlighter": "Surligneur",
+    "mode": "Mode",
+    "modes": {
+      "system": "Système",
+      "light": "Clair",
+      "dark": "Sombre"
+    },
+    "corners": "Coins",
+    "cornerStyles": {
+      "soft": "Arrondis",
+      "square": "Carrés"
+    },
+    "readingFont": "Police de lecture",
+    "fonts": {
+      "serif": "Serif",
+      "sans": "Sans serif"
+    },
+    "preview": "Aperçu",
+    "previewTitle": "Les villes adoptent des toits plus frais",
+    "previewTldr": "Les toits blancs réduisent la chaleur intérieure jusqu’à 4 °C en été.",
+    "previewNum1": "plus frais à l’intérieur",
+    "previewNum2": "moins d’énergie"
+  },
+  "advanced": {
+    "maxChars": "Nombre maximal de caractères envoyés au modèle",
+    "privacy": "Les clés sont stockées uniquement dans ce navigateur (chrome.storage.local) et ne sont jamais synchronisées."
+  },
+  "footer": {
+    "save": "Enregistrer",
+    "saved": "Enregistré ✓",
+    "cancel": "Annuler",
+    "done": "Terminé"
+  },
+  "permissionDenied": "L’autorisation pour le domaine de l’API a été refusée.",
+  "savedNoPermission": "Enregistré, mais l’autorisation pour le domaine de l’API a été refusée. Les requêtes risquent d’échouer.",
+  "tabs": {
+    "ai": "Modèle d’IA",
+    "summary": "Résumé",
+    "appearance": "Apparence",
+    "advanced": "Avancé"
+  }
+}

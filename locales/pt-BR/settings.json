@@ -1,0 +1,118 @@
+{
+  "title": "Configurações",
+  "intro": "Use sua própria chave. As solicitações vão direto do seu navegador ao provedor, sem servidor intermediário.",
+  "provider": {
+    "heading": "1. Provedor",
+    "connected": "Conectado"
+  },
+  "connect": {
+    "heading": "2. Conexão",
+    "apiKey": "Chave de API",
+    "optional": "(opcional)",
+    "keyPlaceholder": "Cole sua chave do {{provider}}",
+    "keyOptionalPlaceholder": "Deixe em branco se não for necessário",
+    "show": "Mostrar",
+    "hide": "Ocultar",
+    "getKey": "Obter uma chave do {{provider}}",
+    "baseUrl": "URL base",
+    "ollamaHint": "Verifique se o Ollama está em execução (ollama serve). Clique em Salvar para conceder acesso e escolha um modelo com suporte a chat.",
+    "lmstudioHint": "Inicie o servidor local no LM Studio (Developer → Start server) e ative o CORS."
+  },
+  "model": {
+    "heading": "3. Modelo",
+    "searchPlaceholder": "Pesquise ou escolha um modelo",
+    "idPlaceholder": "ID do modelo, ou carregue a lista",
+    "loading": "Carregando…",
+    "refresh": "Atualizar",
+    "load": "Carregar modelos",
+    "available_one": "{{count}} modelo disponível",
+    "available_many": "{{count}} modelos disponíveis",
+    "available_other": "{{count}} modelos disponíveis"
+  },
+  "summary": {
+    "showIn": "Mostrar resultados em",
+    "displaySidepanel": "Painel lateral",
+    "displayTab": "Nova aba (página inteira)",
+    "displayTabHint": "Uma nova aba abre ao lado da página com um resumo interativo em largura total.",
+    "displaySidepanelHint": "O resumo abre no painel lateral, ao lado da página que você está lendo.",
+    "outputLanguage": "Idioma do resumo",
+    "sameAsSource": "Igual ao da fonte",
+    "length": "Tamanho",
+    "lengths": {
+      "short": "Curto",
+      "medium": "Médio",
+      "detailed": "Detalhado"
+    },
+    "customInstructions": "Instruções personalizadas",
+    "customPlaceholder": "ex.: Foque nos detalhes técnicos. Sempre inclua uma seção “Por que importa”.",
+    "lengthHints": {
+      "short": "TL;DR e até 3 pontos-chave. Bom para uma olhada rápida.",
+      "medium": "TL;DR, números-chave, 3–6 pontos e detalhes recolhidos. Um bom padrão.",
+      "detailed": "Tudo o que importa, com o aprofundamento em seções recolhidas."
+    },
+    "alwaysInclude": "Sempre incluir",
+    "alwaysIncludeHint": "Vale para todo resumo novo. Você ainda pode adicionar depois com os botões abaixo do resumo.",
+    "styles": {
+      "actionItems": {
+        "title": "Ações",
+        "desc": "Uma lista curta de coisas concretas que você pode fazer ou decidir. Omitida se a fonte não tiver nada acionável."
+      },
+      "timeline": {
+        "title": "Linha do tempo",
+        "desc": "Datas, eventos ou etapas-chave em ordem. Omitida se a fonte não tiver uma sequência."
+      },
+      "simpler": {
+        "title": "Para iniciantes",
+        "desc": "Palavras simples, frases curtas e uma explicação rápida de cada termo técnico."
+      }
+    }
+  },
+  "appearance": {
+    "uiLanguage": "Idioma da interface",
+    "uiLanguageAuto": "Idioma do navegador ({{language}})",
+    "colors": "Cores",
+    "custom": "Personalizado",
+    "colorPreset": "Paleta de cores",
+    "pen": "Caneta (destaque)",
+    "highlighter": "Marca-texto",
+    "mode": "Modo",
+    "modes": {
+      "system": "Sistema",
+      "light": "Claro",
+      "dark": "Escuro"
+    },
+    "corners": "Cantos",
+    "cornerStyles": {
+      "soft": "Arredondados",
+      "square": "Retos"
+    },
+    "readingFont": "Fonte de leitura",
+    "fonts": {
+      "serif": "Serifada",
+      "sans": "Sem serifa"
+    },
+    "preview": "Prévia",
+    "previewTitle": "Cidades ganham telhados mais frescos",
+    "previewTldr": "Telhados brancos reduzem o calor interno em até 4 °C no verão.",
+    "previewNum1": "mais fresco dentro",
+    "previewNum2": "menos energia"
+  },
+  "advanced": {
+    "maxChars": "Máximo de caracteres enviados ao modelo",
+    "privacy": "As chaves ficam salvas só neste navegador (chrome.storage.local) e nunca são sincronizadas."
+  },
+  "footer": {
+    "save": "Salvar",
+    "saved": "Salvo ✓",
+    "cancel": "Cancelar",
+    "done": "Concluído"
+  },
+  "permissionDenied": "A permissão para o domínio da API foi negada.",
+  "savedNoPermission": "Salvo, mas a permissão para o domínio da API foi negada. As solicitações podem falhar.",
+  "tabs": {
+    "ai": "Modelo de IA",
+    "summary": "Resumo",
+    "appearance": "Aparência",
+    "advanced": "Avançado"
+  }
+}

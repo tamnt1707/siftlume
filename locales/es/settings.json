@@ -1,0 +1,118 @@
+{
+  "title": "Ajustes",
+  "intro": "Usa tu propia clave. Las solicitudes van directamente de tu navegador al proveedor, sin servidores intermedios.",
+  "provider": {
+    "heading": "1. Proveedor",
+    "connected": "Conectado"
+  },
+  "connect": {
+    "heading": "2. Conexión",
+    "apiKey": "Clave de API",
+    "optional": "(opcional)",
+    "keyPlaceholder": "Pega tu clave de {{provider}}",
+    "keyOptionalPlaceholder": "Déjalo vacío si no hace falta",
+    "show": "Mostrar",
+    "hide": "Ocultar",
+    "getKey": "Obtener una clave de {{provider}}",
+    "baseUrl": "URL base",
+    "ollamaHint": "Asegúrate de que Ollama esté en ejecución (ollama serve). Haz clic en Guardar para dar acceso y elige un modelo que admita chat.",
+    "lmstudioHint": "Inicia el servidor local en LM Studio (Developer → Start server) y activa CORS."
+  },
+  "model": {
+    "heading": "3. Modelo",
+    "searchPlaceholder": "Busca o elige un modelo",
+    "idPlaceholder": "ID del modelo, o carga la lista",
+    "loading": "Cargando…",
+    "refresh": "Actualizar",
+    "load": "Cargar modelos",
+    "available_one": "{{count}} modelo disponible",
+    "available_many": "{{count}} modelos disponibles",
+    "available_other": "{{count}} modelos disponibles"
+  },
+  "summary": {
+    "showIn": "Mostrar resultados en",
+    "displaySidepanel": "Panel lateral",
+    "displayTab": "Pestaña nueva (página completa)",
+    "displayTabHint": "Se abre una pestaña nueva junto a la página con un resumen interactivo a todo el ancho.",
+    "displaySidepanelHint": "El resumen se abre en el panel lateral, junto a la página que estás leyendo.",
+    "outputLanguage": "Idioma del resumen",
+    "sameAsSource": "El mismo que la fuente",
+    "length": "Longitud",
+    "lengths": {
+      "short": "Corto",
+      "medium": "Medio",
+      "detailed": "Detallado"
+    },
+    "customInstructions": "Instrucciones personalizadas",
+    "customPlaceholder": "p. ej., Céntrate en los detalles técnicos. Incluye siempre una sección “Por qué importa”.",
+    "lengthHints": {
+      "short": "TL;DR y hasta 3 puntos clave. Ideal para un vistazo rápido.",
+      "medium": "TL;DR, cifras clave, 3–6 puntos y detalles plegados. Un buen valor por defecto.",
+      "detailed": "Todo lo importante, con la profundidad en secciones plegadas."
+    },
+    "alwaysInclude": "Incluir siempre",
+    "alwaysIncludeHint": "Se aplica a cada resumen nuevo. También puedes añadirlo después con los botones bajo el resumen.",
+    "styles": {
+      "actionItems": {
+        "title": "Tareas",
+        "desc": "Una lista breve de cosas concretas que puedes hacer o decidir. Se omite si la fuente no tiene nada accionable."
+      },
+      "timeline": {
+        "title": "Cronología",
+        "desc": "Fechas, hechos o etapas clave en orden. Se omite si la fuente no tiene una secuencia."
+      },
+      "simpler": {
+        "title": "Para principiantes",
+        "desc": "Palabras sencillas, frases cortas y una explicación breve de cada término técnico."
+      }
+    }
+  },
+  "appearance": {
+    "uiLanguage": "Idioma de la interfaz",
+    "uiLanguageAuto": "Idioma del navegador ({{language}})",
+    "colors": "Colores",
+    "custom": "Personalizado",
+    "colorPreset": "Paleta de colores",
+    "pen": "Bolígrafo (acento)",
+    "highlighter": "Rotulador",
+    "mode": "Modo",
+    "modes": {
+      "system": "Sistema",
+      "light": "Claro",
+      "dark": "Oscuro"
+    },
+    "corners": "Esquinas",
+    "cornerStyles": {
+      "soft": "Redondeadas",
+      "square": "Rectas"
+    },
+    "readingFont": "Fuente de lectura",
+    "fonts": {
+      "serif": "Serif",
+      "sans": "Sans"
+    },
+    "preview": "Vista previa",
+    "previewTitle": "Las ciudades estrenan tejados más frescos",
+    "previewTldr": "Los tejados blancos reducen el calor interior hasta 4 °C en verano.",
+    "previewNum1": "más fresco dentro",
+    "previewNum2": "menos energía"
+  },
+  "advanced": {
+    "maxChars": "Máximo de caracteres enviados al modelo",
+    "privacy": "Las claves se guardan solo en este navegador (chrome.storage.local) y nunca se sincronizan."
+  },
+  "footer": {
+    "save": "Guardar",
+    "saved": "Guardado ✓",
+    "cancel": "Cancelar",
+    "done": "Listo"
+  },
+  "permissionDenied": "Se denegó el permiso para el dominio de la API.",
+  "savedNoPermission": "Guardado, pero se denegó el permiso para el dominio de la API. Las solicitudes pueden fallar.",
+  "tabs": {
+    "ai": "Modelo de IA",
+    "summary": "Resumen",
+    "appearance": "Apariencia",
+    "advanced": "Avanzado"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "title": "Cài đặt",
+  "intro": "Dùng API key của riêng bạn. Yêu cầu đi thẳng từ trình duyệt đến nhà cung cấp, không qua máy chủ trung gian.",
+  "provider": {
+    "heading": "1. Nhà cung cấp",
+    "connected": "Đã kết nối"
+  },
+  "connect": {
+    "heading": "2. Kết nối",
+    "apiKey": "API key",
+    "optional": "(không bắt buộc)",
+    "keyPlaceholder": "Dán API key {{provider}} của bạn",
+    "keyOptionalPlaceholder": "Để trống nếu không cần",
+    "show": "Hiện",
+    "hide": "Ẩn",
+    "getKey": "Lấy API key {{provider}}",
+    "baseUrl": "Base URL",
+    "ollamaHint": "Hãy chắc Ollama đang chạy (ollama serve). Bấm Lưu để cấp quyền truy cập, sau đó chọn một model hỗ trợ chat.",
+    "lmstudioHint": "Khởi động máy chủ cục bộ trong LM Studio (Developer → Start server) và bật CORS."
+  },
+  "model": {
+    "heading": "3. Model",
+    "searchPlaceholder": "Tìm hoặc chọn một model",
+    "idPlaceholder": "Tên model, hoặc tải danh sách",
+    "loading": "Đang tải…",
+    "refresh": "Làm mới",
+    "load": "Tải danh sách model",
+    "available_other": "Có {{count}} model"
+  },
+  "summary": {
+    "showIn": "Hiển thị kết quả ở",
+    "displaySidepanel": "Bảng bên (side panel)",
+    "displayTab": "Tab mới (toàn trang)",
+    "displayTabHint": "Một tab mới mở cạnh trang, với bản tóm tắt tương tác toàn chiều rộng.",
+    "displaySidepanelHint": "Bản tóm tắt mở trong bảng bên, ngay cạnh trang bạn đang đọc.",
+    "outputLanguage": "Ngôn ngữ bản tóm tắt",
+    "sameAsSource": "Giống ngôn ngữ nguồn",
+    "length": "Độ dài",
+    "lengths": {
+      "short": "Ngắn",
+      "medium": "Vừa",
+      "detailed": "Chi tiết"
+    },
+    "customInstructions": "Hướng dẫn riêng",
+    "customPlaceholder": "Ví dụ: Tập trung vào chi tiết kỹ thuật. Luôn có phần “Vì sao quan trọng”.",
+    "lengthHints": {
+      "short": "TL;DR và tối đa 3 ý chính. Hợp để xem nhanh.",
+      "medium": "TL;DR, số liệu chính, 3–6 ý và phần chi tiết thu gọn. Mức mặc định nên dùng.",
+      "detailed": "Đầy đủ mọi ý quan trọng, phần sâu được thu gọn để mở khi cần."
+    },
+    "alwaysInclude": "Luôn bao gồm",
+    "alwaysIncludeHint": "Áp dụng cho mọi bản tóm tắt mới. Vẫn có thể thêm sau bằng các nút bên dưới bản tóm tắt.",
+    "styles": {
+      "actionItems": {
+        "title": "Việc cần làm",
+        "desc": "Danh sách ngắn các việc cụ thể bạn có thể làm hoặc quyết định. Bỏ qua nếu nguồn không có gì để hành động."
+      },
+      "timeline": {
+        "title": "Dòng thời gian",
+        "desc": "Các mốc thời gian, sự kiện hoặc giai đoạn chính theo thứ tự. Bỏ qua nếu nguồn không có trình tự."
+      },
+      "simpler": {
+        "title": "Dễ hiểu cho người mới",
+        "desc": "Lời lẽ đơn giản, câu ngắn, và giải thích nhanh mỗi thuật ngữ chuyên môn."
+      }
+    }
+  },
+  "appearance": {
+    "uiLanguage": "Ngôn ngữ giao diện",
+    "uiLanguageAuto": "Theo trình duyệt ({{language}})",
+    "colors": "Màu sắc",
+    "custom": "Tuỳ chỉnh",
+    "colorPreset": "Bộ màu",
+    "pen": "Bút (màu nhấn)",
+    "highlighter": "Bút dạ quang",
+    "mode": "Chế độ",
+    "modes": {
+      "system": "Theo hệ thống",
+      "light": "Sáng",
+      "dark": "Tối"
+    },
+    "corners": "Góc",
+    "cornerStyles": {
+      "soft": "Bo tròn",
+      "square": "Vuông"
+    },
+    "readingFont": "Phông chữ đọc",
+    "fonts": {
+      "serif": "Có chân",
+      "sans": "Không chân"
+    },
+    "preview": "Xem trước",
+    "previewTitle": "Thành phố đang dùng mái nhà mát hơn",
+    "previewTldr": "Mái nhà màu trắng giảm nhiệt trong nhà tới 4°C vào mùa hè.",
+    "previewNum1": "mát hơn trong nhà",
+    "previewNum2": "tiết kiệm điện"
+  },
+  "advanced": {
+    "maxChars": "Số ký tự tối đa gửi cho model",
+    "privacy": "API key chỉ được lưu trong trình duyệt này (chrome.storage.local) và không bao giờ được đồng bộ."
+  },
+  "footer": {
+    "save": "Lưu",
+    "saved": "Đã lưu ✓",
+    "cancel": "Huỷ",
+    "done": "Xong"
+  },
+  "permissionDenied": "Quyền truy cập tên miền API đã bị từ chối.",
+  "savedNoPermission": "Đã lưu, nhưng quyền truy cập tên miền API bị từ chối. Yêu cầu có thể thất bại.",
+  "tabs": {
+    "ai": "Model AI",
+    "summary": "Tóm tắt",
+    "appearance": "Giao diện",
+    "advanced": "Nâng cao"
+  }
+}

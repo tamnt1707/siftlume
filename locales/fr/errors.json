@@ -1,0 +1,38 @@
+{
+  "requestExpired": "Cette demande a expiré. Recommencez depuis l’icône de l’extension.",
+  "notInHistory": "Ce résumé n’est plus dans l’historique.",
+  "nothingToSummarize": "Rien à résumer.",
+  "config": {
+    "baseUrl": "Indiquez une URL de base pour le fournisseur personnalisé dans les paramètres.",
+    "apiKey": "Ajoutez votre clé d’API {{provider}} dans les paramètres.",
+    "model": "Choisissez un modèle dans les paramètres."
+  },
+  "llm": {
+    "stopped": "Arrêté.",
+    "localRefused": "Le serveur local a refusé la requête (HTTP 403). Ouvrez les paramètres, cliquez sur Enregistrer pour autoriser l’accès, puis réessayez.",
+    "keyRejected": "La clé d’API a été refusée. Vérifiez-la dans les paramètres.",
+    "accessDenied": "Accès refusé (HTTP 403) : la clé n’a peut-être pas accès à ce modèle.",
+    "notFound": "Modèle ou endpoint introuvable. Vérifiez le nom du modèle et l’URL de base.",
+    "rateLimited": "Limite de débit ou quota atteint. Réessayez plus tard ou changez de modèle.",
+    "network": "Impossible de joindre le fournisseur (réseau, CORS ou autorisation manquante pour le domaine de l’API). Enregistrez à nouveau les paramètres."
+  },
+  "models": {
+    "baseUrlRequired": "L’URL de base est obligatoire.",
+    "unreachable": "Impossible de joindre le fournisseur. Vérifiez l’URL de base, votre réseau ou que le serveur local est lancé.",
+    "keyRejected": "La clé d’API a été refusée.",
+    "forbidden": "Accès refusé (HTTP 403). Pour un serveur local, cliquez sur Enregistrer pour autoriser l’accès.",
+    "http": "Le fournisseur a renvoyé HTTP {{status}}."
+  },
+  "page": {
+    "noTab": "L’onglet d’origine a été fermé.",
+    "restricted": "Le navigateur n’autorise pas les extensions à lire cette page.",
+    "pdfDownload": "Impossible de télécharger le PDF. Enregistrez-le puis importez le fichier.",
+    "pdfStatus": "Impossible de télécharger le PDF (HTTP {{status}}).",
+    "noAccess": "Plus d’accès à cette page. Ouvrez l’extension sur la page et réessayez.",
+    "readFailed": "Impossible de lire le contenu de la page.",
+    "noText": "Cette page ne contient pas de texte à résumer."
+  },
+  "file": {
+    "unsupported": "Type de fichier non pris en charge : « {{type}} ». Formats pris en charge : PDF, CSV, MD, TXT, HTML, JSON."
+  }
+}

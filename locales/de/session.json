@@ -1,0 +1,53 @@
+{
+  "refine": {
+    "shorter": "Kürzer",
+    "moreDetail": "Ausführlicher",
+    "actionItems": "Aufgaben",
+    "timeline": "Zeitleiste",
+    "simpler": "Einfacher"
+  },
+  "summarizeAgain": "Erneut zusammenfassen",
+  "summarizeAgainTitle": "Mit dem ausgewählten Modell erneut zusammenfassen",
+  "fullPage": "Ganze Seite",
+  "fullPageTitle": "Diese Zusammenfassung in einem ganzseitigen Tab öffnen",
+  "truncated": "Langer Inhalt: Nur der Anfang wurde gesendet (das Limit lässt sich in den Einstellungen ändern).",
+  "summarizing": "Wird zusammengefasst…",
+  "updating": "Zusammenfassung wird aktualisiert…",
+  "thinking": "Denkt nach…",
+  "noSummary": "Noch keine Zusammenfassung. Beginne mit einer neuen Quelle.",
+  "refinePlaceholder": "Zusammenfassung ändern… (z. B. Vergleichstabelle hinzufügen)",
+  "apply": "Anwenden",
+  "questions": "Fragen",
+  "questionsEmpty": "Frag alles zu dieser Seite. Antworten stützen sich nur auf die Quelle.",
+  "askPlaceholder": "Frag etwas zu diesem Inhalt…",
+  "ask": "Fragen",
+  "toast": {
+    "highlightOnlyWeb": "Hervorheben funktioniert nur, wenn die Quelle eine geöffnete Webseite ist.",
+    "highlighted": "Auf der Seite hervorgehoben.",
+    "quoteNotFound": "Dieses Zitat wurde auf der Seite nicht gefunden.",
+    "tabGone": "Der ursprüngliche Tab wurde geschlossen oder hat die Seite gewechselt.",
+    "copied": "Kopiert."
+  },
+  "warnings": {
+    "invalidUi_one": "Das Modell hat {{count}} ungültige UI-Anweisung erzeugt; angezeigt wird, was dargestellt werden konnte.",
+    "invalidUi_other": "Das Modell hat {{count}} ungültige UI-Anweisungen erzeugt; angezeigt wird, was dargestellt werden konnte.",
+    "textInstead": "Das Modell hat mit Text statt mit einer Oberfläche geantwortet."
+  },
+  "genui": {
+    "errors_one": "{{count}} Fehler beim Anzeigen dieser Ansicht",
+    "errors_other": "{{count}} Fehler beim Anzeigen dieser Ansicht",
+    "showInPage": "Auf der Seite zeigen",
+    "copy": "Kopieren",
+    "minRead_one": "{{count}} Min. Lesezeit",
+    "minRead_other": "{{count}} Min. Lesezeit",
+    "drawing": "Diagramm wird gezeichnet…",
+    "diagramFailed": "Dieses Diagramm konnte nicht gezeichnet werden"
+  },
+  "refineHint": {
+    "shorter": "Nur die wichtigsten Punkte behalten.",
+    "moreDetail": "Fehlende Fakten, Zahlen und Argumente ergänzen.",
+    "actionItems": "Eine Checkliste mit konkreten Aufgaben oder Entscheidungen hinzufügen.",
+    "timeline": "Eine Zeitleiste der wichtigsten Daten, Ereignisse oder Phasen hinzufügen.",
+    "simpler": "In einfachen Worten neu schreiben und Fachbegriffe erklären."
+  }
+}

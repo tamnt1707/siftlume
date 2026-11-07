@@ -1,0 +1,50 @@
+{
+  "refine": {
+    "shorter": "Ngắn hơn",
+    "moreDetail": "Chi tiết hơn",
+    "actionItems": "Việc cần làm",
+    "timeline": "Dòng thời gian",
+    "simpler": "Dễ hiểu hơn"
+  },
+  "summarizeAgain": "Tóm tắt lại",
+  "summarizeAgainTitle": "Tóm tắt lại bằng model đang chọn",
+  "fullPage": "Toàn trang",
+  "fullPageTitle": "Mở bản tóm tắt này trong một tab toàn trang",
+  "truncated": "Nội dung dài: chỉ phần đầu được gửi đi (giới hạn chỉnh trong Cài đặt).",
+  "summarizing": "Đang tóm tắt…",
+  "updating": "Đang cập nhật bản tóm tắt…",
+  "thinking": "Đang suy nghĩ…",
+  "noSummary": "Chưa có bản tóm tắt. Hãy bắt đầu lại từ một nguồn mới.",
+  "refinePlaceholder": "Chỉnh bản tóm tắt… (ví dụ: thêm bảng so sánh)",
+  "apply": "Áp dụng",
+  "questions": "Câu hỏi",
+  "questionsEmpty": "Hỏi bất cứ điều gì về trang này. Câu trả lời chỉ dựa trên nội dung nguồn.",
+  "askPlaceholder": "Hỏi bất cứ điều gì về nội dung này…",
+  "ask": "Hỏi",
+  "toast": {
+    "highlightOnlyWeb": "Chỉ tô sáng được khi nguồn là một trang web đang mở.",
+    "highlighted": "Đã tô sáng trong trang.",
+    "quoteNotFound": "Không tìm thấy đoạn trích này trong trang.",
+    "tabGone": "Tab gốc đã đóng hoặc đã chuyển sang trang khác.",
+    "copied": "Đã sao chép."
+  },
+  "warnings": {
+    "invalidUi_other": "Model tạo ra {{count}} câu lệnh giao diện không hợp lệ; đang hiển thị phần dựng được.",
+    "textInstead": "Model trả lời bằng văn bản thay vì giao diện."
+  },
+  "genui": {
+    "errors_other": "{{count}} lỗi khi hiển thị phần này",
+    "showInPage": "Xem trong trang",
+    "copy": "Sao chép",
+    "minRead_other": "{{count}} phút đọc",
+    "drawing": "Đang vẽ sơ đồ…",
+    "diagramFailed": "Không vẽ được sơ đồ này"
+  },
+  "refineHint": {
+    "shorter": "Chỉ giữ những ý quan trọng nhất.",
+    "moreDetail": "Bổ sung các dữ kiện, con số và lập luận còn thiếu.",
+    "actionItems": "Thêm danh sách các việc cụ thể cần làm hoặc cần quyết định.",
+    "timeline": "Thêm dòng thời gian các mốc, sự kiện hoặc giai đoạn chính.",
+    "simpler": "Viết lại bằng lời dễ hiểu và giải thích thuật ngữ."
+  }
+}

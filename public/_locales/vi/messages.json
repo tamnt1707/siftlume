@@ -1,0 +1,25 @@
+{
+  "extName": {
+    "message": "AI Summarizer",
+    "description": "Extension name (brand, not translated)"
+  },
+  "extDescription": {
+    "message": "Tóm tắt trang web, văn bản và file (PDF, CSV, Markdown) thành bản tóm tắt trực quan, tương tác. Dùng API key LLM của riêng bạn."
+  },
+  "actionTitle": {
+    "message": "Mở AI Summarizer",
+    "description": "Toolbar icon tooltip"
+  },
+  "commandOpen": {
+    "message": "Mở AI Summarizer",
+    "description": "Keyboard shortcut description"
+  },
+  "menuSummarizePage": {
+    "message": "Tóm tắt trang này",
+    "description": "Context menu on a page"
+  },
+  "menuSummarizeSelection": {
+    "message": "Tóm tắt đoạn đã chọn",
+    "description": "Context menu on selected text"
+  }
+}

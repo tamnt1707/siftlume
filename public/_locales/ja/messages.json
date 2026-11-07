@@ -1,0 +1,25 @@
+{
+  "extName": {
+    "message": "AI Summarizer",
+    "description": "Extension name (brand, not translated)"
+  },
+  "extDescription": {
+    "message": "Webページ、テキスト、ファイル(PDF、CSV、Markdown)を、インタラクティブで見やすい要約にします。ご自身のLLMキーを使います。"
+  },
+  "actionTitle": {
+    "message": "AI Summarizer を開く",
+    "description": "Toolbar icon tooltip"
+  },
+  "commandOpen": {
+    "message": "AI Summarizer を開く",
+    "description": "Keyboard shortcut description"
+  },
+  "menuSummarizePage": {
+    "message": "このページを要約",
+    "description": "Context menu on a page"
+  },
+  "menuSummarizeSelection": {
+    "message": "選択範囲を要約",
+    "description": "Context menu on selected text"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "refine": {
+    "shorter": "短く",
+    "moreDetail": "詳しく",
+    "actionItems": "やること",
+    "timeline": "タイムライン",
+    "simpler": "やさしく"
+  },
+  "summarizeAgain": "もう一度要約",
+  "summarizeAgainTitle": "選択中のモデルでもう一度要約",
+  "fullPage": "全画面",
+  "fullPageTitle": "この要約を全画面のタブで開く",
+  "truncated": "長いコンテンツのため、先頭部分のみ送信しました(上限は設定で変更できます)。",
+  "summarizing": "要約中…",
+  "updating": "要約を更新中…",
+  "thinking": "考え中…",
+  "noSummary": "要約はまだありません。新しいソースからやり直してください。",
+  "refinePlaceholder": "要約を変更…(例: 比較表を追加)",
+  "apply": "適用",
+  "questions": "質問",
+  "questionsEmpty": "このページについて何でも質問できます。回答はソースの内容だけに基づきます。",
+  "askPlaceholder": "この内容について質問…",
+  "ask": "質問",
+  "toast": {
+    "highlightOnlyWeb": "ハイライトはソースが開いているWebページの場合のみ使えます。",
+    "highlighted": "ページ内でハイライトしました。",
+    "quoteNotFound": "この引用はページ内に見つかりませんでした。",
+    "tabGone": "元のタブは閉じられたか、別のページに移動しました。",
+    "copied": "コピーしました。"
+  },
+  "warnings": {
+    "invalidUi_other": "モデルが無効なUI記述を {{count}} 件生成しました。表示できた部分のみ表示しています。",
+    "textInstead": "モデルはUIではなくテキストで回答しました。"
+  },
+  "genui": {
+    "errors_other": "この表示で {{count}} 件のエラー",
+    "showInPage": "ページで表示",
+    "copy": "コピー",
+    "minRead_other": "{{count}} 分で読めます",
+    "drawing": "図を描画中…",
+    "diagramFailed": "この図は描画できませんでした"
+  },
+  "refineHint": {
+    "shorter": "最も重要なポイントだけを残します。",
+    "moreDetail": "抜けている事実・数値・論点を補います。",
+    "actionItems": "具体的にやること・決めることのチェックリストを追加します。",
+    "timeline": "主な日付・出来事・段階のタイムラインを追加します。",
+    "simpler": "やさしい言葉で書き直し、専門用語を説明します。"
+  }
+}

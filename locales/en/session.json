@@ -1,0 +1,53 @@
+{
+  "refine": {
+    "shorter": "Shorter",
+    "moreDetail": "More detail",
+    "actionItems": "Action items",
+    "timeline": "Timeline",
+    "simpler": "Simpler"
+  },
+  "summarizeAgain": "Summarize again",
+  "summarizeAgainTitle": "Summarize again with the selected model",
+  "fullPage": "Full page",
+  "fullPageTitle": "Open this summary in a full-page tab",
+  "truncated": "Long content: only the beginning was sent (the limit is in Settings).",
+  "summarizing": "Summarizing…",
+  "updating": "Updating summary…",
+  "thinking": "Thinking…",
+  "noSummary": "No summary yet. Start again from a new source.",
+  "refinePlaceholder": "Change the summary… (e.g. add a comparison table)",
+  "apply": "Apply",
+  "questions": "Questions",
+  "questionsEmpty": "Ask about anything in this page. Answers use only the source.",
+  "askPlaceholder": "Ask anything about this…",
+  "ask": "Ask",
+  "toast": {
+    "highlightOnlyWeb": "Highlighting only works when the source is an open web page.",
+    "highlighted": "Highlighted in the page.",
+    "quoteNotFound": "Could not find that quote in the page.",
+    "tabGone": "The original tab was closed or navigated away.",
+    "copied": "Copied."
+  },
+  "warnings": {
+    "invalidUi_one": "The model produced {{count}} invalid UI statement; showing what rendered.",
+    "invalidUi_other": "The model produced {{count}} invalid UI statements; showing what rendered.",
+    "textInstead": "The model answered with text instead of a UI."
+  },
+  "genui": {
+    "errors_one": "{{count}} error while running this view",
+    "errors_other": "{{count}} errors while running this view",
+    "showInPage": "Show in page",
+    "copy": "Copy",
+    "minRead_one": "{{count}} min read",
+    "minRead_other": "{{count}} min read",
+    "drawing": "Drawing diagram…",
+    "diagramFailed": "This diagram could not be drawn"
+  },
+  "refineHint": {
+    "shorter": "Keep only the most important points.",
+    "moreDetail": "Add facts, numbers and arguments that were left out.",
+    "actionItems": "Add a checklist of concrete things to do or decide.",
+    "timeline": "Add a timeline of key dates, events or stages.",
+    "simpler": "Rewrite in plain words and explain jargon."
+  }
+}

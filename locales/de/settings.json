@@ -1,0 +1,117 @@
+{
+  "title": "Einstellungen",
+  "intro": "Verwende deinen eigenen Schlüssel. Anfragen gehen direkt von deinem Browser zum Anbieter, ohne Server dazwischen.",
+  "provider": {
+    "heading": "1. Anbieter",
+    "connected": "Verbunden"
+  },
+  "connect": {
+    "heading": "2. Verbindung",
+    "apiKey": "API-Schlüssel",
+    "optional": "(optional)",
+    "keyPlaceholder": "Deinen {{provider}}-Schlüssel einfügen",
+    "keyOptionalPlaceholder": "Leer lassen, falls nicht nötig",
+    "show": "Anzeigen",
+    "hide": "Verbergen",
+    "getKey": "{{provider}}-Schlüssel erhalten",
+    "baseUrl": "Basis-URL",
+    "ollamaHint": "Stelle sicher, dass Ollama läuft (ollama serve). Klicke auf Speichern, um den Zugriff zu erlauben, und wähle dann ein chatfähiges Modell.",
+    "lmstudioHint": "Starte den lokalen Server in LM Studio (Developer → Start server) und aktiviere CORS."
+  },
+  "model": {
+    "heading": "3. Modell",
+    "searchPlaceholder": "Modell suchen oder auswählen",
+    "idPlaceholder": "Modell-ID oder Liste laden",
+    "loading": "Wird geladen…",
+    "refresh": "Aktualisieren",
+    "load": "Modelle laden",
+    "available_one": "{{count}} Modell verfügbar",
+    "available_other": "{{count}} Modelle verfügbar"
+  },
+  "summary": {
+    "showIn": "Ergebnisse anzeigen in",
+    "displaySidepanel": "Seitenleiste",
+    "displayTab": "Neuer Tab (ganze Seite)",
+    "displayTabHint": "Neben der Seite öffnet sich ein neuer Tab mit einer interaktiven Zusammenfassung in voller Breite.",
+    "displaySidepanelHint": "Die Zusammenfassung öffnet sich in der Seitenleiste, direkt neben der Seite, die du liest.",
+    "outputLanguage": "Sprache der Zusammenfassung",
+    "sameAsSource": "Wie die Quelle",
+    "length": "Länge",
+    "lengths": {
+      "short": "Kurz",
+      "medium": "Mittel",
+      "detailed": "Ausführlich"
+    },
+    "customInstructions": "Eigene Anweisungen",
+    "customPlaceholder": "z. B. Auf technische Details achten. Immer einen Abschnitt „Warum das wichtig ist“ einfügen.",
+    "lengthHints": {
+      "short": "TL;DR und bis zu 3 Kernpunkte. Gut für einen schnellen Blick.",
+      "medium": "TL;DR, Kennzahlen, 3–6 Punkte und eingeklappte Details. Eine gute Voreinstellung.",
+      "detailed": "Alles Wichtige, Details in eingeklappten Abschnitten."
+    },
+    "alwaysInclude": "Immer einbeziehen",
+    "alwaysIncludeHint": "Gilt für jede neue Zusammenfassung. Du kannst es auch später über die Schaltflächen unter der Zusammenfassung hinzufügen.",
+    "styles": {
+      "actionItems": {
+        "title": "Aufgaben",
+        "desc": "Eine kurze Checkliste konkreter Dinge, die du tun oder entscheiden kannst. Entfällt, wenn die Quelle nichts Umsetzbares enthält."
+      },
+      "timeline": {
+        "title": "Zeitleiste",
+        "desc": "Wichtige Daten, Ereignisse oder Phasen der Reihe nach. Entfällt, wenn die Quelle keinen Ablauf hat."
+      },
+      "simpler": {
+        "title": "Einsteigerfreundlich",
+        "desc": "Einfache Wörter, kurze Sätze und eine kurze Erklärung jedes Fachbegriffs."
+      }
+    }
+  },
+  "appearance": {
+    "uiLanguage": "Sprache der Oberfläche",
+    "uiLanguageAuto": "Browsersprache ({{language}})",
+    "colors": "Farben",
+    "custom": "Eigene",
+    "colorPreset": "Farbschema",
+    "pen": "Stift (Akzent)",
+    "highlighter": "Textmarker",
+    "mode": "Modus",
+    "modes": {
+      "system": "System",
+      "light": "Hell",
+      "dark": "Dunkel"
+    },
+    "corners": "Ecken",
+    "cornerStyles": {
+      "soft": "Abgerundet",
+      "square": "Eckig"
+    },
+    "readingFont": "Leseschrift",
+    "fonts": {
+      "serif": "Serif",
+      "sans": "Serifenlos"
+    },
+    "preview": "Vorschau",
+    "previewTitle": "Städte bekommen kühlere Dächer",
+    "previewTldr": "Weiße Dächer senken die Innentemperatur im Sommer um bis zu 4 °C.",
+    "previewNum1": "kühler innen",
+    "previewNum2": "weniger Energie"
+  },
+  "advanced": {
+    "maxChars": "Maximale Zeichenzahl an das Modell",
+    "privacy": "Schlüssel werden nur in diesem Browser gespeichert (chrome.storage.local) und nie synchronisiert."
+  },
+  "footer": {
+    "save": "Speichern",
+    "saved": "Gespeichert ✓",
+    "cancel": "Abbrechen",
+    "done": "Fertig"
+  },
+  "permissionDenied": "Die Berechtigung für die API-Domain wurde verweigert.",
+  "savedNoPermission": "Gespeichert, aber die Berechtigung für die API-Domain wurde verweigert. Anfragen können fehlschlagen.",
+  "tabs": {
+    "ai": "KI-Modell",
+    "summary": "Zusammenfassung",
+    "appearance": "Darstellung",
+    "advanced": "Erweitert"
+  }
+}

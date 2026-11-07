@@ -1,0 +1,38 @@
+{
+  "requestExpired": "此請求已過期。請從擴充功能圖示重新開始。",
+  "notInHistory": "此摘要已不在歷史紀錄中。",
+  "nothingToSummarize": "沒有可摘要的內容。",
+  "config": {
+    "baseUrl": "請在設定中為自訂服務供應商填寫 Base URL。",
+    "apiKey": "請在設定中新增 {{provider}} 的 API 金鑰。",
+    "model": "請在設定中選擇模型。"
+  },
+  "llm": {
+    "stopped": "已停止。",
+    "localRefused": "本機伺服器拒絕了請求(HTTP 403)。請開啟設定並點擊儲存以授予存取權限,然後再試一次。",
+    "keyRejected": "API 金鑰遭到拒絕。請在設定中檢查。",
+    "accessDenied": "存取遭拒(HTTP 403):此金鑰可能無權使用這個模型。",
+    "notFound": "找不到模型或端點。請檢查模型名稱與 Base URL。",
+    "rateLimited": "觸發速率限制或額度用盡。請稍後再試或更換模型。",
+    "network": "無法連線到服務供應商(網路、CORS 或缺少 API 網域權限)。請重新儲存設定。"
+  },
+  "models": {
+    "baseUrlRequired": "需要填寫 Base URL。",
+    "unreachable": "無法連線到服務供應商。請檢查 Base URL、網路,或本機伺服器是否已啟動。",
+    "keyRejected": "API 金鑰遭到拒絕。",
+    "forbidden": "存取遭拒(HTTP 403)。若為本機伺服器,請點擊儲存以授予存取權限。",
+    "http": "服務供應商回傳了 HTTP {{status}}。"
+  },
+  "page": {
+    "noTab": "原分頁已關閉。",
+    "restricted": "瀏覽器不允許擴充功能讀取此頁面。",
+    "pdfDownload": "無法下載 PDF。請先儲存檔案再上傳。",
+    "pdfStatus": "無法下載 PDF(HTTP {{status}})。",
+    "noAccess": "已無法存取該頁面。請在頁面上開啟擴充功能後再試一次。",
+    "readFailed": "無法讀取頁面內容。",
+    "noText": "此頁面沒有可摘要的文字。"
+  },
+  "file": {
+    "unsupported": "不支援的檔案類型「{{type}}」。支援:PDF、CSV、MD、TXT、HTML、JSON。"
+  }
+}

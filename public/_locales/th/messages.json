@@ -1,0 +1,25 @@
+{
+  "extName": {
+    "message": "AI Summarizer",
+    "description": "Extension name (brand, not translated)"
+  },
+  "extDescription": {
+    "message": "สรุปหน้าเว็บ ข้อความ และไฟล์ (PDF, CSV, Markdown) เป็นสรุปแบบภาพที่โต้ตอบได้ ใช้คีย์ LLM ของคุณเอง"
+  },
+  "actionTitle": {
+    "message": "เปิด AI Summarizer",
+    "description": "Toolbar icon tooltip"
+  },
+  "commandOpen": {
+    "message": "เปิด AI Summarizer",
+    "description": "Keyboard shortcut description"
+  },
+  "menuSummarizePage": {
+    "message": "สรุปหน้านี้",
+    "description": "Context menu on a page"
+  },
+  "menuSummarizeSelection": {
+    "message": "สรุปข้อความที่เลือก",
+    "description": "Context menu on selected text"
+  }
+}

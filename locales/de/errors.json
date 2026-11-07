@@ -1,0 +1,38 @@
+{
+  "requestExpired": "Diese Anfrage ist abgelaufen. Starte erneut über das Erweiterungssymbol.",
+  "notInHistory": "Diese Zusammenfassung ist nicht mehr im Verlauf.",
+  "nothingToSummarize": "Nichts zum Zusammenfassen.",
+  "config": {
+    "baseUrl": "Lege in den Einstellungen eine Basis-URL für den eigenen Anbieter fest.",
+    "apiKey": "Füge in den Einstellungen deinen {{provider}}-API-Schlüssel hinzu.",
+    "model": "Wähle in den Einstellungen ein Modell."
+  },
+  "llm": {
+    "stopped": "Gestoppt.",
+    "localRefused": "Der lokale Server hat die Anfrage abgelehnt (HTTP 403). Öffne die Einstellungen, klicke auf Speichern, um den Zugriff zu erlauben, und versuche es erneut.",
+    "keyRejected": "Der API-Schlüssel wurde abgelehnt. Prüfe ihn in den Einstellungen.",
+    "accessDenied": "Zugriff verweigert (HTTP 403): Der Schlüssel hat möglicherweise keinen Zugriff auf dieses Modell.",
+    "notFound": "Modell oder Endpunkt nicht gefunden. Prüfe Modellname und Basis-URL.",
+    "rateLimited": "Ratenlimit oder Kontingent erreicht. Versuche es später erneut oder wechsle das Modell.",
+    "network": "Der Anbieter ist nicht erreichbar (Netzwerk, CORS oder fehlende Berechtigung für die API-Domain). Speichere die Einstellungen erneut."
+  },
+  "models": {
+    "baseUrlRequired": "Eine Basis-URL ist erforderlich.",
+    "unreachable": "Der Anbieter ist nicht erreichbar. Prüfe die Basis-URL, dein Netzwerk oder ob der lokale Server läuft.",
+    "keyRejected": "Der API-Schlüssel wurde abgelehnt.",
+    "forbidden": "Zugriff verweigert (HTTP 403). Bei lokalen Servern klicke auf Speichern, um den Zugriff zu erlauben.",
+    "http": "Der Anbieter hat HTTP {{status}} zurückgegeben."
+  },
+  "page": {
+    "noTab": "Der ursprüngliche Tab wurde geschlossen.",
+    "restricted": "Der Browser erlaubt Erweiterungen nicht, diese Seite zu lesen.",
+    "pdfDownload": "Das PDF konnte nicht heruntergeladen werden. Speichere es und lade die Datei hoch.",
+    "pdfStatus": "Das PDF konnte nicht heruntergeladen werden (HTTP {{status}}).",
+    "noAccess": "Kein Zugriff mehr auf diese Seite. Öffne die Erweiterung auf der Seite und versuche es erneut.",
+    "readFailed": "Der Seiteninhalt konnte nicht gelesen werden.",
+    "noText": "Diese Seite enthält keinen Text zum Zusammenfassen."
+  },
+  "file": {
+    "unsupported": "Nicht unterstützter Dateityp „{{type}}“. Unterstützt: PDF, CSV, MD, TXT, HTML, JSON."
+  }
+}

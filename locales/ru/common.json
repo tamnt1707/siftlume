@@ -1,0 +1,45 @@
+{
+  "appName": "AI Summarizer",
+  "actions": {
+    "new": "Новая",
+    "newSummary": "Новая сводка",
+    "history": "История",
+    "settings": "Настройки",
+    "delete": "Удалить",
+    "dismiss": "Закрыть",
+    "openSettings": "Открыть настройки",
+    "stop": "Остановить"
+  },
+  "kind": {
+    "webpage": "Веб-страница",
+    "text": "Текст",
+    "pdf": "PDF",
+    "csv": "CSV",
+    "markdown": "Markdown"
+  },
+  "kindShort": {
+    "webpage": "Веб",
+    "text": "Текст",
+    "pdf": "PDF",
+    "csv": "CSV",
+    "markdown": "MD"
+  },
+  "history": {
+    "empty": "История пока пуста.",
+    "questions_one": "{{count}} вопрос",
+    "questions_few": "{{count}} вопроса",
+    "questions_many": "{{count}} вопросов",
+    "questions_other": "{{count}} вопроса"
+  },
+  "model": {
+    "label": "Модель",
+    "switcherTitle": "Модель для новых сводок и ответов",
+    "searchPlaceholder": "Поиск моделей…",
+    "noResults": "Модели не найдены.",
+    "manage": "Управлять моделями в настройках"
+  },
+  "readingPage": "Читаем страницу…",
+  "pastedText": "Вставленный текст",
+  "selection": "Выделенный текст",
+  "selectionOf": "Выделенный текст: {{title}}"
+}

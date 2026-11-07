@@ -1,0 +1,25 @@
+{
+  "extName": {
+    "message": "AI Summarizer",
+    "description": "Extension name (brand, not translated)"
+  },
+  "extDescription": {
+    "message": "將網頁、文字與檔案(PDF、CSV、Markdown)整理成直觀的互動式摘要。使用你自己的 LLM 金鑰。"
+  },
+  "actionTitle": {
+    "message": "開啟 AI Summarizer",
+    "description": "Toolbar icon tooltip"
+  },
+  "commandOpen": {
+    "message": "開啟 AI Summarizer",
+    "description": "Keyboard shortcut description"
+  },
+  "menuSummarizePage": {
+    "message": "摘要此頁面",
+    "description": "Context menu on a page"
+  },
+  "menuSummarizeSelection": {
+    "message": "摘要選取內容",
+    "description": "Context menu on selected text"
+  }
+}

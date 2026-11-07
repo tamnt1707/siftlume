@@ -1,0 +1,117 @@
+{
+  "title": "Settings",
+  "intro": "Bring your own key. Requests go straight from your browser to the provider, with no server in between.",
+  "provider": {
+    "heading": "1. Provider",
+    "connected": "Connected"
+  },
+  "connect": {
+    "heading": "2. Connect",
+    "apiKey": "API key",
+    "optional": "(optional)",
+    "keyPlaceholder": "Paste your {{provider}} key",
+    "keyOptionalPlaceholder": "Leave empty if not required",
+    "show": "Show",
+    "hide": "Hide",
+    "getKey": "Get a {{provider}} key",
+    "baseUrl": "Base URL",
+    "ollamaHint": "Make sure Ollama is running (ollama serve). Click Save to grant access, then pick a model that supports chat.",
+    "lmstudioHint": "Start the local server in LM Studio (Developer → Start server) and enable CORS."
+  },
+  "model": {
+    "heading": "3. Model",
+    "searchPlaceholder": "Search or pick a model",
+    "idPlaceholder": "Model id, or load the list",
+    "loading": "Loading…",
+    "refresh": "Refresh",
+    "load": "Load models",
+    "available_one": "{{count}} model available",
+    "available_other": "{{count}} models available"
+  },
+  "summary": {
+    "showIn": "Show results in",
+    "displaySidepanel": "Inline (side panel)",
+    "displayTab": "New tab (full page)",
+    "displayTabHint": "A new tab opens next to the page with a full-width, interactive summary.",
+    "displaySidepanelHint": "The summary opens in the side panel, next to the page you are reading.",
+    "outputLanguage": "Summary language",
+    "sameAsSource": "Same as source",
+    "length": "Length",
+    "lengths": {
+      "short": "Short",
+      "medium": "Medium",
+      "detailed": "Detailed"
+    },
+    "customInstructions": "Custom instructions",
+    "customPlaceholder": "e.g. Focus on technical details. Always include a “Why it matters” section.",
+    "lengthHints": {
+      "short": "TL;DR and up to 3 key points. Best for a quick look.",
+      "medium": "TL;DR, key figures, 3–6 points and folded details. A good default.",
+      "detailed": "Everything important, with depth kept in folded sections."
+    },
+    "alwaysInclude": "Always include",
+    "alwaysIncludeHint": "Applied to every new summary. You can still add them later with the buttons under a summary.",
+    "styles": {
+      "actionItems": {
+        "title": "Action items",
+        "desc": "A short checklist of concrete things you can do or decide. Skipped when the source has nothing actionable."
+      },
+      "timeline": {
+        "title": "Timeline",
+        "desc": "Key dates, events or stages in order. Skipped when the source has no sequence."
+      },
+      "simpler": {
+        "title": "Beginner-friendly",
+        "desc": "Plain words, short sentences, and a quick explanation of each technical term."
+      }
+    }
+  },
+  "appearance": {
+    "uiLanguage": "Interface language",
+    "uiLanguageAuto": "Browser language ({{language}})",
+    "colors": "Colors",
+    "custom": "Custom",
+    "colorPreset": "Color preset",
+    "pen": "Pen (accent)",
+    "highlighter": "Highlighter",
+    "mode": "Mode",
+    "modes": {
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "corners": "Corners",
+    "cornerStyles": {
+      "soft": "Soft",
+      "square": "Square"
+    },
+    "readingFont": "Reading font",
+    "fonts": {
+      "serif": "Serif",
+      "sans": "Sans"
+    },
+    "preview": "Preview",
+    "previewTitle": "Cities are getting cooler roofs",
+    "previewTldr": "White roofs cut indoor heat by up to 4°C in summer.",
+    "previewNum1": "cooler indoors",
+    "previewNum2": "less energy"
+  },
+  "advanced": {
+    "maxChars": "Max characters sent to the model",
+    "privacy": "Keys are stored only in this browser (chrome.storage.local) and are never synced."
+  },
+  "footer": {
+    "save": "Save",
+    "saved": "Saved ✓",
+    "cancel": "Cancel",
+    "done": "Done"
+  },
+  "permissionDenied": "Permission for the API domain was denied.",
+  "savedNoPermission": "Saved, but permission for the API domain was denied. Requests may fail.",
+  "tabs": {
+    "ai": "AI model",
+    "summary": "Summary",
+    "appearance": "Appearance",
+    "advanced": "Advanced"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "requestExpired": "Esta solicitud caducó. Empieza de nuevo desde el icono de la extensión.",
+  "notInHistory": "Este resumen ya no está en el historial.",
+  "nothingToSummarize": "No hay nada que resumir.",
+  "config": {
+    "baseUrl": "Indica una URL base para el proveedor personalizado en Ajustes.",
+    "apiKey": "Añade tu clave de API de {{provider}} en Ajustes.",
+    "model": "Elige un modelo en Ajustes."
+  },
+  "llm": {
+    "stopped": "Detenido.",
+    "localRefused": "El servidor local rechazó la solicitud (HTTP 403). Abre Ajustes y haz clic en Guardar para darle acceso, y vuelve a intentarlo.",
+    "keyRejected": "La clave de API fue rechazada. Revísala en Ajustes.",
+    "accessDenied": "Acceso denegado (HTTP 403): puede que la clave no tenga acceso a este modelo.",
+    "notFound": "No se encontró el modelo o el endpoint. Revisa el nombre del modelo y la URL base.",
+    "rateLimited": "Límite de solicitudes o cuota agotada. Inténtalo más tarde o cambia de modelo.",
+    "network": "No se pudo conectar con el proveedor (red, CORS o falta de permiso para el dominio de la API). Vuelve a guardar los ajustes."
+  },
+  "models": {
+    "baseUrlRequired": "La URL base es obligatoria.",
+    "unreachable": "No se pudo conectar con el proveedor. Revisa la URL base, tu red o que el servidor local esté en ejecución.",
+    "keyRejected": "La clave de API fue rechazada.",
+    "forbidden": "Acceso denegado (HTTP 403). En servidores locales, haz clic en Guardar para dar acceso.",
+    "http": "El proveedor devolvió HTTP {{status}}."
+  },
+  "page": {
+    "noTab": "La pestaña original se cerró.",
+    "restricted": "El navegador no permite que las extensiones lean esta página.",
+    "pdfDownload": "No se pudo descargar el PDF. Guárdalo y súbelo como archivo.",
+    "pdfStatus": "No se pudo descargar el PDF (HTTP {{status}}).",
+    "noAccess": "Ya no hay acceso a esa página. Abre la extensión en la página y vuelve a intentarlo.",
+    "readFailed": "No se pudo leer el contenido de la página.",
+    "noText": "Esta página no tiene texto que resumir."
+  },
+  "file": {
+    "unsupported": "Tipo de archivo no admitido: “{{type}}”. Admitidos: PDF, CSV, MD, TXT, HTML, JSON."
+  }
+}

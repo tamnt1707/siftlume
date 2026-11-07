@@ -1,0 +1,12 @@
+{
+  "title": "Was soll zusammengefasst werden?",
+  "summarizePage": "Diese Seite zusammenfassen",
+  "reading": "Wird gelesen…",
+  "cannotRead": "Diese Seite kann nicht gelesen werden",
+  "or": "oder",
+  "pastePlaceholder": "Text hier einfügen…",
+  "summarizeText": "Text zusammenfassen",
+  "dropTitle": "Datei ablegen oder klicken zum Hochladen",
+  "dropFormats": "PDF, CSV, Markdown, TXT, HTML, JSON",
+  "pageHint": "Um eine Webseite zusammenzufassen, klicke auf dieser Seite auf das Erweiterungssymbol oder wähle per Rechtsklick „Diese Seite zusammenfassen“."
+}

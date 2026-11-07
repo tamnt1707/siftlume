@@ -1,0 +1,38 @@
+{
+  "requestExpired": "This request has expired. Start again from the extension icon.",
+  "notInHistory": "This summary is no longer in history.",
+  "nothingToSummarize": "Nothing to summarize.",
+  "config": {
+    "baseUrl": "Set a Base URL for the custom provider in Settings.",
+    "apiKey": "Add your {{provider}} API key in Settings.",
+    "model": "Choose a model in Settings."
+  },
+  "llm": {
+    "stopped": "Stopped.",
+    "localRefused": "The local server refused the request (HTTP 403). Open Settings and click Save to grant access to it, then try again.",
+    "keyRejected": "The API key was rejected. Check it in Settings.",
+    "accessDenied": "Access denied (HTTP 403): the key may not have access to this model.",
+    "notFound": "Model or endpoint not found. Check the model name and Base URL.",
+    "rateLimited": "Rate limited or out of quota. Try again later or switch model.",
+    "network": "Could not reach the provider (network, CORS, or missing permission for the API domain). Save Settings again."
+  },
+  "models": {
+    "baseUrlRequired": "Base URL is required.",
+    "unreachable": "Could not reach the provider. Check the Base URL, your network, or that the local server is running.",
+    "keyRejected": "The API key was rejected.",
+    "forbidden": "Access denied (HTTP 403). For local servers, click Save to grant access.",
+    "http": "The provider returned HTTP {{status}}."
+  },
+  "page": {
+    "noTab": "The original tab was closed.",
+    "restricted": "The browser does not allow extensions to read this page.",
+    "pdfDownload": "Could not download the PDF. Save it and upload the file instead.",
+    "pdfStatus": "Could not download the PDF (HTTP {{status}}).",
+    "noAccess": "No access to that page anymore. Open the extension on the page and try again.",
+    "readFailed": "Could not read the page content.",
+    "noText": "This page has no text to summarize."
+  },
+  "file": {
+    "unsupported": "Unsupported file type “{{type}}”. Supported: PDF, CSV, MD, TXT, HTML, JSON."
+  }
+}

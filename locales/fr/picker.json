@@ -1,0 +1,12 @@
+{
+  "title": "Que voulez-vous résumer ?",
+  "summarizePage": "Résumer cette page",
+  "reading": "Lecture…",
+  "cannotRead": "Impossible de lire cette page",
+  "or": "ou",
+  "pastePlaceholder": "Collez du texte ici…",
+  "summarizeText": "Résumer le texte",
+  "dropTitle": "Déposez un fichier ou cliquez pour l’importer",
+  "dropFormats": "PDF, CSV, Markdown, TXT, HTML, JSON",
+  "pageHint": "Pour résumer une page web, cliquez sur l’icône de l’extension sur cette page, ou faites un clic droit et choisissez « Résumer cette page »."
+}

@@ -1,0 +1,42 @@
+{
+  "appName": "AI Summarizer",
+  "actions": {
+    "new": "ใหม่",
+    "newSummary": "สรุปใหม่",
+    "history": "ประวัติ",
+    "settings": "การตั้งค่า",
+    "delete": "ลบ",
+    "dismiss": "ปิด",
+    "openSettings": "เปิดการตั้งค่า",
+    "stop": "หยุด"
+  },
+  "kind": {
+    "webpage": "หน้าเว็บ",
+    "text": "ข้อความ",
+    "pdf": "PDF",
+    "csv": "CSV",
+    "markdown": "Markdown"
+  },
+  "kindShort": {
+    "webpage": "เว็บ",
+    "text": "ข้อความ",
+    "pdf": "PDF",
+    "csv": "CSV",
+    "markdown": "MD"
+  },
+  "history": {
+    "empty": "ยังไม่มีประวัติ",
+    "questions_other": "{{count}} คำถาม"
+  },
+  "model": {
+    "label": "โมเดล",
+    "switcherTitle": "โมเดลที่ใช้สำหรับสรุปและคำตอบใหม่",
+    "searchPlaceholder": "ค้นหาโมเดล…",
+    "noResults": "ไม่พบโมเดล",
+    "manage": "จัดการโมเดลในการตั้งค่า"
+  },
+  "readingPage": "กำลังอ่านหน้าเว็บ…",
+  "pastedText": "ข้อความที่วาง",
+  "selection": "ข้อความที่เลือก",
+  "selectionOf": "ข้อความที่เลือก: {{title}}"
+}

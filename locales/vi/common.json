@@ -1,0 +1,42 @@
+{
+  "appName": "AI Summarizer",
+  "actions": {
+    "new": "Mới",
+    "newSummary": "Tóm tắt mới",
+    "history": "Lịch sử",
+    "settings": "Cài đặt",
+    "delete": "Xoá",
+    "dismiss": "Đóng",
+    "openSettings": "Mở Cài đặt",
+    "stop": "Dừng"
+  },
+  "kind": {
+    "webpage": "Trang web",
+    "text": "Văn bản",
+    "pdf": "PDF",
+    "csv": "CSV",
+    "markdown": "Markdown"
+  },
+  "kindShort": {
+    "webpage": "Web",
+    "text": "Văn bản",
+    "pdf": "PDF",
+    "csv": "CSV",
+    "markdown": "MD"
+  },
+  "history": {
+    "empty": "Chưa có lịch sử.",
+    "questions_other": "{{count}} câu hỏi"
+  },
+  "model": {
+    "label": "Model",
+    "switcherTitle": "Model dùng cho các bản tóm tắt và câu trả lời mới",
+    "searchPlaceholder": "Tìm model…",
+    "noResults": "Không tìm thấy model.",
+    "manage": "Quản lý model trong Cài đặt"
+  },
+  "readingPage": "Đang đọc trang…",
+  "pastedText": "Văn bản đã dán",
+  "selection": "Đoạn đã chọn",
+  "selectionOf": "Đoạn đã chọn: {{title}}"
+}

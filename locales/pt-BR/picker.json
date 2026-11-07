@@ -1,0 +1,12 @@
+{
+  "title": "O que você quer resumir?",
+  "summarizePage": "Resumir esta página",
+  "reading": "Lendo…",
+  "cannotRead": "Não é possível ler esta página",
+  "or": "ou",
+  "pastePlaceholder": "Cole o texto aqui…",
+  "summarizeText": "Resumir texto",
+  "dropTitle": "Solte um arquivo ou clique para enviar",
+  "dropFormats": "PDF, CSV, Markdown, TXT, HTML, JSON",
+  "pageHint": "Para resumir uma página da web, clique no ícone da extensão nessa página ou clique com o botão direito e escolha “Resumir esta página”."
+}
