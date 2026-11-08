@@ -5,7 +5,7 @@
 <h1 align="center">Siftlume</h1>
 
 <p align="center">
-  Sift any page down to what matters.<br>
+  Summarize any page, keep what matters.<br>
   A Chrome extension that turns web pages, text and files into visual, interactive summaries built with <a href="https://www.openui.com">OpenUI</a>.
 </p>
 

@@ -116,7 +116,7 @@
     "about": "About"
   },
   "about": {
-    "tagline": "Sift any page down to what matters.",
+    "tagline": "Summarize any page, keep what matters.",
     "version": "Version {{version}}",
     "supportTitle": "Support Siftlume",
     "supportText": "Siftlume is free and open source. If it saves you time, a coffee helps keep it going.",
