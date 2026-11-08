@@ -22,7 +22,8 @@ import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../../lib/review-ex
 import { DEFAULT_SETTINGS, type Settings } from '../../lib/settings';
 import { ARTICLE, SUMMARY } from './content';
 
-const view = new URLSearchParams(location.search).get('view') ?? 'compare';
+const query = new URLSearchParams(location.search);
+const view = query.get('view') ?? 'compare';
 const dark = new URLSearchParams(location.search).has('dark');
 const settings: Settings = { ...DEFAULT_SETTINGS, theme: dark ? 'dark' : 'light' };
 
@@ -237,13 +238,118 @@ function SettingsView() {
   return (
     <Themed settings={settings} className="app app--page sc-settings">
       <main className="content">
-        <SettingsForm embedded onClose={() => {}} initialTab="appearance" />
+        <SettingsForm
+          embedded
+          onClose={() => {}}
+          initialTab={(query.get('tab') as 'ai' | 'appearance' | null) ?? 'appearance'}
+        />
       </main>
     </Themed>
   );
 }
 
+// ── Chrome Web Store assets ─────────────────────────────────────────────────────
+
+/** Store screenshots (1280×800): a caption above a scaled live view. */
+const STORE_SHOTS: { title: string; sub: string; src: string; width: number }[] = [
+  {
+    title: 'Long articles in, summaries you can scan in seconds',
+    sub: 'A one-line TL;DR, key figures, takeaways and a timeline, next to the page you are reading.',
+    src: 'view=compare',
+    width: 1360,
+  },
+  {
+    title: 'Numbers become charts. Questions get answers.',
+    sub: 'Charts picked from the shape of the data, plus follow-up questions answered only from the source.',
+    src: 'view=fullpage',
+    width: 1360,
+  },
+  {
+    title: 'Made for the content you read',
+    sub: 'Verdicts and pros and cons for reviews, checklists for action items, who is who for the news.',
+    src: 'view=components',
+    width: 1360,
+  },
+  {
+    title: 'Your AI, your key',
+    sub: 'OpenAI, Claude, Gemini, OpenRouter, Groq and more, or a local model with Ollama. No Siftlume server.',
+    src: 'view=settings&tab=ai',
+    width: 1100,
+  },
+  {
+    title: 'Light, dark, and your own colors',
+    sub: 'Pick a color preset or your own pen and highlighter, in 12 interface languages.',
+    src: 'view=fullpage&dark',
+    width: 1360,
+  },
+];
+
+function StoreShot() {
+  const shot = STORE_SHOTS[Number(query.get('n') ?? 1) - 1] ?? STORE_SHOTS[0]!;
+  const frameW = 1160;
+  const scale = frameW / shot.width;
+  return (
+    <div className="st-shot">
+      <header>
+        <img src="/logo.svg" alt="" width={34} height={34} />
+        <div>
+          <h1>{shot.title}</h1>
+          <p>{shot.sub}</p>
+        </div>
+      </header>
+      <div className="st-frame" style={{ width: frameW }}>
+        <iframe
+          title="Siftlume"
+          src={`?${shot.src}`}
+          style={{ width: shot.width, height: 2000, transform: `scale(${scale})` }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function PromoSmall() {
+  return (
+    <div className="st-promo-small">
+      <span className="st-logo-plate" style={{ width: 96, height: 96 }}>
+        <img src="/logo.svg" alt="" width={80} height={80} />
+      </span>
+      <div>
+        <h1>Siftlume</h1>
+        <p>Summarize any page, keep what matters.</p>
+      </div>
+    </div>
+  );
+}
+
+function PromoMarquee() {
+  return (
+    <div className="st-marquee">
+      <div className="st-marquee__text">
+        <div className="st-marquee__brand">
+          <span className="st-logo-plate" style={{ width: 56, height: 56, borderRadius: 16 }}>
+            <img src="/logo.svg" alt="" width={46} height={46} />
+          </span>
+          <span>Siftlume</span>
+        </div>
+        <h1>Summarize any page, keep what matters.</h1>
+        <ul>
+          <li>Key figures, charts and takeaways at a glance</li>
+          <li>Ask follow-up questions, answered from the source</li>
+          <li>Your own AI provider, or a local model</li>
+        </ul>
+      </div>
+      <div className="st-marquee__shot">
+        <iframe title="Siftlume" src="?view=compare" style={{ width: 1360, height: 900, transform: 'scale(0.56)' }} />
+      </div>
+    </div>
+  );
+}
+
 const views: Record<string, () => ReactElement> = {
+  store: StoreShot,
+  'promo-small': PromoSmall,
+  'promo-marquee': PromoMarquee,
   compare: Compare,
   fullpage: FullPage,
   settings: SettingsView,

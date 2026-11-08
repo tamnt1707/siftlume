@@ -26,7 +26,8 @@ function ruleIdFor(origin: string) {
  * which local servers allow by default.
  *
  * The rule only matches requests initiated by this extension, so web pages cannot use it to bypass
- * the local server's origin protection. Requires host permission for the server (granted on Save).
+ * the local server's origin protection. Uses declarativeNetRequestWithHostAccess, which only acts on
+ * hosts the user granted (the local server, on Save) and shows no install-time warning.
  */
 export async function allowLocalOrigin(baseUrl: string) {
   if (!isLocalUrl(baseUrl)) return;

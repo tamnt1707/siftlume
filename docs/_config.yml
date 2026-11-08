@@ -1,0 +1,6 @@
+# GitHub Pages (Jekyll) for the project site: privacy policy and a short landing page.
+title: Siftlume
+description: Summarize any page, keep what matters.
+theme: jekyll-theme-minimal
+exclude:
+  - store/

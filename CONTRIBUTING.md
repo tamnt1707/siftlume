@@ -136,6 +136,13 @@ To make a button in your component trigger an app action, define the action with
 
 Instructions for the model stay in English; only what users see is translated.
 
+## Releasing (maintainers)
+
+1. Bump `version` in `package.json` (the manifest version comes from it).
+2. `pnpm check && pnpm zip` produces `.output/siftlume-<version>-chrome.zip`.
+3. If the UI changed, run `pnpm screenshots` to refresh `docs/screenshots/` and the store images in `docs/store/`.
+4. Upload the zip in the Chrome Developer Dashboard. Listing text, permission justifications, data disclosures and reviewer instructions are in [`docs/store/listing.md`](docs/store/listing.md); update it when permissions or data handling change, together with [`docs/privacy.md`](docs/privacy.md) (published at https://tamnt1707.github.io/siftlume/privacy.html).
+
 ## Reporting security issues
 
 Please do not open a public issue for vulnerabilities such as a way to leak API keys or to run code from a web page. Contact the maintainer through GitHub ([@tamnt1707](https://github.com/tamnt1707)) first.

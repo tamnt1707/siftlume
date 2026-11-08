@@ -12,8 +12,8 @@ import { createServer } from 'vite';
 // waiting on.
 const run = promisify(execFile);
 const root = new URL('..', import.meta.url).pathname;
-const out = join(root, 'docs/screenshots');
-mkdirSync(out, { recursive: true });
+const dirs = { readme: join(root, 'docs/screenshots'), store: join(root, 'docs/store') };
+Object.values(dirs).forEach((d) => mkdirSync(d, { recursive: true }));
 
 const chrome =
   process.env.CHROME_PATH ??
@@ -31,6 +31,16 @@ const shots = [
   { name: 'full-page-dark', query: 'view=fullpage&dark', size: '1360,1740' },
   { name: 'settings', query: 'view=settings', size: '1100,720' },
   { name: 'components', query: 'view=components', size: '1360,900' },
+  // Chrome Web Store: exact pixel sizes, so 1x.
+  ...[1, 2, 3, 4, 5].map((n) => ({
+    name: `screenshot-${n}`,
+    query: `view=store&n=${n}`,
+    size: '1280,800',
+    scale: 1,
+    dir: 'store',
+  })),
+  { name: 'promo-small-440x280', query: 'view=promo-small', size: '440,280', scale: 1, dir: 'store' },
+  { name: 'promo-marquee-1400x560', query: 'view=promo-marquee', size: '1400,560', scale: 1, dir: 'store' },
 ];
 
 const server = await createServer({ configFile: join(root, 'scripts/showcase/vite.config.mjs') });
@@ -40,14 +50,14 @@ const profile = mkdtempSync(join(tmpdir(), 'siftlume-shots-'));
 
 try {
   for (const s of shots) {
-    const file = join(out, `${s.name}.png`);
+    const file = join(dirs[s.dir ?? 'readme'], `${s.name}.png`);
     await run(
       chrome,
       [
         '--headless=new',
         '--disable-gpu',
         '--hide-scrollbars',
-        '--force-device-scale-factor=2',
+        `--force-device-scale-factor=${s.scale ?? 2}`,
         `--user-data-dir=${profile}`,
         `--window-size=${s.size}`,
         '--virtual-time-budget=10000',

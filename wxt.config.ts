@@ -15,7 +15,7 @@ export default defineConfig({
       'scripting',
       'contextMenus',
       'unlimitedStorage',
-      'declarativeNetRequest',
+      'declarativeNetRequestWithHostAccess',
       'favicon',
       'clipboardWrite',
     ],

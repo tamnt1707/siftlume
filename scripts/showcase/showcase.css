@@ -193,3 +193,139 @@ body {
   display: block;
   padding-bottom: 0;
 }
+
+/* ── Chrome Web Store assets (exact sizes, 1x) ───────────── */
+
+.st-shot,
+.st-promo-small,
+.st-marquee {
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+}
+
+.st-shot {
+  width: 1280px;
+  height: 800px;
+  padding: 34px 60px 0;
+  background: linear-gradient(180deg, #e6f3f4 0%, #f5f7fb 60%);
+}
+
+.st-shot header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.st-shot h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 680;
+  letter-spacing: -0.02em;
+  color: #102a30;
+}
+
+.st-shot p {
+  margin: 6px 0 0;
+  font-family: 'Source Serif 4 Variable', Georgia, serif;
+  font-size: 18px;
+  color: #4a5a66;
+}
+
+.st-frame {
+  height: 640px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  background: #f5f7fb;
+  box-shadow: 0 24px 60px -24px rgb(16 42 48 / 0.45);
+}
+
+.st-frame iframe,
+.st-marquee__shot iframe {
+  border: 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+
+.st-promo-small {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 440px;
+  height: 280px;
+  padding: 0 34px;
+  background: linear-gradient(135deg, #0b7a83 0%, #075a61 100%);
+  color: #fff;
+}
+
+.st-promo-small h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.st-promo-small p {
+  margin: 6px 0 0;
+  font-family: 'Source Serif 4 Variable', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.35;
+  color: #d8fbf5;
+}
+
+.st-marquee {
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  column-gap: 36px;
+  align-items: center;
+  width: 1400px;
+  height: 560px;
+  padding-left: 70px;
+  background: linear-gradient(135deg, #0b7a83 0%, #064a50 100%);
+  color: #fff;
+}
+
+.st-marquee__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.st-marquee h1 {
+  margin: 22px 0 18px;
+  font-size: 40px;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.st-marquee ul {
+  margin: 0;
+  padding-left: 20px;
+  font-family: 'Source Serif 4 Variable', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.7;
+  color: #d8fbf5;
+}
+
+.st-marquee__shot {
+  justify-self: end;
+  width: 762px;
+  height: 470px;
+  overflow: hidden;
+  border-radius: 16px 0 0 16px;
+  background: #e9edf2;
+  box-shadow: -20px 30px 60px -20px rgb(0 0 0 / 0.45);
+}
+
+/* Logo on a light plate so the teal icon stands out on teal backgrounds. */
+.st-logo-plate {
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: 24px;
+  background: #f2fbfa;
+  box-shadow: 0 10px 24px -10px rgb(0 0 0 / 0.45);
+}

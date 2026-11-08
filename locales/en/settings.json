@@ -13,7 +13,7 @@
     "keyOptionalPlaceholder": "Leave empty if not required",
     "show": "Show",
     "hide": "Hide",
-    "getKey": "Get a {{provider}} key",
+    "getKey": "Get your {{provider}} key",
     "baseUrl": "Base URL",
     "ollamaHint": "Make sure Ollama is running (ollama serve). Click Save to grant access, then pick a model that supports chat.",
     "lmstudioHint": "Start the local server in LM Studio (Developer → Start server) and enable CORS."
