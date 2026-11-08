@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:02a13a91b9891f69c5977a4568338b0051336c78fbee3551b0a642dedf12cf81",
+  "claims": [
+    {
+      "id": "claim_d90699162fa44d74b27996b36478255d",
+      "statement": "The extension exposes six browser-facing surfaces — background service worker, context menus, toolbar action/popup, full-page app tab, per-tab side panel and an options page — and no trigger performs summarization itself; each trigger records a pending request and selects the surface that will run it.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L15-L79",
+          "version": "repo-lines-v1:sha256:0effaa531d3cbbf457e2e218872ff84cc29802d13f732b8ac76b425743b36a01:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmYTFkMWJjYjFlZjhmNmE0OTI5Njg1NDQ0MGI3NmYwNTFjM2VjYzcwOGJlNDc0ODc5OGM2MTk2NjRhYWUwNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzYmNmZDFjOGRiYmVjN2JlMmRjODYwNDVhN2ZmNGE0YTkxZjc2Mzk2YTEyNDQzYjNmNjNiN2MzMzYyZGVjOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://entrypoints/options/OptionsApp.tsx#L1-L5",
+          "version": "repo-lines-v1:sha256:d0425974d92da7a45b61bf80372a133a15a6bf7fd2c12273e1382b3c45280179:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBkMTI5NDQxYzUwMjljZDdkMmIzZGU3NTUyZjQ5MjAxNTdkNzViNTA1NTU1NDc1NzVlOTE3YWE4MjA1MjZkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L1-L45",
+          "version": "repo-lines-v1:sha256:68bd089d2939d117293dafb5a24911877d59781c4e455a006d7c4ada817ab24b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNWIyMjg0YWIxNzdiMzcxNWVjNjY5MGE4MTlkOTAxMWM4NjMwMDUxNGMyZTY4OWI0ZWYwNzAwNzQ0NTIxN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2MGE1NTdhMTlhMzAwMjg5NWU0MTZjNDMyY2M5NWY0Y2FhNGM3ZmU2NWQ0YzAyMmJlM2JjY2NjYjgwNDYwYjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a5c4420823348b7aa1ea08d30a5368a",
+      "statement": "The full-page app tab and the side panel are the same React component: App takes a surface prop ('page' | 'panel'), and entrypoints/app/main.tsx renders <App /> while entrypoints/sidepanel/main.tsx renders <App surface=\"panel\" />.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L34-L37",
+          "version": "repo-lines-v1:sha256:b85f4eb0ba7094be8d80b50bff6f1f18bbbab17e8b94d814c8213e4c1e0d0e02:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNiZGVmZjJjODAzYTNhNzBkOTNiYjQwOTQ1Mjg3YTZhNmZjYTI5NjhlOTQ5MmM5MmRkMTc3ZjQ3ZDRhMWVhNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2U2Mjc2ODJmYzNhMGMxZmU5YWRmYTdjODAyYTI1MzU2MGJjMWQzYzkzNWZlZmJmNDQ0YTNlOThmZTExNWVmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjVmNmVkYmI2ZGE2MTM2YTA0NTlmMzAzZWJkM2I0ZGE4MGRhYTFkMTNhOTc5NjdhOWI3MWRiZmZhMzcyMWIwZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzQxMzYyMWQ3YjQ3MjZhMDY2NWUzY2M2MmY3MjAyOGY2ZTBjNTVhNjJkNTlmNGI3NTkzZTU0MDVmYWNmMDI0OCJ9"
+        },
+        {
+          "resource": "repo://entrypoints/app/main.tsx#L10-L15",
+          "version": "repo-lines-v1:sha256:2beafdbb6df165f3db7481626092c00b96242c6c196526031e4f2e4e5e8631f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTllMGE0MGNlZGIwYjhjNmFkNmJlNWNmZjEwODRmNWZjNjE0ZTZhN2UwOTE0Mzg1OTAxY2I4YzVjNmU1NTUyMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://entrypoints/sidepanel/main.tsx#L10-L15",
+          "version": "repo-lines-v1:sha256:40cef2f02e73e477a6f1af89d82307a4b043fe5e2e61de06a22c9afa4cc8eea9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDM3ZjZjMDc0ZTQ1MmU3NjdjZTMwYmYyM2MzOGI4ZjM4ZmM4NTkwNGQ5NjAyZWEyNjA2NDU0MjI4OWJiZjFlYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b345f668fc1a4987bd15ed41cdfac4dc",
+      "statement": "Pending requests are stored in storage.session under session:requests, keyed by a crypto.randomUUID() id; queueRequest drops entries older than 10 minutes and takeRequest returns a request exactly once so reloading the result page does not re-run the summary.",
+      "evidence": [
+        {
+          "resource": "repo://lib/pending.ts#L11-L32",
+          "version": "repo-lines-v1:sha256:718946f167576a899b852de65a249e281786571e9f4e948334eee2cd8c4ed81a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyYThjNGFkZDFkMDMxNDAyMzAwNTljZTlhYTg5YTU5ZDdlNDg3YzM0MzFhZGQ4YzM0MDQ3MGMwOWM5NmNlNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjOGZiZjhjZjhkZjljNmZiMmZhMmVmZGZiYzM4OTI5ZDFlODA1ODc4ZDgxNzE3ODQ1MzM5N2FhNjAyNzE2MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0YzE4NTkwOTgxMzM2ODU4OTYxMGU1OTc0N2ViYjk4ZTY4YWYxY2VmNjIyZTM1NTZlOTExMmVhZWM3ZDRkMTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf5d99926bb746f6baf8c662bf1b05dd",
+      "statement": "Side-panel requests use a second tab-indexed map session:panelRequests pointing at a request id; takePanelRequest consumes the entry and honours it only for 60 seconds, and watchPanelRequests notifies the panel when a request is addressed to its tab.",
+      "evidence": [
+        {
+          "resource": "repo://lib/pending.ts#L55-L101",
+          "version": "repo-lines-v1:sha256:351bfea5d67d4ba772ec3c62629944cf2d869af64ef1e5265406b7f393b0c12c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3ZDU4NTY0MTM5MTE5YTk3YWJmZWM5ZjE1OWY1YWRlZjM1MGE4NGJlNTk4NjQ4MmMzMzcyZmJhNWZkMzQ4YjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMjRkYjE4MTQ1NmQ4YmMzOGZlZWZkNjVhMDJmOTZjZjlmZmQ4ODQ1YWZjZjE3MWJkZjk3MjE0NDZlZGZlYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3Nzc4NzlhYzE1ZjVhYWJkYjNiOTY2YWJjYmJhNTdlY2Y0NTgzZTUyZDJiNDI0M2Y4ZmI5YzhkYTUwNTAwNGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fc44d232b7584aa880023ee4c747f10b",
+      "statement": "The toolbar behaviour is mode-dependent and pushed to the browser at runtime: display 'tab' sets action.setPopup to popup.html, display 'sidepanel' clears the popup so the icon click fires action.onClicked instead; syncAction is re-run whenever the display setting changes.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L21-L40",
+          "version": "repo-lines-v1:sha256:fe9331d92f9ec9ade6c71b51e7e87c9f50adf663d780cd47674fed21d2221a97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1MjQ4MTRiMjk3Y2YzMDMyZGYzZmQzMTZlODM2MTQwZWM2ODdlNjc4ZTE5MDNmNmU5MDBjMTRkODJiMGViMzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmNzFhMWNkMjc5ZDY1NTY3NWM5ODY0MjRmOWY3YjcwNzQzMmYyMDQzODhiOWY0YmUwMmQ5ZmQ5NGUwZTNlNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOGFhNjVhZjU1MWJiNmI5MzY4NWRlYWM0NDkzNDBmMjFmZWJkMWIyZWFiOGFmZDNlYjU4NmUzNzZhY2JmOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxYzYxZDVjNzljNjU2Yzg1NDhjMDlhZDBiYTVhOWYxNGQ1MjM3NTZiMWQ5YWU4MmI1ZDhiMTU3OGMzMTMyZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cdceee136d4d4757ab27aae52e1fb4a2",
+      "statement": "Context-menu item ids encode the display mode ('summarize-page:<display>' and 'summarize-selection:<display>'), and parseMenuId recovers action and display from the id, defaulting an unknown suffix to 'tab' and an unknown prefix to 'page'.",
+      "evidence": [
+        {
+          "resource": "repo://lib/context-menus.ts#L16-L47",
+          "version": "repo-lines-v1:sha256:65ff9039d65a3e7dd77da55a3578118855255438c19cd6cb2cb3c7978098d24c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1MDQzOGE1MjAxODcwMjlkZDdmODkxODYwODc4MjIxYjhmZmUwZTc2NDk0OTE0Nzg0MmUzM2M5NDYzNjEzODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1MWZiY2NhNWFhOGZjNjExODIxMDRjNWY0ZjI5Njg5ZmRiODlkNDI4MjA3MTMyYjY4YWFhYTgwOTlhNTIxOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_35cad641bd964fe6adcf39b9ff163309",
+      "statement": "syncContextMenus serializes its removeAll-then-create runs on a module-level promise chain because startup and onInstalled can both trigger a sync and overlapping runs would create duplicate menu ids; duplicate-id runtime.lastError is swallowed.",
+      "evidence": [
+        {
+          "resource": "repo://lib/context-menus.ts#L10-L41",
+          "version": "repo-lines-v1:sha256:f04bc704a8d60877119dab122a3b560c5aa47c55fc84e7161b9cfbe5fad6886c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2MDVlNjRjZWEzZTI1OWFiMTQ3NDk4NjYzNzAxYzRhYzU5N2E0MTA4NmQ5OGQ2MTkzMTliMGYyMDJlODA2ODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExYWJjMTY4MTJkNjQxYzc3MTRjOGY2MWQ2ZThhYWJiOTY5YTM3MDlmOTc5OWUwNmExY2RmMjJmMzQ1ZmY5MmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhMzJmZTczNzczZmUxNDk4MzhiNTZjYzg5MTEyMWY3YTliZWRiZGQxYWFjMDg0YjU4MjNjOTY3MGIyNzUxZDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_80055baea83c4d54a8e2b0b001d08f7e",
+      "statement": "Context-menu titles are localized through browser.i18n.getMessage with an English fallback.",
+      "evidence": [
+        {
+          "resource": "repo://lib/context-menus.ts#L6-L8",
+          "version": "repo-lines-v1:sha256:a04849eaf0597338772c9fa3affe528062253c53cc9a4f3e0100156934bff6aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWUzNDgyZmRlMTUzZGJkZGUyZmUzMGJkYmZjMWQ3YjkwOGVlOTY5Zjc0YmQ1OGEyMmRhNzhkZjVhYmU4MjY0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDU5NmNmNTQ4M2Y1MjcxZmQyNTI1NzcyMGQ4NTg0MDhmZjc3NDA3ZjBmZGQyMDI0MmI0OWZmNDQ2YzY2YjMwZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGM1Y2YxYmE1OTQwNzEyMGY5YjZmMmIxZjEwOGFiYjc3YzFhMDdkMDYwOWNiZmMwMjFiNDU5MWZiNDMwZDQzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2I5YjY3YmY5Yzg0OTRkOGMzMDQwZGNiZmQ3MDE1YTk3NjJjODJhZWRlNTM5MGEyNTI3OTJjY2UyMjE1YjFmMCJ9"
+        },
+        {
+          "resource": "repo://public/_locales/en/messages.json#L17-L25",
+          "version": "repo-lines-v1:sha256:dfe0189423b4484369b55cabd352647cfb275136ce33a24f97a7209334952f90:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZlYTcwN2YyM2YxNWQ4MjEyYTY3ZWJiOTRhNjI1NTQ4MzRjMThkMmVhMDlhMmIyYzQ0MjcyYzE3ODExYmI5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzU0MWVjMTM0NjdjODdmNjNkMjVhMGU5NjA4ZmRmYmEzMTNmNDFkMzI5MTAyMTVlNDBmZjg5NzFkNGU4YWNmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f40efd9575f451c8a280bc6eda577c1",
+      "statement": "The popup is a pure launcher that never streams a summary: it submits the active tab or pasted text as a pending request and opens a new app tab, and history, uploads and past sessions always open as a full page.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/popup/Popup.tsx#L16-L45",
+          "version": "repo-lines-v1:sha256:1f63657c1496d8313bd2fe472e960cc52885ca485b19c9b518157ab9e6f2e437:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwNTc4YTkxMDUwYmU3ZWY5ZDYyZWQ5MDU4Yzk0OGYzZmE5ZGYzN2I4YTNhZTk0NmM4ZmM2MzI5YzhiN2Y4YjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzNjExYTZmYzhkMDI4ZjM5YzEzOWJjOTVhYjMyNmNiYmJhODU0YTIwNjVkODRhMmVlNDc0MTI4MWM3M2UxMmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1N2JhYzU1ZWEyZTY4YWI3NGRlZjc5ZDNlZmVkZjc4YWMzNWYxZDA4ZTRkMGI0MjZhMGI4YzkyZTJmYjU5YWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3fe4854efaf54ad9a0f68f3f5df0b36e",
+      "statement": "The background service worker disables the browser's own openPanelOnActionClick behavior and globally disables the side panel at startup, so the panel is only ever enabled per tab and the toolbar click can grant activeTab.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L16-L18",
+          "version": "repo-lines-v1:sha256:d21727e30288f2cf33d293e8a7486ad174d4e1bdadc916643f5570d2e9760c0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIxNTljNjhlNzczOWQ3OGExMjFhMTRmZjIyZjE1NmVmMzQzNzBiZTEwYTUxYWRmMjdmYWNhZTNjMTU2MWIwNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQ4YjhhYjFiYTlhMWI5NDk2NTI4MmE0MDNjNjc2ZDQzNWQ3MDQ2YjBmYjJhOWRjNTdhNTFmYjQ2OTFhZmMzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDg0NzI4MDg2ZGU5MThkNmQzZjQ1ODcwNzIyYTliODk0NTk4MjBiNjg2ODJkZDNlYWZlNWY1MWQ3ZTJlYzhiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWMwOWQzNGI3NjAxYTBkNTZhZTg3OGU0MWQ0MzUwYzViYmY5ZjJkMjI0MjQ3NzYyNGZhNWI0MmZmNTU4NzVjOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_375d19c552374195b1bf2e99ace28ad1",
+      "statement": "openApp creates a tab at app.html?<query> positioned directly after the opener tab, carrying over openerTabId and windowId so the result opens next to the page it came from.",
+      "evidence": [
+        {
+          "resource": "repo://lib/pending.ts#L34-L44",
+          "version": "repo-lines-v1:sha256:83d3af3cfb9bd53f6f10bb6f672168f80cf921ed0d1973838dbf0a999c101b4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NzNiMTJlZDQyMzMwYmNkNmU1NmViZGU1MzE0NTk3NWM2MDg3MDcyZTQ4YWY1N2Q0OTNmMmFlYTQxNDJjN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzMmNhODBkM2Q0MWRmY2E2ZjA1YTk2YWE4ZGRmZTM4NGZiNzhhOTFmMTM4ZmYxYzM1MjU5N2VmNDM3NmNmNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5ODlhODQwYTczYWFmODI4MjQ4MTgxM2RmYzA1NjRkOTIyYWRlNTA1Y2E2NTkyNTU2MmE4ZGFhMjA4NDU0Y2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_083694e99c91415abe74425cb42f4bd4",
+      "statement": "The app surface supports the routes ?request=<id>, ?session=<id>, ?view=new and ?view=history; the initial route is consumed only once and only after settings have loaded, because the request needs the provider configuration.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L99-L118",
+          "version": "repo-lines-v1:sha256:f28ddd6b76d9ee50d60dd37e306486168d638cad2d95a158ead60fcaf623e2ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiNDY3ZjVkZDhhYjUxMjU0ODM5MzU5YTE0YmU3OWViY2IzN2I0MjhjMDEyMmRkZDMyN2FiN2E0NWZlZDM1YTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0ODhhYzE1NTdlZjY3ZmMyMDU3MjM2MWQ2NjMyNzM0MjVlYmUyYjY1M2JmMTI0MDhjNzI5OGIyYmYyYjYyMGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4MDAxOWExN2I0NDFhNGY0NDVhOWM5NjgzZmRhODE1OGEzM2FjZTIxMDc0NDBjOGJhNGQ4OTllNWI3NmE4ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2MGM1OWIzMGIxNGJkYzdhMTM3YTk3OGNmM2IyMDFhODFkMjdhMzM4Njc5YTNhY2IyNzZhZmEzZWNkZTAwNTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f36ae8e004db40a1bc67ce268a006bd0",
+      "statement": "The app surface rewrites its own query string with history.replaceState as the user navigates, so a refresh reopens the same view, and the tab title is kept in sync with the session's source title.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L120-L127",
+          "version": "repo-lines-v1:sha256:cda741e0750b54bbef17289a4f893334066cae179739bbf1856b2b5ec10e98c7:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGJlMTQwZmMxNzAxZTk0MjVkY2RiYjUzYjRjZTRkMjY3YTEwMjA2YjI0YWQzMDVhMTM1OTI1MWFiMDVkYTY4MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBhN2EwYjJlOWJkMDBiZWRkODRlNjc1ZGMyNTk0MzgyMDA0YTg1NzMxMzkzMjg1YTE3OWU2MmEzZDVhNTg3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDE1Y2JiMGZhNjIwNjJkYzIxYzAwNDFhMDRiN2RiYTUwYjRhMTM5MzBjZGQzMjc3YjAzNjYyNmZiZTYyYmUyNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmJiMjYwYmFlZWJlNzg4MTc4NzcyODZjMDA1NDQ1ODYzNjc5YmI0ODRkNDgzNzFlNzcwMjhlZWY5MjAzNDdhMSJ9"
+        },
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L20-L23",
+          "version": "repo-lines-v1:sha256:c1be355470f63a3b482080f1d8379c5dfe3504a98e651de2a68dbd0d89f5625c:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTdjMTA4NTQ2MmFkNjQ3ZjNmODJjNDA3MDQxZjIxMWYxMWRjMDIxOTMwZTRiMmQ3ZjhkMjA1YWZhOWFhZjVlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjUyZTlhYjdhZDI0YjhhZTQwNWZjNGExY2U0MjM5ZDgyNmJiM2ZkZGMyMTY1MDhlZWZlOGQ4OGQ2Yzk0MjY4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzA2MmVmM2ZhODNmMGFiOWZkNmE3ZDRjNTUzMzFiMzJiMzk3ZDJmYmQ2ZDNlMzc3ZTMyOGQ0NWExOGUwNTRhNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9bb0c03fc5504902b74f9d4ae4615ef4",
+      "statement": "browser.sidePanel.open() only works during an active user gesture, so openSidePanelForTab must be invoked synchronously inside the click or context-menu handler with no await before it; the function is deliberately non-async, firing setOptions without awaiting and returning the open() promise directly.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L52-L58",
+          "version": "repo-lines-v1:sha256:80525be024ddfb332af12e2b528220b48ee86347c4980cf7b77cc07675aeaaac:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzVjYjU4ZjZlOWNmOGNmMjgzYzJlZmEyYTMzMjA3NzQ3ODBhNTk0ZmE4ZTA2MzI3ZDRlODM1YmU2ODcxYWZhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDFmMmZjNzhhNDA0NzA4ZTAyYzQyMGM0ZTQxZWMyYjU3OTY1NjA4NzcyNWFhMDA5NDVmZDY1YWZkNTM3ZWM5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDE1MzcyNDQyOGY5NjM0NzFmYzdjZjEwMTQ3NTY5N2YyZjJiOTNjMGM4MTc4NTZlMDVhMGYyYWRjYzM5MGI3NyJ9"
+        },
+        {
+          "resource": "repo://entrypoints/background.ts#L70-L76",
+          "version": "repo-lines-v1:sha256:6a56fddc08ab2a2872fdb0322da47e472b6543f16d4cd98cc6495fc653181db7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmNhM2VkYWI0NjhkZWFkYjk0ZjQ5MDUyNWE1NDZlN2U2NWNlYWIzOTkwMjE2OTYzNDc3NDIxYzg1NDI5MjFmNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWYzMDgyZDkwNjBkZWNjMmRkZTBiYzVkYjAxM2IyZWIzY2ViMGJmYTMzYTI0YTg5Yzc3MGFjOTAzMTg0MDc3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTM5YzEwYzQ5YTIyNTgxZTVmNTczNTVjMjE4ODU4ZGY2MTE2Y2JmODhjZGRhOGI5ZmQ2ZmIyYzY5YTA4OTZlYyJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L61-L69",
+          "version": "repo-lines-v1:sha256:16dc2bb2417e4ddb0614bea72fa40bec0f00e6e099f545235f8ab58ef15da94b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGM5ZDJiODRmYjZhZDdkZTJkZmNjN2Q4ZTY2MjAwNWYyYjVkNzBmODgxMjI3ODk4YmYwYWE0ODExYWM0MWFkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg2NDFhMjE3OGVkNzRkYTNkNDFiY2RhYmNkNDhmZDNkY2IyNTc2MjljOGI4NDIwZTI3ZmNmZmZmMDA3MzNjYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_807dc771970b40b1bf2129aeda2390f1",
+      "statement": "The requirement to keep the side-panel open inside the user gesture is why the display mode is encoded in the context-menu id rather than read from storage at click time, since reading settings would require an await and break the gesture.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L62-L68",
+          "version": "repo-lines-v1:sha256:4d6c2269eec7538b0bf740db9d94c2dae91cf1ccb4489aaf5ac3575c6a44bf7d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdkMjQyOTcyMGI1Y2E3NWE4Nzg2OWI3ODJiNmI2Y2E1NDk3YWZiYmViNjgxYWZkM2M2ZjA5MTk1MmE2NDkwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGYyNDYxNzBjMTdjZTIzY2JhM2U0NjJiYjAyZmU5ZDVjOGVmNzI0OTJkMDRlMTUwNTQ0NTc1ZDI1MGQ2YmFiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDE1MzcyNDQyOGY5NjM0NzFmYzdjZjEwMTQ3NTY5N2YyZjJiOTNjMGM4MTc4NTZlMDVhMGYyYWRjYzM5MGI3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDM1MTE3YjI5NmRhNGZkMzZlMTdjMTg3NzFlZmNhNjEwZjc2NDcyODZiMDNlNDFiOGQ0ZWUzMzEzYTQwMTAwMCJ9"
+        },
+        {
+          "resource": "repo://lib/context-menus.ts#L14-L18",
+          "version": "repo-lines-v1:sha256:11478ce4de3cc92a4364cff68be51b328f8c51655b75311b96e5fabdb0d39f1e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWI2NTU0YWNjODc0M2ExN2ZhYjk5Y2Y2NmE4MWVmYmExYTBmM2FiZTg3ZTFlZWY2YzZjYmE4MGY4ZDczOGEzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTkzMjlhM2MzOTE4YWYxZjBjZDk2ZTZlZTExMjgxOGE2MGE0NmFmMzU3ZTY3NDI2M2U3MGJiYTNiZGY4OTljMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDNkOWEwYjdmZWVkY2ZiZDhiNGIwMzc2NzNhYTMyODFkYTk3NDIzNTM4YjE3NTQ2OTJkNGY2ODM1YzNmMjNmMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d3bcccf42674772bf5ead2a22bf7edc",
+      "statement": "Each side panel is scoped to a single tab: openSidePanelForTab enables the panel only for that tab with path sidepanel.html?tab=<id>, and the tab id in the panel's query string lets the panel offer 'Summarize this page' for its own tab via browser.tabs.get(panelTabId).",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L61-L87",
+          "version": "repo-lines-v1:sha256:31be1ebbe046f1f79d1ff54a9bf2ec6ad54ae6489dc53b059f3f60b9b1635cc3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNzVjNzBkOTQ2MzYyNWUxMDc5ZmQ4ZmM4ZWU2MmFkMmU5MmM0MmJlYWFiZmQ4NWI3OGQ4ZTBhNDk3OWI5NGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjMmU2OWM1NDk4ZTIwZTIxMDQzOTkzZjNjNGRkMjUxNmYxODdhMDI0MDBhOWExNzkxYjJlNmU5ZTUxYjY2YWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2OTk1NjVmYzk5ZmRjODFkYzZhNjZhYzc3MTRhN2M3NjU2ZWQzNGZjZTVjYmY5YTVjODg2NDI3MWZkNTc3YzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMTVmMDFhYTg5ODFjYjgxYWZlZmE2MWQ2ZWMzYzJlMjk2YjM3ZDQ3ZDEwZjE3MjVkNTM2MGZjMDNlNmE5OGYifQ"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L61-L69",
+          "version": "repo-lines-v1:sha256:16dc2bb2417e4ddb0614bea72fa40bec0f00e6e099f545235f8ab58ef15da94b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGM5ZDJiODRmYjZhZDdkZTJkZmNjN2Q4ZTY2MjAwNWYyYjVkNzBmODgxMjI3ODk4YmYwYWE0ODExYWM0MWFkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg2NDFhMjE3OGVkNzRkYTNkNDFiY2RhYmNkNDhmZDNkY2IyNTc2MjljOGI4NDIwZTI3ZmNmZmZmMDA3MzNjYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_581f23b10a604b329617e055a129c93b",
+      "statement": "The URL a panel was opened for is remembered per tab in storage.session (session:panelUrls), and sameDocument compares URLs without the fragment so in-page anchor navigation keeps the panel open.",
+      "evidence": [
+        {
+          "resource": "repo://lib/pending.ts#L52-L59",
+          "version": "repo-lines-v1:sha256:218e8a4c4e0dea0f78d8e220847d8fa918a55c0f552ae6ca4c1d69957bb6cb76:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDBlZDdmZWE4OGQzZjVmY2ZkZGI2OTQxZTM1MGY5MGJkZWE2YzEyOTkyZWRiODEzM2JmNzhjZjJmMjE0OWQ5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzAzNzhkZmM2YTM4YTBkNTY4OWE2ZTA4ODdhZjkxOTU4Mzg3MDBjNTg0MTc1Y2I0YWZmMjJlYWRkYmU4OGZlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTk1NjczYmI3MDA4NmY2MzljY2UxODUwZjJmYTk4OTZlOWZhMjQzZjIzOWZjOWY5NTliMjQwNTkyM2RiNzA3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmNmZGE2YWVkMjI1MzkzYTg2ZDMzNGEyZDY2ZTQ4YTBhMWU5YzdkMjY5OTBmYWMzM2QxNjU1MTU3ZmRhYjZiNiJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L70-L73",
+          "version": "repo-lines-v1:sha256:f3964cbe19cec8e82b2d86960e56b19a96d641a4afa3cd59745ef3b5ae9269de:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWMxZmU0ZTkxMDNlMGNlZjBiNmJlYWViMjE0ZTE5YzgzMDM2ZjZmZjg3MTU3M2ZjZWZmMGExYmE0OWU3YzI0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTFkZTYxYjQ2ZTFiZDZjODczMTM2N2IwMThlYmNiYjkxNDUyZDY2ZjBjNTJhZmNhODcwMzhkMDIwOGI3NjMwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjZmNWY5ODc5ZWQ2YzdiN2UyZWU0NTJjYWIxMTU4YjgzOWM0ZjNjYjlhYTIyYzk5NzBlNTQ2ZDk0N2MzZTA1YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_faa400d049994d399a949a95433f413e",
+      "statement": "The panel is closed when its tab navigates to a different document (tabs.onUpdated) or when the tab is removed (tabs.onRemoved); closeSidePanelForTab disables the panel for that tab and forgets its remembered URL.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L42-L50",
+          "version": "repo-lines-v1:sha256:7a0ca1c4a5a00bd3dadf4aa990f687d44f9b7731bf202e71a42dc996f4908796:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTBjNzc0ZmI1YzIyMGU4OTVjMjk3YWE0YTFjOTc4ZDcwZDUzNTc3YmVkYjE4ZDQ1ZmQyNzQzZTAzNjEyODA1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWZkMGI3OTBkZGRmN2IyYTJlMzJlYzYzNjM1OTIxZGI2YTM0MzJlODVmNTUwNWU2NzM1N2NhMmVhZmU3ODlhYiJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L103-L109",
+          "version": "repo-lines-v1:sha256:28b17c84fbe4a24128eda5bb854cae38007a50b6b940df6195812442f9cd2c1f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWFlZjA0YmFkYTdmOGNkNmViYTNlZWRmODViNjQzMjgwMTI4ZmQwOGU4ZTYwZTkxZjc3OTM3NGM5YTdiOWFkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI0NjFkZTIwNjA0MmE4MWExMzI0YzkyZWE2NzRjODkwMTMwNzJlZTI5YWRiZjljMmMzNWI0ZTIyZWMzOTM0ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae1984ef42d34075aed48e383b5da66c",
+      "statement": "Inside the shared App component, routing is page-only: the panel ignores the request, session and view query parameters, and its URL stays sidepanel.html?tab=<id>.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L129-L140",
+          "version": "repo-lines-v1:sha256:88d7a34a350fbdc206310b4318da0106f19970a769baa64f3897ae72fab3c877:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkNDgxOTc4YjUxOWE1Mzg5ZGM2YTYzMzY0OTliZGQ5OTJhODEyODM4NGZiNmYyNmE0NWIwOWJlOGUzNzZmYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkZWZhNzk0OTkzYzU5MzY1ZmI0N2I4OGZjN2U1ZDRiODQ1OGRlYzM0YjVmYmRlMGI3NWVlMDE2NWY3NzhkYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4YTI1NjUzMjc3OWQ4Y2IwZWJhYmE0MjRiOTlhY2U2NTIyNTY4NTljMzUyZDQ1ZDc0NDI2YWUzNWU2Nzk2YWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15b70d2456684f9ab3ec68fd5ba3e712",
+      "statement": "A side panel shows only summaries belonging to its own tab; opening a history entry whose source.tabId differs from the panel's tab opens a full-page tab instead, and the panel offers an expand affordance to reopen the current session in a full-page tab.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L132-L142",
+          "version": "repo-lines-v1:sha256:ce64a8e3fb48b8a5a9d83df661f0dcbe3c93ad07e9be35763f132c615a61f7dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZDQyMGM2MzIwOGZiZmM0ZDcyMzkyYTAwNzYxZmY1MGQ2MjUxNDg5OTM4NjNlMDA5NDc4N2FjMjVlZTZiMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MjE2ZThlOWMwYTFhNjhkMDZjMmZiYWE1ZmQyMTM5NDgyYjhlZmQwYTE5MzE1YjkxNWU2Y2NlODQ5ZDg5ZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlMGQwN2U2NjU2MDA4ZDNjMWY2MjdhYTg1YWY0MDkyZTExNTY2NTdjNjJkM2U5Y2Y2ZmM2MzczYmMxY2I0NjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1MjRhMjAyZTdmOWJmOTQyZTJhYjUxNzRlMDBiMDc1YWM0Yjc3MmRkZjRhMTQ2NGM0NDlkYjZkNGFlZTVkYTMifQ"
+        },
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L216-L222",
+          "version": "repo-lines-v1:sha256:4cfe0741d64ba141c3763b5dbc3373289c22fdd1b1e9b7b4088849ab9e9a9276:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWUzNWY5Y2RjZWUwN2Y2YTI1NjQ0OWJjOTdmNDEwM2ZhZTEwZmEzYmZlZGM3MTQ4NjY4ZmMxYzU4MWI1MmY4YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjhkNGMxOWQ5ZTI2YWVjNDFhNWNmMTVjNTZjMDMwYWJmODBiZTFkY2UzZDc4M2I5NTgxMjhlMzA4M2QzOWEyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTE3NmQxMThiYTQ5ZWYzNjcxYzE4ZjdhNzFlODZiMjg3M2JjODI2ZDA3M2Q1ZjUwOWJkODRhMmNmNjdhZWFjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWZkNmJmYmM2MGExYTUzMjZhOWUyZDAyZWRjYTNiNGQ2ZmY1MGFkYTg1MjdkNDQ2MzEyOTIyMmJjZmYzM2Q0YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_21a9aee2366740dbabc846e94e7f0432",
+      "statement": "The display setting drives the generated UI's shape as well as routing: lib/openui.ts selects a layout rule by settings.display, giving the full-page tab a wide layout and the side panel a narrow single-column layout.",
+      "evidence": [
+        {
+          "resource": "repo://lib/openui.ts#L51-L56",
+          "version": "repo-lines-v1:sha256:86218699aac309b19cce369c8c77bc7b8e8e2a2b1920d11268989e21c40c1d4c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDlmNDNiMjczYjVkNThlZjgyODdjODcwNjJmYzg4N2ViYmY3MDk3OThjZDE0ODY4YjMwYTIyYTlkMTFjMjQ4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2QyNjYyMWVlOWE0M2NkMDFiZDc3MmI3MTAwYzdlY2Q4MWJhYWQ2MzE1MjUyZDdjNjJjZTQxNWNmMmVmODFiMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDJlNDVkNmFkOGM2NGY4YjE4ZGM5MTg4OGE4NjAyOGQyZjgxOGM0OTMyYTY0MjU3OWZkZTlkMWY3YzAyYWExYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTVkMTVjOGNmNzRjM2JlMGMwYzg5OGYyZjU2OTNkOTBiNzFmOTZjZDc0YmJkOGI5YjZkMzMwODI3OTFkMjg4NSJ9"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L82-L85",
+          "version": "repo-lines-v1:sha256:04506ac4e1c273d56cdcc71da6c0d632d1c24d9509742229e1f946c1b8fce717:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjg3ZTAzMWJhZDY3Y2RlNzkyMDMwNWNjMWJiMGU2M2ZlNDRmZDlmYzE2MjJkODZlMGUwM2RhY2ZlYjc3MzA4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTIwNDBlMDk1YTk0ZTJhZGE3NGU0MjFmMzcxODc1MWE5MWE4MTBiZmQ2NmY0OGY0ZTkzOWM3Yjc0ODBlYjY3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI4ZjY5MzIzMWQyYTc0YjI0ZjZlYjJhYTExMjRmMzA5MDI3NDkxYzY3NzdjYWEwNWFiMzQ2MzA3OTgwODE4ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5de1e2fdf25741d9850ffad333d3319b",
+      "statement": "Settings.display is persisted in local:settings, edited under 'Show results in', and normalizeSettings falls back to the default value 'sidepanel' for any unrecognized value.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L309-L331",
+          "version": "repo-lines-v1:sha256:9fafc3f797650a28de6ac674f280af985c8c28e9545196965bd3224c1de56d02:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlODgwNWZkODA5MjdhNmI1Mjg4ZTQyNzI2ZTI0MDBhYWIxZDMxZmI0ZDAzYWM4MDRlMDcwZWRlOTVmODc1MmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxNWZmZWUzMDE0NjQ3MmEyY2ViNDIzMjg1MDkwZjdmY2Q0YzlmYjZiOGRhZWRhNGU5MTdiZTdkMTg4MjUxM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmNjUyNjM0NzU0NGFlZDg4ZmY1YzJkNDczMGYxYmI1YWQ0NDQ4MzZjNDFkZDVhOThiMTJkMzUzNDMzZDYzNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxYzY1YWU2Y2JlMzUwMGNkY2VkNTY1MjAxODczOTllOTkxZmM0MTA1MWQ5OWE2YjU0NTU0YjUwMmVlNTI1ZWYifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L169-L183",
+          "version": "repo-lines-v1:sha256:ecc4f1c35a7f04fd3222463a4dbe168431a14335388a90122cff84e2d2f6f3e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2NTIwMzRmMjc0YjMyZWZmNzBiZWExNDIzZTgyMzhhYjZlYTc5MzMxNjU0NzU1YmQzY2VlZjBkMWZlYzljOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUyZmVjNWUwOGQ0ZDU3NzRiMWVkNjFmM2NlMTZjNDdkMDc1OGRjMGMzMDM1MWM5MjEyMzY0ZjY5NjBmZGUzZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjYmM4NGZjYTFmYzU2NjcyMjdmMmFiYWZmOWRjNTEwNDU1MWZiZGFlOGViM2FjNDhhYTY0ZDRkNjkwNDI5YmIifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L220-L232",
+          "version": "repo-lines-v1:sha256:90bf91ef6feae616985c5478228b5f7add2e3b2c466013d21e4e73b1848592ad:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhMjg1ZjY0OGM0OTQwNDIwNzRhMTVlOGZlMzJkNmM4NGRjMzJiMTIzYTdmZmVhZTM4MWQxNmI5YTJiMDg3Y2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3NGI2ODdjNTkxOWM5OWZkOGY5YWZhZDAxY2Q4ZjNjZGVhMGQwMzgxYzEzNDM2M2M5MWJiZTFjZWZmZmU5ZDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aad7713edd764f3b9dcb56c574a66180",
+      "statement": "The built manifest declares the side panel's default_path as sidepanel.html, lists the sidePanel, activeTab, scripting and contextMenus permissions, and exposes an _execute_action keyboard command bound to Alt+Shift+S; it also ships a static action.default_popup of popup.html, which is only the tab-mode fallback because the background worker clears it at runtime in sidepanel mode via browser.action.setPopup({ popup: '' }).",
+      "evidence": [
+        {
+          "resource": "repo://.output/chrome-mv3/manifest.json#L1-L1",
+          "version": "repo-lines-v1:sha256:cf548b1b17e76f0e7c5dedaf8c274dfc3ea158e22c9e9f7afbb4b5eac9d0b434:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y1NDhiMWIxN2U3NmYwZTdjNWRlZGFmOGMyNzRkZmMzZWExNThlMjJjOWU5ZjdhZmJiNGI1ZWFjOWQwYjQzNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y1NDhiMWIxN2U3NmYwZTdjNWRlZGFmOGMyNzRkZmMzZWExNThlMjJjOWU5ZjdhZmJiNGI1ZWFjOWQwYjQzNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://entrypoints/background.ts#L21-L24",
+          "version": "repo-lines-v1:sha256:bb400d9ed5bd6650c190af3f1c38f43d59a5e93c296910fa8fb297237df1ecf1:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzUyNDgxNGIyOTdjZjMwMzJkZjNmZDMxNmU4MzYxNDBlYzY4N2U2NzhlMTkwM2Y2ZTkwMGMxNGQ4MmIwZWIzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWU3MTEyN2Y3ZjVmMTcxN2I5NmU3ZTk3NjkwYTdkMTgxYTUwNzIzN2ZjYWQxODg0MGJiYjA5MzQwMjJhOTIwYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWI4YWE2NWFmNTUxYmI2YjkzNjg1ZGVhYzQ0OTM0MGYyMWZlYmQxYjJlYWI4YWZkM2ViNTg2ZTM3NmFjYmY5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzExYWZlNjY1YzdkMDI5MjE0NmY0NWMxY2MwZGNkYTBjYjU3NDQwODY1NWYwZmZmOTI0YTkxNDJlYWIzN2MyNyJ9"
+        },
+        {
+          "resource": "repo://wxt.config.ts#L5-L28",
+          "version": "repo-lines-v1:sha256:54f6cf69c791920a6d7ab4c174e181366f06a99ca52ad23af9a54ee8216bca36:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkOTlhNjkxZTQxYmY0NGJjYWQxMjJkYmIzZTdmZTQ0NzA0YjFkOTYyMTdkNGRjNGU5Mjg1MzUwMWNmMmMwNDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1MzhmZGNlODlkODcxMDA4NjQ2MjY4OGMwYzk2YjBkNmFkYWI1ZjIwODUzZDdhMjhjZDM5N2IzMTE3YTczNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4M2MwM2ZiZGY5YjM0NmFhNTUyNzg2YjVlZWJiM2FhZDRmYWM4M2FiOWU1YzZiNWQ1MTVhM2ViNTljZWVkNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4068f03e134c42a49d9647c1399b6155",
+      "statement": "The context-menu click handler converts the click into a PendingRequest — a selection item with non-empty info.selectionText becomes a text request carrying the tab's title, url and tabId, everything else becomes a tab request — and then routes it either to the tab's side panel via sendToSidePanel in sidepanel mode or to a queued request and a new app tab in tab mode.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L60-L78",
+          "version": "repo-lines-v1:sha256:eafce7fd70605a2eb8744813e02867f2040fa82ec427bfb80f42175aa16623e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzMTFmZjIwYWJmZTdhY2QyMjViOTJhMDEzMDdkNDM0NWJmN2U5MWY3YmQzMDA5MTRhNzc3OGYxNzRlZTMzZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIifQ"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L5-L9",
+          "version": "repo-lines-v1:sha256:53f1640ea30cc8eccc62ae6fc047a502a1a812540d3cc3e96c1c55b6b52ab1d1:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTdhNmY1ODBkNmMwMDBhNWZkMzU1OTM3Nzg5MTM2NGFmNzMwZDg1NjE4ODQyNTlhODJhNmY2OWFmMTQ0ZThhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODg3ZjVjOWEyNTQ3NmY2NDExMTViNTM3MmVjM2VmMGZjNDk2OTdjZGNmZTZlZTAxNzUwMzU0ZDhjYzljMGY1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGY2YWM1ZWZjNWNmMDU5ZjQ5ZGUwOGQ5ZDgzOWEyNDViNjVkZDM2MjhjMWE1OWUxNWRkNjYxYzlhYWY0NWI0MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWIxNzdjZDg5NTI3YjJhYzU4MGQxYmM2OTI4YjM5MGY4YzRiM2Q3NmFjZjczNGU3YTM2NmM5MTEyZjNmN2VmZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_612602da807c4bddb83fa7bf844ec89c",
+      "statement": "The side panel has no push channel from the service worker: in panel mode the App pulls takePanelRequest(panelTabId) once on mount and then subscribes with watchPanelRequests, and both paths run the same request through ctrl.fromTab or ctrl.fromText, while a null request surfaces the requestExpired error.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L68-L78",
+          "version": "repo-lines-v1:sha256:598652e5334b4e1facd964487edc3b332b21637f30abd8122765dcfaaebab147:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlOWEyYjkxMmM2NDhlNmJjMmRmZDc2ZGRlYmNmM2ZkMTIxY2E4M2QyNTU3ZDc5ZTU3MTU4Y2U3MzMyYThhNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4NTkxOGY3Mzg0NDczN2EzN2NhMGM1MjljNWVjZmRiMWEwMGUwYjRiNDllMDBmZTRhZDI0ZTA1ZmMwZDQ4MGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkY2VkMWIyNzZhYmUwZDk5YTgzNDI4ZDJjNGUzMjUzOTk1Y2ZhZmNkNTFkOWQ2NDc1MmFjNDgwYjExZGZjZDcifQ"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L93-L100",
+          "version": "repo-lines-v1:sha256:0bf28bef70b76b83a7181dd5a8c216ea4c316073e43ed80cc7753ab2e84447d8:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTE2OGJhYzU4ZTRhYjUyMTE3YzBlY2E2NDhhMzI4YTU4Njc3OTAwNWQ3ZDYwNzFlNzBiMzZhYzFhOWI5NGFkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODdhMjllMDkxYTE4NjRkZDAwZThjYmE1Y2Q0MWZjZTU2MWE1OThlYWVlMmI5NGQ1YjhkYzMyMWQwODI2MDQxZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e54f1b6b083414f8ed269523123f9d6",
+      "statement": "The panel request window is deliberately tighter than the request-body window: takePanelRequest honours a session:panelRequests entry for only 60 seconds because sendToSidePanel writes that entry after the panel document has already been opened, whereas queueRequest only opportunistically drops request bodies older than 10 minutes.",
+      "evidence": [
+        {
+          "resource": "repo://lib/pending.ts#L17-L25",
+          "version": "repo-lines-v1:sha256:75ee01258f98011f20da616ef6f8a3904892b494c94e7e7d349474220aab7907:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmU5ZjMzMGJjZjdiMGRmMjQzOTkyYzAxYzI1NDk5OWFhN2Y5NTE4ZjUzNWE3ODM1YWE1YmQwYmY1NmIwMWMyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWNmNmI2ZDk1OWQ3Yjc0NmRiNmZmNzRmZGJmYzRiN2VkM2Y2ODk5MTMzYjFkMGVmNTg4NTczZDk0NzY4ZmY1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmUxMTEzOTg3NzIzOTA0YjI4NmE3MDY1ZDE0M2QzYjVmZWM4ZTdkODVkODdjY2VhMWJiNjcwOTg4YWIwYzZkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWI4YTAwODNjM2Y4MTZiMjQxOTU4Y2Y1ZjljOWRiNDUxYmMwNWQyMGE2YWI1YjAzNTJmN2I5YjVlNGU0MzUzNiJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L77-L92",
+          "version": "repo-lines-v1:sha256:92dd9a2506fd7f1b1fda136e0c9c4d6d063c53998091ce87ed859d26bc490ccd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNDJkMGZmMDExZjczYjI3M2NlZDlmMTU2YjM3MDJlNTY4YTExYWRmYjdiYTk3YzE1ZWJhZTQwMTdhZTZmYjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0MDFjYTZjYTM2YWQ3ZDc5NWZiN2IyMTc3Mzk2ODIwMjU1ZGQ5YjZjOGFjNDM2ODZjMjAwZTVhZWZkODYyOWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2ZjVmOTg3OWVkNmM3YjdlMmVlNDUyY2FiMTE1OGI4MzljNGYzY2I5YWEyMmM5OTcwZTU0NmQ5NDdjM2UwNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZDAyNzllYzZiMTJkOTc3NzVjZGZiZTJhNDdjYmY0NTk2NDkzY2IzNzkyYjE5ZDc4MjVhNzZiMmM3MDU2YTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e39b3d7d621454ab8aa5d8ee2e6f206",
+      "statement": "In panel mode the source picker receives the panel's own tab as its page target, so a side panel can summarize its own tab directly, while the full-page app tab relies on the popup or the context menu to supply the source.",
+      "evidence": [
+        {
+          "resource": "repo://components/SourcePicker.tsx#L18-L52",
+          "version": "repo-lines-v1:sha256:5a6ab03a043b82fdef0642e866ef601b909d8a65d013d0362f12fb94c67d7fd4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4NDMxZjFhMDY4NDRjODQ5YjZkZGRmYWQ0MTkzNjI2NTBhZmNkZGVkYTRlOWIxMTFlYmVmMzI2NjhjMzEwZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExMjllMTI2NzUxZmM0Yjk2ODE4ZjU4YjI2MzI3M2EwMjk2YTFkYWJiY2ZmYWJjMzYyODM5ZTljYjQxYzNmZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxMmQwZjBlNjEyMGE5ZDNmYjIxZWNmZmI2NzZjYjVlMjU2NjUzZDAxYzNhNGJmMDJjZDkxNTMzMDFjYzRkMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2NzFlYmMwYjQ1NjgyNzMwMGY1MzlmZDJmOGFlYjliNWE2YzM1OTU3ZjI3ZTljYWRmMzJjODdjODIxYjM0MjMifQ"
+        },
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L224-L232",
+          "version": "repo-lines-v1:sha256:237f03c09a9ff1b807882a5b5bc9cc32cac693538089f300ba4e510db3e75188:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODhhZWM1MDhkOWVmNDEwNDU5NDVhZjMxMGFmMGJjMzhlNGY1MWEwMWM3YmZmYTQ4Yzc3ODY4OTVhNDYwMjY5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ZiODM5ODVjNDE4ZDkwMTdhOGYzZGI4MzNjZDY4MmMwZjE3YWJmOThjYzJjMzI0N2E5MjNkN2I5MDdjNWM4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGY3NzQzMWMyN2ViMzE5ZGU3MGE4MjRlOTE4NmIwMWE5MTA5OTJlMWVlNWRhZGVlY2VlYjQ3ZGQyYmFmNjhhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I4YjYwMGE1YjQ0OGIxZTRkMDJkZjA5NzQ2ZWQzY2EzMTcyZjc1YzRhYWJiMDFkZGUwODBlMzZjYWIwNzRiNCJ9"
+        },
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L80-L95",
+          "version": "repo-lines-v1:sha256:f300bd613b18ce2c3506703985872fb851bd202fb46c4e804ee08fa932dcd41f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4ZDkxZWIzYjk5OTNjNjRlNDVhMjcwOTgwMDM0MTZjZjliNTE3OTM3YjY1MWYzMzVlOTgxNWVlMTAwNzNjZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0NzM0ZTVhNDJiN2IyZjQzNmI1N2UxMzFkMDExYWZlODU3MjE4MTJlN2QyM2FiMGU2YzlmZmZlYWExMjk3OGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4MDAxOWExN2I0NDFhNGY0NDVhOWM5NjgzZmRhODE1OGEzM2FjZTIxMDc0NDBjOGJhNGQ4OTllNWI3NmE4ZGIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-07T09:34:41.642Z"
+  }
+}

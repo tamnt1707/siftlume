@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1602aa2f19798d433fa6d5e28860f1ff83043ec67f91b7fa3449bdcb82a73d77",
+  "claims": [
+    {
+      "id": "claim_a748edd98fb240febdfbb2d3c5e850d7",
+      "statement": "A CSV file is parsed by extractCsv into two artifacts: a prompt-side text summary (schema, per-column statistics and the first 30 rows as a Markdown table) and a CsvDataset ({ columns, numericColumns, rows }) that is stored on the ExtractedSource as `csv` and used only by the in-browser query tools.",
+      "evidence": [
+        {
+          "resource": "repo://lib/extractors.ts#L129-L142",
+          "version": "repo-lines-v1:sha256:3e9e749d3ac7218750dabf5e669ddd1ee2b5852df38b3ac3eb23d69c79074b3c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMTQ2OGJlZWNlM2VhMjA5NjRjYWU3NGIzMDczZDExNzBhZTMwZWI0OWM3OWJhOTg2MDlmNzU1ZTEyODQ1MzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiN2E5ZTEyMGI2ZmE0NzRkY2QwOWIzZjlmYWJjZTI0ODE1ZjlhOWViNDc3MDBlZmM1Y2YzMDZhM2U0ZmZhMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4NjM4ZjFmZWQ2MjIxMWI5M2U5NDE4YTJkOWViYWY3MjI5ODU0NzQyZDc5MjdkMGM0OTFmZjQxNTU0MjVmMTkifQ"
+        },
+        {
+          "resource": "repo://lib/extractors.ts#L66-L127",
+          "version": "repo-lines-v1:sha256:2cca5911718ec9d0a543a72f9a5a53c56b9a215d8fbba91196f5363d51d7c044:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NjgxN2RiNTFmMjBlYTk0ZDZlNmVkZGYzNTdkNzU3NzQ4YTNlOWFhNzFhNTk4NGJiNGNjZmRkYjVmOWQyZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5ZmM0N2VkNzFlMTNjMzRjZGZkYWFmNzhiNzUzYmJlNWY3MmJlZTFmN2Q3YmEyMWEyODY1NGE0Yzk2NmZjMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2YThkZDI3NTdlYTNmYTY5MDNlM2U1NGIwMzQxMGEyZDMwN2JkNTM3ODE3NDk5YmI3MjUzODNmMDJhMjcyYWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e04a3947a074c21a8e8ea5c18cbe47e",
+      "statement": "Only the first MAX_CSV_ROWS = 5000 parsed rows are kept for the tools (and therefore for what is stored in history), while the prompt still reports the true total row count and adds a note when rows were cut.",
+      "evidence": [
+        {
+          "resource": "repo://lib/extractors.ts#L116-L116",
+          "version": "repo-lines-v1:sha256:aeb22e294569d7d8b68c9d6180c01bfebfd704c39eafe69dbd25a02fab124862:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWViMjJlMjk0NTY5ZDdkOGI2OGM5ZDYxODBjMDFiZmViZmQ3MDRjMzllYWZlNjlkYmQyNWEwMmZhYjEyNDg2MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWViMjJlMjk0NTY5ZDdkOGI2OGM5ZDYxODBjMDFiZmViZmQ3MDRjMzllYWZlNjlkYmQyNWEwMmZhYjEyNDg2MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmIyYmQyMmMzZGQ2MGMyODQzYzliMTg0NTJlZGM0NThlNWMzNDQzZGFhMzQ3Zjc0YWY1YTYyOTZmZjU3NmRkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTk5MzUwNTkwMzZhZTE3NTlhNmE1MWY4MTNjNmM5N2E4NWFkMTVmYTIwNzg2ZGRhYWZhMjQ1NmFmOWJhMjk2NCJ9"
+        },
+        {
+          "resource": "repo://lib/extractors.ts#L21-L21",
+          "version": "repo-lines-v1:sha256:0d58fc6f0bd05eb1b9d4afa15f9ec7b830e5fd17654c002d7dc89e6c3334db24:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ1OGZjNmYwYmQwNWViMWI5ZDRhZmExNWY5ZWM3YjgzMGU1ZmQxNzY1NGMwMDJkN2RjODllNmMzMzM0ZGIyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ1OGZjNmYwYmQwNWViMWI5ZDRhZmExNWY5ZWM3YjgzMGU1ZmQxNzY1NGMwMDJkN2RjODllNmMzMzM0ZGIyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzVmMjlhMjExNjgyNmE4YTAwMTY5Y2JlMWIyMjIwOWNmZTkxNmYwNjUyMDkzYmZjMWNmNzA3ZTIwOGIyOWUzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmJlMGZlNjUwY2Y0N2Y5N2ZhNTg3M2JkMDBiYzE1MGY1YjU5YTFjNDJmMjNlMjVmMmY0MWJiNTRiN2ExMDQwZiJ9"
+        },
+        {
+          "resource": "repo://lib/extractors.ts#L77-L84",
+          "version": "repo-lines-v1:sha256:4f788676ee43c6c2b6d812ae570d856e9e9c1af99fe385126d4641e16df336ee:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjYxMmJjM2YyZjY3OTJhNmMzNmQwYmRmMzk1N2JmZTU3ZjQ5YjdkYzMyMDAyMzA5NjM3MWIzMmZlM2QxYTg3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODE5ZjJjZDZmMzM3YWQyNjAwMzE1YWNkNTQ4Njg4NjRlYmNlMDgyM2NlNGViMTJhNzBkYzFhODkzYmQ3MGM5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2ZiZDNjNzA1NDE5MTFhMGQxMTlhZThjMDlhM2I1NzIzMjc4YTNkZTA4ZDRiNTRhOGViZWQwNGY3ZGY4YzVlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGVhNjQ2NDE5YTEwMWE4N2I2NjVhMjliODM5NWI3ODEyYWU2N2Y1MGZmYjU0ODAyMjkxMGU1YzQxNTc0OWFkMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ea71426c06314538adfbcdf782098ad1",
+      "statement": "A column is treated as numeric when more than 90% of its non-empty values parse as finite numbers; numeric columns are converted to real numbers in the dataset, other columns stay strings and empty cells become null.",
+      "evidence": [
+        {
+          "resource": "repo://lib/extractors.ts#L70-L90",
+          "version": "repo-lines-v1:sha256:902b1eee6d91b6f654e77d055248350d11cd874e677fece40ab0db42cd237124:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMzliNDBiNDg2Yjg2YmNiNzA4YTZiMWI4NzZlOWU2OTJlYjQ0YzI2OTYxMGMxOTEyOTA3NWZmNzZhMzMwZGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjN2RkMzBlM2M4NjkxMmNhOTUzM2I1Yjk1MDFmNGQ5OTJlNjRlMTc1MmYyYzg0ODkyMDY5NGIxZGZmZDhlZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3OTQzYjcxMDZjZDNhMTQ2NWNlNTZlNTE4MjYyMDgwYWQyNGQ1YmUyY2NmNzVjMzY5MTMzMDhkMTIwNjE2NGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_02153c38b34d4726aee1b776eaee8bd5",
+      "statement": "CSV_TOOL_SPECS and CSV_TOOL_EXAMPLES are added to the system prompt only when the source kind is 'csv' and a dataset exists; in that case toolCalls and bindings are enabled, and the same gate applies to the summary and the Q&A prompt.",
+      "evidence": [
+        {
+          "resource": "repo://lib/csv-tools.ts#L107-L155",
+          "version": "repo-lines-v1:sha256:7ddc2829d966b11744ead6e726ff2f57d91540d575a5bb136f493733151204ca:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMTFmMjM5YWM2NWM5ZmVjZDRmNzk3NWQ0ZWUwYzY3N2I1OGE4ZWE2Nzg1MmVhMjVkMjc5MjM5MjUxOGQyZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5NzBjMzU1ODhjMmNmMzA1NWI5MDc2NDU1YjdlNzViMTJmNjYyYTMxODNlZWU0ZDZjODg5MzNiMjI0MWEzMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjNWNmMWUyY2VmNGJmNDI3MDZjODA5ZWZmYjlkZTRmZjU3YTBmZTE0MjRkMGI2NjM2ZTk3YWI3YmJhNWQ5MDEifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L113-L122",
+          "version": "repo-lines-v1:sha256:1bdefd979fc6692a4ecbfe57ba16a5eeb8f2dd2f243cc38c1e6e9f66073e5407:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhMWY5MTA2MDVkZDZkMzE0OTc0ZWE5ZDRhNTBhOTk0MjY4MTc5OGVhMTgyYzUxM2QxOWM0NDE2MTI0OWYyODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmOTg3NzRlZGE0ZWU1NDgyNjRkZGI4MGU0MWMwODVmNjBiZGFhYzAzNzQ2MjRmYmRiZWViNzc4ODUwZDc2MzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmOTI4ZTI2YzY2MGNiZWY4NTFmMzA2YTU0MTBmMDI4YjBlNjQxMzQ0YTY3YWZmMjk3ZWI4MmNhNGQzNGEzMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhOTk1MmRhMWQzNjRhZWI5MTFkNWE3ODdjODg5YTMyOTNiNzFlMWY2ZWE4MzVlOTVhOWI0NDViNDk1Yjc4YzgifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L148-L158",
+          "version": "repo-lines-v1:sha256:4ef6147ba83e231245e47ae2aa8d1ed9cb154870f3574f135918cc381233157c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzZjA5Y2UzMDc5Nzk2YmM5OTJhMmRlYjYyZTg4NGZjMDU1YmMzMDFjMDU0MjFlMjI1MDBlMmUwODY1NDc2NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllOTM5YzNmZWFlYzcwMjE4NmVmYjk3ODBhY2NmMjI2YWNjMjRhOWMxOGY0NjNmMmMxNTgxM2JmZGM1Y2U5YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhYmIzMmVhZjFkYTViNjZjOWE0MDdjZGVmYjNjMGI1YzUzNTFlYTk0ZDhiNGFkOWYxYTViNjk2Njc5NDc4NzEifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L96-L100",
+          "version": "repo-lines-v1:sha256:1ad5ea2bef742f0465b2f98d3e7326de59cb63ea18bcd205d932c5c9db79a442:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmJjNWFlY2MwNDg1OTRjYjhiMmRhMTYyYzRlNGJjODUzN2EyMWQyNjFhYjc0YjA3NGExMDc0OTI5MWY1M2VjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRiMTg5OWI2ZDhiYjMyMGYzZWZkMTFjNGMyODg2ZGE5Nzk2MzIzYjQxNzA4MGYxYmFiOWQyZTQ3MTdkMzU4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmI5MzRhMGEzNjBkNmUyZWExN2UwOWQ0Nzc1MDAxMjBmY2M4NjFmN2E5MjFlMTlhNTNmMjkxMWU0OTg1MDA4ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc136be7f5f4459381b006b265a4e80f",
+      "statement": "SessionView creates the CSV tool provider once per dataset with useMemo and passes it to GenUI for the summary and for every Q&A answer, so a single dataset serves all rendered programs in the session.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L137-L150",
+          "version": "repo-lines-v1:sha256:e902071f4f923273a0ea8b470d867c17ef359af14ec466d5af44c7de3f838790:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyNzcxM2E1YTJlNWY3NzYyM2Q1YTc5ODY5OTFkNGRhYWI0ZjNiYzIxNDVhYTQzODM3NDA1Y2EzYzZmYTE0ZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhYTc5NzQ0ZjA3OTQyNjU3ODFhZTI3NzJmNTQ5OWQyOTQ5MzYyMTUxNWM5Yjc4NTMzY2Q0MGZiMGMwMDZlMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljYWY4YjY3OGVkMDgzZDNhMWNkNjg3YTRjNzQxMDY4MjYzNzNiMGFhMmNlZDZiYWYyNGE3MjNjMThjOWFkMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzNThlMThlOTQ4ZTViN2IzMjZlNGU2N2ZhYjdlZWNlZjAyNThkNjNkMTIzMGUxYTM1OTVlZGI5ZGEwNGU1YWIifQ"
+        },
+        {
+          "resource": "repo://components/SessionView.tsx#L206-L226",
+          "version": "repo-lines-v1:sha256:3bd92fbda405742c2e33470559cb45d1f4533a6df5ef34328df4a5aa1c8ac59b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlYTRhOTk2NDFkMGNmZGRmOTQzMmVhNTk2ZDgyMGYwNzY1YWZlNjk3MzMzNzhlM2IxZWZiNzRhY2UzYjk0ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YjhjMTA4NWY5NWExYWZhYmU1ZDE1MmFkNThkYjlkYzI2MzM2YzEyMThlMmI4NDBhZTdhZDgyNmEwZDU3NDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjNTkzY2FlYzkzZjlmNDM0NmE1ZjRhYTE3YmViNzgyN2MxY2MxOTUxZWM2MzY0YzQ3ZmE2YWRmZjZlMDEyMDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhOGJjMTk5ODM5NGIyMTQzYjVmN2E1ZDQxMDhiOWRlNWFlNmY1NDE4NmRlNzlmMmFkYjA4NGY3NTg5OWQ1NTMifQ"
+        },
+        {
+          "resource": "repo://components/SessionView.tsx#L270-L330",
+          "version": "repo-lines-v1:sha256:bdebf7acb47836d5c590d2eba1a1727b1b9152efa8b079c4f5597e937417faa4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhZmRmYzkzMDdmNGMyNmI5OTA3YWY0Yzg2NGNkYzVjNTMzYjU2Zjg4MDFiMGE3MDBmNzk3NDVhZTc3NzBhYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmY2U1YzQ4NTc5MTJhODk4Yjc2ZGIwMjEwMzMzZmQ4YWZlOTAwZDdkMmJlNTUyMjM0NmJkMjIwMTMwOTk3YTMifQ"
+        },
+        {
+          "resource": "repo://components/SessionView.tsx#L54-L55",
+          "version": "repo-lines-v1:sha256:17cfcdcf2b52f47007e4a9e737500e77cc6c02846ac2ea2158d0b6c2390fd62b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGY2MDUwYWMwMDc3Zjc4MDBlNWE5Mzk1M2Y2MDBmZDExNjljOWE0ODE1ZGMyM2QzZjEzYzFlNGQzZGE0ODlkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFjZmI3ZWIxN2YxOTVjYWIzNmMxMjM4N2I2ZTRjMjlkZGY4Y2ZkN2VmMDg5NGI5N2U3NzZjOWFjMjVjYWEwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWE0MzllOWMxZDYwN2QzOTNhNmZmNjVlNDA0ZDBmNTc3MjNlOWEzN2VlZDk4YTYzMDhhOWYzMjUzMWIzNzdjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDAwZDk5ZDFhZjIwNTFlMWJkNGRkZjA4YzNkZWM5N2E5NDMxZjY2MzY2YWMxODVmODE0Y2U1MjEyNTQ3YmVhNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6c19f44549d4e59ba9bb32c7eeb2ab1",
+      "statement": "GenUI forwards the tool provider to the OpenUI Renderer as its toolProvider prop, where a plain function map resolves Query(\"csv_rows\"/\"csv_group\") calls locally without network access or an MCP client.",
+      "evidence": [
+        {
+          "resource": "repo://components/GenUI.tsx#L20-L47",
+          "version": "repo-lines-v1:sha256:752c06bf1d27ebfd7f20bd46f6d637e6c8294d2bdc7a28782e09dc6f16723521:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZTEyOTYzMDU3ODAzNDliYTU5YTM1ZGMyZmUyZjQ4MzYzZjY2MzdmNTBmZTBjYmViNTIyZGQ2Yzg2NDk4MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwNjQzMWY0M2M4YTJmNTQ4YmM1YzRhZGI5Mjg1NTFmY2JhZjAzNGI1YmZhNDcwNGY0M2E1ODRlYTA1NmVhYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4YmFhMzRjNDQ3NThiMDlhODIyNzQ4OWE5Y2Q0NTRkMjEyMDNmM2RiYjA4ZTQxYjI5N2NmMGM0ZGE4YjI1ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxOTkzODg3ZWE1OTQxNGMzYmRhMzhmZjVmYzg2OGRhOGY2ZDY2MzEzNTJhN2ZjZDQwOWZjMDUzMGIzZTViNGMifQ"
+        },
+        {
+          "resource": "repo://lib/csv-tools.ts#L31-L104",
+          "version": "repo-lines-v1:sha256:b820958b21302b6a99956db9fa38906bf52a9dca5ae8c3a69f84fb8956ba4ebd:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMjY0YmMwMjE3NTk1MDZlZmFhZDAwNGYyMTM5NzljZGU1NWMxODc3YjAwYjAyNWYxMmFiNjg0M2VlYWNhMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxMDcxMzI4MThkZDRjMzkzODNiZjRhNDRmMzM2MzlkODZiNDA1ODA3NmQ0ZDg3MDRhZGJjODM1ZmJkYzM5NzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4Nzk4NzQ3NTA1ODk2ZmU5MGJhN2FmZWUxNGExNTg3ZDI5NzI4ZmI5NWY2MTFlYTI3NWZiMmQwMGQ2NWQwNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_87133debb8dd4032881b1556ea690fd6",
+      "statement": "The csv_rows tool filters by exact string match and treats an empty column, an empty value or the sentinel value \"__all__\" as \"no filter\", so an \"All\" option in a Select works; its limit defaults to 20 and is clamped to 1…200, and it returns the post-filter pre-limit count as `total`.",
+      "evidence": [
+        {
+          "resource": "repo://lib/csv-tools.ts#L22-L28",
+          "version": "repo-lines-v1:sha256:0ae9b972d8ae08fd9e30f64dc49812efa209852f86805e53a97e637ef8e8fde6:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ3ZGM3MjYxMTVmZjczNzAxMGQ2NDA3NjE2YjNkMDFiOGE3NzRiZjlhMjU1MmU5NmNjMTUwYWMwN2M3Zjk4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTA3OTc1NTc2YTllMDQwNDJiY2E5ZDg0ZDc0YmJkNGJiZDdkM2ZmMWJiYTA1YTk1MzE1NTU0ZTZlMzg4NjlmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzAyNDIxZTNhZTFhOWVjNjMyNDg4MGE3NmEwNWZkMTQwMTMzMDUwMDMzNGQ0YjkxZmJiNjFlZjM4OGVlODYzNSJ9"
+        },
+        {
+          "resource": "repo://lib/csv-tools.ts#L37-L54",
+          "version": "repo-lines-v1:sha256:1e1a2a23372428c0992f33ee4993bc993c657cf24952d1abc3bd08c44329bae1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5YzNhMjdmOTllNGE3NDQ2NzZlMDlmMWQ2ZjNiODU3ZDNkYWM5ZWI1NzAyYjkwMDlkYzlmMWVlNDFmMjM0NTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlMTMyNzQ1ZTNlN2IyZGU2NTI1NTM5NTc1Y2NlNDE3ZmQwZjJhNTVkMjRkZDA1ODNlZjczYjE1NDA3ZDAyOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3ZTRhYTljMjg4N2I2ZDk4MThkNTQ4NDJjODRjNDc0MTBjODNjZmQ5ZTM4ZGIyMzI0YjZmZjdiMDI1OTY4MjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_35cb1e26777c4ff49ac8f06adf236a6e",
+      "statement": "The csv_group tool requires group_by, needs a numeric value_column for sum/avg/min/max, buckets rows (using \"(empty)\" for blank keys), ignores non-numeric cells when aggregating, rounds results to two decimals, and clamps its limit to a default of 12 and a maximum of 50 while returning the pre-limit group count as `groups`.",
+      "evidence": [
+        {
+          "resource": "repo://lib/csv-tools.ts#L56-L102",
+          "version": "repo-lines-v1:sha256:4214fe7987ff0841efb005d1e705c5a806875b5162dd3339a7775a1dba8aae47:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiMTRkNDgxNDI3MzQ0MmIyYWYyZTE5MTg4NDE0OTYwMzZlMDRhNmNkN2RjMTYwMGRmZDQ1Y2NkZmVhNDk4NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyM2NjYTQ3NTBlZTlhZGMwZmNlY2NmMWY3MDcyYzkzZTEzZDk4MzU3ZTNmZWFlMTUyNjQxNDIxNzg5NmQxOGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2YmVmMGNkYWM2NGQ1MTZjZWNlMTZjZDMyYzk2ZTJlMzM3M2I0ODM2NjBlOTlmY2UwNzRkM2Q5MjMyYzNkYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhOTMzMDNjZmIzODljYjRhOTc3OTAzMjc2YTI5YjFiOWI3ZTE3NjhiNjQ4NWRhMzhmY2IxNDgyNzg0MjU0ZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_23e22453a58546af8bc97b775acf3d67",
+      "statement": "Both tools validate column names and the numeric-ness of value_column and throw plain Errors with messages that list the available columns or numeric columns, which the Renderer surfaces as query errors through onError and GenUI's error list.",
+      "evidence": [
+        {
+          "resource": "repo://components/GenUI.tsx#L21-L45",
+          "version": "repo-lines-v1:sha256:7b1b97d79a31e68936bd5548f9b969e5233a0f95875e2c873f221d45165fcd78:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5ODYzYjFjYzE0NGI4ZGNkNGJiNDI4MDBlYzgzMmU2MzY5ODA3MjI2NDY0YTc2MDcyMWNiN2I4ZWNkODRkNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliYmQyNWQwNjNhZTdhM2RhNTVhYjA3MDc2YzRiMGJhYjk2N2Q0ZjdlYmYxYTk5MjkxMTM5MGI3ZWIyNTZhMDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkYmZlY2ZiNjIyYjFhN2VhODllNDNmM2JhNTM2ZDI5YjA1MGZkZTcyZDI4ZjlhZjY1NzkxOGE1ZDVjODdhYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhOTkzYjJiZmI3NDhlNTkxODczOGNmNzM4ZGQzNmY1Njg4NzMyZTk3ODk4ZTZjNjRkYjBiOTE3ZDc1ZjJmNTEifQ"
+        },
+        {
+          "resource": "repo://lib/csv-tools.ts#L32-L36",
+          "version": "repo-lines-v1:sha256:b57f2dfa65a3115894e47b5c24ef5e22c45cc3faf518190714570593873c634c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQyMDY5YzMxMDRlOWQzZTEyNmRlM2VhZGMyMjI4NjA1ODU3NGZhMmJmNGFmY2FlMzg5YzE5MWMwNDZlMmQ3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDk1ZmEwZjExMTdiNWVhNDA0MzQxNDBkZGUxYTM0MGM3MjBkZGJmMzI2MjEyZTE5MTgzOGQ0YjE1NmQzMTZiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzAyNDIxZTNhZTFhOWVjNjMyNDg4MGE3NmEwNWZkMTQwMTMzMDUwMDMzNGQ0YjkxZmJiNjFlZjM4OGVlODYzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODExNThjYjI5ZmNjNmJkY2ZmYjcxYzEzNWY1Njg1ODI5MmUwOGM4NTYxN2Y4NTNhMjY1MjI3MDE0NTc0NWQ3ZSJ9"
+        },
+        {
+          "resource": "repo://lib/csv-tools.ts#L60-L69",
+          "version": "repo-lines-v1:sha256:b685e80736e39cec8e47274f28638f6eb4746d8f002d62cafe2185bb8f642ab0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzYWNlNWU4NTA2Mjk1Y2FmMzg3MTkxMDYzNjdkZmFmMmEzZmQxNGQyYWQ0MTU4NmQ4ZDRkMTRkNjkxYTAyODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlN2Y1MTFhOTVkZmVhYjIyODE1ODlkNDdhMmYxZTVmMzZhYmNjZjAzNjY4YmE3YzdlYjllNGYwZTMwMzViMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkMTE1YjIxOTc2NTFhNGQ2ZTgxMjRkNzlkNTU0Zjc3ZWEwNTliODcyZjU3ZTg2NzNhODQ1YjM5MTg2ZGIxMmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d258f94937b34b54b3cd645dea792ec5",
+      "statement": "Changing a filter or grouping re-renders the UI without a new model call: the Renderer tracks the $variables referenced in a query's arguments as its dependencies and re-runs the browser-side tool when the store changes, so the model is never re-invoked.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L54-L55",
+          "version": "repo-lines-v1:sha256:17cfcdcf2b52f47007e4a9e737500e77cc6c02846ac2ea2158d0b6c2390fd62b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGY2MDUwYWMwMDc3Zjc4MDBlNWE5Mzk1M2Y2MDBmZDExNjljOWE0ODE1ZGMyM2QzZjEzYzFlNGQzZGE0ODlkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFjZmI3ZWIxN2YxOTVjYWIzNmMxMjM4N2I2ZTRjMjlkZGY4Y2ZkN2VmMDg5NGI5N2U3NzZjOWFjMjVjYWEwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWE0MzllOWMxZDYwN2QzOTNhNmZmNjVlNDA0ZDBmNTc3MjNlOWEzN2VlZDk4YTYzMDhhOWYzMjUzMWIzNzdjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDAwZDk5ZDFhZjIwNTFlMWJkNGRkZjA4YzNkZWM5N2E5NDMxZjY2MzY2YWMxODVmODE0Y2U1MjEyNTQ3YmVhNCJ9"
+        },
+        {
+          "resource": "repo://lib/csv-tools.ts#L1-L6",
+          "version": "repo-lines-v1:sha256:2e0c8790589f03b9f2555cd43601d161c1cef93a8f9518a60d68d46907f40945:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDIxZjg0MTFhMjU1Yjc5ODhhNWNjMmU1ZmE1OGZjNmNlYjllMGU1OTdiNjkyOGY0NDAxNWM3ZDJiZmZiNjdiNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODdmOWVjMmNkYTNmN2I1ZDc2OWUxOTY0ODViMTE5ZGVhYjU4MDJlNWQxZDAzNmExYmE5OTJkOTVlMDZkMDc5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzM4NzRiYTQ3YTk2ZmE5MmY1NWQzNzQ2OTM1ZjU5YjMzMzRmYmU3MzU0MDdhZWNkNTNlYzgyZGNmNjRkNjQzZSJ9"
+        },
+        {
+          "resource": "repo://lib/csv-tools.ts#L158-L169",
+          "version": "repo-lines-v1:sha256:0aef7702f34f3c64cf7c282b89243d9ce173e58c5169660cb96d3e09c06f9c69:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5NjI1NTFlMGQxNGIxYWUzNmIwMTBjN2MyMGZkNzYxZjFkYWMyODI2MDk2ODkwZTBmNzQzNmMyODcyZTA4N2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkZjM3NWIyMjNjY2YwYjU2MzE4ZTllYmI4NTA0MTgwYzkzNWFmNDVlMjAyNzJhNDQxNTU3OTAwMTEwMmY2ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4YTkxNzU5NzJmZTE1ZTJhOTY0MWFiMTMxZjU3MWU2YzdjYWJjYTA2ODM3NjJlYmE1ZjIzNTNlNDgzYzNkNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd8a860aa85c4e9ba8333b377e3fe974",
+      "statement": "The selected filter state is persisted with the stored summary message and restored on reload: the Renderer's onStateUpdate feeds useSession.updateSummaryState, which writes the formState into the stored message (debounced by 500 ms) and hands it back to the Renderer as initialState.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L145-L149",
+          "version": "repo-lines-v1:sha256:334b20432d80844cad4bb39f5512aaba66fcec871e0908cf0db4011f3c7ec8a1:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTcyMWU1MjUxMWM1NjgxY2VhODFlMWM0MjcyYTQ0ZGQ4ZWZjYzRkNTliNDc1Y2Q1Y2I2M2ZiYWM0MWE4YzRiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg4M2U4M2E2MzY3MWUyOGM5NWZmZWZmMDY1MDc4MTczNTUzOTc5MGU1NTgxNTVhOTVkZmJjMmViMDRlNDY1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2ZhZWMzMGQ0NTI2Njc5ZjA5ZTA0ODE5NTI0ZDRkMGQ3MmRkYWVhNWNjMTUyNGJlMWYzMzhhMjhmZTM3NzFhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzAxOTZhZDRjYzc4ODc5YmY2NDFiMWNjMmI1ZmVjNmQ5MDkzMTU2MmVkYjQ3MWFkNGI4Y2FjODQ2ZDdkNzliZiJ9"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L218-L234",
+          "version": "repo-lines-v1:sha256:c3ab7fb852d916b69bd29d273b2d9bf322848a677cef67d7a9c3f1da8d55d71a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlYjg1OGJjNzE3MmM5YmY3MjllMzgyN2U2ZmVjZWY2ZGUwNDg4ODQwMDdhMjVmNzdkM2Y5NjMxNWRkMTYyY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0MWFkY2Y1YWZmYjVjNDUxMzBhNzU1Y2UzODA3NGE4YTNhMzZkY2E2MDE2MGY1NTc2ODI4MzZjYTgyMGEwNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmNDg3Y2I0ZGU1ZTYyZGJkODliYWZjZmQyNjY3ODA4MTA2YzNiMGMwMmJhZjFmZDVhZTllZWQ5NmRlNmFiZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjODg1ZGU5ZjFmZjUwMzJmZTA0YjBiOWU1ZjAxMDcwOTkxOGQ0MWFjNWMyNWJlODlmZjdmOTRlMGI0NTk4NmYifQ"
+        },
+        {
+          "resource": "repo://lib/history.ts#L30-L50",
+          "version": "repo-lines-v1:sha256:a4c97faf0797b651e3a959fe9ad35bc2eb592d0a0b449924beed636c7d147813:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlZDg1YWRiOWFkY2VmNDYyOTdkOWY4NDQxYjM4Mzk0NmE4MThhNWJmZTJmY2NjZDkxNTViZmZjNzAwMzBjNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwYTczNWRlOWNjMzYzZTdmYTFhZmRkMGM0MWIwZGU4M2NiMmE3YTRmMjgyZjQ3YjBmY2IxZmVhZjU1OTViNzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkNTFmOWQ5ZGFlZjE5M2M3MjkzYjlhMGRjMTVmY2ExYmNmNjFjZGEzMDJlZDUyZWMwOWZiMmJhZDA5ODVlZTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e70b077f77f49b8b8a78dc4d130d9e8",
+      "statement": "The CSV prompt text handed to the model may be cut to the settings.maxChars budget before the request, because useSession truncates the extracted source content when the session starts.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L74-L86",
+          "version": "repo-lines-v1:sha256:35788272f6351465a51898076e0631eeafd5712fff1fafac25dbc062e414ae07:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExNjUzOThlZThlNDI4MDJmYjc3ODI5ZmE0ODlkMGE3YTBlZDYyYzFlMGM5ZDg5MzkyMzVlYjg0N2E5YWIwYWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2NzMxMzY4MTQ4ZWE3MmY5ZDE3NDZmMzM0MzBjZGMxMTBiOTMxYjkzMGMyNmJmOTQyNDE2ODM3MjI0ZWUzZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxMWY2YWMyZWIxZmRlNWZlNmVhMTI5OGQ0OWE1MDVmZWYyZWI3MmNhZDNjNDllMWFiOGVmZmIyMWZmZDI4ZDYifQ"
+        },
+        {
+          "resource": "repo://lib/extractors.ts#L149-L152",
+          "version": "repo-lines-v1:sha256:986070f1446446e8b21ad92d75dd85611741fcd789eb9d2f74932c91aa123c6a:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRhZmRmNGFiY2Q2YWRjMTI2ZWMxM2E1ODg1ZGU5NTY2NzViNTE0NzMxOTVjNWQ2Mzc1ZWQ4Y2RkYWI4Mjg1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2M1N2IwZTMwZTcwODRmZGQwZDYxZTgxNTdkNWYwYmYyNjQ2MDAxYzc5OWY2M2NmYmNmYWJhMGE1YzJhNTQ0OSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-07T09:34:41.642Z"
+  }
+}

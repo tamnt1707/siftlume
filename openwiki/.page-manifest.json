@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/extension-surfaces.md": {
+      "pageVersion": "sha256:02a13a91b9891f69c5977a4568338b0051336c78fbee3551b0a642dedf12cf81",
+      "completedBy": "openwiki/0.8.0",
+      "completedRunId": "a19cc504-7d43-4307-8f89-6a638d539eb3",
+      "gitHead": "af888431ea33b59495ac9bd3505841f053a479bc",
+      "sourceFingerprint": "sha256:067acea75d0abc34a0e7da294a89f3bf205bbf6a75e52ab704e59c5fc4337f86"
+    },
+    "/openwiki/architecture/overview.md": {
+      "pageVersion": "sha256:d6a31f965aaf0320227313af2b14fe70c2913fa03c9df2bebb1d17df9c76bb7f",
+      "completedBy": "openwiki/0.8.0",
+      "completedRunId": "a19cc504-7d43-4307-8f89-6a638d539eb3",
+      "gitHead": "af888431ea33b59495ac9bd3505841f053a479bc",
+      "sourceFingerprint": "sha256:067acea75d0abc34a0e7da294a89f3bf205bbf6a75e52ab704e59c5fc4337f86"
+    },
+    "/openwiki/concepts/csv-data-tools.md": {
+      "pageVersion": "sha256:1602aa2f19798d433fa6d5e28860f1ff83043ec67f91b7fa3449bdcb82a73d77",
+      "completedBy": "openwiki/0.8.0",
+      "completedRunId": "a19cc504-7d43-4307-8f89-6a638d539eb3",
+      "gitHead": "af888431ea33b59495ac9bd3505841f053a479bc",
+      "sourceFingerprint": "sha256:067acea75d0abc34a0e7da294a89f3bf205bbf6a75e52ab704e59c5fc4337f86"
+    },
+    "/openwiki/concepts/openui-lang.md": {
+      "pageVersion": "sha256:a2fae8c4ff6a85f8f5600b23548007c4faf0b89cb0a88dcc1619b0622e78f2ca",
+      "completedBy": "openwiki/0.8.0",
+      "completedRunId": "a19cc504-7d43-4307-8f89-6a638d539eb3",
+      "gitHead": "af888431ea33b59495ac9bd3505841f053a479bc",
+      "sourceFingerprint": "sha256:067acea75d0abc34a0e7da294a89f3bf205bbf6a75e52ab704e59c5fc4337f86"
+    },
+    "/openwiki/integrations/llm-providers.md": {
+      "pageVersion": "sha256:f39c201ac486806839fd78d8aa2dac01d039e4def02b1cab6291bde19ed0861c",
+      "completedBy": "openwiki/0.8.0",
+      "completedRunId": "a19cc504-7d43-4307-8f89-6a638d539eb3",
+      "gitHead": "af888431ea33b59495ac9bd3505841f053a479bc",
+      "sourceFingerprint": "sha256:067acea75d0abc34a0e7da294a89f3bf205bbf6a75e52ab704e59c5fc4337f86"
+    },
+    "/openwiki/integrations/mermaid-diagrams.md": {
+      "pageVersion": "sha256:bb586c99c5bf566565b2325862373a074c040802ca762797b882cbd1b440ace7",
+      "completedBy": "openwiki/0.8.0",
+      "completedRunId": "a19cc504-7d43-4307-8f89-6a638d539eb3",
+      "gitHead": "af888431ea33b59495ac9bd3505841f053a479bc",
+      "sourceFingerprint": "sha256:067acea75d0abc34a0e7da294a89f3bf205bbf6a75e52ab704e59c5fc4337f86"
+    },
+    "/openwiki/operations/permissions-and-privacy.md": {
+      "pageVersion": "sha256:aa471379c5028ced01d3ec0a90d499eba296ba3897003bea21d3ee3003e4f4ea",
+      "completedBy": "openwiki/0.8.0",
+      "completedRunId": "a19cc504-7d43-4307-8f89-6a638d539eb3",
+      "gitHead": "af888431ea33b59495ac9bd3505841f053a479bc",
+      "sourceFingerprint": "sha256:067acea75d0abc34a0e7da294a89f3bf205bbf6a75e52ab704e59c5fc4337f86"
+    },
+    "/openwiki/workflows/refinement.md": {
+      "pageVersion": "sha256:d578d2a33073fb99437c572a7fc7eeebbe22b335af92730ed95726dc202e0e05",
+      "completedBy": "openwiki/0.8.0",
+      "completedRunId": "a19cc504-7d43-4307-8f89-6a638d539eb3",
+      "gitHead": "af888431ea33b59495ac9bd3505841f053a479bc",
+      "sourceFingerprint": "sha256:067acea75d0abc34a0e7da294a89f3bf205bbf6a75e52ab704e59c5fc4337f86"
+    },
+    "/openwiki/workflows/summary-generation.md": {
+      "pageVersion": "sha256:0470feb478a453888f3bc8c1f2ac2269a2a94e4e761242404baf2c9c6a6265ab",
+      "completedBy": "openwiki/0.8.0",
+      "completedRunId": "a19cc504-7d43-4307-8f89-6a638d539eb3",
+      "gitHead": "af888431ea33b59495ac9bd3505841f053a479bc",
+      "sourceFingerprint": "sha256:067acea75d0abc34a0e7da294a89f3bf205bbf6a75e52ab704e59c5fc4337f86"
+    }
+  }
+}

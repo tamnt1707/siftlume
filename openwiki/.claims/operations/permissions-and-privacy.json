@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:aa471379c5028ced01d3ec0a90d499eba296ba3897003bea21d3ee3003e4f4ea",
+  "claims": [
+    {
+      "id": "claim_685538c66d8b4e89b060549fa8dae16b",
+      "statement": "The extension's Manifest V3 permission set is declared in `wxt.config.ts` (`storage`, `sidePanel`, `activeTab`, `scripting`, `contextMenus`, `unlimitedStorage`, `declarativeNetRequest`, `favicon`, `clipboardWrite`) together with `optional_host_permissions: ['<all_urls>']`, a localized `default_locale`/`name`/`description`, and the `Alt+Shift+S` `_execute_action` command; the same permission array is copied verbatim into the built `.output/chrome-mv3/manifest.json`.",
+      "evidence": [
+        {
+          "resource": "repo://.output/chrome-mv3/manifest.json",
+          "version": "repo-file-v1:sha256:cf548b1b17e76f0e7c5dedaf8c274dfc3ea158e22c9e9f7afbb4b5eac9d0b434"
+        },
+        {
+          "resource": "repo://wxt.config.ts",
+          "version": "repo-file-v1:sha256:a203b5ccb2d476d44c59e81c9af1cae296bf301373d47c546e3c17deecf6d353"
+        }
+      ]
+    },
+    {
+      "id": "claim_7b562fc33da24a79a6a5a0d3dd7e224f",
+      "statement": "The built manifest contains surface wiring that `wxt.config.ts` does not declare — `action.default_popup: \"popup.html\"`, `side_panel.default_path: \"sidepanel.html\"`, `options_ui: { open_in_tab: true, page: \"options.html\" }`, `background.service_worker: \"background.js\"` and the icon set — because WXT derives these from the `entrypoints/` folders and `public/`, so the config file alone is an incomplete picture of the extension's runtime surface.",
+      "evidence": [
+        {
+          "resource": "repo://.output/chrome-mv3/manifest.json",
+          "version": "repo-file-v1:sha256:cf548b1b17e76f0e7c5dedaf8c274dfc3ea158e22c9e9f7afbb4b5eac9d0b434"
+        },
+        {
+          "resource": "repo://wxt.config.ts",
+          "version": "repo-file-v1:sha256:a203b5ccb2d476d44c59e81c9af1cae296bf301373d47c546e3c17deecf6d353"
+        }
+      ]
+    },
+    {
+      "id": "claim_cc3db8049f274536b5ebe97aadc17bdb",
+      "statement": "The manifest's static `action.default_popup` is only the `tab`-mode fallback: at runtime `entrypoints/background.ts` calls `browser.action.setPopup({ popup: '' })` when the display setting is `sidepanel`, clearing the manifest default so a toolbar click fires `browser.action.onClicked` instead of opening the popup.",
+      "evidence": [
+        {
+          "resource": "repo://.output/chrome-mv3/manifest.json",
+          "version": "repo-file-v1:sha256:cf548b1b17e76f0e7c5dedaf8c274dfc3ea158e22c9e9f7afbb4b5eac9d0b434"
+        },
+        {
+          "resource": "repo://entrypoints/background.ts#L23-L30",
+          "version": "repo-lines-v1:sha256:e375120599e66efdff606e415f8acde9519944805480f98ad314b36151435ca3:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzRjYzlkOTI3NjUxMDA1Yjc3ZjI5OThjMGY1YWYxZGJlMGU1YTFkYTg2ZWUyNjVmOWI2YzJiNGFmNjJiODk1MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdmNmZjZDUyNGE1MTFjZDQ4MjcxZTViZDcxNDNkMGQ2YTI4ZWI2YzI3NDNmZDIyOTQ4MjY1ZTQyNzU3MGM5NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzZjM2ViNjhmYWI4Y2QyMGEzYTcyNDkwMzVhMDJmNTBhZGQzZTlkYjBjZjg3MjVjMTg1M2JhNDgyZWUxNDNlMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTMyZGVjNjljOTg4NDFjNzJmZTdlZTRjOTg1YjNhZjhlMzc5YTM2NDExZjJjNDNiN2I2ZGIyOTQ3ODVlMzgyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a9d2699d8864f48a67c11f2be587a47",
+      "statement": "The `storage`, `sidePanel` and `contextMenus` permissions are exercised by concrete code paths: `storage.defineItem` in `lib/settings.ts`, `lib/history.ts`, `lib/models.ts` and `lib/pending.ts`; `browser.sidePanel.setOptions/open` in `lib/pending.ts` and `setPanelBehavior` in `entrypoints/background.ts`; and `browser.contextMenus.create/removeAll` in `lib/context-menus.ts`.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L16-L18",
+          "version": "repo-lines-v1:sha256:d21727e30288f2cf33d293e8a7486ad174d4e1bdadc916643f5570d2e9760c0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIxNTljNjhlNzczOWQ3OGExMjFhMTRmZjIyZjE1NmVmMzQzNzBiZTEwYTUxYWRmMjdmYWNhZTNjMTU2MWIwNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQ4YjhhYjFiYTlhMWI5NDk2NTI4MmE0MDNjNjc2ZDQzNWQ3MDQ2YjBmYjJhOWRjNTdhNTFmYjQ2OTFhZmMzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDg0NzI4MDg2ZGU5MThkNmQzZjQ1ODcwNzIyYTliODk0NTk4MjBiNjg2ODJkZDNlYWZlNWY1MWQ3ZTJlYzhiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWMwOWQzNGI3NjAxYTBkNTZhZTg3OGU0MWQ0MzUwYzViYmY5ZjJkMjI0MjQ3NzYyNGZhNWI0MmZmNTU4NzVjOCJ9"
+        },
+        {
+          "resource": "repo://lib/context-menus.ts#L21-L40",
+          "version": "repo-lines-v1:sha256:0ebfa216adc5e6bd90e2341402f69829b0eeeb20f119ee1657502ea3daff65b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjY2UwYmI0NTZhNzMzZGMzYzFiMmJkNWI5MTg2MGM5NTJjOTNiMTdlZWNkMWE2YzhiZTA5MzRhNDlhY2FiYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0OWJhYTc4MDhjMDhlMzNjMGRlMWI1YjJiM2ZjMGJkZjkyYzk2ZTkwNGY5MDUxMDE3YmUyMTE2ZmRlMjVmZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmYjc0NmE0NTU5MjgwMjQ0NTRmYjkxMzc4NzhiYmRiODRlM2NkZWM0OGIzMGE2NjkxY2RhYWIxNzQwOGEyZTYifQ"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L11-L13",
+          "version": "repo-lines-v1:sha256:7b02eda2debb2f13ffd41c03765c3907478c46838beda50548584030e028d37f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjJhOGM0YWRkMWQwMzE0MDIzMDA1OWNlOWFhODlhNTlkN2U0ODdjMzQzMWFkZDhjMzQwNDcwYzA5Yzk2Y2U1YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGM4ZmJmOGNmOGRmOWM2ZmIyZmEyZWZkZmJjMzg5MjlkMWU4MDU4NzhkODE3MTc4NDUzMzk3YWE2MDI3MTYxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmUxMTEzOTg3NzIzOTA0YjI4NmE3MDY1ZDE0M2QzYjVmZWM4ZTdkODVkODdjY2VhMWJiNjcwOTg4YWIwYzZkYSJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L52-L58",
+          "version": "repo-lines-v1:sha256:a996ac6a4c9ca02bbca4ff3df31cce2ea7bf9620660c92d8fd8b916722926e93:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDBlZDdmZWE4OGQzZjVmY2ZkZGI2OTQxZTM1MGY5MGJkZWE2YzEyOTkyZWRiODEzM2JmNzhjZjJmMjE0OWQ5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTk1NjczYmI3MDA4NmY2MzljY2UxODUwZjJmYTk4OTZlOWZhMjQzZjIzOWZjOWY5NTliMjQwNTkyM2RiNzA3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDBlNTcyMmQ2MWE1OTlhYjM2ZTQyODg4ZTM5ZGI2MDRkYjY3MDM3NTMwY2Y0NmM3MmVkYzMzMjQyMTA5N2ViMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_614c2d6da79d4c4d885b60ac487e987c",
+      "statement": "Page reading is authorised by `activeTab` plus `scripting`: `lib/page.ts` reads a tab via `browser.scripting.executeScript` (returning `document.documentElement.outerHTML`) and injects a highlighter function the same way, and the grant comes implicitly from the toolbar click and the context-menu click on that tab rather than from a host permission or a prompt.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L54-L76",
+          "version": "repo-lines-v1:sha256:4c9982bc4bc1a43365af857725e24d5a569d07914867c698c4a394818681ebe4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2OThhZGNmZTNjZTYzNWVlNGJmMDY3YTVkOGY0YmRmZWJmOGI3OGVjZTc0NGZlZDc0ZTk1NDg5MmMyMDEwMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjYTNlZGFiNDY4ZGVhZGI5NGY0OTA1MjVhNTQ2ZTdlNjVjZWFiMzk5MDIxNjk2MzQ3NzQyMWM4NTQyOTIxZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmZDBiNzkwZGRkZjdiMmEyZTMyZWM2MzYzNTkyMWRiNmEzNDMyZTg1ZjU1MDVlNjczNTdjYTJlYWZlNzg5YWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzOWMxMGM0OWEyMjU4MWU1ZjU3MzU1YzIxODg1OGRmNjExNmNiZjg4Y2RkYThiOWZkNmZiMmM2OWEwODk2ZWMifQ"
+        },
+        {
+          "resource": "repo://lib/page.ts#L30-L55",
+          "version": "repo-lines-v1:sha256:fbc5cb80307b3ad6d791db9b15306e2b24c3bd147758ad951ac9f77215786a71:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkYzc5MjNiMjc3NzViOGJmNWY2ODcwYWRjZDQ5OTA4OTY0ODZhMTNmODdhZmY3ZWQzZjIzYzAzMWUzYTEzMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyNDY3NTBkZTJiNWQyMjZkZTc5NTZiOGE0MGUxNGUyNDI1MTcyNWU4ZGE2N2M3MDY3ODkyMGQ3NzJmNjdkOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTA5NWRlMGYyYTEzNDY3MzRjZGQ4NjEwMDhlOTg2NTJiZjNkYWU4MDJkMWRjNTQzZmUwZjYwMzA5MjJmZDEifQ"
+        },
+        {
+          "resource": "repo://lib/page.ts#L69-L75",
+          "version": "repo-lines-v1:sha256:d1ec66a25beb96b77f787fb8045125befba116b8c7dc5e07fa653948133f39e7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTc1MmJjOGYzOWEwMzM4M2NkNDRiNGQzMDQyZjE3OTE0ZWM3NTBjMTRkNzYzYTBiZmE4Njg1ZjZiZWQ4ZjEyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA5ZjNiM2E1OTkwODAzMTYwMTQ0MjVjNWJiZTQ0NjZiMTNmMWRiZWE1NzI4NTc4ZDhlYTllMWE5NjZmZjA3MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmJmOTJkNmNiNmEyZGRlN2FlNmNmZTlhN2EyYWNjODM2OTMyNjZkYTI2OTgxMDc3NDYwMzljMDg2ZGNkNjM2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODkwMGE1ZjYxYzM5NzBhMWYyODlhYTA5ZTNiZGFjNTYzM2ExZGM0YjJkYmQ5YjBiYTgwZDRjMTg5ODQzNjhkYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5cb989b1120a4bffa7c765fec647b8f7",
+      "statement": "`lib/page.ts` still refuses URLs the browser itself blocks (`chrome:`, `edge:`, `about:`, `chrome-extension:`, `devtools:`, `view-source:` and the Chrome Web Store) via the `RESTRICTED` pattern and `isReadableUrl`, and the popup disables its \"Summarize this page\" action for such tabs.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/popup/Popup.tsx#L30-L36",
+          "version": "repo-lines-v1:sha256:5a940a9bcd0e15f2f719e0a6f95eaf1b33d4f7634021db3664700831e7a9bdc8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDQ0NWEwNWJmNWMwY2M5OTJiNzY4ZmMxNzQyNzhhODAzMTc0MGYwNWM5OGUwZjA2YTZlNGIzZTc1MjZkMmNkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmU2OGQ0NTUwOTU4Mjg1ODJiMmEyYmVlYzBmMTFkOTk1MDdhNzgzYzdjM2FiMWNjMDMyZDFmZjM5NzczNjExZSJ9"
+        },
+        {
+          "resource": "repo://lib/page.ts#L10-L16",
+          "version": "repo-lines-v1:sha256:f16f97d9bd18419984c1bf8817356d822f33b9bbde8f04f57b5eefc51272ef6a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQ2NzcxZDEyZDU3YzMzZTMzN2E1MDQ3MjIyN2QxZjQ1MmVmY2FkMjAxNTlmOWJkMmUxNTU1YjdkZmI0Mzg0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTViZTUxNGZlMDRlZjMzNWExOTBhZDMwNmY4MGI2NjdiNTNmNmQwNTA4N2NhNDY0OThhZDE3NTk1MzAwZTUyNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTE3NDc0MjRkYzVkNjg1NTY4ZWRlOWFiMTYxMGZjOGFmZWJkM2YxMmEzZjE1MTljMTAzYmNhMjAwZWMyMThjNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_82e5628882894fefa473d82c084bf2ba",
+      "statement": "Host access to the provider is requested at runtime, not at install time: `requestOriginPermission` in `lib/settings.ts` converts a base URL into a Chrome match pattern (e.g. `https://api.openai.com/*`) and calls `browser.permissions.request`, so the granted scope is a single provider origin drawn from the `optional_host_permissions: ['<all_urls>']` pool.",
+      "evidence": [
+        {
+          "resource": "repo://lib/settings.ts#L238-L257",
+          "version": "repo-lines-v1:sha256:439f6f017557d43500221a6ab7e74eb31d76e78b9bf6354920eeaedab95f0dfd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzNGJlZDk3OTVlMDZjOTBhZDFlZmEyODk2Zjc0MGJjY2JjMjkxZDE0MDU5YjE2YmFmNjQ5OWNjMTBmNDI0NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3MTU3MmY5ZjkyNDFlYTcwMjllNjUzODgwMWMyMTE2MGYyNDBhYmU5OWZlMTI1MGY5YzMzNzY1OWUyYjEyNmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://wxt.config.ts#L21-L23",
+          "version": "repo-lines-v1:sha256:a48c522a35ff3a226b6d5f0de70e3fa517814af6ef6c14232d8f954f0c7998d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzYzZDUzNWNlMzgwNjNkNmI0YzUxZDhjMzg2YTdmOWIzZTU4MGExNGExMGMwN2IxOThkZmFmMTljOTNhM2JmZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg4N2IxYmI2N2Q1ODhjYzBjMzc1N2U3YTA0NjVjYTZmNjYwYjljMjZkY2I3NGU1ZmRhMDFlMTllNTA1NmJlOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmRmMzBkMWI3NDQyZjUyOTYxODJjMWViMWMxMTJiZjk1OTYyYmNlODE1NTUzNDM2ZjQ5OGUxMDk0NjAyMjFmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjFhOWUwNmY0ZDMwN2Y1MzNmOWMwY2NiY2MzMzhkNTA1MTdkMzZjMWU5MGE4ODRmZGY0ODJmMDZlZWUyZmFmZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_274117059cf74c6eb62aacc059be6d69",
+      "statement": "The runtime host-permission request must stay inside a user gesture: `components/SettingsForm.tsx` calls `requestOriginPermission` synchronously in both `onSave` and `onLoadClick` (no `await` before the call), and the settings are still written when the user denies, with the form reporting `savedNoPermission` / `permissionDenied`.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L145-L163",
+          "version": "repo-lines-v1:sha256:f4d5886eaab6e0e4d5f4f5d12556ae44774c0b013a5063f67c75985aa9c70564:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzNDQ1N2FlYjZlZDYzZDdhODMxOTY2NjljODA2OTIzOTc0MTkxMTMwOGQwZjcxNTg3ODhkZDg3YjMzMDBmYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiMzM1NTczMDU4ZGJhYmY2NzZlMWU0YTdkODM0NjhkMmRmOTFmYWI2MDE5YWJjN2U5ZWFhN2FiMWQyMjQyMjEifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L245-L252",
+          "version": "repo-lines-v1:sha256:7c24e5e8a995d365c1dd9e0e3fc768a71e1ad6556dd1e2ab57fd6d8f03d974d7:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODA1YzAwMjEwZGZmODMyZGJmOWMwZTI5NDk2MDY3ZGFiNjdkYTRiZDRkNmUzN2QwYjBhOGNlNWZjYjA3NDc4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDVlODA2OGMyZTgxZGRkZGU4MjQ1NzI4NzVlMmEzMDdiYmJkMWY3ODBhZTNjZDIxMGE0ZWFiMWZiZjkzZmRlYiJ9"
+        },
+        {
+          "resource": "repo://locales/en/settings.json#L112-L115",
+          "version": "repo-lines-v1:sha256:805647ba0307b3f2b51967bceddb9d2860273363c74242142781ddd78b297388:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY1MmJmYTkyZDQzZWIxZGMxZTJhMTY0NjNkZmFhMDc4MDZiYWU3ZjYzOGJiYjBkZjMwMGUwNjk4ZGM5ZmE3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFmNmZhN2I5MjRmYzhiYzFlNTE5NjFjYTU2NTBhZGU5NTdmNzgxZjBlNzJmNDYyZGFjNGZmYjNmNmUwOTYwNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTBkNDcxZjE4ZDhhMmVkMmE1ODg3YTgzZWIwZjAzNDE4NjJlOTYyNWQ0MGI2ODM5NmY4YTFhMWIyZGU1OTVkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGY3MzlhMDZjMWNiYjEyNDRlMzM2M2QzOGJjZjlmYTUwY2U4NGZlZDM5OWMyMTkzYTNjN2YwOGQ1OTkxOGIyYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6dcdc8097bb745a4b0de0244e9f57bdb",
+      "statement": "The `declarativeNetRequest` permission exists to support local providers: `allowLocalOrigin` in `lib/local-origin.ts` installs a session rule that rewrites the `Origin` header to the local server's own origin, and the rule is scoped by `urlFilter` to that origin plus `initiatorDomains: [browser.runtime.id]`, so only this extension's own requests are affected and web pages cannot reuse it to bypass the server's origin protection.",
+      "evidence": [
+        {
+          "resource": "repo://lib/local-origin.ts#L20-L55",
+          "version": "repo-lines-v1:sha256:fb2bae8127d9af586774ca3cbe452277a31cff1f0631fb0d66f665ed0d36d7d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjYjMyNzYxNmIxZGQxMWMzYzllNDcxMThlMTVkZmVhZmFjODZjNTRlZjFjNDZkZDhjYzgxNzNhMjFmM2E3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyN2Y4NTYxODk4OWM3YmU5NjIxOGVlYjBlY2Q0OGJlZWQ4MTM4M2E2YzA2MWE0YjA5ZTJjMzQxMzU5ZjY2ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_50fed486c2cb4360bcf3e38da8e01cc5",
+      "statement": "The `favicon` and `clipboardWrite` permissions back two UI affordances: `components/SessionView.tsx` renders the source favicon through Chrome's `chrome-extension://<id>/_favicon/?pageUrl=…` cache and copies quotes with `navigator.clipboard.writeText` for the `CopyText` action.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L19-L21",
+          "version": "repo-lines-v1:sha256:60155e79b69baa993df793cbce25be86d0f5a8feff3f977acc5817b7c2787342:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzkyZTIxMGY4ODM0NWM3MWVjMmE1NmZjOGUzMGZjNjdkYzMwOGFhZjUxN2RhMzZiM2NjYzAyYWJhNDhiOGUxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDc2Y2RmM2U3ZDg2NWUxOGIwNWIyZmRiYjYzZmI1MmJhZjMyNDgxYTNlNGY0OTY4NzhkYjllZjdmZDBjYjY0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZThhZjk1OGU0MzY5Zjg0NDc0Njc3ZDVlMWFiYjcwMTg2MTZlYzgyYzQ5MjZkOWI2OTdjZDAwOGUwY2Q0MDc1ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODY2NDAyOWNkMjY4MDYxOGJjYmM5YTQwMzExZTMyMDNkOGY4ODRkOTVmODIxMTczOTJiM2M1N2NiNjQ5YTcyMSJ9"
+        },
+        {
+          "resource": "repo://components/SessionView.tsx#L88-L92",
+          "version": "repo-lines-v1:sha256:1479bcaad919b14cee488fef1f9c934c5280c5f20880bc670d610df6722527ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWI2MmY2MGQ4NTkwYTU3OWNmNDZmOGQ2NzM3OGM0YzU3MmI5NjJjZWNjZGI5MGM3YTVmN2I0MmI5NjA3ODJhNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDE3NDg1MTc3MDJlODc1ZGQ1ZTI5YjdiYjAyN2FmNDgyMjc2NzBjYjhhNDg4YTI5NzQwZjVlOWFhODY5MDAyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGE5N2ZiMGE4ZjVhZDEzNWMwYWYxMDQzMDc4ZmFmMTU4NmQ0ZTk5YWI4NGRhODNlOGEzYjFkMzEzZWJhOTE3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTFlMzcyNWRhMDAyYjQ2ZWQ4YjRkZTg4MDAzYWQ5NzEwZGNhZjE4ZDU3YzQ3MDFkYzNiZWZmMGIyYzVjYjEzZiJ9"
+        },
+        {
+          "resource": "repo://lib/library.tsx#L28-L33",
+          "version": "repo-lines-v1:sha256:acfa4d2ceb60d6326359bd91160b0268c3079fff7731f5c8db1882bd9ee537ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzc2Yzg5YTljNDgyMWZlNzYzZjRiYjg2NTlmOTIyNTYwYTlmZmU5NTM4ZGM1NTA3YTM3ZjgxZGMyZWQ1NzRmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJlNmZjZGQ0ZDcyNzQ4N2U4YjhkN2E0Mzc3ZjA2MmNkMWJjZTU5NDQ0ZDZkNzNhYTg4Y2E1ODQ4Zjk0YjRlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmQxOTE5YjE1YTljN2FlZGM3NmE0ZDM1NjNiMTk0ZDNhOWMxZjg2NGNiNjE5ODNiOTkzNTQ4M2ZmNjY4ZjQ1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDhiN2Q3ODMyYTgxNDBhMmFiMzBhMmNhMjQ5OTY3MTJhNzQ2MjIzMWE5ZjAyYzJhMDk3ZjM2Mjk2NmQ3NDNiMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5eb5e345a6504bcd819ab1f4841532cf",
+      "statement": "API keys are stored only in `chrome.storage.local` and are never synced: `settingsItem` is defined with the `local:` prefix and an explicit comment stating the reason, and the same holds for the persisted history (`local:history`) and the model cache (`local:modelCache`).",
+      "evidence": [
+        {
+          "resource": "repo://lib/history.ts#L50-L52",
+          "version": "repo-lines-v1:sha256:e4368d0de738100bb5d495da6fb1c3eec5f73dc5d5ca3100f14ebb66569e089d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGJkNjRlM2I1MjgxMWViNzU0MTA0YmI2NzA0OTYwYjUzYjQ0M2QwNzAyNzUyYWUwYzE4NjQwNzNlMTk3MmE2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmZlNzhiMDk5OGU3OTAwMTgyODU3YmE3MjgyY2Q0ODNjNzI4MDIyMDk0Zjc3YTYzYmRjYmQ1YjA0ODBhNTY3NCJ9"
+        },
+        {
+          "resource": "repo://lib/models.ts#L101-L104",
+          "version": "repo-lines-v1:sha256:f0dd6238576258163e1683a6b2e9a6739925fc8623b152415b3eea882d38c3ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk3YjEwMWI4YjQ3YzIyNGQ1YWZkMjYyNTY3NTk5YzQ4Y2I2MDdkOGU2ZGZjYWYxMTZlYjM1YzA0YTQ3ZmE5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTEyNGVmZTQ0MmUzMmQ1MDg3MGZjNGUyYjMxYTZmZGNkZmUwNWUyOGZiNWFiMGM5MzFiZmYxY2MwOGRiMjA4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWQ3YzQ2YjViNDU0YWU0YmNkMTMzMTJmNTViOWVhYTA0ZWI1NTdhZGRjODg4MDIwN2YwMWE0MWIxNGE4MTYyZiJ9"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L216-L220",
+          "version": "repo-lines-v1:sha256:5ad55589df1c9e52ce3d054236e4d81365bfc4782f1e80abe8fc8fe35c5e3f72:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmY0YzE2NTQ1NjlhZDEwYzhkZTM1MDk5NmY0YTRiNmZjZWRmZmFlN2I2MzVmMzMwOGVhYzRmMDRmYWJiMTI2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmQ2NTM1NWI2NGVlNzk1Y2JiNmQ2OWIwN2I4NmU4Nzg0YmVhZTkyNWE0ZWFmNGYzN2FjZmVlODhhNjhiOWU1NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c7421f6494a4123866c1d4fac7d29fb",
+      "statement": "The handoff of pending summarize requests is deliberately non-durable: `lib/pending.ts` stores queued requests, the per-tab panel pointer and the per-tab panel URLs under `session:` keys (`chrome.storage.session`, memory only), so pasted or selected text never travels in a URL and does not outlive the browser session; `lib/history.ts` separately keeps at most 20 sessions locally.",
+      "evidence": [
+        {
+          "resource": "repo://lib/history.ts#L49-L52",
+          "version": "repo-lines-v1:sha256:fae2cff0c32433d6c0294e992a87a393d031507ea6cb5761034649f752ecc796:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFiODk0OGIwYWJiZTFhNjkwYzg2N2EwN2QyMWI4NzZmZDg5YzdiOGE3ZjI2MzkyNmIyYWU0MmY3YzcwMDI1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODgwMDU3ZGZiYmVjODg2ZjNjOTVlMTE1MTJlYzgyMDhlNDNjOTRlN2MxMGQyY2EyZDY1YTU2MGQzZjAyZWE4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmZlNzhiMDk5OGU3OTAwMTgyODU3YmE3MjgyY2Q0ODNjNzI4MDIyMDk0Zjc3YTYzYmRjYmQ1YjA0ODBhNTY3NCJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L11-L13",
+          "version": "repo-lines-v1:sha256:7b02eda2debb2f13ffd41c03765c3907478c46838beda50548584030e028d37f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjJhOGM0YWRkMWQwMzE0MDIzMDA1OWNlOWFhODlhNTlkN2U0ODdjMzQzMWFkZDhjMzQwNDcwYzA5Yzk2Y2U1YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGM4ZmJmOGNmOGRmOWM2ZmIyZmEyZWZkZmJjMzg5MjlkMWU4MDU4NzhkODE3MTc4NDUzMzk3YWE2MDI3MTYxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmUxMTEzOTg3NzIzOTA0YjI4NmE3MDY1ZDE0M2QzYjVmZWM4ZTdkODVkODdjY2VhMWJiNjcwOTg4YWIwYzZkYSJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L52-L58",
+          "version": "repo-lines-v1:sha256:a996ac6a4c9ca02bbca4ff3df31cce2ea7bf9620660c92d8fd8b916722926e93:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDBlZDdmZWE4OGQzZjVmY2ZkZGI2OTQxZTM1MGY5MGJkZWE2YzEyOTkyZWRiODEzM2JmNzhjZjJmMjE0OWQ5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTk1NjczYmI3MDA4NmY2MzljY2UxODUwZjJmYTk4OTZlOWZhMjQzZjIzOWZjOWY5NTliMjQwNTkyM2RiNzA3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDBlNTcyMmQ2MWE1OTlhYjM2ZTQyODg4ZTM5ZGI2MDRkYjY3MDM3NTMwY2Y0NmM3MmVkYzMzMjQyMTA5N2ViMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd4571c3e8be450aacded5aad04d2b68",
+      "statement": "There is no backend: `lib/llm.ts` builds an AI SDK model bound to the user's own base URL and API key and streams it directly from the extension page, so the only outbound traffic is the provider request and the provider's model-list request, carrying the user's key and the extracted source text.",
+      "evidence": [
+        {
+          "resource": "repo://lib/llm.ts#L40-L60",
+          "version": "repo-lines-v1:sha256:e217fbae5d99fbed8e2553d119579600ce39f29976bce38175e4dfd63df1601c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1M2Q4ODYyMDRkMDMzN2FlNDgxMzBiZDNkMjY4ZjYzZDJiMDU5Y2NmMTFhMzIzZWJiOGUxYTY1MGMzZTg4NDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3MWNiNWYyMjEwMzRiMTc2Mzc4OWIyYzdmNzQxZGRmZjc3Yzg1NzdmZmMxNDAyMzFlMGQ1NzU1ZTQyZTZjYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4MmQxNzFhYWRhNjIzN2RhNjI1Y2NlMjE3MjY3NDM5MzJjNmMxZjM2OGM0OGJlZTllOThjZTYzNmRlZTY3ZmYifQ"
+        },
+        {
+          "resource": "repo://lib/llm.ts#L9-L30",
+          "version": "repo-lines-v1:sha256:7829653e78d9cc5067ec4189a10a4816acb2ed8e1768ce6517cdc8d67fb5907b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MzU0YWI4NGFiMTg1MTk3ZDBmNGNkNmNmNDUzNTgxYjE0NWJmMDE1YzIxZTg0MzRjYmU1NmIzZGI0NjQ3MGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0Y2I3ZjVjODEzNGIyODg5ZmM3ZDgxMzg2OGYwM2NjM2ZlZDAzNDBiMjU0NWMzYWM0ZjU1ODIyZmEwN2VkM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhNDEzNjA5NGEwNTgwOWRkYjE4MGJiZWFlZmZlNDU5MGFjZTIxOTc5NjYxYzhiZmQzMDFkOTc4MmI4NjIzYmYifQ"
+        },
+        {
+          "resource": "repo://lib/models.ts#L21-L28",
+          "version": "repo-lines-v1:sha256:f3ce8b741c2541755ef0cc0d6c5bea39facd90af9408592451a1ff0b6a15a2fa:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTEzNDJhZTYwM2JlMDE2MmNlOWJlNTIwOTY0MDczZGFkY2I3ODhhMjFiYzc1NjNiNjZjNzZjZTI0YzZkMDdlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDMxNDY0YTdhMTZkZTBkZWYwZGUxMmU3MzJkNGRjNjhmMGJjN2QyYjY4YjY3NDMwNjM4ODdjZTMzZmE1NGQ4NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM3NGI1NWM0NjMzMTA0YTg5NGQ2MDRmM2ZmYmE4ODkzMTE4ZWRmMTAzZGJmOTdmZTc4NTU4N2MxMGQ3NDdkMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b96f21b1c0e6451a83f924709c474cdb",
+      "statement": "The source content is bounded before it reaches the model: `truncate` in `lib/extractors.ts` cuts the content to `settings.maxChars` (default 60 000) and flags it, and `buildSourceMessage` in `lib/openui.ts` tells the model explicitly that the source was truncated.",
+      "evidence": [
+        {
+          "resource": "repo://lib/extractors.ts#L153-L156",
+          "version": "repo-lines-v1:sha256:4883f9fe8dc9d52243331a74c0a4468247f56ac2740e0b6708d35b7f8754ff91:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODcyZjdlYzk0MDExYjYxYTcxMTc5NTQ1ZDA2YWM0OGQ0MmNkZTNhZWIzZDY2Y2Q1NTc2NjgzZmUyMWJhYWM3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjk4YjExMWIyYmY1ZjBiZDQzOTFjMzE5ZTg2MzBkNzkxN2YzZDExNGIzZTUyMjljOGRhNGMwZjFiNzRkZmYxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L172-L185",
+          "version": "repo-lines-v1:sha256:0d1cdb48b2bce827fc9441b481b7e07a86bf646efdd94889de51efcef4f6d432:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlN2M2YmIxOTIzMWI5ZDIxNmVhMzA1OTAxN2Q2NTFiYjIyYmQxYWFmOGIzOGIzOTBmMmMzNjNjMzk2NzRlODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmNjAzOGE4ZmFiNDgxN2U1M2U3ZTg0NDE0ZGFmYzBlZDEzMTEwOGJkYmUxN2Y2MGU4ZDVhZDMwZmU1MGRiNmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjMDU5YTEyNDNkNzRlZTlkODcyNjNhMDIxMWI2ZWI1ZDlmYmQ2ZjFkZjE2ZDQ1N2U4OTU4YWI2MmJiZGQwZjMifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L166-L176",
+          "version": "repo-lines-v1:sha256:d236c9254cd60cda9923dd43bffbc20ff72076a4411acf26f870f0c709dc652b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0MGZmNzI3ZDcwZjQxNWNjM2ZlYTEyNWI4MTkyNjZhZTJkOTQ3MDg1OTQzZjM0MjUzMDc1YzM3ZGM5YWE4ZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4YTRhNmU0ZGU5ODI0MTQxZDhmZjk1MzdjOWIxODFjNTVmODZhZWMxYmNhYzUzYzkzNWM2Y2M1YThiZTliY2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkYjI5ZmVjYTIzYjg5MGJhMWIzMzdhYmIyOGZkMDI3Y2MyNzlkZjM1N2NmZTMwMzQ3YTZlNzA4NWNiY2QwNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwNjU4YmNhN2JlZTc0ZjQ4OTk4YjlkNWJlMzhmMWU2YWQ2OThkNzg2MjkyODUwN2ZlYWQ4N2QyMjc1NzhjY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bd21c15db2cf48dd887941816519a801",
+      "statement": "UI translations live in `locales/<lang>/<namespace>.json` (namespaces `common`, `picker`, `popup`, `session`, `settings`, `errors`) and are bundled at build time by `import.meta.glob` with `eager: true` in `lib/i18n/index.ts`, so the JSON is inlined into the JavaScript bundles rather than fetched at runtime; twelve languages ship, and `matchLanguage`/`browserLanguage`/`resolveUiLanguage` implement the BCP 47 to UI-language mapping with English as the fallback.",
+      "evidence": [
+        {
+          "resource": "repo://lib/i18n/index.ts#L12-L40",
+          "version": "repo-lines-v1:sha256:961eabc8bf4bcf8dd151b3fc438f07499f0c56eb33e4af668133084a5cc3555c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMGExZTYyODdhNmQwNmM0YzNiMTRlY2ZkNmQ5Yjc0YmFmOGEyNGFiNjBlOGY2Y2MxYTc5NzEzYzIxNDdjMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0MWJkMzExYjYyZmRkMGE1YTNiYzQzMDQ3YWVmMzYzZTM2YzM4NzkyYzgzOTBmNjA3OTNjYzdlYzA2MWJmZTEifQ"
+        },
+        {
+          "resource": "repo://lib/i18n/index.ts#L42-L80",
+          "version": "repo-lines-v1:sha256:47ed62eccecd6baf2600fb51b406354c749ffe3ebb177156a92d8e9940416839:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4YTFiZjgxNjVhNGViYmEyZmE1N2YzYzYzZTBjNDUwZGU0MzI0NjFkOGI2MGE1YWRmYzFhMjYxYjVmZWNhNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjMTk3ZmIyYTQ0ZDRjMmJjNTMwOWE3MjkxZGQzZDEyZWQ4NzBiMWEwMjkxODZjYTVkZmI2NTkyMzg0YzcyM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwYTE2Mjc2ZmViM2Q3MDI2ZTAxMTM1MGU5MDEyNWM5NDM2NGJlMDExZjZiMmZlODgzZDQ0ODVjN2MyMWJmMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1YjI5NjZiNDQ2ZTA5Yjc3ZDNmYThhMjhiMjM5NGQ4ODNkOTliYTZjZjhjYmMxYzdkNzlkMDhkZGQ4MWE5MTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_55b8d73f715144ba91e4d805c3ac3f09",
+      "statement": "English is the source of truth for UI strings and its keys are type-checked: `lib/i18n/types.d.ts` augments the `i18next` module with `CustomTypeOptions` whose `resources` are the `typeof` of the six English JSON files, so a `t('settings:model.load')` call for a key missing from English fails to compile.",
+      "evidence": [
+        {
+          "resource": "repo://lib/i18n/index.ts#L30-L31",
+          "version": "repo-lines-v1:sha256:3b580d3d281b653973ac8e47db942a6311aeb83e322604b1fdca92e9b07f85b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDllMzhhZmQ0NTE5YjgyYjlhNjRiNTFmNGIxOWJmZDVhNzc2YzlkMWEwOGM1ZjJjZTM0NzFiYzY2M2RmNzRlMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDlkMGMzMWVhNmY4NjMyNWNkNmY3MDFmNjdhOTZhZDE4MjExZmY3NjBhYTZjMjBlM2Y2YzI1MTQ3MDRjN2Q0ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGM0ZDA1OWZkZDY5NmQ2ZjllMTkzN2FhYTU2NmJjNWVkMzFkODBlMzc2N2NjODhhYjJlMWFjMmNmYjRjNDBlNSJ9"
+        },
+        {
+          "resource": "repo://lib/i18n/types.d.ts#L1-L22",
+          "version": "repo-lines-v1:sha256:934ca58c8a997813eea8c9b184ed8fc9f640208ee87724c876c5b7598b286252:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NTg4MjJhMWE4NGM1ZWFkMjU5ZWE1Y2E1N2I2Y2ZlOTViOGM2ZTYyZTcxOTNkYTQ3ODUyNDYxMDY2YjVlMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_24611aa377d64b94a855959d2cd0d361",
+      "statement": "Chrome-level strings live in a separate tree, `public/_locales/<lang>/messages.json`, using Chrome's underscore directory convention (`pt_BR`, `zh_CN`, `zh_TW`); they provide the extension name, description, toolbar tooltip, command description and the context-menu titles, the latter read through `browser.i18n.getMessage` with an English fallback.",
+      "evidence": [
+        {
+          "resource": "repo://lib/context-menus.ts#L4-L6",
+          "version": "repo-lines-v1:sha256:bfc508cf60f895f5600bbe5a46a1f727a3bfe974b75d017b6d840790e49c2b9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTBlMDVhYjk2ZGJjYWQxMjdjNzM1MDgwNjc4ZWRlNjVlMzc5NDAyOTYyOTRkZmExM2RmYzYyMTY5Y2FjMzE1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWUzNDgyZmRlMTUzZGJkZGUyZmUzMGJkYmZjMWQ3YjkwOGVlOTY5Zjc0YmQ1OGEyMmRhNzhkZjVhYmU4MjY0MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRmNDYyOGNiMWVkYzIzODhkYzQ5NTg3YjczMzM0NTdjNjc0MGEyMmUxYWFkNzkwMjc5MWEzMzY2NzNmNDNmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTFhYmMxNjgxMmQ2NDFjNzcxNGM4ZjYxZDZlOGFhYmI5NjlhMzcwOWY5Nzk5ZTA2YTFjZGYyMmYzNDVmZjkyYyJ9"
+        },
+        {
+          "resource": "repo://public/_locales/en/messages.json",
+          "version": "repo-file-v1:sha256:f52124332573baacf70836a66f76c6087a93358b28b6aafc2e6873cbd3887300"
+        },
+        {
+          "resource": "repo://wxt.config.ts#L6-L9",
+          "version": "repo-lines-v1:sha256:9b6ea94dcff9399f34b7da9541beff461a82ab789cac6aa96af88183da612ff7:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjZhYWI1MzJmZDFhY2YzMGZkYzM2ZDM1MDRhODIxM2U4YzJiMjdkNWM5ZmE4N2U3NzQ0YTA5MDUyMGFlMWEwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGExM2VjNzNkNzdhZjMwMWJhMGI4MDNkOGUxZTdlMGUxNjBmOTBiNTc2MWY1N2U2ZGJiMzU4YmI5NGU1ZTA3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzk1YzUwMWUwOWM3OWMwMTUxNjY1Nzc1ZmY0MDJiNDViMjUwNTU1ZGFiZTUzZTE4OWM1ODFlMmU1Njg3NWZiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2M3ODA2NWY5NzI2ZjcxYjI0ODgxMjAzMDBmYmM4NDBlM2E4NzZiM2I5YWI4MjcwYjlhZDc4OGM5ZmJmNjUzZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f552c0fbe24e4358adbf63d68c40a1b5",
+      "statement": "`pnpm check:i18n` (`scripts/check-locales.mjs`) fails the build on locale drift by verifying, against English, that every key exists and no extra key was added, that a pluralised key supplies exactly the CLDR categories its language needs (computed with `Intl.PluralRules`), that the `{{placeholder}}` sets match, and that no translated value is empty.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/check-locales.mjs#L1-L67",
+          "version": "repo-lines-v1:sha256:c31830142657654d6a567a1b2d049db612ba25e918373368be75f7d66b0310cc:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViZWQ5NzdmNTUzMjYwYzJkYjIxMDFhNGVhNmM5Yzg1OTVjMmIyOTdiZDVkZDY4OTE3NjA5ZTA2ZTU1NWI2NTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b156dd58668d4f2d82be0d1521b36fb1",
+      "statement": "The operational commands are `pnpm dev` (WXT dev server with the extension loaded), `pnpm compile` (`tsc --noEmit`, which is also what enforces the type-checked i18n keys), `pnpm build` (`wxt build`), `pnpm zip` (`wxt zip`) and `pnpm check:i18n`, with `dev:firefox`, `build:firefox` and `zip:firefox` variants; `pnpm build` writes `.output/chrome-mv3/` containing the manifest, the service worker bundle, the four HTML entrypoints, `_locales/`, `icon/`, code-split `chunks/` and `assets/`, and both `.output/` and `.wxt/` are git-ignored so the built manifest is a local artefact rather than a source file.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L12-L15",
+          "version": "repo-lines-v1:sha256:2d8b6b751135173c6eec3d545ca3d6a5a47a26a4a14d0768082febc9644c5f1a:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZkZDMwZGMzMTBjOGNhY2NlMDQ4OGI5NjJjYWEwMmM3MGNiODdkYmRiN2IwMGM2M2I0YjI1ZTM2Y2FjNmE2YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmY2ZDQ1MWQ0MjgzM2U3NmVjMWIyNGY3NTE5ZWQ1OGUyNjBkMTBjYzk1MTVkNDM5NDIyMTc3ODdmMjA2MTM1NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDNjMGRkZDM4ZDRlZjcyMjQxYTcwZDY3MGMxYTA4ZjFjNjY0ZGU3MGVlNmJiZWI5Y2I5MWEwMDk3YTkwNGRhZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTFhNDZhNWU2ODYyMjY0ZDdjNGZiMWQyZjY5YWFhYmU4MTg4M2Q2NTdlZGY1YTI2MTQ1YjVjNDAxM2RhMTU5MSJ9"
+        },
+        {
+          "resource": "repo://package.json#L8-L18",
+          "version": "repo-lines-v1:sha256:a1f726acabc522ed8d92f9a7ba19236dba770926e834ee1b13b1bc30ab83f176:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMmFiMGYzNWViZTY0MDUzZDkzMmY1ODgwZDhkMTgxMTNkZmRkNmVhMjRjOTMxMGY5OTk2NmNmOGZlZmUyZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhM2I0NjlkOWUwOTc1NzIyNDY2NjczNGM5ZWY3YjI1NGQ4ODUzNGY1ZDViYjcwOTg5NjA4MDVjNTUzZGMzMDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlYTk5NjMzYjA3NjRmYzJjMzdkZTZlMzUxODNhNjUwODQyZGRkNDA5ZmUwOTcxZTAyN2ExODU2MmJmY2UxMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzMGI5ODQ5YWEzZDJiYTEzYTNiMGM4NDJlNTUxZmY5MjdiOTc0MzljNmExZjIyNjNjNjNhMTg5YmFhNDExNTgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-07T09:34:41.642Z"
+  }
+}

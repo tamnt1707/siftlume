@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d578d2a33073fb99437c572a7fc7eeebbe22b335af92730ed95726dc202e0e05",
+  "claims": [
+    {
+      "id": "claim_e2c4dfd198ec46a88e561822265c8730",
+      "statement": "Both refinement entry points — the one-click chips and the free-text form — end in the same controller call `ctrl.refine(instruction)`; the chip list is `REFINE_PRESETS` in SessionView and each chip id maps to an English instruction in `REFINE_PROMPTS` in lib/refine.ts, while the free-text instruction is forwarded verbatim.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L15-L18",
+          "version": "repo-lines-v1:sha256:ba442ff44c86a9dbba6ba48e262e93a79eabdf780f4646d52df7c4fb89480ef4:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODUzMjM0ZGJkY2ZkYjVkNGEzZDQxY2VkZmUxMzkxZDk3YjlmMWYyMGRhYzllZWRmMTI5NWZlNTllNThjNmRmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzBmYjEwYTQwMmZhZjFiZWE3MTBiNzNmYmE4M2NmZWQ4YjdiNTFlMWVkMzc1ZTBiMzNjNDA3MGQ3ZDdlNTAwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjAxNTVlNzliNjliYWE5OTNkZjc5M2NiY2UyNWJlODZkMGY1YThmZWZmM2Y5NzdhY2M1ODE3YjdjMjc4NzM0MiJ9"
+        },
+        {
+          "resource": "repo://components/SessionView.tsx#L160-L195",
+          "version": "repo-lines-v1:sha256:6787172349bc2d1773b1d24171e4041bc989b6c16a4827e78b5a4fdde232b201:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzY2U4NGQzMmUzMzI4NTdmYmVkZWZlNTEyNmQzNDQ2ODZjMzY4NDUwMmMwYWJkNzE5MDQ0OGRmNzQ2OTI3NDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjZGZjZjBiNGUxZjExZDY1Nzk2ZWQ4NTU1MDg2OTNmNmIyYjU4YzA1MDI1NzNlYzZkODgwMGQ2MDI1ZTJkNDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhNjYzOTJiMzc2M2RjNTIyZDhjOGEwYTMyNWExMmM4OWYyZTY3ZTBmMjgwYmRjOTY3MzJjNWE4ZGUzYjYzMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwZGY0ZmZmNjcyNjQwZmIxMjYzYjVmNzgzODBmZWNlNTJhZWE4OTBiMjBiOTEyMzgwY2RlOWI2MTg4MmRjODgifQ"
+        },
+        {
+          "resource": "repo://lib/refine.ts#L8-L20",
+          "version": "repo-lines-v1:sha256:8da89dca4306776c24d6743d8787c3730b22d24fd32523d2d6c0b6b00be73e69:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwN2U1NWFmNWZhNDljYTQ0NmY2MjJlOGQwMjExODMyYmY4NzJlYzM0YjcyNjBlZTc2NjQ2NTU4M2IyODNmNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4Mzk2YjAxNWFjNDUzYjg5ZTZiNDQ3YmQ5MmM2YzkzN2NiNjkyYzEyZmY3MzQyMTE2MmIzOTFiYjRlNTRiMWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4225be10bea407e8eb108c362fc4fdd",
+      "statement": "Refinement instructions are model-facing and therefore stay in English, while the chip labels and tooltips are translated: the chip renders `t('refine.<id>')` and `t('refineHint.<id>')` from the locale files but sends `REFINE_PROMPTS[id]` to the model.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L160-L175",
+          "version": "repo-lines-v1:sha256:6bcb21cffa0f0fbf35f276f3acf18ba89c7a3add2b6e45aeb99b9cd5f7a7a91e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzY2U4NGQzMmUzMzI4NTdmYmVkZWZlNTEyNmQzNDQ2ODZjMzY4NDUwMmMwYWJkNzE5MDQ0OGRmNzQ2OTI3NDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZWEwYTBkYWY0ZDU5MjBlMTI3ZTYyMWZlMzBlNTE2ODI5NTI0MGY3MTE1YmNlOTI2YWVkNmFiMzkyMzZhMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhNjYzOTJiMzc2M2RjNTIyZDhjOGEwYTMyNWExMmM4OWYyZTY3ZTBmMjgwYmRjOTY3MzJjNWE4ZGUzYjYzMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmMjQ5MTA5MTBmYmJmNmZjOWRmOTEwYWE5NTM5MDE4MWNlM2MyZDg3NTc1YTZkNjYwNDA0ODM5YWRiZmQ2NWQifQ"
+        },
+        {
+          "resource": "repo://lib/refine.ts#L1-L6",
+          "version": "repo-lines-v1:sha256:10a7b8396c85d6aedf09613e5dd5795f8a1537637e939f0e35c7edf26cc64fdf:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjg0M2U5ZDFmMzZlYmY1MjQxNDMzOGUwOTRmMDI3YTMzMzQwMTU5MWNmNzA3NDM4YmZkOGQ4NWJlZTAwZDAxNSJ9"
+        },
+        {
+          "resource": "repo://lib/refine.ts#L14-L20",
+          "version": "repo-lines-v1:sha256:676d775c3ba724afd309e21d4146498d6c825428edd41f78a98d96ae76921c2c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTVkYTkwN2VhZWFjY2MyODgxODFlYTk3YjAzYmM5ZmMzMTc1YmQxNjg1ZGM4NTIyNzcxZjIyNTNiMjc4NzZkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzAxNTdkNDliNmU5MDlmYzRiMjdjYzY0ZmYyNDM2MjAyMDk3NWYwMjJiYjRiZTA5M2U5Yzc0Njk0ZTBkNzA0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTgzOTZiMDE1YWM0NTNiODllNmI0NDdiZDkyYzZjOTM3Y2I2OTJjMTJmZjczNDIxMTYyYjM5MWJiNGU1NGIxZCJ9"
+        },
+        {
+          "resource": "repo://locales/en/session.json#L1-L8",
+          "version": "repo-lines-v1:sha256:1b199319fac3b122b4a7a33d5c513085f5ed05c02bf78f975e764efebec8c4d5:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA0ZDFmMWIyYjAxNWNhMTA2NDc3ODMyOTVjNTM2MzA1ZWQ2YzU2YWQxYTJkYjJhMWUxZjRiYzJhNTBjOWRjMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_adf86050d88b49a88f5021cbbac1edd7",
+      "statement": "A refinement turn sends the source first, then the current merged program as the last assistant message (fenced as openui-lang), then the instruction as the last user message, so the model can emit only the changed statements.",
+      "evidence": [
+        {
+          "resource": "repo://lib/generate.ts#L96-L119",
+          "version": "repo-lines-v1:sha256:2716b4a849eaafc04e19d320a34670ac5870b82a6f3cec1cba47079d3caa628d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiMzAxZDkxZTg1YTRlODEyYjk5N2FhZWQ3ZmQ3N2Q1Mjg0M2U5OTdlMDRjYTk3NTU5NGY5OGVhZTI3YzFlNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMDNlNmZhZWFkYWFkMzQxN2Q5ZTY1M2JlMWZkOWQ1N2JjZWI4ZGViN2QzMGFiMDkyMDQ4ZmMxMGU2OGE0OTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyMDQwZTA5NWE5NGUyYWRhNzRlNDIxZjM3MTg3NTFhOTFhODEwYmZkNjZmNDhmNGU5MzljN2I3NDgwZWI2NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5MDZmOGZhZTUxNzk4NTRlNmQzN2Y4NTM5ZjBkMmY0OWM1NWJlNDQ1OTc0YzUxODFjZmQ2NzNiNGQzNDUwY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_27488064fe854f39a8f54f15500a97f9",
+      "statement": "The refinement patch is merged into the existing program by the app-side wrapper `applyPatch`, which delegates to the OpenUI runtime's `mergeStatements` and special-cases the two empty cases: with no previous program the patch is the program, with an empty patch the program is kept.",
+      "evidence": [
+        {
+          "resource": "repo://lib/generate.ts#L55-L62",
+          "version": "repo-lines-v1:sha256:b71e12dcd7d4242d6df038b9419d5796c833efe97aa0333e9cf3b3ffc6aa19cc:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmE0OGI0NjVmODdhZGNjNWNhM2NjNDQ2YThlYWEwNjVjZDQzMTU2YmE3MWYzMzNlYWIwMTVkMWM2OWNjODc3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODNjYzg0M2ZiMTFhNjhmMjcxZTliZWMxOGY1ZTNhN2NhNjg5N2QwMTA0NzFhNWE4YjExZDIwOGMxZDE3MzkwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDMxNGFkNDcxZWU2ZDM5Mjk0ZTQ2MzNkNjlhNmM3YjAzNmJlZDBiNzNjZjJjMTAwMmMyMWUwM2VlMjUxM2M4NyJ9"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L1-L3",
+          "version": "repo-lines-v1:sha256:ae8f469a0ddb4d6cf039352286f24ff3211df85f33bf1a55981cc1c43d2382b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZlZDY3YjEwM2M5NTRjZDQ2N2I0ODU5YWU5MmNjNTRhNjhmMzYxMjdhMzc0YzIwN2FhMGQxMTc4M2NlYjBkMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGY5MDcyNTIzNWYzYzU3ZjhlMWQ3MzZjNWNlYTg4MmI0NGYwMGFmM2FlNWE3NGNkZDY3ODM4OGZkMTE1NjdkNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODk4Y2NjMDVlNWQyNTRkZjVmMDM3YjRhMDcwZDc5OGU2MTcwMDNlZWRhOGQ4ZTcxY2U5YzlkYjgxOTI5ODhlNSJ9"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L290-L298",
+          "version": "repo-lines-v1:sha256:3d31e1d17421602594debd0d3ff10e00c18641d3fb9b82274498e6ba32c416ca:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzU1MjdjNjc3ZjVhYjg4MDE3M2U2OGI5MjZlMTdjYmVhNTRlZDkxMmY2YTQwYzYyN2ZkNDE0YjYwN2U4ZDk3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTc2MzA3ODhiZGUyMDE2ODdkODNjNDI4ZGU1NWZhYmRjNzY0YTI1NjZjMGU0ZTg4YjY1ZTkzYjU0NGNmZGU5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f20eb12e7d4a4f0e9703136c1a7cd75a",
+      "statement": "The merged program is validated by a combined parser check and Mermaid rendering of every Diagram, and at most one repair turn is sent back to the model; the repaired program is kept only when it produces no more errors than the failed attempt, and any remaining errors become a user-visible warning.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L50-L53",
+          "version": "repo-lines-v1:sha256:b498cfa55703b9542cb736efa50ff1ede119c24c7b3abc2eb4ca2c8b0a918502:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IzOWQ0YTVlN2Q1YmJjYmU3NmEwZjdhMWJmMDYxYmMwMTdkNzAzMjlkNzJhYTY1MzBjOGEyOTE5NTA2ZTQwYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDYyOTIyMTQyYjFmNWYxMDM4ZDNiM2EzNGNkY2NiZjI1NTA2YjQwMjIxZGU1NTEyMTkwYjdhM2E3NmU5YTllMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjI4NzAyM2U4ZjRlMmJmZTM3OTYwMzZkYjliN2UxODBjOWI0YjZlZWFhYTY4ZWFkZTU1YzNlYTk3MzM1NjY2YiJ9"
+        },
+        {
+          "resource": "repo://lib/generate.ts#L39-L93",
+          "version": "repo-lines-v1:sha256:9f4e5313bb4a6754dfd72b82e7165429167733f583b613059439d75165310c54:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5Mjk1ZDIxOTc2MGRlZDQ4M2Y3MTViNmJlNzJmMDkyN2RlOGRkYjhlNDA3NDk3NWZkMTI2Y2Y0MWNmZGRhOWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2OGYyYTQ3OGQ3YjBiNGQ3NmU3YzQ4ZDQzZTAxZjI4ZTQyOTk1MjFlNjE0MjA3NTg1OGM4YTllMWIxMzViM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1ZGM5YTkxMzM3NzhjZWFiMTJjMzZmZGEzMDE5NTQ3YWJkOTQ1NmM5ZTI5YWI2ZGUzYmYyNDNlYThhYWU1ZGMifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L249-L292",
+          "version": "repo-lines-v1:sha256:45ba59be6b4786e23db94348a58573f231aecec583688733c9f88033e5644170:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlM2QyMzdhZTk1ZjllZWQ3MTQyYjhlYTU4YTA2MzNiMDA1Y2YzYmIzYmU1MTAyYjUxZmI2ZjkyMmJhNDlkYjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyMTM3MDIwODVkZWJhMmQyNWY0ZTNkMWQxZDkyNDhlOWI5OTUxYzU2YjY3YzBlOGFiODFkYmI2ODc4NzFmNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3ZjdjOTU2NWQ0ZDVhYjIxYzYzNTJmMDY5YWRmNzc3YTUxODBlMzAxZTIwM2QyZGIxNmEwY2VlYTM1ZmM2OTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7868a5b7da54d6b82e169270c662f0a",
+      "statement": "After a refinement the merged program is stored together with the previous formState and the new prose note, so the interactive state of the summary survives the change even though the program itself was replaced by the merge result.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L137-L166",
+          "version": "repo-lines-v1:sha256:eee111f480c9db08e347569c052537ebcca6a74c52587d890a7abd11079d8c83:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNDYyNTAwNjM5ZTg1YjJiMmM4NTgzZTMzMjQ3YmNmNzEyYzYyZmY2ODU1MTE5MDc1YzVkYzk0MTEzYTE3MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiODNmNjc3NTZmYzM4MGEwODM3M2NiNTU0ZGE0YWJkMjAxNDBhMTNiMTgxMjBiNzgzZDdlMDBiOTFlNTViODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhODM3YWUzYTc4ZThkZDhlZWU0M2Q5ZWYwN2IxZjhlZmJjN2MyNmQ1MWM4ZGMxNmExODM5MTQ3OTQ5ZTNlOTMifQ"
+        },
+        {
+          "resource": "repo://lib/history.ts#L29-L47",
+          "version": "repo-lines-v1:sha256:118f348be71bf679b185b889ae7d06dfc9d99a88232e74e64445f0efad38a186:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjY2ZjZmIwMjAxM2QxZjJjYWMwZWJjMDU3NzhiYmMwNWFkNTQ5MGZmMjZjZWIzN2MwMzVjODEyOTMwODYzMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNTUzNWIzYzA4NzFlMDljY2VjOGY2NjRlMDI4OGMyYzhlNTE0NGQ3OTU2ZDZlNTk3YzMxNTQ4ZDAzZDhlOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3631045dc967439285b5ba7099c6586a",
+      "statement": "Standing styles and refine chips are different mechanisms: the standing styles (`actionItems`, `timeline`, `simpler`) are appended to the summary prompt as rules via `settings.styles.map((s) => STYLE_RULES[s])` so they apply to every new summary, whereas a chip is a one-off instruction sent for the currently open summary; `shorter` and `moreDetail` exist only as chips.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L15-L18",
+          "version": "repo-lines-v1:sha256:ba442ff44c86a9dbba6ba48e262e93a79eabdf780f4646d52df7c4fb89480ef4:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODUzMjM0ZGJkY2ZkYjVkNGEzZDQxY2VkZmUxMzkxZDk3YjlmMWYyMGRhYzllZWRmMTI5NWZlNTllNThjNmRmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzBmYjEwYTQwMmZhZjFiZWE3MTBiNzNmYmE4M2NmZWQ4YjdiNTFlMWVkMzc1ZTBiMzNjNDA3MGQ3ZDdlNTAwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjAxNTVlNzliNjliYWE5OTNkZjc5M2NiY2UyNWJlODZkMGY1YThmZWZmM2Y5NzdhY2M1ODE3YjdjMjc4NzM0MiJ9"
+        },
+        {
+          "resource": "repo://components/SettingsForm.tsx#L363-L390",
+          "version": "repo-lines-v1:sha256:9dc081c0d8ae9702db157c827e43b538e0559a53fbeca70a593f83f52d12bdc1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNmI2MDA0ODgzMWVkYWRhNTRlZDdkNzAzMjI1ZTBiNjJlOWQ5ZTgyODkzZWNiMWFkN2Y1Yjk1OTRhZTc5OWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzODI4NTg3MjQwMDc2Y2Q0NjEyYWU2MjJkNDNlYjJjZmNlMmFlMDRmMWYyNjMxMDc5OGI1OWY0MDQ4ZDc2NDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmZDA3OTAyODVkYWU0ODNhYTg3YmJhMGI4ZGNjZTE1MzFmN2Y1ZjMzYjRkYzk0N2I0MDUxNjIxMmYzNzk1OGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmNTlkNTA2NTI2ZGM0NDFhYWNjZTg3YWJhODM1OGEyZjg3OTZlYWI0YTY2NmYwZTg4NTliYmJkNmFiODgwNTEifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L133-L147",
+          "version": "repo-lines-v1:sha256:625f785869d7517ec63b4026e4ff72bbcf166a11b0f525c21f818bd6c2a36221:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlNzgwODA2NGVmNTA1ZWQ5ZjRiYjQwNzE3YTNlMGRhOGRkNzM2NTRkNjUyZmIyMzI5NDQwNDY4YTNlZDQ1ZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2MjNkYjJmODQ4MzlhYTIzMTU0Y2VjN2IyYjVhZTU1ZDI1Nzk0YzljNjg2MTc5OGZhYzBkNzg2ZDljZGFhM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzZWJkNzkyMmE1ZDQ2OTM2MjhmMzU5OGI3OTQ2NjhhMDY5ZDBkYzU1OTBhYjEzNGNhYTVjNDI5ZDIxYTdhMTMifQ"
+        },
+        {
+          "resource": "repo://lib/refine.ts#L9-L30",
+          "version": "repo-lines-v1:sha256:2d22c1d0df8c7e8bca9789b9d6f2cdbd636040d8191ec87e3ca7dd3e972264ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjZTRjYTVjNjEzNTRkMDIyNGJiYWIzY2NhYTc0OTJhNDZjYmRiMjQ4M2UzOWQ3NWRhNTdkOWNhMGE0ODUwNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4NjM0M2I4NDQwNGUyNjhlYzdmNDU2ZjU5YTgwZDRiNTY0NjNiMjNlYjM2NzMwN2M1MTNkZDkxYjQwNDVmZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_66d5f88be242403ba2d8431f6870ad2b",
+      "statement": "The Q&A prompt does not carry the standing styles or the length rules, so the style configuration influences summaries but not follow-up answers.",
+      "evidence": [
+        {
+          "resource": "repo://lib/openui.ts#L149-L170",
+          "version": "repo-lines-v1:sha256:2cd3b4a38ee18d3f8fede4563e15911c72a1b0975efb40a9803c5877ae4fc092:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3ODczYTMzNWY5MmY4ZDVhYTkyOGFkNWE3NGFkMDlmNDI5MDE5ZDhkOWIzYzIyNzI4NGI4OWJkMWE0YjYwMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3YTRmZmY1MTBiMGFhNTc4NDBiY2M3ZmEyNWRiYzEzMmY1OWUxY2YwNDllZTBhNmM1ZjQ1MjQ3ZjI3NjM1YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyODcwOGJiMDc4MjU2MzEzZmRjOTFjNzcyMjY4MzA0ZGYzNGNiZjFmNWE3ZWZjMGFhOGI3MTZhNjE5YmZhOGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_966e6a98c40041969252760b50408e55",
+      "statement": "A `continue_conversation` action event becomes the follow-up question: the question text is the event's human-friendly message, and when the event carries a `context` object it is appended to the question as a JSON blob under a `Context:` line rather than sent as a separate channel.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L61-L72",
+          "version": "repo-lines-v1:sha256:190f9139c9928f301f003fdf767bfb0bc9f232baa1bc75e9793ad52d131328d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkZWVmM2E0ZDdjYTc1YjI1MDRkMWI5MzI5ZWI2OTljMjcwYmFmNDJjNjAxZjc4ZTcxNTA1ZjVkNzdjY2U1MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5N2U0NzNiNTY3OTIyNDczYzUzYThkZTZkZDMwZWNiNGZmZWEzMGU2OGQ0OGFlMGQ3Yzg1MDIzYjNjNTczY2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzZjhkOWU5YzJiMzMzMzlmZWU2MTdiYTFjMmQxN2U5NTIwOGVjODYxZDMyZWY1ZmVjYjNhNWE5MjQ2NWIzMWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8026fd49809746ecbdb2007ffa20ab94",
+      "statement": "The summary prompt requires the model to end the summary with a FollowUpBlock of 2-3 short questions, and the worked examples model it with FollowUpItem entries, which is how a click inside the generated UI reaches the assistant.",
+      "evidence": [
+        {
+          "resource": "repo://lib/chart-example.ts#L6-L20",
+          "version": "repo-lines-v1:sha256:b36765cd5e53954a621ca56be7c0382416af7bc7dbd1769863c897f5ad4ad53f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3ODNlNmZiNGVhMzk2ZjhmYmRhMzc4YjhhMTAwMjBhMzE3MGYzMDBiNzY1MDU5YmYyMWZlZjJkYWJjYTU0ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4N2Q2NDYyOGJiNTY1ODY1Y2FkOTdmNmI3NWM5ODY1ZmEyMmI3NjVlM2M1NWUwZjQzZGViYTYwMDA2NWJkYjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3NmI0MWMzYzRmNzZhMmZkZWMxMTU0NDNhM2IwMDI4ODY0M2Y2MWQ1NGYyZTQyMDdmNjhiMTUxY2M2OGRkOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L138-L145",
+          "version": "repo-lines-v1:sha256:269e0312cb7858334e6a0b396e53ecf48cd9eb713d4865accbe3dc18608e33cc:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmEwNzEwOTI5ZTU0NTI3NDYxZGYzYTIwYWRhMDQ2NTU5MDY5N2FhNTliMTI1MWE5ZDA2NjA5NWQ4YzdkYWQ3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWYwZTg2NWQ0YTBlZTg5NWQyOTU3ZjljYzNiNWViOTg1OGFlOTkxNzdhNmE3NmJlMTQ1YzU3Nzc3ZmE5OGZiYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTRkZWQyNjgzNWFiOTQwMTNjZDc3OTFhMTEzMjg0Y2U4MWEzNDRiNDY4YTk3NDI4ODVhNjRjMzI2NWEwMjkwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdhNGZmZjUxMGIwYWE1Nzg0MGJjYzdmYTI1ZGJjMTMyZjU5ZTFjZjA0OWVlMGE2YzVmNDUyNDdmMjc2MzVhMCJ9"
+        },
+        {
+          "resource": "repo://lib/summary-example.ts#L6-L25",
+          "version": "repo-lines-v1:sha256:b08300133a84ac719cc8e8ab54dd0bce1911d78ebc68efa38a188caaa7243d31:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZDA2MmI5ODgzOTg1ZGQwZTRkZGY1OTQ1M2I2MTgwNmI2YjM4MDE1ZDMzZTU2ZjM1ZWVkYTJkNDMxMzVjNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkN2I0NTFkMzk3ZjBkMTdlNjc0ZGM2YTQ0NzE1OGUzYjk5NjJlMGU1MzBlZTQzZjBmZTliM2UyYzg3ZjUwMjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzNzdjNGRmMzEyYTZjNDA5YmFlYzEzYmVjMmQwMmJhZmIxNWYxYjlkNzZlYTZmNTA2OTUwNjg5NzEwZmNlOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_16785ab894ef4d818ea837551981303c",
+      "statement": "A Q&A turn rebuilds the whole conversation from scratch: the source message, then the current summary program as an assistant message, then each stored turn as a user question followed by an assistant message whose content is `readStored(turn.answer).content`, and finally the new question.",
+      "evidence": [
+        {
+          "resource": "repo://lib/generate.ts#L121-L140",
+          "version": "repo-lines-v1:sha256:f25ebfc678e6580be97f2b6b5e56d1a629989b2f964fc2909a27575cf3d4c5b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkZDVjODZjNDllZjU2NTI2YWRiYmQyNDUwNzFiODFjMWE1NjhkN2NiZDkxYjIzYWYwOWIyNzU2MjA0YjdmYzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyZmVjYjdiNmViYjNiZmY3MGMwMDIyYTQ5ZWJlMWRhYmI4ZDE0ZmM2Yjg3YmI1YTdiN2NkYzVlODA0ZTlhODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_80f41a99264a49eb9b330f3f761a7f0c",
+      "statement": "Only the content of a stored Message Protocol message is ever sent back to the model: the Q&A history uses `readStored(turn.answer).content`, so the protocol markers, the stored formState and the app attribute never reach the prompt; the stored message is only handed to the Renderer as-is for rendering.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L272-L345",
+          "version": "repo-lines-v1:sha256:cf211ed21fc184918534dd7dd7a22b1e3220022f16c0692aa95330732ebf12ca:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwOGNkOWUwNjliNzVjM2M3MjY2YWZmMmRmNmYzZDExYjdjYjc0ZmYyOGIyNjVlNWFmNjQzNzIyNDIwNTQyZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NGZjMGMxNzNkMWVjM2ZjNTAxZDdkZmE5Mjg1NTAxYzUyN2NmYjQ3MTI1ODNkYTNjYzM2MTgwNTY2YjRiZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://lib/generate.ts#L126-L132",
+          "version": "repo-lines-v1:sha256:92cb79b34386884bcd05f6aa27e39e51c689a3e644f5adbd956d57b36ff396ed:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNhMzczMDUyM2QxNmY0NmRkZDlmMzQ4ZjRiODBkZjIyOGMwMWM1NGM0NGFmNmZkYzA3ZTMzY2FiYTM3MGU5ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGM5MmNlZmY3N2RjNjMzNmExMmExZGFlNmRhOTZhM2NjYjQ4YzBhY2MzNWY4OWFmODNjYjE2YzgwYmU2MmQ1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmJiMjc3M2ZmZjdkNzQ1ZTYxNjczN2MyODA1ZDRlNzhhYjFiMDc1MzVmZjFlZWNjNzYyZGE0N2NlZTQyNzM4OCJ9"
+        },
+        {
+          "resource": "repo://lib/history.ts#L1-L9",
+          "version": "repo-lines-v1:sha256:32260a79d5077143d76226600273bbaa56195b30dd2a6bd93d791e5a29f514c4:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWU1NDc1YTMxNGU0YzYwOWY3NzFhOWU1NmQ2YTIzOTkxYmYwMjA1OWYwN2NkZDU4OTVmNTJiODZlYzc5ZTk1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTIyMTU0ZWEzOTNkYmNjYmQ0MDM2OTlmNGVlZTQxZDhhN2MyNDZkMzZhMjk4NTA1NmJmOTk4Yjg5ZjA0MDRiMyJ9"
+        },
+        {
+          "resource": "repo://lib/history.ts#L37-L47",
+          "version": "repo-lines-v1:sha256:39f11668916e2a282fa6794e28c06d2fad52302a5819f3d2e4ec9c2115b9bc71:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlMmQzMjgyZjEwZmIwNTgzZDU4NzhkM2RkZDAxNDg4ZTdjMjcyY2E5MWM4ZDgzMDI4OTc3MjVkODJmOGM0MjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjODUxMmE0MzE2MzYxZGVkM2RkYmZjNTJiMGY4ZGE3MDNkOTEwYjBmODQ5Yjg0YzI0YzY0OTgyNWJiYmRiMDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNTUzNWIzYzA4NzFlMDljY2VjOGY2NjRlMDI4OGMyYzhlNTE0NGQ3OTU2ZDZlNTk3YzMxNTQ4ZDAzZDhlOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9b8642335f3c4591865392109a6d29f5",
+      "statement": "Follow-up answers run in non-edit mode and are never merged into the summary program: `generateAnswer` passes an empty previous program with `editMode: false`, and the answer is stored as its own `QaTurn` whose answer is a stored message holding the model's raw text.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L183-L215",
+          "version": "repo-lines-v1:sha256:7425670cdb3545e49ab66e8596d819cca2b40a2f6eac3585f2f8f1f3a6c694ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNGJjYzJhOGQ3Zjg0YjI0ZmMxZTRhZDZkNDQ0YzE5NTMxMzdiZDc3YzAwMzQ3MjVmNTVmMzI5MmU1Y2I2MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkM2RjZjRjMzUxMTA4MjhjODE0NGZlNzU5M2EyZDAzNTIzOGVlYTU2ZGZhM2JmZTMzZjZlNzI4MzIwMWEzNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1N2IxMTJmNzg1OTgxYjFlMjYxNTE1ZjY3MWY4NTllZmY3Mzg1YWYwZmM3OGRlOWZiOWFmNjY4MzFiZDI2YTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlYmQ1ZjE3MTVjN2Y2NmFjNWY3MzQzMjEwMTE5NjZmNTNjZjdhNzE5M2I2MThhM2E3NDUzOTdlNTU5YmRiNDgifQ"
+        },
+        {
+          "resource": "repo://lib/generate.ts#L121-L140",
+          "version": "repo-lines-v1:sha256:f25ebfc678e6580be97f2b6b5e56d1a629989b2f964fc2909a27575cf3d4c5b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkZDVjODZjNDllZjU2NTI2YWRiYmQyNDUwNzFiODFjMWE1NjhkN2NiZDkxYjIzYWYwOWIyNzU2MjA0YjdmYzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyZmVjYjdiNmViYjNiZmY3MGMwMDIyYTQ5ZWJlMWRhYmI4ZDE0ZmM2Yjg3YmI1YTdiN2NkYzVlODA0ZTlhODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_16727d07423742ea8d801097400b1a85",
+      "statement": "A stored answer is rendered back by splitting it with `splitInline`: prose outside the fence becomes Markdown and the fenced program is handed to the OpenUI Renderer; each answer keeps its own renderer state, written back through `updateAnswerState` and persisted on a shared 500 ms debounce.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L272-L345",
+          "version": "repo-lines-v1:sha256:cf211ed21fc184918534dd7dd7a22b1e3220022f16c0692aa95330732ebf12ca:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwOGNkOWUwNjliNzVjM2M3MjY2YWZmMmRmNmYzZDExYjdjYjc0ZmYyOGIyNjVlNWFmNjQzNzIyNDIwNTQyZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NGZjMGMxNzNkMWVjM2ZjNTAxZDdkZmE5Mjg1NTAxYzUyN2NmYjQ3MTI1ODNkYTNjYzM2MTgwNTY2YjRiZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L231-L243",
+          "version": "repo-lines-v1:sha256:1f359867cc6a33a520e35173fb153abfb1a19d17a8f48d23ab58d2078db3942b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZmQyNmQxNWU0NzIyYzQ1N2RlNjBmZDc1NWU5ZWU0ZWViNDhmNTMwNjkxZmRhYzk0ZmE2M2M2MmMxNTg4ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4MDBjYWQ1Y2ZkZmQ2MTk1ZTlkMmRhMWVkNzkxODIwOGVlZmVjMzY2YTQ2YWRhYTQ0NmRhZTE3NjdjYzdkZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzMjcyOWQwZmVkNmRkYTFiNDFiYTFkOGZlMDRhZTcyNWEwZDQ0YWY5OTc3YTJiMTZmMjQ3ZTFmN2M2NDQwODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_577414466bdd4aa185c0efc684b49e15",
+      "statement": "Refinement and Q&A are guarded by the same preconditions as the initial summary: the provider configuration is validated before the call, a new turn aborts the in-flight one, and a refinement on a session without a program falls back to regenerating the whole summary instead of running an edit-mode turn.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L137-L146",
+          "version": "repo-lines-v1:sha256:b3fb4d9250837e6d7106f736353ae25baf4f097570c5d04509000d9bf6c7c47d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNDYyNTAwNjM5ZTg1YjJiMmM4NTgzZTMzMjQ3YmNmNzEyYzYyZmY2ODU1MTE5MDc1YzVkYzk0MTEzYTE3MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyYjMzZWVlYTQ0YTFmZDY0NTlhMzI3MGU1ZjE0YTg4ZjRlZDFiNGUyOTBkNTk0ZDIwNjU3MTY1OTIxOTg2MzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiODNmNjc3NTZmYzM4MGEwODM3M2NiNTU0ZGE0YWJkMjAxNDBhMTNiMTgxMjBiNzgzZDdlMDBiOTFlNTViODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZjAxNDFmN2RhNjJhNDJlYTVjYzY0YmE3NmM0YmYwOWJhY2Y2Yzk1YTdhM2RmMzQ4YjM0ZjU2NjU0ODQ0NWMifQ"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L183-L192",
+          "version": "repo-lines-v1:sha256:837acd3b1894e77dbbb47cb456a79ee39f2d80739dedc09ef8dfd5d2e0eef6b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNGJjYzJhOGQ3Zjg0YjI0ZmMxZTRhZDZkNDQ0YzE5NTMxMzdiZDc3YzAwMzQ3MjVmNTVmMzI5MmU1Y2I2MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YTdlNjUwNDc0YWVmNGU5Zjg1MDI0MGY5MzgzMzkwNzNiMWRjOTQxNTg2OTI0NmM5YWM5NmQ3ODdkZDY0ZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1N2IxMTJmNzg1OTgxYjFlMjYxNTE1ZjY3MWY4NTllZmY3Mzg1YWYwZmM3OGRlOWZiOWFmNjY4MzFiZDI2YTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzYWJhOTZhNzM5ODRkMjc1MWY4YTY1ZTNjYjFhOTNhYWI0MWUyOTg2ZmI2NjNmZjAwMWExMDg2ZTk5Y2M2ZmMifQ"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L31-L48",
+          "version": "repo-lines-v1:sha256:063ba7e20eaa0cb9fcac7f8cff397886c0b7351b36688d3cc58aa25864e7e4a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjMWRmYTM4OWEwMzNmMzlmZjgxZjkzMTFhOGRmMjM5YTgwYWIwYmI2MTVkNWE0Mzk3NGRjYmJiNTg3NzAyNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiYmFiMmNlMmZkNjFjNDYwNGQ1NGJkMWMxOWE1ZjZjMGNmN2E2ZTg0NTA3Y2E1NWM0ZGY1MmEyYzJlZGIyY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0YWYxMWNiNWMxOWI3MWFlNTc4MGRjNjgxYWE2YjU0MTg5ZTQ5NDg1ZjE2NzRjNjM4YThlZTFkMTUzZTA0NWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwYjI1NTQ1ODRhMjI4MjI4Y2Q0NTQ1ZWIxYmI0ODA2NDUxMGVlN2FkZDVlZjdiYTRiODMzZjg1MzE1NTBjOGIifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L170-L180",
+          "version": "repo-lines-v1:sha256:e229d68eff71be492ac450361d118bb42341f502e59973f4472490968947a44d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjZGY2OWY4N2E2YTQ0MjlhNmZhMWNhYmM3ODQ5NDNjZWEwMGExODg0YWIxNDRlNzNkNjk3MWI2OTM5Y2U2ZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5ZDFkZDhmMzk4ZmE0MGUzMzNiNjYzYzVkNmJiZGQ2MGUwMmY2YjU2OWRjODQyZDk5MDlkM2Y1NjQ4ZWI2NDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmZGNiYjdiOTUzNDY5ZDQyMjc2ZjFkZmFkMjRmMGRlMjA1N2VhNTNjNDM3ODI1NDlhYjdjZmQ5YTRlMDQxYjAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-07T09:34:41.642Z"
+  }
+}

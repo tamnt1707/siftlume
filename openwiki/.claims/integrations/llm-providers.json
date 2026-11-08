@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f39c201ac486806839fd78d8aa2dac01d039e4def02b1cab6291bde19ed0861c",
+  "claims": [
+    {
+      "id": "claim_c7761118763c45efb532a390f975ca08",
+      "statement": "The provider catalogue `PROVIDERS` maps twelve provider ids to presets that carry the API flavour, default base URL, suggested model, whether a key is required, and a `local` flag; `custom` is the only preset with an empty default base URL.",
+      "evidence": [
+        {
+          "resource": "repo://lib/settings.ts#L14-L137",
+          "version": "repo-lines-v1:sha256:bcaaa4f0c4fea49a93f38a559481a262c6bc8f515e02cccfd4596ff377b8bb3a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhYTFkMWE2MzM5MDIyOWM3OTgzNDdlODNhMDQwNTQ0MWM5NDAwMDM1Mjg0YWQxNjhjMWJmNmNkZjFkNzBhMzcwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3ZTYxZmUwZTMzZDlhNzA1MzRlYjg3YzFjMWMxYmM3MmFjNTY5YmFlYjk2NGI0ZmI2MjVjZGE5NmM0NzYzMjFkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmNjM0ZmI0Y2IyNWUzMDUwMjNmZjI1MTMzNDFjZGIzZDE4Yjc5MmJjZjYyOGZiZjA2NjA1MzQ0ZmMzMzI5NmFlIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_c3c9d77769e94de3a4c31b5d54c0f059",
+      "statement": "Provider calls are dispatched by four API flavours: `openai` uses the OpenAI Responses API, `anthropic` the Messages API, `google` the Gemini API, and `compatible` any OpenAI-compatible Chat Completions endpoint.",
+      "evidence": [
+        {
+          "resource": "repo://lib/llm.ts#L10-L32",
+          "version": "repo-lines-v1:sha256:bf2637d14a782e69347a29a0c658455265fd041ee4a997dd82cac9ca6f10edcc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhMjBlZmIxMmEwZjZhNGVjMmI5YmRlYjhmNTg1NzNlMGQ0YmQ2ODA3YzY0ZjdiYjI1MmNjZWQzYjMwNTQ1N2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExMjE1Y2QyOGZlMTVkYjM2YzU0YTQ4YzMxYzBhMzQ2MWVlYjIxNzFhNzFhOTczOGZkNmU5ZGJlMGIzYjc2MzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiM2NlOGUxNjJlZDkyYWQ0M2Q3YzY4MjhjYjUwYzg1Nzg5ZTQyYjM3NGU3NmM3NDRhNDIwYzFkYzY1ZjJkODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNDNkMzYxMWIyN2Y2ZmUyNGE4ZjliZTc1ZTNmODhkMjVlNjc4OGQ1OWNhM2VkMzE5NDI2N2JjNTcxMjZmMTAifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L6-L12",
+          "version": "repo-lines-v1:sha256:52c5ff8a2c9d542638377677525867e23447b887cd31ec7c660ced5b31f0f37f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI1ODExYmFiOWI3MmI3MDJjZTljNTM2NGI0ZGYyZmVmY2QzN2RmN2U4OTc5NmVhMDI1MmRhMWQ0NGNkM2M4NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzFhMjEzNDZmMWYwM2M1Mjk0ZDdlMTc3ZGVmMzA2MmRjMmUzMzY5ZThhYjkxOTM3ZjUwNzFhZDMzNzg3MjdiZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9d00f43922fb4e2aa2cf7d9c1364c2e0",
+      "statement": "`createModel` builds the AI SDK provider per flavour and, for the `compatible` flavour, calls `.chat(p.model)` because OpenAI-compatible servers implement Chat Completions rather than the Responses API.",
+      "evidence": [
+        {
+          "resource": "repo://lib/llm.ts#L10-L32",
+          "version": "repo-lines-v1:sha256:bf2637d14a782e69347a29a0c658455265fd041ee4a997dd82cac9ca6f10edcc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhMjBlZmIxMmEwZjZhNGVjMmI5YmRlYjhmNTg1NzNlMGQ0YmQ2ODA3YzY0ZjdiYjI1MmNjZWQzYjMwNTQ1N2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExMjE1Y2QyOGZlMTVkYjM2YzU0YTQ4YzMxYzBhMzQ2MWVlYjIxNzFhNzFhOTczOGZkNmU5ZGJlMGIzYjc2MzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiM2NlOGUxNjJlZDkyYWQ0M2Q3YzY4MjhjYjUwYzg1Nzg5ZTQyYjM3NGU3NmM3NDRhNDIwYzFkYzY1ZjJkODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNDNkMzYxMWIyN2Y2ZmUyNGE4ZjliZTc1ZTNmODhkMjVlNjc4OGQ1OWNhM2VkMzE5NDI2N2JjNTcxMjZmMTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d1cb3f8ce094f18ab87e73267ed46dc",
+      "statement": "Anthropic requests carry the `anthropic-dangerous-direct-browser-access: true` header, which Anthropic requires when the API is called from a browser context.",
+      "evidence": [
+        {
+          "resource": "repo://lib/llm.ts#L14-L21",
+          "version": "repo-lines-v1:sha256:f059d0e995eadc2030e4d18779be0d722ff83156486ece788dccd50dbb3cf288:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzRhODM0NGYzNmQyZDZmNmRjZTgzYmM1ZTE3NzkyYjJjZmMzMmFjMWFjZmJjOTE0NmFmOTA0ZTgwOWRmODU3OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjlhM2E2ZGQyYTg3NGYwYTE5NGU0YjQyNmI4YTMyYTI2ZWVlNWQ0NzVjNDhjOWEwOWIzODZmMjIyZGFmODY2ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTA5ZTQzZmJlYjhkMTZhMzMzNzYyOTgzOWFmOTljNzM2NzdiNzNkNDEyODVkNmE5ODJmMjc4MDYyMGY2MmQzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEwMmU0NTgzNjk4MjEzNmM5MDJiYmViMTk4ZTcwMWRiODk3ZmI2YWZmNWU4MGVkNGU1YjYyZWIxODliNjdmYiJ9"
+        },
+        {
+          "resource": "repo://lib/models.ts#L28-L34",
+          "version": "repo-lines-v1:sha256:d5711946acedb37cc471981b033fb45568453ec6a268bddaad4ff1be613e8607:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjJkMTFjYWY0M2U5N2VmMzY5ZTZiZWVkMWEyNjhiZDA1ODM4ZjI5YjlkZDI1NGJmNjliYTY0ODg0MTQ3MjM0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzcwOGRkOTg5YmY2MjYwNDk3OGVjMjUyZTIwYmNhZmQxODBkZjczZGZmNDM4ZjIxMzg4MmVkNjhkNWQyMmRlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGE4ODIxYzE3MTE4MDdlNmYxYjBiOWM1YTM0OGM2ZDQyNmY1M2MzMmNmZWJkNzE5NjRkOGRlZGMxYjdkMzMxYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a40339aab634dedb48668baf19c92fd",
+      "statement": "Credentials are stored per provider in `Settings.providers` while `Settings.provider` is only a pointer, so switching providers preserves every already-entered key and model.",
+      "evidence": [
+        {
+          "resource": "repo://lib/settings.ts#L143-L158",
+          "version": "repo-lines-v1:sha256:a201d62da28572706ea9355538bc6cd16e5bbd49035aee98a0a280b708701fa9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmN2VmOWIzZmY4MDc5M2YwODBlY2VmMmQ0YTZlYzJjZTM4Yzg2NzQxNDFkYzRhNzAxODNjMDhkZjQzMWFkNjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0ZTExODA4MWE0ZWQ5OWYwZmIxZDdmYjU0ZGZjYjEwZDQ5MDBiZGI2N2YyYWMwNjI1M2ZhNDIxMDg2MDQ0YmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2OWY1NWE3OWM3OGYwMDI3OGMxZWJhY2ZlMGYyMjYzZDJkNWY5ZmNmOTliYjNlMTE2Njc3MzFhYmVkODI3NWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmYmZlOWZlZDRiNDM0MjcyNGE1Njc2N2VmMTEwOTMwYmJiNWRkYmJjZDljZjkzN2I5NjFhMTFiMWJkOTU0YWEifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L189-L205",
+          "version": "repo-lines-v1:sha256:1f7cfba2984b28b29841cb9af1904282f9644245d6f38d0213e5f8b6b572c05e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5ODkyMGFkYzNhMjhmYmYyOWJiOGNmMjc3M2NiMmNjYzBiMmU4YjMyMzA1NjZmMzQ4YzZjNzY3ZjA0OGE1ODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2MGE3ZDYwNDRlZTBmYjdlZThmY2JhMzlhYzU0ZTg0NmQwNmIwZTY5OWFiZGM5NmQyZWU5NDdlOGVmMjBmZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhYTE4M2U3MjllMjc2ZDI4NjJhMDMyMmVhYzhjYmZiYmJkZjY2NmFhNmNhMTgxY2Y2MzUxZTQ5ZjY4ODdjMDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1839049662824bb79eb8f13caf7ddf0b",
+      "statement": "The whole settings object including API keys is persisted in `local:settings` (chrome.storage.local) and never in `sync:`, so keys are not synced through the browser account.",
+      "evidence": [
+        {
+          "resource": "repo://lib/settings.ts#L216-L220",
+          "version": "repo-lines-v1:sha256:5ad55589df1c9e52ce3d054236e4d81365bfc4782f1e80abe8fc8fe35c5e3f72:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmY0YzE2NTQ1NjlhZDEwYzhkZTM1MDk5NmY0YTRiNmZjZWRmZmFlN2I2MzVmMzMwOGVhYzRmMDRmYWJiMTI2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmQ2NTM1NWI2NGVlNzk1Y2JiNmQ2OWIwN2I4NmU4Nzg0YmVhZTkyNWE0ZWFmNGYzN2FjZmVlODhhNjhiOWU1NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c659f16c39404073894c76a2e231647a",
+      "statement": "`configProblem` returns, in order, a missing-base-URL message, a missing-API-key message for providers whose preset needs a key, and an empty-model message; keyless providers skip the key check.",
+      "evidence": [
+        {
+          "resource": "repo://lib/settings.ts#L207-L214",
+          "version": "repo-lines-v1:sha256:447ad86e5a3094b715b97f248a4d9b977ea3f1c2794b07e54c66c334207811f2:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNkODg2OWNiYTIyMmUwMDAzYjBmMjViYTE4MzEzYjU3NzdhNTUwOTFkN2ZmMTg2MDk5NmQ4ODc3NjU5MjQ4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2NhMzQwZjUzOWE1NThlNGQ2ODQwNDE0OTk1Njg5YTdiOWRmMTQ5NGI3OTkwYjNiODk5MTg2YTY3NGQ3MDAyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBlODZjYTFkNjg3ZmE1ZWMzNWFmMWE1YWVkZmExNzc1NDI1MmQzZDhmMzRhYzE4YjI1MzcyYjdkZmZjMTRjYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8a1d75018ca344cea23a0776eda6346b",
+      "statement": "`useSession` runs `configProblem(settingsRef.current)` before `start()`, `refine()`, `resummarize()` and `ask()`, and refuses to run when the configuration is incomplete.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L189-L200",
+          "version": "repo-lines-v1:sha256:02c74a0ad21892622582820c0fa951aa56dc46ad462bb81c0ea9a4a8a8351e25:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzNmM5ODJmYWQ2YjVjZGQzZTZhYjc4YzY3NmRkNzdhYjhhMmZjNWExZGY3NmU2MjZhMGFkNzcxY2NhNWNkM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViZmMwZmEzMDJhODg0YzVkMTE3ODAxMTQ3Y2U2YzFiMWQ0Zjc5YjVkYWJhNzU1ZGI5ZjFkOWRiYTY4ODQ1N2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkMTE2OGZiOThmNDU4ZTk1MTY4YjkzNGVkYjc5ODhiMmVjNjYzNjZjMTE1MTFiOWY0MDQ5ZGQ5NzBhZmYzODMifQ"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L48-L48",
+          "version": "repo-lines-v1:sha256:8bbab2ce2fd61c4604d54bd1c19a5f6c0cf7a6e84507ca55c4df52a2c2edb2cb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGJiYWIyY2UyZmQ2MWM0NjA0ZDU0YmQxYzE5YTVmNmMwY2Y3YTZlODQ1MDdjYTU1YzRkZjUyYTJjMmVkYjJjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGJiYWIyY2UyZmQ2MWM0NjA0ZDU0YmQxYzE5YTVmNmMwY2Y3YTZlODQ1MDdjYTU1YzRkZjUyYTJjMmVkYjJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmM5NDdhNDMwMjQyMTViYjBkMTY0MGIyMGIzNDI4YTdmZGU4ZTUxMzM0NmY0Y2I2NTEyNWM1NDg4MTc1NDliNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTBiMjU1NDU4NGEyMjgyMjhjZDQ1NDVlYjFiYjQ4MDY0NTEwZWU3YWRkNWVmN2JhNGI4MzNmODUzMTU1MGM4YiJ9"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L80-L90",
+          "version": "repo-lines-v1:sha256:e3faf4f91af54af662717160b14084964052cd6a05980267766eca49ed5248fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0YzI5NmVkOThhNDY2MjMzM2EyOGVmYzBiNDkwMzBlZTVjODRmMTdkMjE4MzY2NzVjMDU2NWZmOWJiNGM4OTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NjdjZDFlMzNiZmE1MzQ0NDg5MDQwYjYxYjRkMDE4ODAwYjI3Njk3NDFlMWQ5MzRhYjkzOTk3OWY5ZTExODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlMzQxOGRjNjZmMGRjMDYxMWQ2Nzc1NWMyZTMwNzY4NzcyMjM2MTgwNzBkMTRkZjUzYTU0NjQ1ODcxZmJlNjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_121e190a710b483e9bc413864144026d",
+      "statement": "`streamCompletion` is the single entry point to a provider: it installs the local Origin rule, streams via the AI SDK `streamText`, reports accumulated text through `onText` after every delta, and re-throws an error captured by `onError` after the stream loop ends.",
+      "evidence": [
+        {
+          "resource": "repo://lib/llm.ts#L42-L62",
+          "version": "repo-lines-v1:sha256:38e41f7465a040a8db1f45e20873f4a5d36a5ea0d9e723d4961827ee583df649:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyNDk1YzhjZTg3NjliN2NjNWJkZTcyYzVkYzdmMjVkNDBhOWNhZDk1NTViZGI5OWQ4ZTU1NjVmNGY1NTZhYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmMzY1Njk1MWY0ZWJjMDAzZmZiNTFmYzg1MGY2M2E5NDIxMTNhNGZmN2RlYjM1Y2NmOTk5MmEzMjI2YzVkY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmMWU2NDE5ZWM2MDY3M2I4NGU1ZjZkZjg3OWNjYzRhNzBjNzRkZDQ0ZDNmNGNiMDJjMDI2MGQxYjJjZGU5NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f53ae9379c14869880186990c850356",
+      "statement": "The repair turn in `lib/generate.ts` reuses `streamCompletion` but discards its streamed text, because the repair output is a patch while the UI keeps showing the first attempt.",
+      "evidence": [
+        {
+          "resource": "repo://lib/generate.ts#L44-L92",
+          "version": "repo-lines-v1:sha256:c2a86713c9dc4b6db4e615095a40edf3fb125bef3eda2a6212a6197226da0a00:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NmU0MTc3ZjA4YWVmNjYyOTQ1YzMyYTE5MjhjMDY1MDhiMThlZGVkZTAzZTQxODRmODRhNjg5MjgyYjc4OGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5YzZhZDZmMmFhMDk3NjczMTI3MmYyNDI1MmU4Nzk4OWFhYjU5YTE0NmVlN2NmMGE1YTFhMjc0ODJjZmI5MjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyMDQwZTA5NWE5NGUyYWRhNzRlNDIxZjM3MTg3NTFhOTFhODEwYmZkNjZmNDhmNGU5MzljN2I3NDgwZWI2NzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8d4e9e9ed7a34ff290f4929af0077306",
+      "statement": "`describeError` maps an AbortError to \"stopped\", 401 to a rejected key, 403 to access denied, 404 to not found, 429 to rate limited, and network-style messages to a connectivity hint, falling back to the raw error message.",
+      "evidence": [
+        {
+          "resource": "repo://lib/llm.ts#L64-L79",
+          "version": "repo-lines-v1:sha256:483279a78ddcd3f4284f4c0ca00ecd54a32b954a411e2ca25110f2dec3d9ce24:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MGZmZWMxMDU5ODk2ZWUwMTc4ZDhhMDRjNTc3NWJiMjZiNGRiYjA5YjYwYTZjZjQwNWQ4MjkwNzI5MTM0OTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4MmQxNzFhYWRhNjIzN2RhNjI1Y2NlMjE3MjY3NDM5MzJjNmMxZjM2OGM0OGJlZTllOThjZTYzNmRlZTY3ZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e349019123cd43b69df612913491b217",
+      "statement": "An HTTP 403 against a local provider produces a different message (\"the local server refused the request\") than a 403 against a hosted provider (\"access denied\"), because the local case is determined by the active provider's resolved base URL.",
+      "evidence": [
+        {
+          "resource": "repo://lib/llm.ts#L64-L79",
+          "version": "repo-lines-v1:sha256:483279a78ddcd3f4284f4c0ca00ecd54a32b954a411e2ca25110f2dec3d9ce24:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MGZmZWMxMDU5ODk2ZWUwMTc4ZDhhMDRjNTc3NWJiMjZiNGRiYjA5YjYwYTZjZjQwNWQ4MjkwNzI5MTM0OTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4MmQxNzFhYWRhNjIzN2RhNjI1Y2NlMjE3MjY3NDM5MzJjNmMxZjM2OGM0OGJlZTllOThjZTYzNmRlZTY3ZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://locales/en/errors.json#L11-L19",
+          "version": "repo-lines-v1:sha256:ec075316e071f10188f149f40d4ce3f4181ce69894b7e97e9cc364bc87b839ee:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA4MzE5NDI1MWQ1NjA0ZGZhMmNmYWJkMDk0OTlhZTUwOThhZDQ5M2VkYjk4YzczNDQ0OThlMGYzMzg3MmM0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ1MjAxN2Q1YmU2MzRhZjE1ZTJlMmYwYjEzMjk0ZjYwNmY4NTM4M2QwYzZhYjQ0NzQ0M2YyMzZhZGY5YWM5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWE2NGUwMjQxZDY5NzEwNGYwMDcwM2QwOTllN2QyM2NmZTMxNTUwNmExNjlkMWNjZjNhZmNjOGZkYzYxZjdkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGU2N2I2NWNkNDFhZDNmZTljNTgwZjFlMDVhODQ2ODllNTQ4ODQzZGQ2NDgxZjdlOGVlNzE2MjA0NzFlNGQyZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a503170ff234a70851279d5e390e5c1",
+      "statement": "Local servers such as Ollama reject requests whose `Origin` is `chrome-extension://…` with HTTP 403 unless `OLLAMA_ORIGINS` is set; Chrome omits `Origin` on simple GETs but always sends it on POST, so listing models can work while generation fails.",
+      "evidence": [
+        {
+          "resource": "repo://lib/local-origin.ts#L25-L32",
+          "version": "repo-lines-v1:sha256:dc47e9e5cb3cec416fbaff74580b44ad8ccc33acf3bc20f598047a2eb67ca45f:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTA1YWJlNWI0YzY4YjBkYmQyN2FmN2NlMTM0OTFlMDAwMjI2ZDI2NTFkMjQwNTg3ODgwNzZhZGRiY2NiYjQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTExMWY0NjQ5YmFiNmMzMmZhOThlMjNhZDE4MThhY2ZmNGUxNDg3NjFlM2RjMWQ1YTNhNTBiMTIzNTU0Nzk0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTYyMjVmYjE3Yzg1ZTNiZjQ5M2YyYTM4MWUwN2E1ODE1ZWE3MTViZDJiZThhZmIyMDBkZGQxOWVmYmUxNjU5ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGYwMWNmZGExNjk2YjIxM2YwZjhhOWNjMDNjNDNjNzg3YWRhYjdkOWJhNjI5NjI4OWM1NzhhNjY2YjE1ZjVjNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_43831f5528814751a15a427f475abed8",
+      "statement": "The Origin rewrite is a declarativeNetRequest session rule that sets the `origin` request header to the server's own origin, and it only matches requests initiated by this extension via `initiatorDomains: [browser.runtime.id]`, so web pages cannot use it to bypass the local server's origin protection.",
+      "evidence": [
+        {
+          "resource": "repo://lib/local-origin.ts#L34-L55",
+          "version": "repo-lines-v1:sha256:0b30d322d55bece1622443a30b37201a245ce0f199964663c2a040dd9236933b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzOTNhYWM2MDNmYjQ0NDhjNGJkMDJlNmRkMDY5N2ViNzg5NTllMzJmYzA0Y2EzYzA1NWEwNmYzY2UxNDAzNjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjYjMyNzYxNmIxZGQxMWMzYzllNDcxMThlMTVkZmVhZmFjODZjNTRlZjFjNDZkZDhjYzgxNzNhMjFmM2E3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxYjE5NTdjNzgzYmFjYzhkMjRhMDE0Yzg0YmE3MzZhMjMxZDRmYmFlNmFmZDM0YzgwNWNjMDQyYmFmYTQ4NDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc171ac86d9548bbb7983f39011196a8",
+      "statement": "The local-origin rule is session-scoped, uses a stable hash-derived rule id per origin that is removed before being re-added, and is applied at most once per origin per page lifetime; it is installed only for `localhost`, `127.0.0.1`, `0.0.0.0` and `[::1]`.",
+      "evidence": [
+        {
+          "resource": "repo://lib/local-origin.ts#L1-L22",
+          "version": "repo-lines-v1:sha256:d6cf5b18fba7bcb62bdba920596ea5061d92ba9956869edddac2aa984b577262:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4MjI3NTQ1Y2UxNDJlNzQ1Mzc3NTdmMjUyNDNjMmJkMmVjOGFhY2ZhMDYyMmYxYzA1MzUwODc4MGYwYWNiMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4MTBlODIyZGRiNzkyODg1NTBkNGU1NDg2ZjA2MGY0YWFlODM5NDAyNTVhYzI0ZDMxNmY5YTMzMTg4ZjM2OTgifQ"
+        },
+        {
+          "resource": "repo://lib/local-origin.ts#L34-L55",
+          "version": "repo-lines-v1:sha256:0b30d322d55bece1622443a30b37201a245ce0f199964663c2a040dd9236933b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzOTNhYWM2MDNmYjQ0NDhjNGJkMDJlNmRkMDY5N2ViNzg5NTllMzJmYzA0Y2EzYzA1NWEwNmYzY2UxNDAzNjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjYjMyNzYxNmIxZGQxMWMzYzllNDcxMThlMTVkZmVhZmFjODZjNTRlZjFjNDZkZDhjYzgxNzNhMjFmM2E3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxYjE5NTdjNzgzYmFjYzhkMjRhMDE0Yzg0YmE3MzZhMjMxZDRmYmFlNmFmZDM0YzgwNWNjMDQyYmFmYTQ4NDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_61e9028cb42c44b8acf83ea800f4c656",
+      "statement": "`allowLocalOrigin` is invoked both before a provider request in `streamCompletion` and before a model-list request in `fetchModels`.",
+      "evidence": [
+        {
+          "resource": "repo://lib/llm.ts#L43-L43",
+          "version": "repo-lines-v1:sha256:0babee34e6612df2ed2893ac3641743c34307b593cfca27f56f3ed131020f084:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJhYmVlMzRlNjYxMmRmMmVkMjg5M2FjMzY0MTc0M2MzNDMwN2I1OTNjZmNhMjdmNTZmM2VkMTMxMDIwZjA4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJhYmVlMzRlNjYxMmRmMmVkMjg5M2FjMzY0MTc0M2MzNDMwN2I1OTNjZmNhMjdmNTZmM2VkMTMxMDIwZjA4NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGQwNDIxODZiYTZkNGE2N2UwMGUzNGU0NmRmMTNlNzZhZjFjN2M3MzQ5YWZkYjA5OWY5MjdmZTA3ZDE2ODE4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWEzNTYxMWFlODIyYTVkNzliZTUyZjdjZTkzMzU0OTRjYmJiMDQ5ZmFiNjBkMzJlOTUzZDRhNTIzZmNiZTdiMCJ9"
+        },
+        {
+          "resource": "repo://lib/models.ts#L22-L24",
+          "version": "repo-lines-v1:sha256:87672d22cea715f57840a888d27329e878fb47a3f6fb956cf7c8dce4402c5d22:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY0OGRkNGY3NzUzN2JlNzIxZjk0YzkwYmIxMDk4YzA0MDVjMzBiMzQ4MjQxYmNkNDE0MWNlMjAzNzVhMWVjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODQxZTI0NDM1ODVmNDQ1NjJlMjQ3NzI1NTg3ZjJjMGZiMDVjMWM1Yzk0NTdiNjk3OWViZTM1ZDZkYTYwN2EyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjIzYmNiZmRjZjQ2NTk3YzNlYWZiZjNhOWEyNWMyNjkwZDQwODVjZTkzNjgwNTNhNjMyNjk4NGU2MjVmYzJlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzcwOGRkOTg5YmY2MjYwNDk3OGVjMjUyZTIwYmNhZmQxODBkZjczZGZmNDM4ZjIxMzg4MmVkNjhkNWQyMmRlOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba2373d0655f48a183c34ba40460f13d",
+      "statement": "`fetchModels` requests the model list with the auth header of the provider's flavour: `x-api-key` plus `anthropic-version` for Anthropic, `x-goog-api-key` for Gemini, and `Authorization: Bearer` only when a key exists for OpenAI and compatible endpoints.",
+      "evidence": [
+        {
+          "resource": "repo://lib/models.ts#L17-L58",
+          "version": "repo-lines-v1:sha256:b2d03e5c14d63fb9af4c4ddec87ce524d781393e1870a1790a5d9a38c5687bb9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1YTEwNWY3MTEyMDA0OWJkNjA2NGJiNmQ3Yzk4ZjNlZjUyODAzZDkyMzZiMzdjYWQxMDEwYzI5MTI4ZGMyZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5MGZmNmViYmE3YjBjYTVjZTc5YWQ4OThiMWNiYzUyYzFhZjc4M2RmZGRmZmNhZWFkZmVjNGQ3YWU4NGJhNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxYWUxYjg4YWQ0OTg4MDkxNzNiMTE0MDUzNWI2NGU0ZDQ2YTI0MGQzNjQ5NWNkNmMwYWU3YTU0ODQ2M2Y4MWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwMTc4ODg5MzUxMmJlN2ZlNmY3MTc2ZjhhZjY1NDI4OWQxY2QwNzA4ZmFkNWU4N2FhYWQzOTU5N2MyNDdhYTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_db388f67556a4ea7ae64be3ddb94bee7",
+      "statement": "The Gemini model list is filtered to models whose `supportedGenerationMethods` include `generateContent` and the `models/` prefix is stripped from the id; the OpenAI-compatible response is accepted as a bare array or as an object with `data` or `models`.",
+      "evidence": [
+        {
+          "resource": "repo://lib/models.ts#L36-L58",
+          "version": "repo-lines-v1:sha256:d919099e57334395d383ef9b6cf064d5c8f17fc2db58d5c2f041fe89af508923:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmMWMyNzA2MWQ1MTlkZTg3Y2I1MDRiYmI3OTU3ZjU0MGVkN2RiMjk0YTMzOGFjYjMxM2VkNTU4ZjJkMTdhYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5MGZmNmViYmE3YjBjYTVjZTc5YWQ4OThiMWNiYzUyYzFhZjc4M2RmZGRmZmNhZWFkZmVjNGQ3YWU4NGJhNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0ZDlkMjA5OTc1NmZlYjExNTJjMzUzMjNlNGNmNTVjYzJiOWUxNDIwZDc5MThiMGU4MTIwZTU1NjczZDYzZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwMTc4ODg5MzUxMmJlN2ZlNmY3MTc2ZjhhZjY1NDI4OWQxY2QwNzA4ZmFkNWU4N2FhYWQzOTU5N2MyNDdhYTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_60ce983c0f324983930d19efd9d9394e",
+      "statement": "Every fetched model list is filtered by a `NON_CHAT` regular expression that removes embedding, whisper, tts, audio, transcription, image, moderation, rerank, realtime, search, guard and vision-preview models.",
+      "evidence": [
+        {
+          "resource": "repo://lib/models.ts#L11-L13",
+          "version": "repo-lines-v1:sha256:fb8d2d7b6306bea092caf026f0ccf95c06a6fd347668797ed7fae3c3412b7896:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGUxZDMwZmM3ZDg5ZGNlNDExNGRhMTZlNzliNjA1MzVjOGI2MWVmZTllMmM4MWQ5ZTBhN2RlYzgzNjBjODFlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDg1ODk2MmEzNjMxMmRlZmJiNmM5YWQ2NDY1NDgzNTIwNDZkNTRmNDNiODYyOTM4YjQwMzhhYzAyMWRhZjY2ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjUyOGZhYmI0MDYxZDlhMWE1Y2YyNDVjOGI3YWVmYTdkZmE0Nzc2NTczMzliOGQxZjg2NTMzNjBlOGFiNjBiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzFhZTFiODhhZDQ5ODgwOTE3M2IxMTQwNTM1YjY0ZTRkNDZhMjQwZDM2NDk1Y2Q2YzBhZTdhNTQ4NDYzZjgxYiJ9"
+        },
+        {
+          "resource": "repo://lib/models.ts#L60-L62",
+          "version": "repo-lines-v1:sha256:37929e91e0f99c3e825de69b435fb6484d1b0a1df2f46561abf1a29f04188b88:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNlNDA2ZjBjOThjZmNiODQ2NzI2ZWQ0MGZhMjEzMjlkNTEwZWZiNjYxMzIzZjc0MGQ3NDVhZTM3MTI0NThlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDJjNGQ3YTk3OTcwMmM5ZDBiMjI5NDI4NjdhNmM0NDI3YTM0MTY2OGYxZTc4Y2E3NDE1MjQ2OGQ2ZWVkNWU3YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e08234e90b134366baefd8d70b36672c",
+      "statement": "Ollama lists models that cannot chat, so `keepOllamaChatModels` posts to the native `/api/show` endpoint (base URL with a trailing `/v1` removed) and keeps only models reporting the `completion` capability, treating an unknown capability or a failed request as \"keep\".",
+      "evidence": [
+        {
+          "resource": "repo://lib/models.ts#L64-L89",
+          "version": "repo-lines-v1:sha256:1c1a95bf9de2a132eaa4d0827c38bc563ce7490169c5c1ee352e78a8e8cca84a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0OTBkMDUxMTQxYzEwMmQ3ZDliNDcyMzEyY2QzYjhkMTU3OTM5ZDNhY2ViNzMwNjlmNTg3MDE0MTM2OWQ5YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1MjFjYmUzZTkzYTdhNmNkYTYwN2IxNmIwODA1MDNmYzFiZDY3Yjk1NGQ5NmYzM2Q0NzhkN2QxNGFiMDEzOGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5YmZjOGM3M2I4MTQwYjkyNjVlMjVjODYwZGViNGRiNTUzMWJkZTg3OTExYTc3MjEyMjZmMmJlMzliNDU5ZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxZjc3MWNmZjU0NjE2ZTIwMGNiYjIwYjdjMjMzNWZkZjI0OThiOTI2MTExODA0NmQ3NmQwODY0NGUxYWNiOGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0bdd6faec7384cf7b75379aba9b9baa5",
+      "statement": "Model-list failures are mapped to distinct messages: unreachable for a thrown fetch, key rejected for 401, forbidden for 403, and a generic HTTP message carrying the status code otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://lib/models.ts#L91-L103",
+          "version": "repo-lines-v1:sha256:a2f8a17f83c19f74243d6bda9340b060f512781c600c4a64614c8477bd91d5ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmMTkyM2EzNDU0ODAwMThmNTU1YmVlMzA3M2M5ODM1ZDc4N2UzYjhlZDJiOTZmNTdhZThkNTU2OTY0NDYxMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiMDhkYmY2NDhhNDhjOTk4MzAzM2Q3OGMxYjljYWRhNjI0ZTY1OTNhMmY5YzNhOWQ4YTYyZjc3YWMxNzFiZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmZWVkNzg3OGYxMWIyYjEzNzEzZjc5NzcyNDcxNDNjZGZmMGMwYTUwMTVmMjkzZDFlYjBlMjVkNDA4ZTgzM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4ZjJmNmY2NjE2YzQzMDFjZDM0M2Q2M2RhZTBiZGYwZGU3NjJkYTI3NzYwMDAwZjI5MDcxMDdiYTg3MzUxY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c1fae07fcd734474916988711880f616",
+      "statement": "`local:modelCache` stores the last model list per provider in chrome.storage.local; it is written after a successful fetch and read by the settings form and the model switcher, both of which watch the item for changes.",
+      "evidence": [
+        {
+          "resource": "repo://components/ModelSwitcher.tsx#L44-L50",
+          "version": "repo-lines-v1:sha256:db738a8c4586ade4d8664fde1f92da99c42137e90d3a152eca01b53eb215d561:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk2NmZiZmE4ODk5OGRhNzQ2NTZjNTAxOTQ5NTZjMjVmMDg0OTQ1NzY2MGMwMDlmZTYzZDFlOWZhOWRjOTMxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmZkYjYyODg0MjkxZWMyMzU5NmVlMjc3ZGI0YzBlNjQyYjY0OWIxYTViZDcxZTU1NzI1YmFmMmVlMGJlM2VlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGM4ODU2MDRhNTU2YzRiM2QzZGRlYzQyZTVmM2UzMGVkNWUwMWY5MWM0M2VjNWM0Y2YwNTgwZTM2MmZiYzBhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGNhYmQ4NThjZTQ4M2IyNGE1NDNkYzFhZDM3NGZjZGJhY2JjY2RiNDc3NjlkNWRlMjdjZjZlMzcxYmQzMzUwYSJ9"
+        },
+        {
+          "resource": "repo://components/SettingsForm.tsx#L76-L82",
+          "version": "repo-lines-v1:sha256:18712acbc6b1259e4f78e7be46998f53764b5422f6ecdc770dfd8b74fe7cd842:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTdlMjA5ZjY0NzgyOTM0NTUxYTkyNTY4MjYwNWEzMDQxNWNhYTUzOWU1YzdmZDZjMjY0Yjg5YWNkMzkwY2QxZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTlkOTM3NTgyNGExMjk5MTRhNTNiNWY3YzFhMDE3MTU1ZTM3OWZjM2YwMmM5NWZhYzBjMTI5MDUwYzdmYWNmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Q5NjczMmYwNTQ0NDIzYTMzMDEwMTU3OTZlY2RjMjk3NmM2ZjM4NzQzZjE1NTcyZDZiZTRmMWQ0NjQ3ZGNmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmEwZDZkYzRiN2E5NjI5ZjlhZGUwYjEzYTc1ZmJlZmNlOTEwZjMzMWI0NWNlY2YzNDI4MzkwOWVjNjE4ZGMyYiJ9"
+        },
+        {
+          "resource": "repo://lib/models.ts#L105-L109",
+          "version": "repo-lines-v1:sha256:a651f50629a2b40256b352a65c0ecc96ea3a8e9092296a2b959f4f09b2d33f61:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2E4YmQ5ZDgyZDlmYTM1ZmVmMDEzMmEzYzYyYzEyZDA2NGI3ZDlmZmY5NTIwOGM4Y2NmMmYyN2Y3ZWJjZTU5ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTEwMjAyNjY0YzZkODc3ZGY2OGRiMzQ3M2I4MzMxNzliZWY3YWY1YWVmN2MyNzMzYzZhMWQ3Y2ZkODJjZmJjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWRkZWJjYmM1MjMwMTE1NmNjNjI3MmUxMzY5ZGZlYzJkYTZmNjIyY2UzYWIxZDBjNDZmYThlOGMxMmI4MDU4YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_97b7b740dbaa465fae9a08ff4abe285e",
+      "statement": "A provider counts as connected when it has a saved API key, or — for keyless providers — when it has a chosen model or a non-empty cached model list; the active provider is always listed in the switcher even when not fully set up.",
+      "evidence": [
+        {
+          "resource": "repo://components/ModelSwitcher.tsx#L14-L18",
+          "version": "repo-lines-v1:sha256:a5973ebb34c8fe50c8865ff356ba1f90c55c9e830a9c68bdaa367d8ce9054de9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGVjMDg4MmY2ODNhMjM0MGI5NTE1OWEyMzhkNGVmZGNiNjUwY2ZmM2RkNGYwZGIzZjRiNTk0NzYyYjIzN2I4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGZhNGRhMDEzMWM2MTAxZGEwNWNmZTUyNjA1M2ViMjk5MGExZWMyODRmNWEyOGExYzczODEzYjg1NjEyZTIyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWEwNmU4MjIyOTg0NzU4YTg4NjFjNzJkYjEyOTZmNGYzYjM5YWJkZjhiZmI0OTc3MjNhYmI0NDM3NjJhZjc4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWFhZDI0OTU5YTg1YWJjM2FiNGJkODljMTlmZGU4NDc5YTVhYzlmZGI4ZjE1YjQ2MWU3MmQ0OTM4YTBmYjAxZiJ9"
+        },
+        {
+          "resource": "repo://lib/models.ts#L111-L116",
+          "version": "repo-lines-v1:sha256:78d0458428d54aa840d9a7f8b3e214ef30ff0cb75594dd987936cd4d8cc8b70d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmQ1NDM4OGYwZGRmOThmMmIxNzZmMDZiYzA2Y2VjMDc1ZjU5N2NkOTYzZWQ2YjViOTg1Y2IxYmMxYTM2NDA3ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd9ec790444243178ae207546519a571",
+      "statement": "The settings form reloads the model list automatically 600 ms after the API key or base URL changes, and the explicit Load models button requests the host permission synchronously inside the click handler before loading, because Chrome drops the user gesture if an await happens first.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L104-L114",
+          "version": "repo-lines-v1:sha256:152dfdd4ef85decdd74ce3f0560584204747a93271d40a45719546943a01ee3c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4YWQ3Y2FhZTNjNDIyNzRiNGRiODM1MTMzNDgyN2RkNTNlNTgwZjJjNzZkMDQ3OGIwZDgxZDNiM2M2NDMzZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmNDNlYTJiMGI0NmQ5YjZkOTc1MzQ4NGI2NTE0NmQ3YzI5YTFkZTcyNjNlYmIxMTI0ODllYjliMmMxMDE2NDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlZWViZWExNzM1NTk1M2Y1MjVmOWJjZGIwZjE1NTQ1OGU4YTU2YWNiZDVmY2Q2NGM2YWVhNDcwOTE2NTFjOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiZTAyZmQ0YWQ5NDA3OTA0NTY4ZGNlYjBiMGY0OTUzZmY1ZTA4MjBhMjc1YmMzZGFhZDFlNTE0MDRhN2ZjZTkifQ"
+        },
+        {
+          "resource": "repo://components/SettingsForm.tsx#L146-L150",
+          "version": "repo-lines-v1:sha256:255a5e80bdcce24f9ea455026a19faf8225efcaf06bada2f4f20b9fefaa8231c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjA1YWQ2ODYzM2U0OGM5MmUxMjUxM2UxYzcyMjNiYzE2NjBjOWE4MDVkNDg4MzIxZjgxOGQ3NTIxZTMxMWFjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTdkODYzMmU1NGU5Mjk4YWJiOTU4NzI3ZTJkNTE0MDhhYmFmMTM2NjAzNTM3OTEwMTQwYWJmNjViMzBhYjYxMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDM4ZDViZDk2MjRjYWU0NmM2MzQ2NzU2MDI2NmM1MjYxMjVkOTA0NTE5NjU5NzRlYjI5MzU0MWY4NWRhZTI0MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4386211d507846b7908925aaa2e958d3",
+      "statement": "Save also requests the host permission for the current base URL and writes the settings; when the user declines, the settings are still saved and the form reports that requests to that origin may fail.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L152-L163",
+          "version": "repo-lines-v1:sha256:81428561150ff70777d61342259107db8b88dab97a05356229f65935afaceb2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4MmZmODUxMzFiYWU5YWQzM2U2ZTJjYWVhZjM3OGU2ZDIzNGNmOWZiZmM4MGZmMGM0NWU3MzVjMTVlODU5MGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxODE1ZTRjY2I4NTI1MzJiZWU4NzQ5YzMwMTE3N2UzNDBkYmQ1YmFjMjBhNmNjMzVmNDZjOWU3MDljMDgzMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiMzM1NTczMDU4ZGJhYmY2NzZlMWU0YTdkODM0NjhkMmRmOTFmYWI2MDE5YWJjN2U5ZWFhN2FiMWQyMjQyMjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_72c146c7200346abbb1a6f7c2eec5c21",
+      "statement": "`loadModels` aborts the previous request, writes the fresh list to the model cache, and falls back to the preset's default model or the first model of the list when the currently selected model is not offered.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L123-L144",
+          "version": "repo-lines-v1:sha256:e468761b04be4d06949e74fe0daf9ca2f06836deb60b64c6ddc6a39b3d5dc5e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2NDU4YzRhNDJkOTlmMjhmZjczZDlhOTgzZDFiODliYzA0YjI1ZmJmMWNlMzBhYWEwNzRmZjAzODgwODI5ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlMGFiMDYwMGY1NjVhMmJmYzVmZmVkZjcyNmExZGY2ZGIzNmFlNDk2ZDk1OWYwZWZkMTllZGU0MmY2YTQ5ZTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4008e3f89f7f4f73a49fcf637483051c",
+      "statement": "Host permission for the provider API domain is requested at runtime through `browser.permissions.request` with an origin match pattern, and is requested in exactly two places: the Load models button and Save.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L146-L163",
+          "version": "repo-lines-v1:sha256:f0bfb23e115256a48f38d2d3e805c62e2edded5c59a257c6674532a152a4668b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwNWFkNjg2MzNlNDhjOTJlMTI1MTNlMWM3MjIzYmMxNjYwYzlhODA1ZDQ4ODMyMWY4MThkNzUyMWUzMTFhYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiMzM1NTczMDU4ZGJhYmY2NzZlMWU0YTdkODM0NjhkMmRmOTFmYWI2MDE5YWJjN2U5ZWFhN2FiMWQyMjQyMjEifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L234-L257",
+          "version": "repo-lines-v1:sha256:e6df0f850a36c34394f829dca9b6d24d17d69881f9f8891b764b518f32ab56f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyNDJkOTEwNmE0OGU1OTk4OTRkNmE3MDQwOGM2MTk2OWE1MDEzOTkwNWRiOWE1OTM4YjlmMjZjY2FkZWZhY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkOTg5ZWQ2NTJjOTM4NTA0Mjg3ODIxNmNlNTFlN2E0NDM4MDgwN2NjMTA4Y2E3YzU5YTUyYmFiNmU2MmE1MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://wxt.config.ts#L20-L22",
+          "version": "repo-lines-v1:sha256:a81a68f3fdde2893f7b9896ee9159868af62a2c4d37f68fe3f865cf5e6d2cc9b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjkyYTY4NmMxNWM1N2E4MzQyYTMwMWVhZTI4ZTI4MDViYjU1MzVjNDRiYmVmMjI3NWY0NmM1OTBmMmQ4ZDg5ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmI0ZTMzNGU2ZDc2ZDYwMzljZTc3OGY2YWFhYzEyYzg5NWQ5NGQzM2RkN2ZiZDgzMmQ5OGQxZTkzYTg4NjU2ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzM2NTUzZjZhODZjZGUwODhhMTg3OTEyYTc5NWFmZWI3YjIyOGY0MDI2YTUxOTM3NTA3YTM2OGIyZTk2MDJiMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzA3ZmY4NGZlZjE1MjQ0MTI1OWRlNzEyZWQxYjEwNTdhY2M2MmQ4ZDJkMzlkMTNiZTI4Zjg1MGVhMzNlNjY1OSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-07T09:34:41.642Z"
+  }
+}

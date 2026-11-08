@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:0470feb478a453888f3bc8c1f2ac2269a2a94e4e761242404baf2c9c6a6265ab",
+  "claims": [
+    {
+      "id": "claim_dd7d26e8146048ba91f20d2a1a820d53",
+      "statement": "A summarize request is queued in storage.session by the popup, context menu or side panel and consumed once by the result view after settings load; if the request id is unknown the view shows the request-expired error instead of running anything.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L45-L62",
+          "version": "repo-lines-v1:sha256:ae4d2ff95aeed1ff3392feb47ad419e32b63c400d91f51d946f620230062164c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1ODY3Y2Q0YzBkZjZmYTNmMzAxMDVmNTUwZjNkZTQ4Mjg1NDVkZjZmYjRhMDljYzA3NDkwZThiNjgxMGE4YzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhNWE2YjE3N2U5NDQ4ZDAwMTEyN2VmZDRkODdhOTc5N2JlNjc5YjRhODQxNzUwMWM2ZjU0YjA5MWMzZWRmN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3NjlkZWEzOWQ3MzM3MzgzMGFlNmFlNzFlZWUzYmViNjBkZjVkYzQzMmY0ZTVjMzIxZmVmMjljYTQyZGQ4YTYifQ"
+        },
+        {
+          "resource": "repo://entrypoints/popup/Popup.tsx#L36-L42",
+          "version": "repo-lines-v1:sha256:dc5b98ab5c80a1f82953e9e3c52fa5f5e75ed8c5bb29dbe1dc4dce7cc569dff6:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Q5YTdmMzZiNjY2MmI1ZmJiNTUzODcxMjRlNWIyNmQ4MTU5NGMzNDgwYTE1ZDExYTA2MGYxMzBkYzU4MzFiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmQ0ZTJhNzk3YmVkMmI0MGUzNGVkODA0YjFhYjRkODMwZjQ0OTkxZGViMWFhMzYzNGIwZWU1ZjdmY2ZjNDEyOCJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L16-L35",
+          "version": "repo-lines-v1:sha256:58e5f183b8bcb2da2dd41eaa26ceef28c1a52424d6f4cb287bcd0d77cf076e08:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4M2NhYmZjN2VlMDFjNGI4ZTg0OWJjMjJjYzZjMTg5MTZjNGNhNzczY2U4ODcwZGRjOGQ5ZTM2M2Q1ZGFlNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwN2I5ZDQ5NjkyZDM0ZThhZDAxYjE0YTlmNWUzN2Y4OTc4MjkwZjk0NjkwYjMzN2RhMzJiYzMwMDM0MDI3NGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyY2Y4OWJmMzcwYmYyNmRiZGU2ZTc5NzM3Mzc3Yzg3ZWZhMzQzNDJiY2EyZWQ0ZWFhNjNlYjg4MWY2MjMyZWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_424283d9bfa3434d9c64f792aff41aa0",
+      "statement": "useSession exposes a single phase value (idle, extracting, summarizing, refining, answering); begin() aborts the previous controller, creates a new one and clears error, warning and stream state, and every operation only finishes the phase if its own controller is still the current one.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L10-L46",
+          "version": "repo-lines-v1:sha256:aba471b315c3b921d19848219c48d9e6848b6c59d9ae556d7f593810bde18d47:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1NWIwOWIyMDUwZGE2NzhhZTRkMzQzNTZkYjA1MDRkZGJhODI0NjJkODUxZTlkM2JlZGExMzRiMGU0MTIzYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhMDc0NGE1ODVlZjc5ZmUwNmEyNmFiNTNjOGMwNzMwYjczZDZhMjlmYjBmYWZlYzhjMjcyMDYxMDdjYzM2ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2MjkyMjE0MmIxZjVmMTAzOGQzYjNhMzRjZGNjYmYyNTUwNmI0MDIyMWRlNTUxMjE5MGI3YTNhNzZlOWE5ZTEifQ"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L53-L74",
+          "version": "repo-lines-v1:sha256:1a5d99cb2ef9272e42c84802775a078d66bee666d29e6d42a6a7a79b101f0a7b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1NjcwNWU2OTIxMDFlYjRlNmU5ODZkNzgyY2RlODU5NTkxMzQxZDliZmI3MDI1NWQ0OGEzNzMwNzY3NmJiNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4N2IwY2E4ZjE3ODg1M2RlMGI2MjM2OGZiYzc0MTdmZTRmYzk0NGE2ZmFmMDA3ZTJlZDZjMTZlOTIzZjViZGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_05630e37750b45a292e9029b91b460df",
+      "statement": "Each source kind is extracted differently: HTML goes through DOMParser plus Readability and Turndown with the GFM plugin (keeping tables as Markdown tables) and falls back to body text; PDFs are parsed with pdfjs-dist into per-page text blocks; CSV is parsed with Papa Parse into schema, per-column statistics and a 30-row sample plus a separate row dataset capped at MAX_CSV_ROWS; Markdown and text are passed through unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://lib/extractors.ts#L132-L151",
+          "version": "repo-lines-v1:sha256:ea95eaaae36c7dd298a46f7810fadf69a76a46ea94f084e0e8331cc1d7e69ce2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4NWQ4OTYxYjE5ZGE3YjdjM2E0MjlmNzRjYTE5MTRlZjNhNWY4NGNlYjFmNDc2OTZiNzc0Zjg3ZTE3MzY5ZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyMDIzNTdmNWE5MmUxNjBhNDJlNGZlNDNmNjcxMjMzMzAxZTYzMzRjY2Q4MjRhMWQwNGRiNTdlZjBkMjMwYjQifQ"
+        },
+        {
+          "resource": "repo://lib/extractors.ts#L26-L63",
+          "version": "repo-lines-v1:sha256:5517a8635489fa11318bb401b21a20843d5e5dd809a1ba5d4f6733b3e5b630d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxNjMwZmQxMWQ4MGVmZjQwNTdmZWJmZGRmNjM3NGZmMmRiYmE1ZDAzMTk3NzQwMDQ1ZWEzNjhmZDg0OGNiYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlNWQxM2E1ZGE3MzA5YzQ1NWE0MzA3MTZhZWZjMWIyY2U4ZjAwNDAzMTBhNmQ4MmNiYTMyZDYyMDMzZGJkN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0ZTliMzAyOTBhYTU0OTc3NTc0YWNmN2VmYzI5YTBkZTUxYWI1NTk4ZTYxNzU3NWQyNWIzOTdiZGE2Yjc4OTIifQ"
+        },
+        {
+          "resource": "repo://lib/extractors.ts#L65-L129",
+          "version": "repo-lines-v1:sha256:f425976045e3237919c9ce061ca259a14f5744270c1ddcb5f9cd189295078dc8:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZTAzZWE3NjNkYTcwZmFmYjJlODgxMzgzOTg2Mzc3ZmZjODY5NjE4YmQyN2Q0ZDAyYWIwOGMwNzJiM2Q5NDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMTQ2OGJlZWNlM2VhMjA5NjRjYWU3NGIzMDczZDExNzBhZTMwZWI0OWM3OWJhOTg2MDlmNzU1ZTEyODQ1MzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxMWJkOGVhZDViM2U5ZTE0NDU5ZWFmNDM2OTM5M2FmZDFiYTVjYTY5NGM4NjY2YTY1MGY0OGI0ZWM4MDExZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwZjUzMGQxMjU3ODVhOGEyY2VmNDJmNGQwYWEyNGZjMDQxMjdkMzRmMmQ1ZjZlMTg0MDA0OGI1M2NjZTgxY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_228ba3fa79ae4c5dbd95a49acda8e39b",
+      "statement": "Source content is truncated to settings.maxChars by a plain head cut, and the resulting truncated flag is sent to the model inside the source message as a note that the source was truncated to fit the context window.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L77-L91",
+          "version": "repo-lines-v1:sha256:f07a706db0723c3eb616fe7f55d2519b0e09afbee2c508707cb325b5a17633e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3OTM4ZTNhOTcyZGNmNzZmOGU5ZjY5OTY2NjkwOGNmMDU2ZmE1NDRlYWM5YWM2MTcxNjdiNDg0MzRiZjc1ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MjBiYzZkOWE3ODZlMzc0NjNjMzBlZGMxNTgxN2Y1ZjMxOWE2ZWQzZjUyNGY3ZWY3OWQ5YzhlMjc3ZDQ3MWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlZmRhMDg3OTRlNzg4NGVlYTNkNjhmMmIzYTk4ZDMyYmU4ZmQzY2IwODY5MzQxZTMyMjM0ZjY3YTE5OTQ1MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlZjQyMTQ4YTUwMDYwY2Q4ZTExNDM5ZTU5YTI0YmNhOWI1NDYwODcxNDQ2M2I1YjYxYzYxYmZjNDA3NGE0OWUifQ"
+        },
+        {
+          "resource": "repo://lib/extractors.ts#L153-L156",
+          "version": "repo-lines-v1:sha256:4883f9fe8dc9d52243331a74c0a4468247f56ac2740e0b6708d35b7f8754ff91:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODcyZjdlYzk0MDExYjYxYTcxMTc5NTQ1ZDA2YWM0OGQ0MmNkZTNhZWIzZDY2Y2Q1NTc2NjgzZmUyMWJhYWM3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjk4YjExMWIyYmY1ZjBiZDQzOTFjMzE5ZTg2MzBkNzkxN2YzZDExNGIzZTUyMjljOGRhNGMwZjFiNzRkZmYxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L188-L201",
+          "version": "repo-lines-v1:sha256:a81ba5e8fc96a9a33480238d997f7b51bffbb97c0d9cd8d7971bca7da6ea7b3c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwZDAyYmVkYmU2ZTE3NDNkMmFjYzVmMDljOWY3Y2MzZGYyZDYxNTg1YmZiM2VlNGUwOWNlMzgxYmY1ZWM5YzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhM2IyODZkNWVmZWVhOWU3OGI2YWIxZGIyZjc0YTQ3YmI4MmQ0MmU4ODliOWYzOGQ3MTMxOWU5ZTcxYmQyMjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2MzNlNzZiNDYxYWFhZDZmYmFjYWI0Mzc2ZmE1MmRlYTZmOWMyMTlkMDY1NzlkMzJmZTZlMDk4ZGRkOWRlNWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_103d1eca0dd4446286f5d168773ae04f",
+      "statement": "The base session is committed and persisted to history before the first model call, so an interrupted or failed summary still leaves a history entry, and reopening such a session resumes the summary when no configuration problem exists.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L249-L259",
+          "version": "repo-lines-v1:sha256:d66d92122cc64c9a46c04e98a0dc9b58ab1db1b3b9965f864cab2f9eae79aab6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiNWQwZTQyYWFiZWJlZDU3YTI3YWE2NmRlYzQwNWU1NWVhZWNmZmMwNWI5MWZjYTA4MjI5MjgyMWE3M2JmOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmNmI0NjA4MjRiYTZhYTEyZDdkNjFkM2Y1ODkyMzI2MWNjZjJjMTg4YmQ1YzJhNmE2ZDBiNTA2NTU0OTEyOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5Zjg4MGYxYmVhMTkzN2Y4NTZhMDc5YjkwMzk1MjA2ODlkZmFmODA0ZWQzNGRlY2I5YzNmZWIxZjM0MDFmODQifQ"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L77-L91",
+          "version": "repo-lines-v1:sha256:f07a706db0723c3eb616fe7f55d2519b0e09afbee2c508707cb325b5a17633e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3OTM4ZTNhOTcyZGNmNzZmOGU5ZjY5OTY2NjkwOGNmMDU2ZmE1NDRlYWM5YWM2MTcxNjdiNDg0MzRiZjc1ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MjBiYzZkOWE3ODZlMzc0NjNjMzBlZGMxNTgxN2Y1ZjMxOWE2ZWQzZjUyNGY3ZWY3OWQ5YzhlMjc3ZDQ3MWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlZmRhMDg3OTRlNzg4NGVlYTNkNjhmMmIzYTk4ZDMyYmU4ZmQzY2IwODY5MzQxZTMyMjM0ZjY3YTE5OTQ1MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlZjQyMTQ4YTUwMDYwY2Q4ZTExNDM5ZTU5YTI0YmNhOWI1NDYwODcxNDQ2M2I1YjYxYzYxYmZjNDA3NGE0OWUifQ"
+        },
+        {
+          "resource": "repo://lib/history.ts#L55-L61",
+          "version": "repo-lines-v1:sha256:fc65e7819606be22c6a4d8a529bc9ad062221980cb8d5118d39b28886e327bba:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQwMWI2NGI0YjdhM2Y0ZDhkMDgxYTJmYTEyMmZiZTNiNmYxNzViYWQ3Y2M0NmI3M2MxNmY5ZDg3NDEyYzZhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IxNzMzNjNkNGUyMmQxMTM1YmUxYWY2ZTE4ZDM1NDY4ZWQ2MjRkMDc5ODU5Y2VlNzQwYzQ4MzAxZTFjODFlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzZhN2MzODAwZTUwNDYyYjdiMDg0MGZlZmE1MWMwYmVmN2YyZjkxYjkxNzhjYmIxMWMwNTUxYjlkNzA4MWZkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjQ2NTMzZjVjYjJkYmNmNDMxMTMyNzFhOWVlZmRlOTFiZmY0YmZiZGJkNDM1MGYxY2QzMTA2MTRiMWZiMWM2MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c836dbfb82654b5593c195c3acd6e607",
+      "statement": "The summary prompt is composed of a cached library base (rendered once per source kind and CSV presence) plus per-turn rules from the visual, chart, diagram, length, style, layout, source-kind and user-rule sets, and the CSV Query tools and bindings are enabled only for a CSV source with parsed data.",
+      "evidence": [
+        {
+          "resource": "repo://lib/openui.ts#L107-L166",
+          "version": "repo-lines-v1:sha256:c798a0ffc2405d48e4b1c5db1aa2f7d45e7e6e252919d595b1fde507eb03fae6:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4NzliNWIzZDhlMGFiMzU0MWNiM2MyYmM0YjM3ZWM2MzU2YzQ3NGM2ODIzODJlMGUxNGZlZDQ0NjgzMmI1ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3ZTFkOTU5OGRmODI0ZjA3Mzc2NmUwYzI3N2ZmZjYwYzk2Y2EwNWVjZWZlNzVlMGE0ZTk5YWY1OGVkMzA3YjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhM2RmYWJjYTczMjE3ZmQzMTAzYzc5M2Q0NWM3YWZmODJkM2Q2ZDdlN2U0NTJmOGE1OWFjNjdhNTdhMWZjOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2MjdlNDBlM2IzODA2OWNiNzQ4NDIxOTA2MmMwNWFiYzY2MTg5Y2M5MjZjMDk0ODNlOWIxYmZjMzE4Y2Y2ZmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8499519b7c04651a44447be1b635f6d",
+      "statement": "The generation turn streams the answer, splits it into prose and code with splitInline, validates the program with the OpenUI parser and renders every Diagram with Pele to catch Mermaid errors, and returns the program, prose and any remaining errors.",
+      "evidence": [
+        {
+          "resource": "repo://lib/diagram.ts#L37-L52",
+          "version": "repo-lines-v1:sha256:164dea188da08848890afe03cbb4ccc13ee43fa1178044477dfb1d277524a6f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxMWU2MTlhZWMxMThjNzMwZWE4ODU3ZWUzMDliMThmNjk0OThmMjZlODNiZGI5Mjg5ZTIyODgwYzU3NDQyNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxNTNjNjVmYjUxMTI0N2MzYjZmMWJjM2YxZDYyOGNiZGFiODhmNGRmMDgzMGYyYjA1Nzk4OGYwYmRmZDdiMmMifQ"
+        },
+        {
+          "resource": "repo://lib/generate.ts#L44-L97",
+          "version": "repo-lines-v1:sha256:0d318c89a9100b3886dceb16f59930a9ea5afc8139aee044a81e1ef40f7aefe6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YWE3YjQzNWRlYzJiMWYzNDIzYjVmODc1ZTllZmE0ZTZmZDYyZjhlNjMwYzIzYWZkNzk5MTNiNmYzNjY4YzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5YzZhZDZmMmFhMDk3NjczMTI3MmYyNDI1MmU4Nzk4OWFhYjU5YTE0NmVlN2NmMGE1YTFhMjc0ODJjZmI5MjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlZWFhZmQwYTU0Njg0MjcwYzkxNzQ0OTk0OGM5ODc3YjI1OGE1ZWQ5MTVmN2ZkMGYwMmNhYTA0MjQzY2ZmNGMifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L204-L298",
+          "version": "repo-lines-v1:sha256:6a5d7c67518996dc8234978206fd78ad163d2582ad6ce8984fd551f088349219:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkMmE5N2E1Y2VlMzQyYTVkMmIxYzU3OTE2MjVjZmQ3NGY2MWVlMzAyNDEzMGEwZGExYWMwMDRiYjBkNWIzZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2Y2ViNmE3MWFjYTU2NDUyYzhkYzcwY2JlZWJjOWYzNzlkYTA3MjRjMTM5YTlmZDk2ZGMzNzhjNjlkY2IxYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31eede709ca041cfad236187150301d0",
+      "statement": "splitInline separates prose from the OpenUI Lang program and tolerates sloppy model output: text without a fence that starts like a statement is treated as code, and a fence without any statement is returned as prose.",
+      "evidence": [
+        {
+          "resource": "repo://lib/openui.ts#L204-L252",
+          "version": "repo-lines-v1:sha256:23a479cab24bc21874fbb792f8c93b38e3e2c012a3afa3c100f6e21f17836150:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkMmE5N2E1Y2VlMzQyYTVkMmIxYzU3OTE2MjVjZmQ3NGY2MWVlMzAyNDEzMGEwZGExYWMwMDRiYjBkNWIzZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMDU1YWI3Yzc5ZDcyYzVhYTVjMTcxMWVhZDg0NDg5NjE0MTY1YWIxYzM4NjliYzc2NzRkMmE2Y2QxOWU4ZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2Y2ViNmE3MWFjYTU2NDUyYzhkYzcwY2JlZWJjOWYzNzlkYTA3MjRjMTM5YTlmZDk2ZGMzNzhjNjlkY2IxYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZTgwYTY5NDYxYzA2YTZhOGIzYzEwMmUzZmVhNGYxMDQ4OTNhNDg0NWQ2NTU0ODZjM2FiYTllODIwMDFhMjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_532506daf86648078a43150adc0e4d15",
+      "statement": "When the program is invalid, exactly one repair turn is sent with the LLM-readable error list and is not streamed to the UI; the fix is kept only if it does not leave more errors, otherwise the last valid program is kept and the remaining errors become a warning.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L49-L52",
+          "version": "repo-lines-v1:sha256:b67ee01aeb74f4bbf9f89ac23945c832d6f7dd40c7f9da554ab6e42c1af1f552:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWIzOGY0NjU4ZjIwNWE0NjcwYmVlNmVjZTdhNzI0NzUzZjgxOGRjMzhjMmVmYTg2OTA3M2E1ODA4MTI1YzVmZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmIzMTNiZWI4MTExMTlmZDEwNDE4MjFjNDY3MGZhNjIwMTJmY2Y1ZWQ5NjFhY2RjNThhZDY3ODlkODMwNjQzMSJ9"
+        },
+        {
+          "resource": "repo://lib/generate.ts#L60-L97",
+          "version": "repo-lines-v1:sha256:5584e0665586e0f258bcb025dd788ee52e2aa5e8580a1100fa7995874643a55e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YWE3YjQzNWRlYzJiMWYzNDIzYjVmODc1ZTllZmE0ZTZmZDYyZjhlNjMwYzIzYWZkNzk5MTNiNmYzNjY4YzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExYjAyZWU1MDZjYTdmN2IyZDNlZDZlZjE5ZmNmNTYyMTE0ZmE3OThiYjJjYWI2MjNiNmZjYTQ5YmVjMmZjN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlZWFhZmQwYTU0Njg0MjcwYzkxNzQ0OTk0OGM5ODc3YjI1OGE1ZWQ5MTVmN2ZkMGYwMmNhYTA0MjQzY2ZmNGMifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L286-L298",
+          "version": "repo-lines-v1:sha256:b1e3d1d29c8565a37c2b017e0d7a2c4c083583af0dd818b01c7b40dfbae03a43:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNmU5NGE3MGFhMTJmZjAwNWZiZTVhZDIyMjE4MzRkMzlhMzc3ZGVhNzRiODAyNjAxY2U3ZGY2YWM5YWE3ZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5NmFjMDIwYmEzZDEyZDNiYTU0NTllM2JiYzEwNTVlY2NlOWI1YjUyMmQ1N2YxZGEyZjUzNDM4OTUyMmM1ZWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_92291f7628734672bcebc8f311c4e07f",
+      "statement": "A prose-only answer is not validated; the empty program is stored with the prose as the message note and the user is warned that the model answered with text instead of a UI.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L62-L66",
+          "version": "repo-lines-v1:sha256:14b30b30cb58fc9031ccce0942aa429bd2b295a88b122c1cbe3d28c4d1a5eacf:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDM2Yzk4MmZhZDZiNWNkZDNlNmFiNzhjNjc2ZGQ3N2FiOGEyZmM1YTFkZjc2ZTYyNmEwYWQ3NzFjY2E1Y2QzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdkNTRjZTU0MDVjYzVmNDMxNWZkMDE2ODc4NzA3YjNmNjFiNDVlNWJhZWMxZGE0YzBlYTE0MzYxZTg0Y2E4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGI0YTFiNjM5MTRhZWM0YWI4YzViMWFhMDg3ODMzOWI2OTc0NDg2YTVkZjA1NDA0Y2MwZDNmNjNkODJiYjA5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDFjNDA1Y2M5OTE1NDNjODc2Mjk1MDBmMmU1ODU3MGM3MzZhZWQ5Mzk2Nzk0Y2YyYTk1MmZmZjBmNTE4YmRiNyJ9"
+        },
+        {
+          "resource": "repo://lib/generate.ts#L57-L59",
+          "version": "repo-lines-v1:sha256:a1b02ee506ca7f7b2d3ed6ef19fcf562114fa798bb2cab623b6fca49bec2fc7d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDk1MmY2NTg1OWUyYTJkNWJmY2M4OTBjYTY4ZjEyNzA3YjZhYjBmYjZmYTU0ZWNhYjVhMDE0NWQ5MWYyNWZjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzRlNjJlMjJmOWI4OGJlZWQyYzcyN2UxYjljOTMyNjc2MTE4ODYyM2NlY2Q0MjY4ZTdmZGY4YjdjODE0OTc5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTlhNmY1MzhmMWIwMmZkZGRiOWFkNzg0MjVjYTM1YmUyOTg0OTYwZTRmZjgxYWYzYjQwZjcyNDc0Y2EwNThlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmRiZmU4OTUzZjkxNzI1MTE2NTY5ZmVjZmQxYmNiYmZkOTY3YjZmZmY4NmRmMzlhMmFjM2FmYjQwYTNiOGI5OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5534eba60674af1bbeba98d34067678",
+      "statement": "The resulting program and note are persisted with the OpenUI Message Protocol via writeStored/buildMessage, so the stored message can be handed to the Renderer while only its content is ever sent back to the model.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L62-L66",
+          "version": "repo-lines-v1:sha256:14b30b30cb58fc9031ccce0942aa429bd2b295a88b122c1cbe3d28c4d1a5eacf:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDM2Yzk4MmZhZDZiNWNkZDNlNmFiNzhjNjc2ZGQ3N2FiOGEyZmM1YTFkZjc2ZTYyNmEwYWQ3NzFjY2E1Y2QzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdkNTRjZTU0MDVjYzVmNDMxNWZkMDE2ODc4NzA3YjNmNjFiNDVlNWJhZWMxZGE0YzBlYTE0MzYxZTg0Y2E4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGI0YTFiNjM5MTRhZWM0YWI4YzViMWFhMDg3ODMzOWI2OTc0NDg2YTVkZjA1NDA0Y2MwZDNmNjNkODJiYjA5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDFjNDA1Y2M5OTE1NDNjODc2Mjk1MDBmMmU1ODU3MGM3MzZhZWQ5Mzk2Nzk0Y2YyYTk1MmZmZjBmNTE4YmRiNyJ9"
+        },
+        {
+          "resource": "repo://lib/history.ts#L38-L53",
+          "version": "repo-lines-v1:sha256:2300bfdee1cf40be90ad1f38585de9be2522c8da626be3173177163e82b0368a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjNzYxZDFhZTFiMzNiNDUyNDY4MWJmODk5MmYzZTIzOTAwZmY1MDJlNTk1NWZmNzAwYzFlMjQ3OTBjYjZmMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwNjYyMTBlYTJhYWE2OTY3MGZkNzhhZGI1OGYyZTI0YWRjNjMwYTY1MGYwNTEzZWNiZmNiNWI5MDA3NGQwZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5ODEyZTBmNWM5N2ZhY2JhM2E2ZmFiMGE1N2RlOWVkMDJiMDMzMjJjOTY1ZDlhZjliODg2ZmU5NzQ4ZGJlM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyNzk4OWNkZGZiODY4M2Q2Nzc3YmIwYmNkOTc3NGI1N2QzODg4ODQxNmFkYWY4MmJhZWE4MTAwZDM1NGUwNWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1f6e355d5c234d28adb25ba11ddc1e16",
+      "statement": "Provider and network failures are mapped by describeError to short actionable messages (key rejected, access denied, model or endpoint not found, rate limited, network or CORS problem, and a local-server hint for HTTP 403 on localhost), while an aborted request is not reported as an error.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L67-L72",
+          "version": "repo-lines-v1:sha256:c4d25d02090d8952af6f67196dcb40e95c4561fc9bf53cabcfde87bc8abaa16b:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU0ZWJjMjY1MDdkZWNmMDA4MTI1NzFjZDBlOGNmNDJlNzBjNGU2ODZmZWIyYmNkNjA2NjE3NzA5ODk0YzRkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWYwY2RiOTcyYTdiZmI3ZWQyNDZmOWZmNjcyMzg1ZTU1ZjQ5NjhmYzExMDQzZGM1YjY4NGQ1MWRmYTMxZGJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWYwOTg3ODdkNWFmNWU0ZWQ5ZTg5Zjg2MGI1M2RmZjNjODc2MGYxYTZmYmExMjQzNzMwNzhiMzZiZTY5YjViZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGY0ODdjYjRkZTVlNjJkYmQ4OWJhZmNmZDI2Njc4MDgxMDZjM2IwYzAyYmFmMWZkNWFlOWVlZDk2ZGU2YWJkZCJ9"
+        },
+        {
+          "resource": "repo://lib/llm.ts#L63-L79",
+          "version": "repo-lines-v1:sha256:523da216438a19a10c204c978f9dfb8b801a3fca0dd7887e97847d2aa8885839:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5NWQ2ZDkxNzAzZjI1MDU2YTMyMmU3YWU1ZmQ3OGM0M2Q0YWExNjQ3YTAwYTkzODEzMjVlNjczZDc2MGQ2MmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b56dc506b294a718b4251668ff022e3",
+      "statement": "Configuration problems are checked before every model turn, so a new summary with a missing base URL, API key or model never creates a session, while an existing session is left untouched.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L77-L91",
+          "version": "repo-lines-v1:sha256:f07a706db0723c3eb616fe7f55d2519b0e09afbee2c508707cb325b5a17633e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3OTM4ZTNhOTcyZGNmNzZmOGU5ZjY5OTY2NjkwOGNmMDU2ZmE1NDRlYWM5YWM2MTcxNjdiNDg0MzRiZjc1ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MjBiYzZkOWE3ODZlMzc0NjNjMzBlZGMxNTgxN2Y1ZjMxOWE2ZWQzZjUyNGY3ZWY3OWQ5YzhlMjc3ZDQ3MWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlZmRhMDg3OTRlNzg4NGVlYTNkNjhmMmIzYTk4ZDMyYmU4ZmQzY2IwODY5MzQxZTMyMjM0ZjY3YTE5OTQ1MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlZjQyMTQ4YTUwMDYwY2Q4ZTExNDM5ZTU5YTI0YmNhOWI1NDYwODcxNDQ2M2I1YjYxYzYxYmZjNDA3NGE0OWUifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L209-L215",
+          "version": "repo-lines-v1:sha256:037f2b97e018e74fe56a6965cf20eb252c562ea4957117749e66317daab7a81a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhhMTdjYWM3NTVhNTdjZWM5M2RkZjQzMWRlZDNkMTIzNzI1NzVjNTE3YWMwYzFkYjUxNDYwMzlmNzMzMzRkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmFhMTgzZTcyOWUyNzZkMjg2MmEwMzIyZWFjOGNiZmJiYmRmNjY2YWE2Y2ExODFjZjYzNTFlNDlmNjg4N2MwNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzI3Y2VmZDVkYzhhZmU1NDU1ZDBhM2I3ZGM3NjllYTFlNTVjMDJjNDIwMDM5MWYwNGYxMGY3YmE4MmRjNTJmNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d2d6e408f1e47848dc531a9c6ce5982",
+      "statement": "Streaming text is what the UI renders while the summary is still being written: the session view splits the accumulated raw stream into code and renders it, and after the commit it renders the stored message so form and $state values survive.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L99-L152",
+          "version": "repo-lines-v1:sha256:4ec4f307f0c9f226e23c9c9ff25050261414602304820e1f785d6bf12cd7a3b2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTc3YWIwYTEwNzc2MTk0NjgxMjViMzQ2NTUxZDBkYTUxNDk3MDVmYjQxZDEwYTI3NDNkNjU0OGJhNjU3ZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4ODNlODNhNjM2NzFlMjhjOTVmZmVmZjA2NTA3ODE3MzU1Mzk3OTBlNTU4MTU1YTk1ZGZiYzJlYjA0ZTQ2NTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4MjJlYjY3NzVlYjlmMjg1ODE2ZTNmMjA0NDdkMTNjM2JhYzE5OWJjN2MxM2FlYTNjOWM4MTIzZjY4MzJlODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyMzQ5MmQzMzhkM2YwMjVlNjFkMjk3NDBmZDhlZGY4MTMwMzdkODI1YmJhMTE4Njg5ODQ1NWZlMmJjZDYzMTEifQ"
+        },
+        {
+          "resource": "repo://lib/llm.ts#L45-L61",
+          "version": "repo-lines-v1:sha256:2f047dae99f2c8c7b0c2af64a0f139616fa078d4e1c106e312be8b630b9da768:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlZDc5ZTVjMjUxZTBkNDRmYmM4YmIwNzRhOTc3MTM5MTc2MTUzYjA2ZDVmNTc5NDI4ZTEyNDhiYWExZmUyM2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExOWNhZTAwZTM4Nzg5NzcxNmY2YzZlNDhmNDg3NDUxNDc4MDA1NGNlNTk2YmFmZWI2N2Q4YTI1NGY0YTFkN2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhZDFiYTU1ZmRiNDFlOWU2NDZmZjgwZTY5ODY1YzZlYmQ1Yzg5YThmMTA3MzY3ZmY1ZDQwNmNkZmZkY2M5NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwZTQxODQ4ZGQxMDViZmUwODIyNDA5ODc5MDE3ZDE1ZGE4YmQzYjQ3ZjdmNDVlZDNkYjRhYTAxMDEyOGUyMjYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-07T09:34:41.642Z"
+  }
+}

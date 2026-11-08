@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d6a31f965aaf0320227313af2b14fe70c2913fa03c9df2bebb1d17df9c76bb7f",
+  "claims": [
+    {
+      "id": "claim_57d6c7451c094c1b8b5f2b536b51f5d3",
+      "statement": "The extension is a Manifest V3 Chrome extension built with WXT, React 19 and TypeScript that renders summaries as OpenUI Lang programs through the OpenUI Renderer.",
+      "evidence": [
+        {
+          "resource": "repo://components/GenUI.tsx#L20-L53",
+          "version": "repo-lines-v1:sha256:b20ddc87c6ea26a2690db09559e2050c8019213ba161f4e92178baf269f7c6a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZTEyOTYzMDU3ODAzNDliYTU5YTM1ZGMyZmUyZjQ4MzYzZjY2MzdmNTBmZTBjYmViNTIyZGQ2Yzg2NDk4MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4YmFhMzRjNDQ3NThiMDlhODIyNzQ4OWE5Y2Q0NTRkMjEyMDNmM2RiYjA4ZTQxYjI5N2NmMGM0ZGE4YjI1ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://package.json#L1-L20",
+          "version": "repo-lines-v1:sha256:db3a6c57603fb7411e6c2354b256d18cb3b52f3301390437bb211ed6c7a4dc7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjZjRmNTE2Njc5MDQzMmU3MjkwYjJmNDZmMmFkZjBlNzIxZGZhOGRkNmRjYzUxNmNlMGJkODgxZjFhOTkwYTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjYmFlY2E3ZGI2OGVjOTZiZmY1MTQ0OTRlZTMxNGZjZDM1NTNhZTdiOTRjMzM2ZmRiNDliMjAxOGU5ZTQxY2UifQ"
+        },
+        {
+          "resource": "repo://wxt.config.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:a203b5ccb2d476d44c59e81c9af1cae296bf301373d47c546e3c17deecf6d353:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxNzNjZjVjNDI3YjE2MWM3YTY4MTRjNGY1NGQ1OGQxZGZkNzc3N2JmZWE5YjlhMWFiZGFjODA5ZDcyOWFjMTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d16eb7d946d7491a8816f04832acc56a",
+      "statement": "There is no backend: the extension builds an AI SDK provider from the user's own credentials and streams completions directly from the extension page, so every model call is BYOK.",
+      "evidence": [
+        {
+          "resource": "repo://lib/llm.ts#L9-L60",
+          "version": "repo-lines-v1:sha256:e747a56a4548de1c84859c2339a9dcb2a2486f050cd51d036f77e1fc8bbf58cd:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MzU0YWI4NGFiMTg1MTk3ZDBmNGNkNmNmNDUzNTgxYjE0NWJmMDE1YzIxZTg0MzRjYmU1NmIzZGI0NjQ3MGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1M2Q4ODYyMDRkMDMzN2FlNDgxMzBiZDNkMjY4ZjYzZDJiMDU5Y2NmMTFhMzIzZWJiOGUxYTY1MGMzZTg4NDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0Y2I3ZjVjODEzNGIyODg5ZmM3ZDgxMzg2OGYwM2NjM2ZlZDAzNDBiMjU0NWMzYWM0ZjU1ODIyZmEwN2VkM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4MmQxNzFhYWRhNjIzN2RhNjI1Y2NlMjE3MjY3NDM5MzJjNmMxZjM2OGM0OGJlZTllOThjZTYzNmRlZTY3ZmYifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L216-L220",
+          "version": "repo-lines-v1:sha256:5ad55589df1c9e52ce3d054236e4d81365bfc4782f1e80abe8fc8fe35c5e3f72:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmY0YzE2NTQ1NjlhZDEwYzhkZTM1MDk5NmY0YTRiNmZjZWRmZmFlN2I2MzVmMzMwOGVhYzRmMDRmYWJiMTI2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmQ2NTM1NWI2NGVlNzk1Y2JiNmQ2OWIwN2I4NmU4Nzg0YmVhZTkyNWE0ZWFmNGYzN2FjZmVlODhhNjhiOWU1NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b90ccfdfc3f410987f2756d969346bb",
+      "statement": "A single Appearance object (accent pen, marker highlighter, corner style, reading font) is resolved into CSS variables for the app chrome, OpenUI ThemeProvider tokens for the generated UI, chart palettes and Pele diagram colors, so the same tokens drive all four surfaces.",
+      "evidence": [
+        {
+          "resource": "repo://components/Themed.tsx#L37-L69",
+          "version": "repo-lines-v1:sha256:4167c56221c000655dd8b3e7f1e04281f43d726b58e08ede06985a0e43a90537:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMzc0NjYwYWMxMTVkMTMyZDgwYmUwM2I3OWMxMTM5NzZlY2M0NDk1NzIyNzBlZjljMjJmNzcxMDliYzQ5OWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiOTY0MzBjNTJjNzFmN2QxOWVkZWUzOGE1ODZhNzhmOWQ3YThjN2VkMDg3OWJiN2MyNDVhNGJkYmFhNjUyNTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://lib/appearance.ts#L115-L150",
+          "version": "repo-lines-v1:sha256:668e94e8040cf4b8f5d9e240658d8eb1d3c09fb5f034728026cb64f19db38613:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NWZhMGYxMTE3YjVlYTQwNDM0MTQwZGRlMWEzNDBjNzIwZGRiZjMyNjIxMmUxOTE4MzhkNGIxNTZkMzE2YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyMGU4OTRkNzQzZDE2ZDVjNzAyOWU0OWI0ZjgwMGQ5MjM2NDZmMzhjNDNmYjU0MDI5OTUwY2QyYzEyNTU5MjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkOTUyM2VlMTliMDY3YTlmOGY5Y2UwYWRlNGNiODNiMzk2YzNlYTgyZjZkNTZkZDI4MjM4ZWI2ODRjZTBmZDQifQ"
+        },
+        {
+          "resource": "repo://lib/appearance.ts#L165-L229",
+          "version": "repo-lines-v1:sha256:becf34ac0301d6a92b182b4186b1d3d66ac4200fb5554e537f48a6eda3ab4cb4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhYjM0YjQ5NTIxZjQ0MzI5NWFjN2Y1YTUxMjI1ODM1ZmViY2Q1MjU1NWY1NjgwNjg0YmY3NzQzOWNiOWQxNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiMDFjMWIzZjczMjQ1ODExOTE1ZDRiMDkyMWRmZDQwOGJmYzAzZWQ4ZjE4ZjFkZDI1NGMwNjQ4NGZiNGMzOGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_95b1c9e77e434964ba405663320b7ccc",
+      "statement": "The background service worker only routes: it never renders or summarizes, but owns context-menu sync, the toolbar action popup vs side-panel mode, the per-tab side-panel lifecycle, and the choice of surface for a trigger.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L14-L79",
+          "version": "repo-lines-v1:sha256:74d3f268aa52b4517f681778104c241447932d7efcab013d20dce6171d1fabd1:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhNTJkNzJjNDZmOTk1YTQ2NGEyMjRlZWNmYWY2MDcxNDNhNDc2NzA2OTVlMmZhMjZjMDMxOGRmMzdhN2Y2MTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_28147da50d27443a871d09eb898f18fb",
+      "statement": "The full-page app tab and the per-tab side panel mount the same React result view; App takes a surface prop ('page' | 'panel') and the sidepanel entrypoint renders App with surface=\"panel\".",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L21-L35",
+          "version": "repo-lines-v1:sha256:8dfe6be016b36bd44eb9997b9793f9780c0be39b09626a5a07562d4c25d9faa6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2OWIzNWEzMmI1OWE2MDI3OTEwODViY2QzZGI0YmIwZDc3MGNjZjAwMDliMWIzNzVhZDNkYTk2NDNmOGU1OTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxZjM5Zjg5Y2Y4MWE1NTU5NWNjYTBkY2QwZmZjNDljZTI5MGU2ODExN2E5YmNiNDYzMGY4YzBkM2YwNGExNzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmZmUyYTliOWFjYzFjYmIyYzhkMGY3MDJkOTNmZTJkYzNkNzYzMTk1M2Y2MTgxNzA2ZmNkYWM4MDg0NmFlMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4MjlmNzYyZTg3ZGMxZDk1YjA1NjllNWZhYTkzYTQ1YmJiMDA2MTA5ZmY0NzRjNjFlNTc4Mjc3MzM1OTExMDcifQ"
+        },
+        {
+          "resource": "repo://entrypoints/app/main.tsx#L11-L15",
+          "version": "repo-lines-v1:sha256:b5dfca70c2339cfd5a2049cf2719f7119991ce942155dfa664157259a6dcb986:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDRkYTA3MzA5OTFlOTZmOTBhMTgwYTk4ZmY4N2FjNzY1OGU0MTgwYzhhYWY5OTE5Yjc0OTI4MjAxNmFjY2M2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTEzNDgzMGE3YTc0ZWFjN2Q0NDFmMjFkY2ZlMzUzMjg1ZTIyMDI4NTg0Zjk2YjFlZDkyYjNmNTBiZWU5MjZjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://entrypoints/sidepanel/main.tsx#L11-L15",
+          "version": "repo-lines-v1:sha256:642005c4ffc207936db9511450dd773dda73803b353a1a98d236e87311acf403:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDRkYTA3MzA5OTFlOTZmOTBhMTgwYTk4ZmY4N2FjNzY1OGU0MTgwYzhhYWY5OTE5Yjc0OTI4MjAxNmFjY2M2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWQzMWMyNjQwNTllNGNkOTZlNGI4ODlmZTM5YWU2M2E4MzQ0MDVhMzJiZTRiOGJkNGU0ZGMxNTRjODY3NjhjZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_19d3c97fff7a441c9623660b7abd5039",
+      "statement": "The app library extends openuiChatLibrary with the custom components SummaryHero, KeyNumbers/KeyNumber, Takeaways/Takeaway, Timeline/TimelineEvent, SourceQuote and Diagram plus the custom actions HighlightInPage and CopyText, with Card as the program root.",
+      "evidence": [
+        {
+          "resource": "repo://lib/library.tsx#L275-L300",
+          "version": "repo-lines-v1:sha256:f410f778b0509ccbfd4b0eb3d6341967195322f35a3a249fd706c1840a526465:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhYzgyMWZkNzJhZTM1NGMyNzU2ZTE1NGFhMWY4OWJkNjA3MzU0MWI1YTJhMjhlZGU4YzNjMTkxNWUzZTUwOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYzdjMTE1MWY3YzhkNmI0OWIzMDM3MjcxZTRkOGQ5YjliZGExNGMyZmRhYzY2NjQyMjAzNzBlMTI0Yzc4NWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b11a91f9b5a847e08ddcc7890c7cee4a",
+      "statement": "lib/openui.ts owns the system prompts (visual-first, chart-selection, diagram, length, layout and per-source-kind rules), the inline-mode prose/code split, parser validation, Mermaid validation, the repair message and edit-mode merging via mergeStatements.",
+      "evidence": [
+        {
+          "resource": "repo://lib/openui.ts#L17-L60",
+          "version": "repo-lines-v1:sha256:a1a52c7ce06b72de89a7a2d3faa6c8bd50518f026b182ae50b5c5afa74021363:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4MGIwYWRlYzMxYjU1MWZiZGQ4MTY1ZDk1YWFiNjU1MDJmN2JhMzZmNDAxNTQwZWEzODg2NDM2ZGQ4ODJhMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhMDZiOTZjN2Y5MTAyNGYyMWEzZjgwMzk5MmFmYzhkYTQ0Y2UwZmQ1OTlkMmZjMDMxNzFjZmRkNTQwNmFkNmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkZjIwNjRjYmU4YTZhMmQ4MTRjZWFlNmMyMTA0ZjY4YmRhZDFiMjAxMWQ3MTU1ZGFiNzI0ZTQwODNlM2Y2YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzODY3YTUyZDlkZDFkZTdmYjU1MzE3NWQ1ZTViMDU4MDA1MDY3Njg1ZDY0MzE2NTBiNGZhNTBkYmM3MGEwYWEifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L195-L298",
+          "version": "repo-lines-v1:sha256:4d489826b059a9db85461535e82069fa75a5268dfff9c8d1076b2475047e932e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3N2NmZjc5NzkyYjg1YzcyYTUwNTUzMDI4NjZkYzliYzRiNTk3N2NkYzBiODZhMWEwZTdlOTQ1NDI0YjlhMjIxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlY2EwZmRhZWJmNWEwNzQ5NTRhNTFjMWViNjAzNmVlZTU3NzljZDY3OTJhMTk4MmY3NTJhZDU5YjAyMmIyYTU5IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_81a280a94ded4bfa90226f689c34fdaa",
+      "statement": "The prompt's layout rule is chosen by the display setting (tab vs sidepanel), so the generated UI is shaped for the surface it will be shown in.",
+      "evidence": [
+        {
+          "resource": "repo://lib/openui.ts#L104-L110",
+          "version": "repo-lines-v1:sha256:2b36c91575d915bce0c6caa5b0aea9d71d3e5e5c4fa9b8360482d81e4e412ac5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmI5MzRhMGEzNjBkNmUyZWExN2UwOWQ0Nzc1MDAxMjBmY2M4NjFmN2E5MjFlMTlhNTNmMjkxMWU0OTg1MDA4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2EwODk1ZmUyYTllYTZjZjdkZTU0ZjNlOGRhOTQyZjZlNzMwYzI0YzhlOThkNDUwYzA3YTg2YTJhMjhiMTA2NyJ9"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L62-L66",
+          "version": "repo-lines-v1:sha256:1c48703b89dd47a7807e6fe962167d4e31bff317f130c7eb1436c4039f0271c3:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWIxODdlNWIzOGU1M2YwNTI3ZTdjYmNiZDY0MmUzNmQwODM4MjhjODE1Y2MxYTNhNTUxZDIxYzk2YWU1OThlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDAxYWUyZGI5NDhjNzAyMTllNzVlZGQ2ZDQ1ZTY1NzgyZDBmNWM1NTA3NGU5MDJiYTAyNTJmY2YxZDcxNTMyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjVhNGM0ZjgyMzBjZDRiYmU2NmY5OWQ0NDVjNjQyNGUzYTMxYzI3ZGI4YmRiNzAyYWFhMWVkMzlhZGQ0NDU0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWNiNzI3ZjNiZTk4M2E1MTQ1MjQyNTMxY2I5MzUwOGRkYjVhZmUyYTIyN2RmNWUzMTg1MDI3ZjFmYzFkMjc2YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b9dc3c3d9e34cdfb23ac6d203e22179",
+      "statement": "Only CSV sources enable the Query tools and $state bindings in the prompt, and the corresponding toolProvider executes csv_rows and csv_group in the browser, so filtering and grouping never call the model again.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L52-L53",
+          "version": "repo-lines-v1:sha256:fb84c665bfa6671b0174c2fc6b9fb7f1fb4d9775c8833ff347e3bc5973388b0f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzUwYzk0YWYxM2I0MjY3ZDdkODI5YjQyOGYxNjc5ZmUyYzU4MGEwYTc4OTU4NWFlMjc3NzhmMTdkNTcwNTBjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NlZmU5YzM1NmY4ZDI3N2E3ZjkyMWU2MzE2M2QyZDBmYWFjOWQxM2RhN2ZjMTc5NDU3NzIwN2RhZmIzN2FjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWM4ODI2N2VhNWNlMTE4ZGNkYzhiNDA2ZDJlYjQxNGNjMTIzMDIzMDRlM2ZhOThlNmVmNzI3OGU0MWE2Y2I0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWM2ZGFjYmE3YWJlYzRmMjBiYTg2NmE4ZDI5Njc5NzkzMjg5OGVkN2ZiOTRlM2ZmMWNmYmRlYjAwZmYxNTJiMSJ9"
+        },
+        {
+          "resource": "repo://lib/csv-tools.ts#L33-L108",
+          "version": "repo-lines-v1:sha256:c3cf492e0d96df3045a78013d6fe8d64dc18990e92b182d00c2266cd48cb7051:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiNjFiZDY1MGYzNzczNTAxZDI3M2UxZWNmN2ZmMzFhOWNhNDJjMGMzNWEwN2I2ZGI2ZmRkN2U1ODIyMDI5ZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmODhmNjA2ZjNjMTdhNmFiMmEzNDFjODBiNzE2NmIyMmFmMmRmZmFiZWUxZDQwYzQ3NjM1ZTQ3ZDM4ZTc2MWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3MzYzYjdlZDFlNjRiZGM5MWQ1OGRjODYzMTVlMWFlNjhlYTE4MTI0NDY0YzFmN2Y5ZDVmZGUzNzA3NGYxOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkYjlmN2Q1N2JkNGE4YTYyM2Q4ODZjNGU1MjZjOTU3ZWRkZGUzNjI1OTkzMWI3MDYxMDBlNDk2ZjNlMGY0ODUifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L112-L118",
+          "version": "repo-lines-v1:sha256:fe7f4a690ae55ff75ddf5d41903fe29cea1767068d59aaa46c7ed53fd332478b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDNkZDc1YTA1ZjVjMjExYTdmZTMzNGYyY2E2MDRjNjc1YzI1NDJiZGQ2ZTQ4OWEyNDExNTJhMmNiNmM4YTgxNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWMxNjJjMmM4NWIzZWNmNmE3NGE5MmMzMzdkMzUyMWUyMGM5NTE2ZjAwMzIyOGFjMTg1OWZlMWMxODA5YmI1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzc5MjllOTFlMGY5OWMzZTgyNWRlNjliNDM1ZmI2NDg0ZDFiMGExZGYyZjQ2NTYxYWJmMWEyOWYwNDE4OGI4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDU3Y2Q0ZDE1NDJiODlhNjY1MjY2ZWQxNWFiNzRkMDc0Yzg0YzRhMzI1N2YyYmEzNmZiMTA2Y2QyNzFmNDBjYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cbc6048ae37640e193218eaa08f7b8c4",
+      "statement": "lib/generate.ts runs the turn: it streams the completion, splits prose from code, and if the program is invalid it sends the error list back to the model exactly once, accepting the repair only when it does not leave more errors than before.",
+      "evidence": [
+        {
+          "resource": "repo://lib/generate.ts#L40-L100",
+          "version": "repo-lines-v1:sha256:de689f72a7d9b24b743bad7c15fb8e212f1ab811f33042a11a87bab6c8e2269c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3OWExMjNmMWRhNWY5OGJiNTUzNDE4ODgwZjY2MDU2Y2I0OThjNWMzMmI0NWQzMTQ1MjFmYmEzMjU0NWVlZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0OGM4NmY3Njg2OGRjNGM0OGI3ZDA3MDEwNDYyMmU2Zjc3ODYzNjdmOTZmZjJiNTM0OTA0NDQ3YjJhZGYwYTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkYzNhOTVhN2M4YzViODE3NmM2MTc4YTNlNzBhZDY5YzRiODYzNmYwMTVhYTZiNWQxMjQwNzRlMWYzMGJjODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhY2JkM2RmNTVjMWRlZTEyM2Q5NDBkNDQ4MzNjOTFkMjcxYzI5OTZiNjlmNDQxMjkyMTk0ZTQwZTIzODcwZTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4cc59f3c59b7476f9bb36ed124d9a55f",
+      "statement": "Validation covers both the OpenUI Lang program (parser errors, missing root, unresolved references) and every Diagram node, which is rendered with Pele so Mermaid errors are reported to the model too.",
+      "evidence": [
+        {
+          "resource": "repo://lib/diagram.ts#L28-L52",
+          "version": "repo-lines-v1:sha256:2dc32b9263433a01e4475ccec8af6e329aaac6d4dab6fe9519251a86dbee7f5b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NmIxZDM5YWQyZTY3OWUwZDI4OGZmZGU4MDk5ZTM1YTdjYWFhMjFlY2NlYzJmNDRmYWE0ZTJiMWEyYWY0OTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkYjE4ZGRlNmZmMTQzOWFlYThkZjEyZDYzZmVmNWIzY2E2ZmJjNDAzMzM0ZWVlZDdmNTFiYzVkMGE3YzQ5YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxNTNjNjVmYjUxMTI0N2MzYjZmMWJjM2YxZDYyOGNiZGFiODhmNGRmMDgzMGYyYjA1Nzk4OGYwYmRmZDdiMmMifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L247-L281",
+          "version": "repo-lines-v1:sha256:17f3e8170b9d42e4416d6c4e4cc8a29a38678f64063010654449ce7e45d37444:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3ZDFlNTRkMmVlNGVjZjc2NzBmYTdiMGNkOTAzNzliNTQwYjcxMWQ5MjUzYzUzODhmMTJjNjIxZDI0ZDI4NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiZTAwNDE3OTEwMTE2MjU1N2Y4MzBkMTYxOWM1NDk5MzdjZjNmODlkMTZjZTlkZTQyYTMwYzZjMmE2NTBiMTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1eecbd4819324c63896448bb4e878e1d",
+      "statement": "Refinement turns use OpenUI edit mode, where the model returns only changed statements that are merged into the current program, while follow-up questions use inline mode and may answer with plain prose or a compact UI.",
+      "evidence": [
+        {
+          "resource": "repo://lib/generate.ts#L102-L121",
+          "version": "repo-lines-v1:sha256:97c5b0bb9d4956ac784118117688d8c718326bbe77443f107066ad13085bfdaa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2NmQ4ZDIxOGUxNGRiMzQ3MGE1ZTQ2M2FkODU0Y2Y5ZDhhNzFlZDI1MTNlNjkyZWE5MWFhNmNhZTA0ZmI1YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkZDVjODZjNDllZjU2NTI2YWRiYmQyNDUwNzFiODFjMWE1NjhkN2NiZDkxYjIzYWYwOWIyNzU2MjA0YjdmYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2MGQ2NWZlNDAwYmNmZmFkYjY0OGE5YzNhNzI5OTY0NGFjODQ3OTFjZDZhMmNmNGMyYzNiZjVkNzM2ZGJjODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhY2JkM2RmNTVjMWRlZTEyM2Q5NDBkNDQ4MzNjOTFkMjcxYzI5OTZiNjlmNDQxMjkyMTk0ZTQwZTIzODcwZTkifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L195-L212",
+          "version": "repo-lines-v1:sha256:2051538938761e46e43254ebcc4129e265d5d48cff55813f606e9a88efee6196:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3Y2ZmNzk3OTJiODVjNzJhNTA1NTMwMjg2NmRjOWJjNGI1OTc3Y2RjMGI4NmExYTBlN2U5NDU0MjRiOWEyMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxMjkyMGZiN2JmMWNiOTMyMWRkN2Y0Yzg3OTVhODczZTg5OTk5MjYxNDk2ZWNmNzUzYmMzYzBkNmFlOTM2NjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjYTBmZGFlYmY1YTA3NDk1NGE1MWMxZWI2MDM2ZWVlNTc3OWNkNjc5MmExOTgyZjc1MmFkNTliMDIyYjJhNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzNzUxNmE2YjM4ZDgyYzQ2NWYyZTBiYzVmMjU1NjZjZThhYWUyMDFmMTRkNDU2MWY3YzAzMWQwNDc5MTM4OGEifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L290-L298",
+          "version": "repo-lines-v1:sha256:3d31e1d17421602594debd0d3ff10e00c18641d3fb9b82274498e6ba32c416ca:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzU1MjdjNjc3ZjVhYjg4MDE3M2U2OGI5MjZlMTdjYmVhNTRlZDkxMmY2YTQwYzYyN2ZkNDE0YjYwN2U4ZDk3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTc2MzA3ODhiZGUyMDE2ODdkODNjNDI4ZGU1NWZhYmRjNzY0YTI1NjZjMGU0ZTg4YjY1ZTkzYjU0NGNmZGU5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_56ab4999969b4d45a2ba8b7269528458",
+      "statement": "The OpenUI Renderer does not execute custom actions: it emits an event that the app handles, which is how @HighlightInPage, @CopyText, URL opening and follow-up questions are fulfilled in SessionView.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L57-L92",
+          "version": "repo-lines-v1:sha256:daf283fb539fe28b57bfa5fdca0f69be8a97fc611f910dd86e94e4d7adebbd40:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxNzQ4NTE3NzAyZTg3NWRkNWUyOWI3YmIwMjdhZjQ4MjI3NjcwY2I4YTQ4OGEyOTc0MGY1ZTlhYTg2OTAwMjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjNmRhY2JhN2FiZWM0ZjIwYmE4NjZhOGQyOTY3OTc5MzI4OThlZDdmYjk0ZTNmZjFjZmJkZWIwMGZmMTUyYjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxZTM3MjVkYTAwMmI0NmVkOGI0ZGU4ODAwM2FkOTcxMGRjYWYxOGQ1N2M0NzAxZGMzYmVmZjBiMmM1Y2IxM2YifQ"
+        },
+        {
+          "resource": "repo://lib/library.tsx#L16-L18",
+          "version": "repo-lines-v1:sha256:ad77aea5911ed1e1f247f3505fef6e2429e80fb36ca611bf21f6e152992f679e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE4MzZjZDQxMjc0ZWJhYWE0YjAxNzk2NDQ1Nzc1Y2Q5YThkNTg5OTI5YzNmOGQxNzBhZGQwMzg4NzNjZTZiMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDZlYzUxMWE4YjFkZThmOGI2M2M2YTEzYjA1NjBiNGQ0MzUxZjVhZDdiNjNmMzZlYTA5OGQ5MWZhMTZlOTViMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDE0ODM4N2U5YWRiZjBmNTRjNmNmNjBhZmI4N2ZlM2RkOTRjYmU5MzIyNmQ2MGNjYTg4YzEzNjFmNjc5MGNiMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_11e114c5bb2249b5b6f639f91e017730",
+      "statement": "Source extraction converts web pages to Markdown with Readability and Turndown (GFM keeps tables for charts), PDFs with pdf.js, CSV with Papa Parse into a dataset, and truncates content to the configured maxChars before it reaches the model.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L76-L88",
+          "version": "repo-lines-v1:sha256:4f4065893c5d72a7e9b1e4b45d4a74e353ddcf1c109d62773eb2fb9a7e3dba80:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1ZmJlYmU2NGFkNmE5NWVkYTFkMDBjZWI4ODBlMzJjNTY3NmM4YWQzMWUxODUyMDliMTM1NDI5ODI1MzcyZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlYjczMTFiYzI4ZTUyMzhmODI4MTE1NDgxNjA5ZTYwMTEyMDg2Y2M2NDRkZWVjOTNlYzJkMDY4N2NkYzUyMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmNDg3Y2I0ZGU1ZTYyZGJkODliYWZjZmQyNjY3ODA4MTA2YzNiMGMwMmJhZjFmZDVhZTllZWQ5NmRlNmFiZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwMTJkNWMxZTZmN2MyOWJkOTljYzQ2MzZhYTBmOGE1Mzc4YTQxYjhmODJkOWNhZmNkYWY3OGI0YjY0YWYzNjkifQ"
+        },
+        {
+          "resource": "repo://lib/extractors.ts#L26-L50",
+          "version": "repo-lines-v1:sha256:608bd69ce0271b057ca0bd557093c6491c1300337db929ef860cdb1fb1a7a6d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxNjMwZmQxMWQ4MGVmZjQwNTdmZWJmZGRmNjM3NGZmMmRiYmE1ZDAzMTk3NzQwMDQ1ZWEzNjhmZDg0OGNiYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMzUwODA4MGQ1MTMyOGYyMmYwMGI4MzhhNGJkODUzOThjM2JlMjc3OWUxMTE0NTA2YzdiNWRlMzI0NWVhY2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlNWQxM2E1ZGE3MzA5YzQ1NWE0MzA3MTZhZWZjMWIyY2U4ZjAwNDAzMTBhNmQ4MmNiYTMyZDYyMDMzZGJkN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0YmIxOTkwYWY2MjdjMzVjM2RhNDExZGM4NGRmZGI5NTRjNzQ4NWFjODdjNWJhODE1YjU2NWE1OGY2YTU0NjQifQ"
+        },
+        {
+          "resource": "repo://lib/extractors.ts#L67-L140",
+          "version": "repo-lines-v1:sha256:523f5fafeb96c541905c3eabf76493a26dde349aec5315eefbad678579f61e28:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4NzA3NjY0OTgzZWI0YmMyOTRlODQ4MTc5ZjRhNGIzNWYxNzE2NWJhOGFlNTI4NTYyYzIyZmVmNzgzZTQzNmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2Mjc4MTliYmZjZmY2YzJkNDRmMjAzOTgxYTYzNmYzNDg3YWZkYTk2YzBlN2Y5ZTcxYjliMmI5ZWYzNDk0ZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0ZTliMzAyOTBhYTU0OTc3NTc0YWNmN2VmYzI5YTBkZTUxYWI1NTk4ZTYxNzU3NWQyNWIzOTdiZGE2Yjc4OTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4MzhlZTJmNDZhYzQ5NjdmMDgyZjUwYzBjZWFkN2UwN2Q1MTUwYmY0MTg1YmM5NDRkMGU5OThjNTBhMzY4YTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1f03c5f5685349bfb192d848140cef94",
+      "statement": "History is persisted with the OpenUI Message Protocol (buildMessage / parseMessage) so form and $state values survive a reopen, and only the plain content is ever sent back to the model; at most 20 sessions are kept.",
+      "evidence": [
+        {
+          "resource": "repo://lib/generate.ts#L123-L140",
+          "version": "repo-lines-v1:sha256:024b2d36c0ad3f057c6d4020efbe5c41ce6fbdfa202c43f17fae2af6c7ab6f2f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2NmQ4ZDIxOGUxNGRiMzQ3MGE1ZTQ2M2FkODU0Y2Y5ZDhhNzFlZDI1MTNlNjkyZWE5MWFhNmNhZTA0ZmI1YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5MDZmOGZhZTUxNzk4NTRlNmQzN2Y4NTM5ZjBkMmY0OWM1NWJlNDQ1OTc0YzUxODFjZmQ2NzNiNGQzNDUwY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://lib/history.ts#L1-L63",
+          "version": "repo-lines-v1:sha256:d47b587fc2c73c0a042863b7b526ebffa5ed8c2e10aaf3171f5be63de477afc0:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNTQ3NWEzMTRlNGM2MDlmNzcxYTllNTZkNmEyMzk5MWJmMDIwNTlmMDdjZGQ1ODk1ZjUyYjg2ZWM3OWU5NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1NjMyMzViYzY1NzZhOWMxNjc5MDhiNDEwNzlhMDZhMWQ3N2U4NWY0OTY5MjNhOWIxMmI2MjBmMjJkZjkyODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_18df41fcfeea4801a5d32b0e5d12e51c",
+      "statement": "Persistent state lives in chrome.storage.local (settings with per-provider API keys, history, cached model lists) while pending requests and side-panel bookkeeping live in chrome.storage.session and are dropped after 10 minutes.",
+      "evidence": [
+        {
+          "resource": "repo://lib/history.ts#L50-L52",
+          "version": "repo-lines-v1:sha256:e4368d0de738100bb5d495da6fb1c3eec5f73dc5d5ca3100f14ebb66569e089d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGJkNjRlM2I1MjgxMWViNzU0MTA0YmI2NzA0OTYwYjUzYjQ0M2QwNzAyNzUyYWUwYzE4NjQwNzNlMTk3MmE2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmZlNzhiMDk5OGU3OTAwMTgyODU3YmE3MjgyY2Q0ODNjNzI4MDIyMDk0Zjc3YTYzYmRjYmQ1YjA0ODBhNTY3NCJ9"
+        },
+        {
+          "resource": "repo://lib/models.ts#L101-L104",
+          "version": "repo-lines-v1:sha256:f0dd6238576258163e1683a6b2e9a6739925fc8623b152415b3eea882d38c3ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk3YjEwMWI4YjQ3YzIyNGQ1YWZkMjYyNTY3NTk5YzQ4Y2I2MDdkOGU2ZGZjYWYxMTZlYjM1YzA0YTQ3ZmE5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTEyNGVmZTQ0MmUzMmQ1MDg3MGZjNGUyYjMxYTZmZGNkZmUwNWUyOGZiNWFiMGM5MzFiZmYxY2MwOGRiMjA4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWQ3YzQ2YjViNDU0YWU0YmNkMTMzMTJmNTViOWVhYTA0ZWI1NTdhZGRjODg4MDIwN2YwMWE0MWIxNGE4MTYyZiJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L10-L24",
+          "version": "repo-lines-v1:sha256:dfdaf9280b291f30ac543f0f4773d9e7335d55d8ac1f01f38eb80a3b44028d57:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwYTZhMjQxZmU1OTczMDU4ODA5ZTJhMjk3NzkwNTdmOWU2MzJiNzM3YWE5YjJmZjNlMDNlMDNhMWNlMjNhYmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjZGEzZDQ1NmRlOWQyMmU1Yzc1ZDRiN2VlOTVlMzYwMDc2MDdiYmI5MzQ1ZGVmZDc4MGQxYmM5ZDljNWYzYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiMDQxNTQ1MmY1NGQ5OTkxOTFhNzQwZDQ5ZWIwNjUzYjA0YmFhNjQ5M2Q4ODViNzgzMzYzNDY4MzgzZWVlNzQifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L216-L220",
+          "version": "repo-lines-v1:sha256:5ad55589df1c9e52ce3d054236e4d81365bfc4782f1e80abe8fc8fe35c5e3f72:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmY0YzE2NTQ1NjlhZDEwYzhkZTM1MDk5NmY0YTRiNmZjZWRmZmFlN2I2MzVmMzMwOGVhYzRmMDRmYWJiMTI2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmQ2NTM1NWI2NGVlNzk1Y2JiNmQ2OWIwN2I4NmU4Nzg0YmVhZTkyNWE0ZWFmNGYzN2FjZmVlODhhNjhiOWU1NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfb5bdb179af4b368585c430b3845ad3",
+      "statement": "Settings are stored under the local: prefix rather than sync:, so API keys are never synchronized through the user's browser account.",
+      "evidence": [
+        {
+          "resource": "repo://lib/settings.ts#L216-L220",
+          "version": "repo-lines-v1:sha256:5ad55589df1c9e52ce3d054236e4d81365bfc4782f1e80abe8fc8fe35c5e3f72:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmY0YzE2NTQ1NjlhZDEwYzhkZTM1MDk5NmY0YTRiNmZjZWRmZmFlN2I2MzVmMzMwOGVhYzRmMDRmYWJiMTI2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmQ2NTM1NWI2NGVlNzk1Y2JiNmQ2OWIwN2I4NmU4Nzg0YmVhZTkyNWE0ZWFmNGYzN2FjZmVlODhhNjhiOWU1NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd5609ee077a425e89a2c79f2b44472e",
+      "statement": "browser.sidePanel.open() only works during a user gesture, so the display mode is encoded in the context-menu id instead of being read from storage at click time, and openSidePanelForTab is deliberately not async.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L55-L78",
+          "version": "repo-lines-v1:sha256:d853c1a3c2e1d20a738810150618e7f0bc46cbf9d9ff3537106fc925c46b429f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZjViY2VlY2IzYTdlN2EyMDRhZWI1ZTUyMjc0MTA0MzIzMTY2ODU5MDM2YmI4NmY3YTA0MjNiNDM1YjZkNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyNDVlODI3NjZhYmVlMjJjZTZmY2FkNjE0MzkxM2UzNjQ2OTM4NGY1NTBiYzZjMDMyNDcwZGNkYzc4ZWVmODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIifQ"
+        },
+        {
+          "resource": "repo://lib/context-menus.ts#L17-L47",
+          "version": "repo-lines-v1:sha256:62c361d9722d2ebbab0093298ba654e9448420c49669ebb90a63e54abee457c9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2NWE1M2UwMTU4Y2FkN2I5NjU4ZTcyNmU5NDhkZGY1YjQwOWYzNDgxZjYwYWQ4ZTZhOTExMGJmYzUwMDg1ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1Y2YyYzZjODIwYTE1M2E4YWRlOWRkN2ZmN2NiMTUzMzRmYjE1Nzc4MjY4MzJjYWNkY2M3OWQxZGZhZTA2OTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L64-L72",
+          "version": "repo-lines-v1:sha256:aef2fa012209ed5069547b20684bc8d7736ffb5e83efe22f1b7e65f9e49a1e68:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGJjZmU3ZTA0ZjllZWJhYmVhNGFiNWFlOGJhZTY4YjA0YTI2ZTdiYzljODBmZDg2OGUwZGI0ZjQ0NzIxNGQyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzU2MTM2YjBkZmQ0OTdiOWIwNjcwNTAzOGU1NDczZDNkZGM1MzUwOGZkZjNjZjc3YjkzMTk3YTU2NjVmNTA4YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTI3YjBlOWJjNThhODhkZmQ2ZDcwNmE3MWJhODdmNTE2ZTliN2M0YjM2ZjgyYjg5YjMxOTBkYmI4YmE1NTVmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTkyNTczZjM3NTgwNjg3NWFmYzcxY2IxNWQwOTMzYWRiZmNiMWI2YmNlYTE5YWNhMGZjNjM3ZDg5ODI2NDVhMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b267fb90c67b40209e2ee2c63ed82407",
+      "statement": "Every request is checked against the provider configuration before it runs: configProblem rejects a missing base URL, a missing API key for key-requiring providers, or an empty model, and the UI offers a link to Settings.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L50-L52",
+          "version": "repo-lines-v1:sha256:156705e692101eb4e6e986d782cde859591341d9bfb70255d48a37307676bb61:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IzOWQ0YTVlN2Q1YmJjYmU3NmEwZjdhMWJmMDYxYmMwMTdkNzAzMjlkNzJhYTY1MzBjOGEyOTE5NTA2ZTQwYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDYyOTIyMTQyYjFmNWYxMDM4ZDNiM2EzNGNkY2NiZjI1NTA2YjQwMjIxZGU1NTEyMTkwYjdhM2E3NmU5YTllMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmIzMTNiZWI4MTExMTlmZDEwNDE4MjFjNDY3MGZhNjIwMTJmY2Y1ZWQ5NjFhY2RjNThhZDY3ODlkODMwNjQzMSJ9"
+        },
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L196-L204",
+          "version": "repo-lines-v1:sha256:a8c4edb337a883c42147cf2956b0f89c6576cc3c7ff0130371899de8a039e524:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGUwMDYzOTk3NmZhNzYzMWE1ZGJkMjdlM2U0Y2MyMjdiYjRjMzcxYzc1NWU2NWU3OWQ0OWRkMzAwZWQ4ZjQzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGUwMDYzOTk3NmZhNzYzMWE1ZGJkMjdlM2U0Y2MyMjdiYjRjMzcxYzc1NWU2NWU3OWQ0OWRkMzAwZWQ4ZjQzYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzc5NzhjNmM0YzNlZWJmYWU2ZmNmNTljYjBiMGM5ZDFjYTc5YmI1MzcyMjc0ZTIzNzcwMjIwYmFkMzFhNzI3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTZhZWE1ODcxNTM4YmQ3NTFkOTljNjVmZWE2ZDBhMGU0MTFlYWMwMzZiZmU5NWFjMjYyYTg5ZmJmODkyZDJlYyJ9"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L205-L214",
+          "version": "repo-lines-v1:sha256:b688b2f8ba0cbea279c65f53f88a815268ae73c8db05228c2e34ad8f21de6678:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzZDg4NjljYmEyMjJlMDAwM2IwZjI1YmExODMxM2I1Nzc3YTU1MDkxZDdmZjE4NjA5OTZkODg3NzY1OTI0ODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxYThmN2VmMGQ0M2EyMjcxMDFjNDIwMjc3ZTZjZGI3MWFhZWU4ZDMyNDhlNzk2NjNjOWQ5YTg5YzNhZDUzODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwZTg2Y2ExZDY4N2ZhNWVjMzVhZjFhNWFlZGZhMTc3NTQyNTJkM2Q4ZjM0YWMxOGIyNTM3MmI3ZGZmYzE0Y2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e02337808179488882d2814c27f09dda",
+      "statement": "Local providers are supported without extra configuration because a declarativeNetRequest session rule rewrites the Origin header of the extension's own requests to localhost, so Ollama does not need OLLAMA_ORIGINS.",
+      "evidence": [
+        {
+          "resource": "repo://lib/llm.ts#L44-L46",
+          "version": "repo-lines-v1:sha256:5a35611ae822a5d79be52f7ce9335494cbbb049fab60d32e953d4a523fcbe7b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzhjMzJkYTJlZDMxY2Q5NGI4MzA5NDU0ZThhNjU1YjIzZWM0ZmIyNjZhMmNiNDEyMjg5YTk2ZDA4MmI1YWNiZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGE2MTlkOWU0ZWMyZDU3MjgxYTQwNjg3YTlmYmNlNzY4Y2EwZTFhMmM2MmZlYThlMWViZTY2MjQ4ZDRiNjRkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTIyMTQ5MTQ2ZjU4ZmQ1MDM1Zjk1MTY0ZDg4NjdmMDVkZWI4MjQyZDU1ZTY1OGVhMDE4YTk0Nzg3YWU2Mzc3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTJjM2IyYWFkZjFmZjlmZDk1N2VhNzFhYmQwYTc0NTQ3YjE4N2FjNDYxM2E5N2Y0NDMzYTA2YmU4NjFjNTA4OSJ9"
+        },
+        {
+          "resource": "repo://lib/local-origin.ts#L24-L56",
+          "version": "repo-lines-v1:sha256:0099280d52f046ca78832a177fb57ddcbb9b62bd1b5236dcd8a5d70816b479ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4Y2U2YzBiNzIyZTgyN2QxMGNkZDY3MzQ4MjU3MWUzNWQ0YjI0YWI1YTAwMGJjODM5NzRhNDRmZjBlNzc2YTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4YjdlMDBkYzM1ZmY2YmJiNmQwYmEwZTE0NTk5ZjdlYjEyMjY4NDYyMTRhODQyOTIxZWY2ZmM3ZTYyNTFhOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d762938389d2485f953bc5722042fda7",
+      "statement": "Model output is treated as untrusted: Pele rendering disables links and images, and a diagram failure is displayed as text rather than markup.",
+      "evidence": [
+        {
+          "resource": "repo://lib/diagram.ts#L10-L25",
+          "version": "repo-lines-v1:sha256:1d4cc543f3ba854dd3644539e8bed9b9d50bf488ce9d861c3f3f3b13da4b543d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2ZDI5NTEyZjc0YjYxODViM2MwY2Q4ZDk0MmIxZTk3ZjdjYjI4MmQzZDlmY2JiZmI5ZTE1Y2VhNmQ5OWZhZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwMmRmNjQzYTM1YzU1NjljZWRiNjgyNjIzZmE5ZWQwZDE1NTNkMDFiMmE5ZjJmMWE0YWQ4NzQ1MWI1MDBhNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjNjZmMTA0OTJiYzZhYmViYzlkMmQyMThhOTA4YTA3NjhhNGZmMGY5NTg4YThjNDc0NGEzY2NhY2Q2MzgyNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4ZjBmYjE2ZjlkMTdjMGY3NmI3YWZiMWI2YTRhNzA3ZmMzODJlYzI4MjEyYjZjOGRjMDNhNzI1NDMwM2VkYWMifQ"
+        },
+        {
+          "resource": "repo://lib/library.tsx#L256-L268",
+          "version": "repo-lines-v1:sha256:7c8afa5b16b574f6fee7d0a5d799dc6831790b096cfea7cd03f6a2c33389088b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyY2U3NGVjOGEwNmM3Mjk2ODNjNTRhMGU2ODkzNDcxMGU0NjEwNzAwNzdlYmQ5ZmE4OGQ0YzI1MDUxZjY2YzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MThlODI0NDdlYzQ5MzAyMzMwMzU1MjY3YjI2Y2NhMmQ5OWM0ZTRkZmYyN2VhMTBlYTQ2MmUyODFiODBkOWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4NWE1NTU5YjIwNzk4MDE5NDAwNThiZjNkMzViYmZiY2Y2OWQxZmYzOWEzY2I1OWY5NDljMDRhNjRiMmUyOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhYjUxNjlkMDI1YzIxNTQ0NzQ3MTAzZjI2NDViY2NhZmQzM2FmMWJiZjYyYWQxNWRjOWM5NjYxY2Q5MzVlODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_43fa280feb9d4df38a745416a642ea84",
+      "statement": "wxt.config.ts declares the runtime permissions (storage, sidePanel, activeTab, scripting, contextMenus, unlimitedStorage, declarativeNetRequest, favicon, clipboardWrite), optional_host_permissions for the provider API domain, the localized name/description, and the Alt+Shift+S _execute_action command.",
+      "evidence": [
+        {
+          "resource": "repo://wxt.config.ts#L6-L29",
+          "version": "repo-lines-v1:sha256:18f081b125745be8a27eb00dd305ef5a7debfbb16363fe3791a327899c707a78:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YWFiNTMyZmQxYWNmMzBmZGMzNmQzNTA0YTgyMTNlOGMyYjI3ZDVjOWZhODdlNzc0NGEwOTA1MjBhZTFhMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NWM1MDFlMDljNzljMDE1MTY2NTc3NWZmNDAyYjQ1YjI1MDU1NWRhYmU1M2UxODljNTgxZTJlNTY4NzVmYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_526dd5b20f68465ba46e6c4e95d3ab2e",
+      "statement": "UI localization is bundled at build time from locales/<lang>/<namespace>.json, with English as the source of truth whose keys are type-checked through an i18next module augmentation, so a missing English key breaks the type check.",
+      "evidence": [
+        {
+          "resource": "repo://lib/i18n/index.ts#L36-L50",
+          "version": "repo-lines-v1:sha256:15b22e978dcfb3d24f9f4c2df2017f67be36744a725943653c1f2e6f7aee3736:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliMzJlNWI0M2JmZTdiYzU5NjYxNmJiZmM0MzY2OWE0ZDhiZTg2NTU2MWE0OGE0ZWFiZWVmNDhmYzQ0OTc5YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1NTJhMTExZjVhODViMGRkMDVkNDBiMGM0MWY5NDJlMTExMDc3MjhmYjNhNGIxMzRlYjNkZTJkODJjNTA3NDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2NGIxMTg3MTU0NTg2OGE3Y2MyNGRkNDllZjU2YWMwZjE1NmVhNDk0Nzc5Yjg2OTVhY2FiNmYwZGY0MmI2MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzNDJhYTUwN2Y2NmM2ODMyZjU2NTk1YjYxMmM2ODdiZDA3MTRlODIyNDQyZmJiNDRhY2U2ZDg1N2FiMDM5MWUifQ"
+        },
+        {
+          "resource": "repo://lib/i18n/types.d.ts#L1-L22",
+          "version": "repo-lines-v1:sha256:934ca58c8a997813eea8c9b184ed8fc9f640208ee87724c876c5b7598b286252:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NTg4MjJhMWE4NGM1ZWFkMjU5ZWE1Y2E1N2I2Y2ZlOTViOGM2ZTYyZTcxOTNkYTQ3ODUyNDYxMDY2YjVlMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_570246d02da24ff1bcdf34afbce34110",
+      "statement": "Operationally the project is driven by pnpm scripts: dev for the loaded extension with hot reload, compile for type-checking, build for .output/chrome-mv3, and check:i18n to validate the locale folders against English.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L8-L18",
+          "version": "repo-lines-v1:sha256:a1f726acabc522ed8d92f9a7ba19236dba770926e834ee1b13b1bc30ab83f176:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMmFiMGYzNWViZTY0MDUzZDkzMmY1ODgwZDhkMTgxMTNkZmRkNmVhMjRjOTMxMGY5OTk2NmNmOGZlZmUyZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhM2I0NjlkOWUwOTc1NzIyNDY2NjczNGM5ZWY3YjI1NGQ4ODUzNGY1ZDViYjcwOTg5NjA4MDVjNTUzZGMzMDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlYTk5NjMzYjA3NjRmYzJjMzdkZTZlMzUxODNhNjUwODQyZGRkNDA5ZmUwOTcxZTAyN2ExODU2MmJmY2UxMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzMGI5ODQ5YWEzZDJiYTEzYTNiMGM4NDJlNTUxZmY5MjdiOTc0MzljNmExZjIyNjNjNjNhMTg5YmFhNDExNTgifQ"
+        },
+        {
+          "resource": "repo://scripts/check-locales.mjs#L1-L10",
+          "version": "repo-lines-v1:sha256:8b10d858607eee5db1253a26f452580b0e5656eb4fcbe642f598377ebfdb9143:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkYmM1OTU1MjY0OWM2ODVkNzdiZThjZDJhNGY3YjMyY2RiZmVmZWFhYmM3NmY0MTc4ODNkYTQ1YjY3MTgyYWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4NTdiMTNhMjNlNTEwNjdhMTM1ZjgzMmYxZDQ1Mzc2NTlkZjIwNDQ4NGNiZmE5MzA5YTQxZmNmYTFkYTM4ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_098dbede163d437faa19ac9bcbaca074",
+      "statement": "The manifest is not fully described by wxt.config.ts: WXT derives the rest from the entrypoint folders and public/, so the built .output/chrome-mv3/manifest.json adds the background service worker, action.default_popup (popup.html), side_panel.default_path (sidepanel.html), options_ui (options.html, open_in_tab) and the icon set.",
+      "evidence": [
+        {
+          "resource": "repo://.output/chrome-mv3/manifest.json#L1-L1",
+          "version": "repo-lines-v1:sha256:cf548b1b17e76f0e7c5dedaf8c274dfc3ea158e22c9e9f7afbb4b5eac9d0b434:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y1NDhiMWIxN2U3NmYwZTdjNWRlZGFmOGMyNzRkZmMzZWExNThlMjJjOWU5ZjdhZmJiNGI1ZWFjOWQwYjQzNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y1NDhiMWIxN2U3NmYwZTdjNWRlZGFmOGMyNzRkZmMzZWExNThlMjJjOWU5ZjdhZmJiNGI1ZWFjOWQwYjQzNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://entrypoints/sidepanel/main.tsx#L11-L15",
+          "version": "repo-lines-v1:sha256:642005c4ffc207936db9511450dd773dda73803b353a1a98d236e87311acf403:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDRkYTA3MzA5OTFlOTZmOTBhMTgwYTk4ZmY4N2FjNzY1OGU0MTgwYzhhYWY5OTE5Yjc0OTI4MjAxNmFjY2M2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWQzMWMyNjQwNTllNGNkOTZlNGI4ODlmZTM5YWU2M2E4MzQ0MDVhMzJiZTRiOGJkNGU0ZGMxNTRjODY3NjhjZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://wxt.config.ts#L6-L28",
+          "version": "repo-lines-v1:sha256:b362dd5fbf21fd00942a3bb4288f34d7c787f94a5bef759f5e7e31fe107cdda1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YWFiNTMyZmQxYWNmMzBmZGMzNmQzNTA0YTgyMTNlOGMyYjI3ZDVjOWZhODdlNzc0NGEwOTA1MjBhZTFhMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NWM1MDFlMDljNzljMDE1MTY2NTc3NWZmNDAyYjQ1YjI1MDU1NWRhYmU1M2UxODljNTgxZTJlNTY4NzVmYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4M2MwM2ZiZGY5YjM0NmFhNTUyNzg2YjVlZWJiM2FhZDRmYWM4M2FiOWU1YzZiNWQ1MTVhM2ViNTljZWVkNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d1e445e16f73482ca1a7629d9606b6a5",
+      "statement": "A pending summarize request is consumed exactly once: takeRequest removes it from chrome.storage.session when the result view picks it up, so reloading the result page does not re-run the summary, and a missing request surfaces as an expired-request error; the per-tab side-panel pointer is ignored after 60 seconds.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L60-L69",
+          "version": "repo-lines-v1:sha256:fd6e2a08117f143358c64369f5842003ce2a69da04cadf085ea633a34ec20a2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2NTIxODE3ZmUzM2Y3Mjg3OGM4M2Q3NzE5ZWRhZmIzOWM1ZmY0ZmViNjAyZDBkMzViMDk0ZTlmZDExOTFlZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMTA0YzY4ZDBjNGNmMmYxNzIxYzczODI1MjQ5NGFjZWFiYmYxM2JkMzFkYTcxMmY2M2IxOTYyZjJjNGJhYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0NDI4MjYxYzcwMmFiNDc4NTVlMjIwMTI4NTk1NzEwN2VkMzg2MzYyMjE2NzZkMDYzNjRlYTk0MmRkYWUzZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5M2M1ODYzZDdhZGViM2FiYmUyNjcyNzM4MzE0ZDQyOTQ0YjVkNDQ4ZDQ5ZGUxZTdkNmQxZGY2NzE4NzkxMGMifQ"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L26-L34",
+          "version": "repo-lines-v1:sha256:8c129f330903c27f308be4d0bc5db02c3da0da8b46d4ad19d85b5f1e17f49523:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmU5ZjMzMGJjZjdiMGRmMjQzOTkyYzAxYzI1NDk5OWFhN2Y5NTE4ZjUzNWE3ODM1YWE1YmQwYmY1NmIwMWMyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQ3M2IxMmVkNDIzMzBiY2Q2ZTU2ZWJkZTUzMTQ1OTc1YzYwODcwNzJlNDhhZjU3ZDQ5M2YyYWVhNDE0MmM3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODg4ZjIxZTFjMjk5ZDMxZWU2M2I4OGEwYWEzMDkyOWUzYTFjOWI0MGFiMWJiMDFkNWNiMDBiYWZkZmJhYWI3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTEwZmFlMzg0MDg5ZTQwMjBiYzY2MGVkMmI2YTMyZTU0NWEzZTM4MjRiOTNhOWZlY2Q1Yjg2MGJmMWJjZGY5YyJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L92-L99",
+          "version": "repo-lines-v1:sha256:3f50ad125009888e9c00558b7571f4d5d6a2cbde6c7db1844847400c884e07e1:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDQwMWNhNmNhMzZhZDdkNzk1ZmI3YjIxNzczOTY4MjAyNTVkZDliNmM4YWM0MzY4NmMyMDBlNWFlZmQ4NjI5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGY4N2VhZjAxMzViMDM2ZTFmNTg2NTQwNWQ0MGJhYzViNTk5NWMyMGY3N2M2MDJhYmI0NjQ4ZGNiNTViN2Q4NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGI0NjFkZTIwNjA0MmE4MWExMzI0YzkyZWE2NzRjODkwMTMwNzJlZTI5YWRiZjljMmMzNWI0ZTIyZWMzOTM0ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d6e579f832d140baa905a395577303a1",
+      "statement": "useSession owns the whole session lifecycle: each turn aborts the previous AbortController and moves through the phases idle, extracting, summarizing, refining and answering, the session is committed and persisted after each turn, and reopening a session that has a source but no summary triggers a fresh summary run.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L10-L50",
+          "version": "repo-lines-v1:sha256:e617ed438306a8d97962e180e7e779258e58356ccf2c9ad83fda294997237994:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1NWIwOWIyMDUwZGE2NzhhZTRkMzQzNTZkYjA1MDRkZGJhODI0NjJkODUxZTlkM2JlZGExMzRiMGU0MTIzYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiMzlkNGE1ZTdkNWJiY2JlNzZhMGY3YTFiZjA2MWJjMDE3ZDcwMzI5ZDcyYWE2NTMwYzhhMjkxOTUwNmU0MGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhMDc0NGE1ODVlZjc5ZmUwNmEyNmFiNTNjOGMwNzMwYjczZDZhMjlmYjBmYWZlYzhjMjcyMDYxMDdjYzM2ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4MzVkMjUwYTk4MWU3NDk1YTllMTMyN2NkZGNkZmMxY2QzMWIwMjhlMjYxYzg1MTM0NTlhZjI4YzBjOTc4NTYifQ"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L246-L262",
+          "version": "repo-lines-v1:sha256:d1e49669ae48dfff4ae63a158fa703859c7333ead5a89cd21877d8bf5131560d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkODMxMmYwZmVhNDY3MmUyOTMyOTM4NzI0OTMxNGY3M2RkNmQ5MTRmNjJjZGU3NGE3OTlhOTFlN2Y3MTdmYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlNmEzMGViMzk2NzVmOWUwMGI4ODY2YmM0ZTI5Y2I1NTI1ZjM5NzBiNTQzYzhlZWNhNWJhZjgxM2RhNDJlYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZjA1ZGQ5YmUxN2U3OGEzZTZkZmVjY2UwMjNlNjhiY2VkZTVjODIyZDhjNTg2Mzk0YzI5MzY3MDEyODE3NjcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-07T09:34:41.642Z"
+  }
+}
