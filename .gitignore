@@ -24,3 +24,6 @@ web-ext.config.ts
 *.njsproj
 *.sln
 *.sw?
+
+# OpenWiki in-progress run state (never commit)
+openwiki/.run.json
