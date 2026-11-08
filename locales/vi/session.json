@@ -38,7 +38,10 @@
     "copy": "Sao chép",
     "minRead_other": "{{count}} phút đọc",
     "drawing": "Đang vẽ sơ đồ…",
-    "diagramFailed": "Không vẽ được sơ đồ này"
+    "diagramFailed": "Không vẽ được sơ đồ này",
+    "pros": "Ưu điểm",
+    "cons": "Nhược điểm",
+    "checklistProgress": "Đã xong {{done}}/{{total}}"
   },
   "refineHint": {
     "shorter": "Chỉ giữ những ý quan trọng nhất.",
@@ -46,5 +49,26 @@
     "actionItems": "Thêm danh sách các việc cụ thể cần làm hoặc cần quyết định.",
     "timeline": "Thêm dòng thời gian các mốc, sự kiện hoặc giai đoạn chính.",
     "simpler": "Viết lại bằng lời dễ hiểu và giải thích thuật ngữ."
+  },
+  "toolbar": {
+    "label": "Công cụ tóm tắt",
+    "copy": "Sao chép dạng Markdown",
+    "copyShort": "Sao chép",
+    "copied": "Đã sao chép dạng Markdown.",
+    "download": "Tải về dạng Markdown (.md)",
+    "listen": "Đọc to",
+    "listenShort": "Nghe",
+    "stopListening": "Dừng đọc",
+    "stopShort": "Dừng",
+    "print": "In hoặc lưu thành PDF",
+    "source": "Xem văn bản gốc đã trích xuất",
+    "sourceTitle": "Văn bản gốc",
+    "sourceWords_other": "{{count}} từ",
+    "timeSaved_other": "Tiết kiệm ~{{count}} phút"
+  },
+  "export": {
+    "value": "Giá trị",
+    "verdict": "Đánh giá",
+    "source": "Nguồn"
   }
 }

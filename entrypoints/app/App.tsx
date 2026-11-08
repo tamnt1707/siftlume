@@ -217,6 +217,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
             ctrl={ctrl}
             notify={notify}
             layout={isPanel ? 'panel' : 'page'}
+            settings={settings}
             onExpand={isPanel && sessionId ? () => void openApp({ session: sessionId }) : undefined}
           />
         ) : ctrl.phase === 'extracting' ? (

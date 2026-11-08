@@ -99,9 +99,37 @@ export interface ResolvedPalette {
   charts: string[];
 }
 
-/** Supporting chart hues, picked to stay distinct next to any accent. */
-const CHART_SUPPORT_LIGHT = ['#0F9D8A', '#E59A1A', '#7C4DDB', '#E2555F', '#5E6880'];
-const CHART_SUPPORT_DARK = ['#3CC8B4', '#F2B54A', '#A784F2', '#F27C84', '#9AA3B8'];
+/** Supporting chart hues, in order of preference. Ones too close to the accent are dropped. */
+const CHART_SUPPORT_LIGHT = ['#E59A1A', '#7C4DDB', '#E2555F', '#0F9D8A', '#2E4BD6', '#5E6880'];
+const CHART_SUPPORT_DARK = ['#F2B54A', '#A784F2', '#F27C84', '#3CC8B4', '#7D93FF', '#9AA3B8'];
+
+function hue(hex: string) {
+  const [r, g, b] = toRgb(hex).map((v) => v / 255) as [number, number, number];
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  if (max === min) return null; // grey
+  const d = max - min;
+  const h = max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  return (h * 60 + 360) % 360;
+}
+
+/**
+ * OpenUI picks chart colors from the middle of the palette outwards (1 series → the middle color,
+ * 3 → middle and its neighbours). Put the accent in the middle so single-series charts use it, and
+ * spread distinct supporting hues around it.
+ */
+function chartPalette(accent: string, support: string[]) {
+  const a = hue(accent);
+  const distinct = support.filter((c) => {
+    const h = hue(c);
+    if (a === null || h === null) return true;
+    const d = Math.abs(a - h);
+    return Math.min(d, 360 - d) > 28;
+  });
+  const [s1, s2, s3, s4, s5] = distinct;
+  // 7 colors, middle index 3 = accent.
+  return [s5, s3, s1, accent, s2, s4, distinct[5]].filter((c): c is string => Boolean(c));
+}
 
 export function resolvePalette(a: Appearance, dark: boolean): ResolvedPalette {
   const preset = PRESETS.find((p) => p.id === a.preset);
@@ -120,7 +148,7 @@ export function resolvePalette(a: Appearance, dark: boolean): ResolvedPalette {
     onAccent: luminance(accent) > 0.45 ? '#141821' : '#FFFFFF',
     // A highlighter on dark paper is a translucent band, not a solid block.
     marker: dark ? `${baseMarker}6B` : baseMarker,
-    charts: [accent, ...(dark ? CHART_SUPPORT_DARK : CHART_SUPPORT_LIGHT)],
+    charts: chartPalette(accent, dark ? CHART_SUPPORT_DARK : CHART_SUPPORT_LIGHT),
   };
 }
 

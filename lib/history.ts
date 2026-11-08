@@ -1,6 +1,7 @@
 import { buildMessage, parseMessage } from '@openuidev/react-lang';
 import { storage } from '#imports';
 import type { ExtractedSource } from './extractors';
+import type { SummaryLength } from './settings';
 
 /**
  * History uses the OpenUI Message Protocol: every response is stored with buildMessage
@@ -25,6 +26,13 @@ export interface Session {
   /** Stored message (buildMessage). Content is the program merged across all refinements. */
   summary: string | null;
   qa: QaTurn[];
+  /** Per-session overrides chosen on the result screen (length, output language). */
+  options?: SessionOptions;
+}
+
+export interface SessionOptions {
+  length?: SummaryLength;
+  language?: string;
 }
 
 export interface StoredContext {

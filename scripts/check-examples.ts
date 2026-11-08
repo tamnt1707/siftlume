@@ -9,12 +9,15 @@ import { CSV_TOOL_EXAMPLES } from '../lib/csv-tools';
 import { VISUAL_SUMMARY_EXAMPLE } from '../lib/summary-example';
 import { CHART_SUMMARY_EXAMPLE } from '../lib/chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from '../lib/diagram-example';
+import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../lib/review-example';
 
 const parser = createParser(library.toJSONSchema(), 'Card');
 const examples: Record<string, string> = {
   'summary-example': VISUAL_SUMMARY_EXAMPLE,
   'chart-example': CHART_SUMMARY_EXAMPLE,
   'diagram-example': DIAGRAM_SUMMARY_EXAMPLE,
+  'review-example': REVIEW_SUMMARY_EXAMPLE,
+  'news-actors-example': NEWS_ACTORS_EXAMPLE,
   ...Object.fromEntries(CSV_TOOL_EXAMPLES.map((e, i) => [`csv-tools[${i}]`, e])),
 };
 

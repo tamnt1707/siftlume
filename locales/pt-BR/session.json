@@ -44,7 +44,10 @@
     "minRead_many": "{{count}} min de leitura",
     "minRead_other": "{{count}} min de leitura",
     "drawing": "Desenhando o diagrama…",
-    "diagramFailed": "Não foi possível desenhar este diagrama"
+    "diagramFailed": "Não foi possível desenhar este diagrama",
+    "pros": "Prós",
+    "cons": "Contras",
+    "checklistProgress": "{{done}} de {{total}} feitas"
   },
   "refineHint": {
     "shorter": "Mantém só os pontos mais importantes.",
@@ -52,5 +55,30 @@
     "actionItems": "Adiciona uma lista de coisas concretas para fazer ou decidir.",
     "timeline": "Adiciona uma linha do tempo de datas, eventos ou etapas-chave.",
     "simpler": "Reescreve com palavras simples e explica os jargões."
+  },
+  "toolbar": {
+    "label": "Ferramentas do resumo",
+    "copy": "Copiar como Markdown",
+    "copyShort": "Copiar",
+    "copied": "Copiado como Markdown.",
+    "download": "Baixar como Markdown (.md)",
+    "listen": "Ler em voz alta",
+    "listenShort": "Ouvir",
+    "stopListening": "Parar leitura",
+    "stopShort": "Parar",
+    "print": "Imprimir ou salvar como PDF",
+    "source": "Mostrar o texto original extraído",
+    "sourceTitle": "Texto original",
+    "sourceWords_one": "{{count}} palavra",
+    "sourceWords_many": "{{count}} palavras",
+    "sourceWords_other": "{{count}} palavras",
+    "timeSaved_one": "~{{count}} min economizado",
+    "timeSaved_many": "~{{count}} min economizados",
+    "timeSaved_other": "~{{count}} min economizados"
+  },
+  "export": {
+    "value": "Valor",
+    "verdict": "Veredito",
+    "source": "Fonte"
   }
 }

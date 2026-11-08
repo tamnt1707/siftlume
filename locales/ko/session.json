@@ -38,7 +38,10 @@
     "copy": "복사",
     "minRead_other": "{{count}}분 분량",
     "drawing": "다이어그램을 그리는 중…",
-    "diagramFailed": "이 다이어그램을 그릴 수 없습니다"
+    "diagramFailed": "이 다이어그램을 그릴 수 없습니다",
+    "pros": "장점",
+    "cons": "단점",
+    "checklistProgress": "{{total}}개 중 {{done}}개 완료"
   },
   "refineHint": {
     "shorter": "가장 중요한 내용만 남깁니다.",
@@ -46,5 +49,26 @@
     "actionItems": "구체적으로 할 일이나 결정할 일의 체크리스트를 추가합니다.",
     "timeline": "주요 날짜, 사건, 단계의 타임라인을 추가합니다.",
     "simpler": "쉬운 말로 다시 쓰고 전문 용어를 설명합니다."
+  },
+  "toolbar": {
+    "label": "요약 도구",
+    "copy": "Markdown으로 복사",
+    "copyShort": "복사",
+    "copied": "Markdown으로 복사했습니다.",
+    "download": "Markdown(.md)으로 다운로드",
+    "listen": "소리 내어 읽기",
+    "listenShort": "듣기",
+    "stopListening": "읽기 중지",
+    "stopShort": "중지",
+    "print": "인쇄 또는 PDF로 저장",
+    "source": "추출한 원문 보기",
+    "sourceTitle": "원문",
+    "sourceWords_other": "{{count}}단어",
+    "timeSaved_other": "약 {{count}}분 절약"
+  },
+  "export": {
+    "value": "값",
+    "verdict": "평가",
+    "source": "출처"
   }
 }

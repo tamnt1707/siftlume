@@ -41,7 +41,10 @@
     "minRead_one": "{{count}} Min. Lesezeit",
     "minRead_other": "{{count}} Min. Lesezeit",
     "drawing": "Diagramm wird gezeichnet…",
-    "diagramFailed": "Dieses Diagramm konnte nicht gezeichnet werden"
+    "diagramFailed": "Dieses Diagramm konnte nicht gezeichnet werden",
+    "pros": "Vorteile",
+    "cons": "Nachteile",
+    "checklistProgress": "{{done}} von {{total}} erledigt"
   },
   "refineHint": {
     "shorter": "Nur die wichtigsten Punkte behalten.",
@@ -49,5 +52,28 @@
     "actionItems": "Eine Checkliste mit konkreten Aufgaben oder Entscheidungen hinzufügen.",
     "timeline": "Eine Zeitleiste der wichtigsten Daten, Ereignisse oder Phasen hinzufügen.",
     "simpler": "In einfachen Worten neu schreiben und Fachbegriffe erklären."
+  },
+  "toolbar": {
+    "label": "Werkzeuge",
+    "copy": "Als Markdown kopieren",
+    "copyShort": "Kopieren",
+    "copied": "Als Markdown kopiert.",
+    "download": "Als Markdown (.md) herunterladen",
+    "listen": "Vorlesen",
+    "listenShort": "Anhören",
+    "stopListening": "Vorlesen stoppen",
+    "stopShort": "Stopp",
+    "print": "Drucken oder als PDF speichern",
+    "source": "Extrahierten Quelltext anzeigen",
+    "sourceTitle": "Quelltext",
+    "sourceWords_one": "{{count}} Wort",
+    "sourceWords_other": "{{count}} Wörter",
+    "timeSaved_one": "~{{count}} Min. gespart",
+    "timeSaved_other": "~{{count}} Min. gespart"
+  },
+  "export": {
+    "value": "Wert",
+    "verdict": "Fazit",
+    "source": "Quelle"
   }
 }

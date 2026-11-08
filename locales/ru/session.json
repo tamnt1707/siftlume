@@ -47,7 +47,10 @@
     "minRead_many": "{{count}} минут чтения",
     "minRead_other": "{{count}} минуты чтения",
     "drawing": "Рисуем схему…",
-    "diagramFailed": "Не удалось нарисовать эту схему"
+    "diagramFailed": "Не удалось нарисовать эту схему",
+    "pros": "Плюсы",
+    "cons": "Минусы",
+    "checklistProgress": "Выполнено {{done}} из {{total}}"
   },
   "refineHint": {
     "shorter": "Оставить только самое важное.",
@@ -55,5 +58,32 @@
     "actionItems": "Добавить список конкретных действий или решений.",
     "timeline": "Добавить хронологию ключевых дат, событий или этапов.",
     "simpler": "Переписать простыми словами и пояснить термины."
+  },
+  "toolbar": {
+    "label": "Инструменты сводки",
+    "copy": "Скопировать как Markdown",
+    "copyShort": "Копировать",
+    "copied": "Скопировано как Markdown.",
+    "download": "Скачать как Markdown (.md)",
+    "listen": "Прочитать вслух",
+    "listenShort": "Слушать",
+    "stopListening": "Остановить чтение",
+    "stopShort": "Стоп",
+    "print": "Распечатать или сохранить в PDF",
+    "source": "Показать извлечённый исходный текст",
+    "sourceTitle": "Исходный текст",
+    "sourceWords_one": "{{count}} слово",
+    "sourceWords_few": "{{count}} слова",
+    "sourceWords_many": "{{count}} слов",
+    "sourceWords_other": "{{count}} слова",
+    "timeSaved_one": "Экономия ~{{count}} минуты",
+    "timeSaved_few": "Экономия ~{{count}} минут",
+    "timeSaved_many": "Экономия ~{{count}} минут",
+    "timeSaved_other": "Экономия ~{{count}} минуты"
+  },
+  "export": {
+    "value": "Значение",
+    "verdict": "Вердикт",
+    "source": "Источник"
   }
 }

@@ -7,6 +7,7 @@ import { VISUAL_SUMMARY_EXAMPLE } from './summary-example';
 import { STYLE_RULES } from './refine';
 import { CHART_SUMMARY_EXAMPLE } from './chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from './diagram-example';
+import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from './review-example';
 import type { ExtractedSource, SourceKind } from './extractors';
 import type { Settings, SummaryLength } from './settings';
 
@@ -31,7 +32,10 @@ const VISUAL_RULES = [
   'Headline numbers → KeyNumbers([KeyNumber(value, label, change)]) with 2-4 items. Never bury numbers in prose. Use a chart instead when there are 3+ comparable values of the same kind.',
   'Key points → Takeaways([Takeaway(text, detail)]): 3-6 statements of max 12 words, most important first. Use detail only when essential.',
   'Dated events or ordered stages → Timeline([TimelineEvent(when, what)]). Only for real sequences.',
-  'Topics, entities, keywords → TagBlock. Pros vs cons or comparisons → a small Table. Warnings or caveats → Callout("warning", ...).',
+  'Reviews, opinions and decisions → ProsCons. A score stated in the source (e.g. 8/10, 4.5 stars) → Verdict; never invent a score.',
+  '2-8 comparable numbers (shares, rankings, test results) → BarList, which is lighter than a chart and works in narrow spaces. Use a chart instead for trends over time or more than 8 values.',
+  'Things the reader can do → Checklist (not Takeaways). Several named people or organizations → People (max 6). Technical terms the reader may not know → Glossary (max 6).',
+  'Topics, entities, keywords → TagBlock. Comparing options across several attributes → a small Table. Warnings or caveats → Callout("warning", ...).',
   'No paragraphs longer than 2 short sentences. Avoid MarkDownRenderer at the top level; put longer explanations inside a folded SectionBlock.',
   'Skip any block that would be empty or filler. Do not repeat the same fact in several places.',
 ];
@@ -122,6 +126,8 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
         VISUAL_SUMMARY_EXAMPLE,
         CHART_SUMMARY_EXAMPLE,
         DIAGRAM_SUMMARY_EXAMPLE,
+        REVIEW_SUMMARY_EXAMPLE,
+        NEWS_ACTORS_EXAMPLE,
       ],
       ...toolOptions(source),
       preamble:
@@ -138,7 +144,7 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
     ...settings.styles.map((s) => STYLE_RULES[s]),
     layoutRule(settings),
     KIND_RULES[source.kind],
-    'Order: SummaryHero → KeyNumbers / charts / Diagram → Takeaways → TagBlock / Timeline → SourceQuote → folded SectionBlock details → FollowUpBlock with 2-3 short questions.',
+    'Order: SummaryHero → Verdict → KeyNumbers / charts / BarList / Diagram → Takeaways / ProsCons → People / Timeline / TagBlock → Checklist → Glossary → SourceQuote → folded SectionBlock details → FollowUpBlock with 2-3 short questions. Use only the blocks the source supports.',
     'First turn: output the complete program in one ```openui-lang fence. Refinement turns: output only the changed statements, with at most one short sentence outside the fence describing the change.',
     ...userRules(settings),
   ];

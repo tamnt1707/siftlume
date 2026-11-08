@@ -176,3 +176,20 @@ body {
 .sc-settings .options__footer {
   display: none;
 }
+
+.sc-components {
+  width: 1360px;
+  min-height: 0;
+}
+
+.sc-components__grid.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: none;
+}
+
+.sc-components__col.session--page {
+  display: block;
+  padding-bottom: 0;
+}

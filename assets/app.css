@@ -1743,3 +1743,151 @@ kbd {
   font-weight: 600;
   text-decoration: none;
 }
+
+/* ── Result toolbar ───────────────────────────────────────── */
+
+.result-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.segmented--sm {
+  padding: 2px;
+}
+
+.segmented--sm button {
+  flex: none;
+  padding: 5px 10px;
+  font-size: 12.5px;
+}
+
+.result-toolbar__lang {
+  width: 170px;
+}
+
+.result-toolbar__lang .ui-select {
+  min-height: 32px;
+  padding: 4px 8px 4px 10px;
+  font-size: 13px;
+}
+
+.result-toolbar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-left: auto;
+}
+
+.tool-btn--on {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Side panel: tools wrap under the controls, icons only. */
+.app--panel .result-toolbar__actions {
+  margin-left: 0;
+}
+
+.app--panel .result-toolbar__lang {
+  flex: 1;
+  width: auto;
+  min-width: 140px;
+}
+
+.time-saved {
+  flex: none;
+  margin-left: 4px;
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  background: var(--accent-soft);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* ── Extracted source text ────────────────────────────────── */
+
+.source-text {
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.source-text header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+}
+
+.source-text__body {
+  max-height: 360px;
+  overflow: auto;
+  padding: 12px 14px;
+  font-family: var(--font-reading);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.source-text__body pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font: inherit;
+}
+
+/* ── Print / Save as PDF: the summary only ────────────────── */
+
+@media print {
+  .topbar,
+  .result-toolbar,
+  .source__actions,
+  .refine,
+  .session__side,
+  .ask,
+  .toast,
+  .banner,
+  .source-text,
+  .genui__errors,
+  .g-quote__actions,
+  .thinking {
+    display: none !important;
+  }
+
+  html,
+  body,
+  .app,
+  .app--page .content {
+    background: #fff !important;
+    color: #000;
+  }
+
+  .app--page .content,
+  .content {
+    max-width: none;
+    padding: 0;
+  }
+
+  .session--page {
+    display: block !important;
+    padding-bottom: 0 !important;
+  }
+
+  .g-hero__tldr mark {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .summary .genui > * {
+    max-width: none;
+    break-inside: avoid;
+  }
+}

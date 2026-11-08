@@ -38,7 +38,10 @@
     "copy": "コピー",
     "minRead_other": "{{count}} 分で読めます",
     "drawing": "図を描画中…",
-    "diagramFailed": "この図は描画できませんでした"
+    "diagramFailed": "この図は描画できませんでした",
+    "pros": "良い点",
+    "cons": "気になる点",
+    "checklistProgress": "{{total}} 件中 {{done}} 件完了"
   },
   "refineHint": {
     "shorter": "最も重要なポイントだけを残します。",
@@ -46,5 +49,26 @@
     "actionItems": "具体的にやること・決めることのチェックリストを追加します。",
     "timeline": "主な日付・出来事・段階のタイムラインを追加します。",
     "simpler": "やさしい言葉で書き直し、専門用語を説明します。"
+  },
+  "toolbar": {
+    "label": "要約ツール",
+    "copy": "Markdown でコピー",
+    "copyShort": "コピー",
+    "copied": "Markdown としてコピーしました。",
+    "download": "Markdown (.md) でダウンロード",
+    "listen": "読み上げる",
+    "listenShort": "聞く",
+    "stopListening": "読み上げを停止",
+    "stopShort": "停止",
+    "print": "印刷または PDF 保存",
+    "source": "抽出した元のテキストを表示",
+    "sourceTitle": "元のテキスト",
+    "sourceWords_other": "{{count}} 語",
+    "timeSaved_other": "約 {{count}} 分の節約"
+  },
+  "export": {
+    "value": "値",
+    "verdict": "評価",
+    "source": "出典"
   }
 }

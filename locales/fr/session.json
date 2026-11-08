@@ -44,7 +44,10 @@
     "minRead_many": "{{count}} min de lecture",
     "minRead_other": "{{count}} min de lecture",
     "drawing": "Dessin du diagramme…",
-    "diagramFailed": "Impossible de dessiner ce diagramme"
+    "diagramFailed": "Impossible de dessiner ce diagramme",
+    "pros": "Points forts",
+    "cons": "Points faibles",
+    "checklistProgress": "{{done}} sur {{total}} fait(s)"
   },
   "refineHint": {
     "shorter": "Garder uniquement les points essentiels.",
@@ -52,5 +55,30 @@
     "actionItems": "Ajouter une liste de choses concrètes à faire ou à décider.",
     "timeline": "Ajouter une chronologie des dates, événements ou étapes clés.",
     "simpler": "Réécrire avec des mots simples et expliquer le jargon."
+  },
+  "toolbar": {
+    "label": "Outils du résumé",
+    "copy": "Copier en Markdown",
+    "copyShort": "Copier",
+    "copied": "Copié en Markdown.",
+    "download": "Télécharger en Markdown (.md)",
+    "listen": "Lire à voix haute",
+    "listenShort": "Écouter",
+    "stopListening": "Arrêter la lecture",
+    "stopShort": "Arrêter",
+    "print": "Imprimer ou enregistrer en PDF",
+    "source": "Afficher le texte source extrait",
+    "sourceTitle": "Texte source",
+    "sourceWords_one": "{{count}} mot",
+    "sourceWords_many": "{{count}} mots",
+    "sourceWords_other": "{{count}} mots",
+    "timeSaved_one": "~{{count}} min gagnée",
+    "timeSaved_many": "~{{count}} min gagnées",
+    "timeSaved_other": "~{{count}} min gagnées"
+  },
+  "export": {
+    "value": "Valeur",
+    "verdict": "Verdict",
+    "source": "Source"
   }
 }

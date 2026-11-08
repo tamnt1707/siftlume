@@ -30,6 +30,7 @@ const shots = [
   { name: 'full-page', query: 'view=fullpage', size: '1360,1740' },
   { name: 'full-page-dark', query: 'view=fullpage&dark', size: '1360,1740' },
   { name: 'settings', query: 'view=settings', size: '1100,720' },
+  { name: 'components', query: 'view=components', size: '1360,900' },
 ];
 
 const server = await createServer({ configFile: join(root, 'scripts/showcase/vite.config.mjs') });

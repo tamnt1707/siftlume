@@ -9,6 +9,8 @@ import { highlightInTab } from '@/lib/page';
 import { ArrowExpand01Icon, ArrowUp02Icon, MagicWand01Icon, RefreshIcon, StopIcon } from '@hugeicons/core-free-icons';
 import { REFINE_PROMPTS, type RefineId } from '@/lib/refine';
 import { GenUI, type GenUIAction } from './GenUI';
+import { ResultToolbar, readingMinutes } from './ResultToolbar';
+import type { Settings } from '@/lib/settings';
 import { Icon } from './Icon';
 import type { SessionController } from './useSession';
 
@@ -33,6 +35,7 @@ export function SessionView({
   notify,
   layout = 'page',
   onExpand,
+  settings,
 }: {
   ctrl: SessionController;
   notify: (msg: string) => void;
@@ -40,12 +43,16 @@ export function SessionView({
   layout?: 'page' | 'panel';
   /** Shown in the side panel: reopen this session in a full-page tab. */
   onExpand?: () => void;
+  /** Global settings; the result toolbar shows this session's overrides on top of them. */
+  settings: Settings;
 }) {
   const { t } = useTranslation(['session', 'common']);
   const session = ctrl.session!;
   const { source } = session;
   const [refineText, setRefineText] = useState('');
   const [question, setQuestion] = useState('');
+  const [sourceOpen, setSourceOpen] = useState(false);
+  const reading = useMemo(() => readingMinutes(source.content), [source.content]);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   const busy = ctrl.phase !== 'idle';
@@ -115,10 +122,20 @@ export function SessionView({
           ) : (
             <span className="source__title">{source.title}</span>
           )}
+          {reading.minutes >= 2 && summary.content && (
+            <span className="time-saved" title={t('toolbar.sourceWords', { count: reading.words })}>
+              {t('toolbar.timeSaved', { count: reading.minutes })}
+            </span>
+          )}
         </div>
         <div className="source__actions">
           {session.summary !== null && (
-            <button className="tool-btn" onClick={ctrl.resummarize} disabled={busy} title={t('summarizeAgainTitle')}>
+            <button
+              className="tool-btn"
+              onClick={() => ctrl.resummarize()}
+              disabled={busy}
+              title={t('summarizeAgainTitle')}
+            >
               <Icon icon={RefreshIcon} size={16} />
               <span>{t('summarizeAgain')}</span>
             </button>
@@ -134,6 +151,32 @@ export function SessionView({
       </header>
 
       <div className="session__main">
+        {summary.content && (
+          <ResultToolbar
+            ctrl={ctrl}
+            session={session}
+            settings={settings}
+            program={summary.content}
+            notify={notify}
+            sourceOpen={sourceOpen}
+            onToggleSource={() => setSourceOpen((v) => !v)}
+          />
+        )}
+        {sourceOpen && (
+          <section className="source-text">
+            <header>
+              <strong>{t('toolbar.sourceTitle')}</strong>
+              <span className="muted">{t('toolbar.sourceWords', { count: reading.words })}</span>
+            </header>
+            <div className="source-text__body">
+              {source.kind === 'pdf' || source.kind === 'text' ? (
+                <pre>{source.content}</pre>
+              ) : (
+                <MarkDownRenderer textMarkdown={source.content} variant="clear" />
+              )}
+            </div>
+          </section>
+        )}
         <section className="summary">
           {(summaryResponse || summaryStreaming) && (
             <GenUI

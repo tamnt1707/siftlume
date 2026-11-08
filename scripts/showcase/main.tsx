@@ -13,8 +13,12 @@ import { ArrowExpand01Icon, ArrowUp02Icon, Clock01Icon, RefreshIcon, Settings02I
 import { Icon } from '../../components/Icon';
 import { Themed } from '../../components/Themed';
 import { SettingsForm } from '../../components/SettingsForm';
+import { ResultToolbar } from '../../components/ResultToolbar';
+import type { SessionController } from '../../components/useSession';
+import type { Session } from '../../lib/history';
 import { library } from '../../lib/library';
 import { CHART_SUMMARY_EXAMPLE } from '../../lib/chart-example';
+import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../../lib/review-example';
 import { DEFAULT_SETTINGS, type Settings } from '../../lib/settings';
 import { ARTICLE, SUMMARY } from './content';
 
@@ -49,6 +53,7 @@ function SourceRow({ title, panel }: { title: string; panel?: boolean }) {
       <div className="source__meta">
         <span className="sc-favicon">D</span>
         <span className="source__title">{title}</span>
+        <span className="time-saved">~12 min saved</span>
       </div>
       <div className="source__actions">
         <span className="tool-btn">
@@ -145,6 +150,22 @@ function Compare() {
   );
 }
 
+const stubCtrl = { phase: 'idle', resummarize: () => {} } as unknown as SessionController;
+const stubSession = {
+  id: 'showcase',
+  createdAt: 0,
+  updatedAt: 0,
+  source: {
+    kind: 'webpage',
+    title: 'Acme investor report',
+    origin: 'https://ir.acme.example',
+    content: '',
+    truncated: false,
+  },
+  summary: null,
+  qa: [],
+} as Session;
+
 /** Full-page tab with charts and the Questions column. */
 function FullPage() {
   return (
@@ -154,6 +175,15 @@ function FullPage() {
         <div className="session session--page">
           <SourceRow title="ir.acme.example" />
           <div className="session__main">
+            <ResultToolbar
+              ctrl={stubCtrl}
+              session={stubSession}
+              settings={settings}
+              program={CHART_SUMMARY_EXAMPLE}
+              notify={() => {}}
+              sourceOpen={false}
+              onToggleSource={() => {}}
+            />
             <section className="summary">
               <div className="genui">
                 <Renderer library={library} response={CHART_SUMMARY_EXAMPLE} isStreaming={false} />
@@ -182,6 +212,27 @@ function FullPage() {
   );
 }
 
+/** The review and news examples side by side: Verdict, ProsCons, BarList, Checklist, People, Glossary. */
+function Components() {
+  return (
+    <Themed settings={settings} className="app app--page sc-components">
+      <main className="content sc-components__grid">
+        {[REVIEW_SUMMARY_EXAMPLE, NEWS_ACTORS_EXAMPLE].map((program, i) => (
+          <div key={i} className="session session--page sc-components__col">
+            <div className="session__main">
+              <section className="summary">
+                <div className="genui">
+                  <Renderer library={library} response={program} isStreaming={false} />
+                </div>
+              </section>
+            </div>
+          </div>
+        ))}
+      </main>
+    </Themed>
+  );
+}
+
 function SettingsView() {
   return (
     <Themed settings={settings} className="app app--page sc-settings">
@@ -192,6 +243,11 @@ function SettingsView() {
   );
 }
 
-const views: Record<string, () => ReactElement> = { compare: Compare, fullpage: FullPage, settings: SettingsView };
+const views: Record<string, () => ReactElement> = {
+  compare: Compare,
+  fullpage: FullPage,
+  settings: SettingsView,
+  components: Components,
+};
 const View = views[view] ?? Compare;
 ReactDOM.createRoot(document.getElementById('root')!).render(<View />);

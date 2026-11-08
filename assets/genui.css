@@ -439,3 +439,342 @@
 .session--panel .g-diagram {
   padding: 12px;
 }
+
+/* ── Pros and cons ────────────────────────────────────────── */
+
+.g-proscons__cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 12px;
+}
+
+.g-proscons__col {
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.g-proscons__col h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.g-proscons__col--pro h3 {
+  color: var(--up);
+}
+
+.g-proscons__col--con h3 {
+  color: var(--down);
+}
+
+.g-proscons__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.g-proscons__col li {
+  position: relative;
+  padding-left: 22px;
+  font-family: var(--font-reading);
+  font-size: 15.5px;
+  line-height: 1.4;
+}
+
+.g-proscons__col li::before {
+  position: absolute;
+  left: 0;
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
+.g-proscons__col--pro li::before {
+  content: '✓';
+  color: var(--up);
+}
+
+.g-proscons__col--con li::before {
+  content: '✕';
+  color: var(--down);
+}
+
+/* ── Verdict ──────────────────────────────────────────────── */
+
+.g-verdict {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 18px;
+  border-radius: var(--r-lg);
+  background: var(--accent-soft);
+}
+
+.g-verdict__score {
+  flex: none;
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.g-verdict__value {
+  font-size: 44px;
+  font-weight: 680;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+}
+
+.g-verdict__max {
+  font-size: 18px;
+  font-weight: 560;
+  color: var(--ink-2);
+}
+
+.g-verdict__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.g-verdict__label {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+.g-verdict__bar {
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  overflow: hidden;
+}
+
+.g-verdict__bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+}
+
+.g-verdict__summary {
+  margin: 0;
+  font-family: var(--font-reading);
+  font-size: 16.5px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+/* ── Bar list ─────────────────────────────────────────────── */
+
+.g-bars ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.g-bar {
+  display: grid;
+  grid-template-columns: minmax(80px, 30%) 1fr auto;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+
+.g-bar__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--ink);
+}
+
+.g-bar__track {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.g-bar__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+}
+
+.g-bar__value {
+  min-width: 3ch;
+  text-align: right;
+  font-weight: 620;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+/* ── Checklist ────────────────────────────────────────────── */
+
+.g-checklist__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.g-checklist__progress {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.g-checklist ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.g-checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  font-family: var(--font-reading);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.g-checklist label:hover {
+  background: var(--accent-soft);
+}
+
+.g-checklist input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.g-checklist label.is-done span {
+  color: var(--ink-3);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--ink-3) 70%, transparent);
+}
+
+/* ── People ───────────────────────────────────────────────── */
+
+.g-people ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.g-person {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.g-person__avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.g-person__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  font-family: var(--font-sans);
+}
+
+.g-person__text strong {
+  font-size: 14.5px;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.g-person__role {
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+.g-person__stance {
+  margin-top: 4px;
+  font-family: var(--font-reading);
+  font-size: 14.5px;
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* ── Glossary ─────────────────────────────────────────────── */
+
+.g-glossary dl {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.g-term {
+  display: grid;
+  grid-template-columns: minmax(110px, 32%) 1fr;
+  gap: 4px 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.g-term dt {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.g-term dd {
+  margin: 0;
+  font-family: var(--font-reading);
+  font-size: 15.5px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+/* Side panel: stack label and value instead of two columns. */
+.session--panel .g-term {
+  grid-template-columns: 1fr;
+}
+
+.session--panel .g-verdict__value {
+  font-size: 36px;
+}

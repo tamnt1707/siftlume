@@ -38,7 +38,10 @@
     "copy": "คัดลอก",
     "minRead_other": "อ่าน {{count}} นาที",
     "drawing": "กำลังวาดแผนภาพ…",
-    "diagramFailed": "ไม่สามารถวาดแผนภาพนี้ได้"
+    "diagramFailed": "ไม่สามารถวาดแผนภาพนี้ได้",
+    "pros": "ข้อดี",
+    "cons": "ข้อเสีย",
+    "checklistProgress": "เสร็จแล้ว {{done}} จาก {{total}}"
   },
   "refineHint": {
     "shorter": "เก็บไว้เฉพาะประเด็นที่สำคัญที่สุด",
@@ -46,5 +49,26 @@
     "actionItems": "เพิ่มรายการสิ่งที่ต้องทำหรือต้องตัดสินใจอย่างเป็นรูปธรรม",
     "timeline": "เพิ่มไทม์ไลน์ของวันที่ เหตุการณ์ หรือขั้นตอนสำคัญ",
     "simpler": "เขียนใหม่ด้วยภาษาง่าย ๆ และอธิบายศัพท์เฉพาะ"
+  },
+  "toolbar": {
+    "label": "เครื่องมือสรุป",
+    "copy": "คัดลอกเป็น Markdown",
+    "copyShort": "คัดลอก",
+    "copied": "คัดลอกเป็น Markdown แล้ว",
+    "download": "ดาวน์โหลดเป็น Markdown (.md)",
+    "listen": "อ่านออกเสียง",
+    "listenShort": "ฟัง",
+    "stopListening": "หยุดอ่าน",
+    "stopShort": "หยุด",
+    "print": "พิมพ์หรือบันทึกเป็น PDF",
+    "source": "แสดงข้อความต้นฉบับที่ดึงมา",
+    "sourceTitle": "ข้อความต้นฉบับ",
+    "sourceWords_other": "{{count}} คำ",
+    "timeSaved_other": "ประหยัด ~{{count}} นาที"
+  },
+  "export": {
+    "value": "ค่า",
+    "verdict": "คำตัดสิน",
+    "source": "แหล่งที่มา"
   }
 }

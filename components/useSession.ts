@@ -4,7 +4,7 @@ import { describeError } from '@/lib/llm';
 import { generateAnswer, generateSummary } from '@/lib/generate';
 import { extractTab } from '@/lib/page';
 import { extractFile, truncate, type ExtractedSource } from '@/lib/extractors';
-import { newId, readStored, saveSession, writeStored, type Session } from '@/lib/history';
+import { newId, readStored, saveSession, writeStored, type Session, type SessionOptions } from '@/lib/history';
 import { configProblem, type Settings } from '@/lib/settings';
 
 export type Phase = 'idle' | 'extracting' | 'summarizing' | 'refining' | 'answering';
@@ -21,6 +21,9 @@ export function useSession(settings: Settings) {
   const sessionRef = useRef<Session | null>(null);
   const settingsRef = useRef(settings);
   settingsRef.current = settings;
+
+  /** Global settings with this session's overrides (result-screen length and language). */
+  const effective = (session?: Session | null): Settings => ({ ...settingsRef.current, ...session?.options });
 
   const commit = useCallback((next: Session) => {
     sessionRef.current = next;
@@ -56,7 +59,7 @@ export function useSession(settings: Settings) {
       const ctrl = begin('summarizing');
       try {
         const res = await generateSummary({
-          settings: settingsRef.current,
+          settings: effective(base),
           source: src,
           signal: ctrl.signal,
           onStream: setStreamRaw,
@@ -146,7 +149,7 @@ export function useSession(settings: Settings) {
       const ctrl = begin('refining');
       try {
         const res = await generateSummary({
-          settings: settingsRef.current,
+          settings: effective(current),
           source: current.source,
           previousProgram: program,
           instruction,
@@ -172,13 +175,17 @@ export function useSession(settings: Settings) {
    * Summarizes the same source again from scratch (e.g. after switching model). The current summary
    * stays visible until the new one has arrived; questions and answers are kept.
    */
-  const resummarize = useCallback(() => {
-    const current = sessionRef.current;
-    if (!current) return;
-    const missing = checkSettings();
-    if (missing) return setError(missing);
-    void runSummary(current.source, current);
-  }, [runSummary]);
+  const resummarize = useCallback(
+    (options?: SessionOptions) => {
+      const current = sessionRef.current;
+      if (!current) return;
+      const missing = checkSettings();
+      if (missing) return setError(missing);
+      const next = options ? { ...current, options: { ...current.options, ...options } } : current;
+      void runSummary(next.source, next);
+    },
+    [runSummary],
+  );
 
   const ask = useCallback(
     async (question: string) => {
@@ -191,7 +198,7 @@ export function useSession(settings: Settings) {
       setPendingQuestion(question);
       try {
         const res = await generateAnswer({
-          settings: settingsRef.current,
+          settings: effective(current),
           source: current.source,
           history: current.qa,
           question,

@@ -38,7 +38,10 @@
     "copy": "复制",
     "minRead_other": "阅读约 {{count}} 分钟",
     "drawing": "正在绘制图表…",
-    "diagramFailed": "无法绘制此图表"
+    "diagramFailed": "无法绘制此图表",
+    "pros": "优点",
+    "cons": "缺点",
+    "checklistProgress": "已完成 {{done}}/{{total}}"
   },
   "refineHint": {
     "shorter": "只保留最重要的要点。",
@@ -46,5 +49,26 @@
     "actionItems": "添加一份具体可做或需决定事项的清单。",
     "timeline": "添加关键日期、事件或阶段的时间线。",
     "simpler": "用通俗的语言改写并解释术语。"
+  },
+  "toolbar": {
+    "label": "摘要工具",
+    "copy": "复制为 Markdown",
+    "copyShort": "复制",
+    "copied": "已复制为 Markdown。",
+    "download": "下载为 Markdown (.md)",
+    "listen": "朗读",
+    "listenShort": "收听",
+    "stopListening": "停止朗读",
+    "stopShort": "停止",
+    "print": "打印或另存为 PDF",
+    "source": "显示提取的原文",
+    "sourceTitle": "原文",
+    "sourceWords_other": "{{count}} 个词",
+    "timeSaved_other": "节省约 {{count}} 分钟"
+  },
+  "export": {
+    "value": "数值",
+    "verdict": "结论",
+    "source": "来源"
   }
 }

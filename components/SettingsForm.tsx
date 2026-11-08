@@ -14,6 +14,7 @@ import { AppearancePanel } from '@/components/AppearancePanel';
 import { LanguagePicker } from '@/components/LanguagePicker';
 import { Select } from '@/components/Select';
 import { SUMMARY_STYLES } from '@/lib/refine';
+import { OUTPUT_LANGUAGES } from '@/lib/languages';
 import { Themed } from '@/components/Themed';
 import { fetchModels, isProviderConnected, modelCacheItem, type ModelCache, type ModelOption } from '@/lib/models';
 import {
@@ -29,26 +30,6 @@ import {
   type Settings,
   type SummaryLength,
 } from '@/lib/settings';
-
-/** Summary output languages: the value goes to the model (English name), the label is the native name. */
-const OUTPUT_LANGUAGES = [
-  ['English', 'English'],
-  ['Vietnamese', 'Tiếng Việt'],
-  ['Japanese', '日本語'],
-  ['Chinese (Simplified)', '简体中文'],
-  ['Chinese (Traditional)', '繁體中文'],
-  ['Korean', '한국어'],
-  ['Spanish', 'Español'],
-  ['French', 'Français'],
-  ['German', 'Deutsch'],
-  ['Portuguese', 'Português'],
-  ['Italian', 'Italiano'],
-  ['Russian', 'Русский'],
-  ['Thai', 'ไทย'],
-  ['Indonesian', 'Bahasa Indonesia'],
-  ['Hindi', 'हिन्दी'],
-  ['Arabic', 'العربية'],
-] as const;
 
 const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed'];
 
@@ -348,8 +329,8 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: S
                 onChange={(language) => update({ language })}
                 options={[
                   { value: 'auto', label: t('summary.sameAsSource') },
-                  ...OUTPUT_LANGUAGES.map(([value, label]) => ({ value, label })),
-                  ...(settings.language !== 'auto' && !OUTPUT_LANGUAGES.some(([v]) => v === settings.language)
+                  ...OUTPUT_LANGUAGES.map((l) => ({ value: l.name, label: l.label })),
+                  ...(settings.language !== 'auto' && !OUTPUT_LANGUAGES.some((l) => l.name === settings.language)
                     ? [{ value: settings.language, label: settings.language }]
                     : []),
                 ]}

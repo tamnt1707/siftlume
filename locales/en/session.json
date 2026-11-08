@@ -41,7 +41,10 @@
     "minRead_one": "{{count}} min read",
     "minRead_other": "{{count}} min read",
     "drawing": "Drawing diagram…",
-    "diagramFailed": "This diagram could not be drawn"
+    "diagramFailed": "This diagram could not be drawn",
+    "pros": "Pros",
+    "cons": "Cons",
+    "checklistProgress": "{{done}} of {{total}} done"
   },
   "refineHint": {
     "shorter": "Keep only the most important points.",
@@ -49,5 +52,28 @@
     "actionItems": "Add a checklist of concrete things to do or decide.",
     "timeline": "Add a timeline of key dates, events or stages.",
     "simpler": "Rewrite in plain words and explain jargon."
+  },
+  "toolbar": {
+    "label": "Summary tools",
+    "copy": "Copy as Markdown",
+    "copyShort": "Copy",
+    "copied": "Copied as Markdown.",
+    "download": "Download as Markdown (.md)",
+    "listen": "Read aloud",
+    "listenShort": "Listen",
+    "stopListening": "Stop reading",
+    "stopShort": "Stop",
+    "print": "Print or save as PDF",
+    "source": "Show the extracted source text",
+    "sourceTitle": "Source text",
+    "sourceWords_one": "{{count}} word",
+    "sourceWords_other": "{{count}} words",
+    "timeSaved_one": "~{{count}} min saved",
+    "timeSaved_other": "~{{count}} min saved"
+  },
+  "export": {
+    "value": "Value",
+    "verdict": "Verdict",
+    "source": "Source"
   }
 }
