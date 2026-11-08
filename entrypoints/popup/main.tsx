@@ -1,3 +1,4 @@
+import '@/lib/no-openui-devtools';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '@openuidev/react-ui/components.css';
