@@ -44,6 +44,8 @@ Then try your change in the browser. A quick manual pass:
 - Click a refine button and ask a follow-up question.
 - Look at it in light and dark mode, and in a narrow side panel.
 
+If your change affects what the screenshots show, run `pnpm screenshots` and commit the updated images in `docs/screenshots/`. The showcase pages live in `scripts/showcase/` (the sample article and summary are in `content.ts`).
+
 ## Conventions
 
 - **Language**: code, comments, commit messages and docs are in English.

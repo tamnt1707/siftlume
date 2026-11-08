@@ -15,7 +15,8 @@
     "postinstall": "wxt prepare",
     "check:i18n": "node scripts/check-locales.mjs",
     "check:examples": "tsx scripts/check-examples.ts",
-    "check": "pnpm compile && pnpm check:i18n && pnpm check:examples"
+    "check": "pnpm compile && pnpm check:i18n && pnpm check:examples",
+    "screenshots": "node scripts/screenshots.mjs"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^4.0.97",
@@ -52,6 +53,7 @@
     "@wxt-dev/module-react": "^1.1.5",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3",
+    "vite": "8.3.6",
     "web-ext": "^10.5.0",
     "wxt": "^0.21.3"
   },

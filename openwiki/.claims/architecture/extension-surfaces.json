@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:02a13a91b9891f69c5977a4568338b0051336c78fbee3551b0a642dedf12cf81",
+  "pageVersion": "sha256:c9a33115c2856a15df765300176e1e83c259570ebf4ef76e32b7bcb550f77921",
   "claims": [
     {
       "id": "claim_d90699162fa44d74b27996b36478255d",
@@ -29,11 +29,11 @@
           "version": "repo-lines-v1:sha256:b85f4eb0ba7094be8d80b50bff6f1f18bbbab17e8b94d814c8213e4c1e0d0e02:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNiZGVmZjJjODAzYTNhNzBkOTNiYjQwOTQ1Mjg3YTZhNmZjYTI5NjhlOTQ5MmM5MmRkMTc3ZjQ3ZDRhMWVhNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2U2Mjc2ODJmYzNhMGMxZmU5YWRmYTdjODAyYTI1MzU2MGJjMWQzYzkzNWZlZmJmNDQ0YTNlOThmZTExNWVmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjVmNmVkYmI2ZGE2MTM2YTA0NTlmMzAzZWJkM2I0ZGE4MGRhYTFkMTNhOTc5NjdhOWI3MWRiZmZhMzcyMWIwZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzQxMzYyMWQ3YjQ3MjZhMDY2NWUzY2M2MmY3MjAyOGY2ZTBjNTVhNjJkNTlmNGI3NTkzZTU0MDVmYWNmMDI0OCJ9"
         },
         {
-          "resource": "repo://entrypoints/app/main.tsx#L10-L15",
+          "resource": "repo://entrypoints/app/main.tsx#L11-L16",
           "version": "repo-lines-v1:sha256:2beafdbb6df165f3db7481626092c00b96242c6c196526031e4f2e4e5e8631f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTllMGE0MGNlZGIwYjhjNmFkNmJlNWNmZjEwODRmNWZjNjE0ZTZhN2UwOTE0Mzg1OTAxY2I4YzVjNmU1NTUyMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         },
         {
-          "resource": "repo://entrypoints/sidepanel/main.tsx#L10-L15",
+          "resource": "repo://entrypoints/sidepanel/main.tsx#L11-L16",
           "version": "repo-lines-v1:sha256:40cef2f02e73e477a6f1af89d82307a4b043fe5e2e61de06a22c9afa4cc8eea9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDM3ZjZjMDc0ZTQ1MmU3NjdjZTMwYmYyM2MzOGI4ZjM4ZmM4NTkwNGQ5NjAyZWEyNjA2NDU0MjI4OWJiZjFlYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         }
       ]
@@ -273,7 +273,7 @@
       "statement": "Settings.display is persisted in local:settings, edited under 'Show results in', and normalizeSettings falls back to the default value 'sidepanel' for any unrecognized value.",
       "evidence": [
         {
-          "resource": "repo://components/SettingsForm.tsx#L309-L331",
+          "resource": "repo://components/SettingsForm.tsx#L319-L341",
           "version": "repo-lines-v1:sha256:9fafc3f797650a28de6ac674f280af985c8c28e9545196965bd3224c1de56d02:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlODgwNWZkODA5MjdhNmI1Mjg4ZTQyNzI2ZTI0MDBhYWIxZDMxZmI0ZDAzYWM4MDRlMDcwZWRlOTVmODc1MmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxNWZmZWUzMDE0NjQ3MmEyY2ViNDIzMjg1MDkwZjdmY2Q0YzlmYjZiOGRhZWRhNGU5MTdiZTdkMTg4MjUxM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmNjUyNjM0NzU0NGFlZDg4ZmY1YzJkNDczMGYxYmI1YWQ0NDQ4MzZjNDFkZDVhOThiMTJkMzUzNDMzZDYzNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxYzY1YWU2Y2JlMzUwMGNkY2VkNTY1MjAxODczOTllOTkxZmM0MTA1MWQ5OWE2YjU0NTU0YjUwMmVlNTI1ZWYifQ"
         },
         {
@@ -292,7 +292,7 @@
       "evidence": [
         {
           "resource": "repo://.output/chrome-mv3/manifest.json#L1-L1",
-          "version": "repo-lines-v1:sha256:cf548b1b17e76f0e7c5dedaf8c274dfc3ea158e22c9e9f7afbb4b5eac9d0b434:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y1NDhiMWIxN2U3NmYwZTdjNWRlZGFmOGMyNzRkZmMzZWExNThlMjJjOWU5ZjdhZmJiNGI1ZWFjOWQwYjQzNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y1NDhiMWIxN2U3NmYwZTdjNWRlZGFmOGMyNzRkZmMzZWExNThlMjJjOWU5ZjdhZmJiNGI1ZWFjOWQwYjQzNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+          "version": "repo-lines-v1:sha256:59893c6167cb5f5bc09c3743de45839aebee490dea9467d4734c223db2a5053a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk4OTNjNjE2N2NiNWY1YmMwOWMzNzQzZGU0NTgzOWFlYmVlNDkwZGVhOTQ2N2Q0NzM0YzIyM2RiMmE1MDUzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk4OTNjNjE2N2NiNWY1YmMwOWMzNzQzZGU0NTgzOWFlYmVlNDkwZGVhOTQ2N2Q0NzM0YzIyM2RiMmE1MDUzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         },
         {
           "resource": "repo://entrypoints/background.ts#L21-L24",
@@ -363,10 +363,78 @@
           "version": "repo-lines-v1:sha256:f300bd613b18ce2c3506703985872fb851bd202fb46c4e804ee08fa932dcd41f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjZmYmZhODg5OThkYTc0NjU2YzUwMTk0OTU2YzI1ZjA4NDk0NTc2NjBjMDA5ZmU2M2QxZTlmYTlkYzkzMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4ZDkxZWIzYjk5OTNjNjRlNDVhMjcwOTgwMDM0MTZjZjliNTE3OTM3YjY1MWYzMzVlOTgxNWVlMTAwNzNjZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0NzM0ZTVhNDJiN2IyZjQzNmI1N2UxMzFkMDExYWZlODU3MjE4MTJlN2QyM2FiMGU2YzlmZmZlYWExMjk3OGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4MDAxOWExN2I0NDFhNGY0NDVhOWM5NjgzZmRhODE1OGEzM2FjZTIxMDc0NDBjOGJhNGQ4OTllNWI3NmE4ZGIifQ"
         }
       ]
+    },
+    {
+      "id": "claim_44f4e1f1bfc24f00869a41709d7d12d3",
+      "statement": "WXT derives the built manifest from the shape of the entrypoints/ folders: entrypoints/background.ts becomes the background service_worker, entrypoints/popup/ becomes action.default_popup, entrypoints/sidepanel/ becomes side_panel.default_path and adds the sidePanel permission, and entrypoints/options/ becomes options_ui — so removing or renaming an entrypoint folder changes the built manifest and the set of surfaces the browser exposes.",
+      "evidence": [
+        {
+          "resource": "repo://.output/chrome-mv3/manifest.json#L1-L1",
+          "version": "repo-lines-v1:sha256:59893c6167cb5f5bc09c3743de45839aebee490dea9467d4734c223db2a5053a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk4OTNjNjE2N2NiNWY1YmMwOWMzNzQzZGU0NTgzOWFlYmVlNDkwZGVhOTQ2N2Q0NzM0YzIyM2RiMmE1MDUzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk4OTNjNjE2N2NiNWY1YmMwOWMzNzQzZGU0NTgzOWFlYmVlNDkwZGVhOTQ2N2Q0NzM0YzIyM2RiMmE1MDUzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://entrypoints/options/index.html#L1-L13",
+          "version": "repo-lines-v1:sha256:410165563054d3bb118edd61a7355f6b54aa8f343d7743c58cac695216b083e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNWZjYTg1NzRmMDYwZWVhMjRlYmNkYWU2Yjc4ZjMyNDE0ZjVkZTAzZGExMDg0ZmQwZTczZDcxMDc2OGUzYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzZWQ4MWNkMTZkZjg4ZDY5MjE2NjQ2ZDhkYWRhNzYzNGIzM2E2OTg2ZTljMjNhNzI2MzFkMTkzM2I2MzVhNTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://entrypoints/popup/index.html#L1-L12",
+          "version": "repo-lines-v1:sha256:86f1008d6d60f664e9753d2f12b54dfc234bd3dc5fbdd482c101a14ceb894263:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNWZjYTg1NzRmMDYwZWVhMjRlYmNkYWU2Yjc4ZjMyNDE0ZjVkZTAzZGExMDg0ZmQwZTczZDcxMDc2OGUzYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzZWQ4MWNkMTZkZjg4ZDY5MjE2NjQ2ZDhkYWRhNzYzNGIzM2E2OTg2ZTljMjNhNzI2MzFkMTkzM2I2MzVhNTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://entrypoints/sidepanel/index.html#L1-L12",
+          "version": "repo-lines-v1:sha256:8165a7bc3c2f729427c352fb9cd91dd520b3a4d18d501ac2d01adcce6f256176:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNWZjYTg1NzRmMDYwZWVhMjRlYmNkYWU2Yjc4ZjMyNDE0ZjVkZTAzZGExMDg0ZmQwZTczZDcxMDc2OGUzYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzZWQ4MWNkMTZkZjg4ZDY5MjE2NjQ2ZDhkYWRhNzYzNGIzM2E2OTg2ZTljMjNhNzI2MzFkMTkzM2I2MzVhNTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9956e4deadac49de813d7103796b7b0e",
+      "statement": "entrypoints/app/ is an unlisted page: app.html is built and served but declared nowhere in the manifest, and it is opened only programmatically by openApp via browser.tabs.create with browser.runtime.getURL('/app.html?...'), so the full-page result surface exists independently of any manifest entry.",
+      "evidence": [
+        {
+          "resource": "repo://.output/chrome-mv3/manifest.json#L1-L1",
+          "version": "repo-lines-v1:sha256:59893c6167cb5f5bc09c3743de45839aebee490dea9467d4734c223db2a5053a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk4OTNjNjE2N2NiNWY1YmMwOWMzNzQzZGU0NTgzOWFlYmVlNDkwZGVhOTQ2N2Q0NzM0YzIyM2RiMmE1MDUzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk4OTNjNjE2N2NiNWY1YmMwOWMzNzQzZGU0NTgzOWFlYmVlNDkwZGVhOTQ2N2Q0NzM0YzIyM2RiMmE1MDUzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://.wxt/types/paths.d.ts#L21-L31",
+          "version": "repo-lines-v1:sha256:0748284a5ee64308ad55f33fcd2155202ae8f6b1be339c3dc0a11b5f49872f9c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MDhhMTI2NDM5Zjc4NTBiZGMxODBkYzMxNzhhZTg5OTQwMjEyZTIzNWUxNzgyNjA0ZmYzOTgxNTNiZTFhZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxOGFmODkwYjI2OGU1NGEyNTBhZGRlN2FiZGJhY2YzMmQyYzEwOWViODczZmRkZjU2MTUxN2MwOTZjMTQ0OTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1MDA3ODljNmUwMzhhYWZkNDk5NGE4OWE2Yzk2Y2EyZmY4YjExM2Q1OWExMDg0OWQ1OWU5MmJjZTY4YTJjZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmMGQyNWFiNWEwM2E3NDA1NmIyNDE3NTU5NzdiODlkMWQyZmNmNDYxY2E5MDA5NDdjNTM2ZDAzMTA1NGVkNWQifQ"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L34-L44",
+          "version": "repo-lines-v1:sha256:83d3af3cfb9bd53f6f10bb6f672168f80cf921ed0d1973838dbf0a999c101b4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NzNiMTJlZDQyMzMwYmNkNmU1NmViZGU1MzE0NTk3NWM2MDg3MDcyZTQ4YWY1N2Q0OTNmMmFlYTQxNDJjN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzMmNhODBkM2Q0MWRmY2E2ZjA1YTk2YWE4ZGRmZTM4NGZiNzhhOTFmMTM4ZmYxYzM1MjU5N2VmNDM3NmNmNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5ODlhODQwYTczYWFmODI4MjQ4MTgxM2RmYzA1NjRkOTIyYWRlNTA1Y2E2NTkyNTU2MmE4ZGFhMjA4NDU0Y2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b34a424a745e44e19a4f3b2efebb2f51",
+      "statement": "The user-gesture rule also governs the optional host permission for the provider API origin: requestOriginPermission in lib/settings.ts must be called directly inside a click handler, and the Settings form calls it from the 'Load models' and 'Save' handlers before awaiting anything, otherwise Chrome drops the gesture.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L155-L170",
+          "version": "repo-lines-v1:sha256:0493dbc8644724b429101c0532cf59095b56e56e5e233f8a9aab23b2661b0ea3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzNzcxZWE5OWMxNGUxYjFmMjVlMGMwMmUzMzdjNWFlNzViZGFmMjUwNTYxOWFmMmIxZWY5NzVjODg3OGRiM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzNDQ1N2FlYjZlZDYzZDdhODMxOTY2NjljODA2OTIzOTc0MTkxMTMwOGQwZjcxNTg3ODhkZDg3YjMzMDBmYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhNjNiMWYzZWUxOWE1YzZjYWVhMWUxOTdiNTViYzg4YTk3MGEzODE4OGUzODJhY2M3ODgwMWViOGE5YmVmZTkifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L244-L257",
+          "version": "repo-lines-v1:sha256:a02620da1287ff59564a86ff75091b82a2ee0a4bfd0f3ff500a7a65d073e5d0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1MzhkM2IxNWZiMjljZTkzMjM2OGFiNTQyYzYwYzViNWFlNTU1OGMzZjEzNjlhZmRlY2ZiMWM4NTEwYTU0MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0ODIwNGE2NDc5Zjk0Zjg3OTUwMjFjODBjZTE4YTBiY2Q3Mzg4MTFmODcxNWQ5MThjODBkMTUwODU5MTFiOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8320f623c53149d9ad51c54ee971fc64",
+      "statement": "The _execute_action keyboard command (Alt+Shift+S by default) triggers the same action as a toolbar click, so it inherits the mode-dependent behaviour: the popup in 'tab' mode and the side panel in 'sidepanel' mode.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L21-L40",
+          "version": "repo-lines-v1:sha256:fe9331d92f9ec9ade6c71b51e7e87c9f50adf663d780cd47674fed21d2221a97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1MjQ4MTRiMjk3Y2YzMDMyZGYzZmQzMTZlODM2MTQwZWM2ODdlNjc4ZTE5MDNmNmU5MDBjMTRkODJiMGViMzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmNzFhMWNkMjc5ZDY1NTY3NWM5ODY0MjRmOWY3YjcwNzQzMmYyMDQzODhiOWY0YmUwMmQ5ZmQ5NGUwZTNlNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOGFhNjVhZjU1MWJiNmI5MzY4NWRlYWM0NDkzNDBmMjFmZWJkMWIyZWFiOGFmZDNlYjU4NmUzNzZhY2JmOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxYzYxZDVjNzljNjU2Yzg1NDhjMDlhZDBiYTVhOWYxNGQ1MjM3NTZiMWQ5YWU4MmI1ZDhiMTU3OGMzMTMyZmEifQ"
+        },
+        {
+          "resource": "repo://wxt.config.ts#L25-L28",
+          "version": "repo-lines-v1:sha256:f2013676b38f4db88ff95102a13eab97e3ed808aac1a91cefae8d4b3a14c0c2d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjNmOTQ0N2QxZDcwY2I3MDg5YTdjNzU0ZTMyOWUyN2ExZmU5ZGM2OWIwOWMyNmFjMWZmODhmOTgzODRkZjZmYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWYwY2RiOTcyYTdiZmI3ZWQyNDZmOWZmNjcyMzg1ZTU1ZjQ5NjhmYzExMDQzZGM1YjY4NGQ1MWRmYTMxZGJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDBiM2E5N2M1MWY3Nzk3YjcyNmY3NWQ5ODhkOWQ0ZjBmZDIwNzZmZmJkMDZlNGRlMTU5NDgzZDg1MTEyNTNmZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjgzYzAzZmJkZjliMzQ2YWE1NTI3ODZiNWVlYmIzYWFkNGZhYzgzYWI5ZTVjNmI1ZDUxNWEzZWI1OWNlZWQ1MiJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.8.0",
-    "at": "2026-11-07T09:34:41.642Z"
+    "at": "2026-11-08T08:28:07.947Z"
   }
 }

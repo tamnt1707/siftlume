@@ -3,9 +3,6 @@ type: Integration
 title: LLM Providers and Model Configuration
 description: How the extension talks to an LLM — the provider catalogue and its four API flavours, AI SDK model construction, the local-provider Origin rewrite, live model list fetching, the model cache, and the configuration checks that run before every call.
 tags: [llm, providers, ai-sdk, settings, model-list, local-ollama, permissions]
-verified:
-  - by: openwiki/0.8.0
-    at: 2026-11-07T09:34:41.642Z
 sources:
   - id: openwiki-source-58ce847bf599b95b570d419d
     resource: repo://components/ModelSwitcher.tsx

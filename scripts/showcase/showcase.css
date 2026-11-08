@@ -1,0 +1,178 @@
+/* Layout for README screenshots only. */
+body {
+  margin: 0;
+  background: #e9edf2;
+}
+
+.sc-compare {
+  display: grid;
+  grid-template-columns: 1fr 56px 440px;
+  gap: 0;
+  align-items: start;
+  width: 1360px;
+  height: 900px;
+  padding: 36px 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+}
+
+.sc-label {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a2236;
+}
+
+.sc-label span {
+  margin-left: 8px;
+  font-weight: 400;
+  color: #5e6880;
+}
+
+.sc-arrow {
+  align-self: center;
+  text-align: center;
+  font-size: 30px;
+  color: #0b7a83;
+}
+
+.sc-browser,
+.sc-panel {
+  height: 790px;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 18px 50px -20px rgb(20 24 33 / 0.35);
+}
+
+.sc-browser {
+  background: #fff;
+}
+
+.sc-chrome {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 14px;
+  background: #f1f3f4;
+  border-bottom: 1px solid #e3e6ea;
+}
+
+.sc-chrome i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #d5d8dc;
+}
+
+.sc-chrome span {
+  margin-left: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 12px;
+  color: #5f6368;
+}
+
+.sc-article {
+  padding: 26px 40px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #2b2b2b;
+}
+
+.sc-site {
+  margin: 0;
+  font:
+    800 20px/1 Georgia,
+    serif;
+  letter-spacing: 0.02em;
+}
+
+.sc-section {
+  margin: 14px 0 6px;
+  font:
+    600 12px/1 system-ui,
+    sans-serif;
+  color: #b3261e;
+}
+
+.sc-article h1 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.sc-dek {
+  font-size: 17px;
+  color: #555;
+}
+
+.sc-byline {
+  font:
+    13px system-ui,
+    sans-serif;
+  color: #777;
+}
+
+.sc-ad {
+  margin: 18px 0;
+  padding: 34px 0;
+  border: 1px dashed #ccc;
+  text-align: center;
+  font:
+    11px system-ui,
+    sans-serif;
+  color: #999;
+}
+
+.sc-panel {
+  min-height: 0;
+}
+
+.sc-panel .content {
+  height: calc(790px - 52px);
+  overflow: hidden;
+}
+
+.sc-favicon {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: #1a2236;
+  font:
+    700 10px/1 Georgia,
+    serif;
+  color: #fff;
+}
+
+.sc-ask {
+  position: static !important;
+}
+
+.sc-placeholder {
+  color: var(--ink-3);
+}
+
+.sc-full {
+  width: 1360px;
+  min-height: 0;
+}
+
+.sc-settings {
+  width: 1100px;
+  min-height: 0;
+}
+
+/* Static shells: no fixed bars or sticky rails in screenshots. */
+.sc-full .session--page > .session__side {
+  position: static;
+  height: auto;
+}
+
+.sc-settings .options__footer {
+  display: none;
+}

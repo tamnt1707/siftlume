@@ -3,9 +3,6 @@ type: Integration
 title: Mermaid Diagrams via Pele
 description: How a Diagram block travels from the model to a themed SVG — the prompt rules that constrain Mermaid, the Pele render options, the Diagram component lifecycle, and the model-readable error format that feeds the repair loop.
 tags: [mermaid, pele, diagrams, genui, validation, openui-lang]
-verified:
-  - by: openwiki/0.8.0
-    at: 2026-11-07T09:34:41.642Z
 sources:
   - id: openwiki-source-91562fff700667f8709f3231
     resource: repo://assets/genui.css

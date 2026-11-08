@@ -3,9 +3,6 @@ type: Workflow
 title: Summary Generation
 description: How one summary is produced end to end — from a page, selection, paste or file through extraction, truncation, prompt composition, streaming, OpenUI Lang validation with a single bounded repair turn, and persistence via the OpenUI Message Protocol.
 tags: [workflow, summary, extraction, truncation, streaming, validation, repair, persistence]
-verified:
-  - by: openwiki/0.8.0
-    at: 2026-11-07T09:34:41.642Z
 sources:
   - id: openwiki-source-e9a6fa11b146c932372d7ca2
     resource: repo://components/SessionView.tsx

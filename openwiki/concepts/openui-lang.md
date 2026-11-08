@@ -3,9 +3,6 @@ type: Concept
 title: OpenUI Lang Program Model and Library
 description: How the extension defines its OpenUI Lang component library and custom actions, builds the summarization prompt from that library, parses and validates the model's program, and handles the three output modes (full program, edit-mode patch, inline prose plus code).
 tags: [openui-lang, genui, library, prompt, parsing, validation]
-verified:
-  - by: openwiki/0.8.0
-    at: 2026-11-07T09:34:41.642Z
 sources:
   - id: openwiki-source-7be6309091e21ce73672ed48
     resource: repo://components/GenUI.tsx

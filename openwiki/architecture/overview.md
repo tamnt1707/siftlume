@@ -1,11 +1,8 @@
 ---
 type: Architecture Overview
 title: Architecture Overview
-description: System-level map of the WXT entrypoints, React components, lib modules, the extended OpenUI library, the storage areas, and the end-to-end flow from a user trigger to a rendered and persisted summary.
+description: System-level map of the Siftlume WXT entrypoints, React components, lib modules, the extended OpenUI library, the storage areas and the end-to-end flow from a user trigger to a rendered and persisted summary, with the two core invariants (no backend / BYOK, appearance tokens drive everything visual).
 tags: [architecture, extension, openui, genui, data-flow, storage]
-verified:
-  - by: openwiki/0.8.0
-    at: 2026-11-07T09:34:41.642Z
 sources:
   - id: openwiki-source-7e3355f17b1feb4de5b7b2ce
     resource: repo://.output/chrome-mv3/manifest.json
@@ -64,11 +61,14 @@ sources:
   - id: openwiki-source-49ce5f922c6d8903f5e7d073
     resource: repo://wxt.config.ts
 generated: { by: "openwiki/0.8.0", at: "2026-11-07T09:34:41.642Z" }
+verified:
+  - by: openwiki/0.8.0
+    at: 2026-11-08T08:28:07.947Z
 ---
 
 # Architecture Overview
 
-The extension is a Manifest V3 Chrome extension built with **WXT** + **React 19** + **TypeScript**.
+**Siftlume** is a Manifest V3 Chrome extension built with **WXT** + **React 19** + **TypeScript**.
 It turns a web page, a pasted text, or a file into an **interactive Generative UI** written in
 OpenUI Lang and rendered by the OpenUI `Renderer`.
 
@@ -142,7 +142,7 @@ rendering support and persistence.
 | --- | --- |
 | `background.ts` | MV3 service worker: owns context menus, the toolbar action (popup vs side panel), the per-tab side-panel lifecycle, and routing of a trigger to a `PendingRequest`. It never renders or summarizes. |
 | `popup/` | Small launcher (only installed as the action popup in `tab` display mode). Hands a request to a new tab and closes itself. |
-| `app/` | The result view (`App.tsx`). Rendered as a full-page tab; the same component is mounted in the side panel with `surface="panel"`. |
+| `app/` | The result view (`App.tsx`). Rendered as a full-page tab; the same component is mounted in the side panel with `surface="panel"`. Built as an *unlisted page*, so it never appears in the manifest. |
 | `sidepanel/` | Entry HTML/JS that mounts `App` with `surface="panel"`. |
 | `options/` | Settings page (`OptionsApp.tsx` → `SettingsForm`). |
 
@@ -158,11 +158,13 @@ mechanics.
 - `SessionView.tsx` — the summary UI: `GenUI` output, one-click refine chips, free-text refine,
   the follow-up question column, and the `onAction` handler that fulfils custom actions.
 - `GenUI.tsx` — thin wrapper around the OpenUI `Renderer`: binds the app library, forwards
-  `toolProvider`, `initialState` and `onStateUpdate`, and surfaces runtime/tool errors.
+  `toolProvider`, `initialState` and `onStateUpdate`, and surfaces runtime/tool errors
+  (warnings and parser errors are filtered out, since the repair loop already handled the latter).
 - `SourcePicker.tsx` — the start screen: summarize this page, paste text, drop a file.
 - `HistoryList.tsx` — session list (compact variant in the popup).
-- `SettingsForm.tsx` + `AppearancePanel.tsx` + `ModelSwitcher.tsx` + `LanguagePicker.tsx` —
-  settings surface; `ModelSwitcher` is a cross-provider model picker that switches provider too.
+- `SettingsForm.tsx` + `AppearancePanel.tsx` + `ModelSwitcher.tsx` + `LanguagePicker.tsx` +
+  `AboutPanel.tsx` — settings surface; `ModelSwitcher` is a cross-provider model picker that
+  switches provider too.
 - `useSession.ts` — the session controller: phases (`idle`, `extracting`, `summarizing`,
   `refining`, `answering`), abort handling, persistence, and the operations `fromTab`,
   `fromText`, `fromFile`, `refine`, `resummarize`, `ask`.
@@ -175,7 +177,7 @@ mechanics.
 | Module | Responsibility |
 | --- | --- |
 | `library.tsx` | The OpenUI library: `openuiChatLibrary` extended with the custom components `SummaryHero`, `KeyNumbers`/`KeyNumber`, `Takeaways`/`Takeaway`, `Timeline`/`TimelineEvent`, `SourceQuote`, `Diagram`, and the custom actions `HighlightInPage` and `CopyText`. `ROOT` is `Card`. The library is created at module scope, because the OpenUI parser memoizes by library identity. |
-| `openui.ts` | System prompts (visual, chart, diagram, length, layout and per-source-kind rules), inline-mode splitting (`splitInline`), parser validation (`validateProgram`), Mermaid validation (`validateDiagrams`), repair messages, and edit-mode merging (`applyPatch` → `mergeStatements`). |
+| `openui.ts` | System prompts (visual, chart, diagram, length, layout and per-source-kind rules), inline-mode splitting (`splitInline`), parser validation (`validateProgram`), Mermaid validation (`validateDiagrams`), repair messages, and edit-mode merging (`applyPatch` → `mergeStatements`). The expensive library prompt part is cached per source kind in a module-level map. |
 | `generate.ts` | The generation turn: streaming, one-shot repair loop, `generateSummary` (edit mode) and `generateAnswer` (Q&A). |
 | `extractors.ts` | Source extraction: HTML → Markdown via Readability + Turndown (GFM keeps tables), PDF via pdf.js, CSV via Papa Parse, Markdown/text passthrough; `truncate()` caps the content at the configured `maxChars`. |
 | `page.ts` | Tab reading (`extractTab`, HTML or PDF) and the `@HighlightInPage` implementation (`highlightInTab`). |
@@ -184,12 +186,13 @@ mechanics.
 | `csv-tools.ts` | `csv_rows` / `csv_group` tools plus the `toolProvider` that runs them **in the browser** over the parsed dataset. |
 | `diagram.ts` | Mermaid → SVG with Pele (`pele/lazy`), and `diagramError()` producing a model-readable error. |
 | `history.ts` | Sessions stored with the OpenUI Message Protocol (`buildMessage` / `parseMessage`), so form and `$state` values survive a reload. |
-| `settings.ts` | Provider catalogue, the `Settings` shape, `local:settings` persistence, `configProblem()`, and runtime host-permission requests. |
+| `settings.ts` | Provider catalogue, the `Settings` shape, `local:settings` persistence, `configProblem()`, `normalizeSettings()` and runtime host-permission requests. |
 | `appearance.ts` | The Inkmark design system: presets, palette resolution (including dark-mode derivation), CSS variables and the OpenUI theme. |
 | `context-menus.ts` | Context-menu items whose ids encode the display mode. |
 | `pending.ts` | The `PendingRequest` handoff and the per-tab side-panel bookkeeping. |
 | `local-origin.ts` | A `declarativeNetRequest` session rule that rewrites `Origin` for local providers (Ollama), so no `OLLAMA_ORIGINS` is needed. |
 | `refine.ts` | The refinement prompts and the standing style rules. |
+| `no-openui-devtools.ts` | Opt-out flag for the OpenUI development widget (see *Manifest V3 and remote code*). |
 | `i18n/` | The i18next instance, language matching and the type-checked key declarations. |
 
 ## Storage areas
@@ -205,8 +208,7 @@ WXT's `storage.defineItem` prefixes map to Chrome storage areas:
 | `session:panelRequests` | `chrome.storage.session` | Per-tab pointer to the request a side panel should run; the pointer is ignored after 60 seconds. |
 | `session:panelUrls` | `chrome.storage.session` | The URL each tab's panel belongs to, used to close the panel on navigation. |
 
-<!-- openwiki: broken internal link [storage-and-state.md] file "storage-and-state.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-See [Storage and State](storage-and-state.md) for the full state model.
+See [Storage and Session State](storage-and-state.md) for the full state model.
 
 ## End-to-end data flow
 
@@ -296,35 +298,42 @@ questions use OpenUI **inline mode**, where the answer may be plain prose or a c
 
 ## Configuration and operations
 
-- `wxt.config.ts` declares only part of the manifest: the localized `default_locale`, `name` and
-  `description`, the runtime permissions (`storage`, `sidePanel`, `activeTab`, `scripting`,
-  `contextMenus`, `unlimitedStorage`, `declarativeNetRequest`, `favicon`, `clipboardWrite`),
-  `optional_host_permissions: ['<all_urls>']` for the provider API domain (requested at runtime
-  on Save, so provider calls bypass CORS), the `action.default_title`, and the `Alt+Shift+S`
-  `_execute_action` command.
-- **The manifest is not only what `wxt.config.ts` says.** WXT derives the rest from the
-  entrypoint folders and `public/`, and the built `.output/chrome-mv3/manifest.json` additionally
-  contains `background.service_worker`, `action.default_popup: "popup.html"`,
-  `side_panel.default_path: "sidepanel.html"`, `options_ui` (`open_in_tab: true`,
-  `page: "options.html"`) and the icon set. The side-panel and options entries exist because
-  `entrypoints/sidepanel/` and `entrypoints/options/` exist, not because the config mentions them.
-- `pnpm dev` runs the extension with hot reload, `pnpm compile` type-checks, `pnpm build`
-  produces `.output/chrome-mv3`, and `pnpm check:i18n` validates the locale folders against
-  English.
+- **The manifest is derived from the entrypoint folders, not from `wxt.config.ts` alone.** WXT
+  maps each `entrypoints/` folder to a manifest entry: `background.ts` → `background.service_worker`,
+  `popup/` → `action.default_popup`, `sidepanel/` → `side_panel.default_path`,
+  `options/` → `options_ui` (`open_in_tab`), and `public/` supplies the icon set. `app/` is an
+  *unlisted page*: `app.html` is built and served but never advertised, because it is opened
+  programmatically with `browser.tabs.create`. Consequence: removing or renaming an entrypoint
+  folder changes the built manifest and the set of surfaces the browser exposes.
+- `wxt.config.ts` supplies what WXT cannot infer: the localized `default_locale`, `name` and
+  `description` (`__MSG_extName__` / `__MSG_extDescription__`), the runtime permissions
+  (`storage`, `sidePanel`, `activeTab`, `scripting`, `contextMenus`, `unlimitedStorage`,
+  `declarativeNetRequest`, `favicon`, `clipboardWrite`), `optional_host_permissions: ['<all_urls>']`
+  for the provider API domain (requested at runtime on Save, so provider calls bypass CORS), the
+  `action.default_title`, and the `Alt+Shift+S` `_execute_action` command.
+- **Manifest V3 and remote code.** OpenUI's development "Inspect" widget loads its UI from a
+  CDN (jsDelivr), which Manifest V3 forbids. `lib/no-openui-devtools.ts` sets the
+  `openui.devtools.autoMount` flag before `@openuidev/react-lang` is evaluated, so the widget
+  never mounts; every entrypoint imports that module first. Without it the extension would try
+  to fetch remote code and fail with console errors.
+- **Development commands.** `pnpm dev` runs the extension with hot reload (`pnpm dev:firefox`
+  for Firefox), `pnpm build` produces `.output/chrome-mv3`, `pnpm zip` packages it for the Web
+  Store, `pnpm compile` type-checks (`tsc --noEmit`), `pnpm check:i18n` validates the locale
+  folders against English, `pnpm check:examples` validates the OpenUI Lang examples embedded in
+  the system prompts (they must parse cleanly and their Mermaid diagrams must render), and
+  `pnpm check` runs all checks.
 - **Localization.** `locales/<lang>/<namespace>.json` (namespaces: `common`, `picker`, `popup`,
   `session`, `settings`, `errors`) are bundled at build time via `import.meta.glob`. English is the
   source of truth and its keys are type-checked through the `i18next` module augmentation in
   `lib/i18n/types.d.ts`, so a missing English key is a compile error. `public/_locales/<lang>/`
-  holds the Chrome-level strings (extension name, description, context-menu titles).
+  holds the Chrome-level strings (extension name, description, context-menu titles), where the
+  brand name "Siftlume" is intentionally not translated.
 
 ## Related pages
 
 - [Extension Surfaces and Routing](extension-surfaces.md)
-<!-- openwiki: broken internal link [storage-and-state.md] file "storage-and-state.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-- [Storage and State](storage-and-state.md)
-<!-- openwiki: broken internal link [ui-components.md] file "ui-components.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-- [UI Components](ui-components.md)
+- [Storage and Session State](storage-and-state.md)
+- [React UI Components](ui-components.md)
 - [OpenUI Lang](../concepts/openui-lang.md)
 - [Summary Generation](../workflows/summary-generation.md)
-<!-- openwiki: broken internal link [../quickstart.md] file "../quickstart.md" does not exist. Fix the href or restore the target, then delete this comment. -->
 - [Quickstart](../quickstart.md)

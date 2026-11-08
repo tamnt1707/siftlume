@@ -3,9 +3,6 @@ type: Workflow
 title: Refinement and Follow-up Questions
 description: The two post-summary turns of a session — one-click refinement chips and free-text refinement, which run the model in OpenUI edit mode and merge the returned patch into the current program, and follow-up Q&A, which rebuilds the conversation from the stored Message Protocol content only.
 tags: [workflow, refinement, edit-mode, merge, qa, follow-up, message-protocol, i18n]
-verified:
-  - by: openwiki/0.8.0
-    at: 2026-11-07T09:34:41.642Z
 sources:
   - id: openwiki-source-e9a6fa11b146c932372d7ca2
     resource: repo://components/SessionView.tsx

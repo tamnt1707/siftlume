@@ -1,0 +1,536 @@
+{
+  "schemaVersion": 1,
+  "runId": "428e3ea2-f37c-468e-b431-b54040236095",
+  "mode": "update",
+  "phase": "generating",
+  "startedAt": "2026-11-08T08:28:07.947Z",
+  "language": "en",
+  "languageChanged": false,
+  "requiredRewritePages": [],
+  "initialPages": [
+    "/openwiki/architecture/extension-surfaces.md",
+    "/openwiki/architecture/overview.md",
+    "/openwiki/concepts/csv-data-tools.md",
+    "/openwiki/concepts/openui-lang.md",
+    "/openwiki/integrations/llm-providers.md",
+    "/openwiki/integrations/mermaid-diagrams.md",
+    "/openwiki/operations/permissions-and-privacy.md",
+    "/openwiki/workflows/refinement.md",
+    "/openwiki/workflows/summary-generation.md"
+  ],
+  "sourceFingerprint": "sha256:f4cdb4f825832d00491c5d86934f296a5ffbf410c8ea06514c23a8e5817f595b",
+  "targetGitHead": "4ec75cad40ac9aa3c35998cab3cce9113667413c",
+  "actor": {
+    "producerActor": "openwiki/0.8.0",
+    "metadataModel": "MiniMax-M3.1-Flash"
+  },
+  "previousLastUpdate": {
+    "updatedAt": "2026-11-08T07:00:30.800Z",
+    "command": "update",
+    "model": "MiniMax-M3.1-Flash",
+    "status": "interrupted",
+    "language": "en"
+  },
+  "wikiGoal": "A code wiki for this repository.",
+  "beforeContentSnapshot": "5b48d64d95a5aae4d89101e4a696cc3c2c3e60206d1477cb0fc71a54757ad756",
+  "preparedWiki": {
+    "generatedProvenance": [
+      {
+        "page": "/openwiki/architecture/extension-surfaces.md",
+        "bodyHash": "d021cbdd8080bfea2a80158d87fe5dc2d0b852947f19609f7f59720d95a94705",
+        "generated": {
+          "by": "openwiki/0.8.0",
+          "at": "2026-11-07T09:34:41.642Z"
+        }
+      },
+      {
+        "page": "/openwiki/architecture/overview.md",
+        "bodyHash": "a907b81c312a9ac2d19b7642a0c5e7ae0e7cb714f30decfd306017a71abe37f5",
+        "generated": {
+          "by": "openwiki/0.8.0",
+          "at": "2026-11-07T09:34:41.642Z"
+        }
+      },
+      {
+        "page": "/openwiki/concepts/csv-data-tools.md",
+        "bodyHash": "873fc8ce185f169fac9aa038b6d7fc214b890d5bba23447ef446b35fcc540948",
+        "generated": {
+          "by": "openwiki/0.8.0",
+          "at": "2026-11-07T09:34:41.642Z"
+        }
+      },
+      {
+        "page": "/openwiki/concepts/openui-lang.md",
+        "bodyHash": "755f6758435d92a10c3c8f43d1b4fd86c4fbd543a215c13e5f326de837296d47",
+        "generated": {
+          "by": "openwiki/0.8.0",
+          "at": "2026-11-07T09:34:41.642Z"
+        }
+      },
+      {
+        "page": "/openwiki/integrations/llm-providers.md",
+        "bodyHash": "3d7f26b3ebcf5cca103ee1637b733b4693f9d26cf970cf74d0db58c07d2863a3",
+        "generated": {
+          "by": "openwiki/0.8.0",
+          "at": "2026-11-07T09:34:41.642Z"
+        }
+      },
+      {
+        "page": "/openwiki/integrations/mermaid-diagrams.md",
+        "bodyHash": "5116813d792c2a4458ee1d5896cd2035c323ee3f21ad54849daaa9e6817468e3",
+        "generated": {
+          "by": "openwiki/0.8.0",
+          "at": "2026-11-07T09:34:41.642Z"
+        }
+      },
+      {
+        "page": "/openwiki/operations/permissions-and-privacy.md",
+        "bodyHash": "99bdd15723fa21553d0b7f295a815cfc22818aefb743171337bb9019f3f88f07",
+        "generated": {
+          "by": "openwiki/0.8.0",
+          "at": "2026-11-07T09:34:41.642Z"
+        }
+      },
+      {
+        "page": "/openwiki/workflows/refinement.md",
+        "bodyHash": "c7396779ae3327df13198da7ecca36fc8313739d4d66b97073b4f2f1b47cf822",
+        "generated": {
+          "by": "openwiki/0.8.0",
+          "at": "2026-11-07T09:34:41.642Z"
+        }
+      },
+      {
+        "page": "/openwiki/workflows/summary-generation.md",
+        "bodyHash": "f23ca6074d07d982b2153dd7cc048b736bfe41850e099867bfcf7e197dca2610",
+        "generated": {
+          "by": "openwiki/0.8.0",
+          "at": "2026-11-07T09:34:41.642Z"
+        }
+      }
+    ]
+  },
+  "plan": {
+    "pages": [
+      {
+        "id": "b5846e17-23f4-43ca-92b2-825d5132a3a3",
+        "path": "/openwiki/architecture/extension-surfaces.md",
+        "title": "Extension Surfaces and Routing",
+        "purpose": "How a trigger becomes a rendered summary across the background service worker, context menus, toolbar action versus popup, full-page app tab, per-tab side panel and options page — pending-request handoff, display-mode routing, side-panel lifecycle, URL routes and the user-gesture invariant.",
+        "seedPaths": [
+          "entrypoints/app/App.tsx",
+          "entrypoints/background.ts",
+          "entrypoints/options/OptionsApp.tsx",
+          "entrypoints/popup/Popup.tsx",
+          "entrypoints/sidepanel/main.tsx",
+          "lib/context-menus.ts",
+          "lib/pending.ts",
+          "lib/settings.ts",
+          "public/_locales/en/messages.json",
+          "wxt.config.ts"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/overview.md",
+          "/openwiki/architecture/storage-and-state.md",
+          "/openwiki/operations/permissions-and-privacy.md",
+          "/openwiki/workflows/summary-generation.md"
+        ],
+        "instructions": [
+          "Explain that entrypoint folders (popup, sidepanel, options, background) are what create the manifest entries, so removing a folder changes the built manifest.",
+          "Include a mermaid flowchart of trigger → pending request → surface and a caption; keep the user-gesture rule explicit (sidePanel.open and permissions.request must run synchronously in the click handler).",
+          "Re-verify the manifest and popup claims against current source: the built manifest, the runtime popup clearing in side-panel mode, the context-menu id encoding the display mode, and the one-shot pending request lifecycle.",
+          "Use the current Chrome menu strings from public/_locales/en/messages.json for Siftlume."
+        ],
+        "status": "complete",
+        "completedBy": "openwiki/0.8.0"
+      },
+      {
+        "id": "e73aaf20-85fa-4a3a-b868-7c7f2dcdf185",
+        "path": "/openwiki/architecture/overview.md",
+        "title": "Architecture Overview",
+        "purpose": "System-level map of the WXT entrypoints, React components, lib modules, the extended OpenUI library, the storage areas and the end-to-end flow from a user trigger to a rendered and persisted summary, with the two core invariants (no backend / BYOK, appearance tokens drive everything visual).",
+        "seedPaths": [
+          "components/GenUI.tsx",
+          "components/SessionView.tsx",
+          "components/useSession.ts",
+          "entrypoints/app/App.tsx",
+          "entrypoints/background.ts",
+          "entrypoints/options/OptionsApp.tsx",
+          "entrypoints/popup/Popup.tsx",
+          "entrypoints/sidepanel/main.tsx",
+          "lib/appearance.ts",
+          "lib/generate.ts",
+          "lib/history.ts",
+          "lib/i18n/index.ts",
+          "lib/library.tsx",
+          "lib/llm.ts",
+          "lib/openui.ts",
+          "lib/pending.ts",
+          "lib/settings.ts",
+          "package.json",
+          "wxt.config.ts"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/extension-surfaces.md",
+          "/openwiki/architecture/storage-and-state.md",
+          "/openwiki/architecture/ui-components.md",
+          "/openwiki/concepts/openui-lang.md",
+          "/openwiki/quickstart.md",
+          "/openwiki/workflows/summary-generation.md"
+        ],
+        "instructions": [
+          "Include a mermaid flowchart of the layer map and one of the trigger → extraction → prompt → stream → validate → render → persist flow, with a one-line caption under each.",
+          "Link only to pages that exist in this plan (storage-and-state.md, ui-components.md, ../quickstart.md) and remove any broken-link placeholder comments.",
+          "Regenerate from current source: the previous version cited the built manifest and package.json ranges that have since changed; re-derive the layer map from the entrypoint folders and lib modules instead of quoting stale line ranges.",
+          "Use the current product name Siftlume and note the OpenUI development widget opt-out (lib/no-openui-devtools.ts) as a Manifest V3 remote-code constraint."
+        ],
+        "status": "complete",
+        "completedBy": "openwiki/0.8.0"
+      },
+      {
+        "id": "278c7dcc-6468-460c-a49f-9a64ed24ae4f",
+        "path": "/openwiki/architecture/storage-and-state.md",
+        "title": "Storage and Session State",
+        "purpose": "Every persisted and in-memory state area: local:settings (including API keys), local:history (sessions with OpenUI Message Protocol payloads), local:modelCache, session:requests, session:panelRequests and session:panelUrls — what is written where, when it is dropped, and how the session, form state and Q&A turns round-trip.",
+        "seedPaths": [
+          "components/HistoryList.tsx",
+          "components/useSession.ts",
+          "components/useSettings.ts",
+          "lib/history.ts",
+          "lib/models.ts",
+          "lib/pending.ts",
+          "lib/settings.ts"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/extension-surfaces.md",
+          "/openwiki/architecture/overview.md",
+          "/openwiki/integrations/llm-providers.md",
+          "/openwiki/operations/permissions-and-privacy.md",
+          "/openwiki/workflows/summary-generation.md"
+        ],
+        "instructions": [
+          "Document the storage-area table (area, key, writer, reader, lifetime) and the rule that API keys live only in local:settings, never sync.",
+          "Explain writeStored/readStored (buildMessage/parseMessage) and the debounced form/$state persistence that keeps filters applied after a reload.",
+          "Include a mermaid erDiagram or flowchart of the storage areas and their owners, with a caption."
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "a405944c-3ac2-4253-80a8-0d32bdb936de",
+        "path": "/openwiki/architecture/ui-components.md",
+        "title": "React UI Components",
+        "purpose": "The React layer: App (page vs panel surfaces and routing), SessionView (summary, refine chips, question box, action handlers), GenUI (Renderer wrapper and error filtering), SettingsForm with its tabs (AI model, Summary, Appearance, Advanced, About), AppearancePanel, AboutPanel, ModelSwitcher, SourcePicker, HistoryList, Themed, and the useSession/useSettings hooks.",
+        "seedPaths": [
+          "components/AboutPanel.tsx",
+          "components/AppearancePanel.tsx",
+          "components/GenUI.tsx",
+          "components/HistoryList.tsx",
+          "components/LanguagePicker.tsx",
+          "components/ModelSwitcher.tsx",
+          "components/Select.tsx",
+          "components/SessionView.tsx",
+          "components/SettingsForm.tsx",
+          "components/SourcePicker.tsx",
+          "components/Themed.tsx",
+          "components/useSession.ts",
+          "components/useSettings.ts",
+          "entrypoints/app/App.tsx"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/overview.md",
+          "/openwiki/architecture/storage-and-state.md",
+          "/openwiki/concepts/inkmark-design-system.md",
+          "/openwiki/concepts/localization.md",
+          "/openwiki/concepts/openui-lang.md"
+        ],
+        "instructions": [
+          "Cover the About panel (version, tagline, Ko-fi support link, MIT license) since it is a current surface, and note the settings tab ids in components/SettingsForm.tsx.",
+          "Document the onAction switch in SessionView (continue_conversation, open_url, HighlightInPage, CopyText) and the fact that custom actions must be fired as an ActionPlan custom_action step (the legacy {type, params} form is dropped by the Renderer).",
+          "Use a mermaid component-tree or sequence diagram for the app surface and caption it."
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "4e824959-d805-4a90-b0e9-a138ab19ca33",
+        "path": "/openwiki/concepts/csv-data-tools.md",
+        "title": "In-browser CSV Query Tools",
+        "purpose": "How a CSV file becomes both a prompt-side summary and a local dataset the model can query with Query(\"csv_rows\"/\"csv_group\"), and how filtering and grouping re-run in the browser without calling the model again.",
+        "seedPaths": [
+          "components/GenUI.tsx",
+          "components/SessionView.tsx",
+          "components/useSession.ts",
+          "lib/csv-tools.ts",
+          "lib/extractors.ts",
+          "lib/openui.ts"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/storage-and-state.md",
+          "/openwiki/architecture/ui-components.md",
+          "/openwiki/concepts/openui-lang.md",
+          "/openwiki/workflows/summary-generation.md"
+        ],
+        "instructions": [
+          "Fix the internal links to the storage-and-state and ui-components pages and remove the broken-link placeholder comments.",
+          "Include a mermaid sequenceDiagram of the CSV data path with a caption.",
+          "Keep the invariant explicit: changing a filter or grouping re-renders without a new model call."
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "1da6360c-6c13-4066-aaba-301910c565ac",
+        "path": "/openwiki/concepts/inkmark-design-system.md",
+        "title": "Inkmark Design System and Appearance Tokens",
+        "purpose": "The visual system: the Appearance object (preset, accent pen, highlighter marker, corners, reading font), preset catalogue, palette resolution including dark-mode derivation and WCAG luminance handling, CSS variables for the app chrome, OpenUI ThemeProvider tokens for the generated UI, and the shared chart/Pele series palette.",
+        "seedPaths": [
+          "assets/app.css",
+          "assets/fonts.ts",
+          "assets/genui.css",
+          "components/AppearancePanel.tsx",
+          "components/Themed.tsx",
+          "lib/appearance.ts"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/ui-components.md",
+          "/openwiki/integrations/mermaid-diagrams.md",
+          "/openwiki/operations/permissions-and-privacy.md"
+        ],
+        "instructions": [
+          "Document the typography workaround (OpenUI shorthand text tokens must be rebuilt because they embed the default font) and the Tide default preset.",
+          "Explain the derivation chain: Appearance → resolvePalette → appearanceVars (CSS custom properties on the app root) and buildOpenUITheme (OpenUI light/dark themes), and how charts and Pele diagrams share one hue set via --pele-series-N.",
+          "Use a mermaid flowchart of the token derivation with a caption."
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "15b0ce73-8ec6-41ad-958f-62fb3c20fa41",
+        "path": "/openwiki/concepts/localization.md",
+        "title": "Localization and Translation Workflow",
+        "purpose": "How the UI is translated: the i18next setup with per-language namespace folders, the 12 supported UI languages and browser-language matching, the English source-of-truth key typing, the separate Chrome-level public/_locales strings, and the locale check script that enforces keys, CLDR plural forms and placeholders.",
+        "seedPaths": [
+          "lib/i18n/glob.d.ts",
+          "lib/i18n/index.ts",
+          "lib/i18n/react.ts",
+          "lib/i18n/types.d.ts",
+          "locales/en/common.json",
+          "locales/en/session.json",
+          "locales/en/settings.json",
+          "public/_locales/en/messages.json",
+          "scripts/check-locales.mjs"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/ui-components.md",
+          "/openwiki/operations/permissions-and-privacy.md",
+          "/openwiki/quickstart.md"
+        ],
+        "instructions": [
+          "Distinguish the two localization systems: app UI (i18next, locales/<lang>/<namespace>.json, namespaces common/picker/popup/session/settings/errors) and Chrome-level strings (public/_locales/<lang>/messages.json, underscore locale codes such as pt_BR and zh_CN).",
+          "Document how to add a language end to end (locales folder, UI_LANGUAGES entry, public/_locales entry, pnpm check:i18n).",
+          "Note that model-facing strings (refine instructions, prompt rules) stay in English while only user-visible labels are translated."
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "032265b8-6d5b-4578-b243-573a2c849632",
+        "path": "/openwiki/concepts/openui-lang.md",
+        "title": "OpenUI Lang Program Model and Library",
+        "purpose": "How the extension defines its OpenUI Lang component library and custom actions, builds the summarization prompt from that library, parses and validates the model's program, and handles the three output modes (full program, edit-mode patch, inline prose plus code) including the worked prompt examples and their automated validation.",
+        "seedPaths": [
+          "components/GenUI.tsx",
+          "lib/chart-example.ts",
+          "lib/diagram-example.ts",
+          "lib/generate.ts",
+          "lib/library.tsx",
+          "lib/openui.ts",
+          "lib/refine.ts",
+          "lib/summary-example.ts",
+          "scripts/check-examples.ts"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/ui-components.md",
+          "/openwiki/concepts/csv-data-tools.md",
+          "/openwiki/integrations/mermaid-diagrams.md",
+          "/openwiki/workflows/refinement.md",
+          "/openwiki/workflows/summary-generation.md"
+        ],
+        "instructions": [
+          "Document the prompt-example check: scripts/check-examples.ts parses every embedded example against the real library and renders its Mermaid diagrams with Pele; a wrong example teaches the model wrong syntax, so `pnpm check:examples` must stay green.",
+          "Include a mermaid sequenceDiagram of the program/prompt/parse/render chain with a caption.",
+          "Keep the three prompt examples (summary, chart, diagram) and their role in the cached prompt.",
+          "State the custom-action rule precisely: actions are defined with defineAction and must be triggered through an ActionPlan custom_action step (lib/library.tsx customAction helper); the legacy { type, params } form is silently dropped by the Renderer."
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "f8e69707-dafd-44fb-a581-0af785e0d56a",
+        "path": "/openwiki/integrations/llm-providers.md",
+        "title": "LLM Providers and Model Configuration",
+        "purpose": "How the extension talks to an LLM — the provider catalogue and its four API flavours, AI SDK model construction, the local-provider Origin rewrite, live model list fetching, the model cache, and the configuration checks that run before every call.",
+        "seedPaths": [
+          "components/ModelSwitcher.tsx",
+          "components/SettingsForm.tsx",
+          "lib/llm.ts",
+          "lib/local-origin.ts",
+          "lib/models.ts",
+          "lib/settings.ts",
+          "locales/en/errors.json"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/storage-and-state.md",
+          "/openwiki/architecture/ui-components.md",
+          "/openwiki/operations/permissions-and-privacy.md",
+          "/openwiki/workflows/summary-generation.md"
+        ],
+        "instructions": [
+          "Fix the internal links to the storage-and-state and ui-components pages and remove the broken-link placeholder comments.",
+          "Include a mermaid flowchart of the request path (provider preset → AI SDK model → stream → error mapping) with a caption.",
+          "Keep the four API flavours (openai Responses, anthropic Messages, google Gemini, compatible Chat Completions) and the per-provider credential model distinct, and re-check the provider ids against lib/settings.ts."
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "4c59816e-a178-4643-8bd6-e87b451186b5",
+        "path": "/openwiki/integrations/mermaid-diagrams.md",
+        "title": "Mermaid Diagrams via Pele",
+        "purpose": "How a Diagram block travels from the model to a themed SVG — the prompt rules that constrain Mermaid, the Pele render options, the Diagram component lifecycle, and the model-readable error format that feeds the repair loop.",
+        "seedPaths": [
+          "assets/genui.css",
+          "lib/diagram-example.ts",
+          "lib/diagram.ts",
+          "lib/generate.ts",
+          "lib/library.tsx",
+          "lib/openui.ts"
+        ],
+        "relatedPages": [
+          "/openwiki/concepts/inkmark-design-system.md",
+          "/openwiki/concepts/openui-lang.md",
+          "/openwiki/workflows/summary-generation.md"
+        ],
+        "instructions": [
+          "Include a mermaid flowchart of the diagram pipeline with a caption.",
+          "Re-verify the security flags (links and images disabled, size limit), the width measurement and direction breakpoint, and the two independent render passes (component render for the reader, validateDiagrams for the model).",
+          "Repair the link to the design-system page now that it exists, and delete the broken-link placeholder comment."
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "172d898c-c515-47a0-be58-4b0abe37f7bd",
+        "path": "/openwiki/operations/permissions-and-privacy.md",
+        "title": "Permissions, Privacy, Checks and Runtime Operations",
+        "purpose": "What the extension's manifest asks for, which code needs each permission, when host and page access are granted at runtime, how API keys and history stay local, the Manifest V3 constraints the code must respect (no remote code, user gestures, untrusted content), and the build, check and packaging commands including the prompt-example check.",
+        "seedPaths": [
+          ".gitignore",
+          "lib/local-origin.ts",
+          "lib/no-openui-devtools.ts",
+          "lib/page.ts",
+          "lib/settings.ts",
+          "package.json",
+          "public/_locales/en/messages.json",
+          "scripts/check-examples.ts",
+          "scripts/check-locales.mjs",
+          "wxt.config.ts"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/extension-surfaces.md",
+          "/openwiki/architecture/storage-and-state.md",
+          "/openwiki/concepts/localization.md",
+          "/openwiki/integrations/llm-providers.md",
+          "/openwiki/quickstart.md"
+        ],
+        "instructions": [
+          "Add the runtime host-permission request for the provider API domain (Settings → Save) and the local-server Origin rewrite (declarativeNetRequest session rule) as the two runtime prompts.",
+          "Document the operational commands: pnpm dev, build, zip, compile, check:i18n, check:examples, and the combined pnpm check; the prompt-example check is new and validates the OpenUI Lang examples and their Mermaid diagrams.",
+          "Fix the internal link to the storage-and-state page and remove the broken-link placeholder comment.",
+          "Re-verify every permission claim against current wxt.config.ts and the code that uses it; state clearly that the browser sees the built manifest, not only wxt.config.ts.",
+          "Record the Manifest V3 remote-code rule and that lib/no-openui-devtools.ts disables the OpenUI development widget because it loads its UI from a CDN."
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "4be3daf3-d7a4-494a-8c14-3f67908ff3ad",
+        "path": "/openwiki/workflows/refinement.md",
+        "title": "Refinement and Follow-up Questions",
+        "purpose": "The two post-summary turns of a session — one-click refinement chips and free-text refinement, which run the model in OpenUI edit mode and merge the returned patch into the current program, and follow-up Q&A, which rebuilds the conversation from the stored Message Protocol content only.",
+        "seedPaths": [
+          "components/SessionView.tsx",
+          "components/SettingsForm.tsx",
+          "components/useSession.ts",
+          "lib/generate.ts",
+          "lib/history.ts",
+          "lib/openui.ts",
+          "lib/refine.ts",
+          "locales/en/session.json"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/storage-and-state.md",
+          "/openwiki/architecture/ui-components.md",
+          "/openwiki/concepts/openui-lang.md",
+          "/openwiki/workflows/summary-generation.md"
+        ],
+        "instructions": [
+          "Fix the internal links to the storage-and-state and ui-components pages and remove the broken-link placeholder comments.",
+          "Include a mermaid flowchart of the two turn types with a caption.",
+          "Keep the English-instruction / translated-label split for refine chips and standing styles, and re-check the chip ids against REFINE_PRESETS in components/SessionView.tsx and REFINE_PROMPTS/STYLE_RULES in lib/refine.ts."
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "3050c982-acad-477f-a060-407ca8ef71d4",
+        "path": "/openwiki/workflows/summary-generation.md",
+        "title": "Summary Generation",
+        "purpose": "How one summary is produced end to end — from a page, selection, paste or file through extraction, truncation, prompt composition, streaming, OpenUI Lang validation with a single bounded repair turn, and persistence via the OpenUI Message Protocol.",
+        "seedPaths": [
+          "components/SessionView.tsx",
+          "components/useSession.ts",
+          "entrypoints/app/App.tsx",
+          "entrypoints/popup/Popup.tsx",
+          "lib/extractors.ts",
+          "lib/generate.ts",
+          "lib/history.ts",
+          "lib/llm.ts",
+          "lib/openui.ts",
+          "lib/page.ts"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/storage-and-state.md",
+          "/openwiki/architecture/ui-components.md",
+          "/openwiki/concepts/openui-lang.md",
+          "/openwiki/integrations/llm-providers.md",
+          "/openwiki/workflows/refinement.md"
+        ],
+        "instructions": [
+          "Fix the internal link to the storage-and-state page and remove the broken-link placeholder comment.",
+          "Include a mermaid stateDiagram-v2 for the phase machine and a caption.",
+          "Keep the bounded-repair invariant: exactly one repair turn, the fix is kept only when it is not worse, and remaining errors surface as a warning while the last valid program is kept.",
+          "Re-derive the phase state machine and the single-AbortController rule from components/useSession.ts, and the extraction table (Readability + Turndown with GFM, pdf.js, Papa Parse, markdown/text) from lib/extractors.ts and lib/page.ts."
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "d9662852-4fa3-4890-9a76-45733b1cb7dc",
+        "path": "/openwiki/quickstart.md",
+        "title": "Siftlume Code Wiki — Quickstart",
+        "purpose": "Entry point for the wiki: what Siftlume is, how to build and load the extension, the repository map (entrypoints/components/lib/locales/scripts), and a task-routing table that points agents to the right architecture, concept, workflow, integration and operations page for a change.",
+        "seedPaths": [
+          "AGENTS.md",
+          "CONTRIBUTING.md",
+          "README.md",
+          "openwiki/index.md",
+          "package.json",
+          "wxt.config.ts"
+        ],
+        "relatedPages": [
+          "/openwiki/architecture/extension-surfaces.md",
+          "/openwiki/architecture/overview.md",
+          "/openwiki/operations/permissions-and-privacy.md",
+          "/openwiki/workflows/summary-generation.md"
+        ],
+        "instructions": [
+          "Keep every internal link resolvable: only link to pages that exist in the plan, and never leave a broken-link placeholder comment.",
+          "Route readers by task: add a component the model can use → OpenUI Lang page; add a provider → LLM providers page; change trigger/routing → extension surfaces; change the repair/validation loop → summary generation; add a permission or locale → permissions and operations; change colors/tokens → Inkmark design system.",
+          "The extension is branded **Siftlume** (not “AI Summarizer”); use the current name when describing the product, e.g. the About panel and the Chrome _locales strings."
+        ],
+        "status": "pending"
+      }
+    ],
+    "deletePages": []
+  }
+}

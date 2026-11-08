@@ -15,6 +15,10 @@
   <a href="https://ko-fi.com/tamnt"><img alt="Support on Ko-fi" src="https://img.shields.io/badge/Ko--fi-support-FFE45C?logo=ko-fi&logoColor=1A2236"></a>
 </p>
 
+<p align="center">
+  <img src="docs/screenshots/compare.png" alt="Before: a long news article with ads. After: the Siftlume side panel with a one-line TL;DR, key figures, takeaways, a timeline and a source quote." width="900">
+</p>
+
 Siftlume reads the page you are on, a PDF, a CSV, or text you paste, and answers with a summary you can scan in seconds: a one-line TL;DR, headline numbers, short takeaways, charts, timelines and diagrams. You can refine it in one click and ask follow-up questions.
 
 It uses your own LLM key. Requests go straight from your browser to the provider you choose; there is no Siftlume server.
@@ -31,6 +35,27 @@ It uses your own LLM key. Requests go straight from your browser to the provider
 - **Any provider**: OpenAI, Anthropic, Google Gemini, OpenRouter, Groq, DeepSeek, Mistral, xAI, Together, Ollama, LM Studio, or any OpenAI-compatible endpoint. The model list loads from the provider.
 - **Make it yours**: color presets or your own pen and highlighter colors, corners, reading font, and light, dark or system mode.
 - **12 interface languages**: English, Tiếng Việt, 日本語, 简体中文, 繁體中文, 한국어, Español, Français, Deutsch, Português (Brasil), Русский, ไทย. It follows the browser language and falls back to English.
+
+## Screenshots
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/full-page.png" alt="Full-page result with key figures, a line chart, a donut chart, a bar chart and a Questions column"></td>
+    <td width="50%"><img src="docs/screenshots/full-page-dark.png" alt="The same full-page result in dark mode"></td>
+  </tr>
+  <tr>
+    <td>Full-page tab: numbers become charts, questions on the side</td>
+    <td>Dark mode</td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="docs/screenshots/settings.png" alt="Settings with vertical tabs and the Appearance tab: color presets, mode, corners, reading font and a live preview"></td>
+  </tr>
+  <tr>
+    <td colspan="2">Settings: color presets, mode, corners and reading font, with a live preview</td>
+  </tr>
+</table>
+
+The screenshots show the real interface rendering example content. Regenerate them with `pnpm screenshots`.
 
 ## Install
 
@@ -63,15 +88,16 @@ pnpm install
 pnpm dev          # opens Chrome with the extension loaded, with hot reload
 ```
 
-| Command               | What it does                                                                    |
-| --------------------- | ------------------------------------------------------------------------------- |
-| `pnpm dev`            | Development build with hot reload (`pnpm dev:firefox` for Firefox)              |
-| `pnpm build`          | Production build in `.output/chrome-mv3`                                        |
-| `pnpm zip`            | Zip for the Chrome Web Store                                                    |
-| `pnpm compile`        | Type-check                                                                      |
-| `pnpm check:i18n`     | Every locale has the same keys, plural forms and placeholders as English        |
-| `pnpm check:examples` | The OpenUI Lang examples in the prompts parse cleanly and their diagrams render |
-| `pnpm check`          | All of the checks above                                                         |
+| Command               | What it does                                                                          |
+| --------------------- | ------------------------------------------------------------------------------------- |
+| `pnpm dev`            | Development build with hot reload (`pnpm dev:firefox` for Firefox)                    |
+| `pnpm build`          | Production build in `.output/chrome-mv3`                                              |
+| `pnpm zip`            | Zip for the Chrome Web Store                                                          |
+| `pnpm compile`        | Type-check                                                                            |
+| `pnpm check:i18n`     | Every locale has the same keys, plural forms and placeholders as English              |
+| `pnpm check:examples` | The OpenUI Lang examples in the prompts parse cleanly and their diagrams render       |
+| `pnpm check`          | All of the checks above                                                               |
+| `pnpm screenshots`    | Re-render the README screenshots (needs Chrome; set `CHROME_PATH` if it is elsewhere) |
 
 ### How it works
 
@@ -110,7 +136,8 @@ lib/
   i18n/                i18next setup
 locales/<lang>/        UI translations, one folder per language
 public/_locales/       extension name, description and menus (Chrome i18n)
-scripts/               checks used by `pnpm check`
+scripts/               checks used by `pnpm check`, and the screenshot showcase
+docs/screenshots/      README images (generated by `pnpm screenshots`)
 ```
 
 More detailed, generated documentation lives in [`openwiki/`](openwiki/index.md).

@@ -1,11 +1,11 @@
 ---
 type: Architecture
 title: Extension Surfaces and Routing
-description: How a trigger becomes a rendered summary across the background service worker, context menus, toolbar action vs popup, full-page app tab, per-tab side panel and the options page — pending-request handoff, display-mode routing, side-panel lifecycle, URL routes, and the user-gesture invariant.
+description: How a trigger becomes a rendered summary across the background service worker, context menus, toolbar action vs popup, full-page app tab, per-tab side panel and the options page — pending-request handoff, display-mode routing, side-panel lifecycle, URL routes and the user-gesture invariant.
 tags: [architecture, extension, routing, side-panel, background]
 verified:
   - by: openwiki/0.8.0
-    at: 2026-11-07T09:34:41.642Z
+    at: 2026-11-08T08:28:07.947Z
 sources:
   - id: openwiki-source-7e3355f17b1feb4de5b7b2ce
     resource: repo://.output/chrome-mv3/manifest.json
@@ -61,6 +61,36 @@ thing that crosses the process boundary between the trigger and the surface.
 The app and the side panel share one React component. `App` takes a `surface` prop
 (`'page' | 'panel'`) and branches on `isPanel`; `entrypoints/app/main.tsx` renders
 `<App />` and `entrypoints/sidepanel/main.tsx` renders `<App surface="panel" />`.
+
+## Entrypoint folders are what create the manifest entries
+
+The build tool is **WXT**, and it derives the manifest from the *shape* of `entrypoints/`, not
+from `wxt.config.ts` alone. Each top-level folder is matched against WXT's entrypoint globs:
+
+| Folder | Entrypoint type | Manifest entry it produces |
+| --- | --- | --- |
+| `entrypoints/background.ts` | `background` | `background.service_worker` (`background.js`) |
+| `entrypoints/popup/` | `popup` | `action.default_popup` → `popup.html` |
+| `entrypoints/sidepanel/` | `sidepanel` | `side_panel.default_path` → `sidepanel.html`, plus the `sidePanel` permission |
+| `entrypoints/options/` | `options` | `options_ui` → `options.html` (open in a tab) |
+| `entrypoints/app/` | `unlisted-page` | **no manifest entry** — `app.html` is an unlisted page reachable only by URL |
+
+This has a direct operational consequence: **removing or renaming an entrypoint folder changes
+the built manifest**, and with it the set of surfaces the browser exposes. Deleting
+`entrypoints/popup/` removes `action.default_popup` (the toolbar icon would then always fire
+`action.onClicked`); deleting `entrypoints/sidepanel/` removes `side_panel.default_path` and the
+`sidePanel` permission, so `browser.sidePanel.*` calls stop working; deleting
+`entrypoints/options/` removes `options_ui`, so `browser.runtime.openOptionsPage()` has no page
+to open. The app tab is the exception: `entrypoints/app/` is an *unlisted page*, so `app.html`
+is built and served but never advertised in the manifest — it is opened programmatically by
+`browser.tabs.create` with `browser.runtime.getURL('/app.html?…')`.
+
+`wxt.config.ts` supplies the parts WXT cannot infer: the extension name and description
+(localized via `__MSG_extName__` / `__MSG_extDescription__`), the permission list
+(`storage`, `sidePanel`, `activeTab`, `scripting`, `contextMenus`, `unlimitedStorage`,
+`declarativeNetRequest`, `favicon`, `clipboardWrite`), the optional host permission
+`<all_urls>` used for the provider API domain, the action title, and the `_execute_action`
+keyboard command bound to `Alt+Shift+S` by default.
 
 ## Flow: trigger → pending request → surface
 
@@ -130,15 +160,17 @@ compact history list; each of those hands a request to a new tab and then closes
 ### The manifest's `default_popup` versus the runtime behaviour
 
 The **built** manifest (`.output/chrome-mv3/manifest.json`) ships `"action": { "default_popup":
-"popup.html" }` — it is a static artefact and cannot know the user's display mode. The
-mode-dependent behaviour is therefore produced at **runtime**: `entrypoints/background.ts` calls
+"popup.html" }` — it is a static artefact, generated from the presence of the popup
+entrypoint, and it cannot know the user's display mode. The mode-dependent behaviour is
+therefore produced at **runtime**: `entrypoints/background.ts` calls
 `browser.action.setPopup({ popup: '' })` in `sidepanel` mode, which clears the manifest default
 and makes the toolbar click fall through to `browser.action.onClicked`. Anyone reading only the
 manifest would wrongly conclude the icon always opens the popup; the manifest value is the
 `tab`-mode fallback until the background worker has run its first sync.
 
 The `_execute_action` keyboard command (`Alt+Shift+S` by default) invokes the same action as a
-toolbar click, so it inherits the same mode-dependent behaviour.
+toolbar click, so it inherits the same mode-dependent behaviour: it opens the popup in `tab`
+mode and the panel in `sidepanel` mode.
 
 ## Trigger: context menus
 
@@ -153,10 +185,13 @@ read out of the id instead by `parseMenuId()`, which maps any unknown suffix to 
 unknown prefix to `page`.
 
 Menu titles come from `browser.i18n.getMessage` (`public/_locales/<lang>/messages.json`) with an
-English fallback. `syncContextMenus(display)` removes all items and recreates them, and the
-calls are serialized on a module-level promise chain: `onInstalled` and startup can both trigger
-a sync, and two overlapping `removeAll()` → `create()` runs would otherwise create duplicate ids.
-`browser.runtime.lastError` from a duplicate id is swallowed rather than left unchecked.
+English fallback. In the English locale these are "Summarize this page" and "Summarize
+selection"; the extension itself is named **Siftlume** and the toolbar tooltip / keyboard
+command description are both "Open Siftlume". `syncContextMenus(display)` removes all items and
+recreates them, and the calls are serialized on a module-level promise chain: `onInstalled` and
+startup can both trigger a sync, and two overlapping `removeAll()` → `create()` runs would
+otherwise create duplicate ids. `browser.runtime.lastError` from a duplicate id is swallowed
+rather than left unchecked.
 
 Because a context-menu click grants `activeTab` on that tab, the panel or result page can read
 the page afterwards without a separate permission prompt.
@@ -196,7 +231,7 @@ The route is a query string, and the app surface understands three shapes:
 
 `App` replaces the query string in place (`history.replaceState`) as the user navigates, so a
 refresh reopens the same view: while a session is open the URL becomes `?session=<id>`, and the
-tab title becomes `<source title> | <app name>`. The initial route is consumed exactly once
+tab title becomes `<source title> | Siftlume`. The initial route is consumed exactly once
 (`routed.current`), and only after settings have loaded — the request needs the provider
 configuration before it can run.
 
@@ -241,6 +276,11 @@ being read from storage at click time — reading settings would require an `awa
 break the gesture. `openSidePanelForTab` is deliberately not `async`: it fires `setOptions`
 without awaiting and returns the `open()` promise directly.
 
+The same gesture rule governs a second API: `browser.permissions.request()` for the provider's
+API origin. `lib/settings.ts` documents that `requestOriginPermission(url)` must be called
+directly inside a click handler, and `components/SettingsForm.tsx` does exactly that — "Load
+models" and "Save" call it before awaiting anything, otherwise Chrome drops the gesture.
+
 ### Lifecycle: enabling, remembering, closing
 
 The panel's URL is remembered per tab in `storage.session` under `session:panelUrls`
@@ -281,17 +321,20 @@ Both surfaces run the same `useSession` controller, but differ in a few delibera
 ## Settings that change routing
 
 `Settings.display` (`DisplayMode = 'sidepanel' | 'tab'`) is persisted in `local:settings` and
-edited in Settings → Summary → "Show results in". `normalizeSettings()` falls back to the
-default (`sidepanel`) for any unknown value. The same value drives three things at once:
+edited in Settings → Summary → "Show results in" ("Inline (side panel)" vs "New tab (full
+page)"). `normalizeSettings()` falls back to the default (`sidepanel`) for any unknown value.
+The same value drives three things at once:
 
 1. which context-menu ids are created,
 2. whether the toolbar icon opens the popup or the panel,
 3. the layout rule sent to the model.
 
+Because the three are derived from a single persisted value, the routing is consistent across
+surfaces: a menu item's id, the toolbar behaviour and the prompt's layout rule can never
+disagree about which mode the user is in.
+
 ## Related pages
 
 - [Architecture Overview](overview.md)
-<!-- openwiki: broken internal link [storage-and-state.md] file "storage-and-state.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-- [Storage and Session State](storage-and-state.md)
 - [Permissions and Privacy](../operations/permissions-and-privacy.md)
 - [Summary Generation](../workflows/summary-generation.md)

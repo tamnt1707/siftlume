@@ -3,9 +3,6 @@ type: Concept
 title: In-browser CSV Query Tools
 description: How a CSV file becomes a dataset the model can query with Query("csv_rows"/"csv_group"), and how filtering and grouping re-run locally in the browser instead of calling the model again.
 tags: [csv, openui-lang, query-tools, data, extension]
-verified:
-  - by: openwiki/0.8.0
-    at: 2026-11-07T09:34:41.642Z
 sources:
   - id: openwiki-source-7be6309091e21ce73672ed48
     resource: repo://components/GenUI.tsx

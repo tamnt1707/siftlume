@@ -3,9 +3,6 @@ type: Operations Guide
 title: Permissions, Privacy and Runtime Operations
 description: What the extension's manifest asks for, which code needs each permission, when host and page access are granted at runtime, how API keys and history stay local, and the build, locale-check and packaging commands.
 tags: [permissions, privacy, manifest, i18n, build, operations, security]
-verified:
-  - by: openwiki/0.8.0
-    at: 2026-11-07T09:34:41.642Z
 sources:
   - id: openwiki-source-ea70eb6c045047448e446296
     resource: repo://.gitignore
