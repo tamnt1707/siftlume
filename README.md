@@ -1,85 +1,128 @@
-# AI Summarizer
+<p align="center">
+  <img src="assets/brand/icon.svg" alt="" width="96" height="96">
+</p>
 
-A Chrome extension that summarizes the page you are reading, pasted text, or a file (PDF, CSV, Markdown, TXT, HTML, JSON) into an **interactive Generative UI** built with [OpenUI](https://www.openui.com).
+<h1 align="center">Siftlume</h1>
 
-Bring your own key: requests go straight from your browser to the LLM provider. There is no backend.
+<p align="center">
+  Sift any page down to what matters.<br>
+  A Chrome extension that turns web pages, text and files into visual, interactive summaries built with <a href="https://www.openui.com">OpenUI</a>.
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-0B7A83"></a>
+  <a href="CONTRIBUTING.md"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-2E7D46"></a>
+  <a href="https://ko-fi.com/tamnt"><img alt="Support on Ko-fi" src="https://img.shields.io/badge/Ko--fi-support-FFE45C?logo=ko-fi&logoColor=1A2236"></a>
+</p>
+
+Siftlume reads the page you are on, a PDF, a CSV, or text you paste, and answers with a summary you can scan in seconds: a one-line TL;DR, headline numbers, short takeaways, charts, timelines and diagrams. You can refine it in one click and ask follow-up questions.
+
+It uses your own LLM key. Requests go straight from your browser to the provider you choose; there is no Siftlume server.
 
 ## Features
 
-- **Two ways to work** (Settings → Show results in):
-  - **Inline (side panel)**: the toolbar icon (`Alt+Shift+S`) opens the side panel of the current tab, and everything happens there. The panel belongs to that tab: other tabs do not show it, and it closes when the tab navigates to another URL.
-  - **New tab**: the icon opens a small popup launcher, and results open in a full-page tab with a Questions column.
-- **Inkmark design system**: you choose the pen (accent) and the highlighter (marker) from five presets or custom colors, plus soft or square corners, a serif or sans reading font, and light, dark, or system mode. The same tokens drive the app chrome, the OpenUI components, charts, and diagrams. Code: `lib/appearance.ts`.
-- **Right-click**: "Summarize this page" / "Summarize selection".
-- **Visual first**: one-line TL;DR, metric cards, short lists, tags, timelines, folded details. Pages with numbers get charts (line, bar, pie, radial, radar, scatter), chosen by the shape of the data. HTML tables are kept, so charts use the page's real numbers.
-- **Diagrams with [Pele](https://pele.run)**: processes, decisions, and interactions between actors are drawn from Mermaid (flowchart, sequence, state, mindmap, ER). Rendering happens in the browser with no `eval`. Wide flows flip to top-down when space is narrow, invalid Mermaid goes back to the model with the line number, and colors follow the app theme.
-- **Refine in one click** (Shorter, More detail, Action items, …): uses OpenUI **edit mode**, so the model sends only a patch and `mergeStatements` applies it.
-- **Ask follow-up questions**: uses OpenUI **inline mode**, so answers are plain text or a compact UI.
-- **Interactive CSV**: the model writes `Query("csv_group", …)` and `$state` filters. The queries run in the browser through `toolProvider`, so filtering and grouping never call the model again.
-- **Source quotes**: a custom `SourceQuote` component plus `@HighlightInPage` / `@CopyText` custom actions.
-- **Self-correction**: invalid OpenUI Lang is validated with the parser, and the errors go back to the model once.
-- **History** is stored with the OpenUI **Message Protocol** (`buildMessage` / `parseMessage`), including form and `$state` values.
-- **Providers**: OpenAI, Anthropic, Google Gemini, OpenRouter, Groq, DeepSeek, Mistral, xAI, Together, Ollama, LM Studio, or any OpenAI-compatible endpoint. The model list loads live from the provider.
+- **Summarize anything**: the open tab (cleaned with Readability), a selection, pasted text, or a file (PDF, CSV, Markdown, TXT, HTML, JSON).
+- **Visual first**: a TL;DR with a highlighter mark, key figures, takeaways, tags and timelines. Pages with numbers get charts picked from the shape of the data, and processes get diagrams.
+- **Two ways to read**: in the **side panel** of the tab you are reading, or in a **new full-page tab** with a Questions column.
+- **Refine in one click**: Shorter, More detail, Action items, Timeline, Simpler. Styles can also be turned on for every summary in Settings.
+- **Ask follow-up questions**, answered only from the source.
+- **Interactive CSV**: filter and group the data in the browser without calling the model again.
+- **Source quotes** that scroll to and highlight the passage in the original page.
+- **Any provider**: OpenAI, Anthropic, Google Gemini, OpenRouter, Groq, DeepSeek, Mistral, xAI, Together, Ollama, LM Studio, or any OpenAI-compatible endpoint. The model list loads from the provider.
+- **Make it yours**: color presets or your own pen and highlighter colors, corners, reading font, and light, dark or system mode.
+- **12 interface languages**: English, Tiếng Việt, 日本語, 简体中文, 繁體中文, 한국어, Español, Français, Deutsch, Português (Brasil), Русский, ไทย. It follows the browser language and falls back to English.
 
-## Languages
+## Install
 
-The interface follows the browser language and falls back to English. It is available in English, Tiếng Việt, 日本語, 简体中文, 繁體中文, 한국어, Español, Français, Deutsch, Português (Brasil), Русский, and ไทย. You can override it in Settings → Appearance. The summary language is a separate setting; by default it matches the source.
+Siftlume is not on the Chrome Web Store yet. To install it from source:
 
-```
-locales/<lang>/          one folder per language
-  common.json            shared: actions, history, model picker
-  picker.json            start screen
-  popup.json             popup launcher
-  session.json           summary, refine, Q&A, generated-UI labels
-  settings.json          settings page
-  errors.json            error messages
-public/_locales/<lang>/  extension name, description, context menu (Chrome i18n)
-```
-
-English (`locales/en`) is the source of truth, and its keys are type-checked in code. To add or update a language, copy `locales/en`, translate the values, and run `pnpm check:i18n`. It verifies keys, CLDR plural forms (`_one`, `_few`, `_many`, `_other`), and `{{placeholders}}` against English.
-
-## Development
-
-```bash
-pnpm install
-pnpm dev          # opens Chrome with the extension loaded (hot reload)
-pnpm compile      # type-check
-pnpm build        # production build in .output/chrome-mv3
-pnpm zip          # zip for the Chrome Web Store
-```
-
-Open the extension's **Settings** page, pick a provider, paste your key, and choose a model.
+1. Build it (see [Development](#development)): `pnpm install && pnpm build`.
+2. Open `chrome://extensions` and turn on **Developer mode**.
+3. Click **Load unpacked** and select `.output/chrome-mv3`.
+4. Click the Siftlume icon, open **Settings**, pick a provider, paste your API key and choose a model.
 
 ### Local models
 
-- **Ollama**: works out of the box. The extension rewrites the `Origin` header for its own requests to localhost, so `OLLAMA_ORIGINS` is not needed. Pick a model that supports chat.
-- **LM Studio**: start the local server and enable CORS.
-
-## Project layout
-
-```
-entrypoints/
-  background.ts       context menu (display mode encoded in the item id)
-  popup/              launcher
-  app/                result view (full-page tab; also mounted in the side panel)
-  sidepanel/          side panel entry for the result view
-  options/            settings (provider, key, model, summary preferences)
-components/           React UI (GenUI renderer wrapper, session view, hooks)
-lib/
-  library.tsx         OpenUI library: openuiChatLibrary + SourceQuote + custom actions
-  openui.ts           system prompts, inline-mode splitting, validation, edit-mode merge
-  generate.ts         streaming + one-shot repair loop
-  csv-tools.ts        in-browser Query tools for CSV data
-  diagram.ts          Mermaid → SVG with Pele (Diagram component, validation)
-  extractors.ts       HTML/PDF/CSV/Markdown → text
-  llm.ts, models.ts   AI SDK providers, live model lists
-  history.ts          sessions stored with the OpenUI Message Protocol
-```
+- **Ollama**: start it with `ollama serve`, select **Ollama** in Settings, click **Save**, then pick a model that supports chat. No `OLLAMA_ORIGINS` setup is needed.
+- **LM Studio**: start the local server (Developer → Start server) and enable CORS.
 
 ## Privacy
 
-API keys are stored only in `chrome.storage.local` and are never synced. The extension asks for host permissions at runtime: the API domain when you save Settings, and page access the first time you summarize a page.
+- API keys are stored only in this browser (`chrome.storage.local`) and are never synced.
+- Page content is sent only to the provider you configured, and only when you ask for a summary.
+- Page access comes from `activeTab`, granted for the tab where you click the icon or use the context menu. The only host permission requested is the API domain of your provider, when you save Settings.
+
+## Development
+
+Requirements: Node.js 20 or newer and [pnpm](https://pnpm.io).
+
+```bash
+git clone https://github.com/tamnt1707/siftlume.git
+cd siftlume
+pnpm install
+pnpm dev          # opens Chrome with the extension loaded, with hot reload
+```
+
+| Command               | What it does                                                                    |
+| --------------------- | ------------------------------------------------------------------------------- |
+| `pnpm dev`            | Development build with hot reload (`pnpm dev:firefox` for Firefox)              |
+| `pnpm build`          | Production build in `.output/chrome-mv3`                                        |
+| `pnpm zip`            | Zip for the Chrome Web Store                                                    |
+| `pnpm compile`        | Type-check                                                                      |
+| `pnpm check:i18n`     | Every locale has the same keys, plural forms and placeholders as English        |
+| `pnpm check:examples` | The OpenUI Lang examples in the prompts parse cleanly and their diagrams render |
+| `pnpm check`          | All of the checks above                                                         |
+
+### How it works
+
+```
+popup / context menu ──► side panel (per tab) or full-page tab
+                              │
+  extract ────────────────────┤  Readability + Turndown (HTML), pdf.js (PDF), Papa Parse (CSV)
+  prompt ─────────────────────┤  OpenUI library → system prompt + rules     (lib/openui.ts)
+  stream ─────────────────────┤  AI SDK, straight to the provider           (lib/llm.ts)
+  validate & repair ──────────┤  OpenUI parser + Pele; errors go back once  (lib/generate.ts)
+  render ─────────────────────┘  <Renderer> with the Siftlume library       (lib/library.tsx)
+```
+
+### Project layout
+
+```
+entrypoints/
+  background.ts        context menus, per-tab side panel, toolbar icon behaviour
+  popup/               launcher (new-tab mode)
+  app/                 result view: full-page tab, also mounted in the side panel
+  sidepanel/           side panel entry
+  options/             settings page
+components/            React UI: session view, settings (tabs), pickers, theme
+lib/
+  library.tsx          OpenUI component library: chat library + Siftlume components and actions
+  openui.ts            system prompts, inline-mode parsing, validation, edit-mode merge
+  generate.ts          streaming and the repair loop
+  refine.ts            refine buttons and default styles
+  csv-tools.ts         in-browser Query tools for CSV data
+  diagram.ts           Mermaid to SVG with Pele
+  extractors.ts        HTML, PDF, CSV and Markdown to text
+  llm.ts, models.ts    providers (AI SDK) and live model lists
+  settings.ts          settings and the provider list
+  appearance.ts        design tokens for the chrome, OpenUI, charts and diagrams
+  history.ts           saved sessions (OpenUI Message Protocol)
+  i18n/                i18next setup
+locales/<lang>/        UI translations, one folder per language
+public/_locales/       extension name, description and menus (Chrome i18n)
+scripts/               checks used by `pnpm check`
+```
+
+More detailed, generated documentation lives in [`openwiki/`](openwiki/index.md).
+
+## Contributing
+
+Contributions are welcome: bug reports, translations, new providers, components and fixes. [CONTRIBUTING.md](CONTRIBUTING.md) covers the setup, conventions and step-by-step guides for common changes.
+
+## Support
+
+Siftlume is free and open source. If it saves you time, you can support it on [Ko-fi](https://ko-fi.com/tamnt). There is also a link in Settings → About.
 
 ## License
 
-MIT
+[MIT](LICENSE) © 2026 TamNT

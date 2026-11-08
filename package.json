@@ -1,8 +1,8 @@
 {
-  "name": "ai-summarizer",
-  "description": "Chrome extension that summarizes web pages, text and files into interactive Generative UI with OpenUI. Bring your own LLM key.",
+  "name": "siftlume",
+  "description": "Siftlume: a Chrome extension that sifts web pages, text and files into visual, interactive summaries with OpenUI. Bring your own LLM key.",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",
@@ -13,7 +13,9 @@
     "zip:firefox": "wxt zip -b firefox",
     "compile": "tsc --noEmit",
     "postinstall": "wxt prepare",
-    "check:i18n": "node scripts/check-locales.mjs"
+    "check:i18n": "node scripts/check-locales.mjs",
+    "check:examples": "tsx scripts/check-examples.ts",
+    "check": "pnpm compile && pnpm check:i18n && pnpm check:examples"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^4.0.97",
@@ -48,9 +50,23 @@
     "@types/react-dom": "^19.2.3",
     "@types/turndown": "^5.0.6",
     "@wxt-dev/module-react": "^1.1.5",
+    "tsx": "^4.23.15",
     "typescript": "^5.9.3",
     "web-ext": "^10.5.0",
     "wxt": "^0.21.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "author": "tamnt1707",
+  "funding": {
+    "type": "ko-fi",
+    "url": "https://ko-fi.com/tamnt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tamnt1707/siftlume.git"
+  },
+  "homepage": "https://github.com/tamnt1707/siftlume#readme",
+  "bugs": {
+    "url": "https://github.com/tamnt1707/siftlume/issues"
+  }
 }
