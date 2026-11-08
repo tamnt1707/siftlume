@@ -2,7 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HugeiconsIcon } from '@hugeicons/react';
 import { Copy01Icon, HighlighterIcon } from '@hugeicons/core-free-icons';
-import { defineAction, defineComponent, useIsStreaming, useTriggerAction } from '@openuidev/react-lang';
+import {
+  defineAction,
+  defineComponent,
+  useIsStreaming,
+  useTriggerAction,
+  type ActionPlan,
+} from '@openuidev/react-lang';
 import { openuiChatLibrary } from '@openuidev/react-ui';
 import { z } from 'zod/v4';
 import { renderDiagram } from './diagram';
@@ -25,6 +31,15 @@ export const copyText = defineAction({
   params: z.object({
     text: z.string(),
   }),
+});
+
+/**
+ * Fires a library action from our own component. It must be an ActionPlan step: the legacy
+ * `{ type, params }` form is silently dropped by the Renderer when `type` names a registered
+ * custom action, so the click would never reach onAction.
+ */
+const customAction = (name: string, params: Record<string, unknown>): ActionPlan => ({
+  steps: [{ type: 'custom_action', name, params }],
 });
 
 // ── Custom components ──────────────────────────────────────────────────────────
@@ -172,9 +187,7 @@ const SourceQuote = defineComponent({
             <button
               type="button"
               disabled={streaming}
-              onClick={() =>
-                triggerAction('', undefined, { type: highlightInPage.name, params: { text: props.quote } })
-              }
+              onClick={() => triggerAction('', undefined, customAction(highlightInPage.name, { text: props.quote }))}
             >
               <HugeiconsIcon icon={HighlighterIcon} size={14} strokeWidth={1.8} aria-hidden="true" />
               {t('genui.showInPage')}
@@ -182,7 +195,7 @@ const SourceQuote = defineComponent({
             <button
               type="button"
               disabled={streaming}
-              onClick={() => triggerAction('', undefined, { type: copyText.name, params: { text: props.quote } })}
+              onClick={() => triggerAction('', undefined, customAction(copyText.name, { text: props.quote }))}
             >
               <HugeiconsIcon icon={Copy01Icon} size={14} strokeWidth={1.8} aria-hidden="true" />
               {t('genui.copy')}

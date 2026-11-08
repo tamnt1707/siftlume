@@ -17,6 +17,7 @@ export default defineConfig({
       'unlimitedStorage',
       'declarativeNetRequest',
       'favicon',
+      'clipboardWrite',
     ],
     // Requested at runtime for the provider API domain (Settings → Save), so calls bypass CORS.
     optional_host_permissions: ['<all_urls>'],
