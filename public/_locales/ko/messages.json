@@ -4,7 +4,7 @@
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
-    "message": "웹 페이지, 텍스트, 파일(PDF, CSV, Markdown)을 한눈에 보이는 대화형 요약으로 만들어 줍니다. 본인의 LLM 키를 사용합니다."
+    "message": "웹 페이지, 텍스트, 파일을 한눈에 보이는 대화형 요약으로 만들어 줍니다. 본인의 LLM 키를 사용합니다."
   },
   "actionTitle": {
     "message": "Siftlume 열기",

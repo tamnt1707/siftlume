@@ -5,7 +5,7 @@ Everything to paste into the [Chrome Developer Dashboard](https://chrome.google.
 ## Package
 
 - Build: `pnpm check && pnpm zip`
-- Upload `.output/siftlume-0.1.0-chrome.zip`
+- Upload `.output/siftlume-<version>-chrome.zip` (0.1.1 after the keyword-spam fix)
 - Before each update, bump `version` in `package.json`.
 
 ## Store listing tab
@@ -14,44 +14,43 @@ Everything to paste into the [Chrome Developer Dashboard](https://chrome.google.
 
 **Summary** (from the manifest, max 132 characters):
 
-> Summarize web pages, text and files (PDF, CSV, Markdown) into interactive visual summaries. Bring your own LLM key.
+> Summarize web pages, text and files into interactive visual summaries. Bring your own LLM key.
 
-**Description**:
+**Description** (keep it free of long lists of brand names or file types; the store rejected an earlier version for "keyword spam"):
 
 ```
 Siftlume turns long pages into summaries you can scan in seconds.
 
-Open any article, report or documentation page and click the Siftlume icon. You get a one-line TL;DR, the key figures, short takeaways, and, when the page has them, charts, timelines and diagrams. Then ask follow-up questions, answered only from the source.
+Open an article, report or documentation page and click the Siftlume icon. You get a one-line TL;DR, the key figures and short takeaways, plus charts, timelines and diagrams when the content calls for them. Then ask follow-up questions, answered only from the source.
 
 WHAT YOU CAN SUMMARIZE
-• The page you are reading, or just a selection (right-click → Summarize selection)
+• The page you are reading, or just a selection (right-click, then Summarize selection)
 • Text you paste
-• Files: PDF, CSV, Markdown, TXT, HTML, JSON
+• Documents and spreadsheets you open from your computer
 
 MADE FOR THE CONTENT
 • Numbers become charts, chosen from the shape of the data
-• Reviews get a verdict and pros and cons
+• Reviews get a verdict with pros and cons
 • Action items become a checklist you can tick
-• News gets a "who is who"; jargon gets a glossary
 • Processes and decisions become diagrams
-• CSV files get filters and groupings that update instantly
+• Spreadsheet data gets filters that update instantly
 
 TOOLS
 • Refine in one click: shorter, more detail, action items, timeline, simpler
-• Switch length or language for a single summary
-• Copy or download as Markdown, listen, print or save as PDF
+• Change the length or language of a single summary
+• Copy or download as Markdown, listen, or print
 • Jump to a quoted passage in the original page
 • History of past summaries
 
 YOUR AI, YOUR KEY
-Use your own API key for OpenAI, Anthropic (Claude), Google Gemini, OpenRouter, Groq, DeepSeek, Mistral, xAI, Together, or any OpenAI-compatible endpoint, or run a local model with Ollama or LM Studio. Requests go straight from your browser to the provider. There is no Siftlume server.
+Connect the AI provider you already use with your own API key, or run a model locally on your computer. Requests go straight from your browser to that provider. There is no Siftlume server.
 
 PRIVATE BY DESIGN
 • No account, no analytics, no tracking
 • Keys, settings and history stay in your browser
 • A page is read only when you ask for a summary
 
-Side panel or full-page tab, light or dark mode, your own colors, and 12 interface languages: English, Tiếng Việt, 日本語, 简体中文, 繁體中文, 한국어, Español, Français, Deutsch, Português (Brasil), Русский, ไทย.
+Side panel or full-page tab, light or dark mode, your own colors, and an interface in 12 languages.
 
 Free and open source (MIT): https://github.com/tamnt1707/siftlume
 ```

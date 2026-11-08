@@ -4,7 +4,7 @@
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
-    "message": "Resuma páginas da web, textos e arquivos (PDF, CSV, Markdown) em resumos visuais e interativos. Use sua própria chave de LLM."
+    "message": "Resuma páginas da web, textos e arquivos em resumos visuais e interativos. Use sua própria chave de LLM."
   },
   "actionTitle": {
     "message": "Abrir o Siftlume",

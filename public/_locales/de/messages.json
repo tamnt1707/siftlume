@@ -4,7 +4,7 @@
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
-    "message": "Fasst Webseiten, Texte und Dateien (PDF, CSV, Markdown) interaktiv und visuell zusammen. Mit eigenem LLM-Schlüssel."
+    "message": "Fasst Webseiten, Texte und Dateien interaktiv und visuell zusammen. Mit eigenem LLM-Schlüssel."
   },
   "actionTitle": {
     "message": "Siftlume öffnen",

@@ -4,7 +4,7 @@
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
-    "message": "Summarize web pages, text and files (PDF, CSV, Markdown) into interactive visual summaries. Bring your own LLM key."
+    "message": "Summarize web pages, text and files into interactive visual summaries. Bring your own LLM key."
   },
   "actionTitle": {
     "message": "Open Siftlume",

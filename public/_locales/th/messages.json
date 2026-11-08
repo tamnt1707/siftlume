@@ -4,7 +4,7 @@
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
-    "message": "สรุปหน้าเว็บ ข้อความ และไฟล์ (PDF, CSV, Markdown) เป็นสรุปแบบภาพที่โต้ตอบได้ ใช้คีย์ LLM ของคุณเอง"
+    "message": "สรุปหน้าเว็บ ข้อความ และไฟล์ เป็นสรุปแบบภาพที่โต้ตอบได้ ใช้คีย์ LLM ของคุณเอง"
   },
   "actionTitle": {
     "message": "เปิด Siftlume",

@@ -4,7 +4,7 @@
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
-    "message": "Tóm tắt trang web, văn bản và file (PDF, CSV, Markdown) thành bản tóm tắt trực quan, tương tác. Dùng API key LLM của riêng bạn."
+    "message": "Tóm tắt trang web, văn bản và file thành bản tóm tắt trực quan, tương tác. Dùng API key LLM của riêng bạn."
   },
   "actionTitle": {
     "message": "Mở Siftlume",

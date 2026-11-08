@@ -4,7 +4,7 @@
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
-    "message": "Webページ、テキスト、ファイル(PDF、CSV、Markdown)を、インタラクティブで見やすい要約にします。ご自身のLLMキーを使います。"
+    "message": "Webページ、テキスト、ファイルを、インタラクティブで見やすい要約にします。ご自身のLLMキーを使います。"
   },
   "actionTitle": {
     "message": "Siftlume を開く",

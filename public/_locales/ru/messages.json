@@ -4,7 +4,7 @@
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
-    "message": "Превращает веб-страницы, текст и файлы (PDF, CSV, Markdown) в наглядные интерактивные сводки. Используйте свой ключ LLM."
+    "message": "Превращает веб-страницы, текст и файлы в наглядные интерактивные сводки. Используйте свой ключ LLM."
   },
   "actionTitle": {
     "message": "Открыть Siftlume",
