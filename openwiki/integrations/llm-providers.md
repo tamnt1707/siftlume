@@ -10,6 +10,10 @@ sources:
     resource: repo://components/SettingsForm.tsx
   - id: openwiki-source-511bc61015173fd994c1849f
     resource: repo://components/useSession.ts
+  - id: openwiki-source-bcf387a6a8a097456632fc07
+    resource: repo://entrypoints/app/App.tsx
+  - id: openwiki-source-cc2647d919da6467bbd4e6cb
+    resource: repo://entrypoints/popup/Popup.tsx
   - id: openwiki-source-5e1df7862c7c2c671c3ef5a6
     resource: repo://lib/generate.ts
   - id: openwiki-source-9c7fd54d188b118255ab791f
@@ -24,7 +28,10 @@ sources:
     resource: repo://locales/en/errors.json
   - id: openwiki-source-49ce5f922c6d8903f5e7d073
     resource: repo://wxt.config.ts
-generated: { by: "openwiki/0.8.0", at: "2026-11-07T09:34:41.642Z" }
+generated: { by: "openwiki/0.8.0", at: "2026-11-08T08:28:07.947Z" }
+verified:
+  - by: openwiki/0.8.0
+    at: 2026-11-08T08:28:07.947Z
 ---
 
 # LLM Providers and Model Configuration
@@ -42,6 +49,31 @@ model" lives in a small, well-bounded corner of the codebase:
 | `components/SettingsForm.tsx` | The settings surface: provider picker, key, base URL, model, plus the model-loading lifecycle and the permission requests. |
 | `components/ModelSwitcher.tsx` | A cross-provider model picker that reads `local:modelCache` and switches provider and model together. |
 
+## The request path
+
+Every model call follows the same route: the active provider is resolved from the stored settings,
+its configuration is validated, the local-Origin rule is installed if needed, an AI SDK model is
+built for the provider's API flavour, the completion is streamed, and any failure is mapped to a
+short user-facing message.
+
+```mermaid
+flowchart TD
+  ACT["getActiveProvider resolves preset, key, base URL and model"] --> CHK{"configProblem returns no problem"}
+  CHK -->|"problem"| STOP["Refuse to run and show the configuration message"]
+  CHK -->|"ok"| LOC["allowLocalOrigin installs the Origin rewrite for a local host"]
+  LOC --> MK["createModel switches on the preset API flavour"]
+  MK --> ST["streamText streams the completion"]
+  ST -->|"text delta"| ON["onText receives the accumulated text"]
+  ST -->|"error after the stream started"| RE["onError captures the error"]
+  RE --> TH["The captured error is rethrown after the stream loop"]
+  ST -->|"stream finished"| DONE["The final text resolves to the caller"]
+  TH --> MAP["describeError maps the failure to a short message"]
+  DONE --> MAP
+```
+
+Caption: the request path from the stored settings to the provider — resolve, validate, install the
+local Origin rule, build the AI SDK model, stream, and map failures to a message.
+
 ## The provider catalogue
 
 `PROVIDERS` (`lib/settings.ts`) maps a `ProviderId` to a `ProviderPreset`. A preset carries the
@@ -51,7 +83,8 @@ machine.
 
 Twelve provider ids exist: `openai`, `anthropic`, `google`, `openrouter`, `groq`, `deepseek`,
 `mistral`, `xai`, `together`, `ollama`, `lmstudio`, `custom`. Only three of them are first-party
-API flavours; the rest are OpenAI-compatible gateways, and three are local servers.
+API flavours; the rest are OpenAI-compatible gateways. Exactly two presets carry the `local` flag —
+`ollama` and `lmstudio`; `custom` is keyless but not flagged local.
 
 ### Four API flavours
 
@@ -91,7 +124,6 @@ uses, and it is the value that decides whether a provider counts as "local".
 
 The whole `Settings` object — keys included — lives in `local:settings`
 (`chrome.storage.local`), never in `sync:`, so API keys never travel through the user's browser
-<!-- openwiki: broken internal link [../architecture/storage-and-state.md] file "../architecture/storage-and-state.md" does not exist. Fix the href or restore the target, then delete this comment. -->
 account. See [Storage and Session State](../architecture/storage-and-state.md).
 
 ## Configuration is validated before every call
@@ -110,8 +142,9 @@ API key field in the form, and `compatible` providers send a placeholder key (`'
 none is set.
 
 `useSession` calls `configProblem(settingsRef.current)` at the start of `start()`, `refine()`,
-`resummarize()` and `ask()`, and refuses to run when it returns a message. The app surface also
-computes the same problem on every render and shows it as a banner with a link to Settings, so an
+`resummarize()` and `ask()`, and refuses to run when it returns a message. The app and popup
+surfaces also compute the same problem on every render and show it as a banner with a link to
+Settings; the popup additionally disables its summarize buttons while a problem exists, so an
 unconfigured provider is visible before the user triggers a request.
 
 ## Building the model
@@ -169,6 +202,9 @@ sequenceDiagram
   AI-->>SC: onError(error) if the stream fails
   SC-->>GS: final text, or the captured error is thrown
 ```
+
+Caption: the streaming call — the local Origin rule is installed first, the AI SDK streams the
+completion, and accumulated text is pushed to the caller after every delta.
 
 The accumulated text is handed to `onText` after every delta, which is what makes the summary
 appear while it is still being generated. Errors that happen *after* the stream started are
@@ -331,6 +367,13 @@ the settings grid and whether it appears in the model switcher:
 
 The active provider is always listed in the switcher, even when it is not fully set up.
 
+`ModelSwitcher` is the cross-provider picker: it lists the connected providers (plus the active
+one) as command groups, and picking a model of another provider writes both the new provider and
+the chosen model to `local:settings` in one `settingsItem.setValue` call, so the switch is
+immediate and the other providers' credentials stay untouched. Each group always offers the
+provider's currently configured model, even when the cache does not list it, so a hand-typed model
+id remains selectable.
+
 ## The settings form lifecycle
 
 `components/SettingsForm.tsx` treats everything as a draft until **Save** is pressed (the
@@ -351,13 +394,18 @@ flowchart TD
   AUTOLOAD -->|"failed"| ERRTXT["Show the mapped error message"]
 ```
 
+Caption: the model-loading lifecycle of the settings form — a debounced auto-load on credential
+changes, an explicit permission-gated "Load models" button, and the cache write that follows a
+successful load.
+
 Two invariants shape this flow:
 
 - **The auto-load may fail without host permission.** The debounced reload fires whenever the key
   or base URL changes, and it may run before the user has granted access to the API origin. The
   explicit **Load models** button exists for that case: it requests the host permission
   *synchronously inside the click handler* (Chrome drops the user gesture if an `await` happens
-  first) and only then calls `loadModels()`.
+  first) and only then calls `loadModels()`. The auto-load is also skipped entirely while a key
+  is still missing for a provider that needs one, or while there is no base URL at all.
 - **Save also requests the permission.** `onSave` asks for the origin permission of the current
   base URL and then writes the settings. If the user declines, the settings are still saved and
   the form reports `savedNoPermission`: requests to that origin may fail.
@@ -366,6 +414,10 @@ Two invariants shape this flow:
 `local:modelCache`, and — when the currently selected model is not in the new list — falls back to
 the preset's default model, or the first model of the list.
 
+The base-URL field is a collapsed `<details>` element that is open by default for `custom` and
+for the two local presets, which is where the setup hints ("make sure Ollama is running", "start
+the local server in LM Studio") are shown.
+
 ## Host permissions
 
 Because the extension calls the provider API from an extension page, it needs host permission for
@@ -373,9 +425,12 @@ the API domain. The manifest declares `optional_host_permissions: ['<all_urls>']
 `declarativeNetRequest` permission, and the permission is requested at runtime:
 
 - `originPattern(url)` turns a base URL into a `chrome.permissions` match pattern
-  (`https://api.openai.com/*`); only `http:` and `https:` URLs qualify.
+  (`https://api.openai.com/*`); only `http:` and `https:` URLs qualify, and the pattern is built
+  from the protocol and hostname only, so a local server's port is not part of it (Chrome match
+  patterns cover every port of a host).
 - `requestOriginPermission(url)` calls `browser.permissions.request({ origins: [pattern] })` and
-  resolves `true` immediately when the permission is already granted.
+  resolves `true` immediately when the permission is already granted; it resolves `false` without
+  asking when the URL cannot be turned into a pattern.
 
 The permission is requested in exactly two places: the **Load models** button and **Save**. See
 [Permissions and Privacy](../operations/permissions-and-privacy.md).
@@ -383,8 +438,6 @@ The permission is requested in exactly two places: the **Load models** button an
 ## Related pages
 
 - [Architecture Overview](../architecture/overview.md)
-<!-- openwiki: broken internal link [../architecture/storage-and-state.md] file "../architecture/storage-and-state.md" does not exist. Fix the href or restore the target, then delete this comment. -->
 - [Storage and Session State](../architecture/storage-and-state.md)
-<!-- openwiki: broken internal link [../architecture/ui-components.md] file "../architecture/ui-components.md" does not exist. Fix the href or restore the target, then delete this comment. -->
 - [UI Components](../architecture/ui-components.md)
 - [Summary Generation](../workflows/summary-generation.md)

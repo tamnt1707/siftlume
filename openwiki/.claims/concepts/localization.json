@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7f3b386230ba765c61b3b0f817a57992a9a4d8052efa8dde32f1e3889983edab",
+  "claims": [
+    {
+      "id": "claim_b644a04f04f24186baa8649bc6e7d196",
+      "statement": "The extension has two independent localization systems: app UI strings in `locales/<lang>/<namespace>.json` read by i18next, and Chrome-level strings in `public/_locales/<lang>/messages.json` read by Chrome itself; the UI language follows the user's Interface-language setting while the Chrome-level strings follow only the browser locale.",
+      "evidence": [
+        {
+          "resource": "repo://lib/i18n/index.ts#L1-L12",
+          "version": "repo-lines-v1:sha256:332efe29a98e1f0ec96467301a1c4b65bbc95b1b8ee81e755191ed57a7fd3e10:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNTFmNWEzM2VlOGExNzljMDkyOWYxNzQ4YjRjNTY3ZWFjNWU0ZDgwMTM5M2Y1ZDlhZmY0OTM3N2JjNzZiMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzYjNmYTk0Y2VmM2FkNzhkOWFjNTM5NWE4ODFhYWJiMjZhNzQwYTQ3NmRlNWY1OWFjMmQ2YWY0MjcxZTM5ZWEifQ"
+        },
+        {
+          "resource": "repo://public/_locales/en/messages.json#L1-L25",
+          "version": "repo-lines-v1:sha256:97259e4482556fbddcb9f946fea9aa8eead7251c3d3d473e3a4833849311c3fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://wxt.config.ts#L6-L28",
+          "version": "repo-lines-v1:sha256:b362dd5fbf21fd00942a3bb4288f34d7c787f94a5bef759f5e7e31fe107cdda1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YWFiNTMyZmQxYWNmMzBmZGMzNmQzNTA0YTgyMTNlOGMyYjI3ZDVjOWZhODdlNzc0NGEwOTA1MjBhZTFhMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NWM1MDFlMDljNzljMDE1MTY2NTc3NWZmNDAyYjQ1YjI1MDU1NWRhYmU1M2UxODljNTgxZTJlNTY4NzVmYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4M2MwM2ZiZGY5YjM0NmFhNTUyNzg2YjVlZWJiM2FhZDRmYWM4M2FiOWU1YzZiNWQ1MTVhM2ViNTljZWVkNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b423259f8ea74429a219e8d54bf1c87d",
+      "statement": "The app UI is organized as one folder per language under `locales/` with one JSON file per feature namespace, and the six namespaces are `common`, `picker`, `popup`, `session`, `settings` and `errors`, with `common` as the default namespace.",
+      "evidence": [
+        {
+          "resource": "repo://lib/i18n/index.ts#L29-L30",
+          "version": "repo-lines-v1:sha256:7ec34f4e3ce65f908802c5e65e70809467b5c8f0ff1b90218867c60f4dfa2ce8:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQxYmZiMTAxNTdiNzkyNTk4M2ZjOTNlZWQ1ZGIwNWIyNjI2YzZmZjg4OGRhOTIyMTk3ZTY3YTdjY2JhMTcwNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzJhMmI1MGIwNWE0ZTFiMmFjNDNiNzg3ZDBmNzA2MjRhZjY4ZDViZTUzZDc3YTNhODU0YjE5NTk3ZDQ3NmQwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTAzZmI4ZjEzZTJiYWRjZWIzZDQxY2JjMWM1YWUxNTVhOGY0N2UzYTIyNjVkMTQ3Njc5MTdlMmE2YjUyNWJkNyJ9"
+        },
+        {
+          "resource": "repo://locales/en/common.json#L1-L43",
+          "version": "repo-lines-v1:sha256:472ab9aeb55829dc8064f571725a5eaef96f91671430d2f4d1d82938161cc06f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://locales/en/session.json#L1-L53",
+          "version": "repo-lines-v1:sha256:058ab81cac5c4627402f980e3f9c25717b5a216a7490b52edd51ae2280a8c764:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9581d50ce0f2473499dd2880cad7fdc4",
+      "statement": "Twelve UI languages ship today (en, vi, ja, zh-CN, zh-TW, ko, es, fr, de, pt-BR, ru, th), and the list is declared once in `UI_LANGUAGES` in `lib/i18n/index.ts`, pairing each code with its native name for the language picker.",
+      "evidence": [
+        {
+          "resource": "repo://components/LanguagePicker.tsx#L13-L33",
+          "version": "repo-lines-v1:sha256:4f8a518c5a0d1239b6109c9e5d5f8821db0378383a507dbfae919a5f79cadab7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYjdhYzYzNjY0YTU2ZDJlYmM3YWU4MzI4NzFiYzNkZjNiYWVmMWFhOTFkNzRiYjdkNzVkODE4Y2FiODIyMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3YWQ2YTdiYWFkYjcwODAzNDU3NGVlMDQwY2I4ZjA1ZTc5OTVjZTUwNDk0ZTIyZjUyMDZlOWEwYTE2N2ZiZGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhYzQ0YzQ4Njg3YTYxYjQwZDdjNDAxZmU1NTg5MTQwMjYwMGJlMTdiMDg3OTg0YTc4OTU3MmQ4ZmZlY2YyODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiOGI2MDBhNWI0NDhiMWU0ZDAyZGYwOTc0NmVkM2NhMzE3MmY3NWM0YWFiYjAxZGRlMDgwZTM2Y2FiMDc0YjQifQ"
+        },
+        {
+          "resource": "repo://lib/i18n/index.ts#L13-L28",
+          "version": "repo-lines-v1:sha256:84603267d326a5836acc2621d00ab30f00608c1c5a7e09a91b7b961d1d0047e7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyNmQ5NTRmNjdkNTVhYjZlZTA4NzFmZmZiYmViZDEwM2MzZmE4NTRhZWMwZmVhZTYxMzg4N2Q4Zjc2YjUzNjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiZTVhOGJhNjY4YzhjNjYxZDAwOTcxZjcyZmI3YTZhNjViM2FjNzhlMmY2MDcyZWRmMDI5M2U3YjNlNzQ0ZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZTFhZWUyMTI3MGE3ZjVlZjMyMzIzMDM1YzkyZTk0MjI5NmE1MGE4MjgxNDJiNTlmZmUzYTNiZGY1NTIzZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4MjhmN2ZjZTNhM2ExYTAzNmQ1ZDJiM2Q5YjViMGVjMjQyYzZmYzJiYjNiM2Y0YzE4YTQ5Yjg5YjhiMzgxZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_59268f710deb4af9b057b580dcdb384f",
+      "statement": "All locale files are bundled into the extension at build time through Vite's `import.meta.glob` over `../../locales/*/*.json`, so there is no runtime fetch of a locale file, and i18next is initialized synchronously with `fallbackLng: 'en'`, `defaultNS: 'common'`, `escapeValue: false` and `initAsync: false`.",
+      "evidence": [
+        {
+          "resource": "repo://lib/i18n/index.ts#L32-L43",
+          "version": "repo-lines-v1:sha256:2d246b109b8c1a4285b38a33b2a3f36cb0aa7abb155e6bbf388b7123c15f927e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmY2FiNjQ4NWU1MmVmM2NhOWU3ODNiZWZmZDI1OGQxMDBkZjY3ODBjZGVkNzc1M2Q0ZjA2MTQzY2FmOThkM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA4MjhmN2ZjZTNhM2ExYTAzNmQ1ZDJiM2Q5YjViMGVjMjQyYzZmYzJiYjNiM2Y0YzE4YTQ5Yjg5YjhiMzgxZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1ODI0MjZhMTUwNDQ0YjllZjNjMjEzOTBjODQ5MmRkZmY5NjYzNDRlODlhYjU0NzJiYjYyOTkyNDhiYWU5MGIifQ"
+        },
+        {
+          "resource": "repo://lib/i18n/index.ts#L71-L82",
+          "version": "repo-lines-v1:sha256:3b0af618e011cf3eeb90e1fe6d855971f4394319306363882af71efe4ff7bbe9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyNmZhNWNhMmNlYWVlZTFkOGFkOTAwNzVhZjhhN2RiYWJmZGZjZjc1ODcyZTY5MWM4MDg5OTEyMzBiY2NhYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlZjVmMDQ5YmQ3ZmE3MjA2Y2E4YzQ5NTdjODc0YmViNWVmNThhZjZjMzhhZDAxMjM4M2FjODY1NDZmYjYxNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmOTg5MTQ3YTc4ZDI1ZjgxOTc5MTdkODNhYjkyMjExNTM1NWMzODRkOWI2NjFmYjM3OWM1NTdlOWUzYmE4MGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ddb1a1a47734fa6b79901dbfeb94e26",
+      "statement": "`lib/i18n/index.ts` has no React dependency and exports a bound `t` so plain `lib/` code and the background can translate directly, while `lib/i18n/react.ts` registers the same instance with `initReactI18next` and each UI entrypoint imports it so `useTranslation()` works.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/main.tsx#L1-L16",
+          "version": "repo-lines-v1:sha256:ef2f9d34f662d16f3ca9892646c718dd16431bf9319d0b543a318602c3e2ada5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMGZhNWYzODBlMTE2ZTk0YmJmMGZiODI0ZTk1NWMzNDRjYjQ0ZTFhODVhNDVmYTQxNmUxMTg0ZTljNDc1ODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5OTY3ZWMxZWQzODM2ZjhlYjE3YWZmMTcyYjViZmVmN2RlNjA0ODVhNDM5YzZjYTExYzU5MWUxNzU1NzM5YWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://lib/i18n/index.ts#L1-L12",
+          "version": "repo-lines-v1:sha256:332efe29a98e1f0ec96467301a1c4b65bbc95b1b8ee81e755191ed57a7fd3e10:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNTFmNWEzM2VlOGExNzljMDkyOWYxNzQ4YjRjNTY3ZWFjNWU0ZDgwMTM5M2Y1ZDlhZmY0OTM3N2JjNzZiMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzYjNmYTk0Y2VmM2FkNzhkOWFjNTM5NWE4ODFhYWJiMjZhNzQwYTQ3NmRlNWY1OWFjMmQ2YWY0MjcxZTM5ZWEifQ"
+        },
+        {
+          "resource": "repo://lib/i18n/index.ts#L89-L90",
+          "version": "repo-lines-v1:sha256:55f47965633b1128c5b0607ab0acc2259e6420ee7666a021a8c5426b93b30e68:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE4NjZjNTZhZDdkODIxNTYwOGI5NjZkZjNlOTM4ZjA0YmIxMDk2M2I2YzI1YmUyNzlhNmUwNGQ4NjZiZDI4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE4MGE5Njk3MThmMzk2NzNjMTc2OTJmYTMwMmRmNTE4NmExYjczODYxYWU4ZGQ2NDZkN2NmMmQxZWJiNTE4MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWMwMDU2Y2Q0MGU3ZDIwOTQ5ZTIyN2I2NzkxMDk2NjJiZjQyNjE2NmUyZDYzNjJhN2JmZTZkYTgzZmI5OGUxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://lib/i18n/react.ts#L1-L8",
+          "version": "repo-lines-v1:sha256:dadd9385e12507c064bd46cb575e6fe0ba42f099a7c0009f82a1cbd71de82553:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Q3Yzc0OTAyM2Y1YmFiMzkyNmYwOGZkNWY5N2ZkNTBhODA4N2RhNjhlMDEwNDkxNjljYTM1ZGE2NTU0MzVlYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE4MGE5Njk3MThmMzk2NzNjMTc2OTJmYTMwMmRmNTE4NmExYjczODYxYWU4ZGQ2NDZkN2NmMmQxZWJiNTE4MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f93adc43a3484e1a97b1a40d9e6392fc",
+      "statement": "`components/Themed.tsx` mounts `<I18nextProvider>` and applies the interface language with `setUiLanguage(settings.uiLanguage)`, but only when it is the root instance, so an embedded Settings draft does not switch the whole page's language before the user saves.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L180-L181",
+          "version": "repo-lines-v1:sha256:4cf5ab42634c92595a18c274234f7cecf5e4a940bb96b807d9329c7a8f25c1b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTNkYzQzNzAwMTVmODE4ZDY5OGEyODBiODBjNTVhZTA5YWI3MjRlOGU4NzMyYjU1NTY2ODg1YjY5MGYzZjU1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGY0NDVkZGNkMDJmZDUwOWI2MDYzNmQ5NjY3NWJjYTU2OTAwOTMwZmRlYTAzZjI5NjYwMmQ5MTkxNjI2MDgxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjRhNDdhYmE1NWY2NTdkMGY1YmYxYmRhZDg0Mjg3YTdiZDAwNTE3YzE2MGNiN2QzNTIzOTNlYzM4ZDhiZmU2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2NmY2VhM2NjZGU4Njk5MzI0MmE3MjBiMDNhNDBlZjNlNDVlOTY5YjcwYzU5NDg5YjJkZDg4ZmU3MmUwZjU4OSJ9"
+        },
+        {
+          "resource": "repo://components/Themed.tsx#L44-L48",
+          "version": "repo-lines-v1:sha256:7997d022fa37497a6c02b8bdb6ab4d8a2ceea9c6281b8d4dbe1f12820195b800:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzNmJjODU4NTM0ZGI1YmEwNmYxNTc3OGY0ZWQ3ODNlNTk3MWQ2MGNjMDQ2NmFlMWI0ZjkxZjhmMGYzODI5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWFlM2U0YWE3MDU1ZmFhYWQwYjg1YzM4ODJkMGFlMzg0N2ZhNDFjMTAzYWZkOTcyYjRmMmRlNjRiOWE2YTg5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFhNDE1MDNlNTkwN2MxYzllNWE4NDdiYTAzOTM4MzlmZDhiNDFmNmJjNjQ4N2E2NGRlYTMwNjNjMjdlOGZmOSJ9"
+        },
+        {
+          "resource": "repo://components/Themed.tsx#L55-L68",
+          "version": "repo-lines-v1:sha256:d954f5cc7e185d0d587f8fbfb5d5a6182fe511d4e0e1c6f693a608fc4dfdd23c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhNDg1OWQ5M2U4NjMzZjY4OWY3OTBkNTJlNzUyMjBhZmE1ZTE1ZGZkOGNjNDY1MzE4MTUzMjcxNTc5Y2U4MDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a3c499adcd87457d9d0bf46caff9906b",
+      "statement": "`matchLanguage()` maps a BCP 47 tag to one of the supported codes, treating `zh-HK`/`zh-MO`/`Hant` as `zh-TW`, other `zh-*` as `zh-CN` and any `pt-*` as `pt-BR`; `browserLanguage()` prefers `browser.i18n.getUILanguage()` then `navigator.languages` and falls back to `en`, and `resolveUiLanguage()` turns the `\"auto\"` setting into a concrete language.",
+      "evidence": [
+        {
+          "resource": "repo://lib/i18n/index.ts#L41-L69",
+          "version": "repo-lines-v1:sha256:0097045d49d9bf9f668ebfc1fe39608b7ab52753cba225cb501d0c27c6b93cf3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3MWRhY2VkNWE3MzVjYzQ3NDc4NmUwMmM2ODk5M2Q1OWVkY2I1ZmU5NDJjYmFhNDQzM2ZjNTc5MzdkODQxZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1NGYzYmJhNjU1ZTMzNDUyMTU3ZTcyM2IxMmVlMjBmZDEwZjVkOWZhOTQ3NjUzMTk5YWM4YWY0MmUyNmRiNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0NWY2YTBjNzk3OTlkMDM5OGZjZDU5MmRiOTZkYTA1ZjUyMGNjYmJhNDc2Yjk5MTE1ZWZhYzgwYjcyYWU0YTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b119351dbc754b5b869d735166629cd8",
+      "statement": "`setUiLanguage()` changes the i18next language only when it actually differs and also sets `document.documentElement.lang` to the active language.",
+      "evidence": [
+        {
+          "resource": "repo://lib/i18n/index.ts#L83-L88",
+          "version": "repo-lines-v1:sha256:6060c77e70d055262c778b83a3d29e586097b93bf5162c94e260f52a8435b3cb:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTY2ZTI4YTA2YjU1NTY4MDcwNzFlOTgyZThjNzMxZGYxY2JmYjQ3YTBhYTkyMjdmMzEzYmMzMTQ0Yzk4ZGI1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzUwZmJjYTQwNzMzMzdhZjc3NTM4OWJmZjFlMWY2ZmMzMGU0ZjhjYTVjODI4NDhmMGNjYmNmM2Y0YThhYmU0NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTVmNDc5NjU2MzNiMTEyOGM1YjA2MDdhYjBhY2MyMjU5ZTY0MjBlZTc2NjZhMDIxYThjNTQyNmI5M2IzMGU2OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_20c17cd4148e4e92b87a307397e40c8e",
+      "statement": "The Interface language picker is the one setting that applies and persists immediately instead of waiting for Save, writing straight to `local:settings` through `settingsItem.setValue`, so the rest of the form is already readable in the new language.",
+      "evidence": [
+        {
+          "resource": "repo://components/LanguagePicker.tsx#L8-L20",
+          "version": "repo-lines-v1:sha256:11196f2564905ab196e6bc32bd61ecd795da98f06377ce0b3af995e8be6f4b10:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExYWU1ODgxN2Y3YjNlNjU4M2MyMWYzMjllM2I5YTRkZWU5OGU2NmQ1ODYxZGZkZGUyYjRiZTEzZDA0YTIwYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkOWVkOTQ5OTc5NzRiNWRhMWVhYjg1ZDYyNDJkOGI2NTc3MDdhMWI5NTcxM2I0MzY3NTJhNTA4NjVkMmJjMDMifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L215-L218",
+          "version": "repo-lines-v1:sha256:5d765ea28425ecdfc8b933c5d37c3f8000076227d4dcf195b05d162d7af82bef:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTc3MGVmNzQ5ZjllNmUyMTAwY2QyZWY3NDZiZTVkMTE5NDdkN2NlZjZmYWVmMDY3Y2I4YTZlM2Y4MTMzZDIyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWI4OTg2NDMxOGRmMTQ5ZTRkNzlhZGEzMmNiOGMwMGNmNjE3MWY2OWM5NTE1ODEyOTZhMmQ2NWVkZTRlY2NlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWFlZWQwOTA1NTJiYmI2NWNkOWFjN2Y2MWZjMDlmNDIzMTRiMzM2Mjc4ODRhMmI1NGUxZDM5OWI4YTcwNTdhNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce414ce7348a47ce8a151973a9cfbca7",
+      "statement": "Settings carries two distinct language fields: `uiLanguage` (the interface language, `\"auto\"` or one of the twelve codes) and `language` (the summary output language); the output language is not an i18next concern but a prompt rule sent to the model, with its own sixteen-entry `OUTPUT_LANGUAGES` list in the Settings form.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L33-L52",
+          "version": "repo-lines-v1:sha256:04143dfae28de48cd3a2942ac70b454a6d4e8857096d01ae1cb8dc1cee7c948c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0OWJiMTNjNzhhYTYwOTU5ZTgwN2FmNzI0OGJmZTVhYTE1ODA2NWU1ZDJkZjEzMDc4NWI5NjMyY2VlZTI3YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4ODYzMWJmMjNiM2UyM2EwYjExNjY3ODQ3NmYyYmU4MjEwYmYwZmRhMjc1MGFiNTNjNmViYzljNDJjMjRjMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0ODFiNGIwMGQxYTJmYjFmY2U4ZWJiZTI4MDc4ZDIyYTBiNWQwOTI3NTY1MTlkNzA0ZjkzMGM3MmYxNTE1YWIifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L87-L95",
+          "version": "repo-lines-v1:sha256:a9c57b05d920ecd94b418a33e32a47fcbc126ce298b39b36788241214b87becf:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q4N2YwNDhmMDkyMjU2YTg1MTAxYTljYzM3NGI1MGJhMjMzZjI1MmZiZjhhYWY0MDBmM2VkZjhiNTBjMzU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzMxOTk5MGRlZjRlMzgwMWEyNTIzOTYxN2NjMzk4YTRjODFlMDU2MDdlYWIyMjliNmU3OWJiZjE4OWM5YjM0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWY3MTM5YjRhYTczNzhhZDY0YjQwMTU5OTE0ODJhMGFlNmFkZDMyOTlmOGY1ZjFjZjI3MTQwNjU3YTExM2U3MCJ9"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L148-L156",
+          "version": "repo-lines-v1:sha256:e1934ae689ff47e87cea86a7aa01eae1e61773f460cbeb10cd0295b7fbda558c:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQ0MTM2YWQzNDA1YTA4NDYyNWIyNzVhYTk3ZmNlNDY3MjgyZjAxZDI4MTJmNzA3MGNkZGY5NjI1MDc2M2JkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZjZjQ0MDU1NDczZmNhMzM1OThjMzNkNmQwMGNmMDdiZTZhNmM1ZTRmYWNjZGY5MjE4MGRlZDUxNDQ3ZTk0OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDI2NjBjMmM2Mzk0NWIzOWEyNTBkNDUxOTNjMThjZTViNmE0YWYyMGM1MWE0ODI0M2ZiYzU2ZmZmMmI2MGRlYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzZhMWI5Mzk3ODEzN2RkNDY1MjU3NGI2YWUzZjM2NzE4OWMxNmQ1OTM4ZTE2YjgwMDE5ZmMwOTMwM2E3YWNmMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_acc08171a44a41ea9f8627fa7ea578bf",
+      "statement": "Only user-visible labels are translated: model-facing strings such as `REFINE_PROMPTS`, `STYLE_RULES` and the summary/Q&A prompt rules stay in English, while the refinement chip labels and tooltips come from the locale files.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L10-L17",
+          "version": "repo-lines-v1:sha256:e3ef78e62d79f1c115e86be372167b7b9161e8a3b741a31f4eadb3baed27ff23:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzZjM2ZmNjg0YmU2YjFlZjkxYjkxZDM1NWUyNDM3MDAyNTM3ZWQ4MWUyMjliYjQ5Y2Y0MjE1Y2MxNTRhYjRmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ2ZTUyMGZmNDU5ZDg5MzYxNjVmOTdkYTkxNTZkMTFiZmI0NzdhNzgwZWVjZWU5ZjFjMWVkYjY0Nzk1ZTg4OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWQwNmRlNzNkNDA5MmQzMWU3OGM4NjJhNmRlMzI3MmEyMWIzMjJhYTBmZWVkNzg0NjI5ZWRhZTBhOWY2ZDk1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTMwMDljNTk5ZjcwZTY0OGI5YmYzMzMzMjBhNTdjNDY1MGMwMWIxODZhMGYzZjAxZTgxZDEwOGFmMmY5OTgzZSJ9"
+        },
+        {
+          "resource": "repo://lib/refine.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:8c9f879ef7b100a2b51ef7638fdc382d1cd93d2abb4bef2a86b90c193c2eb361:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://locales/en/session.json#L2-L8",
+          "version": "repo-lines-v1:sha256:3128555640747922331ca5da232edf863e98e814b2585ae6169017b82585e1f8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjYxMGFlMGZiMTRlZmJlYzk1MTI2MDFjNjI5YzhmYjc0MGFhNGI1ZTZlNGJlYmE0Yjk0NzJhYTAxNjFkMWIzZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjEsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA0ZDFmMWIyYjAxNWNhMTA2NDc3ODMyOTVjNTM2MzA1ZWQ2YzU2YWQxYTJkYjJhMWUxZjRiYzJhNTBjOWRjMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a09600e3f2945a38f9baf77e73a4a13",
+      "statement": "Error messages are translated at the moment they are produced: `lib/llm.ts`, `lib/models.ts`, `lib/page.ts`, `lib/extractors.ts` and `lib/settings.ts` build user-facing error text with `t('errors:…')` from the `errors` namespace.",
+      "evidence": [
+        {
+          "resource": "repo://lib/extractors.ts#L150-L150",
+          "version": "repo-lines-v1:sha256:fa8c8d719e160cdf2576af0c960d380a0205990fe65b6714272e1a8389f473ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmE4YzhkNzE5ZTE2MGNkZjI1NzZhZjBjOTYwZDM4MGEwMjA1OTkwZmU2NWI2NzE0MjcyZTFhODM4OWY0NzNlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmE4YzhkNzE5ZTE2MGNkZjI1NzZhZjBjOTYwZDM4MGEwMjA1OTkwZmU2NWI2NzE0MjcyZTFhODM4OWY0NzNlYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTM0ZGYyYTRiZjc4NWFlOTBmNTBhNmM2NDYxNjM2ZjEwNTZjZjU0NWFhYTEzZWQxZTc1OGJhYzk3MWQ1ZWI1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTc4NTk1OTI5ZTEzMjBjMTZhYzA5MzljMGJiYTk5NzI4NmFkMDk0NDc5OGEzMjIyZDI4OTM5NzJlMzZiMmZkYyJ9"
+        },
+        {
+          "resource": "repo://lib/llm.ts#L64-L78",
+          "version": "repo-lines-v1:sha256:13b94a365d7c9c59f07cf1fee8ad03c25fb2f9605e585a0c36376a87bfcb6444:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MGZmZWMxMDU5ODk2ZWUwMTc4ZDhhMDRjNTc3NWJiMjZiNGRiYjA5YjYwYTZjZjQwNWQ4MjkwNzI5MTM0OTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNjM0NzA1ZDUzMTU5NWYwYTJiMDIzY2RmNGNmNGNiODg3Mzg3YjAyMmUyYWU1Njg2NDZjZmQ1MDQxODhlMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4MmQxNzFhYWRhNjIzN2RhNjI1Y2NlMjE3MjY3NDM5MzJjNmMxZjM2OGM0OGJlZTllOThjZTYzNmRlZTY3ZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://lib/models.ts#L93-L97",
+          "version": "repo-lines-v1:sha256:33a9b7025c87804e3f06f97f7a3b5e53fbf99d5ca7f81592fe3bc8200bd5ba25:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODgwMWRmNGE3MGFmYmRiMzNjYTExMDNmNGU2NTJjOTVlODVmOTI4ZmYwODk2Mzc5ZjllMjA4NzdhYmY3NTI5ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTE0MDNiZjE4OTdhZDE5MGI1MzhiNjM0N2NiOWYxMzY0Y2M2OGI1NzJjODM2YjIwOWFjYzc3ZDcxODBkYjE2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzFmNzcxY2ZmNTQ2MTZlMjAwY2JiMjBiN2MyMzM1ZmRmMjQ5OGI5MjYxMTE4MDQ2ZDc2ZDA4NjQ0ZTFhY2I4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTEyNGVmZTQ0MmUzMmQ1MDg3MGZjNGUyYjMxYTZmZGNkZmUwNWUyOGZiNWFiMGM5MzFiZmYxY2MwOGRiMjA4MyJ9"
+        },
+        {
+          "resource": "repo://lib/page.ts#L24-L65",
+          "version": "repo-lines-v1:sha256:3908d5167e29e6244ecb43f2ec3cfa8c1215f77e260af00ceec6b1ba178f7413:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMzhhZDM3ZDg1ZDZjOWMzZWIwOTdiZWE3M2QyNzZiNmU5NzY4Mzc5NDMwMDNlYzA3YTc0MTc4YjRjNTcyZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxM2ZjZTg2OTI1N2FlNTgyN2VhYjNkYzIxZGJkNTFiYzY4MzI1NGM3NDZkNTMxYzEyMDRiZTQ4MDRjOTBhYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyNTI4NDU1ZTI2OTIyNDdjM2IzMzU0ODg2MjY1OTJkMTc1ZjcwNzZmMWY5ZTA1YzUwN2Y5MzQ5NDgzNmI3Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiZjkyZDZjYjZhMmRkZTdhZTZjZmU5YTdhMmFjYzgzNjkzMjY2ZGEyNjk4MTA3NzQ2MDM5YzA4NmRjZDYzNjEifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L210-L214",
+          "version": "repo-lines-v1:sha256:44918e6e82a5f3c02e1dfa103b990b04c7b2757bf5a843a52bf103ba06c1b086:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTA3MTQzNWE3NTM1NTI5MjUxZTk5NzMzZmM4YjMxZGRhNTNiYTYyNjg1YTQxNzQ5ZThkMmNiOTNjMzYzNDk0NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNkODg2OWNiYTIyMmUwMDAzYjBmMjViYTE4MzEzYjU3NzdhNTUwOTFkN2ZmMTg2MDk5NmQ4ODc3NjU5MjQ4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTU4MjIwYzQ2YjZmNWFlNzJjYWZlMTc5MGRmNmVjZWRiNjIyZmFjYTViYzBjMTc3Njc3NDEzN2MxNzNhYzFjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBlODZjYTFkNjg3ZmE1ZWMzNWFmMWE1YWVkZmExNzc1NDI1MmQzZDhmMzRhYzE4YjI1MzcyYjdkZmZjMTRjYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a0155c77d20476fa1a4f6016dfd533d",
+      "statement": "`lib/i18n/types.d.ts` augments the `i18next` module with the types of the English JSON files, so a call such as `t('settings:model.load')` fails to compile when the key is absent from English — a missing English key is a compile error caught by `pnpm compile`, not a runtime surprise.",
+      "evidence": [
+        {
+          "resource": "repo://lib/i18n/types.d.ts#L1-L22",
+          "version": "repo-lines-v1:sha256:934ca58c8a997813eea8c9b184ed8fc9f640208ee87724c876c5b7598b286252:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NTg4MjJhMWE4NGM1ZWFkMjU5ZWE1Y2E1N2I2Y2ZlOTViOGM2ZTYyZTcxOTNkYTQ3ODUyNDYxMDY2YjVlMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a4963a1e3d34511a750991e5f70ac92",
+      "statement": "The Chrome-level tree `public/_locales/<lang>/messages.json` holds six keys — `extName`, `extDescription`, `actionTitle`, `commandOpen`, `menuSummarizePage` and `menuSummarizeSelection` — and the manifest references the first four through `__MSG_*__` placeholders with `default_locale: 'en'`.",
+      "evidence": [
+        {
+          "resource": "repo://public/_locales/en/messages.json#L1-L25",
+          "version": "repo-lines-v1:sha256:97259e4482556fbddcb9f946fea9aa8eead7251c3d3d473e3a4833849311c3fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://wxt.config.ts#L6-L28",
+          "version": "repo-lines-v1:sha256:b362dd5fbf21fd00942a3bb4288f34d7c787f94a5bef759f5e7e31fe107cdda1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YWFiNTMyZmQxYWNmMzBmZGMzNmQzNTA0YTgyMTNlOGMyYjI3ZDVjOWZhODdlNzc0NGEwOTA1MjBhZTFhMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NWM1MDFlMDljNzljMDE1MTY2NTc3NWZmNDAyYjQ1YjI1MDU1NWRhYmU1M2UxODljNTgxZTJlNTY4NzVmYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4M2MwM2ZiZGY5YjM0NmFhNTUyNzg2YjVlZWJiM2FhZDRmYWM4M2FiOWU1YzZiNWQ1MTVhM2ViNTljZWVkNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11027799c28a4c8893dc62c886496ba7",
+      "statement": "The two context-menu titles are read at runtime with `browser.i18n.getMessage(key) || fallback` in `lib/context-menus.ts`, so a missing key in a locale file still yields a usable English menu title.",
+      "evidence": [
+        {
+          "resource": "repo://lib/context-menus.ts#L22-L40",
+          "version": "repo-lines-v1:sha256:d8e93cba654d17d4a683ee293ecd7883b0ee983e26a33777b70a257a14ef6955:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzZDlhMGI3ZmVlZGNmYmQ4YjRiMDM3NjczYWEzMjgxZGE5NzQyMzUzOGIxNzU0NjkyZDRmNjgzNWMzZjIzZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmYjc0NmE0NTU5MjgwMjQ0NTRmYjkxMzc4NzhiYmRiODRlM2NkZWM0OGIzMGE2NjkxY2RhYWIxNzQwOGEyZTYifQ"
+        },
+        {
+          "resource": "repo://lib/context-menus.ts#L4-L7",
+          "version": "repo-lines-v1:sha256:c3cd06d850847fca2f469f10fbc9a12339659489904e7cd66cc7689ffee5d06e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTBlMDVhYjk2ZGJjYWQxMjdjNzM1MDgwNjc4ZWRlNjVlMzc5NDAyOTYyOTRkZmExM2RmYzYyMTY5Y2FjMzE1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRmNDYyOGNiMWVkYzIzODhkYzQ5NTg3YjczMzM0NTdjNjc0MGEyMmUxYWFkNzkwMjc5MWEzMzY2NzNmNDNmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmIzZTI5MGY1NWQ2MDI0NzQzZjAwNmQ4NGFmYTJiOTE5YzVkZDk0MDdhYTk5NzY4MjNmOGY5ZWU2YmRhOGQ1NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5473302b855145bda7af8892a0792746",
+      "statement": "The `public/_locales` directories use Chrome's underscore locale convention (`pt_BR`, `zh_CN`, `zh_TW`) while `locales/` uses BCP 47 hyphens (`pt-BR`, `zh-CN`, `zh-TW`); the two trees cover the same twelve languages but are maintained separately, with no script keeping them in sync.",
+      "evidence": [
+        {
+          "resource": "repo://lib/i18n/index.ts#L13-L28",
+          "version": "repo-lines-v1:sha256:84603267d326a5836acc2621d00ab30f00608c1c5a7e09a91b7b961d1d0047e7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyNmQ5NTRmNjdkNTVhYjZlZTA4NzFmZmZiYmViZDEwM2MzZmE4NTRhZWMwZmVhZTYxMzg4N2Q4Zjc2YjUzNjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiZTVhOGJhNjY4YzhjNjYxZDAwOTcxZjcyZmI3YTZhNjViM2FjNzhlMmY2MDcyZWRmMDI5M2U3YjNlNzQ0ZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZTFhZWUyMTI3MGE3ZjVlZjMyMzIzMDM1YzkyZTk0MjI5NmE1MGE4MjgxNDJiNTlmZmUzYTNiZGY1NTIzZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4MjhmN2ZjZTNhM2ExYTAzNmQ1ZDJiM2Q5YjViMGVjMjQyYzZmYzJiYjNiM2Y0YzE4YTQ5Yjg5YjhiMzgxZmUifQ"
+        },
+        {
+          "resource": "repo://public/_locales/pt_BR/messages.json#L1-L25",
+          "version": "repo-lines-v1:sha256:c0c7d7ed1af37b551b5a65c2ba9c8b74c46bd624c8399c73f37b4b8bfedf5992:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://public/_locales/zh_CN/messages.json#L1-L25",
+          "version": "repo-lines-v1:sha256:38c57f02d4bc772a61fec5cfe5a2f8075cf750c3b9006d517e01d1b4c60dbcb9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7344d6c6d594ceabf3a8fde685c742c",
+      "statement": "`scripts/check-locales.mjs` (`pnpm check:i18n`) compares every non-English locale against English and fails with exit code 1 on key drift, wrong CLDR plural categories computed via `Intl.PluralRules`, mismatched `{{placeholders}}`, empty strings, or unexpected extra keys.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/check-locales.mjs#L1-L67",
+          "version": "repo-lines-v1:sha256:c31830142657654d6a567a1b2d049db612ba25e918373368be75f7d66b0310cc:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViZWQ5NzdmNTUzMjYwYzJkYjIxMDFhNGVhNmM5Yzg1OTVjMmIyOTdiZDVkZDY4OTE3NjA5ZTA2ZTU1NWI2NTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c31c9e86ef2848ed89d220e2c2de5e2d",
+      "statement": "The plural check requires each translated language to supply exactly the CLDR categories its own language needs — Russian must have `_one`, `_few`, `_many` and `_other`, English only `_one` and `_other`, French `_one`, `_many` and `_other` — while the check script covers only the `locales/` tree and not `public/_locales`.",
+      "evidence": [
+        {
+          "resource": "repo://locales/fr/common.json#L26-L31",
+          "version": "repo-lines-v1:sha256:d8d0dbb6e7be50a70d8ed8e96dd997d352a138e5242bb18ac334023730ef6b71:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE3MjNmYzE5NDJmNWUzZGIzY2MyZTFjNjNmMDM0YTc1MzRhOWNiYjlkMTYyMDgwMjA3ZTg4OTYyOWUzMzI1YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODQzYjE0YmEzZTliNDk2NTFhZDc1YjUyOTMwYjMxN2ZiMmIzOGM5Mzg1OGE2NjBiNTdmYjA5NWQ0NmExMmFkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDczZDYzODQzZjQyZjE4ZjYyYzhmYTg3MjI3MGZhMTU5NDk1ZjAwNDI3MmE4NWNkMjlkYzYzMGI3YTM5NDBmMCJ9"
+        },
+        {
+          "resource": "repo://locales/ru/common.json#L27-L32",
+          "version": "repo-lines-v1:sha256:c0de5eadcace60709a5dae2be5651965f36ccd75ad67ccfe90cab220d9d961aa:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2I5M2YzOGY5NTYxNTMwOTBkZTUwN2EzOWFiMjQwMjhjMWJhZGFkMmE4NWRiN2JkZWZlNTI5NzFmZjYxMWQzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjU3YmMyNDcwMjFlZTVjNTUyMGU2ODFkZjI3NWYyOGY4ZjFlMjA3ZmFmNjM5NDc1YTRiNjdjNjZkOTRmN2I0ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmVmNDU0Yzk4YjVlMjM5YWJjYzlhY2U4ZGU1ODFjYTE5OTc4OWIwNmY2NWQxZTM3NWFkNzU5MDhkY2RjZTU4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjAzODY1ODJjNWJkNzZjMTk2YzFjZmE0ZjAyNTRkOGU0OGY1ZjkyYjk0ZTk0MzkxYWMyNjUzOTQyZjhlMjU5NSJ9"
+        },
+        {
+          "resource": "repo://scripts/check-locales.mjs#L31-L49",
+          "version": "repo-lines-v1:sha256:3b2f0ceb074e9d36d747560c70cb49fb38a88126b2cac11da9355fe84899e3e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyNjFmODRmNWI1MDcxZmY1OTI3OTc2MzRiYmE2ZmIyYjIzOTcyZDQ2ZTAwMTY0YjZjMmVhZWUxN2IzZDc0ODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwZDg4Mzg5NTI3ODhmYWM0NWYyOGU5ZTJjZjc3MjVkYWRmOGUyNTk5OTFkNmRjZWM2YjIxZDU5ZjhiZmNmMTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiMGRkYzM0NTQ3NjkzNjEwNzQ2OWZiYWFiZjI5ZjQ1MzI3NzZhZWRiZmJiMjhjMjNkMWYyNGVkN2QyM2Q0ZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5OGEzYmIwOGNkODEwY2M2NmUyMjY2OGM4ZjczZTNmN2YyMzI2YTg4NzEzZDBiYjRmYjBhNGI0NzIwYzNmZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f76d271daa594bf2a83429ff8cdebc4b",
+      "statement": "`pnpm check` runs three gates: `pnpm compile` (TypeScript, including the English-key type check), `pnpm check:i18n` and `pnpm check:examples`.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L8-L20",
+          "version": "repo-lines-v1:sha256:749531612c42838681b720ad6b07adaaf9ccafadbc9608ce7c0ea74fa38dd9d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMmFiMGYzNWViZTY0MDUzZDkzMmY1ODgwZDhkMTgxMTNkZmRkNmVhMjRjOTMxMGY5OTk2NmNmOGZlZmUyZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0YTk3MTkxNzA4ZWRmMWYwNjdmZTRkODljOWM4NDBmYjNiMjgxMTU4MzdjYzRmZWM5NTk5Mzc3NDE1NGRlMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1MmJkYzMyOGYwYjcwZTcxNjQxOTMzZWZlNDdlYjgxNDhkNWI2MDRhODlkZTExOTg3YWE1YmRmYTA5YjczNjcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-08T08:28:07.947Z"
+  }
+}

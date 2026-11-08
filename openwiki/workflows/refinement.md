@@ -26,7 +26,10 @@ sources:
     resource: repo://lib/summary-example.ts
   - id: openwiki-source-3149f8a0cd2cbdd3697c0dec
     resource: repo://locales/en/session.json
-generated: { by: "openwiki/0.8.0", at: "2026-11-07T09:34:41.642Z" }
+generated: { by: "openwiki/0.8.0", at: "2026-11-08T08:28:07.947Z" }
+verified:
+  - by: openwiki/0.8.0
+    at: 2026-11-08T08:28:07.947Z
 ---
 
 # Refinement and Follow-up Questions
@@ -91,9 +94,9 @@ while another turn is running (`busy`).
 `lib/refine.ts` documents the split explicitly: the prompts are *for the model*, so they stay in
 English; only the labels and descriptions are translated. The chip button uses
 `t(\`refine.${id}\`)` for its text and `t(\`refineHint.${id}\`)` for its tooltip, while the value
-sent to the model is `REFINE_PROMPTS[id]` — an English sentence such as *"Add a checklist of
-concrete action items or takeaways from the source."* A user who types a free-text instruction
-gets it forwarded verbatim, in whatever language they typed it.
+sent to the model is `REFINE_PROMPTS[id]` — an English sentence such as *"Add a Checklist of
+concrete action items from the source."* A user who types a free-text instruction gets it
+forwarded verbatim, in whatever language they typed it.
 
 ### What the model receives
 
@@ -112,9 +115,14 @@ if (previousProgram && instruction) {
 
 So the previous program is sent as the **last assistant message** (fenced with
 `` ```openui-lang ``), and the instruction is the **last user message**. The source is still
-included, so the model can check a fact before changing the summary. The summary prompt is built
-with `editMode: true` and `inlineMode: true`, which is what tells the model to return only the
-changed statements and at most one sentence of prose outside the fence.
+included, so the model can check a fact before changing the summary.
+
+The prompt that frames the turn is the ordinary summary prompt: `buildSummaryPrompt` sets
+`editMode: true` and `inlineMode: true` on the library prompt and adds the turn contract to its
+rules — *"First turn: output the complete program in one ```openui-lang fence. Refinement turns:
+output only the changed statements, with at most one short sentence outside the fence describing
+the change."* That is what tells the model to return only the changed statements and at most one
+sentence of prose outside the fence.
 
 ### From patch to merged program
 
@@ -137,9 +145,10 @@ statements that are no longer reachable from the root are garbage-collected. Tha
 The merged program is then validated (`fullCheck`: parser validation plus Mermaid rendering of
 every `Diagram`). If it is invalid, one repair turn is sent back to the model with
 `buildRepairMessage(errors, true)`, which in edit mode asks for "only the corrected statements".
-The repair is accepted only when it is **not worse** (`recheck.errors.length <= check.errors.length`);
-otherwise the previous program is kept. Remaining errors become the user-visible warning
-*"The model produced N invalid UI statements; showing what rendered."*
+The repair is accepted only when it is **not worse** (`recheck.errors.length <= check.errors.length`).
+The repair turn is not streamed to the UI — the first attempt stays on screen while it runs.
+Remaining errors become the user-visible warning *"The model produced N invalid UI statements;
+showing what rendered."*
 
 ### What is stored afterwards
 
@@ -162,7 +171,8 @@ note.
 Two UI details matter here:
 
 - While `phase === 'refining'`, the **old program stays on screen** until the patch has been
-  merged and committed, so a refinement never blanks the summary.
+  merged and committed, so a refinement never blanks the summary. The streamed text of the
+  refining turn is not rendered as a program; a "Updating summary…" indicator is shown instead.
 - If there is no program yet (an empty or prose-only summary), `refine` does not run an edit-mode
   turn at all: it falls back to `runSummary`, which regenerates the whole summary.
 
@@ -254,8 +264,12 @@ Three things follow from this:
    `]]>openui:` envelope, the `formState` snapshot, or the app attribute. The protocol is a
    storage format for the renderer, not a wire format for the model.
 
-The Q&A prompt (`buildQaPrompt`) enables `inlineMode` but not `editMode`: the answer may be
-plain prose, a fenced program, or both, and it is never merged into the summary program.
+The Q&A prompt (`buildQaPrompt`) enables `inlineMode` but not `editMode`: the answer may be plain
+prose, a fenced program, or both, and it is never merged into the summary program. Its own rules
+shape the answer — *"Short factual answers: 1-3 plain sentences. Answers with structure
+(comparisons, steps, lists, numbers): a compact openui-lang Card in a fence"*, process questions
+answered with a `Diagram` plus a line or two, and *"If the source does not contain the answer,
+say so plainly instead of guessing."*
 
 ### How the answer is stored and rendered
 
@@ -288,8 +302,8 @@ program.
 | The model answers with prose only during a refinement | `splitInline` finds no code, so the program is kept unchanged and only the note is replaced. |
 | The summary comes back as prose only | The session stores an empty program with the prose as the note and warns *"The model answered with text instead of a UI."* |
 | The model answers with prose only during Q&A | The turn is stored as a text answer and rendered as Markdown; no UI is produced. |
-| The merged program is invalid | One repair turn; the fix is kept only if it is not worse; the remaining errors become a warning and the last valid program is kept. |
-| The user asks while the summary is missing | The question is still asked: `ask` reads `readStored(current.summary).content`, which is empty, and the answer is grounded in the source alone. |
+| The merged program is invalid | One repair turn; the fix is kept only if it is not worse. If the repair does not help, the **failed merged program** is kept (not the previous valid one) and the remaining errors become the warning *"…showing what rendered."* |
+| A question is asked without a summary program | The question still goes out: `ask` reads `readStored(current.summary).content`, which is empty, so the answer is grounded in the source alone. |
 
 ## Where to change what
 
@@ -304,9 +318,8 @@ program.
 
 ## Related pages
 
-<!-- openwiki: broken internal link [../architecture/storage-and-state.md] file "../architecture/storage-and-state.md" does not exist. Fix the href or restore the target, then delete this comment. -->
 - [Storage and Session State](../architecture/storage-and-state.md)
+- [React UI Components](../architecture/ui-components.md)
 - [OpenUI Lang Program Model and Library](../concepts/openui-lang.md)
 - [Summary Generation](summary-generation.md)
-<!-- openwiki: broken internal link [../architecture/ui-components.md] file "../architecture/ui-components.md" does not exist. Fix the href or restore the target, then delete this comment. -->
-- [React UI Components](../architecture/ui-components.md)
+- [Localization and Translation Workflow](../concepts/localization.md)

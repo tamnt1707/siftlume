@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:0470feb478a453888f3bc8c1f2ac2269a2a94e4e761242404baf2c9c6a6265ab",
+  "pageVersion": "sha256:13aaa168786c910bfecc58e20f975400b066e3ef562ad5793ca98b82891f527f",
   "claims": [
     {
       "id": "claim_dd7d26e8146048ba91f20d2a1a820d53",
@@ -25,12 +25,8 @@
       "statement": "useSession exposes a single phase value (idle, extracting, summarizing, refining, answering); begin() aborts the previous controller, creates a new one and clears error, warning and stream state, and every operation only finishes the phase if its own controller is still the current one.",
       "evidence": [
         {
-          "resource": "repo://components/useSession.ts#L10-L46",
-          "version": "repo-lines-v1:sha256:aba471b315c3b921d19848219c48d9e6848b6c59d9ae556d7f593810bde18d47:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1NWIwOWIyMDUwZGE2NzhhZTRkMzQzNTZkYjA1MDRkZGJhODI0NjJkODUxZTlkM2JlZGExMzRiMGU0MTIzYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhMDc0NGE1ODVlZjc5ZmUwNmEyNmFiNTNjOGMwNzMwYjczZDZhMjlmYjBmYWZlYzhjMjcyMDYxMDdjYzM2ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2MjkyMjE0MmIxZjVmMTAzOGQzYjNhMzRjZGNjYmYyNTUwNmI0MDIyMWRlNTUxMjE5MGI3YTNhNzZlOWE5ZTEifQ"
-        },
-        {
-          "resource": "repo://components/useSession.ts#L53-L74",
-          "version": "repo-lines-v1:sha256:1a5d99cb2ef9272e42c84802775a078d66bee666d29e6d42a6a7a79b101f0a7b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1NjcwNWU2OTIxMDFlYjRlNmU5ODZkNzgyY2RlODU5NTkxMzQxZDliZmI3MDI1NWQ0OGEzNzMwNzY3NmJiNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4N2IwY2E4ZjE3ODg1M2RlMGI2MjM2OGZiYzc0MTdmZTRmYzk0NGE2ZmFmMDA3ZTJlZDZjMTZlOTIzZjViZGQifQ"
+          "resource": "repo://components/useSession.ts#L34-L52",
+          "version": "repo-lines-v1:sha256:f07a8cbb48bae032bc2b8f0eb82ae95843414489d0a67ca3b2395221470eb139:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjMWRmYTM4OWEwMzNmMzlmZjgxZjkzMTFhOGRmMjM5YTgwYWIwYmI2MTVkNWE0Mzk3NGRjYmJiNTg3NzAyNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0YWYxMWNiNWMxOWI3MWFlNTc4MGRjNjgxYWE2YjU0MTg5ZTQ5NDg1ZjE2NzRjNjM4YThlZTFkMTUzZTA0NWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1NjcwNWU2OTIxMDFlYjRlNmU5ODZkNzgyY2RlODU5NTkxMzQxZDliZmI3MDI1NWQ0OGEzNzMwNzY3NmJiNjEifQ"
         }
       ]
     },
@@ -57,7 +53,7 @@
       "statement": "Source content is truncated to settings.maxChars by a plain head cut, and the resulting truncated flag is sent to the model inside the source message as a note that the source was truncated to fit the context window.",
       "evidence": [
         {
-          "resource": "repo://components/useSession.ts#L77-L91",
+          "resource": "repo://components/useSession.ts#L80-L94",
           "version": "repo-lines-v1:sha256:f07a706db0723c3eb616fe7f55d2519b0e09afbee2c508707cb325b5a17633e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3OTM4ZTNhOTcyZGNmNzZmOGU5ZjY5OTY2NjkwOGNmMDU2ZmE1NDRlYWM5YWM2MTcxNjdiNDg0MzRiZjc1ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MjBiYzZkOWE3ODZlMzc0NjNjMzBlZGMxNTgxN2Y1ZjMxOWE2ZWQzZjUyNGY3ZWY3OWQ5YzhlMjc3ZDQ3MWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlZmRhMDg3OTRlNzg4NGVlYTNkNjhmMmIzYTk4ZDMyYmU4ZmQzY2IwODY5MzQxZTMyMjM0ZjY3YTE5OTQ1MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlZjQyMTQ4YTUwMDYwY2Q4ZTExNDM5ZTU5YTI0YmNhOWI1NDYwODcxNDQ2M2I1YjYxYzYxYmZjNDA3NGE0OWUifQ"
         },
         {
@@ -65,7 +61,7 @@
           "version": "repo-lines-v1:sha256:4883f9fe8dc9d52243331a74c0a4468247f56ac2740e0b6708d35b7f8754ff91:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODcyZjdlYzk0MDExYjYxYTcxMTc5NTQ1ZDA2YWM0OGQ0MmNkZTNhZWIzZDY2Y2Q1NTc2NjgzZmUyMWJhYWM3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjk4YjExMWIyYmY1ZjBiZDQzOTFjMzE5ZTg2MzBkNzkxN2YzZDExNGIzZTUyMjljOGRhNGMwZjFiNzRkZmYxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         },
         {
-          "resource": "repo://lib/openui.ts#L188-L201",
+          "resource": "repo://lib/openui.ts#L194-L207",
           "version": "repo-lines-v1:sha256:a81ba5e8fc96a9a33480238d997f7b51bffbb97c0d9cd8d7971bca7da6ea7b3c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwZDAyYmVkYmU2ZTE3NDNkMmFjYzVmMDljOWY3Y2MzZGYyZDYxNTg1YmZiM2VlNGUwOWNlMzgxYmY1ZWM5YzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhM2IyODZkNWVmZWVhOWU3OGI2YWIxZGIyZjc0YTQ3YmI4MmQ0MmU4ODliOWYzOGQ3MTMxOWU5ZTcxYmQyMjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2MzNlNzZiNDYxYWFhZDZmYmFjYWI0Mzc2ZmE1MmRlYTZmOWMyMTlkMDY1NzlkMzJmZTZlMDk4ZGRkOWRlNWQifQ"
         }
       ]
@@ -75,15 +71,15 @@
       "statement": "The base session is committed and persisted to history before the first model call, so an interrupted or failed summary still leaves a history entry, and reopening such a session resumes the summary when no configuration problem exists.",
       "evidence": [
         {
-          "resource": "repo://components/useSession.ts#L249-L259",
+          "resource": "repo://components/useSession.ts#L256-L266",
           "version": "repo-lines-v1:sha256:d66d92122cc64c9a46c04e98a0dc9b58ab1db1b3b9965f864cab2f9eae79aab6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiNWQwZTQyYWFiZWJlZDU3YTI3YWE2NmRlYzQwNWU1NWVhZWNmZmMwNWI5MWZjYTA4MjI5MjgyMWE3M2JmOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmNmI0NjA4MjRiYTZhYTEyZDdkNjFkM2Y1ODkyMzI2MWNjZjJjMTg4YmQ1YzJhNmE2ZDBiNTA2NTU0OTEyOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5Zjg4MGYxYmVhMTkzN2Y4NTZhMDc5YjkwMzk1MjA2ODlkZmFmODA0ZWQzNGRlY2I5YzNmZWIxZjM0MDFmODQifQ"
         },
         {
-          "resource": "repo://components/useSession.ts#L77-L91",
+          "resource": "repo://components/useSession.ts#L80-L94",
           "version": "repo-lines-v1:sha256:f07a706db0723c3eb616fe7f55d2519b0e09afbee2c508707cb325b5a17633e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3OTM4ZTNhOTcyZGNmNzZmOGU5ZjY5OTY2NjkwOGNmMDU2ZmE1NDRlYWM5YWM2MTcxNjdiNDg0MzRiZjc1ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MjBiYzZkOWE3ODZlMzc0NjNjMzBlZGMxNTgxN2Y1ZjMxOWE2ZWQzZjUyNGY3ZWY3OWQ5YzhlMjc3ZDQ3MWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlZmRhMDg3OTRlNzg4NGVlYTNkNjhmMmIzYTk4ZDMyYmU4ZmQzY2IwODY5MzQxZTMyMjM0ZjY3YTE5OTQ1MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlZjQyMTQ4YTUwMDYwY2Q4ZTExNDM5ZTU5YTI0YmNhOWI1NDYwODcxNDQ2M2I1YjYxYzYxYmZjNDA3NGE0OWUifQ"
         },
         {
-          "resource": "repo://lib/history.ts#L55-L61",
+          "resource": "repo://lib/history.ts#L63-L69",
           "version": "repo-lines-v1:sha256:fc65e7819606be22c6a4d8a529bc9ad062221980cb8d5118d39b28886e327bba:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQwMWI2NGI0YjdhM2Y0ZDhkMDgxYTJmYTEyMmZiZTNiNmYxNzViYWQ3Y2M0NmI3M2MxNmY5ZDg3NDEyYzZhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IxNzMzNjNkNGUyMmQxMTM1YmUxYWY2ZTE4ZDM1NDY4ZWQ2MjRkMDc5ODU5Y2VlNzQwYzQ4MzAxZTFjODFlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzZhN2MzODAwZTUwNDYyYjdiMDg0MGZlZmE1MWMwYmVmN2YyZjkxYjkxNzhjYmIxMWMwNTUxYjlkNzA4MWZkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjQ2NTMzZjVjYjJkYmNmNDMxMTMyNzFhOWVlZmRlOTFiZmY0YmZiZGJkNDM1MGYxY2QzMTA2MTRiMWZiMWM2MSJ9"
         }
       ]
@@ -93,8 +89,8 @@
       "statement": "The summary prompt is composed of a cached library base (rendered once per source kind and CSV presence) plus per-turn rules from the visual, chart, diagram, length, style, layout, source-kind and user-rule sets, and the CSV Query tools and bindings are enabled only for a CSV source with parsed data.",
       "evidence": [
         {
-          "resource": "repo://lib/openui.ts#L107-L166",
-          "version": "repo-lines-v1:sha256:c798a0ffc2405d48e4b1c5db1aa2f7d45e7e6e252919d595b1fde507eb03fae6:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4NzliNWIzZDhlMGFiMzU0MWNiM2MyYmM0YjM3ZWM2MzU2YzQ3NGM2ODIzODJlMGUxNGZlZDQ0NjgzMmI1ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3ZTFkOTU5OGRmODI0ZjA3Mzc2NmUwYzI3N2ZmZjYwYzk2Y2EwNWVjZWZlNzVlMGE0ZTk5YWY1OGVkMzA3YjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhM2RmYWJjYTczMjE3ZmQzMTAzYzc5M2Q0NWM3YWZmODJkM2Q2ZDdlN2U0NTJmOGE1OWFjNjdhNTdhMWZjOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2MjdlNDBlM2IzODA2OWNiNzQ4NDIxOTA2MmMwNWFiYzY2MTg5Y2M5MjZjMDk0ODNlOWIxYmZjMzE4Y2Y2ZmMifQ"
+          "resource": "repo://lib/openui.ts#L111-L172",
+          "version": "repo-lines-v1:sha256:411f5357d1bb4661268c8f01e5cea58f75831731939922427520eed00d7547db:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4NzliNWIzZDhlMGFiMzU0MWNiM2MyYmM0YjM3ZWM2MzU2YzQ3NGM2ODIzODJlMGUxNGZlZDQ0NjgzMmI1ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3ZTFkOTU5OGRmODI0ZjA3Mzc2NmUwYzI3N2ZmZjYwYzk2Y2EwNWVjZWZlNzVlMGE0ZTk5YWY1OGVkMzA3YjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhM2RmYWJjYTczMjE3ZmQzMTAzYzc5M2Q0NWM3YWZmODJkM2Q2ZDdlN2U0NTJmOGE1OWFjNjdhNTdhMWZjOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2MjdlNDBlM2IzODA2OWNiNzQ4NDIxOTA2MmMwNWFiYzY2MTg5Y2M5MjZjMDk0ODNlOWIxYmZjMzE4Y2Y2ZmMifQ"
         }
       ]
     },
@@ -111,7 +107,7 @@
           "version": "repo-lines-v1:sha256:0d318c89a9100b3886dceb16f59930a9ea5afc8139aee044a81e1ef40f7aefe6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YWE3YjQzNWRlYzJiMWYzNDIzYjVmODc1ZTllZmE0ZTZmZDYyZjhlNjMwYzIzYWZkNzk5MTNiNmYzNjY4YzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5YzZhZDZmMmFhMDk3NjczMTI3MmYyNDI1MmU4Nzk4OWFhYjU5YTE0NmVlN2NmMGE1YTFhMjc0ODJjZmI5MjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlZWFhZmQwYTU0Njg0MjcwYzkxNzQ0OTk0OGM5ODc3YjI1OGE1ZWQ5MTVmN2ZkMGYwMmNhYTA0MjQzY2ZmNGMifQ"
         },
         {
-          "resource": "repo://lib/openui.ts#L204-L298",
+          "resource": "repo://lib/openui.ts#L210-L304",
           "version": "repo-lines-v1:sha256:6a5d7c67518996dc8234978206fd78ad163d2582ad6ce8984fd551f088349219:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkMmE5N2E1Y2VlMzQyYTVkMmIxYzU3OTE2MjVjZmQ3NGY2MWVlMzAyNDEzMGEwZGExYWMwMDRiYjBkNWIzZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2Y2ViNmE3MWFjYTU2NDUyYzhkYzcwY2JlZWJjOWYzNzlkYTA3MjRjMTM5YTlmZDk2ZGMzNzhjNjlkY2IxYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
@@ -121,7 +117,7 @@
       "statement": "splitInline separates prose from the OpenUI Lang program and tolerates sloppy model output: text without a fence that starts like a statement is treated as code, and a fence without any statement is returned as prose.",
       "evidence": [
         {
-          "resource": "repo://lib/openui.ts#L204-L252",
+          "resource": "repo://lib/openui.ts#L210-L258",
           "version": "repo-lines-v1:sha256:23a479cab24bc21874fbb792f8c93b38e3e2c012a3afa3c100f6e21f17836150:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkMmE5N2E1Y2VlMzQyYTVkMmIxYzU3OTE2MjVjZmQ3NGY2MWVlMzAyNDEzMGEwZGExYWMwMDRiYjBkNWIzZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMDU1YWI3Yzc5ZDcyYzVhYTVjMTcxMWVhZDg0NDg5NjE0MTY1YWIxYzM4NjliYzc2NzRkMmE2Y2QxOWU4ZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2Y2ViNmE3MWFjYTU2NDUyYzhkYzcwY2JlZWJjOWYzNzlkYTA3MjRjMTM5YTlmZDk2ZGMzNzhjNjlkY2IxYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZTgwYTY5NDYxYzA2YTZhOGIzYzEwMmUzZmVhNGYxMDQ4OTNhNDg0NWQ2NTU0ODZjM2FiYTllODIwMDFhMjEifQ"
         }
       ]
@@ -131,7 +127,7 @@
       "statement": "When the program is invalid, exactly one repair turn is sent with the LLM-readable error list and is not streamed to the UI; the fix is kept only if it does not leave more errors, otherwise the last valid program is kept and the remaining errors become a warning.",
       "evidence": [
         {
-          "resource": "repo://components/useSession.ts#L49-L52",
+          "resource": "repo://components/useSession.ts#L52-L55",
           "version": "repo-lines-v1:sha256:b67ee01aeb74f4bbf9f89ac23945c832d6f7dd40c7f9da554ab6e42c1af1f552:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWIzOGY0NjU4ZjIwNWE0NjcwYmVlNmVjZTdhNzI0NzUzZjgxOGRjMzhjMmVmYTg2OTA3M2E1ODA4MTI1YzVmZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmIzMTNiZWI4MTExMTlmZDEwNDE4MjFjNDY3MGZhNjIwMTJmY2Y1ZWQ5NjFhY2RjNThhZDY3ODlkODMwNjQzMSJ9"
         },
         {
@@ -139,7 +135,7 @@
           "version": "repo-lines-v1:sha256:5584e0665586e0f258bcb025dd788ee52e2aa5e8580a1100fa7995874643a55e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YWE3YjQzNWRlYzJiMWYzNDIzYjVmODc1ZTllZmE0ZTZmZDYyZjhlNjMwYzIzYWZkNzk5MTNiNmYzNjY4YzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExYjAyZWU1MDZjYTdmN2IyZDNlZDZlZjE5ZmNmNTYyMTE0ZmE3OThiYjJjYWI2MjNiNmZjYTQ5YmVjMmZjN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlZWFhZmQwYTU0Njg0MjcwYzkxNzQ0OTk0OGM5ODc3YjI1OGE1ZWQ5MTVmN2ZkMGYwMmNhYTA0MjQzY2ZmNGMifQ"
         },
         {
-          "resource": "repo://lib/openui.ts#L286-L298",
+          "resource": "repo://lib/openui.ts#L292-L304",
           "version": "repo-lines-v1:sha256:b1e3d1d29c8565a37c2b017e0d7a2c4c083583af0dd818b01c7b40dfbae03a43:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNmU5NGE3MGFhMTJmZjAwNWZiZTVhZDIyMjE4MzRkMzlhMzc3ZGVhNzRiODAyNjAxY2U3ZGY2YWM5YWE3ZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5NmFjMDIwYmEzZDEyZDNiYTU0NTllM2JiYzEwNTVlY2NlOWI1YjUyMmQ1N2YxZGEyZjUzNDM4OTUyMmM1ZWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
@@ -149,7 +145,7 @@
       "statement": "A prose-only answer is not validated; the empty program is stored with the prose as the message note and the user is warned that the model answered with text instead of a UI.",
       "evidence": [
         {
-          "resource": "repo://components/useSession.ts#L62-L66",
+          "resource": "repo://components/useSession.ts#L65-L69",
           "version": "repo-lines-v1:sha256:14b30b30cb58fc9031ccce0942aa429bd2b295a88b122c1cbe3d28c4d1a5eacf:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDM2Yzk4MmZhZDZiNWNkZDNlNmFiNzhjNjc2ZGQ3N2FiOGEyZmM1YTFkZjc2ZTYyNmEwYWQ3NzFjY2E1Y2QzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdkNTRjZTU0MDVjYzVmNDMxNWZkMDE2ODc4NzA3YjNmNjFiNDVlNWJhZWMxZGE0YzBlYTE0MzYxZTg0Y2E4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGI0YTFiNjM5MTRhZWM0YWI4YzViMWFhMDg3ODMzOWI2OTc0NDg2YTVkZjA1NDA0Y2MwZDNmNjNkODJiYjA5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDFjNDA1Y2M5OTE1NDNjODc2Mjk1MDBmMmU1ODU3MGM3MzZhZWQ5Mzk2Nzk0Y2YyYTk1MmZmZjBmNTE4YmRiNyJ9"
         },
         {
@@ -163,11 +159,11 @@
       "statement": "The resulting program and note are persisted with the OpenUI Message Protocol via writeStored/buildMessage, so the stored message can be handed to the Renderer while only its content is ever sent back to the model.",
       "evidence": [
         {
-          "resource": "repo://components/useSession.ts#L62-L66",
+          "resource": "repo://components/useSession.ts#L65-L69",
           "version": "repo-lines-v1:sha256:14b30b30cb58fc9031ccce0942aa429bd2b295a88b122c1cbe3d28c4d1a5eacf:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDM2Yzk4MmZhZDZiNWNkZDNlNmFiNzhjNjc2ZGQ3N2FiOGEyZmM1YTFkZjc2ZTYyNmEwYWQ3NzFjY2E1Y2QzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdkNTRjZTU0MDVjYzVmNDMxNWZkMDE2ODc4NzA3YjNmNjFiNDVlNWJhZWMxZGE0YzBlYTE0MzYxZTg0Y2E4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGI0YTFiNjM5MTRhZWM0YWI4YzViMWFhMDg3ODMzOWI2OTc0NDg2YTVkZjA1NDA0Y2MwZDNmNjNkODJiYjA5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDFjNDA1Y2M5OTE1NDNjODc2Mjk1MDBmMmU1ODU3MGM3MzZhZWQ5Mzk2Nzk0Y2YyYTk1MmZmZjBmNTE4YmRiNyJ9"
         },
         {
-          "resource": "repo://lib/history.ts#L38-L53",
+          "resource": "repo://lib/history.ts#L46-L61",
           "version": "repo-lines-v1:sha256:2300bfdee1cf40be90ad1f38585de9be2522c8da626be3173177163e82b0368a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjNzYxZDFhZTFiMzNiNDUyNDY4MWJmODk5MmYzZTIzOTAwZmY1MDJlNTk1NWZmNzAwYzFlMjQ3OTBjYjZmMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwNjYyMTBlYTJhYWE2OTY3MGZkNzhhZGI1OGYyZTI0YWRjNjMwYTY1MGYwNTEzZWNiZmNiNWI5MDA3NGQwZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5ODEyZTBmNWM5N2ZhY2JhM2E2ZmFiMGE1N2RlOWVkMDJiMDMzMjJjOTY1ZDlhZjliODg2ZmU5NzQ4ZGJlM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyNzk4OWNkZGZiODY4M2Q2Nzc3YmIwYmNkOTc3NGI1N2QzODg4ODQxNmFkYWY4MmJhZWE4MTAwZDM1NGUwNWIifQ"
         }
       ]
@@ -177,7 +173,7 @@
       "statement": "Provider and network failures are mapped by describeError to short actionable messages (key rejected, access denied, model or endpoint not found, rate limited, network or CORS problem, and a local-server hint for HTTP 403 on localhost), while an aborted request is not reported as an error.",
       "evidence": [
         {
-          "resource": "repo://components/useSession.ts#L67-L72",
+          "resource": "repo://components/useSession.ts#L70-L75",
           "version": "repo-lines-v1:sha256:c4d25d02090d8952af6f67196dcb40e95c4561fc9bf53cabcfde87bc8abaa16b:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU0ZWJjMjY1MDdkZWNmMDA4MTI1NzFjZDBlOGNmNDJlNzBjNGU2ODZmZWIyYmNkNjA2NjE3NzA5ODk0YzRkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWYwY2RiOTcyYTdiZmI3ZWQyNDZmOWZmNjcyMzg1ZTU1ZjQ5NjhmYzExMDQzZGM1YjY4NGQ1MWRmYTMxZGJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWYwOTg3ODdkNWFmNWU0ZWQ5ZTg5Zjg2MGI1M2RmZjNjODc2MGYxYTZmYmExMjQzNzMwNzhiMzZiZTY5YjViZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGY0ODdjYjRkZTVlNjJkYmQ4OWJhZmNmZDI2Njc4MDgxMDZjM2IwYzAyYmFmMWZkNWFlOWVlZDk2ZGU2YWJkZCJ9"
         },
         {
@@ -191,7 +187,7 @@
       "statement": "Configuration problems are checked before every model turn, so a new summary with a missing base URL, API key or model never creates a session, while an existing session is left untouched.",
       "evidence": [
         {
-          "resource": "repo://components/useSession.ts#L77-L91",
+          "resource": "repo://components/useSession.ts#L80-L94",
           "version": "repo-lines-v1:sha256:f07a706db0723c3eb616fe7f55d2519b0e09afbee2c508707cb325b5a17633e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3OTM4ZTNhOTcyZGNmNzZmOGU5ZjY5OTY2NjkwOGNmMDU2ZmE1NDRlYWM5YWM2MTcxNjdiNDg0MzRiZjc1ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MjBiYzZkOWE3ODZlMzc0NjNjMzBlZGMxNTgxN2Y1ZjMxOWE2ZWQzZjUyNGY3ZWY3OWQ5YzhlMjc3ZDQ3MWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlZmRhMDg3OTRlNzg4NGVlYTNkNjhmMmIzYTk4ZDMyYmU4ZmQzY2IwODY5MzQxZTMyMjM0ZjY3YTE5OTQ1MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlZjQyMTQ4YTUwMDYwY2Q4ZTExNDM5ZTU5YTI0YmNhOWI1NDYwODcxNDQ2M2I1YjYxYzYxYmZjNDA3NGE0OWUifQ"
         },
         {
@@ -205,8 +201,8 @@
       "statement": "Streaming text is what the UI renders while the summary is still being written: the session view splits the accumulated raw stream into code and renders it, and after the commit it renders the stored message so form and $state values survive.",
       "evidence": [
         {
-          "resource": "repo://components/SessionView.tsx#L99-L152",
-          "version": "repo-lines-v1:sha256:4ec4f307f0c9f226e23c9c9ff25050261414602304820e1f785d6bf12cd7a3b2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTc3YWIwYTEwNzc2MTk0NjgxMjViMzQ2NTUxZDBkYTUxNDk3MDVmYjQxZDEwYTI3NDNkNjU0OGJhNjU3ZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4ODNlODNhNjM2NzFlMjhjOTVmZmVmZjA2NTA3ODE3MzU1Mzk3OTBlNTU4MTU1YTk1ZGZiYzJlYjA0ZTQ2NTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4MjJlYjY3NzVlYjlmMjg1ODE2ZTNmMjA0NDdkMTNjM2JhYzE5OWJjN2MxM2FlYTNjOWM4MTIzZjY4MzJlODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyMzQ5MmQzMzhkM2YwMjVlNjFkMjk3NDBmZDhlZGY4MTMwMzdkODI1YmJhMTE4Njg5ODQ1NWZlMmJjZDYzMTEifQ"
+          "resource": "repo://components/SessionView.tsx#L106-L195",
+          "version": "repo-lines-v1:sha256:5601ca5fbafac685cf98dd9ebafe49d618c34cca931beb43dc33fac81323f4a5:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTc3YWIwYTEwNzc2MTk0NjgxMjViMzQ2NTUxZDBkYTUxNDk3MDVmYjQxZDEwYTI3NDNkNjU0OGJhNjU3ZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4ODNlODNhNjM2NzFlMjhjOTVmZmVmZjA2NTA3ODE3MzU1Mzk3OTBlNTU4MTU1YTk1ZGZiYzJlYjA0ZTQ2NTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4MjJlYjY3NzVlYjlmMjg1ODE2ZTNmMjA0NDdkMTNjM2JhYzE5OWJjN2MxM2FlYTNjOWM4MTIzZjY4MzJlODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyMzQ5MmQzMzhkM2YwMjVlNjFkMjk3NDBmZDhlZGY4MTMwMzdkODI1YmJhMTE4Njg5ODQ1NWZlMmJjZDYzMTEifQ"
         },
         {
           "resource": "repo://lib/llm.ts#L45-L61",
@@ -217,6 +213,6 @@
   ],
   "verification": {
     "by": "openwiki/0.8.0",
-    "at": "2026-11-07T09:34:41.642Z"
+    "at": "2026-11-08T08:28:07.947Z"
   }
 }

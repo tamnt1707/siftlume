@@ -9,6 +9,8 @@ verified:
 sources:
   - id: openwiki-source-7e3355f17b1feb4de5b7b2ce
     resource: repo://.output/chrome-mv3/manifest.json
+  - id: openwiki-source-1c09638f4ed2318a5896df74
+    resource: repo://.wxt/types/paths.d.ts
   - id: openwiki-source-73b5356d2812920c745c9bc0
     resource: repo://components/SettingsForm.tsx
   - id: openwiki-source-f387604c5df6a923aa92fdd3
@@ -19,10 +21,16 @@ sources:
     resource: repo://entrypoints/app/main.tsx
   - id: openwiki-source-f7a24281a6b5103146379f37
     resource: repo://entrypoints/background.ts
+  - id: openwiki-source-ead5c3bcaade748ff9805fd4
+    resource: repo://entrypoints/options/index.html
   - id: openwiki-source-6d0cd898c8e6e2f9e9bab0ef
     resource: repo://entrypoints/options/OptionsApp.tsx
+  - id: openwiki-source-a49a3eac571bda7ee4b2fbfd
+    resource: repo://entrypoints/popup/index.html
   - id: openwiki-source-cc2647d919da6467bbd4e6cb
     resource: repo://entrypoints/popup/Popup.tsx
+  - id: openwiki-source-fe2efa4d7c58b5895ccc3c25
+    resource: repo://entrypoints/sidepanel/index.html
   - id: openwiki-source-7ca0dfda383943bae04e75f3
     resource: repo://entrypoints/sidepanel/main.tsx
   - id: openwiki-source-3044b6aba8672ca1bfcf69c6
@@ -37,7 +45,7 @@ sources:
     resource: repo://public/_locales/en/messages.json
   - id: openwiki-source-49ce5f922c6d8903f5e7d073
     resource: repo://wxt.config.ts
-generated: { by: "openwiki/0.8.0", at: "2026-11-07T09:34:41.642Z" }
+generated: { by: "openwiki/0.8.0", at: "2026-11-08T08:28:07.947Z" }
 ---
 
 # Extension Surfaces and Routing

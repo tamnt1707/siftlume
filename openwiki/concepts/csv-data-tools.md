@@ -18,7 +18,12 @@ sources:
     resource: repo://lib/history.ts
   - id: openwiki-source-8fc820fe296baa60761c2279
     resource: repo://lib/openui.ts
-generated: { by: "openwiki/0.8.0", at: "2026-11-07T09:34:41.642Z" }
+  - id: openwiki-source-d5a195680a34e5c378d6b135
+    resource: repo://scripts/check-examples.ts
+generated: { by: "openwiki/0.8.0", at: "2026-11-08T08:28:07.947Z" }
+verified:
+  - by: openwiki/0.8.0
+    at: 2026-11-08T08:28:07.947Z
 ---
 
 # In-browser CSV Query Tools
@@ -64,7 +69,14 @@ sequenceDiagram
   SV->>RE: Renderer with toolProvider
   RE->>TP: csv_rows / csv_group
   TP-->>RE: rows and aggregates
+  U->>RE: change the filter value
+  RE->>TP: csv_rows / csv_group re-run with new args
+  TP-->>RE: rows and aggregates
+  Note over RE,LLM: no model call on this path
 ```
+
+*Caption: the CSV data path — from a dropped file to a browser-side tool call, and the
+re-filter loop that never reaches the model.*
 
 ## Parsing a CSV into a dataset
 
@@ -148,6 +160,11 @@ A separate rule in `KIND_RULES.csv` tells the model to describe the dataset, to 
 numbers*, and to add a filter `Form` with a `Select` bound to a `$variable` when a text column has
 few distinct values.
 
+Because a wrong example teaches the model wrong syntax, `CSV_TOOL_EXAMPLES` is parsed and
+validated by `scripts/check-examples.ts` (`pnpm check:examples`): the example program must have a
+root, no parser errors, no unresolved or orphaned statements, and every Mermaid diagram in it must
+render with Pele.
+
 ### Wiring the provider into the Renderer
 
 `SessionView` creates the provider once per dataset and hands it to every renderer it owns:
@@ -158,8 +175,9 @@ const toolProvider = useMemo(() => (source.csv ? createCsvToolProvider(source.cs
 
 The provider is passed to `GenUI` for the summary and for every Q&A answer (`QaItem` →
 `Answer` → `GenUI`), and `GenUI` forwards it to the OpenUI `Renderer` as its `toolProvider`
-prop. The Renderer's provider is a plain function map — `{ tool_name: async (args) => result }` —
-so `Query("csv_rows", …)` resolves to `csv_rows(args)` with no network and no MCP client.
+prop. The Renderer's provider is a plain function map — `{ tool_name: async (args) => result }`,
+the shape declared by `GenUI`'s `ToolProvider` type — so `Query("csv_rows", …)` resolves to
+`csv_rows(args)` with no network and no MCP client.
 
 ## Tool semantics and limits
 
@@ -238,9 +256,7 @@ the raw form/`$state` map, and `useSession` persists it into the stored message 
 `writeStored(..., { formState })` (debounced by 500 ms). On reload the same map is handed back
 through `initialState`, so the summary opens with the user's last filter still applied. The
 persistence path is described in
-<!-- openwiki: broken internal link [../architecture/storage-and-state.md] file "../architecture/storage-and-state.md" does not exist. Fix the href or restore the target, then delete this comment. -->
 [Storage and Session State](../architecture/storage-and-state.md); the rendering side in
-<!-- openwiki: broken internal link [../architecture/ui-components.md] file "../architecture/ui-components.md" does not exist. Fix the href or restore the target, then delete this comment. -->
 [UI Components](../architecture/ui-components.md).
 
 Two consequences follow from this design:
@@ -262,3 +278,4 @@ Two consequences follow from this design:
 | When the tools enter the prompt (`toolOptions`), CSV kind rules, prompt caching | `lib/openui.ts` |
 | Provider creation and wiring into the Renderer, state persistence | `components/SessionView.tsx`, `components/useSession.ts` |
 | Renderer wrapper and error display | `components/GenUI.tsx` |
+| Validation of the prompt examples | `scripts/check-examples.ts` |

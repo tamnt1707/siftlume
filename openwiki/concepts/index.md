@@ -1,4 +1,6 @@
 # Files
 
 - [In-browser CSV Query Tools](csv-data-tools.md) - How a CSV file becomes a dataset the model can query with Query("csv_rows"/"csv_group"), and how filtering and grouping re-run locally in the browser instead of calling the model again.
+- [Inkmark Design System and Appearance Tokens](inkmark-design-system.md) - How the Inkmark design system turns one Appearance object (color preset or custom pen and highlighter, corner style, reading font) into the resolved palette, the CSS variables of the app chrome, the OpenUI ThemeProvider tokens for the generated UI, and the shared chart and Pele series colors.
+- [Localization and Translation Workflow](localization.md) - How the extension is translated — the i18next-based app UI in locales/<lang>/<namespace>.json, the separate Chrome-level strings in public/_locales, the English source-of-truth typing, and the pnpm check:i18n gate that enforces key parity, CLDR plural forms and placeholders.
 - [OpenUI Lang Program Model and Library](openui-lang.md) - How the extension defines its OpenUI Lang component library and custom actions, builds the summarization prompt from that library, parses and validates the model's program, and handles the three output modes (full program, edit-mode patch, inline prose plus code).

@@ -28,9 +28,14 @@ sources:
     resource: repo://lib/settings.ts
   - id: openwiki-source-e90a9845d58de04e0ad54095
     resource: repo://lib/summary-example.ts
-  - id: openwiki-source-23775c3de52f3ab95a13cb8b
-    resource: repo://README.md
-generated: { by: "openwiki/0.8.0", at: "2026-11-07T09:34:41.642Z" }
+  - id: openwiki-source-5b54a58d1b51cd490b0e7162
+    resource: repo://package.json
+  - id: openwiki-source-d5a195680a34e5c378d6b135
+    resource: repo://scripts/check-examples.ts
+generated: { by: "openwiki/0.8.0", at: "2026-11-08T08:28:07.947Z" }
+verified:
+  - by: openwiki/0.8.0
+    at: 2026-11-08T08:28:07.947Z
 ---
 
 # OpenUI Lang Program Model and Library
@@ -49,9 +54,10 @@ Three files own this domain model:
 | `lib/generate.ts` | The turn loop that streams, splits, merges, validates and repairs a program. |
 
 Everything else (`components/GenUI.tsx`, `components/SessionView.tsx`, `components/useSession.ts`)
-<!-- openwiki: broken internal link [../architecture/ui-components.md] file "../architecture/ui-components.md" does not exist. Fix the href or restore the target, then delete this comment. -->
 consumes these APIs; see [React UI Components](../architecture/ui-components.md) for the React
-side and [In-browser CSV Query Tools](csv-data-tools.md) for the tool-gated part of the prompt.
+side, [In-browser CSV Query Tools](csv-data-tools.md) for the tool-gated part of the prompt, and
+[Mermaid Diagrams](../integrations/mermaid-diagrams.md) for the diagram renderer behind the
+`Diagram` component.
 
 ## The program/prompt/parse/render chain
 
@@ -148,7 +154,8 @@ parser stable for the lifetime of the extension page.
 
 ### Custom actions and their contract
 
-Two custom actions are registered on the library:
+Two custom actions are registered on the library. Both are declared with `defineAction`, which
+gives them a name, a description and a Zod schema for their parameters:
 
 - `HighlightInPage(text)` — scrolls the original web page to an exact quote and highlights it.
 - `CopyText(text)` — copies text to the user clipboard.
@@ -195,7 +202,10 @@ summary prompt adds three more worked examples on top:
 | `DIAGRAM_SUMMARY_EXAMPLE` | `lib/diagram-example.ts` | A small Mermaid flowchart inside a `Diagram`, with no styling. |
 
 All three are complete programs that were validated against the library with the parser (and the
-diagram one with Pele), so the model sees examples that actually parse.
+diagram one with Pele), so the model sees examples that actually parse. They are the first three
+entries of the `examples` array passed to `library.prompt`, after the upstream chat examples, and
+they belong to the **cached** half of the prompt: they are assembled once per source kind and
+reused for every later summary of that kind.
 
 **The task half.** A `## Summarization task` (or `## Q&A task`) section is appended as a bullet
 list of rules. The rule sets are:
@@ -349,7 +359,41 @@ takes the model's code as-is.
 
 Pele itself is configured with `links: false`, `images: false` and a `limit` of 20 000 in
 `lib/diagram.ts` — the model's output is untrusted, so a diagram cannot contain a clickable link
-or a remote image.
+or a remote image. See [Mermaid Diagrams](../integrations/mermaid-diagrams.md) for the renderer
+details.
+
+## The prompt-example check
+
+Because a wrong example teaches the model wrong syntax, the examples embedded in the prompts are
+not trusted to prose — they are checked. `scripts/check-examples.ts` (`pnpm check:examples`, part
+of `pnpm check`) parses every embedded example against the **real** library and renders its
+Mermaid diagrams with Pele:
+
+```ts
+const parser = createParser(library.toJSONSchema(), 'Card');
+const examples: Record<string, string> = {
+  'summary-example': VISUAL_SUMMARY_EXAMPLE,
+  'chart-example': CHART_SUMMARY_EXAMPLE,
+  'diagram-example': DIAGRAM_SUMMARY_EXAMPLE,
+  ...Object.fromEntries(CSV_TOOL_EXAMPLES.map((e, i) => [`csv-tools[${i}]`, e])),
+};
+```
+
+For each example the script fails it when:
+
+- the parsed program has **no root** component,
+- the parser reports **errors** (each shown with its statement id),
+- there are **unresolved** references (used but never defined),
+- there are **orphaned** statements (defined but unreachable from the root), or
+- a Mermaid diagram inside it does not **render** with Pele (`links: false`, `images: false`);
+  a Pele failure is reported with its error code, line and message.
+
+Any failure prints `✗ <name>` with the list of problems and the script exits with code 1, so
+`pnpm check:examples` must stay green. Note that the check is stricter than the runtime
+validation: it also rejects **orphaned** statements, which `validateProgram` does not report.
+
+The check covers the four kinds of program text the model is shown: the three worked summary
+examples and the CSV tool example from `lib/csv-tools.ts`.
 
 ## Where to change what
 
@@ -361,3 +405,4 @@ or a remote image.
 | A new standing summary style | `lib/refine.ts` (the style) and the `STYLE_RULES` table it feeds |
 | A new worked example | `lib/summary-example.ts`, `lib/chart-example.ts` or `lib/diagram-example.ts` |
 | The repair loop, the merge, or what is streamed | `lib/generate.ts` |
+| The guard that keeps the prompt examples valid | `scripts/check-examples.ts` |

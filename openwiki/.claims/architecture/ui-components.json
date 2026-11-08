@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:27c968bc9a7b73130e17ca75ff41097631c06aae806a3faf1bcaf5237228e02f",
+  "claims": [
+    {
+      "id": "claim_17b133e7163f4b3185290dee1f7b4fff",
+      "statement": "One App component serves both the full-page result tab and the per-tab side panel; the surface prop only changes the layout class, whether the URL is rewritten, and whether panel-scoped requests and the tab target are consumed.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L26-L45",
+          "version": "repo-lines-v1:sha256:d5b987e33ac0775d4852ccac867392e0afe1aded810381fc0e30cc1421665ead:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1ODY3Y2Q0YzBkZjZmYTNmMzAxMDVmNTUwZjNkZTQ4Mjg1NDVkZjZmYjRhMDljYzA3NDkwZThiNjgxMGE4YzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4ZDAwNjQ3OGYyOTFiZjYxZWQzYmQwOWFmMzk0OWQ4NDI0NTI2YWU0MTg0MTM0ZDYwMzI2NTM4NzA2NjZlZGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiMWJmOTYwOTYyMGNkNDk1NDgxM2JmNzczMmIyNTEyZmJlM2ViYjViNzA4ZjBhYTQ1ZDY0YTRiOTE4YzYyNjIifQ"
+        },
+        {
+          "resource": "repo://entrypoints/app/main.tsx#L11-L16",
+          "version": "repo-lines-v1:sha256:2beafdbb6df165f3db7481626092c00b96242c6c196526031e4f2e4e5e8631f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTllMGE0MGNlZGIwYjhjNmFkNmJlNWNmZjEwODRmNWZjNjE0ZTZhN2UwOTE0Mzg1OTAxY2I4YzVjNmU1NTUyMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://entrypoints/sidepanel/main.tsx#L11-L16",
+          "version": "repo-lines-v1:sha256:40cef2f02e73e477a6f1af89d82307a4b043fe5e2e61de06a22c9afa4cc8eea9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDM3ZjZjMDc0ZTQ1MmU3NjdjZTMwYmYyM2MzOGI4ZjM4ZmM4NTkwNGQ5NjAyZWEyNjA2NDU0MjI4OWJiZjFlYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb02cc9f553b464ebded57a0517f35ee",
+      "statement": "The page surface handles routes ?request=<id> (consumed once via takeRequest, so a reload does not re-run it), ?session=<id> (looked up in local:history) and ?view=history, and rewrites the URL to ?session=<id> with history.replaceState while a session is open.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L100-L127",
+          "version": "repo-lines-v1:sha256:b216fcc9d7d663b1dff9ccdfb65a4a561dde916fb18da9c7f667cbd11d31274b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwYTdhMGIyZTliZDAwYmVkZDg0ZTY3NWRjMjU5NDM4MjAwNGE4NTczMTM5MzI4NWExNzllNjJhM2Q1YTU4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNzQ2OGZlYjIwNzBlNGRkZDJhM2VlNmU2NmFkOTE5OTA1ZmRhMmViZjZmMWIyMDBhMTcwNDQwNzU1Yzk3YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiYjI2MGJhZWViZTc4ODE3ODc3Mjg2YzAwNTQ0NTg2MzY3OWJiNDg0ZDQ4MzcxZTc3MDI4ZWVmOTIwMzQ3YTEifQ"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L28-L36",
+          "version": "repo-lines-v1:sha256:39b0906ffdad9d6ef7ce8c180438a47e5c25545a7872db70a328a3b096cc3b74:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjMWM0MDA3OWQ4MDc0YjYzMmEyNmM3MzViMDE4NDAwNDQ5OTA3NmM2MWZmNzk5M2JiYmM0MzI4ZTRiNWM4MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg3MmQ1YWI0MzI1N2YxZjFiMDA2M2QzOTk0NDhkNTYyOTg4NmY1NzA4NmRhZjk2OWM4MjllMWMwMDNmYmJlZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGIwNDE1NDUyZjU0ZDk5OTE5MWE3NDBkNDllYjA2NTNiMDRiYWE2NDkzZDg4NWI3ODMzNjM0NjgzODNlZWU3NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjU5ZTI5YzY4YzU3ZTJkMmQyNzNhNmI3MDFhMGFiMDc0ZmUyMzdmZmJmNmNhNDRjYmExYjVhMTY0MDc5NGQ4OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c14ff2650f84479f989643858226f3bd",
+      "statement": "A side panel may only display summaries of its own tab: opening a session whose source tabId differs from the panel's tab opens it as a full-page tab instead.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L137-L146",
+          "version": "repo-lines-v1:sha256:f8685cc60505916f4333016dbdc2f112e1fcd7cd0f1e1b5115ca68b37f0b204e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhZWNjODIzZTVlZjc3MjQ3MzlkMWU1M2RmMzFlOTA5NThkNTMzNTUzY2FiY2RiYWVkMGM3OWVlM2M3ZTI5ZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2OTA3NjA4NTJlNDcwY2IwMmZiYzZhOTMwYTEyZTdiNzRjZjMwZDZiMWE4YjNmOWFiNzMyNDY5YjBlNDQ3OTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiNGY1YzYyOWQ0ZDBkZTVlZjQ1ZmNiYzMxZjNmOTc4ZjVhMzY1NzE2YjJjYzY4ZDM2MjVhNzA1MzNkNzY5OGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c494cc8527174c7ebe370f01d26ce4f5",
+      "statement": "useSession is the sole owner of session state and exposes a phase state machine (idle, extracting, summarizing, refining, answering) in which each phase change aborts the previous AbortController, so only one model request runs at a time.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L11-L50",
+          "version": "repo-lines-v1:sha256:d35fd52bde67e8bd56131d405605fdfe96944f52a5b27578c8fad2bf5c23c464:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiMzlkNGE1ZTdkNWJiY2JlNzZhMGY3YTFiZjA2MWJjMDE3ZDcwMzI5ZDcyYWE2NTMwYzhhMjkxOTUwNmU0MGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZThmM2NmZjczMDEzNmM0ZWIyZGFmNWVmODFlNTAxNThjMmQyM2YwYzE5ZWJhNjY5NjQ2M2Q0Y2Q3ODI0ZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4MzVkMjUwYTk4MWU3NDk1YTllMTMyN2NkZGNkZmMxY2QzMWIwMjhlMjYxYzg1MTM0NTlhZjI4YzBjOTc4NTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d1930b18c914488493d841b28a933630",
+      "statement": "Every model-bound command in useSession (start, refine, resummarize, ask) checks configProblem(settings) first and surfaces the configuration problem as an error instead of issuing a request that would fail.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L50-L54",
+          "version": "repo-lines-v1:sha256:8e7e7bee20d9722f966ebb20aec613c5f1e265a6ac9283ae5600713df1f41de0:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IzOWQ0YTVlN2Q1YmJjYmU3NmEwZjdhMWJmMDYxYmMwMTdkNzAzMjlkNzJhYTY1MzBjOGEyOTE5NTA2ZTQwYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDgzZTY5YTRlMWNhYmI5YWUyNzIxM2RiN2E4ZTljZTJiYTBhMDYyYTNjYzgyNjgxOGVhYzdmYmMzNGNjNGVhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDYyOTIyMTQyYjFmNWYxMDM4ZDNiM2EzNGNkY2NiZjI1NTA2YjQwMjIxZGU1NTEyMTkwYjdhM2E3NmU5YTllMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2IxM2U3OTJiZjk3ODhkNWFmMTcwN2UzYzUxMzIzZGNkZjlkZTMzNjAyYzM1MTQyN2MzNzUyN2ViMGZiMTU4MSJ9"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L84-L100",
+          "version": "repo-lines-v1:sha256:adc124edb53f43ea61b89b5216b481e4a4ddc66789000b129b366f9e28162f0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjNDQ0NjQ2Y2RjZjQxZDFkNWUwZGQ2M2I5N2M1MGUxMjY1NTE0MmZkMDMxNjFjZDY4NDhjZTdkYzMwOTJjYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjYWE1NmMxOGI5NTM4NjMyZGMzNmJlYTEzODdiZmM3OThkYjQ1Njc2NzFlMWZiMDRlMzhmODI5YjE2NTU5NGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4NTIzMDE3MmE0ZTdlYjQxNDY3N2VkNjIzZWVkMjBlNDY1ZjQ2NjIxYTY2OTAwNjhjMmUxMDNjNzE3MDczZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlYzNmZjk5OTJiZmVjOTc0ZGU4NWQ5MWVmZmQ5NGIwOTYwYmQzNDE2Nzk2NGNmYTVlNDhmYTY3ZTdjZGU4MGIifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L203-L209",
+          "version": "repo-lines-v1:sha256:b6b68eb77722932837972516f4cddd0b72c3655404dc070cf6bd3bb2cf64a14a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmY1NDllN2YyNGU4MmNjYzhmYzU2MGI5MDRiM2VkOWEyMzViMTRjZWM0YmEzYWQxZmU0OTcxZTMyOWQyMTU3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhhMTdjYWM3NTVhNTdjZWM5M2RkZjQzMWRlZDNkMTIzNzI1NzVjNTE3YWMwYzFkYjUxNDYwMzlmNzMzMzRkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWY2OGQxNWQ1Y2Y3OGRhZmVhYTIwNTg2Y2NiYmUxYTlhNzQxOTRkOGZiZWY4YWIyZjE4ZTgyYmU0MzQxODRlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmJhZjgxZmViMmYyZWMxYWE5NGZjNWQ3ZDM2MjAwZDg1ZmFiODZjNmQzMThiODZlZDhkMGNlOTIwY2M3ZGUxZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_30715a6ac0c54e68938437a181e0f719",
+      "statement": "useSession persists every committed session change to local:history and keeps form state separately, writing the Renderer's $state back into the stored Message Protocol message with a 500 ms debounce before saving.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L212-L245",
+          "version": "repo-lines-v1:sha256:ed74b26d17e650bca508ccc99510b617e32c6bcf4737d90fa1444a93a5a1c2e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyYjIxNDRkMTlkYTZiYjkyYTY5MGRiNmQxOTY2YjQ4MDhmNmVjNzU0NmFjYmQwNTJlOThjMjIyMWRiOGE0NDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNGE2MWE2YzUwOGVhZGZhYzViNDc3MmJiNmNlZDhmMzk0MDYzNWU2ZjU2MGVjYjI0OWEzZTdmZTcyMTk2NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxYzQwNWNjOTkxNTQzYzg3NjI5NTAwZjJlNTg1NzBjNzM2YWVkOTM5Njc5NGNmMmE5NTJmZmYwZjUxOGJkYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmNmI0NjA4MjRiYTZhYTEyZDdkNjFkM2Y1ODkyMzI2MWNjZjJjMTg4YmQ1YzJhNmE2ZDBiNTA2NTU0OTEyOTQifQ"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L26-L30",
+          "version": "repo-lines-v1:sha256:e5108979a7abb0ddc50d6bdb0f2af15d9f81623fa37f7e507e73b1f7bf416234:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjVjNWVhN2ZlOWM2OTU2NmFhNjhkMTFiNzM3MGVmZTk1MTgzMjYxMzA2YTNkNTk3YTk1NDRjZDljZGQ5OWM5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDJjZjExOTdiMDk3MjEwNjIwNWVmYWNiN2UzODU3OWE2Mzc5MmE0NzNhM2U2NjFhMTEyYzk1NmY0YzcwZDE1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjZlNzgyMGJkOTRkYjgyMjhlNjdmNTE0ODNkYjNmMjUyMTY1MzdhNDg0OGM2OWE2NzhkYjYyZmY1NTYzYTRjNSJ9"
+        },
+        {
+          "resource": "repo://lib/history.ts#L49-L66",
+          "version": "repo-lines-v1:sha256:18369527b1cfec185f6880843fc25c72f2661cdef8fae8a3a9dc9ab063329b96:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxYjg5NDhiMGFiYmUxYTY5MGM4NjdhMDdkMjFiODc2ZmQ4OWM3YjhhN2YyNjM5MjZiMmFlNDJmN2M3MDAyNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4MDA1N2RmYmJlYzg4NmYzYzk1ZTExNTEyZWM4MjA4ZTQzYzk0ZTdjMTBkMmNhMmQ2NWE1NjBkM2YwMmVhODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_552e0e9682fa41b3b5c06ed7a337711c",
+      "statement": "Opening a stored session that has no summary yet re-runs the summary, so a session interrupted by a closed tab finishes when it is reopened.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L246-L259",
+          "version": "repo-lines-v1:sha256:97f5764b44174961fbc093986b53ddeb06ff61f7a30cdd403f68492444ceaf50:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkODMxMmYwZmVhNDY3MmUyOTMyOTM4NzI0OTMxNGY3M2RkNmQ5MTRmNjJjZGU3NGE3OTlhOTFlN2Y3MTdmYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlNmEzMGViMzk2NzVmOWUwMGI4ODY2YmM0ZTI5Y2I1NTI1ZjM5NzBiNTQzYzhlZWNhNWJhZjgxM2RhNDJlYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5Zjg4MGYxYmVhMTkzN2Y4NTZhMDc5YjkwMzk1MjA2ODlkZmFmODA0ZWQzNGRlY2I5YzNmZWIxZjM0MDFmODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fabd924872914e1d87060186a46af9a0",
+      "statement": "SessionView renders the streamed program while the first summary arrives but keeps the previous program visible during a refinement until the patch is merged, and it keys the GenUI instance by session id so the Renderer resets when the session changes.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L143-L152",
+          "version": "repo-lines-v1:sha256:3a7a5546c686de67413fb4d0ad9597bb5d06f3aaa186c295b2667f45b73ffabc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1YzkyY2ZhOTBjM2I0ZTQzMDQ2YmNjMDFiZDUwZTNjNjMzOTkyNDY5MmE0OWUyZjUzN2ZiNjM0MmI4YmYzMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4ODNlODNhNjM2NzFlMjhjOTVmZmVmZjA2NTA3ODE3MzU1Mzk3OTBlNTU4MTU1YTk1ZGZiYzJlYjA0ZTQ2NTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmZjc1MjljMDBiYTkzNDFjNzllODVjMTU5NTc2YTlkYmM5ZmI2YmIzMzVkNjgwNzJjMzZjZWQxZDg4MDkxMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyMzQ5MmQzMzhkM2YwMjVlNjFkMjk3NDBmZDhlZGY4MTMwMzdkODI1YmJhMTE4Njg5ODQ1NWZlMmJjZDYzMTEifQ"
+        },
+        {
+          "resource": "repo://components/SessionView.tsx#L96-L101",
+          "version": "repo-lines-v1:sha256:1210789230b6d8253b3e099f04ac45152bf5fdc09d0822d21358dda6ffb4288a:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWY5ODk0NjJlYTExNTQ1ZmEwM2Q0MjczMGUwODQxZDdkMzY1ZmY0OTQ5NjFiNTkxY2QzYmMzZWJmZTg4ZWM4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTFlMzcyNWRhMDAyYjQ2ZWQ4YjRkZTg4MDAzYWQ5NzEwZGNhZjE4ZDU3YzQ3MDFkYzNiZWZmMGIyYzVjYjEzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzhkMjIzOGYzOWY0NmQ1Y2IxZmM2NmVkNWI1M2IyOGQ0NzljZjQ5OGQ2M2M4ZGM3MWQzMjU4YTA5MDc1NDZiZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_65e918443470422789bee247aae08294",
+      "statement": "The one-click refine chips call ctrl.refine with the model-facing prompts from lib/refine.ts, which runs the model in edit mode so only changed statements are merged into the current program.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L155-L176",
+          "version": "repo-lines-v1:sha256:cb4a56fd4650964a56dd62b5858e6b21194144bad213b54e6dd7a0ac7489047f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4ODNlODNhNjM2NzFlMjhjOTVmZmVmZjA2NTA3ODE3MzU1Mzk3OTBlNTU4MTU1YTk1ZGZiYzJlYjA0ZTQ2NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkNTkzNGY1NDM2MmU2ZjM5NmY0ZDBlMDNkNDUxNGQ0YjdjMzQwNjVmZmZlYzUwZmMzNTEyNGM3NWQxYzU0M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5NmM5ZjJlOTE3ODdmZDNkZjllNDVlZjQ2YjNiODE2YThjOTY3OGJmNWVkMTZjNWI4MmRjZDRlNmFhMzA1ZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0MGYwZmQzYWU4M2FmZTQxZDY1NzFkYzE3MTAxNTBkYjYyMWFiOTc0ZDc0NTk3NTc0YjVjNzdhNDg1Y2FhNWYifQ"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L131-L163",
+          "version": "repo-lines-v1:sha256:5722ae69ada7facfd0ce78d82b7940d485ea266d99b3776f554a8a1b17b235eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MDZiMjU2NGI4NTgzZDkyMjM5ZTg4YTA5OTgyYTBhZWU4ZjQ3YmMwYWI5MTFkMDhmZDhhYWU0Y2M0M2IxMDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1ZDhiYzY0NTYxMWNiOTlmMWNlNTBjZjk3MzNmZWJmYWNlYTc2MGM2ODZmYTg1MmEyMDQ5NTVkZjRjZDE4MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwMzY2MjRjY2ZkOTQ0Y2RmMjY5MTMzYjlhOWUzYTNjYWQ2NjEzMDY3NWFhMDI4ODkwNzE5YzgyNGE2MDM2NjQifQ"
+        },
+        {
+          "resource": "repo://lib/refine.ts#L14-L20",
+          "version": "repo-lines-v1:sha256:676d775c3ba724afd309e21d4146498d6c825428edd41f78a98d96ae76921c2c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTVkYTkwN2VhZWFjY2MyODgxODFlYTk3YjAzYmM5ZmMzMTc1YmQxNjg1ZGM4NTIyNzcxZjIyNTNiMjc4NzZkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzAxNTdkNDliNmU5MDlmYzRiMjdjYzY0ZmYyNDM2MjAyMDk3NWYwMjJiYjRiZTA5M2U5Yzc0Njk0ZTBkNzA0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTgzOTZiMDE1YWM0NTNiODllNmI0NDdiZDkyYzZjOTM3Y2I2OTJjMTJmZjczNDIxMTYyYjM5MWJiNGU1NGIxZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cfdab5af6f2f4db2aa89487229edd2a0",
+      "statement": "SessionView's onAction switch handles exactly four renderer event types: continue_conversation (sent back to the model as a follow-up question with any params.context appended), open_url (opened in a new tab), HighlightInPage (focuses the original tab and highlights the quote, only for a webpage source with a tabId) and CopyText (writes to the clipboard).",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L64-L95",
+          "version": "repo-lines-v1:sha256:d80d1536eccd25ed91e0d5c2c12d71d8e30a19644d26a6b92df109bcffce5f8f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2NDM4YWQyYmQzNjIxZjhiYWRlMTIxNzM1Y2NjZDE1YjRmNTI2N2UzYTY4N2EwNzlhM2RhZWI4YjIzMTk5NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwZTdhYmYzZjNjNDExNzE2YTA1MjgwYTg2ZGI3NjVkNGRiNmI1OGYxZTQ2MDcwZmNiZTM2NThlNGRjMjAzODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4MjJlYjY3NzVlYjlmMjg1ODE2ZTNmMjA0NDdkMTNjM2JhYzE5OWJjN2MxM2FlYTNjOWM4MTIzZjY4MzJlODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_61870164c01b440ea2bd9a6aa82162ba",
+      "statement": "Custom actions must be triggered as a custom_action step inside an ActionPlan ({ steps: [...] }); the legacy { type, params } form is silently dropped by the Renderer when type names a registered custom action, so the click never reaches onAction.",
+      "evidence": [
+        {
+          "resource": "repo://lib/library.tsx#L186-L201",
+          "version": "repo-lines-v1:sha256:90b0fc81d41198509e794c2b80a9ba0a0598c9b20cdefa4462f16224df6244cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzYzMyOGYyMmNjMjYzNTZkNWY4YmE2ZmJlMDZlMmI0YjllMWE2ZGU1NTU3NTg5YmVmZTNlN2NiMjdmMTM4NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNTc3OWIxNjg4YzIyNDRkNDE0ZjQ4OGZiMzg3ZDQ5YTA2YTg3YzY0MWY4NmU5ZWMxYmNmMDNiMTUzMTAyODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2MGE3YTM4MjQ5NTVhYmUxNmZjYzczNDk4NzJjODA3NGU5YmVhZWZhMGQ2MjQyOWVjODg3YTMxNDFmNTMxYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkNWE0MTc3YTE1NTg4MGNmZWY5MWNiYzYyMzgwNTE0ZjdiODUyNzM0MWJkMzg5N2MwMTIwYjA2ZjAzNjBmZDMifQ"
+        },
+        {
+          "resource": "repo://lib/library.tsx#L36-L43",
+          "version": "repo-lines-v1:sha256:61855453e69662102d59b9125803153608687d0cdf00524ec05ab237dec7a305:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmQxOTE5YjE1YTljN2FlZGM3NmE0ZDM1NjNiMTk0ZDNhOWMxZjg2NGNiNjE5ODNiOTkzNTQ4M2ZmNjY4ZjQ1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGEyZGZiODczNjRkYTllMTY5ZTMxMWI0YzM4ZGZhMmQ1NDA0ZDk5Mjc3ZTJhZDQ1ODUwZjI0OWE1ZGY3ZTc0ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a4a1de1517047919a6443ef3baca497",
+      "statement": "The OpenUI Renderer does not execute custom actions itself: it evaluates the action plan and emits an event to onAction, which the app handles; for the custom_action step type the event type is the action's own name with its params.",
+      "evidence": [
+        {
+          "resource": "repo://lib/library.tsx#L14-L16",
+          "version": "repo-lines-v1:sha256:bb69096f02f2cfda28ade434e557d3603f9b3e43546e98641d3a6f128e376607:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzVkNWUzZDVlNjY2NmQ4NDExOTY2MjA0YTRhNzUyMzdlMjM1NzMyMzAyZmQ3ZGFmNTFjZmMzNjQzYmIzNDlkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE4MzZjZDQxMjc0ZWJhYWE0YjAxNzk2NDQ1Nzc1Y2Q5YThkNTg5OTI5YzNmOGQxNzBhZGQwMzg4NzNjZTZiMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWQ3NGM0M2UxOTI2YjQyN2I1Y2I1Y2Q2NjhmOTlmYjlmOWQ3YzgxZDRlNmYwMjE5ZWEwYjlmYWQzYjQ2MDIxOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2Q4NDBlYjc4YzZhZGI2MTdiMGQyMmZhMTAwNGQzYjFjOTNjYjQ3MDAyZjVkMTIzMTgwM2ZjZTUyOTk0YWNmNyJ9"
+        },
+        {
+          "resource": "repo://node_modules/.pnpm/%40openuidev%2Breact-lang%401.1.0_react-dom%4019.3.1_react%4019.3.1__react%4019.3.1_zod%404.6.7/node_modules/%40openuidev/react-lang/dist/index.mjs#L790-L800",
+          "version": "repo-lines-v1:sha256:4c2e4708b599d07d9cfb9ae41b7f2d770a0b6639483694b24d001dbd881b3ebd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5ZWJlNzMxOGI3MzE1NTE5Mjg4OTlmOWU4N2Y1OTRmMjlmNTAxZTYwNzE1MzJlYzE4MDJhOTI1N2RmOTVmNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0N2Q0ZjkyOTBjZjNkMGZlMjRmOGNmNTFmMTA5MWU4MzFhYWQxNDViMWZlZjgxNTEwNTA5NTIyNDg1ZmExZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUyYzBiYjVjZDZkYWJiZGRiODE3MDViMjA2MWJkMGQzOTJiODViM2NiMDhmYmEyM2ZjZDkxZGNiM2QxNmYwYzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkZWExZTMzOWNmYWQwYzYyMDIwMjEwZTVhOTM0NjEwMTQxNjVhY2UwYTM3ZjNkNTUzNWZlNmUzZjdmZWEyMjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a8a1ebb869242929d9e7fb0d936cc05",
+      "statement": "GenUI wraps the OpenUI Renderer bound to the app library and shows runtime/tool errors in a collapsible list, filtering out warnings and parser errors, and shows nothing while the response is still streaming.",
+      "evidence": [
+        {
+          "resource": "repo://components/GenUI.tsx#L20-L52",
+          "version": "repo-lines-v1:sha256:632ef607ec1153eb063d323aef1b1b77ce968f0a6a583cd621d87c00e68a8383:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZTEyOTYzMDU3ODAzNDliYTU5YTM1ZGMyZmUyZjQ4MzYzZjY2MzdmNTBmZTBjYmViNTIyZGQ2Yzg2NDk4MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4YmFhMzRjNDQ3NThiMDlhODIyNzQ4OWE5Y2Q0NTRkMjEyMDNmM2RiYjA4ZTQxYjI5N2NmMGM0ZGE4YjI1ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2371054457ea441f8c3f5d1d52eef17f",
+      "statement": "SettingsForm defines five fixed tab ids — ai, summary, appearance, advanced and about — and is used both as the whole options page and embedded in the result view via the embedded prop.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L59-L77",
+          "version": "repo-lines-v1:sha256:bc5364501fa24b2dfbadc5a27afdb5db68f9915edeefebcda70aec44fb7b7249:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNDQ3NjE5Nzk2ZDM1ZGViY2MxNDUzYTliMzA4MDI1NDZjNDQ2NzExZDc5YWY1NTY0OGE1M2ZhY2VmZjdlODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0OTRjMzVjZDRkNzYxYjU5ZTAyMDBhY2VmZjU1NzdhOTVlZmIwZjQ4YjE5MzNmNjE4NTljZTU1YmRlN2NjNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlZjk5NzNlMTE0OTcyYTFiZDUwNjRmNTQ0OWIzNzY4OTBkYWI3OGNkYmM3MzE2MGJjNDUzZWU5NGE1NjMxZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyYjdiZWM3MTQ5YTA5ZTgzNjJlZjdkZGQ1ZDBhODgzOGYzYjA1OWFjZjg5ODYxNzM2MmNjMTlhMGJjZjZhMjkifQ"
+        },
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L196-L198",
+          "version": "repo-lines-v1:sha256:56f3f6344da6c90018f3cdc1abff168d2d00511e54d9faafa7c159162576cf66:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGUwMDYzOTk3NmZhNzYzMWE1ZGJkMjdlM2U0Y2MyMjdiYjRjMzcxYzc1NWU2NWU3OWQ0OWRkMzAwZWQ4ZjQzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQ3ZmEwY2Q1NjNjODY2OGFjNzc2NmExNTE1YzkxZTM1YTRmMTE4NTVjYWRhNzY4MzlhNTY4ZDEzNWVjNmU0ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzc5NzhjNmM0YzNlZWJmYWU2ZmNmNTljYjBiMGM5ZDFjYTc5YmI1MzcyMjc0ZTIzNzcwMjIwYmFkMzFhNzI3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2MzMmI5YTc1N2U4ZjJiYWQ5MmM3ZmY2MmVhMzEyNGVmMGQ4NDAxOGE4MTc3YzMxNjRlMTIyNWJmMzkxOWUzOSJ9"
+        },
+        {
+          "resource": "repo://entrypoints/options/OptionsApp.tsx#L1-L5",
+          "version": "repo-lines-v1:sha256:d0425974d92da7a45b61bf80372a133a15a6bf7fd2c12273e1382b3c45280179:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBkMTI5NDQxYzUwMjljZDdkMmIzZGU3NTUyZjQ5MjAxNTdkNzViNTA1NTU1NDc1NzVlOTE3YWE4MjA1MjZkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2813e5d2a464d148f55c9f1eba06dc6",
+      "statement": "Settings edits are a draft held in SettingsForm's own state and written to local:settings only when Save is pressed, except the interface language, which LanguagePicker applies and stores immediately.",
+      "evidence": [
+        {
+          "resource": "repo://components/LanguagePicker.tsx#L12-L22",
+          "version": "repo-lines-v1:sha256:74d99d2a144ece23115dd33e1551f39e8275352d196c14a4c49787e4c91105d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MjFhZTFjMDg1NTg4OTFlMDVlMmYyNWE4YTY1ZDEyY2ZlMDgxZmNjMTY5OGVlOWZlNGQ4YzkwYmQ5MDY3NmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MjE2ZThlOWMwYTFhNjhkMDZjMmZiYWE1ZmQyMTM5NDgyYjhlZmQwYTE5MzE1YjkxNWU2Y2NlODQ5ZDg5ZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzNGRkZjlhZjBjZDI3OTU1MTk1YWIxOTVhNzAxNTI0N2FjZDJmMzYzNjZkN2Y4MWQxYzU3ZGEwOGQyMmU3ZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyNWVjM2I4NDc2OGFhYjExYWY1ZTM4MzQ2MWNiM2M2MjRjMWE4Njc1NTZlMjViZmE4ZjA0MDVkNjk4MDQ2MDcifQ"
+        },
+        {
+          "resource": "repo://components/SettingsForm.tsx#L160-L172",
+          "version": "repo-lines-v1:sha256:8b0f29e1e80b0a5bf8e8be4aabb25e1b861d3aed1c1e3dcd583e5d940bca0cb7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyZDExY2FmNDNlOTdlZjM2OWU2YmVlZDFhMjY4YmQwNTgzOGYyOWI5ZGQyNTRiZjY5YmE2NDg4NDE0NzIzNGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjZjg3MTJkMDdlNmZjYmI4ZjAyNGQzMTM0MWU0OTUxZmJhNTRkM2I3OWZiY2YxNDJiZjk2Y2U0OTkzMzk2MTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYjMzODE5YzMxNTQzMDhjNDNkMDU2NjBiMzc1MDkwMDFhODRiYTI2YmNlNDMzM2QxYjRkOTE4OGYzYjFmMmEifQ"
+        },
+        {
+          "resource": "repo://components/SettingsForm.tsx#L76-L80",
+          "version": "repo-lines-v1:sha256:f9df631fb4dca8a3957b68089a36ce775570f82689ec543c0f72006251a233ac:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjY2MDg4NDg3Y2I4OWZlZDQ0Yzk4NTlhYjQ5ZWI3Mjk4MTMyN2MwZjhiYjRmMTE5NTM4YTljMzdjOTg4NTBhYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQzZjIxNGFjMDc3NDNkZWVjMzNhMmRhZDIxZDdiZjk0ZGFjODY0MTQyMjY0YWFkNzVkMmU5MzE5OTJkODkzMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_217f5fd45c4e487bb312ac0fca281638",
+      "statement": "The AI settings tab requests the provider origin permission synchronously inside the \"Load models\" click before fetching the model list, and shows the cached per-provider list first while a background refresh runs 600 ms after the key or base URL changes.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L104-L125",
+          "version": "repo-lines-v1:sha256:52550e8a5aeeaf1a08ebf1cd261d2951eea4e076f2c97b3582fade4b70d18d57:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNjBkYjE0NzE4NzNmZDdmNTEwOGI4ZjMxNTY5MjI4MTNlNjM5MjRmZTZlZDZhOTBjZTIyOTJlODA0OWRlZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4N2YxMjE2Y2Y3MTRjOGVjMDhmMzhhOGUzMTUxZDY2ODNkMGQxNjcxYmI3MmJhNzVjMTYxYmJiNDg4ZGE2ZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0MjkxN2E5OTI0NzExNjMxZDIzNjVjNmE0ZDVkMmNjZWYyYzZiM2ZjMDE5YzdlN2Y2NjViYjFiNDRhYTUyOGMifQ"
+        },
+        {
+          "resource": "repo://components/SettingsForm.tsx#L136-L157",
+          "version": "repo-lines-v1:sha256:dff3e08f125c009041f8b6188b5f683c08fff5f0dd1f18d4b7092605aaf7994e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4YjU2MmNlODk0ZDhjMWEyYWJkMWMyN2EyYTJiMTliNzFkOWE4NTgwYWE1MDEzOWQ3ODczNDVkNjEyZWM5N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjMDhkMTIyMTZlNTlkOWRiZmIwZjgwZjQzNDAyZTg4OTUyZTVlYmVhY2Y0NGFkNDIyN2M2ZWY5NmU2ZDJjOGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiMzczNzYyODg1MGM2N2UxNGQxNmZmOWIyOGJjOTdlNGFjMDlkNDA2Y2YxNjgyZDU5N2Y1ZGE2Nzc4N2Q2MmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3MGVkY2UzMzYyYjgzMzBjNzI3N2E0ZTM0MTYwNjlkOGEwZTlhYWYxNTAwMTM4NGU1YTJjOGEwNmRiNWQ3NjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cddbe5f920a949d1a2f231d820165f6c",
+      "statement": "AppearancePanel edits the Inkmark appearance (color preset or custom pen and highlighter, color mode, corner style, reading font) and previews the result live using the real summary classes.",
+      "evidence": [
+        {
+          "resource": "repo://components/AppearancePanel.tsx#L121-L159",
+          "version": "repo-lines-v1:sha256:2441d2c157343dbf8caebdfbe081e40046bb0d67d30d1d068a3ffc18edd40dd2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlN2M4MmI5OTkzOGQ0YjBlMTY5OTk5MGFhZjY0MTc4MzdmMGVjMTU1MDZmY2QzOWQ2ODMyMTQ1ODkxOGM0OWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5NTcxZDRhYTBhMmVmNjUyOWIxNDEwOTllMzc4ZjZhYjMwMDAyNmI4OGU5YzU5OGY5N2UxZWQyNWNjMWU4ZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://components/AppearancePanel.tsx#L14-L107",
+          "version": "repo-lines-v1:sha256:61757303b56aea938c871c250d4e6e23a7e45aa09afa2e8e6574999ec5b28bf2:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4ZWMwYWU4YTU5MTNjMTY0OGZjOWZiMzllMDVkY2ZjMWNkYzE5NTVlNmJjZTNjMWY4OGNhMDY4NTNjODhhMTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNzBlNTE0ZTA5NmJjY2IyYTM5ZTIzMTYwNTRlNDdmZWMzZDA2YzJlNDNkZjk3NzU3ZjNlYzk3OTE4NmU4ZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwNTQ2YjUyMTliZDQwNTQ2OGJlM2EyMDBhNjc5Y2ZmYzMyZmFjMTAzYjA2MjE1YWZkMDFkNzkzMjRhNmU5OTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b383ee66481946668dc891670e3a40cf",
+      "statement": "The About panel shows the app name and tagline, the extension version read from the browser manifest, a Ko-fi support button linking to https://ko-fi.com/tamnt, and a link to the MIT license.",
+      "evidence": [
+        {
+          "resource": "repo://components/AboutPanel.tsx#L1-L44",
+          "version": "repo-lines-v1:sha256:1ba0ea1ced516f4c7ebdad28679f049b77c6c15effc24a6dc424edb0ca97dc91:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiY2UwNTJmZDQxYTNlOTEyY2Y2MmFlYzI3MmM2MmRiNTkyMzYzMTc3ZDZhNzlkMTM5OGIxNTViMzgzNzMxZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0368a966dae14e9593bb8d41ab48d6ff",
+      "statement": "Themed applies the Inkmark tokens (CSS variables for the chrome and OpenUI ThemeProvider tokens for generated UI) and provides a portal container so that Radix menus and selects portal into the themed root element instead of document.body.",
+      "evidence": [
+        {
+          "resource": "repo://components/Themed.tsx#L27-L69",
+          "version": "repo-lines-v1:sha256:29b8b1ed0056f50293bd719f220aba3eb0183a4bf7d54d6e48047515e5815260:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5ZDk2NDViYmY0OGI4MTI0MDkxYzk3MTVjNzg1MTljYjAzMTFhNDkzYmEzZWM4MDMyYTNlNmFiM2VlMDgxN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmOTRmNjc1NGYyYWU5ZjAzMThmMDU3YWYxOWYxYTE5ZmVhMDRjYjJmMjQyZDZjZDE5ZTk4MDQ0MmU2NDU0ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://components/portal.ts#L1-L8",
+          "version": "repo-lines-v1:sha256:d2881f890b1caf038b2ed3beaf3ecbcb2d67a3eb9ac23fa14e85fa39747337a4:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAwYjliMGMzYmU4ZjI3YjQ2ZjIxZDVjYzNjZjg1NzRmMDEzZTc2MTE4NWYyN2Y3M2NiZGI0YzAxMjk4NDNlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmUzYTBjOGM5NWZkMDA1MGY2NDI2YTVmYzE3MjI5Yzk3NGViNGE1OGU1ZTk3NmRhMGU3OWQ3Y2I4ZjMwM2RlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f543ed5c96424accb3c829a9a79c1ee8",
+      "statement": "Only the root Themed applies the interface language and the page background; an embedded Themed (root={false}, used by the embedded settings draft) leaves the surrounding page unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L175-L177",
+          "version": "repo-lines-v1:sha256:acc046b9784e5cdc17ae053edc7ad42b74ae0e39029cf9ba44e69e583276f753:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2YxMTFiYWQzZjRjZTJkZGVkZmVlYzkwNDBjY2I2ZjI2NTcxZjE1NjgzNDVmNDVhNzk0YjE0NzlhYjBiODlkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjYzYjEwYThhZjY1YzZhYmIyOWZmMmZiODRmNGQwZDljMzg3NDNjNDYwMzA3ZTVjOGU3NzZkMDYwNDRlNDU1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWZjMTcxMDQ3YTZhYjhhMDI1Njk2NmQzMTA0YTYxZWE2Yjk0OThjNjUwMzJkOGY5ZjQ3ZGYyZTI3M2IzOGIxOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2FlNmE5MzI4MjRmZDE4YmMxNmFmOWY0ZDQ2YzU2ZDIxYmMwYTI5NzRiYjA5Yjk4YTk2MTc1YzgwM2MzZTI5YiJ9"
+        },
+        {
+          "resource": "repo://components/Themed.tsx#L43-L58",
+          "version": "repo-lines-v1:sha256:eb159782784e4c5f3eb8ae23e24381248b46a52fe297b4e3157d1fc4e9ccb3e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwOWY2ZTMzMzFlMmM2OTlhMWNlODZjOGVhZDVkMzA1ZTgwMzIxZmQ0MGIyNzkzZWRhMDM4MzY5NzFkOWUwODIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyYTAxODQ1ZDJjZThlZGM2MTIwM2I1MjgzNjNmYTgyMmNlODAyNjEyZmEyOTlhNDVmM2U5YTRhZmYwNDU1NmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1ODY1NDQ4NTYzNGI2NDE5ZjNlZjM5NWQ5MTIzZmU1NTZkYTU1N2Y3YjdjZGI4YjhlOTlhN2VlNGJkNmJkZjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_01f84d20a1e14697966730ce313029ee",
+      "statement": "ModelSwitcher lists the models of every connected provider in a searchable cmdk palette and writes the chosen provider and model straight to local:settings, an intentional exception to the settings form's draft-until-Save rule.",
+      "evidence": [
+        {
+          "resource": "repo://components/ModelSwitcher.tsx#L13-L18",
+          "version": "repo-lines-v1:sha256:6436545d5a3ab3badabb5660d297ce92d66cf45d441f63e9e065ddd5c54a9fd9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjA3NmJjMDAxZGYzYzc3YWI2NjMyY2FkYTAxODM1MDAzMDVhYzk5MTAxNjU0NmQxZmFlMDlkM2E3MTE3ZTkwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGZhNGRhMDEzMWM2MTAxZGEwNWNmZTUyNjA1M2ViMjk5MGExZWMyODRmNWEyOGExYzczODEzYjg1NjEyZTIyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU1ZDE0ZGQ0MGM3ZTNhZmE5YmU2ZDYzYTU0NzRkMGE0MTBjOTY4ODc5NmRiOWZhYWQyMDJlODc1YzQ4YzI3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWFhZDI0OTU5YTg1YWJjM2FiNGJkODljMTlmZGU4NDc5YTVhYzlmZGI4ZjE1YjQ2MWU3MmQ0OTM4YTBmYjAxZiJ9"
+        },
+        {
+          "resource": "repo://components/ModelSwitcher.tsx#L54-L70",
+          "version": "repo-lines-v1:sha256:92a9ca45c42b1a6d43da00cb9aa43b0f756e4c67affd9289158787043f3e898b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2NDUxMTBiZGRkOTUxZDQ4NWIzYmFkOTA5NWNlM2I1YTM2MmU2NjJmYTlmZTk4NTc5YzI3ZDE0ZTlhNzFhNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4NGFhYzlkZTVmZjZjOGQyYThlMzljNmMxYjJmNjA1NDBhNGE5YzZlNzA4YzQwZDI1ODhkOWIxNjJjMGI3OWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjYWJkODU4Y2U0ODNiMjRhNTQzZGMxYWQzNzRmY2RiYWNiY2NkYjQ3NzY5ZDVkZTI3Y2Y2ZTM3MWJkMzM1MGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkOGMwNWIyZTE3ZTRjNTllYzEzYTlkMWE2MTgzZmE2YjYzNDc4NjI3MTgyNDc3MzIxZjYwMTJhZTg2N2M3NDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_20962749d9974b6da9ae8e506431136b",
+      "statement": "useSettings loads local:settings once and then watches it, normalizing the value on every change so a settings object written by another surface or an older version still yields a valid Settings in the UI.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSettings.ts#L1-L18",
+          "version": "repo-lines-v1:sha256:dd8a04b5662d348eec353a87f5a6d6cfad695e99ed93cdae5f7b3f5669f7e5d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyODkzNDkxNmVkMDkwNmQxODhkZWZlZDJmYjlkZmQ0MDMwZDQxZTBkOWM3MTJjNWYxNjczMmQ5NDBkMTU5YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L211-L220",
+          "version": "repo-lines-v1:sha256:05e3e96ecb50619d13712d90b4ccbf73070d786623fc985c507e54ab0c0cc916:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwMTZhODA3NzI4Y2I5NTk2NGU0NTQyOTI1NjZhNjQyZTRkMGY1ZjQ4NmFhNzlhMmEwZTI1ZmRkYWFkOTdiYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmN2JlN2MwMGY3ZDVhNzFhNTJlOWU0MTU0OWYwNzJkMjZjY2U5NjM1MmE0YzJmZjAzNWJiZTJjMWViMTgwZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkNjUzNTViNjRlZTc5NWNiYjZkNjliMDdiODZlODc4NGJlYWU5MjVhNGVhZjRmMzdhY2ZlZTg4YTY4YjllNTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a24f9fb76f54abf99e75cd02783a562",
+      "statement": "Q&A answers are split with splitInline so prose outside the fence renders as Markdown while the fenced program is handed to the Renderer, and CSV sources get an in-browser toolProvider so Query calls run locally instead of calling the model.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L293-L328",
+          "version": "repo-lines-v1:sha256:8b26d5396042d22da25bfdee1c0eb04ba0474c880fe02c655d82585440ee5e1e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiMTA2M2M0ZGVhNjhhMzgxNjYxMTBiYWQyZDMzOGI0ZDcyZTAyZDM3YmUwODE1YTc4NDUxZTk5MzMyZDZkZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNTYzMDRiMGVlYWJkODhhZDRjYmRkNjBiZGY0NjY1MWFkODU3YWQxZTAxMDRlNDJhYmZmNmIwNDNhZThlYTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhZDlmYThiZTRkODViNWNiNWI0NjIyNDFiN2I2MDQ0NGEyOWU4YjE4MGEyZDBmYjI5NGJjYzJlNGM4ZjhjOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5NGZjMGMxNzNkMWVjM2ZjNTAxZDdkZmE5Mjg1NTAxYzUyN2NmYjQ3MTI1ODNkYTNjYzM2MTgwNTY2YjRiZTMifQ"
+        },
+        {
+          "resource": "repo://components/SessionView.tsx#L54-L57",
+          "version": "repo-lines-v1:sha256:8abdc152963bf69e9352002ac75a15a5adcf9f345cd72411f6d675c70b13e8fa:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGY2MDUwYWMwMDc3Zjc4MDBlNWE5Mzk1M2Y2MDBmZDExNjljOWE0ODE1ZGMyM2QzZjEzYzFlNGQzZGE0ODlkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk2NmZiZmE4ODk5OGRhNzQ2NTZjNTAxOTQ5NTZjMjVmMDg0OTQ1NzY2MGMwMDlmZTYzZDFlOWZhOWRjOTMxYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWE0MzllOWMxZDYwN2QzOTNhNmZmNjVlNDA0ZDBmNTc3MjNlOWEzN2VlZDk4YTYzMDhhOWYzMjUzMWIzNzdjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODk3ZTQ3M2I1Njc5MjI0NzNjNTNhOGRlNmRkMzBlY2I0ZmZlYTMwZTY4ZDQ4YWUwZDdjODUwMjNiM2M1NzNjYyJ9"
+        },
+        {
+          "resource": "repo://lib/csv-tools.ts#L1-L36",
+          "version": "repo-lines-v1:sha256:5a1c63f31318795908ff59bd24b982c5ea9d67bb8db7da7934357b12f38620c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyMWY4NDExYTI1NWI3OTg4YTVjYzJlNWZhNThmYzZjZWI5ZTBlNTk3YjY5MjhmNDQwMTVjN2QyYmZmYjY3YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NWZhMGYxMTE3YjVlYTQwNDM0MTQwZGRlMWEzNDBjNzIwZGRiZjMyNjIxMmUxOTE4MzhkNGIxNTZkMzE2YmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxMTU4Y2IyOWZjYzZiZGNmZmI3MWMxMzVmNTY4NTgyOTJlMDhjODU2MTdmODUzYTI2NTIyNzAxNDU3NDVkN2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0da4a458c2bf48c6aed308c2b8e955fc",
+      "statement": "The custom OpenUI library (custom components plus the HighlightInPage and CopyText actions) is created at module scope because the parser memoizes by library identity.",
+      "evidence": [
+        {
+          "resource": "repo://lib/library.tsx#L277-L300",
+          "version": "repo-lines-v1:sha256:0dbfd7ad14d523ad93cd4fe5bd17151ea75ac79cd0b0995f0f0ee4f4b241888c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhYzgyMWZkNzJhZTM1NGMyNzU2ZTE1NGFhMWY4OWJkNjA3MzU0MWI1YTJhMjhlZGU4YzNjMTkxNWUzZTUwOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxNWMyZDFhYmYxNjBhOWY5OGJjNmZjZTdkOGI4MmJlOTM2OTUzNDU4YTY5NjYzYWZhYjZiNTEzNzk2YWRkMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-08T08:28:07.947Z"
+  }
+}

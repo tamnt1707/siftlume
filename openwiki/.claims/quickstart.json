@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f4b4be835c139bbe4dda4ac87660c95e439ed0f0913e2c693465469c0b0d636b",
+  "claims": [
+    {
+      "id": "claim_180c6aadf0074e6689df4df937c47bad",
+      "statement": "Siftlume is a Manifest V3 Chrome extension that summarizes web pages, selections, pasted text and files into visual, interactive summaries built with OpenUI, and it is the product's brand name used in the UI, the Chrome _locales strings and the About panel.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L1-L30",
+          "version": "repo-lines-v1:sha256:d5df15a8294278b77aa8eae0fa2a1bd2bc92bade4d27ce26a311ab3b66327d07:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwNTkxNDAwMGMxODFjNjZiYjZlNzAwMDQyM2UwNzNlZjQyNzY4MmYxNTM1NTFjZWExNDk0ZmY4NGYwYmY5NDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2NjVhNjY0NWY1NjIwODVkMGMyZDMxYmExY2JiY2I5YjJjOThjZjgyZTg0ODIzMTVlMTVmODVmZWViMTZhN2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3MTAyZmNkODQwMTc0MTJmY2ZkZWYwNjhkMGUwNDNiNWM0MmE1M2I3MDBiZDNhYTU1ODJmMjEyMjU1ZGQxOTEifQ"
+        },
+        {
+          "resource": "repo://components/AboutPanel.tsx#L1-L25",
+          "version": "repo-lines-v1:sha256:e458830825aa302232d6df9a51a3528457084be6ba60809c6c4cc70ddddb8a8d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiY2UwNTJmZDQxYTNlOTEyY2Y2MmFlYzI3MmM2MmRiNTkyMzYzMTc3ZDZhNzlkMTM5OGIxNTViMzgzNzMxZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwZDA4NGMzOGJlYmIwODI0MGEyN2Q2YmNjYTMyMTYwODg2OTg1MDg1NmQzMmEwYWM3YzcyODRlMWI4MTYzNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkNmQ4YWE1ZDAyYmQ3MzA4YjhlNWI0NzQ5MjMyNTllZWU0MmMwYTk0ZTExMGM5ZjJkN2ExMjk4YTEzY2NkODkifQ"
+        },
+        {
+          "resource": "repo://package.json#L1-L5",
+          "version": "repo-lines-v1:sha256:11161c2edeabd12b540737f0ae6fe8139011502be6226efd8b173d4cfaa568da:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU0N2JkMjdkYjNhZjFhN2YyYTMyMjIyODc5YmNkMGM5ODkxOTZiNzI5Yzg5MGI5ZWJkZDJhZmE3MmM5NjcyOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjM3ZTM0MWEyMTJhMzIxYTE3NGY4ZGFlNWE0NWIwYWM0OTU1ZWZkMjhlMjNkNmY1N2E3MjI3MmQ4YjcxZWY3MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fb51b049914a4d549a6dff2bc68aec2b",
+      "statement": "The extension has no backend of its own: it calls the user's configured LLM provider directly from the browser and keeps API keys in chrome.storage.local via the local: prefix, so keys are never browser-synced.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L56-L60",
+          "version": "repo-lines-v1:sha256:37be7eea88a50fe0f86405e7c03f191bc57a48705bed73592b9dc4f143a03135:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQ0ZDljODA2OTg5MTgyOTk3MjA0ZTI3MjIxODYzYTQxMTQ3ZjIyM2Q5ODk0ZGVkN2NkZGM2NzUzNWE2NzI5YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWJiNWU0MDdhM2FmOTdiYWM3NmY1MGU4MjU3YzIwNjQyZWJlZjhkZDlhMGU3Y2QxMWYzODFkYTUxMjI4ZDdhMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTY5ZGJkMTFhZDc5MGQ0MGE5N2Q3MWFlY2M1OWNjMDVmZjE5OGJmNjAwYWFkZTcyNDM5ZDhiMTQzZjVmNzI4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc3ZDcwMmIwYTllYjZmMGY2ZjQyNzQyMWQyZjVkZGZjM2UzZDU1ZDMxZTFmYmI3ZTUzMjZhZDFlZDA5MTdkZiJ9"
+        },
+        {
+          "resource": "repo://lib/llm.ts#L10-L32",
+          "version": "repo-lines-v1:sha256:bf2637d14a782e69347a29a0c658455265fd041ee4a997dd82cac9ca6f10edcc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhMjBlZmIxMmEwZjZhNGVjMmI5YmRlYjhmNTg1NzNlMGQ0YmQ2ODA3YzY0ZjdiYjI1MmNjZWQzYjMwNTQ1N2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExMjE1Y2QyOGZlMTVkYjM2YzU0YTQ4YzMxYzBhMzQ2MWVlYjIxNzFhNzFhOTczOGZkNmU5ZGJlMGIzYjc2MzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiM2NlOGUxNjJlZDkyYWQ0M2Q3YzY4MjhjYjUwYzg1Nzg5ZTQyYjM3NGU3NmM3NDRhNDIwYzFkYzY1ZjJkODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNDNkMzYxMWIyN2Y2ZmUyNGE4ZjliZTc1ZTNmODhkMjVlNjc4OGQ1OWNhM2VkMzE5NDI2N2JjNTcxMjZmMTAifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L206-L212",
+          "version": "repo-lines-v1:sha256:1bdc7cbc1084dbac95ebac2b1541cb74ea5c779b8830cee4553f329c33ac2c4a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2JmMTE3YjdiMzkxYmY0YTIzMTA2Mzc0MjEyODE5YTNmZGE0ZGU4MWY1ZjRkZWE2YThjMzZhYzk4MTJmOWZlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzgyNGE2MWU2MzQ1NWIwNDY5MzIzYTdmOTEyNjZjMzc4N2QyNTgyNTMxMGVjZDBlNjcyMzNlODg1MTE1MjI2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmY0YzE2NTQ1NjlhZDEwYzhkZTM1MDk5NmY0YTRiNmZjZWRmZmFlN2I2MzVmMzMwOGVhYzRmMDRmYWJiMTI2OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_71c94ccb5a594db8a68531063a4981b6",
+      "statement": "The build toolchain is WXT with the React module; wxt.config.ts declares the manifest (permissions, localized __MSG_extName__/__MSG_extDescription__ names, the Alt+Shift+S command and the optional <all_urls> host permission for the provider API domain).",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L6-L22",
+          "version": "repo-lines-v1:sha256:1e4d4dd8d3a9d01280c402e221a8502349397cd68fa87ee985166bb58e9df3e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1NmQ4MzA5MGM2ZmI5MzQ2M2FkNGYyZjg1ZjhjYTU1NzZmN2U4NWUxMjFkOTU4YTUzNzE4ZTIxZDlmNzZlNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4YjQ3ZjMxNjU3ZDNmYTQ3ZjdiZWVlNzZjOTlhOWQ1N2I2MGVhODI5OWNmZTViMTdiYjAzZDNmZDE2NzkwZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyM2RmNjE0NDQyZTE2Y2EyYmI5N2I0M2ZkZGI3ZGFmZDI0MjU0YTczN2NjMjZkMjZiMmQ4NTA3ZjUzOTUxYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4MWFkMWFkZDViZTAwMzk3ZTIxYjdmNTdjZDU3ZWZjN2JmMjcyYjU2Y2ZlZDA2NDZjYWE2YTFlNWJjMjZiNzcifQ"
+        },
+        {
+          "resource": "repo://wxt.config.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:a203b5ccb2d476d44c59e81c9af1cae296bf301373d47c546e3c17deecf6d353:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxNzNjZjVjNDI3YjE2MWM3YTY4MTRjNGY1NGQ1OGQxZGZkNzc3N2JmZWE5YjlhMWFiZGFjODA5ZDcyOWFjMTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cee90a7d864f49c4ae2db38b13c9f292",
+      "statement": "pnpm install runs `wxt prepare` as a postinstall step, and the documented developer commands are pnpm dev (hot reload with the extension loaded in Chrome), pnpm build (output in .output/chrome-mv3, loaded unpacked via chrome://extensions) and pnpm zip.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L100-L128",
+          "version": "repo-lines-v1:sha256:4b9c988a440256f6ca9b2b2e66f1e6f766a6fd29bf6ccfaeafb2b6eba9cbc905:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkZTY2ODdkZWQyMGE4M2I2MzEzMzE4NWZmNWMxYzE0NGRkZDI0NWE1ZDQ1ODhiYzNiM2QyMTdiMGMwMGU3MjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0NTc3Y2Q0M2E4Y2QwZGUyYjVlZWM2YWQ1MTM5Y2RmNzE2OTc4MTI2MzNjY2U2ZTVmYzhmNDJhMDg4ZWM0MTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4NmRjZWY1YjQ1ZmI2NmE4Y2UwNzA5MmI3Y2RlMDEzOGViNzhkYTlhYjhmZmM4YjgwMjUzMDZlMTQ4ODAwYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjMzYyOTk1MGYxNWUzNmE2NDIyYTc2OGVkNDllYWQyZGYwMTJkOTBmMThlNDZhODUyZDI0ZGI2YWQ0MjkzZmQifQ"
+        },
+        {
+          "resource": "repo://package.json#L6-L22",
+          "version": "repo-lines-v1:sha256:1e4d4dd8d3a9d01280c402e221a8502349397cd68fa87ee985166bb58e9df3e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1NmQ4MzA5MGM2ZmI5MzQ2M2FkNGYyZjg1ZjhjYTU1NzZmN2U4NWUxMjFkOTU4YTUzNzE4ZTIxZDlmNzZlNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4YjQ3ZjMxNjU3ZDNmYTQ3ZjdiZWVlNzZjOTlhOWQ1N2I2MGVhODI5OWNmZTViMTdiYjAzZDNmZDE2NzkwZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyM2RmNjE0NDQyZTE2Y2EyYmI5N2I0M2ZkZGI3ZGFmZDI0MjU0YTczN2NjMjZkMjZiMmQ4NTA3ZjUzOTUxYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4MWFkMWFkZDViZTAwMzk3ZTIxYjdmNTdjZDU3ZWZjN2JmMjcyYjU2Y2ZlZDA2NDZjYWE2YTFlNWJjMjZiNzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe08e80acf1f410c960de432ae074f63",
+      "statement": "`pnpm check` chains three gates: `tsc --noEmit` type-checking, `scripts/check-locales.mjs` (every locale must have the same keys, the CLDR plural forms its language needs and the same {{placeholders}} as English) and `scripts/check-examples.ts` (the OpenUI Lang examples embedded in the prompts must parse against the real library and every Mermaid diagram must render).",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L14-L18",
+          "version": "repo-lines-v1:sha256:0165760cf8f104b29b502bd8734aab8aa300d10abca40c60ba5fef7f37ff86ee:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTM2ZjhjMGU1ZWZiNWVmNTliZmRhODliY2M5MDEwMjAzYmNlOTExZTJhYTZhYWNkYmFlODE4NTMwNWQyZDNjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcwYWQxZmJhZDc2NmU0OWRhOTM3YjAxMjA1ZGI2ZTU3MTY1YmI0MmYwY2ZiMGQzMmQ4NGEyNjFlMTNlZTliMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTQyM2EwMjAxMGNlY2FiNmMzNmRlN2Y2ZWVhZGExYTM4Yzk0NTgwYzA0Zjg5ODFhOGNkMThiNWRiMDI2M2Q5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjEyNGY1NjBkMWU2NmU1ZTQwZmMxYzhlYjY2ZDMxMmFkMGQ4YzA3YmM1ZTBmZmRhMWVjYzVjNjYzZmFkZTEzOSJ9"
+        },
+        {
+          "resource": "repo://scripts/check-examples.ts#L1-L56",
+          "version": "repo-lines-v1:sha256:6dce5029cfdaa6a8f46fe0a948b59fe005a8aef57ba3a29f0c857fc0ab0a6b99:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZDFkZDE1ZDQ3ZDUxMDI0ODU4MjhmM2VkMTc4YTNhMTkzY2I5ZmM0OTk3YjczMDIyNDg3YmIyM2ZlYjVkOTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5MWEwOGYxNjI3ZDYwYjY4MzQ3ZDJlMTkxMWJjNTJhNDIzNGY5YzkwNDFiZTc2YjgwN2EzMzRiODNjZWI3YTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://scripts/check-locales.mjs#L1-L67",
+          "version": "repo-lines-v1:sha256:c31830142657654d6a567a1b2d049db612ba25e918373368be75f7d66b0310cc:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViZWQ5NzdmNTUzMjYwYzJkYjIxMDFhNGVhNmM5Yzg1OTVjMmIyOTdiZDVkZDY4OTE3NjA5ZTA2ZTU1NWI2NTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_767740a9814444d097b3366f30e9edb1",
+      "statement": "`pnpm screenshots` re-renders docs/screenshots from the scripts/showcase Vite app with headless Chrome, using CHROME_PATH when Chrome is not in a standard location.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L140-L145",
+          "version": "repo-lines-v1:sha256:b86fa6e56156755e65952c4bb9192bf574c75732944de48d867070991bc3fed8:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTc3N2FjYzZkYzBlNThiNThhYjk3ZmMwM2RkNGY5MWZjN2RjZDk3MTlhOTY4ZWNlMDNkYzkwZDJjMmIxYjhiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTYzNzVkYjVjZjNjOTRkZDA5ZDk3YTU4N2IzMTc3NTViNzgzMGI5MTIyNTI5ZWIzOWMxMGMzMzg1YzFhMjA0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjgzMDFhNzViNzY5YWM3YjZlYTQ2YzUxYmE3NDlkNWQ5NmM2NjJlNjQ0OTA4YmMzNDFmNTA2M2EzZDEwNzUyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzU5MTJiMDQxNTBjZDVjMmJhZTliYTRhNmEwNTZkNmQ2N2U4MGJkMTE1YWIyM2U0N2ZhZWQ3ZWIzMGNlMTY1YSJ9"
+        },
+        {
+          "resource": "repo://scripts/screenshots.mjs#L1-L40",
+          "version": "repo-lines-v1:sha256:ef870cbb602ecff69612400649774ce25ac29aa9bf7a57cd50640442b9a6b373:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyODJlODcyYzJhYWY3NDgyOTQ4NDFkNWY4MWQzOGFiMTI5YWQzMTQ1MTZmZjU3NmViZTIxMWU3NDVmN2FmYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ebe1062cfad8439999bbbba04344baa7",
+      "statement": "The codebase is layered: entrypoints/ are thin WXT surfaces, components/ owns the React tree and session lifecycle, and lib/ holds React-free domain modules (extraction, prompting, streaming, validation, rendering support, persistence), with assets/ for styles, locales/ for i18next UI translations and public/_locales/ for Chrome-level strings.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L136-L157",
+          "version": "repo-lines-v1:sha256:a660dbba875a360d8476e02b81679e74f13e539f13e7c18512f5e293cc788c0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjNDQwNjJiNTk3MmY1NzliMTIwYmM3OWRlODI0NmVlNzViNWMwYzE1ZjZhNzk4NzBhZDI2ZThiNGQzNmYzNDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjZmE4OWFjNGY2YTA0OTQwMDZmZWYzZTZkZmZhOGYzZjRjYzkxYWYyZjExOTc0MTc1YWU1NTZiMGQ4ZmNkNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4MmE4MDMyMTdjZDk3OGExYzM5M2JmZmUzOGEzOTYxY2Q2MDBjYmQxNjQxNDJjNTdiZTY5ODM0MTZiM2VmOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://lib/i18n/index.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:d8ad6f6a7157d9e39ff3c9ae3f199f53a87c5389fe4f4b409ef2690331ac538e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNTFmNWEzM2VlOGExNzljMDkyOWYxNzQ4YjRjNTY3ZWFjNWU0ZDgwMTM5M2Y1ZDlhZmY0OTM3N2JjNzZiMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwM2ZiOGYxM2UyYmFkY2ViM2Q0MWNiYzFjNWFlMTU1YThmNDdlM2EyMjY1ZDE0NzY3OTE3ZTJhNmI1MjViZDcifQ"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:3babf64205d6dd871d4bb1b72fcef8647339a5ef7b308cbf3935cadbfe299310:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNWIyMjg0YWIxNzdiMzcxNWVjNjY5MGE4MTlkOTAxMWM4NjMwMDUxNGMyZTY4OWI0ZWYwNzAwNzQ0NTIxN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmOTUwODg3ZWU3YzIzYzMyNmFjOWMyYjM3ZTRiMjM0YTZmYzU2YzhhNzJmZDAyMjhjZTE1N2ViYjQwYzUyODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxMzAyOWM1ZGFlYTkxYTg0NTI0OTM4NDE5NWI3ZjRmN2NlODEyMTc4OTUyZTMxNzcyMTdhNGQyOWJkODMyOWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8327e6d298ed480b85f42f2432162cf4",
+      "statement": "Two localization systems coexist: the i18next bundle under locales/<lang>/ (one JSON file per namespace, English as source of truth, keys type-checked so a missing English key fails the type-check) and the Chrome _locales strings under public/_locales/ used by the browser for the extension name, description and menu titles.",
+      "evidence": [
+        {
+          "resource": "repo://lib/i18n/index.ts#L1-L36",
+          "version": "repo-lines-v1:sha256:82dd07cf01f01c629a62ca7d2418648c348a45b11f08cbcbc62c264eae50f4f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNTFmNWEzM2VlOGExNzljMDkyOWYxNzQ4YjRjNTY3ZWFjNWU0ZDgwMTM5M2Y1ZDlhZmY0OTM3N2JjNzZiMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliMzJlNWI0M2JmZTdiYzU5NjYxNmJiZmM0MzY2OWE0ZDhiZTg2NTU2MWE0OGE0ZWFiZWVmNDhmYzQ0OTc5YjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjZDY2YzZjN2EzYTQ2OTQ3ZTYwMGE1YmYwZWFkZGM4MjVlMTY5YjYxNTA2M2Y5NjY1NTYzNzdhYzMxNWYxMzcifQ"
+        },
+        {
+          "resource": "repo://lib/i18n/types.d.ts#L1-L22",
+          "version": "repo-lines-v1:sha256:934ca58c8a997813eea8c9b184ed8fc9f640208ee87724c876c5b7598b286252:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NTg4MjJhMWE4NGM1ZWFkMjU5ZWE1Y2E1N2I2Y2ZlOTViOGM2ZTYyZTcxOTNkYTQ3ODUyNDYxMDY2YjVlMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://wxt.config.ts#L7-L10",
+          "version": "repo-lines-v1:sha256:9c4f862e91aebaa467db537d58f33723e2f444c6b17a6273606fc9a2d02935a2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ1ZGJkMWY4MDY2OWNiM2EyMWNmZDAwMzI0OTc4OGYyNjJjZTZjNmFhMzA1ZjIxOTFjODBjMzExOWI5NWQ4YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2RjOGYzNTJkYjM4Nzg1MGUwM2NmYzMyZWJkNWEwMzJiNGI3OGE5NDczYjQ4NjdhMWJiNmZiMDU4MTZmM2ZkOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDk4OGM5M2NkN2JmNjYyMmQ4MWQ5ODZmMDc1YTlmYjMwOGJmM2E2ZWI5NGIzZTViY2Q5YjVlZmMwYmY5MDI4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQyYmNjMzg3Y2FlNWY0NGJiNTVjMDA2N2UyZjRmNGY5ZjY3YmFiMWI5MjQ0NzI3OGU1MGVkZDIwZDJiNGUwMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_002193d372bd49c1ab5d96e245168c7c",
+      "statement": "A summarize request travels as a PendingRequest through storage.session: the popup or context menu queues it and the result view (full-page tab or side panel) takes it once, so reloading the result page does not re-run the request.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L100-L118",
+          "version": "repo-lines-v1:sha256:199f97943b4c29cac9e6ea16c3ec6c4a26e365851f21121e55742e3fc15f4dab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0ODhhYzE1NTdlZjY3ZmMyMDU3MjM2MWQ2NjMyNzM0MjVlYmUyYjY1M2JmMTI0MDhjNzI5OGIyYmYyYjYyMGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNzQ2OGZlYjIwNzBlNGRkZDJhM2VlNmU2NmFkOTE5OTA1ZmRhMmViZjZmMWIyMDBhMTcwNDQwNzU1Yzk3YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2MGM1OWIzMGIxNGJkYzdhMTM3YTk3OGNmM2IyMDFhODFkMjdhMzM4Njc5YTNhY2IyNzZhZmEzZWNkZTAwNTgifQ"
+        },
+        {
+          "resource": "repo://entrypoints/popup/Popup.tsx#L36-L44",
+          "version": "repo-lines-v1:sha256:fa53fed405b47324e3556751768b82f5472d592c45d878edc4b4a8f436b328a3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBhZDZjYWYyYTIxMDIyODFhMDk1NDgwM2ZhZWQ1MmE5NzQzZTBjNzQzZmU1YTIyMGU4ZTkzYTExNmIyOTA5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Q5YTdmMzZiNjY2MmI1ZmJiNTUzODcxMjRlNWIyNmQ4MTU5NGMzNDgwYTE1ZDExYTA2MGYxMzBkYzU4MzFiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTNmNzJjNmZhOGQ0ZjllZGQ4MDY5OGM5Nzc1ZGI1ZjY0ZTNlNDkwZjA2YzY0NjNlZjdmYmM5OTdiOGYxODhiOCJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L11-L33",
+          "version": "repo-lines-v1:sha256:708f3c82d3032d4d2c58525ff7ab40066c4b8e297abc29df54ecdad3c6c5a3b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyYThjNGFkZDFkMDMxNDAyMzAwNTljZTlhYTg5YTU5ZDdlNDg3YzM0MzFhZGQ4YzM0MDQ3MGMwOWM5NmNlNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjOGZiZjhjZjhkZjljNmZiMmZhMmVmZGZiYzM4OTI5ZDFlODA1ODc4ZDgxNzE3ODQ1MzM5N2FhNjAyNzE2MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlYTU0OTQ0MjlhN2Y1NDVlMWIyM2ZhYjlmM2RkYjU0MjYzMGZlMDY1YWEzZjA1ZjgwMzIyZDAyNTEyMTBhZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8056fcb0c6af4e77b955e74ccfc8e7b3",
+      "statement": "The toolbar icon behaves differently per display mode: the background sets the action popup only in 'tab' mode, while in 'sidepanel' mode a click opens that tab's side panel and the popup is never installed.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L14-L30",
+          "version": "repo-lines-v1:sha256:1eff6c95b5b7385684b5c3ba8153131dcae3efbb44af16c2b10e042af2e17f75:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3ZjZmY2Q1MjRhNTExY2Q0ODI3MWU1YmQ3MTQzZDBkNmEyOGViNmMyNzQzZmQyMjk0ODI2NWU0Mjc1NzBjOTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhNTJkNzJjNDZmOTk1YTQ2NGEyMjRlZWNmYWY2MDcxNDNhNDc2NzA2OTVlMmZhMjZjMDMxOGRmMzdhN2Y2MTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzMmRlYzY5Yzk4ODQxYzcyZmU3ZWU0Yzk4NWIzYWY4ZTM3OWEzNjQxMWYyYzQzYjdiNmRiMjk0Nzg1ZTM4MjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_615862c3a0274767acd536fca716338c",
+      "statement": "Manifest V3 constraints are respected in code: OpenUI's auto-mounted development widget is disabled because it loads UI from a CDN, and chrome.sidePanel.open / chrome.permissions.request must be called synchronously inside the click handler before any await.",
+      "evidence": [
+        {
+          "resource": "repo://lib/no-openui-devtools.ts#L1-L9",
+          "version": "repo-lines-v1:sha256:d4b2b05bbbadde41cca4e8926ef859d3131c0fd5d021a9ef61255f3b48f732c1:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGU2MDliYjcxYzIwYjg1OGM3N2YwZTlmOTBiYjEzMTlkYjg0NzdiMTNmOWY5NjVmMWExZTE4NTI0YmY1MDg4MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L62-L72",
+          "version": "repo-lines-v1:sha256:5f838c870ac2d3c6e49e521f1893ee81efe05200138c9231cabccd4584f0c70d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1NjEzNmIwZGZkNDk3YjliMDY3MDUwMzhlNTQ3M2QzZGRjNTM1MDhmZGYzY2Y3N2I5MzE5N2E1NjY1ZjUwOGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwZTU3MjJkNjFhNTk5YWIzNmU0Mjg4OGUzOWRiNjA0ZGI2NzAzNzUzMGNmNDZjNzJlZGMzMzI0MjEwOTdlYjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5MjU3M2YzNzU4MDY4NzVhZmM3MWNiMTVkMDkzM2FkYmZjYjFiNmJjZWExOWFjYTBmYzYzN2Q4OTgyNjQ1YTIifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L240-L257",
+          "version": "repo-lines-v1:sha256:72d28e73bb1590f38744cfc848630c798eba6d992e62695b9b7fa85d0ba0ef19:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MzU2ODhlZTQ0ZmYwMGQzYzBjZWU3MTM0NzlkOTRkMGVkMjYzODkzMTQ3NGU0NDIwMmQ4ODU3MTUwMjJlOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzNGRlN2UzMWE4MTU3NDI3OGJjNjU3YmQ0ZmI4MTgzYzkyYmNhNzUxNDg4ZmFmNDVmNDA0MDRhNWY5YjA5NTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e24aa6da57d46be99c1228cd4792853",
+      "statement": "User-facing strings must go through i18next with keys in locales/en/*.json, while prompts and instructions sent to the model stay in English; styling must use the design tokens rather than raw colors or radii so presets, custom colors and dark mode keep working.",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L60-L70",
+          "version": "repo-lines-v1:sha256:bfcdba993222d1726cbf1cbdc925a79ac0ee93cc34d4b3251757bdf5bd5594d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1MTNiNDMzODM0NzNhM2MwOGY1YzVjOWE2YmY1YjUwNDVhNzMwYTYzODhiNjI1ZTQzNWE4OWE4NGJiZDNmZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwZmViZjg4NzM5YWE5OTEwOTY5Yjc0ZjIwZGIxYzAzNDQ4OGQzZDI0YjE2NjU1NjY4ZTRlMDNiM2ZiZjM0ZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4YTA4M2JlMzIwZDQ2YzgzZTMyMDdjNTU2MmU5Mjg5MGZhZjZmYzFhMzBkOTVjNTRhZGU2OTk4OGRmM2QyNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4NWQ4NWVkMmNlY2FlZTFiMDlhNDhjMzc5MDhkOGUzNGVjMTA1MWI1YjUyZTc3ZmNlOTdkYmFhNTY5MDZmYWYifQ"
+        },
+        {
+          "resource": "repo://lib/refine.ts#L1-L8",
+          "version": "repo-lines-v1:sha256:ff519308dc5c5a940fd92317ad96e45738811db54a3b8dd08b5472a54a74c49c:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWI4YjJlZDJmYjRmYTQzOTQ0MDkzMTVjNzM1YWRjY2JlZGVhNmEyMDlmOTE0ZmM2ZDhjODkwNjAyZGNjYjcyMiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-08T08:28:07.947Z"
+  }
+}

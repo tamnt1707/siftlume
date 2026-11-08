@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:bb586c99c5bf566565b2325862373a074c040802ca762797b882cbd1b440ace7",
+  "pageVersion": "sha256:564c3a5b78223e0f6b24ad26873acfbb422c33a512092928a76af9c4f9bb35e0",
   "claims": [
     {
       "id": "claim_c1e654925b2340c7982dc2bf9e9e6f23",
@@ -55,7 +55,7 @@
       "statement": "The `Diagram` component renders with the measured container width (`maxWidth`) and a `directionBreakpoint` of 760, so wide left-to-right flows flip to top-down in the narrow side panel.",
       "evidence": [
         {
-          "resource": "repo://lib/library.tsx#L243-L253",
+          "resource": "repo://lib/library.tsx#L244-L254",
           "version": "repo-lines-v1:sha256:583a3affb2e66ebf7fa8fdd20e3a5e31b5aea9fb789090754e6a3dfb4d2b81d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3ZjVkYjgzMTliNjg5OWMyOTViOTU5ODY0NGNiMzJjYWUyMWNkMGVmMTE1MmNiYmQwMzM5ZDEzYWEzZmNkM2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmZTIzYjZiODE5ZWRkZTIwMzdjYjg3MjlmN2U1M2M4MGE4YjliODNiMzA3ZTEwM2I2YzM3OTQ1N2Y1YjJiZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5Nzc3YzNiOTgyOTQzZGE2NmI0MDQ5NDc5NzY3YTNhMzE5YzhhZDZkMzkwMjkwNDMzNjlmMDMzZjk1ZDYwNjEifQ"
         }
       ]
@@ -65,15 +65,15 @@
       "statement": "The `Diagram` component skips rendering while the response is still streaming, because partial Mermaid is almost always invalid; it shows a \"Drawing diagram…\" placeholder until then.",
       "evidence": [
         {
-          "resource": "repo://lib/library.tsx#L219-L226",
+          "resource": "repo://lib/library.tsx#L220-L227",
           "version": "repo-lines-v1:sha256:0deccabedc488023f22296012b8382626d166c5f421dc6ebaf30d885fcf39265:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJlNmZjZGQ0ZDcyNzQ4N2U4YjhkN2E0Mzc3ZjA2MmNkMWJjZTU5NDQ0ZDZkNzNhYTg4Y2E1ODQ4Zjk0YjRlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmM3ZTZiN2NhZjk0MDEwMDUxYjkxYzFiZDNlZTY1NzcwNzdkZmRmMDJjNDM4ZjZiOTRmYjYxNTE5YzY2NDRjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTg3YjRhZWI5YTc5YmM0ZTZkNzQzZTBjZDc0MjU1Yzk0ZDQ2MjNiMTFiNjNhZDUwY2QwNmI2MzM3NThmY2VkYiJ9"
         },
         {
-          "resource": "repo://lib/library.tsx#L243-L253",
+          "resource": "repo://lib/library.tsx#L244-L254",
           "version": "repo-lines-v1:sha256:583a3affb2e66ebf7fa8fdd20e3a5e31b5aea9fb789090754e6a3dfb4d2b81d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3ZjVkYjgzMTliNjg5OWMyOTViOTU5ODY0NGNiMzJjYWUyMWNkMGVmMTE1MmNiYmQwMzM5ZDEzYWEzZmNkM2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmZTIzYjZiODE5ZWRkZTIwMzdjYjg3MjlmN2U1M2M4MGE4YjliODNiMzA3ZTEwM2I2YzM3OTQ1N2Y1YjJiZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5Nzc3YzNiOTgyOTQzZGE2NmI0MDQ5NDc5NzY3YTNhMzE5YzhhZDZkMzkwMjkwNDMzNjlmMDMzZjk1ZDYwNjEifQ"
         },
         {
-          "resource": "repo://lib/library.tsx#L265-L270",
+          "resource": "repo://lib/library.tsx#L266-L271",
           "version": "repo-lines-v1:sha256:afe12ee353db4189188b61fc9699d953da2e5107a730035a37799b30a60de539:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWI0YzRlNTE0ODBlMTRhMmU4MWMyMjBkZTU2YWY0NDY0ZmFhMjYyNDM4MDQwNTdlMWNhZDEyNjU2MDU0NTdhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdiOGMxMDg1Zjk1YTFhZmFiZTVkMTUyYWQ1OGRiOWRjMjYzMzZjMTIxOGUyYjg0MGFlN2FkODI2YTBkNTc0OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmE1NWM4MTBhZGM1YTNiNzk3ZDI0MGFkM2JiYWE4NGYzMGJjZDIxYjFhYjVlNmEyNTNiY2E2NDUxMWYxYjgyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDRjOGUyMjBiMDYxMzExMDNlNzc1NDUyYWVmYjY3OWRmNGQwYTAzNzVhODY4NWFjOGM0YmU2ZWNjYjI1NTM1NiJ9"
         }
       ]
@@ -83,7 +83,7 @@
       "statement": "The `Diagram` component measures its container with a `ResizeObserver` and rounds the width down to 40px steps, so small resizes do not trigger a re-layout of the diagram.",
       "evidence": [
         {
-          "resource": "repo://lib/library.tsx#L228-L241",
+          "resource": "repo://lib/library.tsx#L229-L242",
           "version": "repo-lines-v1:sha256:f036bc05d29cfacd8cb66f32bbc546cc73bcd2a8fe0bb57683960acd72a8223f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhODcxMGUwOGJiNmRlZjlmYTdhZDg4M2Y5ZGZhYWViOGE4ODhmNmM3ZDU3NDI0NTEwNzk0YmQ4NTY2Njg4ODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkMzNlNmU0ZWM5ZjM5M2FiZmM4NDUxNzg4MzNmMjI2NTk4OGFlNGNhOTAzOWFjYzdlNGMyODZkMjVkZmFhMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3M2I3MjFhZjE0OThmY2I0ODhhODVkMmJkMjZkYTg0OWY3OTczZTcwMDJhZDdiMGEyYWQxNTZiMGRhYmVlNmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwZmJhYmU3OTM3YTdiNDc0NTVmNmJhYmI3ZGY2MTYzZWE3NGFkYjkzOTc4YTE4MWI3YWNhODdkMzQxYWUzMzUifQ"
         }
       ]
@@ -93,11 +93,11 @@
       "statement": "The `Diagram` component distinguishes idle/pending, ready and error states; on failure the error message is shown as text inside a `<details>` block rather than as markup, because the message can contain diagram source.",
       "evidence": [
         {
-          "resource": "repo://lib/library.tsx#L209-L210",
+          "resource": "repo://lib/library.tsx#L210-L211",
           "version": "repo-lines-v1:sha256:470c1bce4c6d49c736dffecf104c5cbdfdb9e7c7391dc115fac9b04c86b57020:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzZiZTUzMzkyNzRiYmMyZWY4Njg1NWYxMjhmZTc0Y2MxMzA5MDljZTI0MDJiM2ZjNmVlYzJmMTZiNGIzM2E1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2ZjN2MxMTUxZjdjOGQ2YjQ5YjMwMzcyNzFlNGQ4ZDliOWJkYTE0YzJmZGFjNjY2NDIyMDM3MGUxMjRjNzg1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmEyMGI1NDdlMjI5ZDlkNDFiZWRkZWIyZjQyZGNlMzQxMTgyMGUyMWI2ZmUwMDQ4OWIzNWNlZGZlNzJjMzk5YyJ9"
         },
         {
-          "resource": "repo://lib/library.tsx#L255-L272",
+          "resource": "repo://lib/library.tsx#L256-L273",
           "version": "repo-lines-v1:sha256:1393d2b72c863ba74c3ec4268ed8a5ecdc33f2a2770fa49209052b151a7ef9d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3NDdhZmRjMGEwNmRhMGJlNGJlMzdjN2MxMzIwNTNjYjU1OGFhNTQ1Y2EzZTQzZTIwNWEzYzY2YmE1ODU5YzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0ZTQyMDhjZDZmZmI4YzRhMzU0N2IyZjU0YWRhMTk5NzhjM2YzNjVlNzhmOTUwMmVmNTE0NWNkZDJhYTg1NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhMTk3MDQ5MWNjNzJkZjNhNmU3NDEwMjYxOTkzZTlkZDhhM2JmN2ZmZDkwY2FiYWQyNzU4NDJmZDgwMWQ4ZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzODNhYzE5OThhZDg4Mjg4NDVjNzBlZGZmOWQyNWZjYzc4OTU3ZjU1MzBhNzk4MzhkNTE4NGExZTE3MGZlNDIifQ"
         }
       ]
@@ -117,7 +117,7 @@
       "statement": "`validateDiagrams` walks the parsed program tree, renders every `Diagram` element that has a `mermaid` prop, and returns one error per failing diagram prefixed with the statement id, so a broken Mermaid source reaches the model's repair turn.",
       "evidence": [
         {
-          "resource": "repo://lib/openui.ts#L258-L282",
+          "resource": "repo://lib/openui.ts#L264-L288",
           "version": "repo-lines-v1:sha256:f8e3ca7bfd41a61cf63d0ea7258f5d7633eb9a35a1adcf7dd70d84fe511431d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkMWJlYTY2ZjYyNmViNTBiZWM4OGY4NTc3OTE4YjkyMDU0ZDg3MDY4YzZhNzVlZDlmNDBhZjA2ZGVjMDk3N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmYzVhMjJhNjA5NTlmYjM2ZmM4Y2ZlMTlkZDE5MjA4OTk3YjJlZjAxMTZiMzMwZTFmODE1YmJhMmEwMjZiZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5NmFjMDIwYmEzZDEyZDNiYTU0NTllM2JiYzEwNTVlY2NlOWI1YjUyMmQ1N2YxZGEyZjUzNDM4OTUyMmM1ZWYifQ"
         }
       ]
@@ -141,15 +141,15 @@
       "statement": "The prompt rules (`DIAGRAM_RULES`, injected into both the summary and the Q&A prompt) restrict diagrams to process, decision, sequence, lifecycle, mindmap and ER structures, cap them at one per summary, and forbid using a diagram for plain lists or numbers.",
       "evidence": [
         {
-          "resource": "repo://lib/openui.ts#L136-L137",
+          "resource": "repo://lib/openui.ts#L142-L143",
           "version": "repo-lines-v1:sha256:6b07bc6b7ea079c054198a49983048e2d73f20bf98656fbd26f8899c02bef779:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjAwMmI2NmRkNzIyMDQxOTE4ZWY1NWQxYzMxODI5MTNiY2Q1MTRjMjk0OTA5ZDk5MzcxMjU2ZGM5NTNkNDBiYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzg0MjNiY2YyYTAyN2QyYWE0OWZmMGJlMDdkOTFiOWJhZWY0ZTRiZmViYTYwMmJkNTI4Nzg4ODgyYTJmZjBjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmNiNDRhMTlkMDA3YTk5ODg0MGRmN2Y5MGVkNGEyMzFkNTJjYzk0ZDdjYzQwNDdhZjA1YjZhM2RlMDNmZjBhZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmY3YmNjYmI5ZWQwMzNkM2I1MmNjMjZkMzczNjYwNjA5YzM5MmQzMzFlMTc5ZTZhODhhOWU2NGViZWFkNTU4OSJ9"
         },
         {
-          "resource": "repo://lib/openui.ts#L161-L162",
+          "resource": "repo://lib/openui.ts#L167-L168",
           "version": "repo-lines-v1:sha256:d4eb367f6a83bf0b643c8ef07351f811649a0affc7f8c592aa51b1ecf7458819:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjAwMmI2NmRkNzIyMDQxOTE4ZWY1NWQxYzMxODI5MTNiY2Q1MTRjMjk0OTA5ZDk5MzcxMjU2ZGM5NTNkNDBiYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTIyZmMwZTFjYzNlZTA1ZjU2NWY0ZjJkNDExM2JiYjU4ZTVkOGY4NmQ0MjkxYjZkZWU4MGY3YjIyYjM0YTI0ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjk2YTM1ZDEzNjliZThlZDlhZTQ0NWVkYTg2ZmVmZTcxYjI4M2EwOTFjNTdlODc4YTVjN2Y0ODA3OWViODFjYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTg2ZTBhMTc5ZDI4Njg4Yjk1ODAyMWY5MjBmOTE2YTlkYWY0MzM0MGU0YmMxMTU1M2RmZWI2ZTMyNjMyZDU4MCJ9"
         },
         {
-          "resource": "repo://lib/openui.ts#L48-L52",
+          "resource": "repo://lib/openui.ts#L52-L56",
           "version": "repo-lines-v1:sha256:bba03fe0b8a10422809cbd50a098ff9bd7e52dc5d3ccec121fce940c1f0288b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWU5OGY1NDhmNjk2NmZlZjY1YTBhNzQwODc1NGY4NmIyMjhhMTc0NGI1YTNkY2MxOTM0OTk2ZTEyMjJlZGEzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjAyZDJjMGQ2ZGM1ZTc0ZDkyZmExNGI5MWRiZWEyNjQwOTBiZWIzNWZkYjkxODhkOWIzNDExODFkY2U5ZjRjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjg2MjI1NDc0YTM2M2FiOTQ1NmE4NTVmY2Q1NzdlZmRjZjg1Yjk4ODgyYWMxYWQyOGQ1NTcwNWJhNDc1MGFlNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjAzYzQ3NGE3MTIyMDVhZmIwMmFkYTFhMzU2MjUyMmNmYmNkYzkyZDE4Nzk4ZjllMjM5NjVjNmEwYzYxOWI0OSJ9"
         }
       ]
@@ -159,7 +159,7 @@
       "statement": "The prompt requires 4–12 nodes, labels of 1–5 words, space-free node ids, no `style`/`classDef`/`click`/`linkStyle`, no HTML or images, `flowchart TD` by default and `flowchart LR` only for linear flows of at most five nodes; inside the openui-lang string line breaks are written as `\\n` and inner double quotes are escaped.",
       "evidence": [
         {
-          "resource": "repo://lib/openui.ts#L50-L50",
+          "resource": "repo://lib/openui.ts#L54-L54",
           "version": "repo-lines-v1:sha256:93e2c43d925f958f1ed7a244230db5fe2d9cdf49cbfc661b4e2ace4b1a078898:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNlMmM0M2Q5MjVmOTU4ZjFlZDdhMjQ0MjMwZGI1ZmUyZDljZGY0OWNiZmM2NjFiNGUyYWNlNGIxYTA3ODg5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNlMmM0M2Q5MjVmOTU4ZjFlZDdhMjQ0MjMwZGI1ZmUyZDljZGY0OWNiZmM2NjFiNGUyYWNlNGIxYTA3ODg5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQzYWRmNjNjOWYzMjM0YTc4ZjgzYWE0Yjk5MWRjNzYzOTA1YWZlZmI4MDQxOTExM2ZhYjFhMzlhZGU2MDM1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDcyMjg5YmFjMjVlNmRiY2FkM2IwN2EyYTI5MmMzZGZlNDU2M2Q4M2EyYTY0M2EwODk0NTM3NDVkMTBhNzk0OSJ9"
         }
       ]
@@ -173,8 +173,8 @@
           "version": "repo-lines-v1:sha256:c050498bc2ff09ddb1fd9e05151439d7b33928ed9298e5adb48b15c05261166d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhZjc3N2IyYjBjZDllM2ZhMDg4OTcyNGY5Mzk1ZGU3MmI0ZmYzYTRiNTE0YzZjOTRlNWRiZmQwZjk1YTU5MTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
-          "resource": "repo://lib/openui.ts#L9-L11",
-          "version": "repo-lines-v1:sha256:9ac6cb225129ed0539acb913e9ca69b5ecbedc196ae649fe725e9685ea2e5244:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjg1ZTI4ZGU3MTY2MGNkMWRhZTkxZTU2NzE2Yjc0OWM1YzFmOTA2ODYwMjg5YzI0NWNmMmE4YWRhMGVkYjRhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Q5NWFiZmE0ZmM0MzVjYzE0MTkzNjg2ZTUyM2UwYzBmOTYzNGI0NTU3YmUyYjk5NjJmZDUxZWIzMzA0ZGQ5NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODYyNGUwYzE2N2NlYTZkZjVkOTM5MDlhYjRiMzcwMTU3MjYxNjhlMDg0YWU1MzJmYjc5Nzk5ZTQzNGI5NGJmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTFkMTRkODFiNzIyNjMyODY2M2I3NzkyNTdlNzQwODE2OWQ5NjJlNzY4N2Y1OTVhYjYxZTdkYTU2MmNjYmFiNCJ9"
+          "resource": "repo://lib/openui.ts#L9-L12",
+          "version": "repo-lines-v1:sha256:25249647bff58e1b83a645fe0fab8b4b65c31402bf2851470586a64ed9bb12f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjg1ZTI4ZGU3MTY2MGNkMWRhZTkxZTU2NzE2Yjc0OWM1YzFmOTA2ODYwMjg5YzI0NWNmMmE4YWRhMGVkYjRhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Q5NWFiZmE0ZmM0MzVjYzE0MTkzNjg2ZTUyM2UwYzBmOTYzNGI0NTU3YmUyYjk5NjJmZDUxZWIzMzA0ZGQ5NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODYyNGUwYzE2N2NlYTZkZjVkOTM5MDlhYjRiMzcwMTU3MjYxNjhlMDg0YWU1MzJmYjc5Nzk5ZTQzNGI5NGJmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTFkMTRkODFiNzIyNjMyODY2M2I3NzkyNTdlNzQwODE2OWQ5NjJlNzY4N2Y1OTVhYjYxZTdkYTU2MmNjYmFiNCJ9"
         }
       ]
     },
@@ -197,14 +197,56 @@
       "statement": "The diagram series colors `--pele-series-1..6` are written on the app root by `appearanceVars()` from the same chart hue array that feeds the OpenUI charts, so a diagram and a chart in one summary share one palette.",
       "evidence": [
         {
-          "resource": "repo://lib/appearance.ts#L128-L143",
+          "resource": "repo://lib/appearance.ts#L129-L144",
           "version": "repo-lines-v1:sha256:2b111e2a60a21142c4b59b23ab116e3e6b11d994eeadb6cadd959c3a662778b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlNzlmMmU4NWUyNjExODJhZTJmOWNjZmJjYTE5NzQwNDM2YjVkMWFjODZjNjEyNWQ0NjJhZTE1YmRjY2QwOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmODhiNTYwMmFkYTEyYjRhYWQ5YWNkNDFjMDEzNTA2Y2JmY2EzNDY3OTE3MGEzMTQ1Y2E1MDI3NzlkN2FkYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmYmE2MThiNjk4ZWQzODVlYWY3NWQ0OGQxNmQ5MTc4OWMxMjg4NjQwZmJkZjM4MDE5N2RhODE1NGIyOTEwNDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_504655ee9ed04a6482f821d173372628",
+      "statement": "Besides `DIAGRAM_RULES`, the summary prompt fixes a block order that places `Diagram` in the metrics/charts group (after `KeyNumbers`/`BarList`, before `Takeaways`/`Timeline`), and the Q&A prompt adds its own rule that a question about how something works, a process or a flow is answered with a Diagram plus one or two lines.",
+      "evidence": [
+        {
+          "resource": "repo://lib/openui.ts#L142-L150",
+          "version": "repo-lines-v1:sha256:9dbc9bd62022da5f3c991990679030a55f75b56433099d1ed464b7fc044fece4:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjAwMmI2NmRkNzIyMDQxOTE4ZWY1NWQxYzMxODI5MTNiY2Q1MTRjMjk0OTA5ZDk5MzcxMjU2ZGM5NTNkNDBiYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQwMTkwYTMwNThkOWIxZTc2YjNjNTUzN2U3MjdiNWJjMzZkYjA1NTRiODcxZTUwZGJiOGRjOTViODY5ODI2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmNiNDRhMTlkMDA3YTk5ODg0MGRmN2Y5MGVkNGEyMzFkNTJjYzk0ZDdjYzQwNDdhZjA1YjZhM2RlMDNmZjBhZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWU5MzljM2ZlYWVjNzAyMTg2ZWZiOTc4MGFjY2YyMjZhY2MyNGE5YzE4ZjQ2M2YyYzE1ODEzYmZkYzVjZTlhYyJ9"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L165-L170",
+          "version": "repo-lines-v1:sha256:e64e9b49026f91c5442b26d3f81d3797a36aba505d05bd7bd7ac30e0dfa88a73:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWU3ODA4MDY0ZWY1MDVlZDlmNGJiNDA3MTdhM2UwZGE4ZGQ3MzY1NGQ2NTJmYjIzMjk0NDA0NjhhM2VkNDVkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFmNGQ3ZGM3ZmU2YmEyYTZjYjJlNTQ5NGY5NTYyNmZkMTNlN2JlM2NiZjFkNmJhNmY4YjgyNjMxNWMxM2M0NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjYyM2RiMmY4NDgzOWFhMjMxNTRjZWM3YjJiNWFlNTVkMjU3OTRjOWM2ODYxNzk4ZmFjMGQ3ODZkOWNkYWEzZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTQwOGQ3NmVlYzI3MzIyMjNjMzU4OGVkZjBjMGFmNjFhMGRjNThlYWYyNTE1YWZhNGY0ZGYyZDZmYzZkMDYzNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce933ce47cb441db8f31e8bcbb671a39",
+      "statement": "The `Diagram` component's model-facing schema requires a `mermaid` string and an optional `caption` string, and its library description is where the instruction that the caption states the takeaway in max 8 words is given to the model.",
+      "evidence": [
+        {
+          "resource": "repo://lib/library.tsx#L212-L221",
+          "version": "repo-lines-v1:sha256:4ea14ec724f88aa78ca57b70a9fd432c154e908b70590e2ee56cb97b1e8bff3e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiMjQxNjZlYzExMzM5Mzg0MGU1NWIyNTcyYmRjNDZjZWU2OTJmMjIwZjJkMGM1NWUxOWE0MTI1YmRlNDk3OTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmMTMzMzc3NWFhNzk1NzkyY2E4M2ExZWRiZTU0ODRhMGQ3MTU4MTFjZTQyZjRlMjkyY2U0YWFlNWM1YjUzZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmMzFiMTY1MzBmZWI3ZjdjYmVkODg4YzU4ZWIwMmM4M2ZjOTU2ODk3ZjljZTA4YmVkNmNiMTMzNTBmY2IxZTMifQ"
+        },
+        {
+          "resource": "repo://lib/library.tsx#L509-L523",
+          "version": "repo-lines-v1:sha256:85da947dd6a098edf54b47f88428b7f502a5eb068d1d95e57eada854e7b77d1b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhZGNhMTkxMWJiNGNhM2RiOGY5OTgwZTJlZmFmNWEwN2Q4NTE0OTExODhkODNlNzMzNDA1NmUyM2E4ZTAwM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1ODVlNjliMDY3NWY4M2M4NjE3Y2RkMzExNTFhNDQ4ODI3ZGU5MGUxNzllNTYxMmRmZWE3NmQwZTJlZjI5YjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzYmUyNjFiNzA1OTRlNGQzNGVkYmE1MWZhMTg1ZjRmODQyODJlMmMyNjdhYThlMTYwMDkzNjU0NTYxN2M4ZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmMTMzNTBjZGIzMWU4MGZiZDczNzNhOWE3ZTlhNzZlNjQyOWQ0ZDg1NzY2MmE2OWY2NGMzY2Q5YTgyZWQ0MjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_27769c23e1a24cd78ae240e69ef08266",
+      "statement": "Errors that survive the single repair turn are not silently dropped: they are returned with the result and the session layer shows a warning counting the invalid UI statements, so a diagram the model failed to fix degrades the summary instead of failing it.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L49-L66",
+          "version": "repo-lines-v1:sha256:48b61f9cf24372a38fab497ac1b13e712ffb84429c8c3bf9da643c5f4d88dd5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3ZDU0Y2U1NDA1Y2M1ZjQzMTVmZDAxNjg3ODcwN2IzZjYxYjQ1ZTViYWVjMWRhNGMwZWExNDM2MWU4NGNhODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViMzhmNDY1OGYyMDVhNDY3MGJlZTZlY2U3YTcyNDc1M2Y4MThkYzM4YzJlZmE4NjkwNzNhNTgwODEyNWM1ZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxYzQwNWNjOTkxNTQzYzg3NjI5NTAwZjJlNTg1NzBjNzM2YWVkOTM5Njc5NGNmMmE5NTJmZmYwZjUxOGJkYjcifQ"
+        },
+        {
+          "resource": "repo://lib/generate.ts#L84-L96",
+          "version": "repo-lines-v1:sha256:7cc5d7c5a6b9a8efa0b1c3f7567310188b187a286f60b50e80a7c6963f1633a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNGY2YjhhOGQ3OGY0N2UxMzMwNTQ1YTc3YTExM2UzYTgzMjMyZGZjNTc3NDI1YTcwZWFlODEzZDQ4MjViZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiMzAxZDkxZTg1YTRlODEyYjk5N2FhZWQ3ZmQ3N2Q1Mjg0M2U5OTdlMDRjYTk3NTU5NGY5OGVhZTI3YzFlNDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhY2QzYTM4M2FkNDEyZmQwZDIyN2FkMWU0NDI4MWYyYzEyNDc4MTFjOWVkMTM5Y2IzOGJiYmJmYzJjNDIxNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyYjFlMmZhMmJiNjZkODdhODFiYzNjNjdmNjEyNjZkZDk1NWI2ZGRmYjI2NzhiMGQ1MDhlZDQ0ZmE0NjIzMTkifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.8.0",
-    "at": "2026-11-07T09:34:41.642Z"
+    "at": "2026-11-08T08:28:07.947Z"
   }
 }

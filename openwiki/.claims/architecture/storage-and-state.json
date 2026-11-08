@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1edaf4a20a31ae2c0c98f5c8d051fc5e93581e8820c239831972f0808a670628",
+  "claims": [
+    {
+      "id": "claim_16f05e7265f643fc9d2c4e5ed9c68753",
+      "statement": "All persistence in the extension goes through WXT's `storage.defineItem` with an `area:key` prefix, and the codebase defines exactly six items across two Chrome storage areas: `local:settings`, `local:history` and `local:modelCache` in `chrome.storage.local`, and `session:requests`, `session:panelRequests` and `session:panelUrls` in the memory-only `chrome.storage.session`.",
+      "evidence": [
+        {
+          "resource": "repo://lib/history.ts#L50-L52",
+          "version": "repo-lines-v1:sha256:e4368d0de738100bb5d495da6fb1c3eec5f73dc5d5ca3100f14ebb66569e089d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGJkNjRlM2I1MjgxMWViNzU0MTA0YmI2NzA0OTYwYjUzYjQ0M2QwNzAyNzUyYWUwYzE4NjQwNzNlMTk3MmE2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmZlNzhiMDk5OGU3OTAwMTgyODU3YmE3MjgyY2Q0ODNjNzI4MDIyMDk0Zjc3YTYzYmRjYmQ1YjA0ODBhNTY3NCJ9"
+        },
+        {
+          "resource": "repo://lib/models.ts#L101-L104",
+          "version": "repo-lines-v1:sha256:f0dd6238576258163e1683a6b2e9a6739925fc8623b152415b3eea882d38c3ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk3YjEwMWI4YjQ3YzIyNGQ1YWZkMjYyNTY3NTk5YzQ4Y2I2MDdkOGU2ZGZjYWYxMTZlYjM1YzA0YTQ3ZmE5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTEyNGVmZTQ0MmUzMmQ1MDg3MGZjNGUyYjMxYTZmZGNkZmUwNWUyOGZiNWFiMGM5MzFiZmYxY2MwOGRiMjA4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWQ3YzQ2YjViNDU0YWU0YmNkMTMzMTJmNTViOWVhYTA0ZWI1NTdhZGRjODg4MDIwN2YwMWE0MWIxNGE4MTYyZiJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L10-L14",
+          "version": "repo-lines-v1:sha256:b2465ec87df8d2cec9ffa5eb6b6cd5542474a58d53c94b6528a6325f4a9791a1:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGNkYTNkNDU2ZGU5ZDIyZTVjNzVkNGI3ZWU5NWUzNjAwNzYwN2JiYjkzNDVkZWZkNzgwZDFiYzlkOWM1ZjNhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBjMjkxNjI5MTQ2MDUyNDE3NTBiMzkxNzQ2MTA2ZDMxZGZmYjAyOGQ1ZGQ4YTYxMDhiMTZmYjI4NGFjZWY3MCJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L51-L58",
+          "version": "repo-lines-v1:sha256:67241f155a0fed9b965e0d8f2644632fd3071bec64907a816dcc38131b4e26f6:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDkyNmNkMzZlNTNjYTE0YWExODNhNmZhMTZhNWViZDg4MGYxNTA4NDMzMGE1NzZiZjRjYWQ3ZDA3NDVlMDYyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWY5MTc1OWQxN2ZkYTQxNTljOTUxNzdmNDc5MTk1ZjAzZmQxMTY0NjhlZDI0YjRiOTM2Y2Q1YTZmMmY4MWY4NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDBlNTcyMmQ2MWE1OTlhYjM2ZTQyODg4ZTM5ZGI2MDRkYjY3MDM3NTMwY2Y0NmM3MmVkYzMzMjQyMTA5N2ViMyJ9"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L217-L220",
+          "version": "repo-lines-v1:sha256:049fd299d9b1612e8c1eb861f8e9da3eaf75a0573d9c6b22a105893e4e5e69ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjU1ZDc1MDg5ZmQ1YjIxOWMyNWQ3YmE0YTAyNDYxZDhhMzQ1ZmNmOWY0NDEzYjBmZDY5YWY4NjhmNDRmMzRkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTlmMWJmY2JkZTIzN2ExMjE0MTIwNTI0NGE5Y2E0MDMzYjg4ZWRjMDA1OWY2ZDVjMDMzZTQxNzEyZGFhMTIxYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmQ2NTM1NWI2NGVlNzk1Y2JiNmQ2OWIwN2I4NmU4Nzg0YmVhZTkyNWE0ZWFmNGYzN2FjZmVlODhhNjhiOWU1NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4743d1a93ad9497a98e3edfa40db538d",
+      "statement": "The `local:` prefix (rather than `sync:`) is used for the settings item specifically so that the per-provider API keys are never replicated through the user's browser account, and no `sync:` storage item exists anywhere in the codebase.",
+      "evidence": [
+        {
+          "resource": "repo://lib/settings.ts#L216-L220",
+          "version": "repo-lines-v1:sha256:5ad55589df1c9e52ce3d054236e4d81365bfc4782f1e80abe8fc8fe35c5e3f72:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmY0YzE2NTQ1NjlhZDEwYzhkZTM1MDk5NmY0YTRiNmZjZWRmZmFlN2I2MzVmMzMwOGVhYzRmMDRmYWJiMTI2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmQ2NTM1NWI2NGVlNzk1Y2JiNmQ2OWIwN2I4NmU4Nzg0YmVhZTkyNWE0ZWFmNGYzN2FjZmVlODhhNjhiOWU1NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b39b5cf73eac45ab80224b2decb92ca1",
+      "statement": "Every provider's API key, base URL and model are kept together in the single `Settings.providers` map inside `local:settings`, so switching providers preserves each provider's key, and the key is written to no other storage area.",
+      "evidence": [
+        {
+          "resource": "repo://lib/settings.ts#L137-L143",
+          "version": "repo-lines-v1:sha256:16d5d7cbd177e877ec6004fd096848439f233f72b113c02490027408cb6b944a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGY3ZWY5YjNmZjgwNzkzZjA4MGVjZWYyZDRhNmVjMmNlMzhjODY3NDE0MWRjNGE3MDE4M2MwOGRmNDMxYWQ2OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODA2YWI5M2IyNTYyNjczMjQ5ZTE1NTBhOGJiZWZlYjVlYjM2NjQ4MTU2OThkM2NkOTViM2RjNTRkZWRiMGY1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDRlMDYyMjhkYTI3MDA1Y2UxZjBhOWY2MDE3Mzc4ZGZlMDk4YzU5YWE4NDQ0ZjUyNjVhMGFjNzJmZTYwN2U5ZCJ9"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L140-L160",
+          "version": "repo-lines-v1:sha256:9e064211b32ef7dda530790a89c8fc0123e68d6dd28f44487438617812501733:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2YjJjNDFkOTljYmU1MDFkZmM4OTk5OGIzZTdiY2YyMTMwNGU2ODQ1OWY2ZjBhMjg0N2IwNzA3ZjYyZjhiZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwOGEwMTM3MmMyM2NlZWYzMjkxM2UzYWQ2MjZhYzM1ZjA5MTFhYTg4MjgyOGNkMmI5MjI1ODc4NmUyMjMzZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0YzA0M2I3ODFkNDM2ODllZDZjOWJmNjM4Y2M4MmQxYzJmZDU1MDhmNGQ1ZDAwNTkzNjBmMjE4MTRhNTVhZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5f1995723cb340f0918417918604c01f",
+      "statement": "`normalizeSettings()` is the only gate between a raw stored settings blob and the typed `Settings` object: it fills in defaults and discards values from older versions (unknown provider, unknown theme, an invalid `display`, unknown summary styles), so a settings blob written by an earlier version cannot break a newer one.",
+      "evidence": [
+        {
+          "resource": "repo://lib/settings.ts#L222-L231",
+          "version": "repo-lines-v1:sha256:ea4859fc80824e525341cf46aa22850a6177693b0091adc62eb3a918e740f947:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyODk2MWFmOTc2MzNjMWRhZTAyZDUzMzUwMzg0MGRiZGJlM2ZlNzA4MjI0MTVlNWY5YmQ3NTc2NDAxOWY3NTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhZWVkMDkwNTUyYmJiNjVjZDlhYzdmNjFmYzA5ZjQyMzE0YjMzNjI3ODg0YTJiNTRlMWQzOTliOGE3MDU3YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2NzhhYTE1OGM3Zjg0NTIyZTZiNzc2Y2U4MTE1ZmU2ZmIxMmFkNzI0NWVlZDBmM2ZkNDkyOWNkODkwYTBhY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_311730dc6a22487bb0eb54a078f0b2e8",
+      "statement": "`components/useSettings.ts` is the single reactive read path for settings: it loads once via `getSettings()` and then keeps the value in sync through `settingsItem.watch`, and it exposes a `loaded` flag that the result view waits for before handling a routed request, because the request needs the provider configuration.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSettings.ts#L1-L18",
+          "version": "repo-lines-v1:sha256:dd8a04b5662d348eec353a87f5a6d6cfad695e99ed93cdae5f7b3f5669f7e5d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyODkzNDkxNmVkMDkwNmQxODhkZWZlZDJmYjlkZmQ0MDMwZDQxZTBkOWM3MTJjNWYxNjczMmQ5NDBkMTU5YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L106-L125",
+          "version": "repo-lines-v1:sha256:246483d576d6929ce17e4ee84dcaa1760103995e5bddec6ef58103fe62f1cb38:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjMGRhOTIwZjQwN2FmYWVmNzJhMmJkNmI0MWVkNjU4MDBlZGQ0OTdiZGE4ODgyOTgwYTFlZjQyODFiNGY4ZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2NzdkMTYzMWMwYjNjMDc4ZmY2MjdkNjQzNzZkYTFmNjU2NzEzZTAxNmZjYWRjYzcxYmNmZmE2ZWI1NGY3NjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2YTVkMTkwNDhkZjQ3OTc0MmM3ZmVkNjJiNGEyZmU0NjFhZjc2Y2UyZTI0MGZhNzA1OTQ3OWIyMWQ1ZDFhOGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkZWZhNzk0OTkzYzU5MzY1ZmI0N2I4OGZjN2U1ZDRiODQ1OGRlYzM0YjVmYmRlMGI3NWVlMDE2NWY3NzhkYTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9914f2d6e63b4f85936eeb31e9ad8cb6",
+      "statement": "The background worker watches the settings item and compares `next.display` with `prev.display` to re-sync the toolbar action and the context menus, so switching between tab and sidepanel display mode takes effect without restarting the browser.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L37-L40",
+          "version": "repo-lines-v1:sha256:5206e17379713b907e6f01c9573148ccb0985c8814105023302c369a258f6f16:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y3MWExY2QyNzlkNjU1Njc1Yzk4NjQyNGY5ZjdiNzA3NDMyZjIwNDM4OGI5ZjRiZTAyZDlmZDk0ZTBlM2U1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGU3YWJhNGRlMmJlNDY1ZGQxMjYxNjllMWJjZjMxYWMyYjZkM2IzNjU2NDg4YzM2N2I5NzNjNjQ0ZGMxNTAxZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFjNjFkNWM3OWM2NTZjODU0OGMwOWFkMGJhNWE5ZjE0ZDUyMzc1NmIxZDlhZTgyYjVkOGIxNTc4YzMxMzJmYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_159c2a122d3042b1b11ab6749a35e42f",
+      "statement": "`local:history` stores at most 20 `Session` objects; `saveSession()` prepends the session, removes any earlier entry with the same id so a re-save replaces rather than duplicates, and truncates the list to the newest 20 entries.",
+      "evidence": [
+        {
+          "resource": "repo://lib/history.ts#L49-L60",
+          "version": "repo-lines-v1:sha256:25616a724a689de784b3749c46bfd35255e263ed2f61ae228824ece4220936ce:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxYjg5NDhiMGFiYmUxYTY5MGM4NjdhMDdkMjFiODc2ZmQ4OWM3YjhhN2YyNjM5MjZiMmFlNDJmN2M3MDAyNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZDk3ZjBhZjE3YWI4ODUzMzNmYWNjODVjOWIzNTU2MTViNDA1Yzg2ZmM2NjczZTc5OGRhN2VjMjUyY2I5MWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4MDA1N2RmYmJlYzg4NmYzYzk1ZTExNTEyZWM4MjA4ZTQzYzk0ZTdjMTBkMmNhMmQ2NWE1NjBkM2YwMmVhODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxOTRjMzg1ZDY2ZWNhOTFmODI1Y2NhYTUxODkwYjJhYzYwYjUwYTg0YmRhZmM3NDZmNzcxODIyZmZkNzI1ZmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_027000ccc02a4c2dbbc972ca6e2eec9f",
+      "statement": "A session's summary and every Q&A answer are stored as OpenUI Message Protocol payloads written with `buildMessage` and read back with `parseMessage`; the stored payload carries the program in `content`, the renderer's form/`$state` map in `context.formState` and the model's prose note in `context.note`, and the context block is omitted entirely when there is neither a note nor a non-empty form state.",
+      "evidence": [
+        {
+          "resource": "repo://lib/history.ts#L28-L48",
+          "version": "repo-lines-v1:sha256:f3849212d10aad14d694f4de031197759456d8814486cbece918d3ddae2ebe1e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlZjEyZDE4YmI1ZTcwYzNkYjQ0NWYzZGY0NWU4Mzk2ZDQxYzgzMDVhZDk5ZjU1OWIxYmMzNzFjM2MyMTRlOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNTZjOTI0YzNjYjFlYjZhMzAwZGI2MmI4NGQxZGJkMzcxZGE3ODg5ODllNzYzZDllZTZiYWIzNWFiOTlmZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_da5e268ead4848fe8da8c720b0ff80f4",
+      "statement": "Only the `content` of a stored message is ever sent back to the model — the protocol markers and the form state never leave the browser in a prompt.",
+      "evidence": [
+        {
+          "resource": "repo://lib/generate.ts#L125-L129",
+          "version": "repo-lines-v1:sha256:6c3fcccf895ac680c11f87701e305976d849cd5ddf43e99dc56171d430ffbb22:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTcyNmZmNTNkZjYxNGQ0ODkxMTk3YTQ1ODQ3OWFkM2ZmNDQ5ZWExNzZhYzkwZThkZTZjNTI4ZTg3ZmZmMjY2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTY3MTNkMmZiM2EyN2Q2ZWU5MTExYWIxMDFjMjY4NDJmMmQ2NWExYjA5MjdhM2U5ZjQ5ZTNjNzBhOWVjNWQ2MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2FjYmQzZGY1NWMxZGVlMTIzZDk0MGQ0NDgzM2M5MWQyNzFjMjk5NmI2OWY0NDEyOTIxOTRlNDBlMjM4NzBlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTBkZGZkZmFlNDIzYjE5NDk1ZjRlNjM5ZWNjODY2MDYyYjdlYTIxZDNlYzgwNDc0ZWYzMzA5MWU0MTY4NWU0MiJ9"
+        },
+        {
+          "resource": "repo://lib/history.ts#L5-L9",
+          "version": "repo-lines-v1:sha256:73d92a46021879d91c0c746b2b2346888fccb34523b1f4c6c5c024694bd752a7:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzAxY2E1NThhYTM2ZDY1Yjk0NmFkNmU1ZGY0MjAxMWMxMTljMDUzYWFiMzc1OGM1MTdmM2E5YjIxOTBkMzIyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTIyMTU0ZWEzOTNkYmNjYmQ0MDM2OTlmNGVlZTQxZDhhN2MyNDZkMzZhMjk4NTA1NmJmOTk4Yjg5ZjA0MDRiMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_71bf17cf80484d2b9aa47f6050dbc893",
+      "statement": "A stored message is passed to the OpenUI `Renderer` directly as its `response`, so the renderer can consume the stored payload without a conversion step, and the stored message is tagged with `attributes: { app: 'ai-summarizer@1' }` and an end marker.",
+      "evidence": [
+        {
+          "resource": "repo://components/GenUI.tsx#L20-L44",
+          "version": "repo-lines-v1:sha256:cfd296c50e785a8222e0e3181b4fe3498aa976325301450a0f13922d065870ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZTEyOTYzMDU3ODAzNDliYTU5YTM1ZGMyZmUyZjQ4MzYzZjY2MzdmNTBmZTBjYmViNTIyZGQ2Yzg2NDk4MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2MDgxNDMwNzBiOGVmMDhhYjE2OWRjY2ZlNzAzYWFhN2M2MjdjMmQ1NGFjMWIwNTZiZjA5YTE2YTkwNjg5YTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4YmFhMzRjNDQ3NThiMDlhODIyNzQ4OWE5Y2Q0NTRkMjEyMDNmM2RiYjA4ZTQxYjI5N2NmMGM0ZGE4YjI1ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxMWVlZDk3NDFiYzkxYmYyOGRhMmVlZGU5M2NiZDdkY2I3MjU1ZWExNzlhZmU1MGU5ZjlhODNiZTg0M2JmMzkifQ"
+        },
+        {
+          "resource": "repo://lib/history.ts#L40-L45",
+          "version": "repo-lines-v1:sha256:cf392bbbe16de38e2ff4df55cd868c4330faeef7cdd4b8179d86bee90178e036:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQ1N2IzZTE1MTllNGI2MWMxZjQ2ZmMxNWUxMTM4OGZmNTQ4Y2YzZGMzMWRkZGM0N2FiN2RmNDQ2YjRkMmYzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzg4MjlhNGFmMDA5N2UwNWYyMGM2ZmM4YmUwMTM3Nzc2YjRmNDVjNjM1YjU4MDUwZGRiY2FmNzZmNDM1OWU1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDcyMzQ2MTAyMWQ5M2MxMzBhYTRkMzJmZjhlZDc2MWJmZjJhYjI5Njk1M2E1N2Q5Y2Y1NDA3YzIwZThjODBlMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODgwMDU3ZGZiYmVjODg2ZjNjOTVlMTE1MTJlYzgyMDhlNDNjOTRlN2MxMGQyY2EyZDY1YTU2MGQzZjAyZWE4MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_475cb4a540074c4798fc5306067f920d",
+      "statement": "Renderer form and `$state` changes are persisted into the session payload with a 500 ms debounce: `updateSummaryState` rewrites the summary and `updateAnswerState` rewrites one Q&A turn, and in both cases the in-memory session ref is updated synchronously while only the `saveSession` disk write is debounced.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L203-L228",
+          "version": "repo-lines-v1:sha256:a58c715f5685c1765860ad6cde4c0a0e46efe2de9ed0e7027502f22382272d59:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxODdkMGY5ZmYyMzhmZmJiY2Q1Mzg4YmM3OGQ5NTZkZjQ5NjI5NjdiN2QxYmJmMTdhYTUzNGQzZmE5ZTI5N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYzUyZjA4YjM5YjA4YjAxYzhkMzA4YmY4ODBiMGJlZjAyZmQxZGZjYzlkOWFhOTNhNGQxYjVmNGQ1OGI2Y2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkMjU3NWViYWYxMjdjNTVhMWI3YzlmMGQ2ZWM5YTNmYTIwNTgyYWQ2NDBkYmNiYzJlZDU4NmU5NzdmMzQxNGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkMTU4MzZiOWM5YTdlYTM5N2E1NTg0MmZkYjRjM2I3YmM4ZGNlYTI1NjNjZDNhODAxYmIxYjUxZjY1YmY1NGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6406487752f425e897fce4b93da9368",
+      "statement": "Because the persisted form state includes the values of generated filters, the in-browser CSV `toolProvider` (`csv_rows` / `csv_group`) re-renders without a new model call and the same filter is still applied when the session is reopened from history.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L53-L55",
+          "version": "repo-lines-v1:sha256:a18afd0eaf470f19de34f62ede3cbb451d66a620f882fc5e6a474fdf52e19ed3:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NlZmU5YzM1NmY4ZDI3N2E3ZjkyMWU2MzE2M2QyZDBmYWFjOWQxM2RhN2ZjMTc5NDU3NzIwN2RhZmIzN2FjOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFjZmI3ZWIxN2YxOTVjYWIzNmMxMjM4N2I2ZTRjMjlkZGY4Y2ZkN2VmMDg5NGI5N2U3NzZjOWFjMjVjYWEwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWNlMTgyZWQyMTJlMTFkNTViZDQwNGQ1MDNiMzY2MDRiZDg3YjA3MzRkY2JjN2ExZDAzNWE2OGNlYzlmMDBiYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDAwZDk5ZDFhZjIwNTFlMWJkNGRkZjA4YzNkZWM5N2E5NDMxZjY2MzY2YWMxODVmODE0Y2U1MjEyNTQ3YmVhNCJ9"
+        },
+        {
+          "resource": "repo://lib/csv-tools.ts#L1-L35",
+          "version": "repo-lines-v1:sha256:6472060a1f4fa8007588a3154ed4c8ee9a9f5ea161e3b044fc91e8a12d023d0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyMWY4NDExYTI1NWI3OTg4YTVjYzJlNWZhNThmYzZjZWI5ZTBlNTk3YjY5MjhmNDQwMTVjN2QyYmZmYjY3YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyYmZhM2RhZWY4NmVlMzRjNDJkOGMyNTMzZTg2Y2E4M2FhYmU4NmM2YWZjYjdhYTVjYWNhNTRkNGM1MjU3NTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a656ca1b85274f8a845580751f5e06be",
+      "statement": "On reopen, `SessionView` passes the stored `context.formState` back to the renderer as `initialState` and keys the renderer by `session.id`, so form values are hydrated and a previous session's form state cannot leak into the next one.",
+      "evidence": [
+        {
+          "resource": "repo://components/SessionView.tsx#L140-L148",
+          "version": "repo-lines-v1:sha256:5ae38ed3142ccefb58471f4cc5f533bf27a3745bfaf0464b82417cbccfd1e20d:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTgxNWZiMjljZjk4MTcxMmMwNWZkMzk5MWRkYTY5YTVmNzMyNThhODdlZDU5NGMwZGQ5OWNhMjJlY2RlNGVhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmE0MTQzNjc2NmIyZjhjNGZkNzA3NmU5YTdiZTJmYjNjMjQ1NzI4MjI4YmNiOWRjM2E3NmY1MWE1YTQwYzFkOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWI5ZWRiYWI1Mzc4MTBmY2YxOGE4ZjAyY2RjMTExNjRhZDBlOWNjMzUyOTYxNGMwN2Y1YWM4ZjZhZDZiMDMyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmE4NTMyOWJhYTk2OWQ4MGE1MWVmMGJhNTQ0NWU1ZGNmNzEwMmY3MGM3YTEyZmM0MTY0MDE4ZGMyZjMxYTQyMSJ9"
+        },
+        {
+          "resource": "repo://components/SessionView.tsx#L276-L295",
+          "version": "repo-lines-v1:sha256:5d95cb8a9975ce5a988857236984af81ad2f1c522e55bcdfb90b7e9fa284e240:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlODY2ZjdmNDg1MmQ5MTc0NDUxMTAyZDQzN2FmZmQwODVmYTRmOTUxM2E4YWEyMTk0YzVlMzg4OGMzNGY0OTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2MmMyOWE5NWFjZTE3Y2EyYWZkNjc0ODM2YTk0NTkwNDAzMWMzZjcwMjk5YmRlYjYzMTYyYzA0OTUwYjAzYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxYTE0NzBkZGExOWEyMWJjN2E5ZjQwZjE4MTM5YWMwZWQxZGJhZWQ0MTg1NWE0MTNkMmNkMTA1ZDczYzJlZDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_28c710db2d81473bac4634953d153dae",
+      "statement": "`useSession` commits the session to history after every turn — when it is created, when a summary arrives, when a refinement is merged and when an answer is appended — so an interrupted generation still appears in history with its source and a null summary.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L25-L29",
+          "version": "repo-lines-v1:sha256:f104dc2c5746fe488f162f799777a3748920ed35ab14218bd8e25a41f0b02f18:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJhYzM3ZTM1Mzg4ZGY0YzJmNzU4NjdjOGYwYzI4NTFmNTIxY2Y1ODBiMGY1ZWM4ZjBkMTU1Nzk3MDQzM2MyNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmRjNTJmMDhiMzliMDhiMDFjOGQzMDhiZjg4MGIwYmVmMDJmZDFkZmNjOWQ5YWE5M2E0ZDFiNWY0ZDU4YjZjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjBkYTM0NzRjZWM1MjNjNzIwZGY4ODcwOTBmZThlMGIxYmI1MzZkNjliNmJiMTNiYjIyZTcwMDk1ZjIxM2ZjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzE3ZTE5NWNlNTU1M2E1Zjc3OGI2ZGYyMWI4ZGI0ZDM2YTkwOWU5YzQwZTBiYzZlMmFhMDU4OTljZjY2YTk5OSJ9"
+        },
+        {
+          "resource": "repo://components/useSession.ts#L83-L96",
+          "version": "repo-lines-v1:sha256:8d6af1f05d158ca8a4f58099997b54e2c842e3388abb06cd9eeccb2c2e1d8d14:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwODM0MGFkNWFlZmU3YjM2MDZmYzA2MTE4YWJmZmY5ZGNmZmU2YWUzNWYyNTg0NjM2OTk3ZWFmYzc3NjI1NDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzZTMxMjhmYmY2NWU5NmY1OWFiODRjZDQxOWIzYjRkZjFhY2RlNDZkMDU0MTAxNDQ0MzdjYjI4NDM4NzBkYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMjY1ZmM1ZjE3NWNlZTlkMDllZDY4MGZjMGQ0OTQwOGJiMDk3MGJmMmZjNjUxODcxNjg2OTFkMTA2M2JhNjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f6db4c7c9714f73a8e991a7b6f0fa55",
+      "statement": "Reopening a session that was saved without a summary triggers a fresh summary run for that source, so a session interrupted by a closed tab is completed when it is opened again.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L231-L243",
+          "version": "repo-lines-v1:sha256:1f359867cc6a33a520e35173fb153abfb1a19d17a8f48d23ab58d2078db3942b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZmQyNmQxNWU0NzIyYzQ1N2RlNjBmZDc1NWU5ZWU0ZWViNDhmNTMwNjkxZmRhYzk0ZmE2M2M2MmMxNTg4ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4MDBjYWQ1Y2ZkZmQ2MTk1ZTlkMmRhMWVkNzkxODIwOGVlZmVjMzY2YTQ2YWRhYTQ0NmRhZTE3NjdjYzdkZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzMjcyOWQwZmVkNmRkYTFiNDFiYTFkOGZlMDRhZTcyNWEwZDQ0YWY5OTc3YTJiMTZmMjQ3ZTFmN2M2NDQwODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_02c669cdd40b4148b7b92961b703636c",
+      "statement": "Refinement reads the current program out of the stored message and writes the merged program back with the existing form state preserved and only the note replaced, so a refinement does not discard the persisted renderer state.",
+      "evidence": [
+        {
+          "resource": "repo://components/useSession.ts#L136-L162",
+          "version": "repo-lines-v1:sha256:5a7fa1ef6824f833c15f62f73695dd877c80c63314143ff1d2e7a772bafd8341:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmMjBmNGE5OTdhZGM4YzgyYjExNzU2ZDljMDY1YmU4MzZkNWI1Y2FiZDFmMWRmNzZlMDBmOTM2OTBkNzFkNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlNGViYzI2NTA3ZGVjZjAwODEyNTcxY2QwZThjZjQyZTcwYzRlNjg2ZmViMmJjZDYwNjYxNzcwOTg5NGM0ZGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2NmExZjY0ZjRmYTZhOTI0NTZiNTQ0N2IyMDA5MWY1NDJiNjZmMDU3OWY0ZjRmMzI5MGQxYWZmOGM4ODIwZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1ODhlZjcwZGJhYmQ2ZWI2N2RkOGQwYjlhM2Y3MjU5MzcwZmJkNjNhOTQxOWUxZWFjYWZkOTc4MDg4YTE0MjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_46dcb56747de4cce9d089ca68f722ea6",
+      "statement": "The pending-request handoff lives in `chrome.storage.session` so that large pasted or selected text never travels in a URL and never outlives the browser session; `queueRequest()` assigns a UUID and opportunistically drops entries older than 10 minutes, and `takeRequest()` returns the request once and removes it so reloading the result page does not re-run the summary.",
+      "evidence": [
+        {
+          "resource": "repo://lib/pending.ts#L1-L33",
+          "version": "repo-lines-v1:sha256:c0709559af851f9b3823adf01ab9c69dfc443d5623d2bb8da67ccc641471c449:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNWIyMjg0YWIxNzdiMzcxNWVjNjY5MGE4MTlkOTAxMWM4NjMwMDUxNGMyZTY4OWI0ZWYwNzAwNzQ0NTIxN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlYTU0OTQ0MjlhN2Y1NDVlMWIyM2ZhYjlmM2RkYjU0MjYzMGZlMDY1YWEzZjA1ZjgwMzIyZDAyNTEyMTBhZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f857bdc21de6445f9ebdb1223bc808ef",
+      "statement": "`session:panelRequests` holds only a per-tab pointer to a request id, and `takePanelRequest` consumes that pointer and honours it for 60 seconds only; the window exists because `sendToSidePanel` writes the pointer after the panel document has already been opened, so the panel may mount before the entry exists and must poll once and then watch the storage item.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/App.tsx#L70-L85",
+          "version": "repo-lines-v1:sha256:b016a01ff18147d8f067dc4c66a28c411bd10296753be904700e9b903f57efaa:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmMTAwZjBiYWI2ODkyYjViZmE5MzQ2ZWExMDNhMTZlMTQ2M2M5Y2QwYTUyZDIzM2Q1NDE3NWEzYzY2MzFlNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NjZkZDk2Y2UyNDI1MTQyODBmYzkyZDM0NmU4ZTZhY2UyOGNkMGRiOTQzN2NjZWUwZGU0ZWZhZDJhMjBjZDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0YWM4NDY1NjdkZGYyOGQxYWM4NzhlNDRmNjVlYTM5YTJjMDY2ZTZkMDg2NGJmYzMyN2VjMDQ0MGRmNWZiMTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlNDhlMzA0ZGMwYzZiY2U1MzNkMzRmMzBjNTI5YzBlMGFkMzg0YjA3ZDMxODk4NmI5NGY5MDA3NGM4MDE0OWYifQ"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L51-L105",
+          "version": "repo-lines-v1:sha256:c4b827c10224a79e848b51b00a926f1481d057fad5145b601542a3f51aef75ac:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5MjZjZDM2ZTUzY2ExNGFhMTgzYTZmYTE2YTVlYmQ4ODBmMTUwODQzMzBhNTc2YmY0Y2FkN2QwNzQ1ZTA2MjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMjQ2OGNiNThjYmFmZjU3MjE4NTI0OTE3MjNkZWFhZDA1OTI1NDdhMWVlNTcwMThmZjE1YzUxYmNhYzc0ZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmOTE3NTlkMTdmZGE0MTU5Yzk1MTc3ZjQ3OTE5NWYwM2ZkMTE2NDY4ZWQyNGI0YjkzNmNkNWE2ZjJmODFmODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2NmYxZTQ5YTdiYzMwMDhhODk4NjY0OGU4ZmQxY2MyZWYwNjMyMDRiYjljZTU4ODFlMGQ4ODg1ZWY1MmI3MTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e2829523eeb4c00a61d7564273624ab",
+      "statement": "`session:panelUrls` records the URL each tab's panel belongs to so the background worker can close the panel when that tab navigates to a different document; URLs are compared without the fragment, so in-page anchors keep the panel open, and the entry is removed when the panel is closed or the tab is removed.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/background.ts#L42-L50",
+          "version": "repo-lines-v1:sha256:7a0ca1c4a5a00bd3dadf4aa990f687d44f9b7731bf202e71a42dc996f4908796:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTBjNzc0ZmI1YzIyMGU4OTVjMjk3YWE0YTFjOTc4ZDcwZDUzNTc3YmVkYjE4ZDQ1ZmQyNzQzZTAzNjEyODA1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWZkMGI3OTBkZGRmN2IyYTJlMzJlYzYzNjM1OTIxZGI2YTM0MzJlODVmNTUwNWU2NzM1N2NhMmVhZmU3ODlhYiJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L56-L62",
+          "version": "repo-lines-v1:sha256:477cb376d7e8219342505e90d4437570f6dec0da0985df1beed43a4a1494d9a2:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjk4YWI3MTliMjEyMTBmNDMzMjhmNzg1YWM4NGVjZjZmNGYxODM4YzU4MjQ1ZTAxZjgwNzNjYjQ2MmI1NmFhNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2YyM2IxNTU3MmNhMWIzY2E5MGYxYzllYTBhYWMyODM1N2MzNDk2YWFkZmQ2ZjkwMzdiZDJjNTc1ZGFkNTE0MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDQzNjAwYjM4MDk4OTQ1NzVlZWVmZDVlMGRkMjU3ZDQ3ZDVmNzRiYjNkZTU1MjljOWFiNjIzMTVlNmMyOTNjNCJ9"
+        },
+        {
+          "resource": "repo://lib/pending.ts#L98-L109",
+          "version": "repo-lines-v1:sha256:95aa3c92f94bf89b8fbe2d9d8af86d5770ca754efe5c70ddfe99ca895cef2e5c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiYjZiZWNlMDM5ZWMyYmZmM2VjMTFhMzc1ZmNhNGY3YzMzNzZhNTc5OWJjMWI4ZjE0YzZjNDMxYTdkYmRjOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_583c5948a7424ee1801548de8f3915af",
+      "statement": "`local:modelCache` stores the last loaded model list per provider so the model picker works without a new request; `SettingsForm.loadModels()` replaces that provider's entry after a successful fetch and `ModelSwitcher` reads the cache through `getValue()` plus a watcher.",
+      "evidence": [
+        {
+          "resource": "repo://components/ModelSwitcher.tsx#L40-L45",
+          "version": "repo-lines-v1:sha256:96e51c6aea42f96665af38c6f90a8fd273f7416b6e4705fd16d088342df39a5a:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTEzMzEwYTAyNTgxNDA4NGJhMzljOWFhYWU4MDUwOTdjNjVkYzY3NTc4NDU0ZGE4MjUzMTI3MzkxMzhkMzI1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmRlMjc0OTRkYWZkNWMzNjY3Mzg4ZjFjNGQ5ODE0MzA2YTE3YmIxNGZmZDk2ZGRkM2YxNzQ1MjMyYmY5NWFkOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjE2NTkyN2I4OGIwOGY2MWU0OTRmNzM0ZmEzNjg5YWYxM2RjZWIxMWFhODllZmJhMTQ3NzliMGUwNzBmYTlmOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTliYzAwZGE0NThkNTZmYjRjNTNlNzNmZTQyYWVkZTkzYWFlMzlmYTQxZjllYTk4MWUyZmMwZTRkMDg4MDUxNSJ9"
+        },
+        {
+          "resource": "repo://components/SettingsForm.tsx#L137-L147",
+          "version": "repo-lines-v1:sha256:818f2e39bc0282e5eca360866ba7640c32b570fa4a046682731348e4f0670286:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2MzA1MTg1N2JhYWEwYjEzY2JhYjczOWIxNjdkMGVkMzZmNWQyNzE1NjFmNDRiZWE1MGQxNmViMmVhNGI5MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhNGQwZWU0YWRjZTg0NzE2MGI4ZWJkMDA1YjUwYTk0MDFkMjFlNjM3MWNkNzlhNmZjNzY2MTRmNjA3ODE1MjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NDUwNjYwNjA3ZjI5ZTFmNGVjZjAwZWIzZTZiZWZiZjNhYjhiNjdjY2E3MjU5NDRjN2EzYWUwNWU0YzNiZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExOTcwYjUxMzUzOTZhMzhjYjdkNjFjNTUzYmJlYTM0Mzc5ZWRmMDg5NjE4Mzk3NGVmZDQwNWY1ZWU2YjRiMjIifQ"
+        },
+        {
+          "resource": "repo://lib/models.ts#L101-L104",
+          "version": "repo-lines-v1:sha256:f0dd6238576258163e1683a6b2e9a6739925fc8623b152415b3eea882d38c3ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk3YjEwMWI4YjQ3YzIyNGQ1YWZkMjYyNTY3NTk5YzQ4Y2I2MDdkOGU2ZGZjYWYxMTZlYjM1YzA0YTQ3ZmE5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTEyNGVmZTQ0MmUzMmQ1MDg3MGZjNGUyYjMxYTZmZGNkZmUwNWUyOGZiNWFiMGM5MzFiZmYxY2MwOGRiMjA4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWQ3YzQ2YjViNDU0YWU0YmNkMTMzMTJmNTViOWVhYTA0ZWI1NTdhZGRjODg4MDIwN2YwMWE0MWIxNGE4MTYyZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_26c768a899284bc1b040224744bcf291",
+      "statement": "The cached model list also determines whether a keyless provider (Ollama, LM Studio, custom endpoint) counts as connected: `isProviderConnected` accepts either a chosen model or a cached model list, so such a provider shows as connected without further setup.",
+      "evidence": [
+        {
+          "resource": "repo://lib/models.ts#L106-L115",
+          "version": "repo-lines-v1:sha256:dd37f3ac2194ab92d9602a33e06d1fa409ccbbe18e9e840668b59a1a8bd26c25:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxYWVmM2MwNzYxY2FkYjJlOWFkMmNkOTc0MjkzZThkYTA1NDg5MDA4ZDY0MzUzZDgyZTBkMjVlZWQ1ZTgzNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3ZGZhNTk2NjNlMGNiMDA2MmE3MTVkZGQ2OWE5ZTA2NTJhYzEyMDI3ODIxNWY2NDUwNWVhMzY0NTMxN2E5MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMjNiMTU1NzJjYTFiM2NhOTBmMWM5ZWEwYWFjMjgzNTdjMzQ5NmFhZGZkNmY5MDM3YmQyYzU3NWRhZDUxNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-08T08:28:07.947Z"
+  }
+}

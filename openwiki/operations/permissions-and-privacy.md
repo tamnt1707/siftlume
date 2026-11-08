@@ -1,7 +1,7 @@
 ---
 type: Operations Guide
 title: Permissions, Privacy and Runtime Operations
-description: What the extension's manifest asks for, which code needs each permission, when host and page access are granted at runtime, how API keys and history stay local, and the build, locale-check and packaging commands.
+description: What the extension's manifest asks for, which code needs each permission, the two runtime moments when host access and the local-server Origin rewrite are set up, how API keys and history stay local, and the build, check and packaging commands.
 tags: [permissions, privacy, manifest, i18n, build, operations, security]
 sources:
   - id: openwiki-source-ea70eb6c045047448e446296
@@ -12,8 +12,12 @@ sources:
     resource: repo://components/SessionView.tsx
   - id: openwiki-source-73b5356d2812920c745c9bc0
     resource: repo://components/SettingsForm.tsx
+  - id: openwiki-source-c9a09d033d33f35c7f77404e
+    resource: repo://entrypoints/app/main.tsx
   - id: openwiki-source-f7a24281a6b5103146379f37
     resource: repo://entrypoints/background.ts
+  - id: openwiki-source-1a2f20cdaa1b56dbe6bee7da
+    resource: repo://entrypoints/popup/main.tsx
   - id: openwiki-source-cc2647d919da6467bbd4e6cb
     resource: repo://entrypoints/popup/Popup.tsx
   - id: openwiki-source-3044b6aba8672ca1bfcf69c6
@@ -34,6 +38,8 @@ sources:
     resource: repo://lib/local-origin.ts
   - id: openwiki-source-117bfa8c60d3545d019aa9be
     resource: repo://lib/models.ts
+  - id: openwiki-source-37fc048a321278b06586fd61
+    resource: repo://lib/no-openui-devtools.ts
   - id: openwiki-source-8fc820fe296baa60761c2279
     resource: repo://lib/openui.ts
   - id: openwiki-source-1b5cb308e5e18abaa924ebd9
@@ -42,36 +48,44 @@ sources:
     resource: repo://lib/pending.ts
   - id: openwiki-source-3823e904eb7ad607af5f3f70
     resource: repo://lib/settings.ts
+  - id: openwiki-source-e90a9845d58de04e0ad54095
+    resource: repo://lib/summary-example.ts
   - id: openwiki-source-71ac86fb2391cbde6cac5acd
     resource: repo://locales/en/settings.json
   - id: openwiki-source-5b54a58d1b51cd490b0e7162
     resource: repo://package.json
   - id: openwiki-source-43b2056f6f0deea7bca50189
     resource: repo://public/_locales/en/messages.json
+  - id: openwiki-source-d5a195680a34e5c378d6b135
+    resource: repo://scripts/check-examples.ts
   - id: openwiki-source-992a8f5501a08fbbb1cb4abc
     resource: repo://scripts/check-locales.mjs
   - id: openwiki-source-49ce5f922c6d8903f5e7d073
     resource: repo://wxt.config.ts
-generated: { by: "openwiki/0.8.0", at: "2026-11-07T09:34:41.642Z" }
+generated: { by: "openwiki/0.8.0", at: "2026-11-08T08:28:07.947Z" }
+verified:
+  - by: openwiki/0.8.0
+    at: 2026-11-08T08:28:07.947Z
 ---
 
 # Permissions, Privacy and Runtime Operations
 
 This page covers the extension's *operational surface*: what the manifest declares, which code
-needs each permission, the two moments when Chrome asks the user for something at runtime, what
-data leaves the browser and where it is stored, and the commands used to build, validate and
-package the extension.
+needs each permission, the two runtime moments where host access and the local-server `Origin`
+rewrite are set up, what data leaves the browser and where it is stored, and the commands used
+to build, validate and package the extension.
 
 Related reading: [Extension Surfaces and Routing](../architecture/extension-surfaces.md) for how a
-<!-- openwiki: broken internal link [../architecture/storage-and-state.md] file "../architecture/storage-and-state.md" does not exist. Fix the href or restore the target, then delete this comment. -->
 trigger reaches a surface, [Storage and Session State](../architecture/storage-and-state.md) for
-the persisted items, and [LLM Providers](../integrations/llm-providers.md) for the request path.
+the persisted items, [Localization](../concepts/localization.md) for the two translation systems,
+and [LLM Providers](../integrations/llm-providers.md) for the request path.
 
 ## What the manifest declares
 
-`wxt.config.ts` declares only the *hand-written* part of the manifest. Everything the browser
-sees at install time is the built artefact `.output/chrome-mv3/manifest.json`, which is larger
-than the config file suggests.
+**The browser never reads `wxt.config.ts`.** It reads the built artefact
+`.output/chrome-mv3/manifest.json`, which WXT generates from the config *plus* the
+`entrypoints/` folders and `public/`. The config file declares only the hand-written part of the
+manifest, so reading it alone gives an incomplete picture of the extension's runtime surface.
 
 ```ts
 // wxt.config.ts
@@ -139,10 +153,28 @@ Two consequences matter for anyone reading the config instead of the artefact:
 `optional_host_permissions: ['<all_urls>']` is **not** granted at install time. It is the pool
 from which the provider's API origin is requested at runtime.
 
-## The two runtime permission moments
+## Manifest V3 constraints the code must respect
 
-The extension never asks for "access to everything". It asks for exactly two things, at two
-different moments, each tied to a specific user action.
+**No remote code.** Manifest V3 forbids executing remotely hosted code in the extension. The
+OpenUI React runtime ships a development-only Inspect widget that fetches its UI from
+`cdn.jsdelivr.net` at runtime, which the extension's own CSP would block anyway. To keep the
+bundle compliant and free of console errors, `lib/no-openui-devtools.ts` sets the library's
+auto-mount flag *before* `@openuidev/react-lang` is evaluated:
+
+```ts
+(globalThis as Record<symbol, unknown>)[Symbol.for('openui.devtools.autoMount')] = true;
+```
+
+Because the flag is read when the module is first evaluated, this file has to be imported
+**first** in every entrypoint — `entrypoints/app/main.tsx`, `entrypoints/popup/main.tsx`,
+`entrypoints/options/main.tsx`, `entrypoints/sidepanel/main.tsx` (and the showcase harness) all
+begin with `import '@/lib/no-openui-devtools';`. Reordering those imports re-enables the widget
+and breaks the no-remote-code rule.
+
+## The two runtime moments
+
+The extension never asks for "access to everything". Host access is acquired in exactly two
+places, at two different moments, each tied to a specific user action.
 
 ### Moment 1 — the provider API origin, on Save
 
@@ -182,9 +214,42 @@ expired.
 The permission is scoped to one origin — `https://api.openai.com/*` for OpenAI — not to all
 sites. It is what allows the extension page to call the provider without CORS.
 
-### Moment 2 — page access, on the toolbar click or the context menu
+### Moment 2 — the local server's `Origin` header, when a local provider is used
 
-Page reading never uses a broad host permission. It uses `activeTab`, which Chrome grants
+Local providers such as Ollama reject requests whose `Origin` is `chrome-extension://…` unless the
+user sets `OLLAMA_ORIGINS`. Chrome omits `Origin` on simple GETs (so listing models works) but
+always sends it on POST, which is where the summary request goes.
+
+`lib/local-origin.ts` handles this with a *session* `declarativeNetRequest` rule that rewrites
+`Origin` to the server's own origin:
+
+```ts
+condition: {
+  urlFilter: `|${origin}/`,
+  initiatorDomains: [browser.runtime.id],
+  resourceTypes: ['xmlhttprequest', 'other'],
+},
+```
+
+The rule is deliberately narrow and deliberately quiet:
+
+- It only matches the local server's own origin (`urlFilter`), so no other destination is
+  touched.
+- `initiatorDomains` is restricted to this extension's own id, so a web page cannot use the rule
+  to bypass the local server's origin protection.
+- The rule id is a stable hash of the origin, and an in-memory `applied` set means it is
+  installed **at most once per origin per browser session**; repeat calls return immediately.
+- It is a *session* rule, not a persistent one, so it disappears when the browser closes.
+
+The rule is installed lazily, right before the request that needs it: `allowLocalOrigin` is
+called from `streamCompletion` in `lib/llm.ts` and from `fetchModels` in `lib/models.ts`. It only
+applies to a loopback host (`localhost`, `127.0.0.1`, `0.0.0.0`, `[::1]`); for any other base URL
+`isLocalUrl` returns false and the function does nothing. The host permission for the local
+server itself still comes from Moment 1 (Save) — the rule only fixes the `Origin` header.
+
+### Page access needs no prompt at all
+
+Reading the page never uses a broad host permission. It uses `activeTab`, which Chrome grants
 implicitly — without a prompt — to the tab the user interacted with:
 
 - Clicking the toolbar icon (`browser.action.onClicked`) grants `activeTab` on the active tab.
@@ -208,6 +273,7 @@ sequenceDiagram
   participant U as User
   participant SF as Settings form
   participant PM as lib/settings.ts
+  participant LO as lib/local-origin.ts
   participant BW as Background worker
   participant PG as lib/page.ts
   participant PV as Provider API
@@ -218,11 +284,14 @@ sequenceDiagram
   BW->>PG: activeTab granted for that tab
   PG->>PG: scripting.executeScript reads HTML
   U->>SF: summarize
+  SF->>LO: allowLocalOrigin baseUrl
+  LO->>LO: install session Origin rewrite rule
   SF->>PV: fetch from browser with the user's key
 ```
 
-Caption: the two runtime permission moments — the API origin on Save, page access on the trigger —
-and the direct browser-to-provider request that follows.
+Caption: the two runtime setup moments — the API origin on Save and the local-server `Origin`
+rewrite before the provider call — with the implicit `activeTab` grant on the trigger and the
+direct browser-to-provider request that follows.
 
 ## The privacy model
 
@@ -270,23 +339,6 @@ outlive the browser session.
 **What is sent to the model.** The source content is truncated to `settings.maxChars`
 (default 60 000) before it is put into the prompt, and truncation is stated explicitly to the
 model (`buildSourceMessage` adds "Note: the source was truncated to fit the context window.").
-
-**Local servers and the `Origin` header.** Local providers such as Ollama reject requests whose
-`Origin` is `chrome-extension://…` unless the user sets `OLLAMA_ORIGINS`. `lib/local-origin.ts`
-installs a *session* `declarativeNetRequest` rule that rewrites `Origin` to the server's own
-origin. The rule is deliberately narrow:
-
-```ts
-condition: {
-  urlFilter: `|${origin}/`,
-  initiatorDomains: [browser.runtime.id],
-  resourceTypes: ['xmlhttprequest', 'other'],
-},
-```
-
-Because `initiatorDomains` is restricted to this extension's own id, a web page cannot use the
-rule to bypass the local server's origin protection. The rule id is a stable hash of the origin,
-and the rule is installed at most once per origin per session.
 
 ## Localization
 
@@ -382,9 +434,30 @@ A successful run prints `✓ <n> locales × <n> namespaces match English.`
 | `pnpm build` | `wxt build` — production build. |
 | `pnpm zip` | `wxt zip` — packages the build for the Chrome Web Store. |
 | `pnpm check:i18n` | `node scripts/check-locales.mjs` — validates the locale folders against English. |
+| `pnpm check:examples` | `tsx scripts/check-examples.ts` — validates the OpenUI Lang prompt examples and their Mermaid diagrams. |
+| `pnpm check` | `pnpm compile && pnpm check:i18n && pnpm check:examples` — the full pre-commit gate. |
 
 Firefox variants exist for the dev/build/zip trio (`pnpm dev:firefox`, `pnpm build:firefox`,
 `pnpm zip:firefox`).
+
+### What `pnpm check:examples` verifies
+
+The summary prompt teaches the model OpenUI Lang by example, so a wrong example teaches wrong
+syntax. `scripts/check-examples.ts` parses every example the prompt actually uses with the real
+library and reports:
+
+- **Parse errors** — the program is parsed with `createParser(library.toJSONSchema(), 'Card')`,
+  and any `meta.errors` fails the check.
+- **Unresolved and orphaned statements** — `meta.unresolved` (a reference to something that does
+  not exist) and `meta.orphaned` (a statement nothing uses) are both reported.
+- **Mermaid rendering** — every `Diagram` node's `mermaid` prop is extracted from the parsed tree
+  and rendered with Pele; a Mermaid error fails the check.
+
+The examples it covers are the ones embedded in the prompt: `VISUAL_SUMMARY_EXAMPLE`,
+`CHART_SUMMARY_EXAMPLE`, `DIAGRAM_SUMMARY_EXAMPLE`, `REVIEW_SUMMARY_EXAMPLE`,
+`NEWS_ACTORS_EXAMPLE` and the `CSV_TOOL_EXAMPLES` used for CSV sources — all referenced from
+`lib/openui.ts` when the summary prompt is built. The script prints one `✓` line per example and
+exits with code 1 if any example fails.
 
 ### Build outputs
 
@@ -416,7 +489,9 @@ are the Chrome-level ones under `_locales/`.
 - **After adding an English UI string**: add the key to `locales/en/<namespace>.json` (the compile
   step will fail otherwise), then run `pnpm check:i18n` and fill in the new key in every other
   locale — including the plural variants that locale requires.
+- **After changing a prompt example**: run `pnpm check:examples`; a broken example is a silent
+  prompt regression otherwise.
 - **After changing the provider flow**: remember that `requestOriginPermission` must stay inside
   a click handler, and that `activeTab` (not a host permission) is what authorises reading the
   page.
-- **Before packaging**: `pnpm compile && pnpm check:i18n && pnpm build && pnpm zip`.
+- **Before packaging**: `pnpm check && pnpm build && pnpm zip`.

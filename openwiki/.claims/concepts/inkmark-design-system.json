@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7cb37467afd4dfde664e661f58a3caa07eec6a7aa20c0d409cfd9a966c8446b8",
+  "claims": [
+    {
+      "id": "claim_6b6107d4f39945eb819c945e67802420",
+      "statement": "The design system is driven by a serializable Appearance object (preset id, accent pen color, marker highlighter color, corner style, reading font) stored as a field of Settings and merged onto DEFAULT_APPEARANCE by normalizeSettings, so settings written by older versions still yield a complete appearance.",
+      "evidence": [
+        {
+          "resource": "repo://lib/appearance.ts#L13-L56",
+          "version": "repo-lines-v1:sha256:b8891faa14cb53ad2a2c18ce62c4cd8cf24ffbf9c8322a5534aace0f35b7d1fc:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxOGE1MTM4NGY4MDQ3MTBjYjJiN2YwMTJlODk4ZTdmODFmMWJjYjg2ZjAyZTdjZmU1YmFhNDBlNTQyN2FjOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3M2I1ZDA1NzFmMmIxMjFhYjJmZjczM2Y5MTQ3OWJkZjBiZDg2NjJhNmM5Nzg3NjhhMjRlNWE5ZTI5Y2FiOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwMmI0NTg5NDJkYTc4MTgwYTJkZThhZmQ1NGYzNDFkYWE1YzExNzZlNjJlZjA5MmQxZGY5NDFmYjJjOWUzMjkifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L164-L181",
+          "version": "repo-lines-v1:sha256:0ad10175cb677f7bd5387abd441843e258b693a5500e1e01ff0772b8a5a4b9a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkYTQ4Mzg3MWYzZDlkMDRjMTJkYTQ4MTM0NzJmYjBiMTdkZjcxMWI1MzExODUxMjYwOGJjMjZhODE5ODRkZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyMWVmNWI1MDhlOWRhZDVkNzVhMzQwNDEyM2Y3ZmU1YTJmMjdlNzQwMzFiZTIxMWUwNTQzYTUyY2FmYjY0NzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ0YzA0M2I3ODFkNDM2ODllZDZjOWJmNjM4Y2M4MmQxYzJmZDU1MDhmNGQ1ZDAwNTkzNjBmMjE4MTRhNTVhZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxOGExMGVhNmVjNWNkMzU3MjhhNDZhOGViYWU5ZGUyODNmMTUyNWYxZjAzZDc0YzUyMDE3NGNjNjI4MjExYjAifQ"
+        },
+        {
+          "resource": "repo://lib/settings.ts#L220-L232",
+          "version": "repo-lines-v1:sha256:90bf91ef6feae616985c5478228b5f7add2e3b2c466013d21e4e73b1848592ad:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhMjg1ZjY0OGM0OTQwNDIwNzRhMTVlOGZlMzJkNmM4NGRjMzJiMTIzYTdmZmVhZTM4MWQxNmI5YTJiMDg3Y2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3NGI2ODdjNTkxOWM5OWZkOGY5YWZhZDAxY2Q4ZjNjZGVhMGQwMzgxYzEzNDM2M2M5MWJiZTFjZWZmZmU5ZDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ee3c5df21bd846f19bfb663f10b6851e",
+      "statement": "The default appearance is the Tide preset (teal pen #0B7A83, aqua highlighter #A6F0E6, soft corners, serif reading font), and the same values are duplicated as the :root CSS defaults in assets/app.css so the app matches Tide before any token is applied.",
+      "evidence": [
+        {
+          "resource": "repo://assets/app.css#L42-L60",
+          "version": "repo-lines-v1:sha256:dc597f3c493e769911d41bc4f123634604ab567ba5a9fd94c85ee67024f33fd6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMTMwZTZiMWMwZmJkODQ5ZjY3NzQ2NWZjYTZiMjI5NTQ2YWVmOGE3MjM5MWE4NzhiOTdkMDEwY2JlMGM2ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyNjM3ZjBhNjY5MzQ2MzQ3MjRkZDAxNTgyZDNiNTZjODg2M2ZlZDc0NTFmYWFmOTJkMjQ5OTZiNzE2ZDAwYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2NGE3NjdkYWZlNzA5NDJhMGQ4NjU4NzQwNmRmNjA3YWM4YjRmMzU3ZDIzNjJjYzE0MjdmMjVmZWU5YjIxMTQifQ"
+        },
+        {
+          "resource": "repo://lib/appearance.ts#L37-L55",
+          "version": "repo-lines-v1:sha256:b2b9722c2fd949653ed04ab403d19ba0dae1c32f07512bb898bb620a58e2335c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyNjdiNmQxOTI5NzYwMDE5NTJjNzAxNTJiODgyYzAxNzQ1OTM5Y2I2YmVlNTJhMWIyNzE2M2QyYjQ2Zjg4ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyYjYxOTE2MjQ1NTdiMDUzZTkzM2EyZjgxNDA5MjMxYWIxZDI1YjQ3NDQ4NTE1ZGQ0OWIxNDhlZDg3YWYyNTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiYjBhNTUxMDRkNDE2MjY0YTAxMzdkNmQxZTU4NDRlYTQ4YTE3MzBmOWNkZjE4NGIwNWVmMzE1NmMzNzNlNGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2NDVhMWQ3Y2NkZDA5MzM5ZWU5ZGE2ZDE3ODU1NmUyZmI1NmQ3YjRlNjMzMjY4NTNiZjFkNDgyNWRmYTVhYmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6949832b456d42a0b649aaeee14aa495",
+      "statement": "The preset catalogue holds five presets that each store only the light-mode pen and highlighter colors; the dark variant is always derived rather than stored.",
+      "evidence": [
+        {
+          "resource": "repo://lib/appearance.ts#L29-L45",
+          "version": "repo-lines-v1:sha256:512110ec9a81676ad25ce9d6b38c207dae78a1f1a4ff5c7cda22b1673f08c651:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NmVlODEzZmFiMjI0MmUwOTE3MTg2ZGU4OTJiZTE1MjQ3MjFiODYzZTE5MjY1OGE3ZDI5N2QwMGU2MWRiN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZDIxNjc2MWI2YjIwNDViNWJkM2VmYTg4YjZiZDVhMzIxNWNkYzk1MDE1ZDUxNDBjNWQ3ODQ5NWM2MmU2YzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2YTQzMmZlZjAwMzYyMDQ4ODk1NjhhZmU4MGVkOTY4ZjJmOWE1NzU0MDQ0Mjc1NzcyMWIyMWY5MDVlOTc1MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyNjU1YTA1ZDA4YTlkZTQwNjQ5MmIzNjMxODRjYWU0Y2QyMTQxZDgyOTdmNzQwNDU1ZDRhZDA5ZWUxMTM1ZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_41629a27d835444cad9e7c0552dedca4",
+      "statement": "resolvePalette prefers the preset colors by id and otherwise falls back to the stored custom accent/marker only when they pass the six-digit hex check, so an invalid custom color degrades to the default Tide colors rather than producing an unreadable accent.",
+      "evidence": [
+        {
+          "resource": "repo://lib/appearance.ts#L106-L113",
+          "version": "repo-lines-v1:sha256:6402ec44d55368e938c8c242ece3327b6945986f16b8be69d565c5c36cb38b25:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGE2ZTgwZWVjMzdhODE3MmE1Nzg3MWI1OWI1NmVmNDFjNTQ3Y2ExMGUwZDcyNThkM2UzYzU3OGQwZWU5NDgxNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ1ZWI2N2Q2NGY2ZDg3ZWM4MzFjMjMxM2NiYzNhZjdmYjU0OTVlM2QwNzM1MDY2MWNhMDQzZDNiZDE1NGQ5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJiZWYzZjJmNWQ0NzhkOGYzYzFhMjNhYTEwNDUzOTU4Yzg3OWM3OWYyMDk1NDM0YzFhNjFiMzc2ODgzOWJmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzkxYTIyZTMyYTM4YzI5NmQ4YjA1OTkxMjg1YTE2NDI5YzkxYjc4ZGE2NGI5NGEwMzk0YWFiYTVmMzA2ZWUwMiJ9"
+        },
+        {
+          "resource": "repo://lib/appearance.ts#L64-L85",
+          "version": "repo-lines-v1:sha256:948728add7f9e974b61207ce56ca6fa412dfdf841a45221647bb8949052ae0d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYzBkYTQ5OGEzMTIyZDc5OTFmNDI5MmRiZjA5MTVkNjA4OThmM2RiZDg5NjFmYWQwMTZiYzZmMDNmYmM4MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwNWVlNDdjODBjYzBjMDg3M2VlNjY3Yzg3ZmM3ZGJmYzQ1ZDY3ZDhkZDZiZjViNGI4ZThlMjAwNzMzNWI5MzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyYTllZTkxZjRmOWU4NTU1NjBhYWFiMmQ0MmY5NjYyZDg2NWFkMWZkMDY1ZmU4NWQ2ZmMxNTFhZmU3YzNlZDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_47b4b328c76344ea870b0da66c33091b",
+      "statement": "In dark mode the accent is lifted toward white until its WCAG relative luminance reaches 0.22, with at most six 18% mixes, so a dark pen stays readable on the dark paper.",
+      "evidence": [
+        {
+          "resource": "repo://lib/appearance.ts#L114-L116",
+          "version": "repo-lines-v1:sha256:c91a22e32a38c296d8b05991285a16429c91b78da64b94a0394aaba5f306ee02:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDk1ZmEwZjExMTdiNWVhNDA0MzQxNDBkZGUxYTM0MGM3MjBkZGJmMzI2MjEyZTE5MTgzOGQ0YjE1NmQzMTZiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQ2NzA0YmFmY2U3MWQwNTMyMDE0Y2IxOGU5NDkwODIyMzVhNTEyZTBmZDg1ZjQ0NDM0OGE5NzhjMjY2NjM4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDBlZDM0MDIwYTU4MmE3NTQ0ZGZlZjU5ZmJmODAxMjdlNzg4MGJlNTc0YWJjMTI4MDAyYTEzYWIzZWMyZGM2YyJ9"
+        },
+        {
+          "resource": "repo://lib/appearance.ts#L86-L96",
+          "version": "repo-lines-v1:sha256:d64981fc382c10733408299bb31da730f553a2b0a1a5f189dba891268538dd6b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4ZWMxMjRhNjA3MWY0M2NkMDhiNzk0MjUyOTQyYzI5MTkwNjk0YmUxMTU2NTRhYjM1ZDJmNWM4ZGVmYTVkZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNmEyYjY4ZDFlNzI5OWFjMjhmZWZlOWVlZWNiMTA0OGUzZmQ5NjFhMjMwMzE4M2ZlNmEyOWE3OTZhM2E2NGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhMzQ4MWFmZjcxY2FhZjI3MmJiNDJkMjc3MzFhOWIzMTBkNWU1MDM2MGE2ZTdkYzhmMzUzYWVkYzU5ODRlNWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2YzcxMjZjOGNhYzJmNzA3Zjc2OTE3ZjE4ZWQ5MGQyOGVhMzA5MDQyNmYzZjVmYmQwYmIwY2JiMjY5YTA4MjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_44cf7434730a4525938f5dafd74c6ae8",
+      "statement": "From the (possibly lifted) accent the palette derives accentHover (12% toward white in dark, toward black in light), accentSoft (mixed toward the paper color), onAccent (dark ink #141821 when accent luminance exceeds 0.45, otherwise white), and a marker that becomes a translucent #RRGGBB6B band in dark mode instead of a solid block.",
+      "evidence": [
+        {
+          "resource": "repo://lib/appearance.ts#L118-L126",
+          "version": "repo-lines-v1:sha256:dec135b3775306e0854e616219a1e674e6582d9eae14f6d0b490e6e8189edce4:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWE0NTY4ZTU4YzhjODVmNzkwZjkzMzg5M2VlYjZmMmE5MDg5NGUwOTQwMWExYTlkY2Y5ZDVkMDkzZTQ2YTVkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGY2OTdhNDZkMDcyOGZiN2U1YTNkZDBjOWNjNmYyOTM3YjQ2ZDgyY2IyNzcyMTBiMjg4ZTJjZTQ3YzJiZWRhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGY5ZGJhZjBiNjg3ZmI2MWRlNjdhYWVjNGZkZTllM2MwOTQyMjEwZTA0OGNjMThmMTUzZjZkN2M2NDlmZDBlMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c725e8c7a6749b58c821b29cbbe018b",
+      "statement": "appearanceVars returns the inline CSS custom properties applied to the app root: the accent family, the marker, the reading font stack, the corner radius scale (soft 8/12/16/999px, square 2/3/4/4px), and one --pele-series-N variable per chart hue.",
+      "evidence": [
+        {
+          "resource": "repo://lib/appearance.ts#L127-L144",
+          "version": "repo-lines-v1:sha256:469b8419fd0c24dda2c10405b5997fd15fcc3d48a1d92ce0a09f06c6a8146162:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjYmIzMzY4MTYyZmM4MmExNjg3YmJhNDVmYzY1N2UyYmI5YjIyMTBiOWViODgxMjczMWU0MTdlOTVkYzc1YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyMDQwZTA5NWE5NGUyYWRhNzRlNDIxZjM3MTg3NTFhOTFhODEwYmZkNjZmNDhmNGU5MzljN2I3NDgwZWI2NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmYmE2MThiNjk4ZWQzODVlYWY3NWQ0OGQxNmQ5MTc4OWMxMjg4NjQwZmJkZjM4MDE5N2RhODE1NGIyOTEwNDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5052fbedb4fe4c09bb3bc73569a19db1",
+      "statement": "The chart hue array is the accent followed by five fixed supporting hues, with a separate set for light and dark mode, and the same array feeds both the OpenUI chart palette tokens and the --pele-series-N variables, so charts and Mermaid diagrams share one palette.",
+      "evidence": [
+        {
+          "resource": "repo://lib/appearance.ts#L124-L126",
+          "version": "repo-lines-v1:sha256:92040e095a94e2ada74e421f3718751a91a810bfd66f48f4e939c7b7480eb670:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTcwZWZkYzMxMDMzNGY0OTcwNGYxY2ZiOTk3YjE5MTVhMjcxNzAxNmI3MDk1ZjhmZmRiMzliYmQyY2MxZGM5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGY5ZGJhZjBiNjg3ZmI2MWRlNjdhYWVjNGZkZTllM2MwOTQyMjEwZTA0OGNjMThmMTUzZjZkN2M2NDlmZDBlMCJ9"
+        },
+        {
+          "resource": "repo://lib/appearance.ts#L142-L142",
+          "version": "repo-lines-v1:sha256:68cfe00060afa3a83a5ee9318f8e065f6ed97dfd86c849635de42af111d58fe0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjhjZmUwMDA2MGFmYTNhODNhNWVlOTMxOGY4ZTA2NWY2ZWQ5N2RmZDg2Yzg0OTYzNWRlNDJhZjExMWQ1OGZlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjhjZmUwMDA2MGFmYTNhODNhNWVlOTMxOGY4ZTA2NWY2ZWQ5N2RmZDg2Yzg0OTYzNWRlNDJhZjExMWQ1OGZlMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDViYjU1ZTNkZmU3Nzc5NmQ1NzU5NGFlMWZhMDcyOGFmYjhlMzMyNWMyYzU4MjIzNTA1MjhhMzZmYTUxZTE4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTIwNDBlMDk1YTk0ZTJhZGE3NGU0MjFmMzcxODc1MWE5MWE4MTBiZmQ2NmY0OGY0ZTkzOWM3Yjc0ODBlYjY3MCJ9"
+        },
+        {
+          "resource": "repo://lib/appearance.ts#L158-L168",
+          "version": "repo-lines-v1:sha256:06e22977166d8478238779efa569b17c9f9bd425bf7cb1c16c16629a91c52b5b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3OTdlYTA4NTcwYWEwNTBkZmRkMzhjOTQ4ODBlOTUyNTU0NGU1Y2I5ODljNWYyNWQ0MjE4MTgyZTgwZGRlNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YjdiNTY2OWE2ODMzYzliN2NhZDYzYjgzYjFkNjM4MDQ1YjA3NWY4YmNjNDFjOTYwZWYxYTcwMTdlODY0MzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3MTRkZDNjNDkyNGQ0ODFkMDQwYWFlZjU2OTkyMGZmYzA1ZTMxMWZhZmZlMGJmZDQ3YmExNWI5MGQ3ZDhkMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3ZTYyMjc0YTU2OTU0MjQyODM5MDk5ZGJlN2JiY2JlZTUzYzAxNmM4ZGI1OWY0ZTk2OTY2N2ExZDFiZmNjZjQifQ"
+        },
+        {
+          "resource": "repo://lib/appearance.ts#L98-L104",
+          "version": "repo-lines-v1:sha256:5e04fa5084475d6dfdfc48098abe11d90b859b1e79b36ebc4d9361c081a58df2:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2IwZmEyZGJiMjUyMzQ5MDMyNjUwNDJjYjgyMmZmNWFjYjc2NDVkMDVjYTA4YzAxNTRkZDdjMmM4Y2M5ODdkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTU1MGYwMWZiM2Y1NDJlMDg4MGY3N2M5YjU0N2FiY2Q2MjRkOWU3ZmRlYWQyZDEwYTQxYzQ1N2U3ZWJhNjBiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWM3NTk4MjVjYjE3Y2IyYjQyNDgwODBlNjViZGE2MzY4M2UzNDM1NzBiMjdiNWUyMjEwYzllZDczM2FiMDE4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWUzODk4ZmNiNDQzOTBlNTYwZmZmZGI5ZjA3ZjM2MzJiZjk4M2JjMDAwNWQ5MTlhMzQ3N2MwNWM0ZjA0MTQ2NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3974c777f6044d5684b6976f07e2ef53",
+      "statement": "buildOpenUITheme returns light and dark OpenUI themes built with createTheme(), each carrying accent-driven tokens (textBrand, textNeutralLink, interactiveAccent*, borderAccent, highlightSubtle), fixed per-mode paper-and-ink tokens, the reading font as fontBody with sans for heading/label/numbers, the corner radius tokens, and all eight OpenUI chart palette keys set to the resolved chart hues.",
+      "evidence": [
+        {
+          "resource": "repo://lib/appearance.ts#L171-L230",
+          "version": "repo-lines-v1:sha256:4e99aa84360ba6627ec014ea7738aa22e2de6fb0fed58f02d9eae6ee0067e687:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlZTU1MmVmNGI5MzFhMmQ3ZDY5YWYzYmZmNzhiMzQyYjU0N2RiOTY4ODdkNmZiNDI0N2UyMGY4MTA3M2NjYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_932e09c98973406291ac53c3551b6c61",
+      "statement": "Because OpenUI composes its shorthand text tokens from its default font (for example textBodyDefault is '400 16px/1.5 \"Inter\", sans-serif'), overriding fontBody alone does not change rendered OpenUI text; typographyTokens() therefore rebuilds every text* shorthand containing \"Inter\", giving body tokens the reading font and all other text tokens the sans stack.",
+      "evidence": [
+        {
+          "resource": "repo://lib/appearance.ts#L146-L156",
+          "version": "repo-lines-v1:sha256:d2d21c214d9cd0b746384de6f37224e853743bc5ea25794663987a9408c6f960:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMmNiOWQxY2ZmNWE3NDc3NjFmMTE3NDhjMzMzMGQ3ZWFjMTg3YmYyN2UyMTcwOWZkZWE2OGQ1ZTIxMjY4ZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0Y2VlYWRkZjFhZWJiMzU0NmRmYzViMGFkNTJhZjYxZmU1M2M1NDAwOGY4MjM1ZTdiMTdlZWRiNDVkZWU2MTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyMDQwZTA5NWE5NGUyYWRhNzRlNDIxZjM3MTg3NTFhOTFhODEwYmZkNjZmNDhmNGU5MzljN2I3NDgwZWI2NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlNDA3NDUwZTc0YWJhOGJmYjNhZDdkZWIyNDhhMWQyMzllOGVlMDYyMTE0MDhiMjMwZDY5MTI3OWMxOGIzNDkifQ"
+        },
+        {
+          "resource": "repo://lib/appearance.ts#L173-L182",
+          "version": "repo-lines-v1:sha256:c6dcfa86b3f8f7835a3ffc2b8e1356b8be2bc08537a4a90f54804dcffc882cbf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MDI2MzQxZTc5ZDg3YzZlMGM5NWZlYjYzMzZmMWViZDRhYzY1YTFjNzQxZmRmMmIwNTM5MTE5NTZjZmU1NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxNGNlNTJiNWEyOGIyODE3OGIwMDMyMWJhOWY5YmZkN2I0NzY4OWM3NzNmNDFmOWZjZmIyZjQ3ZmJmNmVlNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwN2RmYmQ5NThjMGM5YzFkNmJjODAyM2Q0ZThiMTdmMzA1NWZiMTVjMTViMjM2NTA4ZjkzMDNiZDYwZTU1YzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxZjE2MzJmNmRlY2FjYmIyMGMwYWUwNWViNzk3OTM4MmJmMTA0NzNiNDNhNDM0MDhiOTBhNzAxMzVjNzAzNjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1aa85fc73ecf4c2a91169ecf99e8034d",
+      "statement": "Themed is the root wrapper of every surface and applies the tokens: it resolves the color mode (system follows prefers-color-scheme via a matchMedia listener), memoizes the OpenUI theme and CSS variables, mounts ThemeProvider with the derived light/dark themes, puts the variables and the app--light/app--dark and corners--soft/corners--square class names on the root element, and sets the document color-scheme and the page background around the app.",
+      "evidence": [
+        {
+          "resource": "repo://components/Themed.tsx#L8-L67",
+          "version": "repo-lines-v1:sha256:898ab7e00fa4867ddfa04232d5a98fe0be68bc70b9bf6ade00bddee278ebd7c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5MDkxNjYyZTRiZjNlNzdiYmNlNGZkNmRkMTI5ODE0MmNhODIzYzU3YjlkNWYzZWYxZDQ5M2I5NWQ3MzE4ZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkMTUyYzc4NTc3MWMwMzU0ZjQzMTQzMjQ0ZTdkZjYyM2RlNGJmMzA3NWZkMDZmMWNhMDUxMjE2NDgyMzkxYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiOGI2MDBhNWI0NDhiMWU0ZDAyZGYwOTc0NmVkM2NhMzE3MmY3NWM0YWFiYjAxZGRlMDgwZTM2Y2FiMDc0YjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_242f6182f9c346c1af1dc65ce091969c",
+      "statement": "A nested Themed with root={false} (the embedded settings draft) still applies the appearance tokens but does not switch the interface language or the page background, so the surrounding result view stays unchanged while the draft is edited.",
+      "evidence": [
+        {
+          "resource": "repo://components/SettingsForm.tsx#L180-L180",
+          "version": "repo-lines-v1:sha256:e3dc4370015f818d698a280b80c55ae09ab724e8e8732b55566885b690f3f55d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTNkYzQzNzAwMTVmODE4ZDY5OGEyODBiODBjNTVhZTA5YWI3MjRlOGU4NzMyYjU1NTY2ODg1YjY5MGYzZjU1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTNkYzQzNzAwMTVmODE4ZDY5OGEyODBiODBjNTVhZTA5YWI3MjRlOGU4NzMyYjU1NTY2ODg1YjY5MGYzZjU1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjRhNDdhYmE1NWY2NTdkMGY1YmYxYmRhZDg0Mjg3YTdiZDAwNTE3YzE2MGNiN2QzNTIzOTNlYzM4ZDhiZmU2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzY1MzIxYzY4ZTQ2OGFjZjhjNzQ0NDQ3NTQwNGE3NmNkNTkwOTQ5NzYyMTQzYmZkMTUzYTc4NGE5NjgxMWVkNSJ9"
+        },
+        {
+          "resource": "repo://components/Themed.tsx#L36-L58",
+          "version": "repo-lines-v1:sha256:e106eb477d0791d89ae9b7a8877c0f06747b7ff1f5fcd4711e9d1d37600a366a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxYzAzZmJiNmQ3MjllYWMxYTExOWMxYWVhN2JhZTU1ZmRmNzQxNWQ5OTcyZDBmZDBkMzU0ODkzMTFlZGU0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwOWY2ZTMzMzFlMmM2OTlhMWNlODZjOGVhZDVkMzA1ZTgwMzIxZmQ0MGIyNzkzZWRhMDM4MzY5NzFkOWUwODIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ0NTJmMmZiMzhkZTUzMDY1MGM1ZWI1M2M1M2RkNzllMzUxYTI1ODNmNDlmYWZhMzZlY2E3MmRmNWE2YmMwM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1ODY1NDQ4NTYzNGI2NDE5ZjNlZjM5NWQ5MTIzZmU1NTZkYTU1N2Y3YjdjZGI4YjhlOTlhN2VlNGJkNmJkZjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e083e67538dc44059255896c1b51c087",
+      "statement": "Themed publishes its root element through PortalContainerContext so Radix menus and selects, which portal into document.body by default, keep the Inkmark theme.",
+      "evidence": [
+        {
+          "resource": "repo://components/Themed.tsx#L62-L64",
+          "version": "repo-lines-v1:sha256:b681a3211f8564713cfea48013b184cf50051c85e3c30c39b5e158122c8f95c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDZjN2U3YmQ0M2Y2ZGRhNGM1NjVmNGRjYzJjMTY1ZjY4OTM5MTczMmY2YWY0OGFmYzQyMWE2ZTQwZjU5Mjg5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDM0MzVjYjY1NzNlZTFkOWIzZTYyYzgwOWFiYzhhMjdmOWNkMWJhZTEwOTIwMTI4MzQyZDUxZTg1NWFjYjBhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTU4NjU0NDg1NjM0YjY0MTlmM2VmMzk1ZDkxMjNmZTU1NmRhNTU3ZjdiN2NkYjhiOGU5OWE3ZWU0YmQ2YmRmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjgwODBkNGE3NjY4YTIxMWFkNDQ3OWM4ZjNjMTVjZGY2ZGUyNzU2ZDBkNThmMjNiMTliNDE2ZTcyNTA5ZTgzYyJ9"
+        },
+        {
+          "resource": "repo://components/portal.ts#L1-L8",
+          "version": "repo-lines-v1:sha256:d2881f890b1caf038b2ed3beaf3ecbcb2d67a3eb9ac23fa14e85fa39747337a4:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAwYjliMGMzYmU4ZjI3YjQ2ZjIxZDVjYzNjZjg1NzRmMDEzZTc2MTE4NWYyN2Y3M2NiZGI0YzAxMjk4NDNlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmUzYTBjOGM5NWZkMDA1MGY2NDI2YTVmYzE3MjI5Yzk3NGViNGE1OGU1ZTk3NmRhMGU3OWQ3Y2I4ZjMwM2RlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_532396cb4cba4bb0913b049bc4a1fdd5",
+      "statement": "AppearancePanel is stateless and emits patches and mode changes that the settings form merges into its draft copy of Settings; it renders preset swatches as a pen stroke over a highlighter band, shows the custom pen and highlighter color fields only in custom mode with hex validation, and previews the result with the real summary classes.",
+      "evidence": [
+        {
+          "resource": "repo://components/AppearancePanel.tsx#L107-L160",
+          "version": "repo-lines-v1:sha256:d250fe8474d4f8924f1bb5853fb0c95a83945b1bcb272bd1513c1e073f9a3477:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0MzFiZjczODMxOGQ3YmQyYmM5MmRlMmRjYmM2MGQ4NzQ2NWUyNDRmZmZmNGM4MGU5YzNiNDkyMGM5OWJjMTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://components/AppearancePanel.tsx#L14-L105",
+          "version": "repo-lines-v1:sha256:c0ab7a2b561208cfb2a2311d6bbd987b1d343a2205d70cfce6dffd2a4a9567aa:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4ZWMwYWU4YTU5MTNjMTY0OGZjOWZiMzllMDVkY2ZjMWNkYzE5NTVlNmJjZTNjMWY4OGNhMDY4NTNjODhhMTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkNmJlMjZmMTAwMTg5OWQ4MmFkY2ZhZGZkMjA1ZDhjMTdiNjgxOTY2OWIzNDk0NjFkY2E5ZGNmMWZmNDRlNDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNzBlNTE0ZTA5NmJjY2IyYTM5ZTIzMTYwNTRlNDdmZWMzZDA2YzJlNDNkZjk3NzU3ZjNlYzk3OTE4NmU4ZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyMjY3NGQwOWYxODEzZTQxMTkwZTk3M2M1NmUxODk2MzRmYWQwMjg4YTQ1NmI3M2FkMTNmMjdmZjc4MTZjNDAifQ"
+        },
+        {
+          "resource": "repo://components/SettingsForm.tsx#L416-L424",
+          "version": "repo-lines-v1:sha256:fdbe5f34abc39362b01711d81f6713db0e29eea0ff17b939214f6eb83e8a132a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGI4ODRhMmJjZjZhNGU5NjEzZTA3NjYwYTNhYTZlNzY0M2ZkYjcyYTZlY2NkOTc4YjUxNjMwMzlkZjI2YjY1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmY2NTI2MzQ3NTQ0YWVkODhmZjVjMmQ0NzMwZjFiYjVhZDQ0NDgzNmM0MWRkNWE5OGIxMmQzNTM0MzNkNjM0ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODI0NjhlZmRkNjc3NWU5NTk2ZWU3Y2M2MDAzYjUzOTY1ZmU5NTJhOTkxNWVmMGQ3ZDlmNjdkMDQ4MDgxODI5NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d68390561d5240ef9764278577a2c7a0",
+      "statement": "The two typefaces are bundled as variable fonts via @fontsource-variable packages imported in assets/fonts.ts, so no font CDN is fetched and pages render offline.",
+      "evidence": [
+        {
+          "resource": "repo://assets/fonts.ts#L1-L4",
+          "version": "repo-lines-v1:sha256:c82ba677daf44915a4e918b7ac73d69a6818f7a9fe358ab299b125223799a404:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTM2Mjc5OGY4ODQ2ZTZjZTI5ZDFiZWIzMWM4ZWZhNDRkNzNlNzFjNTQ3ZGFhZTc1MDc4N2I3YzkwMGM5MzY5YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTAyN2QyMjM1YWQ5MjEzYjI4OTdhNmZkMDk5NmQ0NTI5Y2EzNDMxZGIzZTgwODE5YWQ2Zjc3ZTk4Njg5NmRiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://entrypoints/app/main.tsx#L7-L10",
+          "version": "repo-lines-v1:sha256:9259f87c3e441d83a759f290c206f1922404538232c6a038e740a63214162722:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdjM2IyNTBhNmQ5N2YzMGI0N2MxZTAzMzEzYjVmOTdmODNmMDkyNTI1YzdkYTJiZTU0Mjk5NjgzZTcxNzE5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWUwYjk0YjRiZTQ4MTYwOTI0NTg2YmU4Mzk2YWJkYzE3YTY0NGM5OGQyYzQ5MjJmNTlhZTBlZjMyOWJiMWRlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDM1MWRhNzNkYmQzZWE1NjlkMzY4MDVmMTA2MzVkYTU2NmJiYWY1ODMzNjMzNGVkMDIyNGU4MWNiYmY2NzhiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDFhYzEyOTcyNGIxNjVkMGEzNTA2MGU2YTdlYjE4YjgzYTczMmY5ZmYyM2U5ZDc5MmM1ZTdiMWY0NGJiZjU2NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.8.0",
+    "at": "2026-11-08T08:28:07.947Z"
+  }
+}

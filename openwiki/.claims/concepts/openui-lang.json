@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:a2fae8c4ff6a85f8f5600b23548007c4faf0b89cb0a88dcc1619b0622e78f2ca",
+  "pageVersion": "sha256:24da5d4ed45440538b0cc972a3b2e78b53b0ce7894e3d06fe026f64c5cab1ef6",
   "claims": [
     {
       "id": "claim_ffa45d193f4b471ea43afeff27c81131",
@@ -231,12 +231,16 @@
       "statement": "applyPatch wraps the runtime's mergeStatements with two guards so it serves both the first turn and refinements: with no previous program the patch is the program, with an empty patch the previous program is kept, and otherwise mergeStatements merges the patch by statement name.",
       "evidence": [
         {
-          "resource": "repo://README.md#L16-L16",
-          "version": "repo-lines-v1:sha256:42f1952e31a7c0f59bada07b40f8346b5d53e705ccbd428aead17a864c3a02ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJmMTk1MmUzMWE3YzBmNTliYWRhMDdiNDBmODM0NmI1ZDUzZTcwNWNjYmQ0MjhhZWFkMTdhODY0YzNhMDJlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJmMTk1MmUzMWE3YzBmNTliYWRhMDdiNDBmODM0NmI1ZDUzZTcwNWNjYmQ0MjhhZWFkMTdhODY0YzNhMDJlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzlhNzE3ZGMzZGUxY2MxYjM3YmVlYjkyODM5MmRkY2I2NDU0YmMzNjFlNjNlNjM4Mzc4ZWQ4ZTc2OGMzNTljMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWM3M2FmMThmNDUwODE3Yjc4YjE2NWJiYzhjMmUxYmUwMDU0OWI5YzBlYzA4YWFmNzRlMWNkOWQyYzQyNDMwOSJ9"
+          "resource": "repo://lib/generate.ts#L61-L61",
+          "version": "repo-lines-v1:sha256:086daf97a8ebe48053e65f876db6e9285c302ce8e01db20e2fd6d14c89c735c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg2ZGFmOTdhOGViZTQ4MDUzZTY1Zjg3NmRiNmU5Mjg1YzMwMmNlOGUwMWRiMjBlMmZkNmQxNGM4OWM3MzVjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg2ZGFmOTdhOGViZTQ4MDUzZTY1Zjg3NmRiNmU5Mjg1YzMwMmNlOGUwMWRiMjBlMmZkNmQxNGM4OWM3MzVjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDhiMjhmY2RlMmVmODgzYzE4ZjBmNmVlZjU1ODk1OGM0ODY4ZjM4NWUzZDk1MzA1YWY4YmNkYTZlZGVhNWQ5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWViZGM3ZDE2YmE2NGNkODg0N2RmNjRmMWUxYzcwY2M2OTM4NDE5NmQ3MDI0NzAzMGE0ZmIwYTA4YmZhODZhOSJ9"
         },
         {
-          "resource": "repo://lib/openui.ts#L294-L298",
-          "version": "repo-lines-v1:sha256:3cde063a9949efca53369e3c9c2dd9345313dcf1ae094ae6c9c8f011e3f8363a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTY4MmIwYWRmZTU4NmUyMjVhMTE5OTcwNjZmNWZkNWU5NWE3NjVjMzg4MjQyMTc2M2RiY2I4MjBhZTQ3MmVlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDQwMzViMTYzNDNiOWMwOGUzMDFkNDgyY2FkMzQ1NDgwYzk0Y2RkZTkzYmM1MTM4OGY4ZjY3ODZiNGFjNTkyYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+          "resource": "repo://lib/generate.ts#L79-L79",
+          "version": "repo-lines-v1:sha256:474d1d29a7c4b53666ecfdb3b1dae9f83decc472f99eb6a45783d24dfb2a58d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDc0ZDFkMjlhN2M0YjUzNjY2ZWNmZGIzYjFkYWU5ZjgzZGVjYzQ3MmY5OWViNmE0NTc4M2QyNGRmYjJhNThkOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDc0ZDFkMjlhN2M0YjUzNjY2ZWNmZGIzYjFkYWU5ZjgzZGVjYzQ3MmY5OWViNmE0NTc4M2QyNGRmYjJhNThkOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjRlYzY1ODcxOGU2MWRmNjM2ZmEzZDU4ODI3MDYyMTQ4MjM2OTkwNjMxNmMzOGYxNjEyM2Q0NTlkMjE1MjhjMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDFmMGRhZjYzODgyMjhhMGZlODA5ZTZkNGJjNjNjZDUxZjNkNTFiZDVhYzc3OTUzZTgyNjcyM2RkMjc3MzY0YiJ9"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L292-L298",
+          "version": "repo-lines-v1:sha256:0c9a50b989efcd9b9250218537756a84b63516bbe4720e77530d3e73cd8ac3a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjZjZWZhZDBhMDE5Y2E1ODFiZDJlZDA0MzMzN2MyODRhMjVlMWU0ZTJhNzk1ZTc1YjQwMGQyNDgzNTljYTQ5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         }
       ]
     },
@@ -283,10 +287,70 @@
           "version": "repo-lines-v1:sha256:b1334d37a93217764b96ec5e8a1f1c5e7d2f92e5c5da5236cf8b88edca85d37f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2ZDI5NTEyZjc0YjYxODViM2MwY2Q4ZDk0MmIxZTk3ZjdjYjI4MmQzZDlmY2JiZmI5ZTE1Y2VhNmQ5OWZhZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2NTk1ZjRlZTVmZjYzZDUwOTUwNDE5ZGMzNDQxNDUxMzg1MWRjOTczNmZkMTdhNGY3YmZhOTMwYjI2MWI2ZjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjNjZmMTA0OTJiYzZhYmViYzlkMmQyMThhOTA4YTA3NjhhNGZmMGY5NTg4YThjNDc0NGEzY2NhY2Q2MzgyNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhMzViNjI5OWJlZTY3YWNmMWJjYTI5YmNkZWMxZGJmMjIzNDg2NjVlMTk5MzQ5NTUyN2VmMDA3M2EyNmRkODAifQ"
         }
       ]
+    },
+    {
+      "id": "claim_cd08e82cf9f14e659ad35a6b1cf242cf",
+      "statement": "The two custom actions are declared with defineAction, each giving a name, a description shown to the model and a Zod schema for its parameters, and both are registered on the library through the actions.add list.",
+      "evidence": [
+        {
+          "resource": "repo://lib/library.tsx#L19-L34",
+          "version": "repo-lines-v1:sha256:bfb7ea98441383f6610554272aee3dd50ba201b9281d32a4238bbf0610634e9d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmMDFiZmQ1YmU2MzU4NDcxNTQ4NDRhY2QwMzE1NTc4ODg4N2FlZDZkYWU4MTQ1NzY2NmJjZTk0MmYzODQyNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkNzdhZWE1OTExZWQxZTFmMjQ3ZjM1MDVmZWY2ZTI0MjllODBmYjM2Y2E2MTFiZjIxZjZlMTUyOTkyZjY3OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkZWYzZGM4Mzg2MjFmYTQ5NmIyODE3MjQzMjg3NWZhYTY1MmEzOGQ4MGNmZDJhZTk1YzQwZjMzMzBlODc1N2IifQ"
+        },
+        {
+          "resource": "repo://lib/library.tsx#L276-L298",
+          "version": "repo-lines-v1:sha256:732e4f757731520360ed282c1ce1615506b017d06f0b40183aa492d6d03d25cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhZGNhMTkxMWJiNGNhM2RiOGY5OTgwZTJlZmFmNWEwN2Q4NTE0OTExODhkODNlNzMzNDA1NmUyM2E4ZTAwM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzODNhYzE5OThhZDg4Mjg4NDVjNzBlZGZmOWQyNWZjYzc4OTU3ZjU1MzBhNzk4MzhkNTE4NGExZTE3MGZlNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0NGMxMzM2MjFmZGYxYzIyZGI2NjYwZGU1N2Y0MWJkYTBmZjViYjEyN2ZiNzgyOTk1ZmIyOTE2YmQ0ZjA5ZGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_44e8a5da18a3490d90b118660ce6d864",
+      "statement": "The three worked examples (VISUAL_SUMMARY_EXAMPLE, CHART_SUMMARY_EXAMPLE, DIAGRAM_SUMMARY_EXAMPLE) are passed to library.prompt as the examples array after the upstream chat examples, so they belong to the cached library half of the summary prompt and are assembled once per source kind rather than per call.",
+      "evidence": [
+        {
+          "resource": "repo://lib/openui.ts#L103-L113",
+          "version": "repo-lines-v1:sha256:f3a0683f1b5d78cb83e9e5b4e83e0213877c55df3dde7010d6f32241fdb422f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwMTdhZDUxYmZiM2NjN2MwYjBjNTBlY2NhNmViNTdhN2ZlNDRhNzc4MjZmMDExOTlhYmVlNjM3MjVhNTNhNmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhMWY5MTA2MDVkZDZkMzE0OTc0ZWE5ZDRhNTBhOTk0MjY4MTc5OGVhMTgyYzUxM2QxOWM0NDE2MTI0OWYyODkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4NmUxNWE3NTMzYjQ4OGNkMTdmMDc1ZjhmMzljMjNiMjQ0NDMyNGFhYWI3YzUxMzQyYjliYzhiNTI3YzJjNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3OWI2ZGM1ODM2YzhiOGQwMzdhNTcyNTI0MzU5NWExY2NjYjJlMDFmOTk0NjJjMDgzYjE4MzhlMmRkNTQ1NWMifQ"
+        },
+        {
+          "resource": "repo://lib/openui.ts#L115-L124",
+          "version": "repo-lines-v1:sha256:d2a6d8105897f3cd563ef6109baeaa2e5ae222ec6b08acdb10628d6966dca241:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzM2ZmZDhmNDM3YWEzYWVjZWVhYzliYTIyMTFiN2Q5NTVmODMyOTVlMjVhYjE3ZjRjMTNjMzJmZTU3NWVjMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1MWZhMzBmYjNjYTkxZDlhNzJmNzZhYTExOTZlOGQ5NWIwOTkyYmI0ZjljMjQzMzMzYmMwYTI4ODNhYTBlNzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3OTZjMDc2NTAyYTM4NDFlODUxOWJmNDgyZDAxZTM1ZTlmNTQ2YmY3M2NlYzVkNzFlYmU1NjdiZjA1ZTZhNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzZWRhNThhZjFhMzE2MTdhNTBlODA5MTE5ZWJiZTEyYmJmMjY4NjQ0MGJkOTY3NmEwY2JkMDA5MWNhMjY4OTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_795c6f301d3a42668ee3a00ac79271dc",
+      "statement": "scripts/check-examples.ts (pnpm check:examples) parses every prompt-embedded example against the real library and renders its Mermaid diagrams with Pele, failing an example when it has no root, has parser errors, has unresolved references, has orphaned statements, or contains a diagram that does not render; any failure exits with code 1.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L18-L18",
+          "version": "repo-lines-v1:sha256:970ad1fbad766e49da937b01205db6e57165bb42f0cfb0d32d84a261e13ee9b3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcwYWQxZmJhZDc2NmU0OWRhOTM3YjAxMjA1ZGI2ZTU3MTY1YmI0MmYwY2ZiMGQzMmQ4NGEyNjFlMTNlZTliMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcwYWQxZmJhZDc2NmU0OWRhOTM3YjAxMjA1ZGI2ZTU3MTY1YmI0MmYwY2ZiMGQzMmQ4NGEyNjFlMTNlZTliMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODMzOThmNzZmNGI1Mzc0YjVjNThmZGZmZGRmOWM2ZDUyZDFlZTE3MGUwMmM4ODEyMzNkMmU4ZTNhMjFiYjFmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjEyNGY1NjBkMWU2NmU1ZTQwZmMxYzhlYjY2ZDMxMmFkMGQ4YzA3YmM1ZTBmZmRhMWVjYzVjNjYzZmFkZTEzOSJ9"
+        },
+        {
+          "resource": "repo://scripts/check-examples.ts#L1-L53",
+          "version": "repo-lines-v1:sha256:c68d66847847ef79f4a221ebe77332aff02322244e81af39f2a1767f4175d13a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZDFkZDE1ZDQ3ZDUxMDI0ODU4MjhmM2VkMTc4YTNhMTkzY2I5ZmM0OTk3YjczMDIyNDg3YmIyM2ZlYjVkOTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5MWEwOGYxNjI3ZDYwYjY4MzQ3ZDJlMTkxMWJjNTJhNDIzNGY5YzkwNDFiZTc2YjgwN2EzMzRiODNjZWI3YTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_679be4754bf047da8c45ddc2fe2c75fb",
+      "statement": "The prompt-example check is stricter than the runtime validation: it also rejects orphaned statements, which validateProgram does not report, and it covers the three worked summary examples plus the CSV tool example from lib/csv-tools.ts.",
+      "evidence": [
+        {
+          "resource": "repo://lib/openui.ts#L246-L260",
+          "version": "repo-lines-v1:sha256:7d8dc5376316e69cc98ba1ecd23801467af264266977de81851d76dad9c282b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1OTYyMDhkYmU0NTg1YTUyMTNmOTBhM2IxMzQxOGRlMmMyZDI3YzNjOTkwMzUxNGIwMjJlYjk2Y2FkZmRkZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzMTAyMGJiMjU4YTI1NmZiYjlkZWFiYmNmZGU2YjJlMWVjZWRkMzk3MDg3MTdmZDU4ZTIxZjQ4ZDM0NmRkMjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0NWJhNzMxZWM3MWVlOThjMzMyYTE4MmQwMDM3ZTk5ZjBmMDFkZWY1Mjg5N2M4M2E2NTExYmJjOGE1MGM1MTQifQ"
+        },
+        {
+          "resource": "repo://scripts/check-examples.ts#L14-L20",
+          "version": "repo-lines-v1:sha256:c8542c267d65bc4f3e815255d82bfefd97d3781af4e5d3be7009925b34953c55:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzFjYjNlZWU3ZDY0MzVkNjlmMWE3N2M1YWUwYTljODc1MDFhZDQyODZiYzIxNWNmYzg4OTU0ZjQwYTdiYjY5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJjYzkwYjQzZDYyMDdhZmQwNWI4YmFhOWY1ZTdlMGIzMjQ2MTk3ZmY1MTNkYzQxYzU1YTNlMDc5YTFiZmM2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjZiYzhkNzUxMTA5OGJmMmQ0YjQ3YTdjZmExMTBjZDE2ZjhhMDRlMjczZjZmY2Y3YzkzZDYzNDQyMDAyZTA2ZSJ9"
+        },
+        {
+          "resource": "repo://scripts/check-examples.ts#L36-L42",
+          "version": "repo-lines-v1:sha256:506561a6e5f26215d832f567eeafbeb840c97d94c228eba1075731330e07527d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjAxYmUyMjU2MTdhMjVkMTVkMWQ3YjVjYjBmYTVjNjMzOWI0Y2Y1Y2M4ZDY2NmRhYmQ0NWY3ZjhlMDk5YWM1NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTFkZjg3YTQ3MzE2YzcwOGM1NTAyMDk4ZTlhZjZjNDQ1MzRlYjgwYmVhZGNmNjA2MzAyOGVmY2E4NTkzN2FiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjg2NjlhZTNlNzI3MTg0NTkyMGU3ZjI1MTUyZTQ2MjY1ZjEzYTkwOWY2MTZkYmRlN2Q2MDlmMzgzYmI1MWYzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzA1MDZmODRmYWJkN2MxMWM0ZDgzNzZhZTQ4N2JmYjYyYTRkMGE0ZDgwYjNmYzcxNmVlN2VhYzEzODNjYTljNyJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.8.0",
-    "at": "2026-11-07T09:34:41.642Z"
+    "at": "2026-11-08T08:28:07.947Z"
   }
 }

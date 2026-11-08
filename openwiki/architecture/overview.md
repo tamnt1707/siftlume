@@ -4,8 +4,6 @@ title: Architecture Overview
 description: System-level map of the Siftlume WXT entrypoints, React components, lib modules, the extended OpenUI library, the storage areas and the end-to-end flow from a user trigger to a rendered and persisted summary, with the two core invariants (no backend / BYOK, appearance tokens drive everything visual).
 tags: [architecture, extension, openui, genui, data-flow, storage]
 sources:
-  - id: openwiki-source-7e3355f17b1feb4de5b7b2ce
-    resource: repo://.output/chrome-mv3/manifest.json
   - id: openwiki-source-7be6309091e21ce73672ed48
     resource: repo://components/GenUI.tsx
   - id: openwiki-source-e9a6fa11b146c932372d7ca2
@@ -20,6 +18,10 @@ sources:
     resource: repo://entrypoints/app/main.tsx
   - id: openwiki-source-f7a24281a6b5103146379f37
     resource: repo://entrypoints/background.ts
+  - id: openwiki-source-3eb0754a227f452da1689d90
+    resource: repo://entrypoints/options/main.tsx
+  - id: openwiki-source-1a2f20cdaa1b56dbe6bee7da
+    resource: repo://entrypoints/popup/main.tsx
   - id: openwiki-source-7ca0dfda383943bae04e75f3
     resource: repo://entrypoints/sidepanel/main.tsx
   - id: openwiki-source-facb4f87dbf903ee402a1635
@@ -48,6 +50,8 @@ sources:
     resource: repo://lib/local-origin.ts
   - id: openwiki-source-117bfa8c60d3545d019aa9be
     resource: repo://lib/models.ts
+  - id: openwiki-source-37fc048a321278b06586fd61
+    resource: repo://lib/no-openui-devtools.ts
   - id: openwiki-source-8fc820fe296baa60761c2279
     resource: repo://lib/openui.ts
   - id: openwiki-source-ee01d5b2d861717def31ac4c
@@ -56,11 +60,13 @@ sources:
     resource: repo://lib/settings.ts
   - id: openwiki-source-5b54a58d1b51cd490b0e7162
     resource: repo://package.json
+  - id: openwiki-source-d5a195680a34e5c378d6b135
+    resource: repo://scripts/check-examples.ts
   - id: openwiki-source-992a8f5501a08fbbb1cb4abc
     resource: repo://scripts/check-locales.mjs
   - id: openwiki-source-49ce5f922c6d8903f5e7d073
     resource: repo://wxt.config.ts
-generated: { by: "openwiki/0.8.0", at: "2026-11-07T09:34:41.642Z" }
+generated: { by: "openwiki/0.8.0", at: "2026-11-08T08:28:07.947Z" }
 verified:
   - by: openwiki/0.8.0
     at: 2026-11-08T08:28:07.947Z

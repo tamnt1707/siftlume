@@ -6,6 +6,8 @@ tags: [mermaid, pele, diagrams, genui, validation, openui-lang]
 sources:
   - id: openwiki-source-91562fff700667f8709f3231
     resource: repo://assets/genui.css
+  - id: openwiki-source-511bc61015173fd994c1849f
+    resource: repo://components/useSession.ts
   - id: openwiki-source-facb4f87dbf903ee402a1635
     resource: repo://lib/appearance.ts
   - id: openwiki-source-9ac396a11de8342504f5647a
@@ -18,7 +20,10 @@ sources:
     resource: repo://lib/library.tsx
   - id: openwiki-source-8fc820fe296baa60761c2279
     resource: repo://lib/openui.ts
-generated: { by: "openwiki/0.8.0", at: "2026-11-07T09:34:41.642Z" }
+generated: { by: "openwiki/0.8.0", at: "2026-11-08T08:28:07.947Z" }
+verified:
+  - by: openwiki/0.8.0
+    at: 2026-11-08T08:28:07.947Z
 ---
 
 # Mermaid Diagrams via Pele
@@ -27,7 +32,7 @@ A summary may contain a `Diagram` block: Mermaid source written by the model, re
 the browser by [Pele](https://pele.run). Nothing about the diagram is fetched from the network and
 no `eval` is involved — the model only writes text, Pele parses it and lays it out locally.
 
-Four files own the pipeline:
+Five files own the pipeline:
 
 | File | Responsibility |
 | :--- | :--- |
@@ -35,7 +40,7 @@ Four files own the pipeline:
 | `lib/diagram.ts` | The Pele wrapper: `renderDiagram()` with the fixed render options, and `diagramError()` turning a Pele failure into a model-readable message. |
 | `lib/library.tsx` | The `Diagram` component: it measures its container, calls the renderer, and shows the SVG, a placeholder or an error. |
 | `lib/diagram-example.ts` | `DIAGRAM_SUMMARY_EXAMPLE`, the worked Mermaid example that is added to the prompt. |
-| `assets/genui.css` | The `--pele-*` variables that give the SVG the app's colors. |
+| `assets/genui.css` | The `--pele-*` variables that give the SVG the app's colors, plus the card, caption, placeholder and error styles. |
 
 ## The pipeline
 
@@ -43,16 +48,17 @@ Four files own the pipeline:
 flowchart TD
   R["DIAGRAM_RULES in the prompt"] --> M["Model writes a Diagram statement"]
   M --> PR["OpenUI parser builds the component tree"]
+  PR --> V["validateDiagrams renders every Diagram"]
+  V --> E["A Mermaid error goes back to the model in one repair turn"]
   PR --> C["Diagram component"]
   C --> W["ResizeObserver measures the container"]
   W --> RD["renderDiagram with maxWidth and directionBreakpoint"]
   RD --> S["Pele renders Mermaid to SVG"]
-  S --> V["validateDiagrams renders every Diagram again"]
-  V --> E["A Mermaid error goes back to the model in one repair turn"]
 ```
 
-Caption: the model writes Mermaid text, the `Diagram` component renders it once the stream ends and
-the width is known, and a parallel validation pass turns a Mermaid failure into a repair request.
+Caption: the model writes Mermaid text; one branch renders it for the reader once the width is
+known, the other branch renders it again for the model so a Mermaid failure becomes a repair
+request.
 
 The two render passes are independent. The component renders for the reader; `validateDiagrams()`
 renders for the model. The validation pass does not know the container width, so it only checks
@@ -70,6 +76,13 @@ logic, messages between two or more actors over time (`sequenceDiagram`), a life
 per summary, unless the source is mainly about processes. A plain list or a set of numbers must
 not become a diagram — those go to `Takeaways` or to a chart — and the same steps must not appear
 in both a `Diagram` and a `Timeline`.
+
+The two prompts add their own placement rules. The summary prompt fixes the block order —
+`SummaryHero → Verdict → KeyNumbers / charts / BarList / Diagram → Takeaways / ProsCons → People /
+Timeline / TagBlock → Checklist → Glossary → SourceQuote → folded SectionBlock details →
+FollowUpBlock` — so a diagram sits with the other visual blocks, in the metrics/charts group and
+before the lists. The Q&A prompt adds a rule of its own: a question about how something works, a
+process or a flow is answered with a Diagram plus one or two lines.
 
 **How the Mermaid must look.** Four to twelve nodes, labels of one to five words, node ids without
 spaces (`A`, `B`, `step1`), labels with punctuation wrapped in double quotes. No `style`,
@@ -130,16 +143,17 @@ component can add `maxWidth` and `directionBreakpoint` without restating the res
 
 The component lives in `lib/library.tsx` and is registered in the library with the same content
 slots as the other blocks (`Card.children`, `SectionItem.content`, `TabItem.content`,
-`AccordionItem.content`).
+`AccordionItem.content`). Its props are `mermaid` (required string) and `caption` (optional
+string); its description, shown to the model as part of the library schema, is where the
+"takeaway in max 8 words" instruction for the caption comes from.
 
 ```mermaid
 stateDiagram-v2
   [*] --> Idle
-  Idle --> Pending: stream ended and the width is known
-  Pending --> Ready: Pele returned an SVG
-  Pending --> Failed: Pele threw
-  Ready --> Pending: source or width changed
-  Failed --> Pending: source or width changed
+  Idle --> Ready: stream ended, width known, Pele returned an SVG
+  Idle --> Error: Pele threw
+  Ready --> Ready: source or width changed, renders again
+  Error --> Ready: source or width changed, renders again
 ```
 
 Caption: the component waits for a complete source and a known width before rendering, then
@@ -155,12 +169,15 @@ shows either the SVG or the error.
 - **It renders with the measured width.** `renderDiagram(props.mermaid, { maxWidth: width,
   directionBreakpoint: 760 })` — the measured width is the space the diagram really has, and the
   breakpoint decides whether a horizontal flow flips to top-down.
-- **It keeps three states.** `idle` and `pending` show the striped placeholder with
-  `aria-busy="true"`, `ready` injects the SVG, and `error` shows a `<details>` block.
+- **It keeps three states.** The state type is `idle | ready | error`: `idle` shows the striped
+  placeholder with `aria-busy="true"`, `ready` injects the SVG, and `error` shows a `<details>`
+  block.
+- **The SVG is the only raw HTML.** It is the one place in the block that uses
+  `dangerouslySetInnerHTML`, and it comes from Pele with links and images disabled. Everything
+  else — the caption, the placeholder and the failure message — is rendered as ordinary React
+  elements.
 - **The error is text, never markup.** The failure message can contain the diagram source, so it
-  is rendered inside a `<pre>` under the "This diagram could not be drawn" summary, not as
-  HTML. The SVG itself is the only HTML injected with `dangerouslySetInnerHTML`, and it comes
-  from Pele, which escapes the model's text.
+  is rendered inside a `<pre>` under the "This diagram could not be drawn" summary.
 - **A late result is discarded.** The effect sets a `cancelled` flag on cleanup, so a render that
   resolves after the source or the width changed does not overwrite the newer state.
 
@@ -201,7 +218,8 @@ A program with a broken diagram is therefore not accepted: the errors go back to
 single repair turn, which is asked for the corrected statements only. The validation pass is
 wrapped in `.catch(() => [])`, so a failure inside the diagram validation is treated as "no
 diagram errors" rather than as a hard failure of the turn. If the repair does not make things
-worse it is kept, and any remaining errors are surfaced to the user as a warning. See
+worse it is kept, and any remaining errors are surfaced to the user as a warning ("The model
+produced N invalid UI statements; showing what rendered."). See
 [OpenUI Lang Program Model and Library](../concepts/openui-lang.md) for the whole validation and
 merge loop.
 
@@ -228,10 +246,15 @@ variables on the `.g-diagram` element:
 }
 ```
 
+The same rule styles the rest of the block: `.g-diagram` is a card with its own padding, border
+and background; `.g-diagram__caption` is the bold reading-font line above the SVG;
+`.g-diagram__pending` is the striped placeholder; `.g-diagram__error pre` prints the failure in
+the `--down` color. The SVG container is centered and scrolls horizontally when the diagram is
+wider than the card, and the side-panel layout reduces the card padding.
+
 The series colors `--pele-series-1..6` are written on the app root by `appearanceVars()` in
 `lib/appearance.ts` from the same chart hue array that feeds the OpenUI charts, so a diagram and a
 chart in one summary share one palette. The details are in
-<!-- openwiki: broken internal link [../concepts/inkmark-design-system.md] file "../concepts/inkmark-design-system.md" does not exist. Fix the href or restore the target, then delete this comment. -->
 [Inkmark Design System](../concepts/inkmark-design-system.md).
 
 ## Where to change what

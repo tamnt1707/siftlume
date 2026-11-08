@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:aa471379c5028ced01d3ec0a90d499eba296ba3897003bea21d3ee3003e4f4ea",
+  "pageVersion": "sha256:829e4d58fd67fb446ea701fa175a77f890fc4b96cf1c32c6e923ff6cab73e79a",
   "claims": [
     {
       "id": "claim_685538c66d8b4e89b060549fa8dae16b",
@@ -8,7 +8,7 @@
       "evidence": [
         {
           "resource": "repo://.output/chrome-mv3/manifest.json",
-          "version": "repo-file-v1:sha256:cf548b1b17e76f0e7c5dedaf8c274dfc3ea158e22c9e9f7afbb4b5eac9d0b434"
+          "version": "repo-file-v1:sha256:59893c6167cb5f5bc09c3743de45839aebee490dea9467d4734c223db2a5053a"
         },
         {
           "resource": "repo://wxt.config.ts",
@@ -22,7 +22,7 @@
       "evidence": [
         {
           "resource": "repo://.output/chrome-mv3/manifest.json",
-          "version": "repo-file-v1:sha256:cf548b1b17e76f0e7c5dedaf8c274dfc3ea158e22c9e9f7afbb4b5eac9d0b434"
+          "version": "repo-file-v1:sha256:59893c6167cb5f5bc09c3743de45839aebee490dea9467d4734c223db2a5053a"
         },
         {
           "resource": "repo://wxt.config.ts",
@@ -36,7 +36,7 @@
       "evidence": [
         {
           "resource": "repo://.output/chrome-mv3/manifest.json",
-          "version": "repo-file-v1:sha256:cf548b1b17e76f0e7c5dedaf8c274dfc3ea158e22c9e9f7afbb4b5eac9d0b434"
+          "version": "repo-file-v1:sha256:59893c6167cb5f5bc09c3743de45839aebee490dea9467d4734c223db2a5053a"
         },
         {
           "resource": "repo://entrypoints/background.ts#L23-L30",
@@ -117,7 +117,7 @@
       "statement": "The runtime host-permission request must stay inside a user gesture: `components/SettingsForm.tsx` calls `requestOriginPermission` synchronously in both `onSave` and `onLoadClick` (no `await` before the call), and the settings are still written when the user denies, with the form reporting `savedNoPermission` / `permissionDenied`.",
       "evidence": [
         {
-          "resource": "repo://components/SettingsForm.tsx#L145-L163",
+          "resource": "repo://components/SettingsForm.tsx#L136-L154",
           "version": "repo-lines-v1:sha256:f4d5886eaab6e0e4d5f4f5d12556ae44774c0b013a5063f67c75985aa9c70564:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzNDQ1N2FlYjZlZDYzZDdhODMxOTY2NjljODA2OTIzOTc0MTkxMTMwOGQwZjcxNTg3ODhkZDg3YjMzMDBmYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiMzM1NTczMDU4ZGJhYmY2NzZlMWU0YTdkODM0NjhkMmRmOTFmYWI2MDE5YWJjN2U5ZWFhN2FiMWQyMjQyMjEifQ"
         },
         {
@@ -125,8 +125,8 @@
           "version": "repo-lines-v1:sha256:7c24e5e8a995d365c1dd9e0e3fc768a71e1ad6556dd1e2ab57fd6d8f03d974d7:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODA1YzAwMjEwZGZmODMyZGJmOWMwZTI5NDk2MDY3ZGFiNjdkYTRiZDRkNmUzN2QwYjBhOGNlNWZjYjA3NDc4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDVlODA2OGMyZTgxZGRkZGU4MjQ1NzI4NzVlMmEzMDdiYmJkMWY3ODBhZTNjZDIxMGE0ZWFiMWZiZjkzZmRlYiJ9"
         },
         {
-          "resource": "repo://locales/en/settings.json#L112-L115",
-          "version": "repo-lines-v1:sha256:805647ba0307b3f2b51967bceddb9d2860273363c74242142781ddd78b297388:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY1MmJmYTkyZDQzZWIxZGMxZTJhMTY0NjNkZmFhMDc4MDZiYWU3ZjYzOGJiYjBkZjMwMGUwNjk4ZGM5ZmE3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFmNmZhN2I5MjRmYzhiYzFlNTE5NjFjYTU2NTBhZGU5NTdmNzgxZjBlNzJmNDYyZGFjNGZmYjNmNmUwOTYwNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTBkNDcxZjE4ZDhhMmVkMmE1ODg3YTgzZWIwZjAzNDE4NjJlOTYyNWQ0MGI2ODM5NmY4YTFhMWIyZGU1OTVkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGY3MzlhMDZjMWNiYjEyNDRlMzM2M2QzOGJjZjlmYTUwY2U4NGZlZDM5OWMyMTkzYTNjN2YwOGQ1OTkxOGIyYSJ9"
+          "resource": "repo://locales/en/settings.json#L112-L124",
+          "version": "repo-lines-v1:sha256:33513eee5b1f6d62736c61bbff3f2f7f406f91d708c8a81f213e713e0afc2743:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNTJiZmE5MmQ0M2ViMWRjMWUyYTE2NDYzZGZhYTA3ODA2YmFlN2Y2MzhiYmIwZGYzMDBlMDY5OGRjOWZhNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkZjQwY2Y1NzU5MTk2OThiNTY1NDI4NGQ2Yjg1YTYyOWU2ZTRmYjQzYTNjNGY1ZmE5NDU4MTJlODAwNmYwZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwZDQ3MWYxOGQ4YTJlZDJhNTg4N2E4M2ViMGYwMzQxODYyZTk2MjVkNDBiNjgzOTZmOGExYTFiMmRlNTk1ZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmNzM5YTA2YzFjYmIxMjQ0ZTMzNjNkMzhiY2Y5ZmE1MGNlODRmZWQzOTljMjE5M2EzYzdmMDhkNTk5MThiMmEifQ"
         }
       ]
     },
@@ -145,15 +145,15 @@
       "statement": "The `favicon` and `clipboardWrite` permissions back two UI affordances: `components/SessionView.tsx` renders the source favicon through Chrome's `chrome-extension://<id>/_favicon/?pageUrl=…` cache and copies quotes with `navigator.clipboard.writeText` for the `CopyText` action.",
       "evidence": [
         {
-          "resource": "repo://components/SessionView.tsx#L19-L21",
+          "resource": "repo://components/SessionView.tsx#L21-L23",
           "version": "repo-lines-v1:sha256:60155e79b69baa993df793cbce25be86d0f5a8feff3f977acc5817b7c2787342:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzkyZTIxMGY4ODM0NWM3MWVjMmE1NmZjOGUzMGZjNjdkYzMwOGFhZjUxN2RhMzZiM2NjYzAyYWJhNDhiOGUxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDc2Y2RmM2U3ZDg2NWUxOGIwNWIyZmRiYjYzZmI1MmJhZjMyNDgxYTNlNGY0OTY4NzhkYjllZjdmZDBjYjY0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZThhZjk1OGU0MzY5Zjg0NDc0Njc3ZDVlMWFiYjcwMTg2MTZlYzgyYzQ5MjZkOWI2OTdjZDAwOGUwY2Q0MDc1ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODY2NDAyOWNkMjY4MDYxOGJjYmM5YTQwMzExZTMyMDNkOGY4ODRkOTVmODIxMTczOTJiM2M1N2NiNjQ5YTcyMSJ9"
         },
         {
-          "resource": "repo://components/SessionView.tsx#L88-L92",
+          "resource": "repo://components/SessionView.tsx#L95-L99",
           "version": "repo-lines-v1:sha256:1479bcaad919b14cee488fef1f9c934c5280c5f20880bc670d610df6722527ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWI2MmY2MGQ4NTkwYTU3OWNmNDZmOGQ2NzM3OGM0YzU3MmI5NjJjZWNjZGI5MGM3YTVmN2I0MmI5NjA3ODJhNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDE3NDg1MTc3MDJlODc1ZGQ1ZTI5YjdiYjAyN2FmNDgyMjc2NzBjYjhhNDg4YTI5NzQwZjVlOWFhODY5MDAyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGE5N2ZiMGE4ZjVhZDEzNWMwYWYxMDQzMDc4ZmFmMTU4NmQ0ZTk5YWI4NGRhODNlOGEzYjFkMzEzZWJhOTE3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTFlMzcyNWRhMDAyYjQ2ZWQ4YjRkZTg4MDAzYWQ5NzEwZGNhZjE4ZDU3YzQ3MDFkYzNiZWZmMGIyYzVjYjEzZiJ9"
         },
         {
-          "resource": "repo://lib/library.tsx#L28-L33",
+          "resource": "repo://lib/library.tsx#L29-L34",
           "version": "repo-lines-v1:sha256:acfa4d2ceb60d6326359bd91160b0268c3079fff7731f5c8db1882bd9ee537ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzc2Yzg5YTljNDgyMWZlNzYzZjRiYjg2NTlmOTIyNTYwYTlmZmU5NTM4ZGM1NTA3YTM3ZjgxZGMyZWQ1NzRmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJlNmZjZGQ0ZDcyNzQ4N2U4YjhkN2E0Mzc3ZjA2MmNkMWJjZTU5NDQ0ZDZkNzNhYTg4Y2E1ODQ4Zjk0YjRlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmQxOTE5YjE1YTljN2FlZGM3NmE0ZDM1NjNiMTk0ZDNhOWMxZjg2NGNiNjE5ODNiOTkzNTQ4M2ZmNjY4ZjQ1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDhiN2Q3ODMyYTgxNDBhMmFiMzBhMmNhMjQ5OTY3MTJhNzQ2MjIzMWE5ZjAyYzJhMDk3ZjM2Mjk2NmQ3NDNiMyJ9"
         }
       ]
@@ -163,7 +163,7 @@
       "statement": "API keys are stored only in `chrome.storage.local` and are never synced: `settingsItem` is defined with the `local:` prefix and an explicit comment stating the reason, and the same holds for the persisted history (`local:history`) and the model cache (`local:modelCache`).",
       "evidence": [
         {
-          "resource": "repo://lib/history.ts#L50-L52",
+          "resource": "repo://lib/history.ts#L58-L60",
           "version": "repo-lines-v1:sha256:e4368d0de738100bb5d495da6fb1c3eec5f73dc5d5ca3100f14ebb66569e089d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGJkNjRlM2I1MjgxMWViNzU0MTA0YmI2NzA0OTYwYjUzYjQ0M2QwNzAyNzUyYWUwYzE4NjQwNzNlMTk3MmE2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmZlNzhiMDk5OGU3OTAwMTgyODU3YmE3MjgyY2Q0ODNjNzI4MDIyMDk0Zjc3YTYzYmRjYmQ1YjA0ODBhNTY3NCJ9"
         },
         {
@@ -181,7 +181,7 @@
       "statement": "The handoff of pending summarize requests is deliberately non-durable: `lib/pending.ts` stores queued requests, the per-tab panel pointer and the per-tab panel URLs under `session:` keys (`chrome.storage.session`, memory only), so pasted or selected text never travels in a URL and does not outlive the browser session; `lib/history.ts` separately keeps at most 20 sessions locally.",
       "evidence": [
         {
-          "resource": "repo://lib/history.ts#L49-L52",
+          "resource": "repo://lib/history.ts#L57-L60",
           "version": "repo-lines-v1:sha256:fae2cff0c32433d6c0294e992a87a393d031507ea6cb5761034649f752ecc796:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFiODk0OGIwYWJiZTFhNjkwYzg2N2EwN2QyMWI4NzZmZDg5YzdiOGE3ZjI2MzkyNmIyYWU0MmY3YzcwMDI1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODgwMDU3ZGZiYmVjODg2ZjNjOTVlMTE1MTJlYzgyMDhlNDNjOTRlN2MxMGQyY2EyZDY1YTU2MGQzZjAyZWE4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmZlNzhiMDk5OGU3OTAwMTgyODU3YmE3MjgyY2Q0ODNjNzI4MDIyMDk0Zjc3YTYzYmRjYmQ1YjA0ODBhNTY3NCJ9"
         },
         {
@@ -221,7 +221,7 @@
           "version": "repo-lines-v1:sha256:4883f9fe8dc9d52243331a74c0a4468247f56ac2740e0b6708d35b7f8754ff91:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODcyZjdlYzk0MDExYjYxYTcxMTc5NTQ1ZDA2YWM0OGQ0MmNkZTNhZWIzZDY2Y2Q1NTc2NjgzZmUyMWJhYWM3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjk4YjExMWIyYmY1ZjBiZDQzOTFjMzE5ZTg2MzBkNzkxN2YzZDExNGIzZTUyMjljOGRhNGMwZjFiNzRkZmYxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         },
         {
-          "resource": "repo://lib/openui.ts#L172-L185",
+          "resource": "repo://lib/openui.ts#L178-L191",
           "version": "repo-lines-v1:sha256:0d1cdb48b2bce827fc9441b481b7e07a86bf646efdd94889de51efcef4f6d432:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlN2M2YmIxOTIzMWI5ZDIxNmVhMzA1OTAxN2Q2NTFiYjIyYmQxYWFmOGIzOGIzOTBmMmMzNjNjMzk2NzRlODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmNjAzOGE4ZmFiNDgxN2U1M2U3ZTg0NDE0ZGFmYzBlZDEzMTEwOGJkYmUxN2Y2MGU4ZDVhZDMwZmU1MGRiNmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjMDU5YTEyNDNkNzRlZTlkODcyNjNhMDIxMWI2ZWI1ZDlmYmQ2ZjFkZjE2ZDQ1N2U4OTU4YWI2MmJiZGQwZjMifQ"
         },
         {
@@ -268,7 +268,7 @@
         },
         {
           "resource": "repo://public/_locales/en/messages.json",
-          "version": "repo-file-v1:sha256:f52124332573baacf70836a66f76c6087a93358b28b6aafc2e6873cbd3887300"
+          "version": "repo-file-v1:sha256:97259e4482556fbddcb9f946fea9aa8eead7251c3d3d473e3a4833849311c3fe"
         },
         {
           "resource": "repo://wxt.config.ts#L6-L9",
@@ -288,21 +288,75 @@
     },
     {
       "id": "claim_b156dd58668d4f2d82be0d1521b36fb1",
-      "statement": "The operational commands are `pnpm dev` (WXT dev server with the extension loaded), `pnpm compile` (`tsc --noEmit`, which is also what enforces the type-checked i18n keys), `pnpm build` (`wxt build`), `pnpm zip` (`wxt zip`) and `pnpm check:i18n`, with `dev:firefox`, `build:firefox` and `zip:firefox` variants; `pnpm build` writes `.output/chrome-mv3/` containing the manifest, the service worker bundle, the four HTML entrypoints, `_locales/`, `icon/`, code-split `chunks/` and `assets/`, and both `.output/` and `.wxt/` are git-ignored so the built manifest is a local artefact rather than a source file.",
+      "statement": "The operational commands are `pnpm dev` (WXT dev server with the extension loaded), `pnpm compile` (`tsc --noEmit`, which is also what enforces the type-checked i18n keys), `pnpm build` (`wxt build`), `pnpm zip` (`wxt zip`), `pnpm check:i18n` and `pnpm check:examples`, with `pnpm check` running `compile` plus both checks and with `dev:firefox`, `build:firefox` and `zip:firefox` variants; `pnpm build` writes `.output/chrome-mv3/` containing the manifest, the service worker bundle, the four HTML entrypoints, `_locales/`, `icon/`, code-split `chunks/` and `assets/`, and both `.output/` and `.wxt/` are git-ignored so the built manifest is a local artefact rather than a source file.",
       "evidence": [
         {
           "resource": "repo://.gitignore#L12-L15",
           "version": "repo-lines-v1:sha256:2d8b6b751135173c6eec3d545ca3d6a5a47a26a4a14d0768082febc9644c5f1a:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZkZDMwZGMzMTBjOGNhY2NlMDQ4OGI5NjJjYWEwMmM3MGNiODdkYmRiN2IwMGM2M2I0YjI1ZTM2Y2FjNmE2YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmY2ZDQ1MWQ0MjgzM2U3NmVjMWIyNGY3NTE5ZWQ1OGUyNjBkMTBjYzk1MTVkNDM5NDIyMTc3ODdmMjA2MTM1NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDNjMGRkZDM4ZDRlZjcyMjQxYTcwZDY3MGMxYTA4ZjFjNjY0ZGU3MGVlNmJiZWI5Y2I5MWEwMDk3YTkwNGRhZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTFhNDZhNWU2ODYyMjY0ZDdjNGZiMWQyZjY5YWFhYmU4MTg4M2Q2NTdlZGY1YTI2MTQ1YjVjNDAxM2RhMTU5MSJ9"
         },
         {
-          "resource": "repo://package.json#L8-L18",
-          "version": "repo-lines-v1:sha256:a1f726acabc522ed8d92f9a7ba19236dba770926e834ee1b13b1bc30ab83f176:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMmFiMGYzNWViZTY0MDUzZDkzMmY1ODgwZDhkMTgxMTNkZmRkNmVhMjRjOTMxMGY5OTk2NmNmOGZlZmUyZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhM2I0NjlkOWUwOTc1NzIyNDY2NjczNGM5ZWY3YjI1NGQ4ODUzNGY1ZDViYjcwOTg5NjA4MDVjNTUzZGMzMDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlYTk5NjMzYjA3NjRmYzJjMzdkZTZlMzUxODNhNjUwODQyZGRkNDA5ZmUwOTcxZTAyN2ExODU2MmJmY2UxMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzMGI5ODQ5YWEzZDJiYTEzYTNiMGM4NDJlNTUxZmY5MjdiOTc0MzljNmExZjIyNjNjNjNhMTg5YmFhNDExNTgifQ"
+          "resource": "repo://package.json#L8-L20",
+          "version": "repo-lines-v1:sha256:749531612c42838681b720ad6b07adaaf9ccafadbc9608ce7c0ea74fa38dd9d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMmFiMGYzNWViZTY0MDUzZDkzMmY1ODgwZDhkMTgxMTNkZmRkNmVhMjRjOTMxMGY5OTk2NmNmOGZlZmUyZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0YTk3MTkxNzA4ZWRmMWYwNjdmZTRkODljOWM4NDBmYjNiMjgxMTU4MzdjYzRmZWM5NTk5Mzc3NDE1NGRlMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1MmJkYzMyOGYwYjcwZTcxNjQxOTMzZWZlNDdlYjgxNDhkNWI2MDRhODlkZTExOTg3YWE1YmRmYTA5YjczNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ebb9d3c0aab4c15b0f4588740fd2189",
+      "statement": "Manifest V3 forbids remotely hosted code, and the OpenUI React runtime ships a development-only Inspect widget whose UI is fetched from `cdn.jsdelivr.net`; `lib/no-openui-devtools.ts` therefore sets the `openui.devtools.autoMount` flag, and because the flag is read when `@openuidev/react-lang` is first evaluated that module must be imported before anything that pulls the library in — every entrypoint (`entrypoints/app/main.tsx`, `entrypoints/popup/main.tsx`, `entrypoints/options/main.tsx`, `entrypoints/sidepanel/main.tsx`) begins with `import '@/lib/no-openui-devtools';` and reordering those imports re-enables the remote-loaded widget.",
+      "evidence": [
+        {
+          "resource": "repo://entrypoints/app/main.tsx#L1-L1",
+          "version": "repo-lines-v1:sha256:b00fa5f380e116e94bbf0fb824e955c344cb44e1a85a45fa416e1184e9c47585:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjAwZmE1ZjM4MGUxMTZlOTRiYmYwZmI4MjRlOTU1YzM0NGNiNDRlMWE4NWE0NWZhNDE2ZTExODRlOWM0NzU4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjAwZmE1ZjM4MGUxMTZlOTRiYmYwZmI4MjRlOTU1YzM0NGNiNDRlMWE4NWE0NWZhNDE2ZTExODRlOWM0NzU4NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDIyOGIxZDU0ODI0MDg4NmI5ODRlZTg3MTI2ZDU5NDkyNzUwMTM3OTBjNmEyMTE3ODIwZDIwMWVjZDhkMDFhNCJ9"
+        },
+        {
+          "resource": "repo://entrypoints/popup/main.tsx#L1-L1",
+          "version": "repo-lines-v1:sha256:b00fa5f380e116e94bbf0fb824e955c344cb44e1a85a45fa416e1184e9c47585:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjAwZmE1ZjM4MGUxMTZlOTRiYmYwZmI4MjRlOTU1YzM0NGNiNDRlMWE4NWE0NWZhNDE2ZTExODRlOWM0NzU4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjAwZmE1ZjM4MGUxMTZlOTRiYmYwZmI4MjRlOTU1YzM0NGNiNDRlMWE4NWE0NWZhNDE2ZTExODRlOWM0NzU4NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDIyOGIxZDU0ODI0MDg4NmI5ODRlZTg3MTI2ZDU5NDkyNzUwMTM3OTBjNmEyMTE3ODIwZDIwMWVjZDhkMDFhNCJ9"
+        },
+        {
+          "resource": "repo://lib/no-openui-devtools.ts",
+          "version": "repo-file-v1:sha256:d4b2b05bbbadde41cca4e8926ef859d3131c0fd5d021a9ef61255f3b48f732c1"
+        }
+      ]
+    },
+    {
+      "id": "claim_083e395535524224aed9eb6f476e87cf",
+      "statement": "`pnpm check:examples` (`scripts/check-examples.ts`) parses the OpenUI Lang examples that the summary prompt actually ships (`VISUAL_SUMMARY_EXAMPLE`, `CHART_SUMMARY_EXAMPLE`, `DIAGRAM_SUMMARY_EXAMPLE`, `REVIEW_SUMMARY_EXAMPLE`, `NEWS_ACTORS_EXAMPLE` and the `CSV_TOOL_EXAMPLES`, all referenced from `lib/openui.ts`) with the real library, failing on parse errors, unresolved or orphaned statements, and on any Mermaid diagram in a `Diagram` node that Pele cannot render — so a wrong example that would teach the model bad syntax fails the gate.",
+      "evidence": [
+        {
+          "resource": "repo://lib/openui.ts#L120-L135",
+          "version": "repo-lines-v1:sha256:08822ff411ce10cf26d2ebba32d77ae5675ecff53f6da7246dd9e4a30fa3c081:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhZDM1MmMwN2ZlNGZmZjIyODNkMjBhNmZlOWE5MjAyYzVlODhlMTU3OTNiNjcxNWM2YmFiNzgxNzUwYTNkMWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkYzgzMjA5NDJlOTVkNjA4ZTYzZmU4OWExZDc5YTBlY2UzYmEwNTIyMzIzNWUyYzc0NWQwNzIwNTI0ZjA2NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyZWY0NGVjZDk2Zjc2M2UyN2U3ZWYxZjY1NzE3MWY0NTBlYWYxOTZlZjIxODI5MmM5NjJlNjVlZmVhODUzZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2MjNkYjJmODQ4MzlhYTIzMTU0Y2VjN2IyYjVhZTU1ZDI1Nzk0YzljNjg2MTc5OGZhYzBkNzg2ZDljZGFhM2QifQ"
+        },
+        {
+          "resource": "repo://lib/summary-example.ts",
+          "version": "repo-file-v1:sha256:7162bea752b1370541294cad124a92f07c35f8b26fade05281fc836fcfeb94e3"
+        },
+        {
+          "resource": "repo://scripts/check-examples.ts",
+          "version": "repo-file-v1:sha256:6dce5029cfdaa6a8f46fe0a948b59fe005a8aef57ba3a29f0c857fc0ab0a6b99"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9740636c5f54c628728bcac790966f6",
+      "statement": "The local-server `Origin` rewrite is set up lazily and only once: `allowLocalOrigin` in `lib/local-origin.ts` is a no-op unless the base URL is a loopback host (`localhost`, `127.0.0.1`, `0.0.0.0`, `[::1]`), installs a *session* `declarativeNetRequest` rule keyed by a stable hash of the origin, and is guarded by an in-memory `applied` set so the rule is installed at most once per origin per browser session; it is invoked from `streamCompletion` in `lib/llm.ts` and `fetchModels` in `lib/models.ts`, and the host permission for the local server still has to come from the separate runtime request on Save.",
+      "evidence": [
+        {
+          "resource": "repo://lib/llm.ts#L40-L46",
+          "version": "repo-lines-v1:sha256:456e00d51bc4acba8ae5622ad854ea167dd8acff35d12730be6ac1cf102400b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGE2MTlkOWU0ZWMyZDU3MjgxYTQwNjg3YTlmYmNlNzY4Y2EwZTFhMmM2MmZlYThlMWViZTY2MjQ4ZDRiNjRkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTcxY2I1ZjIyMTAzNGIxNzYzNzg5YjJjN2Y3NDFkZGZmNzdjODU3N2ZmYzE0MDIzMWUwZDU3NTVlNDJlNmNiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTJjM2IyYWFkZjFmZjlmZDk1N2VhNzFhYmQwYTc0NTQ3YjE4N2FjNDYxM2E5N2Y0NDMzYTA2YmU4NjFjNTA4OSJ9"
+        },
+        {
+          "resource": "repo://lib/local-origin.ts#L3-L55",
+          "version": "repo-lines-v1:sha256:66bb0863bc070a5a358108560a95b21ca26d444d83f2d40e5ecdf4b4fa269727:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkYzNhMDhkNGEwODRiZDc0YTYwMGQxNzY0OGYwNzJlYzBhM2RkZmIwNDQzMjNiZGY2M2VhOTJlNzAzNTNhYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjYjMyNzYxNmIxZGQxMWMzYzllNDcxMThlMTVkZmVhZmFjODZjNTRlZjFjNDZkZDhjYzgxNzNhMjFmM2E3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3MTlkYjQyMGJlNDRiZGM0ZGVmM2YyOTdiY2VmZGVmZDkwODM0MjRjNDdlNDlkMDAzODlmNDUzNGM4OThmYmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://lib/models.ts#L21-L27",
+          "version": "repo-lines-v1:sha256:41b9ae1b33b56ae76e412ad3fb696d7f53112e6fe161766ac775774693698700:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTEzNDJhZTYwM2JlMDE2MmNlOWJlNTIwOTY0MDczZGFkY2I3ODhhMjFiYzc1NjNiNjZjNzZjZTI0YzZkMDdlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWIxN2QzM2M5YzRlNjYwMWM1MWYxYmNjZDljYzdjYTBiMjBmODBjZDEzYzc3ZmQ1MmViMTk1NGU2MzVmM2U4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDMxNDY0YTdhMTZkZTBkZWYwZGUxMmU3MzJkNGRjNjhmMGJjN2QyYjY4YjY3NDMwNjM4ODdjZTMzZmE1NGQ4NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmExZTg2MjgyZTBhYTAzMjNmODhmOWE4OTNiZDQwZDk0ZGVhN2MyMTBjNGQ0ZWRmYjI2NmYxMjU1MjExNDA2ZSJ9"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.8.0",
-    "at": "2026-11-07T09:34:41.642Z"
+    "at": "2026-11-08T08:28:07.947Z"
   }
 }

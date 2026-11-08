@@ -28,7 +28,10 @@ sources:
     resource: repo://lib/pending.ts
   - id: openwiki-source-3823e904eb7ad607af5f3f70
     resource: repo://lib/settings.ts
-generated: { by: "openwiki/0.8.0", at: "2026-11-07T09:34:41.642Z" }
+generated: { by: "openwiki/0.8.0", at: "2026-11-08T08:28:07.947Z" }
+verified:
+  - by: openwiki/0.8.0
+    at: 2026-11-08T08:28:07.947Z
 ---
 
 # Summary Generation
@@ -40,8 +43,8 @@ OpenUI Lang program it produced, repairing it at most once, and storing the resu
 Post-summary turns — refinement (edit mode) and follow-up Q&A — are documented separately in
 [Refinement and Follow-up Questions](refinement.md). The shared machinery of the program model
 is in [OpenUI Lang Program Model and Library](../concepts/openui-lang.md), provider calls in
-[LLM Providers and Model Configuration](../integrations/llm-providers.md), and persistence in
-<!-- openwiki: broken internal link [../architecture/storage-and-state.md] file "../architecture/storage-and-state.md" does not exist. Fix the href or restore the target, then delete this comment. -->
+[LLM Providers and Model Configuration](../integrations/llm-providers.md), the React layer in
+[React UI Components](../architecture/ui-components.md), and persistence in
 [Storage and Session State](../architecture/storage-and-state.md).
 
 ## Who owns what
@@ -54,15 +57,19 @@ is in [OpenUI Lang Program Model and Library](../concepts/openui-lang.md), provi
 | `lib/openui.ts` | Prompt construction (`buildSummaryPrompt`, `buildSourceMessage`), `splitInline`, `validateProgram`, `validateDiagrams`, `buildRepairMessage`, `applyPatch`. |
 | `lib/generate.ts` | The turn loop: stream → split → validate → one repair → result. |
 | `lib/llm.ts` | `createModel`, `streamCompletion`, `describeError`. |
+| `lib/diagram.ts` | Mermaid → SVG with Pele, plus `diagramError` for the model-readable failure text. |
 | `lib/history.ts` | The Message Protocol storage contract (`writeStored` / `readStored`) and `saveSession`. |
 
 ## From a user gesture to a pending request
 
-A summary never starts inside the popup: the popup closes on blur, so it only *queues* the
-request. The flow is:
+A summary never starts inside the popup: the popup is only a launcher. It submits the request,
+opens the result view and closes itself. The flow is:
 
 1. The popup, the context menu ("Summarize this page" / "Summarize selection") or the side
    panel creates a `PendingRequest` (`{ type: 'tab', tabId }` or `{ type: 'text', text, … }`).
+   The context menu path is in `entrypoints/background.ts`: in `tab` display mode it queues the
+   request and opens the result tab; in `sidepanel` mode it opens the tab's panel and addresses
+   the request to it.
 2. `queueRequest` stores it in `storage.session` under `session:requests` and returns an id;
    the result view is opened as `app.html?request=<id>` (or, in panel mode, the request is
    addressed to that tab's panel).
@@ -78,12 +85,14 @@ route and panel mechanics.
 
 `useSession` exposes a single `phase` value: `idle`, `extracting`, `summarizing`, `refining`,
 `answering`. Everything the UI shows is derived from it (`busy = phase !== 'idle'` disables the
-source picker, the refine chips and the question box).
+source picker, the refine chips and the question box). Pasted text is the one source kind that
+never enters `extracting`: there is nothing to read, so `fromText` goes straight to the model.
 
 ```mermaid
 stateDiagram-v2
   [*] --> idle
   idle --> extracting: fromTab or fromFile
+  idle --> summarizing: fromText pasted text needs no extraction
   extracting --> summarizing: source extracted and truncated
   extracting --> idle: extraction failed or aborted
   summarizing --> idle: committed, failed or aborted
@@ -122,6 +131,10 @@ Two guards depend on this:
 - In the `catch` block, `if (!ctrl.signal.aborted) setError(describeError(e, settingsRef.current))`
   — an abort is a user action, not an error, so it is not reported.
 
+The extraction path uses the same rule with a different guard: `fromTab` and `fromFile` report an
+extraction error only when their own controller is still the current one
+(`if (abortRef.current === ctrl)`).
+
 `stop()` aborts the current controller and returns the UI to `idle`; the component unmount also
 aborts (`useEffect(() => () => abortRef.current?.abort(), [])`).
 
@@ -139,9 +152,24 @@ Extraction happens in `phase === 'extracting'` and produces an `ExtractedSource`
 | `text` | `extractFile` | The file text is passed through unchanged (`.txt`, `.json`, `.log`, `.xml`, `.yaml`, `.yml`, anything with a `text/` MIME type). Pasted text and context-menu selections also arrive as `text`. |
 | `webpage` from a file | `extractFile` | An uploaded `.html`/`.htm` file goes through the same Readability + Turndown path with the URL `about:blank`. |
 
-A file type that matches nothing throws `errors:file.unsupported`. A tab whose URL the browser
-does not let extensions read (`chrome://`, the Web Store, …) is rejected by `isReadableUrl`
-before any injection; a tab without text fails with `errors:page.noText`.
+A file type that matches nothing throws `errors:file.unsupported`.
+
+### Reading a tab
+
+`extractTab` (`lib/page.ts`) reads a browser tab and is the only path that touches page
+permissions:
+
+- The tab URL is checked with `isReadableUrl` **before** any injection. URLs the browser forbids
+  (`chrome://`, `edge://`, `about:`, `devtools://`, `view-source:`, the Chrome Web Store) are
+  rejected with `errors:page.restricted`.
+- A tab whose URL ends in `.pdf` is **downloaded** and parsed with pdf.js, not injected. A tab that
+  reports `contentType === 'application/pdf'` after injection takes the same download path.
+- Otherwise the page HTML is read with `browser.scripting.executeScript`; a failed injection
+  gives `errors:page.noAccess`, a missing result `errors:page.readFailed`, and a page without
+  text `errors:page.noText`.
+
+The `activeTab` grant that makes this possible is given by the popup or the context menu and
+outlives the popup, so the result page can still read the tab afterwards.
 
 ## Truncation and the `maxChars` flag
 
@@ -223,6 +251,10 @@ visual, chart and diagram summaries.
 The Q&A prompt (`buildQaPrompt`) is a separate, smaller rule set — see
 [Refinement and Follow-up Questions](refinement.md).
 
+The settings used for the turn are the global ones **plus the session's own overrides**:
+`effective(session)` merges `session.options` (the length and output language chosen in the
+result toolbar) over the global settings, so a per-session choice wins over the default.
+
 ## The generation turn
 
 ```mermaid
@@ -251,10 +283,11 @@ Caption: the turn streams once, validates, and may spend exactly one extra call 
 
 ### Streaming
 
-`streamCompletion` (`lib/llm.ts`) builds the AI SDK model for the active provider, asks for the
-host permission to be allowed (`allowLocalOrigin` rewrites the `Origin` header for local
-servers such as Ollama), and streams with `streamText`. Every delta is appended to the
-accumulated text and passed to `onStream`, which the controller stores in `streamRaw`.
+`streamCompletion` (`lib/llm.ts`) builds the AI SDK model for the active provider, installs the
+local-origin session rule (`allowLocalOrigin` rewrites the `Origin` header for local servers such
+as Ollama, which reject a `chrome-extension://` origin), and streams with `streamText`. Every
+delta is appended to the accumulated text and passed to `onStream`, which the controller stores
+in `streamRaw`.
 
 `streamRaw` is not decoration: `SessionView` runs `splitInline(ctrl.streamRaw)` on it while
 `phase === 'summarizing'` and renders the code part, so the summary appears while it is still
@@ -303,10 +336,12 @@ if (recheck.errors.length <= check.errors.length) {
 }
 ```
 
-If the repair is rejected, the last valid program is kept and the remaining errors are surfaced
-as a warning (*"The model produced N invalid UI statements; showing what rendered."*). There is
-no second repair turn: the loop is bounded by design, so a model that keeps producing broken
-programs cannot loop the extension.
+If the repair is rejected, the program in hand is kept and the remaining errors are surfaced as a
+warning (*"The model produced N invalid UI statements; showing what rendered."*). On a refinement
+turn the program in hand is the merged program, which is the last one that was accepted; on the
+first summary turn there is no earlier program to fall back to, so the invalid attempt itself is
+stored and the Renderer shows the parts it can render. There is no second repair turn: the loop
+is bounded by design, so a model that keeps producing broken programs cannot loop the extension.
 
 ### Prose-only answers
 
@@ -336,10 +371,13 @@ can be handed to the Renderer directly; only its `content` is ever sent back to 
 | Situation | Detected by | What the user sees | Session state |
 | --- | --- | --- | --- |
 | Missing or invalid provider configuration (base URL, API key, model) | `configProblem(settings)` before every model turn (`start`, `refine`, `resummarize`, `ask`) | An error banner with a link to Settings. | For a **new** summary the session is not created at all (`start` returns before `commit`). For an existing session the session is kept untouched. |
+| The paste is empty | `fromText` checks `text.trim()` | The error *"Nothing to summarize."* | No session is created. |
+| The page cannot be read (`chrome://`, Web Store, no tab, injection refused, no text) | `isReadableUrl`, `extractTab` | The matching `errors:page.*` message. | No session is created; the failure happens before `commit`. |
+| The file type is unsupported | `extractFile` | *"Unsupported file type …"* | No session is created. |
 | Provider or network failure (401, 403, 404, 429, unreachable host) | `describeError(err, settings)` maps the status code to a short message | A specific error banner: key rejected, access denied, model not found, rate limited, network/CORS/permission problem, or the local-server hint for a 403 on `localhost`. | The session stays in history with `summary: null`; reopening it retries the summary. |
-| The user pressed Stop (or a new operation superseded this one) | `ctrl.signal.aborted` | Nothing — an abort is not an error. | The phase returns to `idle`; the partial program is **not** committed, so the session keeps `summary: null`. |
+| The user pressed Stop (or a new operation superseded this one) | `ctrl.signal.aborted` | Nothing — an abort is not an error. | The phase returns to `idle`; the partial program is **not** committed. A first summary therefore leaves `summary: null`; a stopped re-run keeps the previous summary. |
 | The model answered with prose instead of a program | `!res.program && res.prose` | The warning *"The model answered with text instead of a UI."* | The note is stored; the program is empty. |
-| The program is still invalid after the single repair turn | `res.errors.length > 0` | The warning *"The model produced N invalid UI statements; showing what rendered."* | The last valid program (before or after the repair) is stored; the Renderer shows what it can render. |
+| The program is still invalid after the single repair turn | `res.errors.length > 0` | The warning *"The model produced N invalid UI statements; showing what rendered."* | The program in hand is stored (the last accepted one on a refinement, the invalid attempt on the first turn); the Renderer shows what it can render. |
 | The pending request is gone (already taken, or `storage.session` was cleared) | `takeRequest` / `takePanelRequest` return `null` | The error *"This request has expired. Start again from the extension icon."* | No session is created. |
 
 ## Operational notes
@@ -360,8 +398,9 @@ can be handed to the Renderer directly; only its `content` is ever sent back to 
   the prompt and the parser.
 - [LLM Providers and Model Configuration](../integrations/llm-providers.md) — provider calls,
   keys, permissions and error mapping.
-<!-- openwiki: broken internal link [../architecture/storage-and-state.md] file "../architecture/storage-and-state.md" does not exist. Fix the href or restore the target, then delete this comment. -->
 - [Storage and Session State](../architecture/storage-and-state.md) — where sessions live and
   how the Message Protocol is persisted.
+- [React UI Components](../architecture/ui-components.md) — the session view and the
+  controller's consumers.
 - [Extension Surfaces](../architecture/extension-surfaces.md) — how a request reaches the
   result view.

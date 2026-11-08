@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:1602aa2f19798d433fa6d5e28860f1ff83043ec67f91b7fa3449bdcb82a73d77",
+  "pageVersion": "sha256:a7b1214f8e01bdf0401060e92e99ff60e313bdd1ef263b888fcbfae07444404f",
   "claims": [
     {
       "id": "claim_a748edd98fb240febdfbb2d3c5e850d7",
@@ -193,10 +193,24 @@
           "version": "repo-lines-v1:sha256:986070f1446446e8b21ad92d75dd85611741fcd789eb9d2f74932c91aa123c6a:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRhZmRmNGFiY2Q2YWRjMTI2ZWMxM2E1ODg1ZGU5NTY2NzViNTE0NzMxOTVjNWQ2Mzc1ZWQ4Y2RkYWI4Mjg1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2M1N2IwZTMwZTcwODRmZGQwZDYxZTgxNTdkNWYwYmYyNjQ2MDAxYzc5OWY2M2NmYmNmYWJhMGE1YzJhNTQ0OSJ9"
         }
       ]
+    },
+    {
+      "id": "claim_c0db1fb4679e44809b0d2361b969e4a0",
+      "statement": "The CSV tool example embedded in the system prompt is guarded by scripts/check-examples.ts (pnpm check:examples), which parses every prompt example against the real library and fails on parser errors, unresolved or orphaned statements, or Mermaid diagrams that do not render with Pele, because a wrong example teaches the model wrong syntax.",
+      "evidence": [
+        {
+          "resource": "repo://lib/csv-tools.ts#L157-L169",
+          "version": "repo-lines-v1:sha256:13d30c886c78ce9e5c837c041168cf1efd7a81991a14c2920a12cd90a261a8ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkZjM3NWIyMjNjY2YwYjU2MzE4ZTllYmI4NTA0MTgwYzkzNWFmNDVlMjAyNzJhNDQxNTU3OTAwMTEwMmY2ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzYWUzOWQ1YmM4NDc0ZDk3ZTU5OTcxZWRlM2JmNDFhYjNhZWE5ZmEzNGZmMzA0MmE3NDliZjNhM2EwYmYyNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UifQ"
+        },
+        {
+          "resource": "repo://scripts/check-examples.ts#L1-L53",
+          "version": "repo-lines-v1:sha256:c68d66847847ef79f4a221ebe77332aff02322244e81af39f2a1767f4175d13a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZDFkZDE1ZDQ3ZDUxMDI0ODU4MjhmM2VkMTc4YTNhMTkzY2I5ZmM0OTk3YjczMDIyNDg3YmIyM2ZlYjVkOTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5MWEwOGYxNjI3ZDYwYjY4MzQ3ZDJlMTkxMWJjNTJhNDIzNGY5YzkwNDFiZTc2YjgwN2EzMzRiODNjZWI3YTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.8.0",
-    "at": "2026-11-07T09:34:41.642Z"
+    "at": "2026-11-08T08:28:07.947Z"
   }
 }
