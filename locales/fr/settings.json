@@ -113,6 +113,15 @@
     "ai": "Modèle d’IA",
     "summary": "Résumé",
     "appearance": "Apparence",
-    "advanced": "Avancé"
+    "advanced": "Avancé",
+    "about": "À propos"
+  },
+  "about": {
+    "tagline": "Filtrez n’importe quelle page jusqu’à l’essentiel.",
+    "version": "Version {{version}}",
+    "supportTitle": "Soutenir Siftlume",
+    "supportText": "Siftlume est gratuit et open source. S’il vous fait gagner du temps, un café aide à le faire vivre.",
+    "supportButton": "Offrez-moi un café",
+    "license": "Gratuit et open source sous licence"
   }
 }

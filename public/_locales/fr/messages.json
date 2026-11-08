@@ -1,17 +1,17 @@
 {
   "extName": {
-    "message": "AI Summarizer",
+    "message": "Siftlume",
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
     "message": "Résumez pages web, textes et fichiers (PDF, CSV, Markdown) en synthèses visuelles et interactives. Utilisez votre propre clé de LLM."
   },
   "actionTitle": {
-    "message": "Ouvrir AI Summarizer",
+    "message": "Ouvrir Siftlume",
     "description": "Toolbar icon tooltip"
   },
   "commandOpen": {
-    "message": "Ouvrir AI Summarizer",
+    "message": "Ouvrir Siftlume",
     "description": "Keyboard shortcut description"
   },
   "menuSummarizePage": {

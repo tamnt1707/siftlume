@@ -1,17 +1,17 @@
 {
   "extName": {
-    "message": "AI Summarizer",
+    "message": "Siftlume",
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
     "message": "将网页、文本和文件(PDF、CSV、Markdown)总结为直观的交互式摘要。使用你自己的 LLM 密钥。"
   },
   "actionTitle": {
-    "message": "打开 AI Summarizer",
+    "message": "打开 Siftlume",
     "description": "Toolbar icon tooltip"
   },
   "commandOpen": {
-    "message": "打开 AI Summarizer",
+    "message": "打开 Siftlume",
     "description": "Keyboard shortcut description"
   },
   "menuSummarizePage": {

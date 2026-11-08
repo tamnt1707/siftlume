@@ -111,6 +111,15 @@
     "ai": "AI 모델",
     "summary": "요약",
     "appearance": "모양",
-    "advanced": "고급"
+    "advanced": "고급",
+    "about": "정보"
+  },
+  "about": {
+    "tagline": "어떤 페이지든 중요한 것만 걸러 냅니다.",
+    "version": "버전 {{version}}",
+    "supportTitle": "Siftlume 후원하기",
+    "supportText": "Siftlume는 무료 오픈 소스입니다. 시간을 아끼는 데 도움이 되었다면 커피 한 잔으로 개발을 응원해 주세요.",
+    "supportButton": "커피 한 잔 사기",
+    "license": "무료 오픈 소스, 라이선스:"
   }
 }

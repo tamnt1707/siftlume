@@ -1,0 +1,23 @@
+<!-- Siftlume app icon: three lines of text on a cobalt tile; the middle one is swept by a
+     highlighter band and catches a spark of light ("sift out what matters, then light it up"). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3756E6"/>
+      <stop offset="1" stop-color="#2238B4"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#tile)"/>
+  <g transform="translate(0 5)">
+  <!-- line 1 -->
+  <rect x="28" y="34" width="52" height="10" rx="5" fill="#fff" opacity=".55"/>
+  <!-- highlighter band, slightly tilted like a real marker stroke -->
+  <path d="M22 60.5c0-2.3 1.7-4.2 4-4.4l74-5.6c3-.2 5.5 2.1 5.5 5.1v9.1c0 2.6-2 4.8-4.6 5L27 75.6c-2.7.2-5-1.9-5-4.6Z" fill="#FFE45C"/>
+  <!-- line 2 (on the highlight) -->
+  <rect x="30" y="58" width="64" height="10" rx="5" fill="#1B2A86"/>
+  <!-- line 3 -->
+  <rect x="28" y="84" width="40" height="10" rx="5" fill="#fff" opacity=".55"/>
+  <!-- spark -->
+  <path d="M98 22c1.2 6.3 3.7 8.8 10 10-6.3 1.2-8.8 3.7-10 10-1.2-6.3-3.7-8.8-10-10 6.3-1.2 8.8-3.7 10-10Z" fill="#FFE45C"/>
+  </g>
+</svg>

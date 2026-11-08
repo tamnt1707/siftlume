@@ -112,6 +112,15 @@
     "ai": "KI-Modell",
     "summary": "Zusammenfassung",
     "appearance": "Darstellung",
-    "advanced": "Erweitert"
+    "advanced": "Erweitert",
+    "about": "Über"
+  },
+  "about": {
+    "tagline": "Jede Seite auf das Wesentliche gefiltert.",
+    "version": "Version {{version}}",
+    "supportTitle": "Siftlume unterstützen",
+    "supportText": "Siftlume ist kostenlos und Open Source. Wenn es dir Zeit spart, hilft ein Kaffee, es weiterzuentwickeln.",
+    "supportButton": "Spendier mir einen Kaffee",
+    "license": "Kostenlos und Open Source unter der Lizenz"
   }
 }

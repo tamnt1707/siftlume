@@ -111,6 +111,15 @@
     "ai": "AI 模型",
     "summary": "摘要",
     "appearance": "外观",
-    "advanced": "高级"
+    "advanced": "高级",
+    "about": "关于"
+  },
+  "about": {
+    "tagline": "把任何页面筛选成真正重要的内容。",
+    "version": "版本 {{version}}",
+    "supportTitle": "支持 Siftlume",
+    "supportText": "Siftlume 免费且开源。如果它帮你节省了时间,请我喝杯咖啡就能支持它继续发展。",
+    "supportButton": "请我喝杯咖啡",
+    "license": "免费开源,许可证:"
   }
 }

@@ -43,11 +43,11 @@
   --font-serif: 'Source Serif 4 Variable', Georgia, 'Times New Roman', serif;
   /* Inkmark defaults; the app root overrides them from Settings → Appearance. */
   --font-reading: var(--font-serif);
-  --accent: #2e4bd6;
-  --accent-hover: #2840bd;
-  --accent-soft: #eef1fb;
+  --accent: #0b7a83;
+  --accent-hover: #0a6b73;
+  --accent-soft: #e7f2f3;
   --on-accent: #ffffff;
-  --marker: #ffe45c;
+  --marker: #a6f0e6;
   --r-sm: 8px;
   --r-md: 12px;
   --r-lg: 16px;
@@ -1679,4 +1679,67 @@ kbd {
   .style-card__switch::after {
     transition: none;
   }
+}
+
+/* ── Settings → About ─────────────────────────────────────── */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about__identity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.about__logo {
+  flex: none;
+  border-radius: 14px;
+}
+
+.panel .about__name {
+  display: block;
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.about__tagline {
+  margin: 2px 0 0;
+  font-family: var(--font-reading);
+  font-size: 15px;
+  color: var(--ink-2);
+}
+
+.about__support {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  padding: 16px;
+  border-radius: var(--r-md);
+  background: var(--accent-soft);
+}
+
+.about__support p {
+  margin: 4px 0 0;
+  max-width: 46ch;
+  font-size: 13.5px;
+}
+
+.kofi {
+  text-decoration: none;
+}
+
+.about__license a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
 }

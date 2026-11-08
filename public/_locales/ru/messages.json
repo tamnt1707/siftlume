@@ -1,17 +1,17 @@
 {
   "extName": {
-    "message": "AI Summarizer",
+    "message": "Siftlume",
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
     "message": "Превращает веб-страницы, текст и файлы (PDF, CSV, Markdown) в наглядные интерактивные сводки. Используйте свой ключ LLM."
   },
   "actionTitle": {
-    "message": "Открыть AI Summarizer",
+    "message": "Открыть Siftlume",
     "description": "Toolbar icon tooltip"
   },
   "commandOpen": {
-    "message": "Открыть AI Summarizer",
+    "message": "Открыть Siftlume",
     "description": "Keyboard shortcut description"
   },
   "menuSummarizePage": {

@@ -1,17 +1,17 @@
 {
   "extName": {
-    "message": "AI Summarizer",
+    "message": "Siftlume",
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
     "message": "웹 페이지, 텍스트, 파일(PDF, CSV, Markdown)을 한눈에 보이는 대화형 요약으로 만들어 줍니다. 본인의 LLM 키를 사용합니다."
   },
   "actionTitle": {
-    "message": "AI Summarizer 열기",
+    "message": "Siftlume 열기",
     "description": "Toolbar icon tooltip"
   },
   "commandOpen": {
-    "message": "AI Summarizer 열기",
+    "message": "Siftlume 열기",
     "description": "Keyboard shortcut description"
   },
   "menuSummarizePage": {

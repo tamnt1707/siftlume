@@ -1,17 +1,17 @@
 {
   "extName": {
-    "message": "AI Summarizer",
+    "message": "Siftlume",
     "description": "Extension name (brand, not translated)"
   },
   "extDescription": {
     "message": "สรุปหน้าเว็บ ข้อความ และไฟล์ (PDF, CSV, Markdown) เป็นสรุปแบบภาพที่โต้ตอบได้ ใช้คีย์ LLM ของคุณเอง"
   },
   "actionTitle": {
-    "message": "เปิด AI Summarizer",
+    "message": "เปิด Siftlume",
     "description": "Toolbar icon tooltip"
   },
   "commandOpen": {
-    "message": "เปิด AI Summarizer",
+    "message": "เปิด Siftlume",
     "description": "Keyboard shortcut description"
   },
   "menuSummarizePage": {

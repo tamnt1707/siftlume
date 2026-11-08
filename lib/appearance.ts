@@ -31,15 +31,16 @@ export interface Preset {
 }
 
 export const PRESETS: Preset[] = [
-  { id: 'inkmark', name: 'Inkmark', accent: '#2E4BD6', marker: '#FFE45C' },
   { id: 'tide', name: 'Tide', accent: '#0B7A83', marker: '#A6F0E6' },
+  { id: 'inkmark', name: 'Inkmark', accent: '#2E4BD6', marker: '#FFE45C' },
   { id: 'grove', name: 'Grove', accent: '#2E7D46', marker: '#DDF27C' },
   { id: 'orchid', name: 'Orchid', accent: '#A3328F', marker: '#FFC9EC' },
   { id: 'graphite', name: 'Graphite', accent: '#39404F', marker: '#FFD27A' },
 ];
 
+/** Default: Tide (teal pen, aqua highlighter). */
 export const DEFAULT_APPEARANCE: Appearance = {
-  preset: 'inkmark',
+  preset: 'tide',
   accent: PRESETS[0]!.accent,
   marker: PRESETS[0]!.marker,
   corners: 'soft',

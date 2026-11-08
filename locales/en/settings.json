@@ -112,6 +112,15 @@
     "ai": "AI model",
     "summary": "Summary",
     "appearance": "Appearance",
-    "advanced": "Advanced"
+    "advanced": "Advanced",
+    "about": "About"
+  },
+  "about": {
+    "tagline": "Sift any page down to what matters.",
+    "version": "Version {{version}}",
+    "supportTitle": "Support Siftlume",
+    "supportText": "Siftlume is free and open source. If it saves you time, a coffee helps keep it going.",
+    "supportButton": "Buy me a coffee",
+    "license": "Free and open source under the"
   }
 }

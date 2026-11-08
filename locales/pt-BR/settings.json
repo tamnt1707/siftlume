@@ -113,6 +113,15 @@
     "ai": "Modelo de IA",
     "summary": "Resumo",
     "appearance": "Aparência",
-    "advanced": "Avançado"
+    "advanced": "Avançado",
+    "about": "Sobre"
+  },
+  "about": {
+    "tagline": "Filtre qualquer página até ficar só o que importa.",
+    "version": "Versão {{version}}",
+    "supportTitle": "Apoie o Siftlume",
+    "supportText": "O Siftlume é gratuito e de código aberto. Se ele economiza seu tempo, um café ajuda a mantê-lo vivo.",
+    "supportButton": "Me pague um café",
+    "license": "Gratuito e de código aberto sob a licença"
   }
 }

@@ -111,6 +111,15 @@
     "ai": "AIモデル",
     "summary": "要約",
     "appearance": "外観",
-    "advanced": "詳細設定"
+    "advanced": "詳細設定",
+    "about": "このアプリについて"
+  },
+  "about": {
+    "tagline": "どんなページも、大事なところだけに。",
+    "version": "バージョン {{version}}",
+    "supportTitle": "Siftlume を応援する",
+    "supportText": "Siftlume は無料のオープンソースです。時間の節約になったら、コーヒー1杯の支援が開発の励みになります。",
+    "supportButton": "コーヒーをおごる",
+    "license": "無料・オープンソース。ライセンス:"
   }
 }

@@ -111,6 +111,15 @@
     "ai": "Model AI",
     "summary": "Tóm tắt",
     "appearance": "Giao diện",
-    "advanced": "Nâng cao"
+    "advanced": "Nâng cao",
+    "about": "Giới thiệu"
+  },
+  "about": {
+    "tagline": "Tóm tắt mọi trang, giữ lại những gì quan trọng.",
+    "version": "Phiên bản {{version}}",
+    "supportTitle": "Ủng hộ Siftlume",
+    "supportText": "Siftlume miễn phí và mã nguồn mở. Nếu nó giúp bạn tiết kiệm thời gian, một ly cà phê sẽ giúp dự án tiếp tục phát triển.",
+    "supportButton": "Mời một ly cà phê",
+    "license": "Miễn phí, mã nguồn mở theo giấy phép"
   }
 }

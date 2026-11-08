@@ -1,6 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
-import { AiBrain01Icon, PaintBoardIcon, SlidersHorizontalIcon, TextAlignLeftIcon } from '@hugeicons/core-free-icons';
+import {
+  AiBrain01Icon,
+  InformationCircleIcon,
+  PaintBoardIcon,
+  SlidersHorizontalIcon,
+  TextAlignLeftIcon,
+} from '@hugeicons/core-free-icons';
+import { AboutPanel } from '@/components/AboutPanel';
 import { Icon } from '@/components/Icon';
 import { useTranslation } from 'react-i18next';
 import { AppearancePanel } from '@/components/AppearancePanel';
@@ -51,6 +58,7 @@ const TABS = [
   { id: 'summary', icon: TextAlignLeftIcon },
   { id: 'appearance', icon: PaintBoardIcon },
   { id: 'advanced', icon: SlidersHorizontalIcon },
+  { id: 'about', icon: InformationCircleIcon },
 ] as const;
 type SettingsTab = (typeof TABS)[number]['id'];
 
@@ -61,6 +69,8 @@ interface SettingsFormProps {
   embedded?: boolean;
   /** Embedded only: return to the summary. */
   onClose?: () => void;
+  /** Tab shown first (default: AI model). */
+  initialTab?: SettingsTab;
 }
 
 /**
@@ -68,7 +78,7 @@ interface SettingsFormProps {
  * Used by the options page and, embedded, by the side panel and result tab (gear button).
  * Edits are a draft until Save; the appearance preview follows the draft live.
  */
-export function SettingsForm({ embedded = false, onClose }: SettingsFormProps) {
+export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: SettingsFormProps) {
   const { t } = useTranslation(['settings', 'common']);
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
   const [loaded, setLoaded] = useState(false);
@@ -82,7 +92,7 @@ export function SettingsForm({ embedded = false, onClose }: SettingsFormProps) {
   const [load, setLoad] = useState<LoadState>({ status: 'idle' });
   const [showKey, setShowKey] = useState(false);
   const [saved, setSaved] = useState(false);
-  const [tab, setTab] = useState<SettingsTab>('ai');
+  const [tab, setTab] = useState<SettingsTab>(initialTab);
   const abortRef = useRef<AbortController | null>(null);
 
   const id = settings.provider;
@@ -430,6 +440,10 @@ export function SettingsForm({ embedded = false, onClose }: SettingsFormProps) {
             </div>
             <p className="hint">{t('advanced.privacy')}</p>
           </section>
+        </Tabs.Content>
+
+        <Tabs.Content value="about" className="settings-tabs__panel">
+          <AboutPanel />
         </Tabs.Content>
       </Tabs.Root>
 
