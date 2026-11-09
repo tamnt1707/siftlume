@@ -740,12 +740,15 @@ kbd {
 }
 
 /* Over a summary that is being redone: sticks to the top of the view while the old one is dimmed. */
+/* Centered in the window, not in the summary: it stays in view however far the reader scrolled. */
 .sift-loader--overlay {
-  position: sticky;
-  top: 12px;
-  z-index: 5;
-  max-width: 460px;
-  margin: 0 auto 14px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 30;
+  width: min(460px, calc(100vw - 32px));
+  margin: 0;
+  transform: translate(-50%, -50%);
   padding: 16px 20px;
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
