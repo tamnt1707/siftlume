@@ -19,6 +19,7 @@ import type { Session } from '../../lib/history';
 import { library } from '../../lib/library';
 import { CHART_SUMMARY_EXAMPLE } from '../../lib/chart-example';
 import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../../lib/review-example';
+import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from '../../lib/domain-example';
 import { DEFAULT_SETTINGS, type Settings } from '../../lib/settings';
 import { ARTICLE, SUMMARY } from './content';
 
@@ -213,13 +214,28 @@ function FullPage() {
   );
 }
 
-/** The review and news examples side by side: Verdict, ProsCons, BarList, Checklist, People, Glossary. */
+/**
+ * Prompt examples rendered side by side. Default: review and news (Verdict, ProsCons, BarList,
+ * Checklist, People, Glossary). `?set=domain`: product, release notes and research examples.
+ * `&panel` renders them at side-panel width.
+ */
+const COMPONENT_SETS: Record<string, string[]> = {
+  default: [REVIEW_SUMMARY_EXAMPLE, NEWS_ACTORS_EXAMPLE],
+  domain: [PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE],
+};
+
 function Components() {
+  const programs = COMPONENT_SETS[query.get('set') ?? 'default'] ?? COMPONENT_SETS.default!;
+  const panel = query.has('panel');
   return (
     <Themed settings={settings} className="app app--page sc-components">
-      <main className="content sc-components__grid">
-        {[REVIEW_SUMMARY_EXAMPLE, NEWS_ACTORS_EXAMPLE].map((program, i) => (
-          <div key={i} className="session session--page sc-components__col">
+      <main className="content sc-components__grid" style={{ gridTemplateColumns: `repeat(${programs.length}, 1fr)` }}>
+        {programs.map((program, i) => (
+          <div
+            key={i}
+            className={`session ${panel ? 'session--panel' : 'session--page'} sc-components__col`}
+            style={panel ? { display: 'block', maxWidth: 400 } : undefined}
+          >
             <div className="session__main">
               <section className="summary">
                 <div className="genui">

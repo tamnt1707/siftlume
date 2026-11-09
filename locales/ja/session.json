@@ -41,7 +41,35 @@
     "diagramFailed": "この図は描画できませんでした",
     "pros": "良い点",
     "cons": "気になる点",
-    "checklistProgress": "{{total}} 件中 {{done}} 件完了"
+    "checklistProgress": "{{total}} 件中 {{done}} 件完了",
+    "best": "最良",
+    "recommended": "おすすめ",
+    "risk": {
+      "high": "高",
+      "medium": "中",
+      "low": "低"
+    },
+    "claim": {
+      "supported": "根拠あり",
+      "opinion": "意見",
+      "disputed": "異論あり",
+      "unsupported": "根拠なし"
+    },
+    "change": {
+      "added": "追加",
+      "changed": "変更",
+      "fixed": "修正",
+      "removed": "削除",
+      "deprecated": "非推奨",
+      "security": "セキュリティ"
+    },
+    "research": {
+      "question": "問い",
+      "method": "方法",
+      "sample": "対象",
+      "findings": "結果",
+      "limitations": "限界"
+    }
   },
   "refineHint": {
     "shorter": "最も重要なポイントだけを残します。",

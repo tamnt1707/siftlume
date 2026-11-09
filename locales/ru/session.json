@@ -50,7 +50,35 @@
     "diagramFailed": "Не удалось нарисовать эту схему",
     "pros": "Плюсы",
     "cons": "Минусы",
-    "checklistProgress": "Выполнено {{done}} из {{total}}"
+    "checklistProgress": "Выполнено {{done}} из {{total}}",
+    "best": "Лучший",
+    "recommended": "Рекомендуем",
+    "risk": {
+      "high": "Высокий",
+      "medium": "Средний",
+      "low": "Низкий"
+    },
+    "claim": {
+      "supported": "Подтверждено",
+      "opinion": "Мнение",
+      "disputed": "Спорно",
+      "unsupported": "Без доказательств"
+    },
+    "change": {
+      "added": "Добавлено",
+      "changed": "Изменено",
+      "fixed": "Исправлено",
+      "removed": "Удалено",
+      "deprecated": "Устарело",
+      "security": "Безопасность"
+    },
+    "research": {
+      "question": "Вопрос",
+      "method": "Метод",
+      "sample": "Выборка",
+      "findings": "Результаты",
+      "limitations": "Ограничения"
+    }
   },
   "refineHint": {
     "shorter": "Оставить только самое важное.",

@@ -41,7 +41,35 @@
     "diagramFailed": "无法绘制此图表",
     "pros": "优点",
     "cons": "缺点",
-    "checklistProgress": "已完成 {{done}}/{{total}}"
+    "checklistProgress": "已完成 {{done}}/{{total}}",
+    "best": "最佳",
+    "recommended": "推荐",
+    "risk": {
+      "high": "高",
+      "medium": "中",
+      "low": "低"
+    },
+    "claim": {
+      "supported": "有依据",
+      "opinion": "观点",
+      "disputed": "有争议",
+      "unsupported": "无证据"
+    },
+    "change": {
+      "added": "新增",
+      "changed": "变更",
+      "fixed": "修复",
+      "removed": "移除",
+      "deprecated": "弃用",
+      "security": "安全"
+    },
+    "research": {
+      "question": "问题",
+      "method": "方法",
+      "sample": "样本",
+      "findings": "发现",
+      "limitations": "局限"
+    }
   },
   "refineHint": {
     "shorter": "只保留最重要的要点。",

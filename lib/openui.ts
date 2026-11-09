@@ -8,6 +8,7 @@ import { STYLE_RULES } from './refine';
 import { CHART_SUMMARY_EXAMPLE } from './chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from './diagram-example';
 import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from './review-example';
+import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from './domain-example';
 import type { ExtractedSource, SourceKind } from './extractors';
 import type { Settings, SummaryLength } from './settings';
 
@@ -35,6 +36,12 @@ const VISUAL_RULES = [
   'Reviews, opinions and decisions → ProsCons. A score stated in the source (e.g. 8/10, 4.5 stars) → Verdict; never invent a score.',
   '2-8 comparable numbers (shares, rankings, test results) → BarList, which is lighter than a chart and works in narrow spaces. Use a chart instead for trends over time or more than 8 values.',
   'Things the reader can do → Checklist (not Takeaways). Several named people or organizations → People (max 6). Technical terms the reader may not know → Glossary (max 6).',
+  'Label/value details (specs, recipe times and servings, event date and venue, job terms, company profile) → FactSheet, not prose or a Table. How-to instructions and recipes → Steps.',
+  '2-4 products, plans or tools compared on several attributes → Comparison (mark best only when the source says so). Price tiers → PricingPlans. Prices and features exactly as written in the source.',
+  'Risks, side effects, vulnerabilities or red flags → RiskList graded high/medium/low, instead of several warning Callouts.',
+  'News, opinion, health, science or marketing claims → ClaimCheck for the 2-5 main claims, judged only by the evidence the source itself gives.',
+  'Project updates and roadmaps grouped by status → StatusBoard. Release notes, changelogs and amended laws, policies or terms → ChangeList.',
+  'Research papers, studies, trials and surveys → ResearchBrief (question, findings, method, sample, limitations) right after SummaryHero, instead of Takeaways for the findings.',
   'Topics, entities, keywords → TagBlock. Comparing options across several attributes → a small Table. Warnings or caveats → Callout("warning", ...).',
   'No paragraphs longer than 2 short sentences. Avoid MarkDownRenderer at the top level; put longer explanations inside a folded SectionBlock.',
   'Skip any block that would be empty or filler. Do not repeat the same fact in several places.',
@@ -128,6 +135,9 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
         DIAGRAM_SUMMARY_EXAMPLE,
         REVIEW_SUMMARY_EXAMPLE,
         NEWS_ACTORS_EXAMPLE,
+        PRODUCT_COMPARE_EXAMPLE,
+        RELEASE_NOTES_EXAMPLE,
+        RESEARCH_PAPER_EXAMPLE,
       ],
       ...toolOptions(source),
       preamble:
@@ -144,7 +154,7 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
     ...settings.styles.map((s) => STYLE_RULES[s]),
     layoutRule(settings),
     KIND_RULES[source.kind],
-    'Order: SummaryHero → Verdict → KeyNumbers / charts / BarList / Diagram → Takeaways / ProsCons → People / Timeline / TagBlock → Checklist → Glossary → SourceQuote → folded SectionBlock details → FollowUpBlock with 2-3 short questions. Use only the blocks the source supports.',
+    'Order: SummaryHero → Verdict / ResearchBrief → KeyNumbers / FactSheet / charts / BarList / Diagram → Takeaways / ProsCons / Comparison / PricingPlans → ChangeList / StatusBoard → RiskList / ClaimCheck → People / Timeline / TagBlock → Checklist → Glossary → SourceQuote → folded SectionBlock details → FollowUpBlock with 2-3 short questions. Use only the blocks the source supports; a summary rarely needs more than two of the domain blocks.',
     'First turn: output the complete program in one ```openui-lang fence. Refinement turns: output only the changed statements, with at most one short sentence outside the fence describing the change.',
     ...userRules(settings),
   ];

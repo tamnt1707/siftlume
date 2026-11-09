@@ -41,7 +41,35 @@
     "diagramFailed": "Không vẽ được sơ đồ này",
     "pros": "Ưu điểm",
     "cons": "Nhược điểm",
-    "checklistProgress": "Đã xong {{done}}/{{total}}"
+    "checklistProgress": "Đã xong {{done}}/{{total}}",
+    "best": "Tốt nhất",
+    "recommended": "Đề xuất",
+    "risk": {
+      "high": "Cao",
+      "medium": "Trung bình",
+      "low": "Thấp"
+    },
+    "claim": {
+      "supported": "Có dẫn chứng",
+      "opinion": "Ý kiến",
+      "disputed": "Còn tranh cãi",
+      "unsupported": "Không có bằng chứng"
+    },
+    "change": {
+      "added": "Thêm",
+      "changed": "Thay đổi",
+      "fixed": "Sửa lỗi",
+      "removed": "Gỡ bỏ",
+      "deprecated": "Ngừng hỗ trợ",
+      "security": "Bảo mật"
+    },
+    "research": {
+      "question": "Câu hỏi",
+      "method": "Phương pháp",
+      "sample": "Mẫu",
+      "findings": "Kết quả",
+      "limitations": "Hạn chế"
+    }
   },
   "refineHint": {
     "shorter": "Chỉ giữ những ý quan trọng nhất.",

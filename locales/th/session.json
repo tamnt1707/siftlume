@@ -41,7 +41,35 @@
     "diagramFailed": "ไม่สามารถวาดแผนภาพนี้ได้",
     "pros": "ข้อดี",
     "cons": "ข้อเสีย",
-    "checklistProgress": "เสร็จแล้ว {{done}} จาก {{total}}"
+    "checklistProgress": "เสร็จแล้ว {{done}} จาก {{total}}",
+    "best": "ดีที่สุด",
+    "recommended": "แนะนำ",
+    "risk": {
+      "high": "สูง",
+      "medium": "ปานกลาง",
+      "low": "ต่ำ"
+    },
+    "claim": {
+      "supported": "มีหลักฐาน",
+      "opinion": "ความเห็น",
+      "disputed": "ยังถกเถียง",
+      "unsupported": "ไม่มีหลักฐาน"
+    },
+    "change": {
+      "added": "เพิ่ม",
+      "changed": "เปลี่ยน",
+      "fixed": "แก้ไข",
+      "removed": "นำออก",
+      "deprecated": "เลิกใช้",
+      "security": "ความปลอดภัย"
+    },
+    "research": {
+      "question": "คำถาม",
+      "method": "วิธีการ",
+      "sample": "กลุ่มตัวอย่าง",
+      "findings": "ผลการศึกษา",
+      "limitations": "ข้อจำกัด"
+    }
   },
   "refineHint": {
     "shorter": "เก็บไว้เฉพาะประเด็นที่สำคัญที่สุด",

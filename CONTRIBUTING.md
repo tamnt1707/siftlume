@@ -110,7 +110,7 @@ Generated, more detailed documentation is in [`openwiki/`](openwiki/index.md). I
 
 ### Add a component the model can use
 
-Summary components live in `lib/genui/`, one file per group: `core` (hero, numbers, takeaways, timeline, quotes), `diagram`, `review` and `entities` (people, glossary). `lib/library.ts` registers them.
+Summary components live in `lib/genui/`, one file per group: `core` (hero, numbers, takeaways, timeline, quotes), `diagram`, `review`, `entities` (people, glossary), `product`, `trust` (risks, claims), `project` (status board, changelog) and `research`. `lib/library.ts` registers them.
 
 1. Define it with `defineComponent` and a Zod schema. The key order of `props` is the argument order the model writes, so put required props first.
    ```tsx

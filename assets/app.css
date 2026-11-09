@@ -16,6 +16,7 @@
   --line-strong: #c9d0de;
   --up: #0f8a5f;
   --down: #c8414b;
+  --caution: #a8650a;
   --warn-bg: #fff8db;
   --error-bg: #fdeeee;
   color-scheme: light;
@@ -33,6 +34,7 @@
   --line-strong: #3a4357;
   --up: #3ccf95;
   --down: #f27c84;
+  --caution: #f0b450;
   --warn-bg: #2b2614;
   --error-bg: #2d1a1d;
   color-scheme: dark;

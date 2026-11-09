@@ -47,7 +47,35 @@
     "diagramFailed": "No se pudo dibujar este diagrama",
     "pros": "A favor",
     "cons": "En contra",
-    "checklistProgress": "{{done}} de {{total}} hechas"
+    "checklistProgress": "{{done}} de {{total}} hechas",
+    "best": "Mejor",
+    "recommended": "Recomendado",
+    "risk": {
+      "high": "Alto",
+      "medium": "Medio",
+      "low": "Bajo"
+    },
+    "claim": {
+      "supported": "Respaldado",
+      "opinion": "Opinión",
+      "disputed": "Discutido",
+      "unsupported": "Sin pruebas"
+    },
+    "change": {
+      "added": "Añadido",
+      "changed": "Cambiado",
+      "fixed": "Corregido",
+      "removed": "Eliminado",
+      "deprecated": "Obsoleto",
+      "security": "Seguridad"
+    },
+    "research": {
+      "question": "Pregunta",
+      "method": "Método",
+      "sample": "Muestra",
+      "findings": "Resultados",
+      "limitations": "Limitaciones"
+    }
   },
   "refineHint": {
     "shorter": "Deja solo los puntos más importantes.",

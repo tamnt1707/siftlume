@@ -44,7 +44,35 @@
     "diagramFailed": "This diagram could not be drawn",
     "pros": "Pros",
     "cons": "Cons",
-    "checklistProgress": "{{done}} of {{total}} done"
+    "checklistProgress": "{{done}} of {{total}} done",
+    "best": "Best",
+    "recommended": "Recommended",
+    "risk": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "claim": {
+      "supported": "Backed",
+      "opinion": "Opinion",
+      "disputed": "Disputed",
+      "unsupported": "No evidence"
+    },
+    "change": {
+      "added": "Added",
+      "changed": "Changed",
+      "fixed": "Fixed",
+      "removed": "Removed",
+      "deprecated": "Deprecated",
+      "security": "Security"
+    },
+    "research": {
+      "question": "Question",
+      "method": "Method",
+      "sample": "Sample",
+      "findings": "Findings",
+      "limitations": "Limitations"
+    }
   },
   "refineHint": {
     "shorter": "Keep only the most important points.",

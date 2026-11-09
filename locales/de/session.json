@@ -44,7 +44,35 @@
     "diagramFailed": "Dieses Diagramm konnte nicht gezeichnet werden",
     "pros": "Vorteile",
     "cons": "Nachteile",
-    "checklistProgress": "{{done}} von {{total}} erledigt"
+    "checklistProgress": "{{done}} von {{total}} erledigt",
+    "best": "Am besten",
+    "recommended": "Empfohlen",
+    "risk": {
+      "high": "Hoch",
+      "medium": "Mittel",
+      "low": "Niedrig"
+    },
+    "claim": {
+      "supported": "Belegt",
+      "opinion": "Meinung",
+      "disputed": "Umstritten",
+      "unsupported": "Ohne Beleg"
+    },
+    "change": {
+      "added": "Neu",
+      "changed": "Geändert",
+      "fixed": "Behoben",
+      "removed": "Entfernt",
+      "deprecated": "Veraltet",
+      "security": "Sicherheit"
+    },
+    "research": {
+      "question": "Frage",
+      "method": "Methode",
+      "sample": "Stichprobe",
+      "findings": "Ergebnisse",
+      "limitations": "Grenzen"
+    }
   },
   "refineHint": {
     "shorter": "Nur die wichtigsten Punkte behalten.",

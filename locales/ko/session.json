@@ -41,7 +41,35 @@
     "diagramFailed": "이 다이어그램을 그릴 수 없습니다",
     "pros": "장점",
     "cons": "단점",
-    "checklistProgress": "{{total}}개 중 {{done}}개 완료"
+    "checklistProgress": "{{total}}개 중 {{done}}개 완료",
+    "best": "최고",
+    "recommended": "추천",
+    "risk": {
+      "high": "높음",
+      "medium": "중간",
+      "low": "낮음"
+    },
+    "claim": {
+      "supported": "근거 있음",
+      "opinion": "의견",
+      "disputed": "논쟁 중",
+      "unsupported": "근거 없음"
+    },
+    "change": {
+      "added": "추가",
+      "changed": "변경",
+      "fixed": "수정",
+      "removed": "제거",
+      "deprecated": "지원 중단",
+      "security": "보안"
+    },
+    "research": {
+      "question": "질문",
+      "method": "방법",
+      "sample": "표본",
+      "findings": "결과",
+      "limitations": "한계"
+    }
   },
   "refineHint": {
     "shorter": "가장 중요한 내용만 남깁니다.",

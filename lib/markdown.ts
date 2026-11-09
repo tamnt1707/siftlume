@@ -1,5 +1,5 @@
 import { createParser } from '@openuidev/react-lang';
-import { library, ROOT } from './library';
+import { CHANGE_TYPES, CLAIM_STATUSES, library, RISK_LEVELS, ROOT } from './library';
 import { t } from './i18n';
 
 /**
@@ -26,6 +26,10 @@ function table(headers: string[], rows: unknown[][]) {
     ...rows.map((r) => `| ${r.map(cell).join(' | ')} |`),
   ].join('\n');
 }
+
+/** A known enum value, or the fallback (keeps translation keys valid for odd model output). */
+const pick = <T extends string>(v: unknown, all: readonly T[], fallback: T): T =>
+  (all as readonly string[]).includes(str(v)) ? (str(v) as T) : fallback;
 
 const heading = (h: unknown, level = 3) => (str(h) ? `${'#'.repeat(level)} ${str(h)}\n\n` : '');
 
@@ -132,6 +136,101 @@ function render(node: unknown, level: number): string {
           .map((x) => `- **${str(x.term)}**: ${str(x.meaning)}`)
           .join('\n')
       );
+    case 'FactSheet':
+      return (
+        heading(p.heading) +
+        list(p.facts)
+          .map(props)
+          .map((x) => `- **${str(x.label)}**: ${str(x.value)}${x.note ? ` (${str(x.note)})` : ''}`)
+          .join('\n')
+      );
+    case 'Comparison': {
+      const options = list(p.options).map(str);
+      const norm = (s: unknown) => str(s).trim().toLowerCase();
+      const rows = list(p.rows)
+        .map(props)
+        .map((r) => [
+          r.attribute,
+          ...options.map((o, i) => {
+            const v = str(list(r.values)[i]);
+            return r.best && norm(r.best) === norm(o) ? `**${v}** ✓` : v;
+          }),
+        ]);
+      return [heading(p.heading) + table(['', ...options], rows), p.bottomLine ? `**${str(p.bottomLine)}**` : '']
+        .filter(Boolean)
+        .join('\n\n');
+    }
+    case 'PricingPlans':
+      return (
+        heading(p.heading) +
+        list(p.plans)
+          .map(props)
+          .map((x) =>
+            [
+              `**${str(x.name)}**: ${str(x.price)}${x.period ? ` ${str(x.period)}` : ''}${x.recommended ? ` (${t('session:genui.recommended')})` : ''}`,
+              x.note ? `  ${str(x.note)}` : '',
+              ...list(x.features).map((f) => `  - ${str(f)}`),
+            ]
+              .filter(Boolean)
+              .join('\n'),
+          )
+          .map((x) => `- ${x}`)
+          .join('\n')
+      );
+    case 'RiskList':
+      return (
+        heading(p.heading) +
+        list(p.risks)
+          .map(props)
+          .map(
+            (x) =>
+              `- **${t(`session:genui.risk.${pick(x.level, RISK_LEVELS, 'medium')}`)}**: ${str(x.title)}${x.detail ? ` — ${str(x.detail)}` : ''}`,
+          )
+          .join('\n')
+      );
+    case 'ClaimCheck':
+      return (
+        heading(p.heading) +
+        list(p.claims)
+          .map(props)
+          .map(
+            (x) =>
+              `- ${str(x.claim)} — **${t(`session:genui.claim.${pick(x.status, CLAIM_STATUSES, 'unsupported')}`)}**${x.evidence ? `: ${str(x.evidence)}` : ''}`,
+          )
+          .join('\n')
+      );
+    case 'StatusBoard':
+      return (
+        heading(p.heading) +
+        list(p.columns)
+          .map(props)
+          .map((c) => [`**${str(c.title)}**`, ...list(c.items).map((x) => `- ${str(x)}`)].join('\n'))
+          .join('\n\n')
+      );
+    case 'ChangeList':
+      return (
+        heading(p.heading) +
+        list(p.changes)
+          .map(props)
+          .map((x) => `- **${t(`session:genui.change.${pick(x.type, CHANGE_TYPES, 'changed')}`)}**: ${str(x.text)}`)
+          .join('\n')
+      );
+    case 'ResearchBrief':
+      return [
+        `**${t('session:genui.research.question')}**: ${str(p.question)}`,
+        p.method ? `**${t('session:genui.research.method')}**: ${str(p.method)}` : '',
+        p.sample ? `**${t('session:genui.research.sample')}**: ${str(p.sample)}` : '',
+        `**${t('session:genui.research.findings')}**\n${list(p.findings)
+          .map((x, i) => `${i + 1}. ${str(x)}`)
+          .join('\n')}`,
+        list(p.limitations).length
+          ? `**${t('session:genui.research.limitations')}**\n${list(p.limitations)
+              .map((x) => `- ${str(x)}`)
+              .join('\n')}`
+          : '',
+      ]
+        .filter(Boolean)
+        .join('\n\n');
     case 'TextContent':
       return str(p.text);
     case 'MarkDownRenderer':
