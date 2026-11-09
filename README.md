@@ -112,7 +112,7 @@ popup / context menu ──► side panel (per tab) or full-page tab
   prompt ─────────────────────┤  OpenUI library → system prompt + rules     (lib/openui.ts)
   stream ─────────────────────┤  AI SDK, straight to the provider           (lib/llm.ts)
   validate & repair ──────────┤  OpenUI parser + Pele; errors go back once  (lib/generate.ts)
-  render ─────────────────────┘  <Renderer> with the Siftlume library       (lib/library.tsx)
+  render ─────────────────────┘  <Renderer> with the Siftlume library       (lib/library.ts)
 ```
 
 ### Project layout
@@ -126,7 +126,8 @@ entrypoints/
   options/             settings page
 components/            React UI: session view, settings (tabs), pickers, theme
 lib/
-  library.tsx          OpenUI component library: chat library + Siftlume components and actions
+  library.ts           OpenUI component library: registers the chat library + Siftlume components and actions
+  genui/               the Siftlume components, one file per group (core, diagram, review, entities)
   openui.ts            system prompts, inline-mode parsing, validation, edit-mode merge
   generate.ts          streaming and the repair loop
   refine.ts            refine buttons and default styles

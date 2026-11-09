@@ -74,7 +74,7 @@ These are easy to break and hard to notice:
 | Settings                                        | `components/SettingsForm.tsx` (tabs), `components/AppearancePanel.tsx`, `components/AboutPanel.tsx` |
 | Reading pages and files                         | `lib/page.ts`, `lib/extractors.ts`                                                                  |
 | Prompts, validation, edit-mode merge            | `lib/openui.ts`, `lib/generate.ts`                                                                  |
-| OpenUI components and actions                   | `lib/library.tsx`                                                                                   |
+| OpenUI components and actions                   | `lib/genui/*`, registered in `lib/library.ts`                                                       |
 | Providers and models                            | `lib/settings.ts` (`PROVIDERS`), `lib/llm.ts`, `lib/models.ts`                                      |
 | Design tokens                                   | `lib/appearance.ts`, `assets/app.css`, `assets/genui.css`                                           |
 | Translations                                    | `lib/i18n/`, `locales/`, `public/_locales/`                                                         |
@@ -110,23 +110,23 @@ Generated, more detailed documentation is in [`openwiki/`](openwiki/index.md). I
 
 ### Add a component the model can use
 
-Summary components live in `lib/library.tsx`.
+Summary components live in `lib/genui/`, one file per group: `core` (hero, numbers, takeaways, timeline, quotes), `diagram`, `review` and `entities` (people, glossary). `lib/library.ts` registers them.
 
 1. Define it with `defineComponent` and a Zod schema. The key order of `props` is the argument order the model writes, so put required props first.
    ```tsx
-   const ProsCons = defineComponent({
+   export const ProsCons = defineComponent({
      name: 'ProsCons',
      description: 'Advantages and drawbacks side by side. Max 4 items each.',
      props: z.object({ pros: z.array(z.string()), cons: z.array(z.string()) }),
      component: ({ props }) => <div className="g-proscons">…</div>,
    });
    ```
-2. Register it in `library` (`openuiChatLibrary.extend`), with the slots where it may appear (`CONTENT_SLOTS`).
+2. Export it from its group file and register it in `library` in `lib/library.ts` (`openuiChatLibrary.extend`), with the slots where it may appear (`CONTENT_SLOTS`).
 3. Style it in `assets/genui.css` with a `g-` class and the design tokens.
 4. Tell the model when to use it: add a rule to `VISUAL_RULES` in `lib/openui.ts`. If it is easy to get wrong, add it to an example in `lib/summary-example.ts`.
 5. Run `pnpm check:examples`. It parses every prompt example against the real library, so a typo in an example fails here instead of teaching the model wrong syntax.
 
-To make a button in your component trigger an app action, define the action with `defineAction`, handle it in `onAction` in `components/SessionView.tsx`, and fire it with the `customAction()` helper in `lib/library.tsx`. The plain `{ type, params }` form is silently ignored for registered actions.
+To make a button in your component trigger an app action, define the action with `defineAction`, handle it in `onAction` in `components/SessionView.tsx`, and fire it with the `customAction()` helper in `lib/genui/actions.ts`. The plain `{ type, params }` form is silently ignored for registered actions.
 
 ### Add a refine button or a default summary style
 
