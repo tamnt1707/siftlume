@@ -31,7 +31,8 @@ export async function takeRequest(id: string): Promise<PendingRequest | null> {
   return req;
 }
 
-export type AppRoute = { request: string } | { session: string } | { view: 'new' | 'history' };
+/** `print`: open the print dialog once the summary is shown (used from the side panel, which cannot print). */
+export type AppRoute = { request: string } | { session: string; print?: '1' } | { view: 'new' | 'history' };
 
 /** Opens the full-page result view in a new tab, next to the tab it came from. */
 export async function openApp(route: AppRoute, opener?: { id?: number; index?: number; windowId?: number }) {

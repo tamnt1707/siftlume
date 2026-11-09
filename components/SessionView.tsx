@@ -35,6 +35,7 @@ export function SessionView({
   notify,
   layout = 'page',
   onExpand,
+  onPrint,
   settings,
 }: {
   ctrl: SessionController;
@@ -43,6 +44,8 @@ export function SessionView({
   layout?: 'page' | 'panel';
   /** Shown in the side panel: reopen this session in a full-page tab. */
   onExpand?: () => void;
+  /** Shown in the side panel: Chrome cannot print from there, so print from a full-page tab. */
+  onPrint?: () => void;
   /** Global settings; the result toolbar shows this session's overrides on top of them. */
   settings: Settings;
 }) {
@@ -160,6 +163,7 @@ export function SessionView({
             notify={notify}
             sourceOpen={sourceOpen}
             onToggleSource={() => setSourceOpen((v) => !v)}
+            onPrint={onPrint}
           />
         )}
         {sourceOpen && (

@@ -49,6 +49,7 @@ export function ResultToolbar({
   notify,
   sourceOpen,
   onToggleSource,
+  onPrint,
 }: {
   ctrl: SessionController;
   session: Session;
@@ -57,6 +58,8 @@ export function ResultToolbar({
   notify: (msg: string) => void;
   sourceOpen: boolean;
   onToggleSource: () => void;
+  /** Replaces window.print() where it does nothing (Chrome ignores it in the side panel). */
+  onPrint?: () => void;
 }) {
   const { t } = useTranslation(['session', 'settings']);
   const [speaking, setSpeaking] = useState(false);
@@ -148,7 +151,12 @@ export function ResultToolbar({
           <Icon icon={speaking ? StopIcon : VolumeHighIcon} size={16} />
           <span>{speaking ? t('toolbar.stopShort') : t('toolbar.listenShort')}</span>
         </button>
-        <button className="tool-btn" disabled={!program} onClick={() => window.print()} title={t('toolbar.print')}>
+        <button
+          className="tool-btn"
+          disabled={!program}
+          onClick={onPrint ?? (() => window.print())}
+          title={t('toolbar.print')}
+        >
           <Icon icon={PrinterIcon} size={16} />
         </button>
         <button

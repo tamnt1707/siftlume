@@ -40,6 +40,8 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
   const [toast, setToast] = useState<string | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const routed = useRef(false);
+  /** Set by ?print=1: print once the opened session's summary has rendered. */
+  const printWhenReady = useRef(false);
 
   const notify = useCallback((msg: string) => {
     setToast(msg);
@@ -105,6 +107,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
     if (requestId) {
       void takeRequest(requestId).then(run);
     } else if (sessionId) {
+      printWhenReady.current = params.get('print') === '1';
       void historyItem.getValue().then((list) => {
         const s = list.find((x) => x.id === sessionId);
         if (s) ctrl.open(s);
@@ -121,6 +124,18 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
     if (sessionId) setRoute({ session: sessionId });
     document.title = sessionTitle ? `${sessionTitle} | ${t('appName')}` : t('appName');
   }, [isPanel, sessionId, sessionTitle, t]);
+
+  // ?print=1: wait for the summary, fonts and async blocks (charts, diagrams) to lay out, then print.
+  const hasSummary = Boolean(ctrl.session?.summary);
+  useEffect(() => {
+    if (!printWhenReady.current || !hasSummary || ctrl.phase !== 'idle') return;
+    printWhenReady.current = false;
+    let timer: ReturnType<typeof setTimeout>;
+    void document.fonts.ready.then(() => {
+      timer = setTimeout(() => window.print(), 800);
+    });
+    return () => clearTimeout(timer);
+  }, [hasSummary, ctrl.phase]);
 
   const problem = loaded ? configProblem(settings) : null;
   const route = (params: Record<string, string>) => !isPanel && setRoute(params);
@@ -219,6 +234,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
             layout={isPanel ? 'panel' : 'page'}
             settings={settings}
             onExpand={isPanel && sessionId ? () => void openApp({ session: sessionId }) : undefined}
+            onPrint={isPanel && sessionId ? () => void openApp({ session: sessionId, print: '1' }) : undefined}
           />
         ) : ctrl.phase === 'extracting' ? (
           <p className="muted center">{t('readingPage')}</p>
