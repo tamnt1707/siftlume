@@ -4,7 +4,7 @@ import { FileUploadIcon, SparklesIcon } from '@hugeicons/core-free-icons';
 import { Icon } from './Icon';
 import type { SessionController } from './useSession';
 import type { Settings } from '@/lib/settings';
-import { ModePicker, saveMode } from './ModePicker';
+import { AnalysisChoice } from './ModePicker';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
 
@@ -56,7 +56,7 @@ export function SourcePicker({
       }}
     >
       {!page && <h1 className="picker__title">{t('title')}</h1>}
-      <ModePicker value={settings.mode} onChange={(m) => saveMode(settings, m)} disabled={busy} descriptions={!page} />
+      <AnalysisChoice settings={settings} disabled={busy} compact={Boolean(page)} />
       {page ? (
         <>
           <button

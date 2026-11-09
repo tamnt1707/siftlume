@@ -570,6 +570,40 @@ kbd {
   font-size: 13px;
 }
 
+.analysis-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.analysis-choice--compact {
+  gap: 8px;
+}
+
+.analysis-choice__length {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
+.analysis-choice__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.analysis-choice__hint {
+  flex-basis: 100%;
+  font-size: 12.5px;
+  color: var(--ink-3);
+}
+
+.segmented button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
 .picker--drag {
   outline: 2px dashed var(--accent);
   outline-offset: 8px;

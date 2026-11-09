@@ -6,7 +6,7 @@ import { Themed } from '@/components/Themed';
 import { browser, type Browser } from '#imports';
 import { HistoryList } from '@/components/HistoryList';
 import { ModelSwitcher } from '@/components/ModelSwitcher';
-import { ModePicker, saveMode } from '@/components/ModePicker';
+import { AnalysisChoice } from '@/components/ModePicker';
 import { useSettings } from '@/components/useSettings';
 import { getActiveTab, isReadableUrl } from '@/lib/page';
 import { openApp, queueRequest, type AppRoute, type PendingRequest } from '@/lib/pending';
@@ -76,7 +76,7 @@ export default function Popup() {
           </div>
         )}
 
-        <ModePicker value={settings.mode} onChange={(m) => saveMode(settings, m)} descriptions={false} />
+        <AnalysisChoice settings={settings} compact />
 
         <button
           className="btn btn--primary btn--hero"
