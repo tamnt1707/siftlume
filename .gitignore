@@ -27,3 +27,8 @@ web-ext.config.ts
 
 # OpenWiki in-progress run state (never commit)
 openwiki/.run.json
+
+# Xcode (Safari app wrapper in safari/)
+xcuserdata/
+*.xcuserstate
+DerivedData/

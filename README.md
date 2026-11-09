@@ -76,6 +76,17 @@ Siftlume is not on the Chrome Web Store yet. To install it from source:
 - **Ollama**: start it with `ollama serve`, select **Ollama** in Settings, click **Save**, then pick a model that supports chat. No `OLLAMA_ORIGINS` setup is needed.
 - **LM Studio**: start the local server (Developer → Start server) and enable CORS.
 
+### Safari (iPhone, iPad, Mac)
+
+Safari extensions ship inside an app, so this needs a Mac with Xcode.
+
+1. `pnpm build:safari` builds the extension into `.output/safari-mv3`.
+2. Open `safari/Siftlume/Siftlume.xcodeproj` in Xcode. The project reads the files from `.output/safari-mv3`, so rebuild with step 1 after every change.
+3. Pick the **Siftlume (iOS)** scheme and your iPhone (or a Simulator), set your team under Signing & Capabilities, and press Run. A free Apple ID works for your own devices; the App Store needs an Apple Developer account.
+4. On the device: Settings → Apps → Safari → Extensions → Siftlume → turn it on and allow it on all websites. In Safari, tap the extensions button in the address bar to open Siftlume.
+
+Safari has no side panel: results always open in a tab, and on a phone the result uses the narrow single-column layout. There is no right-click menu or keyboard shortcut on iOS. If new files appear at the top of `.output/safari-mv3`, regenerate the project with `xcrun safari-web-extension-converter .output/safari-mv3 --rebuild-project safari/Siftlume/Siftlume.xcodeproj`.
+
 ## Privacy
 
 Full policy: [tamnt1707.github.io/siftlume/privacy.html](https://tamnt1707.github.io/siftlume/privacy.html).
@@ -100,6 +111,7 @@ pnpm dev          # opens Chrome with the extension loaded, with hot reload
 | `pnpm dev`            | Development build with hot reload (`pnpm dev:firefox` for Firefox)                    |
 | `pnpm build`          | Production build in `.output/chrome-mv3`                                              |
 | `pnpm zip`            | Zip for the Chrome Web Store                                                          |
+| `pnpm build:safari`   | Safari build in `.output/safari-mv3`, wrapped by the Xcode project in `safari/`       |
 | `pnpm compile`        | Type-check                                                                            |
 | `pnpm check:i18n`     | Every locale has the same keys, plural forms and placeholders as English              |
 | `pnpm check:examples` | The OpenUI Lang examples in the prompts parse cleanly and their diagrams render       |

@@ -1,0 +1,1017 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94DB4B4430A1834A004F87C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB4B4330A1834A004F87C5 /* AppDelegate.swift */; };
+		94DB4B4630A1834A004F87C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB4B4530A1834A004F87C5 /* SceneDelegate.swift */; };
+		94DB4B4930A1834A004F87C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B4730A1834A004F87C5 /* LaunchScreen.storyboard */; };
+		94DB4B4C30A1834A004F87C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B4A30A1834A004F87C5 /* Main.storyboard */; };
+		94DB4B5530A1834A004F87C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB4B5430A1834A004F87C5 /* AppDelegate.swift */; };
+		94DB4B5830A1834A004F87C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B5630A1834A004F87C5 /* Main.storyboard */; };
+		94DB4B5F30A1834A004F87C5 /* Siftlume Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 94DB4B5E30A1834A004F87C5 /* Siftlume Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		94DB4B6930A1834A004F87C5 /* Siftlume Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 94DB4B6830A1834A004F87C5 /* Siftlume Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		94DB4B6E30A1834A004F87C5 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B3330A18349004F87C5 /* Main.html */; };
+		94DB4B6F30A1834A004F87C5 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B3330A18349004F87C5 /* Main.html */; };
+		94DB4B7030A1834A004F87C5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B3530A18349004F87C5 /* Icon.png */; };
+		94DB4B7130A1834A004F87C5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B3530A18349004F87C5 /* Icon.png */; };
+		94DB4B7230A1834A004F87C5 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B3630A18349004F87C5 /* Style.css */; };
+		94DB4B7330A1834A004F87C5 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B3630A18349004F87C5 /* Style.css */; };
+		94DB4B7430A1834A004F87C5 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B3730A18349004F87C5 /* Script.js */; };
+		94DB4B7530A1834A004F87C5 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B3730A18349004F87C5 /* Script.js */; };
+		94DB4B7630A1834A004F87C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB4B3830A18349004F87C5 /* ViewController.swift */; };
+		94DB4B7730A1834A004F87C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB4B3830A18349004F87C5 /* ViewController.swift */; };
+		94DB4B7830A1834A004F87C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B3930A1834A004F87C5 /* Assets.xcassets */; };
+		94DB4B7930A1834A004F87C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B3930A1834A004F87C5 /* Assets.xcassets */; };
+		94DB4B7A30A1834A004F87C5 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB4B3B30A1834A004F87C5 /* SafariWebExtensionHandler.swift */; };
+		94DB4B7B30A1834A004F87C5 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB4B3B30A1834A004F87C5 /* SafariWebExtensionHandler.swift */; };
+		94DB4B9730A1834B004F87C5 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B8D30A1834B004F87C5 /* background.js */; };
+		94DB4B9830A1834B004F87C5 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B8E30A1834B004F87C5 /* popup.html */; };
+		94DB4B9930A1834B004F87C5 /* chunks in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B8F30A1834B004F87C5 /* chunks */; };
+		94DB4B9A30A1834B004F87C5 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9030A1834B004F87C5 /* manifest.json */; };
+		94DB4B9B30A1834B004F87C5 /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9130A1834B004F87C5 /* options.html */; };
+		94DB4B9C30A1834B004F87C5 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9230A1834B004F87C5 /* _locales */; };
+		94DB4B9D30A1834B004F87C5 /* app.html in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9330A1834B004F87C5 /* app.html */; };
+		94DB4B9E30A1834B004F87C5 /* icon in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9430A1834B004F87C5 /* icon */; };
+		94DB4B9F30A1834B004F87C5 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9530A1834B004F87C5 /* assets */; };
+		94DB4BA030A1834B004F87C5 /* logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9630A1834B004F87C5 /* logo.svg */; };
+		94DB4BA130A1834B004F87C5 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B8D30A1834B004F87C5 /* background.js */; };
+		94DB4BA230A1834B004F87C5 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B8E30A1834B004F87C5 /* popup.html */; };
+		94DB4BA330A1834B004F87C5 /* chunks in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B8F30A1834B004F87C5 /* chunks */; };
+		94DB4BA430A1834B004F87C5 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9030A1834B004F87C5 /* manifest.json */; };
+		94DB4BA530A1834B004F87C5 /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9130A1834B004F87C5 /* options.html */; };
+		94DB4BA630A1834B004F87C5 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9230A1834B004F87C5 /* _locales */; };
+		94DB4BA730A1834B004F87C5 /* app.html in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9330A1834B004F87C5 /* app.html */; };
+		94DB4BA830A1834B004F87C5 /* icon in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9430A1834B004F87C5 /* icon */; };
+		94DB4BA930A1834B004F87C5 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9530A1834B004F87C5 /* assets */; };
+		94DB4BAA30A1834B004F87C5 /* logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 94DB4B9630A1834B004F87C5 /* logo.svg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94DB4B6030A1834A004F87C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94DB4B2D30A18349004F87C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94DB4B5D30A1834A004F87C5;
+			remoteInfo = "Siftlume Extension (iOS)";
+		};
+		94DB4B6A30A1834A004F87C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94DB4B2D30A18349004F87C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94DB4B6730A1834A004F87C5;
+			remoteInfo = "Siftlume Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		94DB4B8130A1834A004F87C5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				94DB4B5F30A1834A004F87C5 /* Siftlume Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DB4B8830A1834A004F87C5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				94DB4B6930A1834A004F87C5 /* Siftlume Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		94DB4B3430A18349004F87C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		94DB4B3530A18349004F87C5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		94DB4B3630A18349004F87C5 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		94DB4B3730A18349004F87C5 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		94DB4B3830A18349004F87C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		94DB4B3930A1834A004F87C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94DB4B3B30A1834A004F87C5 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		94DB4B4030A1834A004F87C5 /* Siftlume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siftlume.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94DB4B4330A1834A004F87C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		94DB4B4530A1834A004F87C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		94DB4B4830A1834A004F87C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		94DB4B4B30A1834A004F87C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		94DB4B4D30A1834A004F87C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94DB4B5230A1834A004F87C5 /* Siftlume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siftlume.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94DB4B5430A1834A004F87C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		94DB4B5730A1834A004F87C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		94DB4B5930A1834A004F87C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94DB4B5E30A1834A004F87C5 /* Siftlume Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Siftlume Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94DB4B6330A1834A004F87C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94DB4B6830A1834A004F87C5 /* Siftlume Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Siftlume Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94DB4B6D30A1834A004F87C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94DB4B8D30A1834B004F87C5 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = "../../../.output/safari-mv3/background.js"; sourceTree = "<group>"; };
+		94DB4B8E30A1834B004F87C5 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = "../../../.output/safari-mv3/popup.html"; sourceTree = "<group>"; };
+		94DB4B8F30A1834B004F87C5 /* chunks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = chunks; path = "../../../.output/safari-mv3/chunks"; sourceTree = "<group>"; };
+		94DB4B9030A1834B004F87C5 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = "../../../.output/safari-mv3/manifest.json"; sourceTree = "<group>"; };
+		94DB4B9130A1834B004F87C5 /* options.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = options.html; path = "../../../.output/safari-mv3/options.html"; sourceTree = "<group>"; };
+		94DB4B9230A1834B004F87C5 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _locales; path = "../../../.output/safari-mv3/_locales"; sourceTree = "<group>"; };
+		94DB4B9330A1834B004F87C5 /* app.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = app.html; path = "../../../.output/safari-mv3/app.html"; sourceTree = "<group>"; };
+		94DB4B9430A1834B004F87C5 /* icon */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icon; path = "../../../.output/safari-mv3/icon"; sourceTree = "<group>"; };
+		94DB4B9530A1834B004F87C5 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = "../../../.output/safari-mv3/assets"; sourceTree = "<group>"; };
+		94DB4B9630A1834B004F87C5 /* logo.svg */ = {isa = PBXFileReference; lastKnownFileType = text; name = logo.svg; path = "../../../.output/safari-mv3/logo.svg"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94DB4B3D30A1834A004F87C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DB4B4F30A1834A004F87C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DB4B5B30A1834A004F87C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DB4B6530A1834A004F87C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94DB4B2C30A18349004F87C5 = {
+			isa = PBXGroup;
+			children = (
+				94DB4B3130A18349004F87C5 /* Shared (App) */,
+				94DB4B3A30A1834A004F87C5 /* Shared (Extension) */,
+				94DB4B4230A1834A004F87C5 /* iOS (App) */,
+				94DB4B5330A1834A004F87C5 /* macOS (App) */,
+				94DB4B6230A1834A004F87C5 /* iOS (Extension) */,
+				94DB4B6C30A1834A004F87C5 /* macOS (Extension) */,
+				94DB4B4130A1834A004F87C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94DB4B3130A18349004F87C5 /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				94DB4B3830A18349004F87C5 /* ViewController.swift */,
+				94DB4B3930A1834A004F87C5 /* Assets.xcassets */,
+				94DB4B3230A18349004F87C5 /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		94DB4B3230A18349004F87C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				94DB4B3330A18349004F87C5 /* Main.html */,
+				94DB4B3530A18349004F87C5 /* Icon.png */,
+				94DB4B3630A18349004F87C5 /* Style.css */,
+				94DB4B3730A18349004F87C5 /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		94DB4B3A30A1834A004F87C5 /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				94DB4B8C30A1834B004F87C5 /* Resources */,
+				94DB4B3B30A1834A004F87C5 /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		94DB4B4130A1834A004F87C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94DB4B4030A1834A004F87C5 /* Siftlume.app */,
+				94DB4B5230A1834A004F87C5 /* Siftlume.app */,
+				94DB4B5E30A1834A004F87C5 /* Siftlume Extension.appex */,
+				94DB4B6830A1834A004F87C5 /* Siftlume Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94DB4B4230A1834A004F87C5 /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				94DB4B4330A1834A004F87C5 /* AppDelegate.swift */,
+				94DB4B4530A1834A004F87C5 /* SceneDelegate.swift */,
+				94DB4B4730A1834A004F87C5 /* LaunchScreen.storyboard */,
+				94DB4B4A30A1834A004F87C5 /* Main.storyboard */,
+				94DB4B4D30A1834A004F87C5 /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		94DB4B5330A1834A004F87C5 /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				94DB4B5430A1834A004F87C5 /* AppDelegate.swift */,
+				94DB4B5630A1834A004F87C5 /* Main.storyboard */,
+				94DB4B5930A1834A004F87C5 /* Info.plist */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		94DB4B6230A1834A004F87C5 /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				94DB4B6330A1834A004F87C5 /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		94DB4B6C30A1834A004F87C5 /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				94DB4B6D30A1834A004F87C5 /* Info.plist */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		94DB4B8C30A1834B004F87C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				94DB4B8D30A1834B004F87C5 /* background.js */,
+				94DB4B8E30A1834B004F87C5 /* popup.html */,
+				94DB4B8F30A1834B004F87C5 /* chunks */,
+				94DB4B9030A1834B004F87C5 /* manifest.json */,
+				94DB4B9130A1834B004F87C5 /* options.html */,
+				94DB4B9230A1834B004F87C5 /* _locales */,
+				94DB4B9330A1834B004F87C5 /* app.html */,
+				94DB4B9430A1834B004F87C5 /* icon */,
+				94DB4B9530A1834B004F87C5 /* assets */,
+				94DB4B9630A1834B004F87C5 /* logo.svg */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94DB4B3F30A1834A004F87C5 /* Siftlume (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94DB4B8230A1834A004F87C5 /* Build configuration list for PBXNativeTarget "Siftlume (iOS)" */;
+			buildPhases = (
+				94DB4B3C30A1834A004F87C5 /* Sources */,
+				94DB4B3D30A1834A004F87C5 /* Frameworks */,
+				94DB4B3E30A1834A004F87C5 /* Resources */,
+				94DB4B8130A1834A004F87C5 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94DB4B6130A1834A004F87C5 /* PBXTargetDependency */,
+			);
+			name = "Siftlume (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Siftlume (iOS)";
+			productReference = 94DB4B4030A1834A004F87C5 /* Siftlume.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94DB4B5130A1834A004F87C5 /* Siftlume (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94DB4B8930A1834A004F87C5 /* Build configuration list for PBXNativeTarget "Siftlume (macOS)" */;
+			buildPhases = (
+				94DB4B4E30A1834A004F87C5 /* Sources */,
+				94DB4B4F30A1834A004F87C5 /* Frameworks */,
+				94DB4B5030A1834A004F87C5 /* Resources */,
+				94DB4B8830A1834A004F87C5 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94DB4B6B30A1834A004F87C5 /* PBXTargetDependency */,
+			);
+			name = "Siftlume (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Siftlume (macOS)";
+			productReference = 94DB4B5230A1834A004F87C5 /* Siftlume.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94DB4B5D30A1834A004F87C5 /* Siftlume Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94DB4B7E30A1834A004F87C5 /* Build configuration list for PBXNativeTarget "Siftlume Extension (iOS)" */;
+			buildPhases = (
+				94DB4B5A30A1834A004F87C5 /* Sources */,
+				94DB4B5B30A1834A004F87C5 /* Frameworks */,
+				94DB4B5C30A1834A004F87C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Siftlume Extension (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Siftlume Extension (iOS)";
+			productReference = 94DB4B5E30A1834A004F87C5 /* Siftlume Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		94DB4B6730A1834A004F87C5 /* Siftlume Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94DB4B8530A1834A004F87C5 /* Build configuration list for PBXNativeTarget "Siftlume Extension (macOS)" */;
+			buildPhases = (
+				94DB4B6430A1834A004F87C5 /* Sources */,
+				94DB4B6530A1834A004F87C5 /* Frameworks */,
+				94DB4B6630A1834A004F87C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Siftlume Extension (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Siftlume Extension (macOS)";
+			productReference = 94DB4B6830A1834A004F87C5 /* Siftlume Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94DB4B2D30A18349004F87C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					94DB4B3F30A1834A004F87C5 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					94DB4B5130A1834A004F87C5 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					94DB4B5D30A1834A004F87C5 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					94DB4B6730A1834A004F87C5 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+				};
+			};
+			buildConfigurationList = 94DB4B3030A18349004F87C5 /* Build configuration list for PBXProject "Siftlume" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 94DB4B2C30A18349004F87C5;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 94DB4B4130A1834A004F87C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94DB4B3F30A1834A004F87C5 /* Siftlume (iOS) */,
+				94DB4B5130A1834A004F87C5 /* Siftlume (macOS) */,
+				94DB4B5D30A1834A004F87C5 /* Siftlume Extension (iOS) */,
+				94DB4B6730A1834A004F87C5 /* Siftlume Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94DB4B3E30A1834A004F87C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DB4B7030A1834A004F87C5 /* Icon.png in Resources */,
+				94DB4B4930A1834A004F87C5 /* LaunchScreen.storyboard in Resources */,
+				94DB4B6E30A1834A004F87C5 /* Main.html in Resources */,
+				94DB4B7430A1834A004F87C5 /* Script.js in Resources */,
+				94DB4B7830A1834A004F87C5 /* Assets.xcassets in Resources */,
+				94DB4B4C30A1834A004F87C5 /* Main.storyboard in Resources */,
+				94DB4B7230A1834A004F87C5 /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DB4B5030A1834A004F87C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DB4B7130A1834A004F87C5 /* Icon.png in Resources */,
+				94DB4B7330A1834A004F87C5 /* Style.css in Resources */,
+				94DB4B5830A1834A004F87C5 /* Main.storyboard in Resources */,
+				94DB4B7530A1834A004F87C5 /* Script.js in Resources */,
+				94DB4B7930A1834A004F87C5 /* Assets.xcassets in Resources */,
+				94DB4B6F30A1834A004F87C5 /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DB4B5C30A1834A004F87C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DB4BA630A1834B004F87C5 /* _locales in Resources */,
+				94DB4BA430A1834B004F87C5 /* manifest.json in Resources */,
+				94DB4BA330A1834B004F87C5 /* chunks in Resources */,
+				94DB4BA930A1834B004F87C5 /* assets in Resources */,
+				94DB4BA530A1834B004F87C5 /* options.html in Resources */,
+				94DB4BA130A1834B004F87C5 /* background.js in Resources */,
+				94DB4BA830A1834B004F87C5 /* icon in Resources */,
+				94DB4BAA30A1834B004F87C5 /* logo.svg in Resources */,
+				94DB4BA730A1834B004F87C5 /* app.html in Resources */,
+				94DB4BA230A1834B004F87C5 /* popup.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DB4B6630A1834A004F87C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DB4B9C30A1834B004F87C5 /* _locales in Resources */,
+				94DB4B9A30A1834B004F87C5 /* manifest.json in Resources */,
+				94DB4B9930A1834B004F87C5 /* chunks in Resources */,
+				94DB4B9F30A1834B004F87C5 /* assets in Resources */,
+				94DB4B9B30A1834B004F87C5 /* options.html in Resources */,
+				94DB4B9730A1834B004F87C5 /* background.js in Resources */,
+				94DB4B9E30A1834B004F87C5 /* icon in Resources */,
+				94DB4BA030A1834B004F87C5 /* logo.svg in Resources */,
+				94DB4B9D30A1834B004F87C5 /* app.html in Resources */,
+				94DB4B9830A1834B004F87C5 /* popup.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94DB4B3C30A1834A004F87C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DB4B7630A1834A004F87C5 /* ViewController.swift in Sources */,
+				94DB4B4430A1834A004F87C5 /* AppDelegate.swift in Sources */,
+				94DB4B4630A1834A004F87C5 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DB4B4E30A1834A004F87C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DB4B7730A1834A004F87C5 /* ViewController.swift in Sources */,
+				94DB4B5530A1834A004F87C5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DB4B5A30A1834A004F87C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DB4B7A30A1834A004F87C5 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DB4B6430A1834A004F87C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DB4B7B30A1834A004F87C5 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94DB4B6130A1834A004F87C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94DB4B5D30A1834A004F87C5 /* Siftlume Extension (iOS) */;
+			targetProxy = 94DB4B6030A1834A004F87C5 /* PBXContainerItemProxy */;
+		};
+		94DB4B6B30A1834A004F87C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94DB4B6730A1834A004F87C5 /* Siftlume Extension (macOS) */;
+			targetProxy = 94DB4B6A30A1834A004F87C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		94DB4B3330A18349004F87C5 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94DB4B3430A18349004F87C5 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		94DB4B4730A1834A004F87C5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94DB4B4830A1834A004F87C5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		94DB4B4A30A1834A004F87C5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94DB4B4B30A1834A004F87C5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		94DB4B5630A1834A004F87C5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94DB4B5730A1834A004F87C5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94DB4B7C30A1834A004F87C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		94DB4B7D30A1834A004F87C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		94DB4B7F30A1834A004F87C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Siftlume Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = work.tamnt.siftlume.Extension;
+				PRODUCT_NAME = "Siftlume Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94DB4B8030A1834A004F87C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Siftlume Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = work.tamnt.siftlume.Extension;
+				PRODUCT_NAME = "Siftlume Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94DB4B8330A1834A004F87C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Siftlume;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = work.tamnt.siftlume;
+				PRODUCT_NAME = Siftlume;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94DB4B8430A1834A004F87C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Siftlume;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = work.tamnt.siftlume;
+				PRODUCT_NAME = Siftlume;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94DB4B8630A1834A004F87C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Siftlume Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = work.tamnt.siftlume.Extension;
+				PRODUCT_NAME = "Siftlume Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		94DB4B8730A1834A004F87C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Siftlume Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = work.tamnt.siftlume.Extension;
+				PRODUCT_NAME = "Siftlume Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		94DB4B8A30A1834A004F87C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Siftlume;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = work.tamnt.siftlume;
+				PRODUCT_NAME = Siftlume;
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		94DB4B8B30A1834A004F87C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Siftlume;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = work.tamnt.siftlume;
+				PRODUCT_NAME = Siftlume;
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94DB4B3030A18349004F87C5 /* Build configuration list for PBXProject "Siftlume" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DB4B7C30A1834A004F87C5 /* Debug */,
+				94DB4B7D30A1834A004F87C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94DB4B7E30A1834A004F87C5 /* Build configuration list for PBXNativeTarget "Siftlume Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DB4B7F30A1834A004F87C5 /* Debug */,
+				94DB4B8030A1834A004F87C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94DB4B8230A1834A004F87C5 /* Build configuration list for PBXNativeTarget "Siftlume (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DB4B8330A1834A004F87C5 /* Debug */,
+				94DB4B8430A1834A004F87C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94DB4B8530A1834A004F87C5 /* Build configuration list for PBXNativeTarget "Siftlume Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DB4B8630A1834A004F87C5 /* Debug */,
+				94DB4B8730A1834A004F87C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94DB4B8930A1834A004F87C5 /* Build configuration list for PBXNativeTarget "Siftlume (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DB4B8A30A1834A004F87C5 /* Debug */,
+				94DB4B8B30A1834A004F87C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94DB4B2D30A18349004F87C5 /* Project object */;
+}
