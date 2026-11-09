@@ -6,6 +6,7 @@ import { extractTab } from '@/lib/page';
 import { extractFile, truncate, type ExtractedSource } from '@/lib/extractors';
 import { newId, readStored, saveSession, writeStored, type Session, type SessionOptions } from '@/lib/history';
 import { configProblem, type Settings } from '@/lib/settings';
+import type { AnalysisMode } from '@/lib/modes';
 
 export type Phase = 'idle' | 'extracting' | 'summarizing' | 'refining' | 'answering';
 
@@ -78,7 +79,7 @@ export function useSession(settings: Settings) {
 
   /** Creates a session from an extracted source and summarizes it right away. */
   const start = useCallback(
-    async (src: ExtractedSource & { tabId?: number }) => {
+    async (src: ExtractedSource & { tabId?: number }, mode: AnalysisMode = 'summary') => {
       const missing = checkSettings();
       if (missing) {
         finish();
@@ -95,7 +96,7 @@ export function useSession(settings: Settings) {
         source,
         summary: null,
         qa: [],
-        options: { mode: settingsRef.current.mode, length: settingsRef.current.length },
+        options: { mode, length: settingsRef.current.length },
       };
       commit(base);
       await runSummary(source, base);
@@ -104,12 +105,12 @@ export function useSession(settings: Settings) {
   );
 
   const fromTab = useCallback(
-    async (tabId: number) => {
+    async (tabId: number, mode?: AnalysisMode) => {
       const ctrl = begin('extracting');
       try {
         const src = await extractTab(tabId);
         if (ctrl.signal.aborted) return;
-        await start(src);
+        await start(src, mode);
       } catch (e) {
         if (abortRef.current === ctrl) {
           setError(describeError(e, settingsRef.current));
@@ -121,20 +122,21 @@ export function useSession(settings: Settings) {
   );
 
   const fromText = useCallback(
-    (text: string, title = t('common:pastedText'), origin?: string, tabId?: number) => {
+    (text: string, opts: { title?: string; origin?: string; tabId?: number; mode?: AnalysisMode } = {}) => {
       if (!text.trim()) return setError(t('errors:nothingToSummarize'));
-      void start({ kind: 'text', title, origin, content: text, tabId });
+      const { title = t('common:pastedText'), origin, tabId, mode } = opts;
+      void start({ kind: 'text', title, origin, content: text, tabId }, mode);
     },
     [start],
   );
 
   const fromFile = useCallback(
-    async (file: File) => {
+    async (file: File, mode?: AnalysisMode) => {
       const ctrl = begin('extracting');
       try {
         const src = await extractFile(file);
         if (ctrl.signal.aborted) return;
-        await start(src);
+        await start(src, mode);
       } catch (e) {
         if (abortRef.current === ctrl) {
           setError(describeError(e, settingsRef.current));

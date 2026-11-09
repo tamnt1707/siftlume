@@ -65,8 +65,7 @@
         "title": "Para iniciantes",
         "desc": "Palavras simples, frases curtas e uma explicação rápida de cada termo técnico."
       }
-    },
-    "modeHint": "O que você quer de uma página. Sua última escolha fica salva e pode ser trocada na tela de resultado."
+    }
   },
   "appearance": {
     "uiLanguage": "Idioma da interface",

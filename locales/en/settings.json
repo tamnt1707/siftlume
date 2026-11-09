@@ -64,8 +64,7 @@
         "title": "Beginner-friendly",
         "desc": "Plain words, short sentences, and a quick explanation of each technical term."
       }
-    },
-    "modeHint": "What you want from a page. Your last choice is kept, and you can switch on the result screen."
+    }
   },
   "appearance": {
     "uiLanguage": "Interface language",

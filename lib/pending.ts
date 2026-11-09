@@ -1,3 +1,4 @@
+import type { AnalysisMode } from './modes';
 import { browser, storage } from '#imports';
 
 /**
@@ -5,8 +6,13 @@ import { browser, storage } from '#imports';
  * Kept in storage.session (memory only, cleared when the browser closes) so large pasted text
  * does not have to travel in the URL.
  */
-export type PendingRequest =
-  { type: 'tab'; tabId: number } | { type: 'text'; text: string; title?: string; url?: string; tabId?: number };
+export type PendingRequest = (
+  | { type: 'tab'; tabId: number }
+  | { type: 'text'; text: string; title?: string; url?: string; tabId?: number }
+) & {
+  /** Analysis mode picked in the popup; missing means a summary. */
+  mode?: AnalysisMode;
+};
 
 const requestsItem = storage.defineItem<Record<string, PendingRequest & { at: number }>>('session:requests', {
   fallback: {},

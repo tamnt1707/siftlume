@@ -54,14 +54,14 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
     (req: PendingRequest | null) => {
       if (!req) return ctrl.setError(t('errors:requestExpired'));
       setView('main');
-      if (req.type === 'tab') void ctrl.fromTab(req.tabId);
+      if (req.type === 'tab') void ctrl.fromTab(req.tabId, req.mode);
       else
-        ctrl.fromText(
-          req.text,
-          req.title ? t('selectionOf', { title: req.title }) : t('pastedText'),
-          req.url,
-          req.tabId,
-        );
+        ctrl.fromText(req.text, {
+          title: req.title ? t('selectionOf', { title: req.title }) : t('pastedText'),
+          origin: req.url,
+          tabId: req.tabId,
+          mode: req.mode,
+        });
     },
     [ctrl],
   );

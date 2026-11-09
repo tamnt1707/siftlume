@@ -287,7 +287,6 @@ function Loaders() {
 /** Start screens with the analysis mode picker: full page (with descriptions) and a tab's side panel. */
 function Pickers() {
   const idle = { phase: 'idle' } as unknown as SessionController;
-  const explain = { ...settings, mode: 'explain' as const };
   return (
     <Themed settings={settings} className="app app--page sc-components">
       <main className="content sc-components__grid" style={{ gridTemplateColumns: '1.4fr 1fr' }}>
@@ -297,7 +296,7 @@ function Pickers() {
         <div className="app--panel" style={{ maxWidth: 400 }}>
           <SourcePicker
             ctrl={idle}
-            settings={explain}
+            settings={settings}
             page={{ id: 1, title: 'How vaccines train the immune system', readable: true }}
           />
         </div>

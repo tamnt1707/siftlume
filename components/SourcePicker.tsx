@@ -4,6 +4,7 @@ import { FileUploadIcon, SparklesIcon } from '@hugeicons/core-free-icons';
 import { Icon } from './Icon';
 import type { SessionController } from './useSession';
 import type { Settings } from '@/lib/settings';
+import type { AnalysisMode } from '@/lib/modes';
 import { AnalysisChoice } from './ModePicker';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
@@ -31,12 +32,14 @@ export function SourcePicker({
   const { t } = useTranslation('picker');
   const [text, setText] = useState('');
   const [dragging, setDragging] = useState(false);
+  // Every visit starts as a summary; another mode applies to the next run only.
+  const [mode, setMode] = useState<AnalysisMode>('summary');
   const fileInput = useRef<HTMLInputElement>(null);
   const busy = ctrl.phase !== 'idle';
 
   const onFiles = (files: FileList | null) => {
     const file = files?.[0];
-    if (file) void ctrl.fromFile(file);
+    if (file) void ctrl.fromFile(file, mode);
   };
 
   return (
@@ -56,17 +59,17 @@ export function SourcePicker({
       }}
     >
       {!page && <h1 className="picker__title">{t('title')}</h1>}
-      <AnalysisChoice settings={settings} disabled={busy} compact={Boolean(page)} />
+      <AnalysisChoice settings={settings} mode={mode} onModeChange={setMode} disabled={busy} compact={Boolean(page)} />
       {page ? (
         <>
           <button
             className="btn btn--primary btn--hero"
             disabled={busy || !page.readable}
-            onClick={() => void ctrl.fromTab(page.id)}
+            onClick={() => void ctrl.fromTab(page.id, mode)}
           >
             <span className="btn__label">
               <Icon icon={SparklesIcon} />
-              {ctrl.phase === 'extracting' ? t('reading') : t(`run.${settings.mode}`)}
+              {ctrl.phase === 'extracting' ? t('reading') : t(`run.${mode}`)}
             </span>
             {page.title && <span className="btn__sub">{page.readable ? page.title : t('cannotRead')}</span>}
           </button>
@@ -85,12 +88,12 @@ export function SourcePicker({
           disabled={busy}
           onChange={(e) => setText(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' && (e.metaKey || e.ctrlKey) && text.trim()) ctrl.fromText(text);
+            if (e.key === 'Enter' && (e.metaKey || e.ctrlKey) && text.trim()) ctrl.fromText(text, { mode });
           }}
         />
         {text.trim() && (
-          <button className="btn btn--primary btn--block" disabled={busy} onClick={() => ctrl.fromText(text)}>
-            {t(`runText.${settings.mode}`)} <kbd>⌘/Ctrl ↵</kbd>
+          <button className="btn btn--primary btn--block" disabled={busy} onClick={() => ctrl.fromText(text, { mode })}>
+            {t(`runText.${mode}`)} <kbd>⌘/Ctrl ↵</kbd>
           </button>
         )}
       </div>

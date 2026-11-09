@@ -13,7 +13,6 @@ import { useTranslation } from 'react-i18next';
 import { AppearancePanel } from '@/components/AppearancePanel';
 import { LanguagePicker } from '@/components/LanguagePicker';
 import { Select } from '@/components/Select';
-import { ModePicker } from '@/components/ModePicker';
 import { SUMMARY_STYLES } from '@/lib/refine';
 import { OUTPUT_LANGUAGES } from '@/lib/languages';
 import { Themed } from '@/components/Themed';
@@ -321,11 +320,6 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: S
               <p className="hint">
                 {settings.display === 'tab' ? t('summary.displayTabHint') : t('summary.displaySidepanelHint')}
               </p>
-            </div>
-            <div className="field">
-              <label>{t('common:modeLabel')}</label>
-              <ModePicker value={settings.mode} onChange={(mode) => update({ mode })} />
-              <p className="hint">{t('summary.modeHint')}</p>
             </div>
             <div className="field">
               <label htmlFor="lang">{t('summary.outputLanguage')}</label>

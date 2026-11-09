@@ -12,23 +12,27 @@ export const MODE_ICONS = {
   action: TaskDone01Icon,
 } as const;
 
-/** Saves the choice right away (no Save button): the last choice is the default for the next analysis. */
-export const saveChoice = (settings: Settings, patch: Partial<Pick<Settings, 'mode' | 'length'>>) =>
-  void settingsItem.setValue({ ...settings, ...patch });
+/** Saves the length right away (no Save button): the last length is kept for the next analysis. */
+const saveLength = (settings: Settings, length: SummaryLength) => void settingsItem.setValue({ ...settings, length });
 
 export const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed'];
 
 /**
  * Everything to choose before the first analysis: what kind (mode) and how long. Picking both up
- * front avoids running once and then re-running at another length. "compact" drops the
+ * front avoids running once and then re-running at another length. The mode is for this run only
+ * (the caller holds it and starts as a summary); the length is remembered. "compact" drops the
  * descriptions for narrow places (side panel, popup).
  */
 export function AnalysisChoice({
   settings,
+  mode,
+  onModeChange,
   disabled,
   compact,
 }: {
   settings: Settings;
+  mode: AnalysisMode;
+  onModeChange: (mode: AnalysisMode) => void;
   disabled?: boolean;
   compact?: boolean;
 }) {
@@ -36,12 +40,7 @@ export function AnalysisChoice({
   const labelId = useId();
   return (
     <div className={`analysis-choice ${compact ? 'analysis-choice--compact' : ''}`}>
-      <ModePicker
-        value={settings.mode}
-        onChange={(mode) => saveChoice(settings, { mode })}
-        disabled={disabled}
-        descriptions={!compact}
-      />
+      <ModePicker value={mode} onChange={onModeChange} disabled={disabled} descriptions={!compact} />
       <div className="analysis-choice__length">
         <span className="analysis-choice__label" id={labelId}>
           {t('summary.length')}
@@ -56,7 +55,7 @@ export function AnalysisChoice({
               className={settings.length === l ? 'active' : ''}
               disabled={disabled}
               title={t(`summary.lengthHints.${l}`)}
-              onClick={() => l !== settings.length && saveChoice(settings, { length: l })}
+              onClick={() => l !== settings.length && saveLength(settings, l)}
             >
               {t(`summary.lengths.${l}`)}
             </button>

@@ -7,6 +7,7 @@ import { browser, type Browser } from '#imports';
 import { HistoryList } from '@/components/HistoryList';
 import { ModelSwitcher } from '@/components/ModelSwitcher';
 import { AnalysisChoice } from '@/components/ModePicker';
+import type { AnalysisMode } from '@/lib/modes';
 import { useSettings } from '@/components/useSettings';
 import { getActiveTab, isReadableUrl } from '@/lib/page';
 import { openApp, queueRequest, type AppRoute, type PendingRequest } from '@/lib/pending';
@@ -24,6 +25,8 @@ export default function Popup() {
   const { settings, loaded } = useSettings();
   const [tab, setTab] = useState<Browser.tabs.Tab | null>(null);
   const [text, setText] = useState('');
+  // Every popup starts as a summary; another mode applies to this request only.
+  const [mode, setMode] = useState<AnalysisMode>('summary');
 
   useEffect(() => {
     void getActiveTab().then((t) => setTab(t ?? null));
@@ -36,7 +39,7 @@ export default function Popup() {
   const show = (route: AppRoute) => void openApp(route, tab ?? undefined).then(() => window.close());
 
   const submit = (req: PendingRequest) => {
-    void queueRequest(req)
+    void queueRequest({ ...req, mode })
       .then((id) => openApp({ request: id }, tab ?? undefined))
       .then(() => window.close());
   };
@@ -76,7 +79,7 @@ export default function Popup() {
           </div>
         )}
 
-        <AnalysisChoice settings={settings} compact />
+        <AnalysisChoice settings={settings} mode={mode} onModeChange={setMode} compact />
 
         <button
           className="btn btn--primary btn--hero"
@@ -85,7 +88,7 @@ export default function Popup() {
         >
           <span className="btn__label">
             <Icon icon={SparklesIcon} />
-            {t(`picker:run.${settings.mode}`)}
+            {t(`picker:run.${mode}`)}
           </span>
           {tab?.title && <span className="btn__sub">{canReadTab ? tab.title : t('picker:cannotRead')}</span>}
         </button>
@@ -108,7 +111,7 @@ export default function Popup() {
               disabled={Boolean(problem)}
               onClick={() => submit({ type: 'text', text, tabId: tab?.id })}
             >
-              {t(`picker:runText.${settings.mode}`)} <kbd>⌘/Ctrl ↵</kbd>
+              {t(`picker:runText.${mode}`)} <kbd>⌘/Ctrl ↵</kbd>
             </button>
           )}
         </div>
