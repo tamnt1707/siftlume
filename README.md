@@ -28,9 +28,10 @@ It uses your own LLM key. Requests go straight from your browser to the provider
 - **Summarize anything**: the open tab (cleaned with Readability), a selection, pasted text, or a file (PDF, CSV, Markdown, TXT, HTML, JSON).
 - **Visual first**: a TL;DR with a highlighter mark, key figures, takeaways, tags and timelines. Pages with numbers get charts picked from the shape of the data, and processes get diagrams.
 - **Two ways to read**: in the **side panel** of the tab you are reading, or in a **new full-page tab** with a Questions column.
-- **Four ways to read**: **Summary** for the gist, **Explain** to understand it (how it works, an everyday analogy, misconceptions, terms), **Critique** to judge it (claims checked against the source's own evidence, weak spots, what to verify) and **Action** for what to do (checklist, deadlines, requirements, risks). Switch on the result screen; the last choice is kept.
+- **Four ways to read**: **Summary** for the gist, **Explain** to understand it (how it works, an everyday analogy, misconceptions, terms), **Critique** to judge it (claims checked against the source's own evidence, weak spots, what to verify) and **Action** for what to do (checklist, deadlines, requirements, risks). Pick it, and the length, before the first run or switch on the result screen; the last choice is kept.
 - **A layout that fits the page**: the structure comes from the kind of source (news, review, how-to, research, docs, data, release notes…) instead of one template.
 - **Built for the content**: verdicts and pros/cons for reviews, bar lists for rankings, tickable checklists for action items, who-is-who cards for news, and a glossary for jargon. Spec sheets, comparison tables and pricing plans for products; risk lists graded by severity; claim checks for news, health and science; status boards and changelogs for projects and release notes; and a question, method, findings and limitations brief for research papers.
+- **Deeper analysis**: argument maps for op-eds and debates, cause → event → effect chains, who-thinks-what perspectives, before/after tables for new rules and prices, weighted decision matrices, best/base/worst scenarios, SWOT and 2×2 matrices, step-by-step calculations, code walkthroughs with line notes, hierarchy trees and QR codes for links you will open on your phone.
 - **Result tools**: switch the length or language of a summary in place, copy or download it as Markdown (charts become tables, diagrams stay Mermaid), listen to it, print or save it as PDF, see how much reading time it saved, and check the extracted source text.
 - **Refine in one click**: Shorter, More detail, Action items, Timeline, Simpler. Styles can also be turned on for every summary in Settings.
 - **Ask follow-up questions**, answered only from the source.
@@ -129,7 +130,7 @@ entrypoints/
 components/            React UI: session view, settings (tabs), pickers, theme
 lib/
   library.ts           OpenUI component library: registers the chat library + Siftlume components and actions
-  genui/               the Siftlume components, one file per group (core, review, product, trust, project…)
+  genui/               the Siftlume components, one file per group (core, review, product, trust, reasoning, decision…)
   openui.ts            system prompts, inline-mode parsing, validation, edit-mode merge
   generate.ts          streaming and the repair loop
   refine.ts            refine buttons and default styles

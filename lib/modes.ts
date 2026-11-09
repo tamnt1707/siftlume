@@ -23,19 +23,19 @@ export const MODE_RULES: Record<AnalysisMode, string[]> = {
   explain: [
     'MODE: EXPLAIN. Goal: the reader understands the subject, even as a beginner. Do not just list what the source says; teach it.',
     'SummaryHero tldr: the core idea in one plain sentence.',
-    'Build understanding in order: what it is → why it matters → how it works (Diagram for processes and relationships, Steps for procedures) → an Analogy from everyday life → Misconceptions the source corrects or that beginners often have → a Glossary of the terms used. Add a worked example from the source when it has one.',
+    'Build understanding in order: what it is → why it matters → how it works (Diagram for processes and relationships, Steps for procedures) → causes and effects (CauseEffect) or how the parts fit together (Tree) when the topic has them → an Analogy from everyday life → Misconceptions the source corrects or that beginners often have → a Glossary of the terms used. Add a worked example from the source when it has one: a Calculation for numbers, a CodeWalkthrough for code.',
     'Plain words, short sentences, every term defined on first use. Numbers only when they help understanding. The Analogy is your own illustration; every fact must still come from the source.',
   ],
   critique: [
     'MODE: CRITIQUE. Goal: help the reader judge how far to trust the source. Be neutral and fair: credit what is solid, flag what is weak.',
     'SummaryHero tldr: the main claim and how well the source supports it, in one sentence.',
-    'Cover: the main claims and how the source backs them (ClaimCheck) → strengths and weaknesses of the argument (ProsCons with a heading) → missing context, one-sided sourcing, loaded wording or conflicts of interest visible in the source (RiskList) → what a careful reader should check next (Checklist). Back key claims with SourceQuote.',
+    'Cover: the main claims and how the source backs them (ClaimCheck) → how the argument is built, for and against (ArgumentMap; ProsCons for non-persuasive sources) → who disagrees and why (Perspectives) when the source reports other views → missing context, one-sided sourcing, loaded wording or conflicts of interest visible in the source (RiskList) → what a careful reader should check next (Checklist). Back key claims with SourceQuote.',
     'Judge only what is in the source: the evidence it gives, what it leaves out, who it quotes. Never use outside knowledge to declare a claim true or false; say what evidence is missing instead.',
   ],
   action: [
     'MODE: ACTION. Goal: what the reader should do, decide or remember. Skip background unless it is needed to act.',
     'SummaryHero tldr: the single most important thing to do or decide.',
-    'Lead with a Checklist of concrete actions, most urgent first. Then, as the source supports: deadlines and dates (Timeline), requirements, costs, contacts or eligibility (FactSheet), decisions with their options (Comparison or ProsCons), how-to steps (Steps), and the risks of not acting (RiskList).',
+    'Lead with a Checklist of concrete actions, most urgent first. Then, as the source supports: deadlines and dates (Timeline), requirements, costs, contacts or eligibility (FactSheet), decisions with their options (DecisionMatrix when the source judges them, Comparison or ProsCons otherwise), costs worked out (Calculation), what changes for the reader (BeforeAfter), how-to steps (Steps), links to open on a phone (QrCode), and the risks of not acting (RiskList).',
     'If the source has nothing actionable, say so in the tldr and give the closest practical takeaways.',
   ],
 };

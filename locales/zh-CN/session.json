@@ -70,7 +70,36 @@
     },
     "analogy": "就像",
     "myth": "误区",
-    "fact": "事实上"
+    "fact": "事实上",
+    "argument": {
+      "thesis": "核心论点",
+      "for": "支持",
+      "against": "反驳"
+    },
+    "cause": {
+      "causes": "原因",
+      "event": "发生了什么",
+      "effects": "影响"
+    },
+    "decision": {
+      "total": "得分"
+    },
+    "scenario": {
+      "best": "最好情况",
+      "base": "基准情况",
+      "worst": "最坏情况",
+      "likelihood": "可能性",
+      "signal": "关注信号"
+    },
+    "stance": {
+      "for": "支持",
+      "against": "反对",
+      "mixed": "分歧",
+      "neutral": "中立"
+    },
+    "before": "之前",
+    "after": "之后",
+    "qrScan": "扫码打开"
   },
   "refineHint": {
     "shorter": "只保留最重要的要点。",

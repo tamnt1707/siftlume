@@ -70,7 +70,36 @@
     },
     "analogy": "Giống như",
     "myth": "Lầm tưởng",
-    "fact": "Thực tế"
+    "fact": "Thực tế",
+    "argument": {
+      "thesis": "Luận điểm chính",
+      "for": "Ủng hộ",
+      "against": "Phản bác"
+    },
+    "cause": {
+      "causes": "Nguyên nhân",
+      "event": "Điều xảy ra",
+      "effects": "Hệ quả"
+    },
+    "decision": {
+      "total": "Điểm"
+    },
+    "scenario": {
+      "best": "Tốt nhất",
+      "base": "Cơ sở",
+      "worst": "Xấu nhất",
+      "likelihood": "Khả năng",
+      "signal": "Dấu hiệu cần theo dõi"
+    },
+    "stance": {
+      "for": "Ủng hộ",
+      "against": "Phản đối",
+      "mixed": "Lưỡng lự",
+      "neutral": "Trung lập"
+    },
+    "before": "Trước",
+    "after": "Sau",
+    "qrScan": "Quét để mở"
   },
   "refineHint": {
     "shorter": "Chỉ giữ những ý quan trọng nhất.",

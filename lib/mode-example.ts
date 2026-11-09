@@ -1,7 +1,7 @@
 /**
  * One prompt example per non-summary analysis mode, each with its own shape, validated by
  * `pnpm check:examples`: explain (Analogy, Diagram, Misconceptions, Glossary), critique
- * (ClaimCheck, ProsCons, RiskList, Checklist) and action (Checklist, Timeline, FactSheet, RiskList).
+ * (ClaimCheck, ArgumentMap, RiskList, Checklist) and action (Checklist, Timeline, FactSheet, RiskList).
  */
 export const EXPLAIN_EXAMPLE = `root = Card([hero, analogy, why, how, myths, glossary, followUps])
 hero = SummaryHero("How vaccines train the immune system", "A vaccine shows your immune system a harmless copy of a germ so it reacts fast later.")
@@ -18,13 +18,17 @@ g1 = Term("Antigen", "The part of a germ the immune system recognises")
 g2 = Term("Booster", "A later dose that refreshes immune memory")
 followUps = FollowUpBlock([FollowUpItem("Why do some vaccines need boosters?"), FollowUpItem("How are mRNA vaccines different?")])`;
 
-export const CRITIQUE_EXAMPLE = `root = Card([hero, claims, pc, flags, quote, check, followUps])
+export const CRITIQUE_EXAMPLE = `root = Card([hero, claims, args, flags, quote, check, followUps])
 hero = SummaryHero("Op-ed: Remote work is killing innovation", "The core claim rests on one survey and anecdotes, so the evidence is thin.")
 claims = ClaimCheck([c1, c2, c3], "Main claims")
 c1 = Claim("Remote teams file fewer patents", "supported", "Cites a 2024 survey of 300 firms")
 c2 = Claim("Offices create chance encounters that spark ideas", "opinion", "Based on the author's own experience")
 c3 = Claim("Productivity fell everywhere", "unsupported", "No data given")
-pc = ProsCons(["Concrete examples from two companies", "Admits hybrid can work"], ["One survey, sample not described", "Ignores hiring and cost benefits"], "How the argument holds up")
+args = ArgumentMap("Offices are needed for innovation", [a1, a2, a3, a4], "How the argument holds up", "The case rests on one survey and leaves the counter-arguments unanswered.")
+a1 = Argument("for", "Remote teams file fewer patents", "A 2024 survey of 300 firms")
+a2 = Argument("for", "Two companies saw ideas dry up after going remote", "Named examples")
+a3 = Argument("against", "Hybrid teams can innovate too", "The author admits this in passing")
+a4 = Argument("against", "Remote work widens the hiring pool", "Raised by critics, not answered")
 flags = RiskList([r1, r2], "What to keep in mind")
 r1 = Risk("medium", "Author runs an office-space company", "Disclosed only at the end")
 r2 = Risk("low", "Only managers are quoted", "No remote employees interviewed")

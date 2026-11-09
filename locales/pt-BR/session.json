@@ -76,7 +76,36 @@
     },
     "analogy": "É como",
     "myth": "Mito",
-    "fact": "Na verdade"
+    "fact": "Na verdade",
+    "argument": {
+      "thesis": "Tese principal",
+      "for": "A favor",
+      "against": "Contra"
+    },
+    "cause": {
+      "causes": "Causas",
+      "event": "O que aconteceu",
+      "effects": "Efeitos"
+    },
+    "decision": {
+      "total": "Pontuação"
+    },
+    "scenario": {
+      "best": "Melhor cenário",
+      "base": "Cenário base",
+      "worst": "Pior cenário",
+      "likelihood": "Probabilidade",
+      "signal": "Fique de olho em"
+    },
+    "stance": {
+      "for": "A favor",
+      "against": "Contra",
+      "mixed": "Dividido",
+      "neutral": "Neutro"
+    },
+    "before": "Antes",
+    "after": "Depois",
+    "qrScan": "Escaneie para abrir"
   },
   "refineHint": {
     "shorter": "Mantém só os pontos mais importantes.",

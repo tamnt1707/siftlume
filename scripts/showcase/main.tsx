@@ -23,6 +23,7 @@ import { library } from '../../lib/library';
 import { CHART_SUMMARY_EXAMPLE } from '../../lib/chart-example';
 import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../../lib/review-example';
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from '../../lib/domain-example';
+import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from '../../lib/analysis-example';
 import { DEFAULT_SETTINGS, type Settings } from '../../lib/settings';
 import { ARTICLE, SUMMARY } from './content';
 
@@ -220,12 +221,14 @@ function FullPage() {
 /**
  * Prompt examples rendered side by side. Default: review and news (Verdict, ProsCons, BarList,
  * Checklist, People, Glossary). `?set=domain`: product, release notes and research examples.
+ * `?set=analysis`: policy debate, decision and code tutorial (the analysis blocks).
  * `&panel` renders them at side-panel width.
  */
 const COMPONENT_SETS: Record<string, string[]> = {
   default: [REVIEW_SUMMARY_EXAMPLE, NEWS_ACTORS_EXAMPLE],
   domain: [PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE],
   modes: [EXPLAIN_EXAMPLE, CRITIQUE_EXAMPLE, ACTION_EXAMPLE],
+  analysis: [POLICY_DEBATE_EXAMPLE, DECISION_EXAMPLE, CODE_TUTORIAL_EXAMPLE],
 };
 
 function Components() {

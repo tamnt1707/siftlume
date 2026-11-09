@@ -73,7 +73,36 @@
     },
     "analogy": "It's like",
     "myth": "Myth",
-    "fact": "Actually"
+    "fact": "Actually",
+    "argument": {
+      "thesis": "Main claim",
+      "for": "Supports",
+      "against": "Challenges"
+    },
+    "cause": {
+      "causes": "Causes",
+      "event": "What happened",
+      "effects": "Effects"
+    },
+    "decision": {
+      "total": "Score"
+    },
+    "scenario": {
+      "best": "Best case",
+      "base": "Base case",
+      "worst": "Worst case",
+      "likelihood": "Likelihood",
+      "signal": "Watch for"
+    },
+    "stance": {
+      "for": "For",
+      "against": "Against",
+      "mixed": "Mixed",
+      "neutral": "Neutral"
+    },
+    "before": "Before",
+    "after": "After",
+    "qrScan": "Scan to open"
   },
   "refineHint": {
     "shorter": "Keep only the most important points.",

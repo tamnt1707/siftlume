@@ -12,6 +12,7 @@ import { DIAGRAM_SUMMARY_EXAMPLE } from '../lib/diagram-example';
 import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../lib/review-example';
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from '../lib/domain-example';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../lib/mode-example';
+import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from '../lib/analysis-example';
 
 const parser = createParser(library.toJSONSchema(), 'Card');
 const examples: Record<string, string> = {
@@ -26,6 +27,9 @@ const examples: Record<string, string> = {
   'explain-example': EXPLAIN_EXAMPLE,
   'critique-example': CRITIQUE_EXAMPLE,
   'action-example': ACTION_EXAMPLE,
+  'policy-debate-example': POLICY_DEBATE_EXAMPLE,
+  'decision-example': DECISION_EXAMPLE,
+  'code-tutorial-example': CODE_TUTORIAL_EXAMPLE,
   ...Object.fromEntries(CSV_TOOL_EXAMPLES.map((e, i) => [`csv-tools[${i}]`, e])),
 };
 

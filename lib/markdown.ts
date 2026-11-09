@@ -1,5 +1,16 @@
 import { createParser } from '@openuidev/react-lang';
-import { CHANGE_TYPES, CLAIM_STATUSES, library, RISK_LEVELS, ROOT } from './library';
+import {
+  CALC_OPS,
+  CHANGE_TYPES,
+  CLAIM_STATUSES,
+  library,
+  qrSafe,
+  RISK_LEVELS,
+  ROOT,
+  SCENARIO_KINDS,
+  STANCES,
+  weightedScores,
+} from './library';
 import { t } from './i18n';
 
 /**
@@ -241,6 +252,139 @@ function render(node: unknown, level: number): string {
           .map((x) => `- ~~${str(x.myth)}~~ — **${t('session:genui.fact')}** ${str(x.fact)}`)
           .join('\n')
       );
+    case 'ArgumentMap': {
+      const args = list(p.arguments).map(props);
+      const side = (stance: 'for' | 'against') => {
+        const items = args.filter((a) => (str(a.stance) === 'against' ? 'against' : 'for') === stance);
+        return items.length
+          ? `**${t(`session:genui.argument.${stance}`)}**\n${items
+              .map((a) => `- ${str(a.point)}${a.evidence ? ` — ${str(a.evidence)}` : ''}`)
+              .join('\n')}`
+          : '';
+      };
+      return [
+        heading(p.heading) + `**${t('session:genui.argument.thesis')}**: ${str(p.thesis)}`,
+        side('for'),
+        side('against'),
+        p.conclusion ? `_${str(p.conclusion)}_` : '',
+      ]
+        .filter(Boolean)
+        .join('\n\n');
+    }
+    case 'CauseEffect':
+      return [
+        heading(p.heading) +
+          `**${t('session:genui.cause.causes')}**\n${list(p.causes)
+            .map((x) => `- ${str(x)}`)
+            .join('\n')}`,
+        `→ **${str(p.event)}**`,
+        `**${t('session:genui.cause.effects')}**\n${list(p.effects)
+          .map((x) => `- ${str(x)}`)
+          .join('\n')}`,
+      ].join('\n\n');
+    case 'DecisionMatrix': {
+      const criteria = list(p.criteria).map(props) as { name?: string; weight?: number }[];
+      const choices = list(p.choices).map(props) as { name?: string; scores?: number[]; note?: string }[];
+      const { totals, best } = weightedScores(criteria, choices);
+      return (
+        heading(p.heading) +
+        table(
+          [
+            '',
+            ...criteria.map((c) => `${str(c.name)}${Number(c.weight) > 1 ? ` (×${str(c.weight)})` : ''}`),
+            t('session:genui.decision.total'),
+          ],
+          choices.map((c, i) => [
+            str(c.name),
+            ...criteria.map((_, j) => (c.scores?.[j] === undefined ? '' : `${str(c.scores[j])}/5`)),
+            best[i] ? `**${str(totals[i])}** ✓` : str(totals[i] ?? ''),
+          ]),
+        ) +
+        (p.bottomLine ? `\n\n${str(p.bottomLine)}` : '')
+      );
+    }
+    case 'Scenarios':
+      return (
+        heading(p.heading) +
+        list(p.items)
+          .map(props)
+          .map((x) => {
+            const likely = x.likelihood
+              ? ` (${t('session:genui.scenario.likelihood')}: ${t(`session:genui.risk.${pick(x.likelihood, RISK_LEVELS, 'medium')}`)})`
+              : '';
+            const signal = x.signal ? ` (${t('session:genui.scenario.signal')}: ${str(x.signal)})` : '';
+            return `- **${t(`session:genui.scenario.${pick(x.kind, SCENARIO_KINDS, 'base')}`)}**${likely}: ${str(x.title)} — ${str(x.outcome)}${signal}`;
+          })
+          .join('\n')
+      );
+    case 'Matrix2x2':
+      return (
+        heading(p.heading) +
+        list(p.quadrants)
+          .map(props)
+          .map((q) => [`**${str(q.title)}**`, ...list(q.items).map((x) => `- ${str(x)}`)].join('\n'))
+          .join('\n\n')
+      );
+    case 'Perspectives':
+      return (
+        heading(p.heading) +
+        (p.issue ? `${str(p.issue)}\n\n` : '') +
+        list(p.items)
+          .map(props)
+          .map(
+            (x) =>
+              `- **${str(x.who)}** (${t(`session:genui.stance.${pick(x.stance, STANCES, 'neutral')}`)}): ${str(x.view)}${x.quote ? ` “${str(x.quote)}”` : ''}`,
+          )
+          .join('\n')
+      );
+    case 'BeforeAfter':
+      return (
+        heading(p.heading) +
+        table(
+          ['', str(p.beforeLabel) || t('session:genui.before'), str(p.afterLabel) || t('session:genui.after')],
+          list(p.items)
+            .map(props)
+            .map((x) => [x.aspect, x.before, x.after]),
+        )
+      );
+    case 'Calculation':
+      return (
+        heading(p.heading) +
+        [
+          ...list(p.steps)
+            .map(props)
+            .map((x) => {
+              const op = pick(x.op, CALC_OPS, '+');
+              return `- ${x.op ? `${op === '-' ? '−' : op} ` : ''}${str(x.label)}: ${str(x.value)}`;
+            }),
+          `- = **${str(p.resultLabel)}: ${str(p.result)}**`,
+        ].join('\n') +
+        (p.note ? `\n\n_${str(p.note)}_` : '')
+      );
+    case 'CodeWalkthrough':
+      return (
+        heading(p.heading) +
+        `\`\`\`${str(p.language)}\n${str(p.code)}\n\`\`\`\n\n` +
+        list(p.notes)
+          .map(props)
+          .map((x) => `- **L${str(x.lines)}**: ${str(x.text)}`)
+          .join('\n')
+      );
+    case 'Tree':
+      return (
+        heading(p.heading) +
+        [
+          `- **${str(p.root)}**`,
+          ...list(p.branches)
+            .map(props)
+            .flatMap((b) => [
+              `  - ${str(b.label)}${b.note ? ` — ${str(b.note)}` : ''}`,
+              ...list(b.items).map((x) => `    - ${str(x)}`),
+            ]),
+        ].join('\n')
+      );
+    case 'QrCode':
+      return qrSafe(p.url) ? `[${str(p.label)}](${str(p.url).trim()})${p.caption ? ` — ${str(p.caption)}` : ''}` : '';
     case 'TextContent':
       return str(p.text);
     case 'MarkDownRenderer':

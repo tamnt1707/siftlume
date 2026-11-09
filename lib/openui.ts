@@ -10,6 +10,7 @@ import { DIAGRAM_SUMMARY_EXAMPLE } from './diagram-example';
 import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from './review-example';
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from './domain-example';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from './mode-example';
+import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from './analysis-example';
 import { MODE_QA_RULES, MODE_RULES, type AnalysisMode } from './modes';
 import type { ExtractedSource, SourceKind } from './extractors';
 import type { Settings, SummaryLength } from './settings';
@@ -33,7 +34,7 @@ const LENGTH_RULES: Record<SummaryLength, string> = {
  */
 const STRUCTURE_RULES = [
   'STRUCTURE: choose the structure from the source and the mode, not from a template. Two different kinds of source should rarely produce the same sequence of blocks. Only SummaryHero (first) and FollowUpBlock with 2-3 short questions (last) are fixed.',
-  "After SummaryHero, lead with the block that answers the reader's first question for this kind of source: news → what happened (Timeline or Takeaways), then People, ClaimCheck if contested; product or review → Verdict, FactSheet or Comparison, then ProsCons or PricingPlans; how-to, tutorial or recipe → FactSheet (time, level, what you need), then Steps; research or study → ResearchBrief, then a chart; opinion or essay → the argument as Takeaways, then ClaimCheck or ProsCons; documentation or reference → FactSheet, Table or CodeBlock, then Glossary; data, report or finance → KeyNumbers and charts; release notes or policy changes → ChangeList, then RiskList; project or status update → StatusBoard; story, biography or history → Timeline and People.",
+  "After SummaryHero, lead with the block that answers the reader's first question for this kind of source: news → what happened (Timeline or Takeaways) or why (CauseEffect), then People or Perspectives, ClaimCheck if contested; policy or law → BeforeAfter, then Perspectives and Scenarios; product or review → Verdict, FactSheet or Comparison, then ProsCons or PricingPlans; buying guide or decision → DecisionMatrix, then Calculation for the cost; how-to, tutorial or recipe → FactSheet (time, level, what you need), then Steps; research or study → ResearchBrief, then a chart; opinion or essay → ArgumentMap, then ClaimCheck; documentation or tutorial → Tree for the structure, CodeWalkthrough or Steps, then Glossary; business or strategy → Matrix2x2 (SWOT) and Scenarios; data, report or finance → KeyNumbers and charts; release notes or policy changes → ChangeList, then RiskList; project or status update → StatusBoard; story, biography or history → Timeline and People.",
   'Use KeyNumbers only for real headline figures and Takeaways only for separate points; neither is required. Mix block types: avoid two text lists in a row, and use a domain block (FactSheet, Comparison, RiskList…) when the source fits one.',
 ];
 
@@ -42,16 +43,18 @@ const MODE_EXAMPLES: Record<AnalysisMode, string[]> = {
   summary: [
     NEWS_ACTORS_EXAMPLE,
     PRODUCT_COMPARE_EXAMPLE,
+    POLICY_DEBATE_EXAMPLE,
     RESEARCH_PAPER_EXAMPLE,
     CHART_SUMMARY_EXAMPLE,
-    VISUAL_SUMMARY_EXAMPLE,
+    CODE_TUTORIAL_EXAMPLE,
     REVIEW_SUMMARY_EXAMPLE,
     RELEASE_NOTES_EXAMPLE,
     DIAGRAM_SUMMARY_EXAMPLE,
+    VISUAL_SUMMARY_EXAMPLE,
   ],
-  explain: [EXPLAIN_EXAMPLE, DIAGRAM_SUMMARY_EXAMPLE, CHART_SUMMARY_EXAMPLE, RESEARCH_PAPER_EXAMPLE],
-  critique: [CRITIQUE_EXAMPLE, RESEARCH_PAPER_EXAMPLE, NEWS_ACTORS_EXAMPLE, CHART_SUMMARY_EXAMPLE],
-  action: [ACTION_EXAMPLE, RELEASE_NOTES_EXAMPLE, PRODUCT_COMPARE_EXAMPLE, DIAGRAM_SUMMARY_EXAMPLE],
+  explain: [EXPLAIN_EXAMPLE, CODE_TUTORIAL_EXAMPLE, DIAGRAM_SUMMARY_EXAMPLE, CHART_SUMMARY_EXAMPLE],
+  critique: [CRITIQUE_EXAMPLE, POLICY_DEBATE_EXAMPLE, RESEARCH_PAPER_EXAMPLE, NEWS_ACTORS_EXAMPLE],
+  action: [ACTION_EXAMPLE, DECISION_EXAMPLE, RELEASE_NOTES_EXAMPLE, PRODUCT_COMPARE_EXAMPLE],
 };
 
 /**
@@ -72,6 +75,10 @@ const VISUAL_RULES = [
   'Risks, side effects, vulnerabilities or red flags → RiskList graded high/medium/low, instead of several warning Callouts.',
   'News, opinion, health, science or marketing claims → ClaimCheck for the 2-5 main claims, judged only by the evidence the source itself gives.',
   'Project updates and roadmaps grouped by status → StatusBoard. Release notes, changelogs and amended laws, policies or terms → ChangeList.',
+  'Persuasive sources (op-eds, essays, proposals, rulings) → ArgumentMap: the thesis with arguments for and against and their evidence. Why something happened and what follows → CauseEffect. Several parties with different views on one issue → Perspectives.',
+  'Choosing between options the source judges → DecisionMatrix (scores 1-5 grounded in the source, weights for what matters most). Possible futures (forecasts, outlooks) → Scenarios. SWOT or impact/effort analyses → Matrix2x2.',
+  'A new law, policy, price or redesign → BeforeAfter, aspect by aspect. A figure worked out from parts (total cost, tax, savings, dosage) → Calculation; use only numbers from the source.',
+  'A hierarchy (topic breakdown, taxonomy, org chart, folder structure, course outline) → Tree. Code the source explains → CodeWalkthrough with notes on line ranges. A link the reader will open on a phone (download, sign-up, tickets, map) → QrCode, only with a URL written in the source.',
   'Research papers, studies, trials and surveys → ResearchBrief (question, findings, method, sample, limitations) right after SummaryHero, instead of Takeaways for the findings.',
   'Topics, entities, keywords → TagBlock. Comparing options across several attributes → a small Table. Warnings or caveats → Callout("warning", ...).',
   'No paragraphs longer than 2 short sentences. Avoid MarkDownRenderer at the top level; put longer explanations inside a folded SectionBlock.',

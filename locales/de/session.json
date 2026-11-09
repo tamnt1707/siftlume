@@ -73,7 +73,36 @@
     },
     "analogy": "Das ist wie",
     "myth": "Irrtum",
-    "fact": "Tatsächlich"
+    "fact": "Tatsächlich",
+    "argument": {
+      "thesis": "Hauptthese",
+      "for": "Dafür",
+      "against": "Dagegen"
+    },
+    "cause": {
+      "causes": "Ursachen",
+      "event": "Was geschah",
+      "effects": "Folgen"
+    },
+    "decision": {
+      "total": "Wertung"
+    },
+    "scenario": {
+      "best": "Bester Fall",
+      "base": "Basisfall",
+      "worst": "Schlimmster Fall",
+      "likelihood": "Wahrscheinlichkeit",
+      "signal": "Achten auf"
+    },
+    "stance": {
+      "for": "Dafür",
+      "against": "Dagegen",
+      "mixed": "Gemischt",
+      "neutral": "Neutral"
+    },
+    "before": "Vorher",
+    "after": "Nachher",
+    "qrScan": "Zum Öffnen scannen"
   },
   "refineHint": {
     "shorter": "Nur die wichtigsten Punkte behalten.",

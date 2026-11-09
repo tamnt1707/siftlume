@@ -70,7 +70,36 @@
     },
     "analogy": "비유하자면",
     "myth": "오해",
-    "fact": "사실은"
+    "fact": "사실은",
+    "argument": {
+      "thesis": "핵심 주장",
+      "for": "지지",
+      "against": "반론"
+    },
+    "cause": {
+      "causes": "원인",
+      "event": "일어난 일",
+      "effects": "결과"
+    },
+    "decision": {
+      "total": "점수"
+    },
+    "scenario": {
+      "best": "최선의 경우",
+      "base": "기본 경우",
+      "worst": "최악의 경우",
+      "likelihood": "가능성",
+      "signal": "주목할 신호"
+    },
+    "stance": {
+      "for": "찬성",
+      "against": "반대",
+      "mixed": "엇갈림",
+      "neutral": "중립"
+    },
+    "before": "이전",
+    "after": "이후",
+    "qrScan": "스캔해서 열기"
   },
   "refineHint": {
     "shorter": "가장 중요한 내용만 남깁니다.",

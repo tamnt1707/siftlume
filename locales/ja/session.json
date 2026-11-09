@@ -70,7 +70,36 @@
     },
     "analogy": "たとえるなら",
     "myth": "誤解",
-    "fact": "実際は"
+    "fact": "実際は",
+    "argument": {
+      "thesis": "主な主張",
+      "for": "支持",
+      "against": "反論"
+    },
+    "cause": {
+      "causes": "原因",
+      "event": "起きたこと",
+      "effects": "影響"
+    },
+    "decision": {
+      "total": "スコア"
+    },
+    "scenario": {
+      "best": "最良のケース",
+      "base": "基本ケース",
+      "worst": "最悪のケース",
+      "likelihood": "可能性",
+      "signal": "注目すべき兆候"
+    },
+    "stance": {
+      "for": "賛成",
+      "against": "反対",
+      "mixed": "賛否あり",
+      "neutral": "中立"
+    },
+    "before": "変更前",
+    "after": "変更後",
+    "qrScan": "スキャンして開く"
   },
   "refineHint": {
     "shorter": "最も重要なポイントだけを残します。",

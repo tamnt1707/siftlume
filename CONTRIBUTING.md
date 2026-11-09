@@ -110,7 +110,7 @@ Generated, more detailed documentation is in [`openwiki/`](openwiki/index.md). I
 
 ### Add a component the model can use
 
-Summary components live in `lib/genui/`, one file per group: `core` (hero, numbers, takeaways, timeline, quotes), `diagram`, `review`, `entities` (people, glossary), `product`, `trust` (risks, claims), `project` (status board, changelog) and `research`. `lib/library.ts` registers them.
+Summary components live in `lib/genui/`, one file per group: `core` (hero, numbers, takeaways, timeline, quotes), `diagram`, `review`, `entities` (people, glossary), `product`, `trust` (risks, claims), `project` (status board, changelog), `research`, `explain` (analogy, misconceptions), `reasoning` (argument map, cause and effect), `decision` (decision matrix, scenarios, 2×2 matrix), `viewpoints` (perspectives, before/after), `technical` (calculation, code walkthrough) and `structure` (tree, QR code). `lib/library.ts` registers them and removes the openuiChatLibrary form controls the app never uses.
 
 1. Define it with `defineComponent` and a Zod schema. The key order of `props` is the argument order the model writes, so put required props first.
    ```tsx

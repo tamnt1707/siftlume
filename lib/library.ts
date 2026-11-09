@@ -19,6 +19,11 @@ import { Claim, ClaimCheck, Risk, RiskList } from './genui/trust';
 import { Change, ChangeList, StatusBoard, StatusColumn } from './genui/project';
 import { ResearchBrief } from './genui/research';
 import { Analogy, Misconception, Misconceptions } from './genui/explain';
+import { Argument, ArgumentMap, CauseEffect } from './genui/reasoning';
+import { Choice, Criterion, DecisionMatrix, Matrix2x2, Quadrant, Scenario, Scenarios } from './genui/decision';
+import { BeforeAfter, Perspective, Perspectives, Shift } from './genui/viewpoints';
+import { CalcStep, Calculation, CodeNote, CodeWalkthrough } from './genui/technical';
+import { Branch, QrCode, Tree } from './genui/structure';
 
 /**
  * The component library the model writes against. Components live in lib/genui/, one file per
@@ -28,6 +33,32 @@ import { Analogy, Misconception, Misconceptions } from './genui/explain';
 export { highlightInPage, copyText } from './genui/actions';
 export { RISK_LEVELS, CLAIM_STATUSES } from './genui/trust';
 export { CHANGE_TYPES } from './genui/project';
+export { ARGUMENT_STANCES } from './genui/reasoning';
+export { SCENARIO_KINDS, weightedScores } from './genui/decision';
+export { STANCES } from './genui/viewpoints';
+export { CALC_OPS, lineRange } from './genui/technical';
+export { qrSafe } from './genui/structure';
+
+/**
+ * Form controls of openuiChatLibrary that a reading assistant never needs. Form, FormControl,
+ * Label, Select and Buttons stay: the CSV filters use them (lib/csv-tools.ts).
+ */
+const UNUSED = [
+  'Input',
+  'TextArea',
+  'DatePicker',
+  'Slider',
+  'CheckBoxGroup',
+  'CheckBoxItem',
+  'RadioGroup',
+  'RadioItem',
+  'SwitchGroup',
+  'SwitchItem',
+  'Chips',
+  'ChipItem',
+  'OptionCards',
+  'OptionCard',
+];
 
 /**
  * Library shared by the summary and Q&A: openuiChatLibrary (root Card) + SourceQuote + custom
@@ -58,6 +89,17 @@ export const library = openuiChatLibrary.extend({
       { component: ResearchBrief, slots: CONTENT_SLOTS },
       { component: Analogy, slots: CONTENT_SLOTS },
       { component: Misconceptions, slots: CONTENT_SLOTS },
+      { component: ArgumentMap, slots: CONTENT_SLOTS },
+      { component: CauseEffect, slots: CONTENT_SLOTS },
+      { component: DecisionMatrix, slots: CONTENT_SLOTS },
+      { component: Scenarios, slots: CONTENT_SLOTS },
+      { component: Matrix2x2, slots: CONTENT_SLOTS },
+      { component: Perspectives, slots: CONTENT_SLOTS },
+      { component: BeforeAfter, slots: CONTENT_SLOTS },
+      { component: Calculation, slots: CONTENT_SLOTS },
+      { component: CodeWalkthrough, slots: CONTENT_SLOTS },
+      { component: Tree, slots: CONTENT_SLOTS },
+      { component: QrCode, slots: CONTENT_SLOTS },
       // Children of the blocks above; not placed directly in Card.
       KeyNumber,
       Takeaway,
@@ -73,7 +115,18 @@ export const library = openuiChatLibrary.extend({
       StatusColumn,
       Change,
       Misconception,
+      Argument,
+      Criterion,
+      Choice,
+      Scenario,
+      Quadrant,
+      Perspective,
+      Shift,
+      CalcStep,
+      CodeNote,
+      Branch,
     ],
+    remove: UNUSED,
   },
   actions: { add: [highlightInPage, copyText] },
 });
