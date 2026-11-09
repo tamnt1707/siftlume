@@ -11,8 +11,6 @@
   "fullPage": "Pleine page",
   "fullPageTitle": "Ouvrir ce résumé dans un onglet pleine page",
   "truncated": "Contenu long : seul le début a été envoyé (la limite se règle dans les paramètres).",
-  "summarizing": "Résumé en cours…",
-  "updating": "Mise à jour du résumé…",
   "thinking": "Réflexion…",
   "noSummary": "Pas encore de résumé. Recommencez avec une nouvelle source.",
   "refinePlaceholder": "Modifier le résumé… (ex. : ajouter un tableau comparatif)",

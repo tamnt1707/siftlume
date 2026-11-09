@@ -11,8 +11,6 @@
   "fullPage": "Full page",
   "fullPageTitle": "Open this summary in a full-page tab",
   "truncated": "Long content: only the beginning was sent (the limit is in Settings).",
-  "summarizing": "Summarizing…",
-  "updating": "Updating summary…",
   "thinking": "Thinking…",
   "noSummary": "No summary yet. Start again from a new source.",
   "refinePlaceholder": "Change the summary… (e.g. add a comparison table)",

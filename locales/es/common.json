@@ -37,8 +37,20 @@
     "noResults": "No se encontraron modelos.",
     "manage": "Gestionar modelos en Ajustes"
   },
-  "readingPage": "Leyendo la página…",
   "pastedText": "Texto pegado",
   "selection": "Selección",
-  "selectionOf": "Selección: {{title}}"
+  "selectionOf": "Selección: {{title}}",
+  "loader": {
+    "reading": "Leyendo la página",
+    "sifting": "Eligiendo lo importante",
+    "drawing": "Creando tu resumen",
+    "reanalyzing": "Resumiendo de nuevo",
+    "updating": "Aplicando tu cambio",
+    "steps": {
+      "read": "Leer",
+      "sift": "Filtrar",
+      "draw": "Crear"
+    },
+    "elapsed": "{{seconds}} s"
+  }
 }

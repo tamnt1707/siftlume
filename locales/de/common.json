@@ -36,8 +36,20 @@
     "noResults": "Keine Modelle gefunden.",
     "manage": "Modelle in den Einstellungen verwalten"
   },
-  "readingPage": "Seite wird gelesen…",
   "pastedText": "Eingefügter Text",
   "selection": "Auswahl",
-  "selectionOf": "Auswahl: {{title}}"
+  "selectionOf": "Auswahl: {{title}}",
+  "loader": {
+    "reading": "Seite wird gelesen",
+    "sifting": "Das Wichtigste wird ausgewählt",
+    "drawing": "Zusammenfassung wird erstellt",
+    "reanalyzing": "Wird neu zusammengefasst",
+    "updating": "Änderung wird angewendet",
+    "steps": {
+      "read": "Lesen",
+      "sift": "Sieben",
+      "draw": "Gestalten"
+    },
+    "elapsed": "{{seconds}} s"
+  }
 }

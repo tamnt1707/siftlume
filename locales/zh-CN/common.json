@@ -35,8 +35,20 @@
     "noResults": "未找到模型。",
     "manage": "在设置中管理模型"
   },
-  "readingPage": "正在读取页面…",
   "pastedText": "粘贴的文本",
   "selection": "选中内容",
-  "selectionOf": "选中内容:{{title}}"
+  "selectionOf": "选中内容:{{title}}",
+  "loader": {
+    "reading": "正在读取页面",
+    "sifting": "正在挑选要点",
+    "drawing": "正在生成摘要",
+    "reanalyzing": "正在重新摘要",
+    "updating": "正在应用更改",
+    "steps": {
+      "read": "读取",
+      "sift": "筛选",
+      "draw": "呈现"
+    },
+    "elapsed": "{{seconds}} 秒"
+  }
 }

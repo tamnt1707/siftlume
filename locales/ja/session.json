@@ -11,8 +11,6 @@
   "fullPage": "全画面",
   "fullPageTitle": "この要約を全画面のタブで開く",
   "truncated": "長いコンテンツのため、先頭部分のみ送信しました(上限は設定で変更できます)。",
-  "summarizing": "要約中…",
-  "updating": "要約を更新中…",
   "thinking": "考え中…",
   "noSummary": "要約はまだありません。新しいソースからやり直してください。",
   "refinePlaceholder": "要約を変更…(例: 比較表を追加)",

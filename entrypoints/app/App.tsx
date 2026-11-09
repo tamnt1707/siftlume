@@ -9,6 +9,7 @@ import { ModelSwitcher } from '@/components/ModelSwitcher';
 import { SessionView } from '@/components/SessionView';
 import { SettingsForm } from '@/components/SettingsForm';
 import { SourcePicker, type PageTarget } from '@/components/SourcePicker';
+import { SiftLoader } from '@/components/SiftLoader';
 import { isReadableUrl } from '@/lib/page';
 import { useSession } from '@/components/useSession';
 import { useSettings } from '@/components/useSettings';
@@ -237,7 +238,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
             onPrint={isPanel && sessionId ? () => void openApp({ session: sessionId, print: '1' }) : undefined}
           />
         ) : ctrl.phase === 'extracting' ? (
-          <p className="muted center">{t('readingPage')}</p>
+          <SiftLoader stage="reading" title={t('loader.reading')} onStop={ctrl.stop} />
         ) : (
           <div className="narrow">
             <SourcePicker ctrl={ctrl} page={pageTarget} />

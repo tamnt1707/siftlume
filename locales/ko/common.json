@@ -35,8 +35,20 @@
     "noResults": "모델을 찾을 수 없습니다.",
     "manage": "설정에서 모델 관리"
   },
-  "readingPage": "페이지를 읽는 중…",
   "pastedText": "붙여넣은 텍스트",
   "selection": "선택한 내용",
-  "selectionOf": "선택한 내용: {{title}}"
+  "selectionOf": "선택한 내용: {{title}}",
+  "loader": {
+    "reading": "페이지 읽는 중",
+    "sifting": "핵심을 고르는 중",
+    "drawing": "요약을 만드는 중",
+    "reanalyzing": "다시 요약하는 중",
+    "updating": "변경 사항 적용 중",
+    "steps": {
+      "read": "읽기",
+      "sift": "고르기",
+      "draw": "그리기"
+    },
+    "elapsed": "{{seconds}}초"
+  }
 }

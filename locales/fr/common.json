@@ -37,8 +37,20 @@
     "noResults": "Aucun modèle trouvé.",
     "manage": "Gérer les modèles dans les paramètres"
   },
-  "readingPage": "Lecture de la page…",
   "pastedText": "Texte collé",
   "selection": "Sélection",
-  "selectionOf": "Sélection : {{title}}"
+  "selectionOf": "Sélection : {{title}}",
+  "loader": {
+    "reading": "Lecture de la page",
+    "sifting": "Sélection de l’essentiel",
+    "drawing": "Création du résumé",
+    "reanalyzing": "Nouveau résumé en cours",
+    "updating": "Application de la modification",
+    "steps": {
+      "read": "Lire",
+      "sift": "Trier",
+      "draw": "Créer"
+    },
+    "elapsed": "{{seconds}} s"
+  }
 }

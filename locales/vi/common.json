@@ -35,8 +35,20 @@
     "noResults": "Không tìm thấy model.",
     "manage": "Quản lý model trong Cài đặt"
   },
-  "readingPage": "Đang đọc trang…",
   "pastedText": "Văn bản đã dán",
   "selection": "Đoạn đã chọn",
-  "selectionOf": "Đoạn đã chọn: {{title}}"
+  "selectionOf": "Đoạn đã chọn: {{title}}",
+  "loader": {
+    "reading": "Đang đọc trang",
+    "sifting": "Đang chọn ý chính",
+    "drawing": "Đang dựng bản tóm tắt",
+    "reanalyzing": "Đang phân tích lại",
+    "updating": "Đang áp dụng thay đổi",
+    "steps": {
+      "read": "Đọc",
+      "sift": "Lọc",
+      "draw": "Dựng"
+    },
+    "elapsed": "{{seconds}} giây"
+  }
 }

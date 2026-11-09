@@ -11,8 +11,6 @@
   "fullPage": "전체 페이지",
   "fullPageTitle": "이 요약을 전체 페이지 탭에서 열기",
   "truncated": "내용이 길어 앞부분만 보냈습니다 (한도는 설정에서 바꿀 수 있습니다).",
-  "summarizing": "요약하는 중…",
-  "updating": "요약을 업데이트하는 중…",
   "thinking": "생각하는 중…",
   "noSummary": "아직 요약이 없습니다. 새 소스로 다시 시작하세요.",
   "refinePlaceholder": "요약 수정… (예: 비교표 추가)",

@@ -35,8 +35,20 @@
     "noResults": "ไม่พบโมเดล",
     "manage": "จัดการโมเดลในการตั้งค่า"
   },
-  "readingPage": "กำลังอ่านหน้าเว็บ…",
   "pastedText": "ข้อความที่วาง",
   "selection": "ข้อความที่เลือก",
-  "selectionOf": "ข้อความที่เลือก: {{title}}"
+  "selectionOf": "ข้อความที่เลือก: {{title}}",
+  "loader": {
+    "reading": "กำลังอ่านหน้าเว็บ",
+    "sifting": "กำลังคัดใจความสำคัญ",
+    "drawing": "กำลังสร้างสรุป",
+    "reanalyzing": "กำลังสรุปใหม่",
+    "updating": "กำลังปรับตามที่ขอ",
+    "steps": {
+      "read": "อ่าน",
+      "sift": "คัด",
+      "draw": "สร้าง"
+    },
+    "elapsed": "{{seconds}} วินาที"
+  }
 }

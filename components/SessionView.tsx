@@ -12,6 +12,7 @@ import { GenUI, type GenUIAction } from './GenUI';
 import { ResultToolbar, readingMinutes } from './ResultToolbar';
 import type { Settings } from '@/lib/settings';
 import { Icon } from './Icon';
+import { SiftLoader } from './SiftLoader';
 import type { SessionController } from './useSession';
 
 /** One-click refinements, applied with edit mode (the model only patches what changes). */
@@ -109,6 +110,35 @@ export function SessionView({
   const summaryResponse = streamedCode || summary.content;
   const summaryStreaming = ctrl.phase === 'summarizing';
 
+  /**
+   * One loading state for every (re)analysis:
+   * - nothing on screen yet → a full loader block;
+   * - a summary is being redone (other length, language or model, refresh, refine, new page) →
+   *   the old one stays dimmed under the loader until the new output arrives;
+   * - output streaming in → a slim strip above it.
+   */
+  const reworking = ctrl.phase === 'refining' || ctrl.phase === 'extracting' || (summaryStreaming && !streamedCode);
+  const loader =
+    !busy || ctrl.phase === 'answering' ? null : streamedCode ? (
+      <SiftLoader stage="drawing" title={t('common:loader.drawing')} variant="strip" onStop={ctrl.stop} />
+    ) : (
+      <SiftLoader
+        stage={ctrl.phase === 'extracting' ? 'reading' : 'sifting'}
+        title={t(
+          ctrl.phase === 'extracting'
+            ? 'common:loader.reading'
+            : ctrl.phase === 'refining'
+              ? 'common:loader.updating'
+              : summary.content
+                ? 'common:loader.reanalyzing'
+                : 'common:loader.sifting',
+        )}
+        variant={summary.content ? 'overlay' : 'block'}
+        onStop={ctrl.stop}
+      />
+    );
+  const dimmed = reworking && Boolean(summary.content);
+
   return (
     <div className={`session session--${layout}`}>
       <header className="source">
@@ -181,8 +211,9 @@ export function SessionView({
             </div>
           </section>
         )}
-        <section className="summary">
-          {(summaryResponse || summaryStreaming) && (
+        <section className={`summary ${dimmed ? 'is-reworking' : ''}`} aria-busy={Boolean(loader)}>
+          {loader}
+          {summaryResponse && (
             <GenUI
               // Keyed by session so the Renderer resets its state when switching sessions.
               key={session.id}
@@ -193,12 +224,6 @@ export function SessionView({
               initialState={summary.context.formState}
               onStateUpdate={ctrl.updateSummaryState}
             />
-          )}
-          {summaryStreaming && (
-            <Thinking label={t('summarizing')} stopLabel={t('common:actions.stop')} onStop={ctrl.stop} />
-          )}
-          {ctrl.phase === 'refining' && (
-            <Thinking label={t('updating')} stopLabel={t('common:actions.stop')} onStop={ctrl.stop} />
           )}
           {!busy && summary.context.note && <p className="note">{summary.context.note}</p>}
           {!busy && !summary.content && !summary.context.note && <p className="muted">{t('noSummary')}</p>}

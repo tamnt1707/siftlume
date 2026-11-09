@@ -2,7 +2,7 @@ import '../../lib/no-openui-devtools';
 import type { ReactElement } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Renderer } from '@openuidev/react-lang';
-import '../../lib/i18n/react';
+import i18n from '../../lib/i18n/react';
 import '@openuidev/react-ui/components.css';
 import '@openuidev/react-ui/styles/index.css';
 import '../../assets/fonts';
@@ -12,6 +12,7 @@ import './showcase.css';
 import { ArrowExpand01Icon, ArrowUp02Icon, Clock01Icon, RefreshIcon, Settings02Icon } from '@hugeicons/core-free-icons';
 import { Icon } from '../../components/Icon';
 import { Themed } from '../../components/Themed';
+import { SiftLoader } from '../../components/SiftLoader';
 import { SettingsForm } from '../../components/SettingsForm';
 import { ResultToolbar } from '../../components/ResultToolbar';
 import type { SessionController } from '../../components/useSession';
@@ -250,6 +251,33 @@ function Components() {
   );
 }
 
+/** Every loading state: reading, sifting (first run), redoing a summary (overlay), streaming (strip). */
+function Loaders() {
+  const t = (k: 'loader.reading' | 'loader.sifting' | 'loader.reanalyzing' | 'loader.drawing') =>
+    i18n.t(k, { ns: 'common' });
+  return (
+    <Themed settings={settings} className="app app--page sc-components">
+      <main className="content sc-components__grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+        <div className="session session--page sc-components__col">
+          <SiftLoader stage="reading" title={t('loader.reading')} onStop={() => {}} />
+          <SiftLoader stage="sifting" title={t('loader.sifting')} onStop={() => {}} />
+        </div>
+        <div className="session session--panel sc-components__col" style={{ display: 'block', maxWidth: 400 }}>
+          <section className="summary is-reworking">
+            <SiftLoader stage="sifting" title={t('loader.reanalyzing')} variant="overlay" onStop={() => {}} />
+            <div className="genui">
+              <Renderer library={library} response={REVIEW_SUMMARY_EXAMPLE} isStreaming={false} />
+            </div>
+          </section>
+          <section className="summary" style={{ marginTop: 24 }}>
+            <SiftLoader stage="drawing" title={t('loader.drawing')} variant="strip" onStop={() => {}} />
+          </section>
+        </div>
+      </main>
+    </Themed>
+  );
+}
+
 function SettingsView() {
   return (
     <Themed settings={settings} className="app app--page sc-settings">
@@ -370,6 +398,7 @@ const views: Record<string, () => ReactElement> = {
   fullpage: FullPage,
   settings: SettingsView,
   components: Components,
+  loader: Loaders,
 };
 const View = views[view] ?? Compare;
 ReactDOM.createRoot(document.getElementById('root')!).render(<View />);
