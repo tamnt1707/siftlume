@@ -104,6 +104,8 @@ const LAYOUT_RULES = {
   tab: 'The UI is shown full page (~800px wide). KeyNumbers with up to 4 items, tables up to 5 columns, charts welcome.',
   sidepanel:
     'The UI is shown in a narrow side panel (~400px wide). Single column: KeyNumbers with max 3 items, tables max 3 columns, charts are fine but keep them simple (≤8 points).',
+  phone:
+    'The UI is shown on a phone screen (~380px wide). Single column: KeyNumbers with max 2 items, tables max 3 columns, short labels, charts simple (≤6 points).',
 } as const;
 
 const KIND_RULES: Record<SourceKind, string> = {
@@ -128,9 +130,10 @@ function basePromptOptions(): PromptOptions {
   };
 }
 
-/** Layout depends on where the result is shown (Settings → Display). */
+/** Layout depends on where the result is shown (Settings → Display), or the phone screen it is on. */
 function layoutRule(settings: Settings) {
-  return LAYOUT_RULES[settings.display] ?? LAYOUT_RULES.tab;
+  const phone = typeof window !== 'undefined' && window.innerWidth > 0 && window.innerWidth < 520;
+  return phone ? LAYOUT_RULES.phone : (LAYOUT_RULES[settings.display] ?? LAYOUT_RULES.tab);
 }
 
 function userRules(settings: Settings) {

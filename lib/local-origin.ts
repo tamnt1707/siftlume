@@ -1,4 +1,5 @@
 import { browser } from '#imports';
+import { hasSessionRules } from './platform';
 
 const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '0.0.0.0', '[::1]']);
 
@@ -30,7 +31,7 @@ function ruleIdFor(origin: string) {
  * hosts the user granted (the local server, on Save) and shows no install-time warning.
  */
 export async function allowLocalOrigin(baseUrl: string) {
-  if (!isLocalUrl(baseUrl)) return;
+  if (!isLocalUrl(baseUrl) || !hasSessionRules()) return;
   const origin = new URL(baseUrl).origin;
   if (applied.has(origin)) return;
 

@@ -17,6 +17,7 @@ import { SUMMARY_STYLES } from '@/lib/refine';
 import { OUTPUT_LANGUAGES } from '@/lib/languages';
 import { Themed } from '@/components/Themed';
 import { fetchModels, isProviderConnected, modelCacheItem, type ModelCache, type ModelOption } from '@/lib/models';
+import { HAS_SIDE_PANEL } from '@/lib/platform';
 import {
   DEFAULT_SETTINGS,
   getProviderConfig,
@@ -299,28 +300,30 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: S
 
         <Tabs.Content value="summary" className="settings-tabs__panel">
           <section className="panel">
-            <div className="field">
-              <label>{t('summary.showIn')}</label>
-              <div className="segmented">
-                {(
-                  [
-                    ['sidepanel', t('summary.displaySidepanel')],
-                    ['tab', t('summary.displayTab')],
-                  ] as const
-                ).map(([value, label]) => (
-                  <button
-                    key={value}
-                    className={settings.display === value ? 'active' : ''}
-                    onClick={() => update({ display: value })}
-                  >
-                    {label}
-                  </button>
-                ))}
+            {HAS_SIDE_PANEL && (
+              <div className="field">
+                <label>{t('summary.showIn')}</label>
+                <div className="segmented">
+                  {(
+                    [
+                      ['sidepanel', t('summary.displaySidepanel')],
+                      ['tab', t('summary.displayTab')],
+                    ] as const
+                  ).map(([value, label]) => (
+                    <button
+                      key={value}
+                      className={settings.display === value ? 'active' : ''}
+                      onClick={() => update({ display: value })}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+                <p className="hint">
+                  {settings.display === 'tab' ? t('summary.displayTabHint') : t('summary.displaySidepanelHint')}
+                </p>
               </div>
-              <p className="hint">
-                {settings.display === 'tab' ? t('summary.displayTabHint') : t('summary.displaySidepanelHint')}
-              </p>
-            </div>
+            )}
             <div className="field">
               <label htmlFor="lang">{t('summary.outputLanguage')}</label>
               <Select

@@ -3,6 +3,7 @@ import { t } from '@/lib/i18n';
 import { DEFAULT_APPEARANCE, type Appearance, type ColorMode } from './appearance';
 import { SUMMARY_STYLES, type SummaryStyle } from './refine';
 import { ANALYSIS_MODES, type AnalysisMode } from './modes';
+import { HAS_SIDE_PANEL } from './platform';
 
 /**
  * How the provider is called:
@@ -227,6 +228,8 @@ export const settingsItem = storage.defineItem<Settings>('local:settings', {
 export function normalizeSettings(raw: Partial<Settings> | null | undefined): Settings {
   const s = { ...DEFAULT_SETTINGS, ...raw };
   if (s.display !== 'sidepanel' && s.display !== 'tab') s.display = DEFAULT_SETTINGS.display;
+  // No side panel outside Chromium (Safari, Firefox): results open in a tab.
+  if (!HAS_SIDE_PANEL) s.display = 'tab';
   if (!(s.provider in PROVIDERS)) s.provider = DEFAULT_SETTINGS.provider;
   // The analysis mode is chosen per run (start screen, result toolbar) and stored on the session;
   // every new analysis starts as a summary, whatever an older version saved here.

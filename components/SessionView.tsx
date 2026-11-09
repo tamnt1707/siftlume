@@ -14,6 +14,7 @@ import type { Settings } from '@/lib/settings';
 import { Icon } from './Icon';
 import { SiftLoader } from './SiftLoader';
 import type { SessionController } from './useSession';
+import { HAS_FAVICON_CACHE } from '@/lib/platform';
 
 /** One-click refinements, applied with edit mode (the model only patches what changes). */
 // Chip order; prompts live in lib/refine.ts (English, for the model), labels in locales.
@@ -144,7 +145,7 @@ export function SessionView({
       <header className="source">
         <div className="source__meta">
           {isWeb ? (
-            <img className="source__favicon" src={faviconUrl(source.origin!)} alt="" />
+            HAS_FAVICON_CACHE && <img className="source__favicon" src={faviconUrl(source.origin!)} alt="" />
           ) : (
             <span className="badge">{t(`common:kind.${source.kind}`)}</span>
           )}

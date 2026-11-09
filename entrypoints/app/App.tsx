@@ -32,8 +32,23 @@ function setRoute(params: Record<string, string>) {
  * - "panel": the side panel of one tab (sidepanel.html?tab=<id>). Requests for that tab arrive
  *            through storage; the panel only ever shows that tab's summaries.
  */
+/** Phone-width windows (Safari on iOS) get the side panel's single-column layout. */
+function useNarrow(max = 560) {
+  const query = `(max-width: ${max}px)`;
+  const [narrow, setNarrow] = useState(() => matchMedia(query).matches);
+  useEffect(() => {
+    const m = matchMedia(query);
+    const onChange = () => setNarrow(m.matches);
+    m.addEventListener('change', onChange);
+    return () => m.removeEventListener('change', onChange);
+  }, [query]);
+  return narrow;
+}
+
 export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }) {
   const isPanel = surface === 'panel';
+  // Layout only: a narrow page looks like the panel but keeps the page's behavior.
+  const compact = useNarrow() || isPanel;
   const { t } = useTranslation(['common', 'errors']);
   const { settings, loaded } = useSettings();
   const ctrl = useSession(settings);
@@ -156,7 +171,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
   };
 
   return (
-    <Themed settings={settings} className={`app ${isPanel ? 'app--panel' : 'app--page'}`}>
+    <Themed settings={settings} className={`app ${compact ? 'app--panel' : 'app--page'}`}>
       <header className="topbar">
         <button className="brand" onClick={goNew} title={t('actions.newSummary')}>
           {t('appName')}
@@ -232,7 +247,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
           <SessionView
             ctrl={ctrl}
             notify={notify}
-            layout={isPanel ? 'panel' : 'page'}
+            layout={compact ? 'panel' : 'page'}
             settings={settings}
             onExpand={isPanel && sessionId ? () => void openApp({ session: sessionId }) : undefined}
             onPrint={isPanel && sessionId ? () => void openApp({ session: sessionId, print: '1' }) : undefined}

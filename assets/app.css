@@ -1272,6 +1272,13 @@ kbd {
   min-height: 0;
 }
 
+/* iOS shows the popup as a sheet: fill its width instead of a desktop-sized box. */
+@media (hover: none) and (pointer: coarse) {
+  .popup {
+    width: 100%;
+  }
+}
+
 .popup__body {
   display: flex;
   flex-direction: column;
