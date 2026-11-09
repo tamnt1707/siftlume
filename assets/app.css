@@ -492,6 +492,84 @@ kbd {
   border-radius: var(--r-lg);
 }
 
+/* ── Analysis mode picker (components/ModePicker.tsx) ──────── */
+
+.mode-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 8px;
+}
+
+.mode-picker--compact {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.mode-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  color: var(--ink-2);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.mode-option:hover:not(:disabled) {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.mode-option.is-on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent) inset;
+}
+
+.mode-option:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.mode-option__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mode-option__text strong {
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.mode-option.is-on .mode-option__text strong {
+  color: var(--accent);
+}
+
+.mode-option__text span {
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--ink-2);
+}
+
+.mode-picker--compact .mode-option {
+  align-items: center;
+  padding: 8px 10px;
+}
+
+.mode-picker--compact .mode-option__text strong {
+  font-size: 13px;
+}
+
 .picker--drag {
   outline: 2px dashed var(--accent);
   outline-offset: 8px;
@@ -2070,6 +2148,11 @@ kbd {
   width: 170px;
 }
 
+.result-toolbar__mode {
+  width: 138px;
+}
+
+.result-toolbar__mode .ui-select,
 .result-toolbar__lang .ui-select {
   min-height: 32px;
   padding: 4px 8px 4px 10px;

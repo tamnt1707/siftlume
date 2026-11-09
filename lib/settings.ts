@@ -2,6 +2,7 @@ import { browser, storage } from '#imports';
 import { t } from '@/lib/i18n';
 import { DEFAULT_APPEARANCE, type Appearance, type ColorMode } from './appearance';
 import { SUMMARY_STYLES, type SummaryStyle } from './refine';
+import { ANALYSIS_MODES, type AnalysisMode } from './modes';
 
 /**
  * How the provider is called:
@@ -153,6 +154,8 @@ export interface Settings {
   uiLanguage: string;
   /** Output language. "auto" = same language as the source. */
   language: string;
+  /** What the reader wants: summary, explanation, critique or action items. Last choice is kept. */
+  mode: AnalysisMode;
   length: SummaryLength;
   /** Styles applied to every new summary (Settings → Summary → Always include). */
   styles: SummaryStyle[];
@@ -173,6 +176,7 @@ export const DEFAULT_SETTINGS: Settings = {
   providers: {},
   uiLanguage: 'auto',
   language: 'auto',
+  mode: 'summary',
   length: 'medium',
   styles: [],
   customInstructions: '',
@@ -224,6 +228,7 @@ export function normalizeSettings(raw: Partial<Settings> | null | undefined): Se
   const s = { ...DEFAULT_SETTINGS, ...raw };
   if (s.display !== 'sidepanel' && s.display !== 'tab') s.display = DEFAULT_SETTINGS.display;
   if (!(s.provider in PROVIDERS)) s.provider = DEFAULT_SETTINGS.provider;
+  if (!ANALYSIS_MODES.includes(s.mode)) s.mode = DEFAULT_SETTINGS.mode;
   if (s.theme !== 'light' && s.theme !== 'dark' && s.theme !== 'system') s.theme = DEFAULT_SETTINGS.theme;
   s.appearance = { ...DEFAULT_APPEARANCE, ...s.appearance };
   s.styles = Array.isArray(s.styles) ? s.styles.filter((x) => SUMMARY_STYLES.includes(x)) : [];

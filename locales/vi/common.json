@@ -50,5 +50,24 @@
       "draw": "Dựng"
     },
     "elapsed": "{{seconds}} giây"
+  },
+  "modeLabel": "Kiểu phân tích",
+  "modes": {
+    "summary": {
+      "title": "Tóm tắt",
+      "desc": "Nắm nhanh: dữ kiện và ý chính"
+    },
+    "explain": {
+      "title": "Giải thích",
+      "desc": "Hiểu sâu: cách hoạt động, ví dụ, thuật ngữ"
+    },
+    "critique": {
+      "title": "Phản biện",
+      "desc": "Đánh giá: luận điểm, bằng chứng, điểm yếu"
+    },
+    "action": {
+      "title": "Hành động",
+      "desc": "Việc cần làm: bước, hạn chót, quyết định"
+    }
   }
 }

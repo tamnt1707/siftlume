@@ -51,5 +51,24 @@
       "draw": "Draw"
     },
     "elapsed": "{{seconds}} s"
+  },
+  "modeLabel": "Analysis",
+  "modes": {
+    "summary": {
+      "title": "Summary",
+      "desc": "The gist in seconds: key facts and points"
+    },
+    "explain": {
+      "title": "Explain",
+      "desc": "Understand it: how it works, examples, terms"
+    },
+    "critique": {
+      "title": "Critique",
+      "desc": "Judge it: claims, evidence, weak spots"
+    },
+    "action": {
+      "title": "Action",
+      "desc": "What to do: steps, deadlines, decisions"
+    }
   }
 }

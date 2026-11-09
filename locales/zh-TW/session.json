@@ -67,7 +67,10 @@
       "sample": "樣本",
       "findings": "發現",
       "limitations": "限制"
-    }
+    },
+    "analogy": "就像",
+    "myth": "迷思",
+    "fact": "事實上"
   },
   "refineHint": {
     "shorter": "只保留最重要的重點。",

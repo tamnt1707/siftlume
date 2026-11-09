@@ -64,7 +64,8 @@
         "title": "Einsteigerfreundlich",
         "desc": "Einfache Wörter, kurze Sätze und eine kurze Erklärung jedes Fachbegriffs."
       }
-    }
+    },
+    "modeHint": "Was Sie von einer Seite wollen. Ihre letzte Wahl bleibt erhalten und lässt sich im Ergebnis ändern."
   },
   "appearance": {
     "uiLanguage": "Sprache der Oberfläche",

@@ -67,7 +67,10 @@
       "sample": "Mẫu",
       "findings": "Kết quả",
       "limitations": "Hạn chế"
-    }
+    },
+    "analogy": "Giống như",
+    "myth": "Lầm tưởng",
+    "fact": "Thực tế"
   },
   "refineHint": {
     "shorter": "Chỉ giữ những ý quan trọng nhất.",

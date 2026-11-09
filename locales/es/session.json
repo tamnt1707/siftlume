@@ -73,7 +73,10 @@
       "sample": "Muestra",
       "findings": "Resultados",
       "limitations": "Limitaciones"
-    }
+    },
+    "analogy": "Es como",
+    "myth": "Mito",
+    "fact": "En realidad"
   },
   "refineHint": {
     "shorter": "Deja solo los puntos más importantes.",

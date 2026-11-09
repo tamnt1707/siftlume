@@ -50,5 +50,24 @@
       "draw": "描く"
     },
     "elapsed": "{{seconds}} 秒"
+  },
+  "modeLabel": "分析の種類",
+  "modes": {
+    "summary": {
+      "title": "要約",
+      "desc": "数秒で要点：重要な事実とポイント"
+    },
+    "explain": {
+      "title": "解説",
+      "desc": "理解する：仕組み、例、用語"
+    },
+    "critique": {
+      "title": "批評",
+      "desc": "評価する：主張、根拠、弱点"
+    },
+    "action": {
+      "title": "行動",
+      "desc": "やること：手順、期限、判断"
+    }
   }
 }

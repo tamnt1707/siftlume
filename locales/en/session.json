@@ -70,7 +70,10 @@
       "sample": "Sample",
       "findings": "Findings",
       "limitations": "Limitations"
-    }
+    },
+    "analogy": "It's like",
+    "myth": "Myth",
+    "fact": "Actually"
   },
   "refineHint": {
     "shorter": "Keep only the most important points.",

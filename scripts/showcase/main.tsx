@@ -13,6 +13,8 @@ import { ArrowExpand01Icon, ArrowUp02Icon, Clock01Icon, RefreshIcon, Settings02I
 import { Icon } from '../../components/Icon';
 import { Themed } from '../../components/Themed';
 import { SiftLoader } from '../../components/SiftLoader';
+import { SourcePicker } from '../../components/SourcePicker';
+import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../../lib/mode-example';
 import { SettingsForm } from '../../components/SettingsForm';
 import { ResultToolbar } from '../../components/ResultToolbar';
 import type { SessionController } from '../../components/useSession';
@@ -223,6 +225,7 @@ function FullPage() {
 const COMPONENT_SETS: Record<string, string[]> = {
   default: [REVIEW_SUMMARY_EXAMPLE, NEWS_ACTORS_EXAMPLE],
   domain: [PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE],
+  modes: [EXPLAIN_EXAMPLE, CRITIQUE_EXAMPLE, ACTION_EXAMPLE],
 };
 
 function Components() {
@@ -272,6 +275,28 @@ function Loaders() {
           <section className="summary" style={{ marginTop: 24 }}>
             <SiftLoader stage="drawing" title={t('loader.drawing')} variant="strip" onStop={() => {}} />
           </section>
+        </div>
+      </main>
+    </Themed>
+  );
+}
+
+/** Start screens with the analysis mode picker: full page (with descriptions) and a tab's side panel. */
+function Pickers() {
+  const idle = { phase: 'idle' } as unknown as SessionController;
+  const explain = { ...settings, mode: 'explain' as const };
+  return (
+    <Themed settings={settings} className="app app--page sc-components">
+      <main className="content sc-components__grid" style={{ gridTemplateColumns: '1.4fr 1fr' }}>
+        <div className="narrow">
+          <SourcePicker ctrl={idle} settings={settings} />
+        </div>
+        <div className="app--panel" style={{ maxWidth: 400 }}>
+          <SourcePicker
+            ctrl={idle}
+            settings={explain}
+            page={{ id: 1, title: 'How vaccines train the immune system', readable: true }}
+          />
         </div>
       </main>
     </Themed>
@@ -399,6 +424,7 @@ const views: Record<string, () => ReactElement> = {
   settings: SettingsView,
   components: Components,
   loader: Loaders,
+  pickers: Pickers,
 };
 const View = views[view] ?? Compare;
 ReactDOM.createRoot(document.getElementById('root')!).render(<View />);

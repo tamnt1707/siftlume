@@ -63,7 +63,8 @@
         "title": "Dễ hiểu cho người mới",
         "desc": "Lời lẽ đơn giản, câu ngắn, và giải thích nhanh mỗi thuật ngữ chuyên môn."
       }
-    }
+    },
+    "modeHint": "Bạn muốn gì từ một trang. Lựa chọn gần nhất được giữ lại, và có thể đổi ngay trên màn hình kết quả."
   },
   "appearance": {
     "uiLanguage": "Ngôn ngữ giao diện",

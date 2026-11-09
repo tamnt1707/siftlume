@@ -1,12 +1,22 @@
 {
-  "title": "何を要約しますか?",
-  "summarizePage": "このページを要約",
+  "title": "何を読みましょうか？",
   "reading": "読み込み中…",
   "cannotRead": "このページは読み取れません",
   "or": "または",
   "pastePlaceholder": "ここにテキストを貼り付け…",
-  "summarizeText": "テキストを要約",
   "dropTitle": "ファイルをドロップ、またはクリックしてアップロード",
   "dropFormats": "PDF、CSV、Markdown、TXT、HTML、JSON",
-  "pageHint": "Webページを要約するには、そのページで拡張機能のアイコンをクリックするか、右クリックして「このページを要約」を選びます。"
+  "pageHint": "Webページを要約するには、そのページで拡張機能のアイコンをクリックするか、右クリックして「このページを要約」を選びます。",
+  "run": {
+    "summary": "このページを要約",
+    "explain": "このページを解説",
+    "critique": "このページを批評",
+    "action": "やることを抽出"
+  },
+  "runText": {
+    "summary": "テキストを要約",
+    "explain": "テキストを解説",
+    "critique": "テキストを批評",
+    "action": "やることを抽出"
+  }
 }

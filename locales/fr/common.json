@@ -52,5 +52,24 @@
       "draw": "Créer"
     },
     "elapsed": "{{seconds}} s"
+  },
+  "modeLabel": "Analyse",
+  "modes": {
+    "summary": {
+      "title": "Résumé",
+      "desc": "L’essentiel en quelques secondes : faits et points clés"
+    },
+    "explain": {
+      "title": "Expliquer",
+      "desc": "Comprendre : fonctionnement, exemples, termes"
+    },
+    "critique": {
+      "title": "Critique",
+      "desc": "Évaluer : affirmations, preuves, points faibles"
+    },
+    "action": {
+      "title": "Action",
+      "desc": "Quoi faire : étapes, échéances, décisions"
+    }
   }
 }

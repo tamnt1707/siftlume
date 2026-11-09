@@ -231,6 +231,16 @@ function render(node: unknown, level: number): string {
       ]
         .filter(Boolean)
         .join('\n\n');
+    case 'Analogy':
+      return `> **${t('session:genui.analogy')} ${str(p.like)}**: ${str(p.because)}`;
+    case 'Misconceptions':
+      return (
+        heading(p.heading) +
+        list(p.items)
+          .map(props)
+          .map((x) => `- ~~${str(x.myth)}~~ — **${t('session:genui.fact')}** ${str(x.fact)}`)
+          .join('\n')
+      );
     case 'TextContent':
       return str(p.text);
     case 'MarkDownRenderer':

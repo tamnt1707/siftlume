@@ -67,7 +67,10 @@
       "sample": "표본",
       "findings": "결과",
       "limitations": "한계"
-    }
+    },
+    "analogy": "비유하자면",
+    "myth": "오해",
+    "fact": "사실은"
   },
   "refineHint": {
     "shorter": "가장 중요한 내용만 남깁니다.",

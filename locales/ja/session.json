@@ -67,7 +67,10 @@
       "sample": "対象",
       "findings": "結果",
       "limitations": "限界"
-    }
+    },
+    "analogy": "たとえるなら",
+    "myth": "誤解",
+    "fact": "実際は"
   },
   "refineHint": {
     "shorter": "最も重要なポイントだけを残します。",

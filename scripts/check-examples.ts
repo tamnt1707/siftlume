@@ -11,6 +11,7 @@ import { CHART_SUMMARY_EXAMPLE } from '../lib/chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from '../lib/diagram-example';
 import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../lib/review-example';
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from '../lib/domain-example';
+import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../lib/mode-example';
 
 const parser = createParser(library.toJSONSchema(), 'Card');
 const examples: Record<string, string> = {
@@ -22,6 +23,9 @@ const examples: Record<string, string> = {
   'product-compare-example': PRODUCT_COMPARE_EXAMPLE,
   'release-notes-example': RELEASE_NOTES_EXAMPLE,
   'research-paper-example': RESEARCH_PAPER_EXAMPLE,
+  'explain-example': EXPLAIN_EXAMPLE,
+  'critique-example': CRITIQUE_EXAMPLE,
+  'action-example': ACTION_EXAMPLE,
   ...Object.fromEntries(CSV_TOOL_EXAMPLES.map((e, i) => [`csv-tools[${i}]`, e])),
 };
 

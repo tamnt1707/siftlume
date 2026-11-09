@@ -1,0 +1,51 @@
+/**
+ * Analysis modes: what the reader wants from the source. Each mode has its own goal, layout and
+ * favourite blocks, so a summary, an explanation, a critique and an action list look different.
+ * Instructions are for the model, so they stay in English; labels live in the locales.
+ */
+
+export type AnalysisMode = 'summary' | 'explain' | 'critique' | 'action';
+export const ANALYSIS_MODES: AnalysisMode[] = ['summary', 'explain', 'critique', 'action'];
+
+/** The user turn that asks for the analysis (also replayed before follow-up questions). */
+export const MODE_TASK: Record<AnalysisMode, string> = {
+  summary: 'Summarize this source.',
+  explain: 'Explain this source so I really understand it.',
+  critique: 'Critically assess this source: how far can I trust it?',
+  action: 'Tell me what I need to do, decide or remember based on this source.',
+};
+
+/** Rules for the first analysis and its refinements. */
+export const MODE_RULES: Record<AnalysisMode, string[]> = {
+  summary: [
+    'MODE: SUMMARY. Goal: the reader grasps the whole source in seconds: what it is about and its most important facts.',
+  ],
+  explain: [
+    'MODE: EXPLAIN. Goal: the reader understands the subject, even as a beginner. Do not just list what the source says; teach it.',
+    'SummaryHero tldr: the core idea in one plain sentence.',
+    'Build understanding in order: what it is → why it matters → how it works (Diagram for processes and relationships, Steps for procedures) → an Analogy from everyday life → Misconceptions the source corrects or that beginners often have → a Glossary of the terms used. Add a worked example from the source when it has one.',
+    'Plain words, short sentences, every term defined on first use. Numbers only when they help understanding. The Analogy is your own illustration; every fact must still come from the source.',
+  ],
+  critique: [
+    'MODE: CRITIQUE. Goal: help the reader judge how far to trust the source. Be neutral and fair: credit what is solid, flag what is weak.',
+    'SummaryHero tldr: the main claim and how well the source supports it, in one sentence.',
+    'Cover: the main claims and how the source backs them (ClaimCheck) → strengths and weaknesses of the argument (ProsCons with a heading) → missing context, one-sided sourcing, loaded wording or conflicts of interest visible in the source (RiskList) → what a careful reader should check next (Checklist). Back key claims with SourceQuote.',
+    'Judge only what is in the source: the evidence it gives, what it leaves out, who it quotes. Never use outside knowledge to declare a claim true or false; say what evidence is missing instead.',
+  ],
+  action: [
+    'MODE: ACTION. Goal: what the reader should do, decide or remember. Skip background unless it is needed to act.',
+    'SummaryHero tldr: the single most important thing to do or decide.',
+    'Lead with a Checklist of concrete actions, most urgent first. Then, as the source supports: deadlines and dates (Timeline), requirements, costs, contacts or eligibility (FactSheet), decisions with their options (Comparison or ProsCons), how-to steps (Steps), and the risks of not acting (RiskList).',
+    'If the source has nothing actionable, say so in the tldr and give the closest practical takeaways.',
+  ],
+};
+
+/** Shorter guidance for follow-up answers in each mode. */
+export const MODE_QA_RULES: Record<AnalysisMode, string> = {
+  summary: 'Answer directly and briefly.',
+  explain:
+    'The reader is learning: answer so a beginner understands, with an example, a Diagram or an Analogy when it helps.',
+  critique:
+    'The reader is evaluating the source: say what evidence the source gives for the answer and what is missing.',
+  action: 'The reader wants to act: answer with the concrete steps, dates or requirements from the source.',
+};

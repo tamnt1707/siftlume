@@ -241,7 +241,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
           <SiftLoader stage="reading" title={t('loader.reading')} onStop={ctrl.stop} />
         ) : (
           <div className="narrow">
-            <SourcePicker ctrl={ctrl} page={pageTarget} />
+            <SourcePicker ctrl={ctrl} page={pageTarget} settings={settings} />
           </div>
         )}
       </main>

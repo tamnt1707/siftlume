@@ -12,6 +12,7 @@ import {
 } from './openui';
 import { readStored, type QaTurn, type SessionSource } from './history';
 import type { Settings } from './settings';
+import { MODE_TASK } from './modes';
 
 const fence = (code: string) => '```openui-lang\n' + code + '\n```';
 
@@ -99,7 +100,7 @@ export function generateSummary(
 ): Promise<GenerateResult> {
   const { settings, source, previousProgram = '', instruction } = args;
   const messages: ModelMessage[] = [
-    { role: 'user', content: `${buildSourceMessage(source, source.truncated)}\n\nSummarize this source.` },
+    { role: 'user', content: `${buildSourceMessage(source, source.truncated)}\n\n${MODE_TASK[settings.mode]}` },
   ];
   if (previousProgram && instruction) {
     // Edit mode: the model sees the current merged program and returns only changed statements.
@@ -120,7 +121,7 @@ export function generateAnswer(
 ): Promise<GenerateResult> {
   const { settings, source, history, question, summaryProgram } = args;
   const messages: ModelMessage[] = [
-    { role: 'user', content: `${buildSourceMessage(source, source.truncated)}\n\nSummarize this source.` },
+    { role: 'user', content: `${buildSourceMessage(source, source.truncated)}\n\n${MODE_TASK[settings.mode]}` },
   ];
   if (summaryProgram) messages.push({ role: 'assistant', content: fence(summaryProgram) });
   for (const turn of history) {

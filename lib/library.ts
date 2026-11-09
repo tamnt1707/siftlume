@@ -18,6 +18,7 @@ import { CompareRow, Comparison, Fact, FactSheet, Plan, PricingPlans } from './g
 import { Claim, ClaimCheck, Risk, RiskList } from './genui/trust';
 import { Change, ChangeList, StatusBoard, StatusColumn } from './genui/project';
 import { ResearchBrief } from './genui/research';
+import { Analogy, Misconception, Misconceptions } from './genui/explain';
 
 /**
  * The component library the model writes against. Components live in lib/genui/, one file per
@@ -55,6 +56,8 @@ export const library = openuiChatLibrary.extend({
       { component: StatusBoard, slots: CONTENT_SLOTS },
       { component: ChangeList, slots: CONTENT_SLOTS },
       { component: ResearchBrief, slots: CONTENT_SLOTS },
+      { component: Analogy, slots: CONTENT_SLOTS },
+      { component: Misconceptions, slots: CONTENT_SLOTS },
       // Children of the blocks above; not placed directly in Card.
       KeyNumber,
       Takeaway,
@@ -69,6 +72,7 @@ export const library = openuiChatLibrary.extend({
       Claim,
       StatusColumn,
       Change,
+      Misconception,
     ],
   },
   actions: { add: [highlightInPage, copyText] },

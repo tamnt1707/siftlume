@@ -9,6 +9,8 @@ import { CHART_SUMMARY_EXAMPLE } from './chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from './diagram-example';
 import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from './review-example';
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from './domain-example';
+import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from './mode-example';
+import { MODE_QA_RULES, MODE_RULES, type AnalysisMode } from './modes';
 import type { ExtractedSource, SourceKind } from './extractors';
 import type { Settings, SummaryLength } from './settings';
 
@@ -16,12 +18,40 @@ const parser = createParser(library.toJSONSchema(), ROOT);
 
 // ── System prompts ─────────────────────────────────────────────────────────────
 
+/** Length sets how much, never which blocks: the structure comes from the mode and the source. */
 const LENGTH_RULES: Record<SummaryLength, string> = {
-  short: 'Length: minimal. TL;DR + at most 3 key points (+ metrics if the source has numbers). No details section.',
+  short: 'Length: minimal. SummaryHero plus 1-3 blocks. No folded details.',
   medium:
-    'Length: medium. TL;DR, metrics/visuals, 3-6 key points, then a folded SectionBlock with 2-4 detail sections.',
+    'Length: medium. SummaryHero plus 3-6 blocks; add a folded SectionBlock only if important detail would otherwise be lost.',
   detailed:
-    'Length: detailed, but still visual. TL;DR, metrics/visuals, key points, then a folded SectionBlock covering every important topic. Depth goes into folded sections, never into long paragraphs at the top.',
+    'Length: detailed, but still visual. SummaryHero plus 5-9 blocks, then a folded SectionBlock covering the remaining important topics. Depth goes into folded sections, never into long paragraphs at the top.',
+};
+
+/**
+ * Layout by source type, so different pages get different shapes instead of one template.
+ * Only SummaryHero (first) and FollowUpBlock (last) are fixed.
+ */
+const STRUCTURE_RULES = [
+  'STRUCTURE: choose the structure from the source and the mode, not from a template. Two different kinds of source should rarely produce the same sequence of blocks. Only SummaryHero (first) and FollowUpBlock with 2-3 short questions (last) are fixed.',
+  "After SummaryHero, lead with the block that answers the reader's first question for this kind of source: news → what happened (Timeline or Takeaways), then People, ClaimCheck if contested; product or review → Verdict, FactSheet or Comparison, then ProsCons or PricingPlans; how-to, tutorial or recipe → FactSheet (time, level, what you need), then Steps; research or study → ResearchBrief, then a chart; opinion or essay → the argument as Takeaways, then ClaimCheck or ProsCons; documentation or reference → FactSheet, Table or CodeBlock, then Glossary; data, report or finance → KeyNumbers and charts; release notes or policy changes → ChangeList, then RiskList; project or status update → StatusBoard; story, biography or history → Timeline and People.",
+  'Use KeyNumbers only for real headline figures and Takeaways only for separate points; neither is required. Mix block types: avoid two text lists in a row, and use a domain block (FactSheet, Comparison, RiskList…) when the source fits one.',
+];
+
+/** Examples shown to the model, the mode's own first (models lean on the first example). */
+const MODE_EXAMPLES: Record<AnalysisMode, string[]> = {
+  summary: [
+    NEWS_ACTORS_EXAMPLE,
+    PRODUCT_COMPARE_EXAMPLE,
+    RESEARCH_PAPER_EXAMPLE,
+    CHART_SUMMARY_EXAMPLE,
+    VISUAL_SUMMARY_EXAMPLE,
+    REVIEW_SUMMARY_EXAMPLE,
+    RELEASE_NOTES_EXAMPLE,
+    DIAGRAM_SUMMARY_EXAMPLE,
+  ],
+  explain: [EXPLAIN_EXAMPLE, DIAGRAM_SUMMARY_EXAMPLE, CHART_SUMMARY_EXAMPLE, RESEARCH_PAPER_EXAMPLE],
+  critique: [CRITIQUE_EXAMPLE, RESEARCH_PAPER_EXAMPLE, NEWS_ACTORS_EXAMPLE, CHART_SUMMARY_EXAMPLE],
+  action: [ACTION_EXAMPLE, RELEASE_NOTES_EXAMPLE, PRODUCT_COMPARE_EXAMPLE, DIAGRAM_SUMMARY_EXAMPLE],
 };
 
 /**
@@ -31,7 +61,8 @@ const VISUAL_RULES = [
   'VISUAL FIRST, MINIMAL TEXT. The reader must understand the source in 5 seconds. Prefer components over sentences.',
   'Always start with SummaryHero(title, tldr, source, readMinutes). For web pages omit source (the app already shows the site); for files pass the file name. The TL;DR is exactly one sentence, max 20 words. Do not add a separate CardHeader or TL;DR Callout.',
   'Headline numbers → KeyNumbers([KeyNumber(value, label, change)]) with 2-4 items. Never bury numbers in prose. Use a chart instead when there are 3+ comparable values of the same kind.',
-  'Key points → Takeaways([Takeaway(text, detail)]): 3-6 statements of max 12 words, most important first. Use detail only when essential.',
+  'Separate key points → Takeaways([Takeaway(text, detail)]): 3-6 statements of max 12 words, most important first. Use detail only when essential.',
+  'Explaining a concept → Analogy (an everyday comparison) and Misconceptions (myth vs fact), next to a Diagram or Steps for how it works.',
   'Dated events or ordered stages → Timeline([TimelineEvent(when, what)]). Only for real sequences.',
   'Reviews, opinions and decisions → ProsCons. A score stated in the source (e.g. 8/10, 4.5 stars) → Verdict; never invent a score.',
   '2-8 comparable numbers (shares, rankings, test results) → BarList, which is lighter than a chart and works in narrow spaces. Use a chart instead for trends over time or more than 8 values.',
@@ -124,41 +155,33 @@ function cachedPrompt(key: string, build: () => string) {
  * mergeStatements). inlineMode: the model may add a short sentence outside the code fence.
  */
 export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) {
-  const base = cachedPrompt(`summary:${source.kind}:${!!source.csv}`, () =>
+  const mode = settings.mode;
+  const base = cachedPrompt(`summary:${mode}:${source.kind}:${!!source.csv}`, () =>
     library.prompt({
       ...basePromptOptions(),
-      // A visual-first example (validated with the parser) next to the library's own examples.
-      examples: [
-        ...(openuiChatPromptOptions.examples ?? []),
-        VISUAL_SUMMARY_EXAMPLE,
-        CHART_SUMMARY_EXAMPLE,
-        DIAGRAM_SUMMARY_EXAMPLE,
-        REVIEW_SUMMARY_EXAMPLE,
-        NEWS_ACTORS_EXAMPLE,
-        PRODUCT_COMPARE_EXAMPLE,
-        RELEASE_NOTES_EXAMPLE,
-        RESEARCH_PAPER_EXAMPLE,
-      ],
+      // Validated examples (pnpm check:examples), the mode's own first, after the library's own.
+      examples: [...(openuiChatPromptOptions.examples ?? []), ...MODE_EXAMPLES[mode]],
       ...toolOptions(source),
       preamble:
-        'You are a visual summarization assistant. You turn the source content the user provides into a glanceable summary UI written in openui-lang (metrics, short lists, tags, timelines; as little prose as possible), and you refine that UI when asked.',
+        'You are a visual reading assistant. You turn the source content the user provides into a glanceable UI written in openui-lang (as little prose as possible), shaped by the analysis mode below, and you refine that UI when asked.',
       editMode: true,
       inlineMode: true,
     }),
   );
   const rules = [
+    ...MODE_RULES[mode],
     ...VISUAL_RULES,
     ...CHART_RULES,
     ...DIAGRAM_RULES,
+    ...STRUCTURE_RULES,
     LENGTH_RULES[settings.length],
     ...settings.styles.map((s) => STYLE_RULES[s]),
     layoutRule(settings),
     KIND_RULES[source.kind],
-    'Order: SummaryHero → Verdict / ResearchBrief → KeyNumbers / FactSheet / charts / BarList / Diagram → Takeaways / ProsCons / Comparison / PricingPlans → ChangeList / StatusBoard → RiskList / ClaimCheck → People / Timeline / TagBlock → Checklist → Glossary → SourceQuote → folded SectionBlock details → FollowUpBlock with 2-3 short questions. Use only the blocks the source supports; a summary rarely needs more than two of the domain blocks.',
     'First turn: output the complete program in one ```openui-lang fence. Refinement turns: output only the changed statements, with at most one short sentence outside the fence describing the change.',
     ...userRules(settings),
   ];
-  return `${base}\n\n## Summarization task\n${rules.map((r) => `- ${r}`).join('\n')}`;
+  return `${base}\n\n## Analysis task\n${rules.map((r) => `- ${r}`).join('\n')}`;
 }
 
 /** Q&A prompt. inlineMode: simple questions get plain text, structured answers get a UI. */
@@ -179,6 +202,7 @@ export function buildQaPrompt(settings: Settings, source: ExtractedSource) {
     'Short factual answers: 1-3 plain sentences. Answers with structure (comparisons, steps, lists, numbers): a compact openui-lang Card in a fence, visual first with minimal text.',
     layoutRule(settings),
     'If the source does not contain the answer, say so plainly instead of guessing.',
+    MODE_QA_RULES[settings.mode],
     KIND_RULES[source.kind],
     ...userRules(settings),
   ];

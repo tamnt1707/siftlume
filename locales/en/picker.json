@@ -1,12 +1,22 @@
 {
-  "title": "What should I summarize?",
-  "summarizePage": "Summarize this page",
+  "title": "What should I read for you?",
   "reading": "Reading…",
   "cannotRead": "This page cannot be read",
   "or": "or",
   "pastePlaceholder": "Paste text here…",
-  "summarizeText": "Summarize text",
   "dropTitle": "Drop a file or click to upload",
   "dropFormats": "PDF, CSV, Markdown, TXT, HTML, JSON",
-  "pageHint": "To summarize a web page, click the extension icon on that page, or right-click and choose “Summarize this page”."
+  "pageHint": "To summarize a web page, click the extension icon on that page, or right-click and choose “Summarize this page”.",
+  "run": {
+    "summary": "Summarize this page",
+    "explain": "Explain this page",
+    "critique": "Critique this page",
+    "action": "Get action items"
+  },
+  "runText": {
+    "summary": "Summarize text",
+    "explain": "Explain text",
+    "critique": "Critique text",
+    "action": "Get action items"
+  }
 }

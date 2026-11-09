@@ -1361,6 +1361,133 @@
   color: var(--caution);
 }
 
+/* ── Analogy ──────────────────────────────────────────────── */
+
+.g-analogy {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: var(--r-lg);
+  background: color-mix(in srgb, var(--marker) 38%, var(--surface));
+}
+
+.g-analogy__mark {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.g-analogy p {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  min-width: 0;
+}
+
+.g-analogy__label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.g-analogy strong {
+  font-family: var(--font-reading);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.g-analogy__because {
+  font-family: var(--font-reading);
+  font-size: 15.5px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+/* ── Misconceptions ───────────────────────────────────────── */
+
+.g-myths > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.g-myth {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.g-myth p {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 0;
+  padding: 10px 14px;
+  font-family: var(--font-reading);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.g-myth__myth {
+  background: color-mix(in srgb, var(--down) 6%, transparent);
+  color: var(--ink-2);
+}
+
+.g-myth__myth s {
+  text-decoration-color: color-mix(in srgb, var(--down) 60%, transparent);
+}
+
+.g-myth__fact {
+  border-left: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.g-myth__label {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.g-myth__myth .g-myth__label {
+  color: var(--down);
+}
+
+.g-myth__fact .g-myth__label {
+  color: var(--up);
+}
+
+.session--panel .g-myth {
+  grid-template-columns: 1fr;
+}
+
+.session--panel .g-myth__fact {
+  border-left: 0;
+  border-top: 1px solid var(--line);
+}
+
 /* Side panel: narrower labels and single-column boards. */
 .session--panel .g-change {
   grid-template-columns: 78px 1fr;

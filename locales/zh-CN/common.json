@@ -50,5 +50,24 @@
       "draw": "呈现"
     },
     "elapsed": "{{seconds}} 秒"
+  },
+  "modeLabel": "分析类型",
+  "modes": {
+    "summary": {
+      "title": "摘要",
+      "desc": "几秒掌握要点：关键事实与观点"
+    },
+    "explain": {
+      "title": "讲解",
+      "desc": "真正理解：原理、例子、术语"
+    },
+    "critique": {
+      "title": "评析",
+      "desc": "判断可信度：论点、证据、弱点"
+    },
+    "action": {
+      "title": "行动",
+      "desc": "该做什么：步骤、期限、决定"
+    }
   }
 }

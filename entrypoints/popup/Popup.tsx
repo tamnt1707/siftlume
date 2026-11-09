@@ -6,6 +6,7 @@ import { Themed } from '@/components/Themed';
 import { browser, type Browser } from '#imports';
 import { HistoryList } from '@/components/HistoryList';
 import { ModelSwitcher } from '@/components/ModelSwitcher';
+import { ModePicker, saveMode } from '@/components/ModePicker';
 import { useSettings } from '@/components/useSettings';
 import { getActiveTab, isReadableUrl } from '@/lib/page';
 import { openApp, queueRequest, type AppRoute, type PendingRequest } from '@/lib/pending';
@@ -75,6 +76,8 @@ export default function Popup() {
           </div>
         )}
 
+        <ModePicker value={settings.mode} onChange={(m) => saveMode(settings, m)} descriptions={false} />
+
         <button
           className="btn btn--primary btn--hero"
           disabled={!canReadTab || Boolean(problem)}
@@ -82,7 +85,7 @@ export default function Popup() {
         >
           <span className="btn__label">
             <Icon icon={SparklesIcon} />
-            {t('picker:summarizePage')}
+            {t(`picker:run.${settings.mode}`)}
           </span>
           {tab?.title && <span className="btn__sub">{canReadTab ? tab.title : t('picker:cannotRead')}</span>}
         </button>
@@ -105,7 +108,7 @@ export default function Popup() {
               disabled={Boolean(problem)}
               onClick={() => submit({ type: 'text', text, tabId: tab?.id })}
             >
-              {t('picker:summarizeText')} <kbd>⌘/Ctrl ↵</kbd>
+              {t(`picker:runText.${settings.mode}`)} <kbd>⌘/Ctrl ↵</kbd>
             </button>
           )}
         </div>

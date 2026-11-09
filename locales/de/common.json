@@ -51,5 +51,24 @@
       "draw": "Gestalten"
     },
     "elapsed": "{{seconds}} s"
+  },
+  "modeLabel": "Analyse",
+  "modes": {
+    "summary": {
+      "title": "Zusammenfassung",
+      "desc": "Das Wichtigste in Sekunden: Fakten und Kernpunkte"
+    },
+    "explain": {
+      "title": "Erklären",
+      "desc": "Verstehen: Funktionsweise, Beispiele, Begriffe"
+    },
+    "critique": {
+      "title": "Kritik",
+      "desc": "Bewerten: Behauptungen, Belege, Schwächen"
+    },
+    "action": {
+      "title": "Handeln",
+      "desc": "Was zu tun ist: Schritte, Fristen, Entscheidungen"
+    }
   }
 }

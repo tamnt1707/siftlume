@@ -1,12 +1,22 @@
 {
-  "title": "要摘要什么?",
-  "summarizePage": "摘要此页面",
+  "title": "要我帮你读什么？",
   "reading": "正在读取…",
   "cannotRead": "无法读取此页面",
   "or": "或",
   "pastePlaceholder": "在此粘贴文本…",
-  "summarizeText": "摘要文本",
   "dropTitle": "拖放文件或点击上传",
   "dropFormats": "PDF、CSV、Markdown、TXT、HTML、JSON",
-  "pageHint": "要摘要网页,请在该页面点击扩展图标,或右键选择“摘要此页面”。"
+  "pageHint": "要摘要网页,请在该页面点击扩展图标,或右键选择“摘要此页面”。",
+  "run": {
+    "summary": "摘要此页",
+    "explain": "讲解此页",
+    "critique": "评析此页",
+    "action": "提取待办事项"
+  },
+  "runText": {
+    "summary": "摘要文本",
+    "explain": "讲解文本",
+    "critique": "评析文本",
+    "action": "提取待办事项"
+  }
 }

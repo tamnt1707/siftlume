@@ -52,5 +52,24 @@
       "draw": "Crear"
     },
     "elapsed": "{{seconds}} s"
+  },
+  "modeLabel": "Análisis",
+  "modes": {
+    "summary": {
+      "title": "Resumen",
+      "desc": "Lo esencial en segundos: datos y puntos clave"
+    },
+    "explain": {
+      "title": "Explicar",
+      "desc": "Entenderlo: cómo funciona, ejemplos, términos"
+    },
+    "critique": {
+      "title": "Crítica",
+      "desc": "Evaluarlo: afirmaciones, pruebas, puntos débiles"
+    },
+    "action": {
+      "title": "Acción",
+      "desc": "Qué hacer: pasos, plazos, decisiones"
+    }
   }
 }

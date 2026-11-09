@@ -1,12 +1,22 @@
 {
-  "title": "O que você quer resumir?",
-  "summarizePage": "Resumir esta página",
+  "title": "O que devo ler para você?",
   "reading": "Lendo…",
   "cannotRead": "Não é possível ler esta página",
   "or": "ou",
   "pastePlaceholder": "Cole o texto aqui…",
-  "summarizeText": "Resumir texto",
   "dropTitle": "Solte um arquivo ou clique para enviar",
   "dropFormats": "PDF, CSV, Markdown, TXT, HTML, JSON",
-  "pageHint": "Para resumir uma página da web, clique no ícone da extensão nessa página ou clique com o botão direito e escolha “Resumir esta página”."
+  "pageHint": "Para resumir uma página da web, clique no ícone da extensão nessa página ou clique com o botão direito e escolha “Resumir esta página”.",
+  "run": {
+    "summary": "Resumir esta página",
+    "explain": "Explicar esta página",
+    "critique": "Criticar esta página",
+    "action": "Extrair tarefas"
+  },
+  "runText": {
+    "summary": "Resumir texto",
+    "explain": "Explicar texto",
+    "critique": "Criticar texto",
+    "action": "Extrair tarefas"
+  }
 }

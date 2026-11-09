@@ -87,7 +87,16 @@ export function useSession(settings: Settings) {
       const { content, truncated } = truncate(src.content, settingsRef.current.maxChars);
       const source = { ...src, content, truncated };
       const now = Date.now();
-      const base: Session = { id: newId(), createdAt: now, updatedAt: now, source, summary: null, qa: [] };
+      // The mode belongs to the session: reopening it later keeps its kind of analysis.
+      const base: Session = {
+        id: newId(),
+        createdAt: now,
+        updatedAt: now,
+        source,
+        summary: null,
+        qa: [],
+        options: { mode: settingsRef.current.mode },
+      };
       commit(base);
       await runSummary(source, base);
     },

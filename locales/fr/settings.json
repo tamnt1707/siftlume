@@ -65,7 +65,8 @@
         "title": "Pour débutants",
         "desc": "Des mots simples, des phrases courtes et une brève explication de chaque terme technique."
       }
-    }
+    },
+    "modeHint": "Ce que vous attendez d’une page. Votre dernier choix est conservé et modifiable sur l’écran de résultat."
   },
   "appearance": {
     "uiLanguage": "Langue de l’interface",

@@ -70,7 +70,10 @@
       "sample": "Stichprobe",
       "findings": "Ergebnisse",
       "limitations": "Grenzen"
-    }
+    },
+    "analogy": "Das ist wie",
+    "myth": "Irrtum",
+    "fact": "Tatsächlich"
   },
   "refineHint": {
     "shorter": "Nur die wichtigsten Punkte behalten.",

@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { FileUploadIcon, SparklesIcon } from '@hugeicons/core-free-icons';
 import { Icon } from './Icon';
 import type { SessionController } from './useSession';
+import type { Settings } from '@/lib/settings';
+import { ModePicker, saveMode } from './ModePicker';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
 
@@ -17,7 +19,15 @@ export interface PageTarget {
  * Start screen. In a tab's side panel it also offers "Summarize this page" for that tab;
  * on the full page, web pages are summarized from the popup or the context menu.
  */
-export function SourcePicker({ ctrl, page }: { ctrl: SessionController; page?: PageTarget }) {
+export function SourcePicker({
+  ctrl,
+  page,
+  settings,
+}: {
+  ctrl: SessionController;
+  page?: PageTarget;
+  settings: Settings;
+}) {
   const { t } = useTranslation('picker');
   const [text, setText] = useState('');
   const [dragging, setDragging] = useState(false);
@@ -45,6 +55,8 @@ export function SourcePicker({ ctrl, page }: { ctrl: SessionController; page?: P
         onFiles(e.dataTransfer.files);
       }}
     >
+      {!page && <h1 className="picker__title">{t('title')}</h1>}
+      <ModePicker value={settings.mode} onChange={(m) => saveMode(settings, m)} disabled={busy} descriptions={!page} />
       {page ? (
         <>
           <button
@@ -54,7 +66,7 @@ export function SourcePicker({ ctrl, page }: { ctrl: SessionController; page?: P
           >
             <span className="btn__label">
               <Icon icon={SparklesIcon} />
-              {ctrl.phase === 'extracting' ? t('reading') : t('summarizePage')}
+              {ctrl.phase === 'extracting' ? t('reading') : t(`run.${settings.mode}`)}
             </span>
             {page.title && <span className="btn__sub">{page.readable ? page.title : t('cannotRead')}</span>}
           </button>
@@ -62,9 +74,7 @@ export function SourcePicker({ ctrl, page }: { ctrl: SessionController; page?: P
             <span>{t('or')}</span>
           </div>
         </>
-      ) : (
-        <h1 className="picker__title">{t('title')}</h1>
-      )}
+      ) : null}
 
       <div className="paste">
         <textarea
@@ -80,7 +90,7 @@ export function SourcePicker({ ctrl, page }: { ctrl: SessionController; page?: P
         />
         {text.trim() && (
           <button className="btn btn--primary btn--block" disabled={busy} onClick={() => ctrl.fromText(text)}>
-            {t('summarizeText')} <kbd>⌘/Ctrl ↵</kbd>
+            {t(`runText.${settings.mode}`)} <kbd>⌘/Ctrl ↵</kbd>
           </button>
         )}
       </div>

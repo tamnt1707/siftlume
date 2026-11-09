@@ -73,7 +73,10 @@
       "sample": "Échantillon",
       "findings": "Résultats",
       "limitations": "Limites"
-    }
+    },
+    "analogy": "C’est comme",
+    "myth": "Idée reçue",
+    "fact": "En réalité"
   },
   "refineHint": {
     "shorter": "Garder uniquement les points essentiels.",
