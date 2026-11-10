@@ -65,9 +65,19 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
     toastTimer.current = setTimeout(() => setToast(null), 2500);
   }, []);
 
+  const problem = loaded ? configProblem(settings) : null;
+  const problemRef = useRef(problem);
+  problemRef.current = problem;
+  /** A request that arrived before any provider was set up; it runs once Settings are saved. */
+  const held = useRef<PendingRequest | null>(null);
+
   const run = useCallback(
     (req: PendingRequest | null) => {
       if (!req) return ctrl.setError(t('errors:requestExpired'));
+      if (problemRef.current) {
+        held.current = req;
+        return setView('settings');
+      }
       setView('main');
       if (req.type === 'tab') void ctrl.fromTab(req.tabId, req.mode);
       else
@@ -153,7 +163,22 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
     return () => clearTimeout(timer);
   }, [hasSummary, ctrl.phase]);
 
-  const problem = loaded ? configProblem(settings) : null;
+  // Nothing works without a provider: a first run opens on Settings instead of the start screen.
+  const setupShown = useRef(false);
+  useEffect(() => {
+    if (!loaded || setupShown.current) return;
+    setupShown.current = true;
+    if (problem) setView('settings');
+  }, [loaded, problem]);
+
+  // Settings saved: run the request that was waiting for them.
+  useEffect(() => {
+    if (problem || !held.current) return;
+    const req = held.current;
+    held.current = null;
+    run(req);
+  }, [problem, run]);
+
   const route = (params: Record<string, string>) => !isPanel && setRoute(params);
   const goNew = () => {
     ctrl.reset();
@@ -237,7 +262,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
         {ctrl.warning && <div className="banner banner--warn">{ctrl.warning}</div>}
 
         {view === 'settings' ? (
-          <SettingsForm embedded onClose={() => setView('main')} />
+          <SettingsForm embedded onClose={() => setView('main')} onReady={() => setView('main')} />
         ) : view === 'history' ? (
           <div className="narrow">
             <h2 className="section-title">{t('actions.history')}</h2>

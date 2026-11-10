@@ -33,6 +33,10 @@ export default function Popup() {
   }, []);
 
   const problem = loaded ? configProblem(settings) : null;
+  // Nothing can run without a provider: send a first run straight to Settings.
+  useEffect(() => {
+    if (problem) void browser.runtime.openOptionsPage().then(() => window.close());
+  }, [problem]);
   const canReadTab = Boolean(tab?.id) && isReadableUrl(tab?.url);
 
   /** History, uploads and past sessions always open as a full page. */
@@ -71,7 +75,7 @@ export default function Popup() {
 
       <main className="popup__body">
         {problem && (
-          <div className="banner">
+          <div className="banner" role="status">
             {problem}{' '}
             <button className="link" onClick={openSettings}>
               {t('common:actions.openSettings')}
