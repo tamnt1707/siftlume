@@ -114,6 +114,8 @@ const KIND_RULES: Record<SourceKind, string> = {
   text: 'The source is text pasted by the user. Do not use @HighlightInPage.',
   pdf: 'The source is text extracted from a PDF; ignore broken line breaks and repeated headers/footers. Mention page numbers when useful. Do not use @HighlightInPage.',
   markdown: 'The source is a Markdown document. Do not use @HighlightInPage.',
+  video:
+    'The source is the transcript of a YouTube video: paragraphs led by [m:ss] timestamps. Summarize what is said, not the transcript format; automatic captions may misspell names and terms, so fix obvious slips silently. Give key moments with their timestamps (Timeline with when set to the timestamp, e.g. "12:34"). Pass the video as the only item of Card sources and cite it as [1]. For SourceQuote and @HighlightInPage, copy a short phrase verbatim from the transcript without the timestamp: clicking it plays the video from that moment.',
   csv: 'The source is a CSV dataset. Describe what it contains, important columns, ranges, trends and outliers. Use Query("csv_group", ...) and Query("csv_rows", ...) for charts and tables instead of hard-coding numbers, and add a filter Form with a Select bound to a $variable when a text column has few distinct values. Do not use @HighlightInPage.',
 };
 

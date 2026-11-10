@@ -34,5 +34,11 @@
   },
   "file": {
     "unsupported": "Tipo de arquivo não suportado: “{{type}}”. Suportados: PDF, CSV, MD, TXT, HTML, JSON."
+  },
+  "video": {
+    "notVideo": "Nenhum vídeo do YouTube nesta aba.",
+    "live": "Esta é uma transmissão ao vivo. Resuma depois que ela terminar.",
+    "noCaptions": "Este vídeo não tem legendas, então não há o que resumir.",
+    "transcriptFailed": "Não foi possível ler as legendas do vídeo. Recarregue a aba do YouTube e tente de novo."
   }
 }

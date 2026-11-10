@@ -1,6 +1,7 @@
 import { browser } from '#imports';
 import { t } from '@/lib/i18n';
 import { extractPdf, htmlToMarkdown, type ExtractedSource } from './extractors';
+import { extractVideo, youTubeVideoId } from './youtube';
 
 export async function getActiveTab() {
   const [tab] = await browser.tabs.query({ active: true, lastFocusedWindow: true });
@@ -28,7 +29,7 @@ async function fetchPdf(url: string) {
 }
 
 /**
- * Reads a tab: HTML → Markdown via Readability, or PDF via pdf.js.
+ * Reads a tab: HTML → Markdown via Readability, PDF via pdf.js, YouTube videos from their captions.
  * Access comes from activeTab, granted when the user opens the popup or uses the context menu on
  * that tab. The grant outlives the popup, so the result page can read the tab afterwards.
  */
@@ -37,6 +38,7 @@ export async function extractTab(tabId: number): Promise<ExtractedSource & { tab
   if (!tab?.url) throw new Error(t('errors:page.noTab'));
   if (!isReadableUrl(tab.url)) throw new Error(t('errors:page.restricted'));
 
+  if (youTubeVideoId(tab.url)) return extractVideo(tabId, tab.url);
   if (isPdfUrl(tab.url)) {
     return { kind: 'pdf', title: tab.title || tab.url, origin: tab.url, content: await fetchPdf(tab.url), tabId };
   }

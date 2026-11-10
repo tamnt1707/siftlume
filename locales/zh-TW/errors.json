@@ -34,5 +34,11 @@
   },
   "file": {
     "unsupported": "不支援的檔案類型「{{type}}」。支援:PDF、CSV、MD、TXT、HTML、JSON。"
+  },
+  "video": {
+    "notVideo": "這個分頁中沒有 YouTube 影片。",
+    "live": "這是直播，請在直播結束後再摘要。",
+    "noCaptions": "這部影片沒有字幕，沒有可摘要的內容。",
+    "transcriptFailed": "無法讀取影片字幕。請重新載入 YouTube 分頁後再試一次。"
   }
 }

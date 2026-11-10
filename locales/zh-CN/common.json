@@ -15,14 +15,16 @@
     "text": "文本",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "Markdown"
+    "markdown": "Markdown",
+    "video": "视频"
   },
   "kindShort": {
     "webpage": "网页",
     "text": "文本",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "MD"
+    "markdown": "MD",
+    "video": "视频"
   },
   "history": {
     "empty": "暂无历史记录。",

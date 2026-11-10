@@ -24,7 +24,9 @@
     "highlighted": "Auf der Seite hervorgehoben.",
     "quoteNotFound": "Dieses Zitat wurde auf der Seite nicht gefunden.",
     "tabGone": "Der ursprüngliche Tab wurde geschlossen oder hat die Seite gewechselt.",
-    "copied": "Kopiert."
+    "copied": "Kopiert.",
+    "playingFrom": "Wiedergabe ab {{time}}",
+    "momentNotFound": "Diese Stelle wurde im Video nicht gefunden."
   },
   "warnings": {
     "invalidUi_one": "Das Modell hat {{count}} ungültige UI-Anweisung erzeugt; angezeigt wird, was dargestellt werden konnte.",

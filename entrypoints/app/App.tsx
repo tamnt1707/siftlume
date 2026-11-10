@@ -110,7 +110,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
     const load = () =>
       void browser.tabs
         .get(panelTabId)
-        .then((t) => setPageTarget({ id: panelTabId, title: t.title, readable: isReadableUrl(t.url) }))
+        .then((t) => setPageTarget({ id: panelTabId, title: t.title, url: t.url, readable: isReadableUrl(t.url) }))
         .catch(() => setPageTarget(undefined));
     load();
     const onUpdated = (id: number, change: { title?: string; url?: string }) => {

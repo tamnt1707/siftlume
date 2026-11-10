@@ -6,12 +6,14 @@ import type { SessionController } from './useSession';
 import type { Settings } from '@/lib/settings';
 import type { AnalysisMode } from '@/lib/modes';
 import { AnalysisChoice } from './ModePicker';
+import { useVideoProbe } from './useVideoProbe';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
 
 export interface PageTarget {
   id: number;
   title?: string;
+  url?: string;
   /** False for pages the browser does not let extensions read (chrome://, the Web Store…). */
   readable: boolean;
 }
@@ -36,6 +38,7 @@ export function SourcePicker({
   const [mode, setMode] = useState<AnalysisMode>('summary');
   const fileInput = useRef<HTMLInputElement>(null);
   const busy = ctrl.phase !== 'idle';
+  const video = useVideoProbe(page?.readable ? page.id : undefined, page?.url);
 
   const onFiles = (files: FileList | null) => {
     const file = files?.[0];
@@ -64,14 +67,15 @@ export function SourcePicker({
         <>
           <button
             className="btn btn--primary btn--hero"
-            disabled={busy || !page.readable}
+            disabled={busy || !page.readable || Boolean(video.blocked)}
             onClick={() => void ctrl.fromTab(page.id, mode)}
           >
             <span className="btn__label">
               <Icon icon={SparklesIcon} />
-              {ctrl.phase === 'extracting' ? t('reading') : t(`run.${mode}`)}
+              {ctrl.phase === 'extracting' ? t('reading') : t(video.isVideo ? `runVideo.${mode}` : `run.${mode}`)}
             </span>
             {page.title && <span className="btn__sub">{page.readable ? page.title : t('cannotRead')}</span>}
+            {(video.blocked || video.note) && <span className="btn__sub">{video.blocked ?? video.note}</span>}
           </button>
           <div className="divider">
             <span>{t('or')}</span>

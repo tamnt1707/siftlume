@@ -24,7 +24,9 @@
     "highlighted": "Đã tô sáng trong trang.",
     "quoteNotFound": "Không tìm thấy đoạn trích này trong trang.",
     "tabGone": "Tab gốc đã đóng hoặc đã chuyển sang trang khác.",
-    "copied": "Đã sao chép."
+    "copied": "Đã sao chép.",
+    "playingFrom": "Phát từ {{time}}",
+    "momentNotFound": "Không tìm thấy đoạn đó trong video."
   },
   "warnings": {
     "invalidUi_other": "Model tạo ra {{count}} câu lệnh giao diện không hợp lệ; đang hiển thị phần dựng được.",

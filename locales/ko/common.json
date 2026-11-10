@@ -15,14 +15,16 @@
     "text": "텍스트",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "Markdown"
+    "markdown": "Markdown",
+    "video": "동영상"
   },
   "kindShort": {
     "webpage": "웹",
     "text": "텍스트",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "MD"
+    "markdown": "MD",
+    "video": "동영상"
   },
   "history": {
     "empty": "아직 기록이 없습니다.",

@@ -18,5 +18,17 @@
     "explain": "Text erklären",
     "critique": "Text kritisch prüfen",
     "action": "Aufgaben herausziehen"
+  },
+  "runVideo": {
+    "summary": "Dieses Video zusammenfassen",
+    "explain": "Dieses Video erklären",
+    "critique": "Dieses Video kritisch prüfen",
+    "action": "Aufgaben herausziehen"
+  },
+  "video": {
+    "captions": "Untertitel: {{label}}",
+    "autoCaptions": "Automatische Untertitel: {{label}}",
+    "noCaptions": "Dieses Video hat keine Untertitel und kann nicht zusammengefasst werden",
+    "live": "Livestreams lassen sich nach dem Ende zusammenfassen"
   }
 }

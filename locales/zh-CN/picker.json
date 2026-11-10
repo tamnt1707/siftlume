@@ -18,5 +18,17 @@
     "explain": "讲解文本",
     "critique": "评析文本",
     "action": "提取待办事项"
+  },
+  "runVideo": {
+    "summary": "总结这个视频",
+    "explain": "讲解这个视频",
+    "critique": "审视这个视频",
+    "action": "提取待办事项"
+  },
+  "video": {
+    "captions": "字幕：{{label}}",
+    "autoCaptions": "自动字幕：{{label}}",
+    "noCaptions": "这个视频没有字幕，无法总结",
+    "live": "直播结束后才能总结"
   }
 }

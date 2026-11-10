@@ -34,5 +34,11 @@
   },
   "file": {
     "unsupported": "未対応のファイル形式「{{type}}」です。対応形式: PDF、CSV、MD、TXT、HTML、JSON。"
+  },
+  "video": {
+    "notVideo": "このタブに YouTube 動画が見つかりません。",
+    "live": "ライブ配信中です。終了後に要約してください。",
+    "noCaptions": "この動画には字幕がないため、要約する内容がありません。",
+    "transcriptFailed": "動画の字幕を読み取れませんでした。YouTube のタブを再読み込みしてもう一度お試しください。"
   }
 }

@@ -18,5 +18,17 @@
     "explain": "Giải thích văn bản",
     "critique": "Phản biện văn bản",
     "action": "Lấy việc cần làm"
+  },
+  "runVideo": {
+    "summary": "Tóm tắt video này",
+    "explain": "Giải thích video này",
+    "critique": "Phản biện video này",
+    "action": "Lấy việc cần làm"
+  },
+  "video": {
+    "captions": "Phụ đề: {{label}}",
+    "autoCaptions": "Phụ đề tự động: {{label}}",
+    "noCaptions": "Video này không có phụ đề nên không tóm tắt được",
+    "live": "Livestream tóm tắt được sau khi kết thúc"
   }
 }

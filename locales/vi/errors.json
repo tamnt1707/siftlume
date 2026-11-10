@@ -34,5 +34,11 @@
   },
   "file": {
     "unsupported": "Không hỗ trợ loại file “{{type}}”. Hỗ trợ: PDF, CSV, MD, TXT, HTML, JSON."
+  },
+  "video": {
+    "notVideo": "Không tìm thấy video YouTube trong tab này.",
+    "live": "Đây là livestream. Hãy tóm tắt sau khi buổi phát kết thúc.",
+    "noCaptions": "Video này không có phụ đề nên không có gì để tóm tắt.",
+    "transcriptFailed": "Không đọc được phụ đề của video. Tải lại tab YouTube rồi thử lại."
   }
 }

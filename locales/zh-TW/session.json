@@ -24,7 +24,9 @@
     "highlighted": "已在頁面中醒目標示。",
     "quoteNotFound": "在頁面中找不到這段引文。",
     "tabGone": "原分頁已關閉或已前往其他頁面。",
-    "copied": "已複製。"
+    "copied": "已複製。",
+    "playingFrom": "從 {{time}} 開始播放",
+    "momentNotFound": "在影片中找不到這一段。"
   },
   "warnings": {
     "invalidUi_other": "模型產生了 {{count}} 條無效的介面敘述;僅顯示可呈現的部分。",

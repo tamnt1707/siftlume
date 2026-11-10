@@ -24,7 +24,9 @@
     "highlighted": "Surligné dans la page.",
     "quoteNotFound": "Citation introuvable dans la page.",
     "tabGone": "L’onglet d’origine a été fermé ou a changé de page.",
-    "copied": "Copié."
+    "copied": "Copié.",
+    "playingFrom": "Lecture à partir de {{time}}",
+    "momentNotFound": "Ce moment est introuvable dans la vidéo."
   },
   "warnings": {
     "invalidUi_one": "Le modèle a produit {{count}} instruction d’interface invalide ; affichage de ce qui a pu être rendu.",

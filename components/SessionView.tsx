@@ -6,6 +6,7 @@ import { createCsvToolProvider } from '@/lib/csv-tools';
 import { readStored, type QaTurn } from '@/lib/history';
 import { splitInline } from '@/lib/openui';
 import { highlightInTab } from '@/lib/page';
+import { findMoment, formatTime, seekVideo, youTubeVideoId } from '@/lib/youtube';
 import { ArrowExpand01Icon, ArrowUp02Icon, MagicWand01Icon, RefreshIcon, StopIcon } from '@hugeicons/core-free-icons';
 import { REFINE_PROMPTS, type RefineId } from '@/lib/refine';
 import { GenUI, type GenUIAction } from './GenUI';
@@ -86,6 +87,32 @@ export function SessionView({
         if (typeof event.params.url === 'string') void browser.tabs.create({ url: event.params.url });
         break;
       case 'HighlightInPage': {
+        if (source.kind === 'video' && source.tabId) {
+          // Videos: play from the moment the quote is said.
+          const at = findMoment(source.content, event.params.text);
+          if (at === null) return notify(t('toast.momentNotFound'));
+          const played = t('toast.playingFrom', { time: formatTime(at) });
+          // The tab moved on to another video (or was closed): open this one at that moment.
+          const openAt = () => {
+            const url = new URL(source.origin!);
+            url.searchParams.set('t', `${Math.floor(at)}s`);
+            return url.href;
+          };
+          try {
+            const current = await browser.tabs.get(source.tabId);
+            if (youTubeVideoId(current.url) !== youTubeVideoId(source.origin)) {
+              await browser.tabs.update(source.tabId, { url: openAt(), active: true });
+              return notify(played);
+            }
+            const tab = await browser.tabs.update(source.tabId, { active: true });
+            if (tab?.windowId !== undefined) await browser.windows.update(tab.windowId, { focused: true });
+            notify((await seekVideo(source.tabId, at)) ? played : t('toast.tabGone'));
+          } catch {
+            await browser.tabs.create({ url: openAt() });
+            notify(played);
+          }
+          break;
+        }
         if (source.kind !== 'webpage' || !source.tabId) return notify(t('toast.highlightOnlyWeb'));
         try {
           // Bring the original tab to the front, then highlight.
@@ -204,7 +231,7 @@ export function SessionView({
               <span className="muted">{t('toolbar.sourceWords', { count: reading.words })}</span>
             </header>
             <div className="source-text__body">
-              {source.kind === 'pdf' || source.kind === 'text' ? (
+              {source.kind === 'pdf' || source.kind === 'text' || source.kind === 'video' ? (
                 <pre>{source.content}</pre>
               ) : (
                 <MarkDownRenderer textMarkdown={source.content} variant="clear" />

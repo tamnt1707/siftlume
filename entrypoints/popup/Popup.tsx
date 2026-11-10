@@ -9,6 +9,7 @@ import { ModelSwitcher } from '@/components/ModelSwitcher';
 import { AnalysisChoice } from '@/components/ModePicker';
 import type { AnalysisMode } from '@/lib/modes';
 import { useSettings } from '@/components/useSettings';
+import { useVideoProbe } from '@/components/useVideoProbe';
 import { getActiveTab, isReadableUrl } from '@/lib/page';
 import { openApp, queueRequest, type AppRoute, type PendingRequest } from '@/lib/pending';
 import { configProblem } from '@/lib/settings';
@@ -38,6 +39,7 @@ export default function Popup() {
     if (problem) void browser.runtime.openOptionsPage().then(() => window.close());
   }, [problem]);
   const canReadTab = Boolean(tab?.id) && isReadableUrl(tab?.url);
+  const video = useVideoProbe(canReadTab ? tab?.id : undefined, tab?.url);
 
   /** History, uploads and past sessions always open as a full page. */
   const show = (route: AppRoute) => void openApp(route, tab ?? undefined).then(() => window.close());
@@ -87,14 +89,15 @@ export default function Popup() {
 
         <button
           className="btn btn--primary btn--hero"
-          disabled={!canReadTab || Boolean(problem)}
+          disabled={!canReadTab || Boolean(problem) || Boolean(video.blocked)}
           onClick={() => tab?.id && submit({ type: 'tab', tabId: tab.id })}
         >
           <span className="btn__label">
             <Icon icon={SparklesIcon} />
-            {t(`picker:run.${mode}`)}
+            {t(video.isVideo ? `picker:runVideo.${mode}` : `picker:run.${mode}`)}
           </span>
           {tab?.title && <span className="btn__sub">{canReadTab ? tab.title : t('picker:cannotRead')}</span>}
+          {(video.blocked || video.note) && <span className="btn__sub">{video.blocked ?? video.note}</span>}
         </button>
 
         <div className="paste">

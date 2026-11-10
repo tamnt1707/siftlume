@@ -15,14 +15,16 @@
     "text": "テキスト",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "Markdown"
+    "markdown": "Markdown",
+    "video": "動画"
   },
   "kindShort": {
     "webpage": "Web",
     "text": "テキスト",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "MD"
+    "markdown": "MD",
+    "video": "動画"
   },
   "history": {
     "empty": "履歴はまだありません。",

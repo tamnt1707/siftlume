@@ -18,5 +18,17 @@
     "explain": "Explain text",
     "critique": "Critique text",
     "action": "Get action items"
+  },
+  "runVideo": {
+    "summary": "Summarize this video",
+    "explain": "Explain this video",
+    "critique": "Critique this video",
+    "action": "Get action items"
+  },
+  "video": {
+    "captions": "Captions: {{label}}",
+    "autoCaptions": "Auto captions: {{label}}",
+    "noCaptions": "This video has no captions, so it can’t be summarized",
+    "live": "Live streams can be summarized after they end"
   }
 }

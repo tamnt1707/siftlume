@@ -5,7 +5,7 @@ import { gfm } from '@joplin/turndown-plugin-gfm';
 import Papa from 'papaparse';
 import type { CsvDataset, CsvRow } from './csv-tools';
 
-export type SourceKind = 'webpage' | 'text' | 'pdf' | 'csv' | 'markdown';
+export type SourceKind = 'webpage' | 'text' | 'pdf' | 'csv' | 'markdown' | 'video';
 
 export interface ExtractedSource {
   kind: SourceKind;

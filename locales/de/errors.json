@@ -34,5 +34,11 @@
   },
   "file": {
     "unsupported": "Nicht unterstützter Dateityp „{{type}}“. Unterstützt: PDF, CSV, MD, TXT, HTML, JSON."
+  },
+  "video": {
+    "notVideo": "In diesem Tab wurde kein YouTube-Video gefunden.",
+    "live": "Das ist ein Livestream. Fasse ihn nach dem Ende zusammen.",
+    "noCaptions": "Dieses Video hat keine Untertitel, daher gibt es nichts zusammenzufassen.",
+    "transcriptFailed": "Die Untertitel dieses Videos konnten nicht gelesen werden. Lade den YouTube-Tab neu und versuche es noch einmal."
   }
 }

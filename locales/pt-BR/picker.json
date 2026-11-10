@@ -18,5 +18,17 @@
     "explain": "Explicar texto",
     "critique": "Criticar texto",
     "action": "Extrair tarefas"
+  },
+  "runVideo": {
+    "summary": "Resumir este vídeo",
+    "explain": "Explicar este vídeo",
+    "critique": "Analisar este vídeo criticamente",
+    "action": "Extrair tarefas"
+  },
+  "video": {
+    "captions": "Legendas: {{label}}",
+    "autoCaptions": "Legendas automáticas: {{label}}",
+    "noCaptions": "Este vídeo não tem legendas, então não pode ser resumido",
+    "live": "Transmissões ao vivo podem ser resumidas depois que terminam"
   }
 }

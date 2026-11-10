@@ -15,14 +15,16 @@
     "text": "Texte",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "Markdown"
+    "markdown": "Markdown",
+    "video": "Vidéo"
   },
   "kindShort": {
     "webpage": "Web",
     "text": "Texte",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "MD"
+    "markdown": "MD",
+    "video": "Vidéo"
   },
   "history": {
     "empty": "Aucun historique pour l’instant.",

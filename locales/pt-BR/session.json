@@ -24,7 +24,9 @@
     "highlighted": "Destacado na página.",
     "quoteNotFound": "Não foi possível encontrar essa citação na página.",
     "tabGone": "A aba original foi fechada ou mudou de página.",
-    "copied": "Copiado."
+    "copied": "Copiado.",
+    "playingFrom": "Reproduzindo a partir de {{time}}",
+    "momentNotFound": "Não foi possível encontrar esse momento no vídeo."
   },
   "warnings": {
     "invalidUi_one": "O modelo gerou {{count}} instrução de interface inválida; mostrando o que foi possível renderizar.",

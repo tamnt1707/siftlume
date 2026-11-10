@@ -18,5 +18,17 @@
     "explain": "Expliquer le texte",
     "critique": "Critiquer le texte",
     "action": "Extraire les actions"
+  },
+  "runVideo": {
+    "summary": "Résumer cette vidéo",
+    "explain": "Expliquer cette vidéo",
+    "critique": "Analyser cette vidéo",
+    "action": "Extraire les actions"
+  },
+  "video": {
+    "captions": "Sous-titres : {{label}}",
+    "autoCaptions": "Sous-titres automatiques : {{label}}",
+    "noCaptions": "Cette vidéo n’a pas de sous-titres, elle ne peut donc pas être résumée",
+    "live": "Les directs peuvent être résumés une fois terminés"
   }
 }

@@ -15,14 +15,16 @@
     "text": "文字",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "Markdown"
+    "markdown": "Markdown",
+    "video": "影片"
   },
   "kindShort": {
     "webpage": "網頁",
     "text": "文字",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "MD"
+    "markdown": "MD",
+    "video": "影片"
   },
   "history": {
     "empty": "尚無歷史紀錄。",

@@ -18,5 +18,17 @@
     "explain": "テキストを解説",
     "critique": "テキストを批評",
     "action": "やることを抽出"
+  },
+  "runVideo": {
+    "summary": "この動画を要約",
+    "explain": "この動画を解説",
+    "critique": "この動画を批判的に検証",
+    "action": "やることを抽出"
+  },
+  "video": {
+    "captions": "字幕: {{label}}",
+    "autoCaptions": "自動字幕: {{label}}",
+    "noCaptions": "この動画には字幕がないため要約できません",
+    "live": "ライブ配信は終了後に要約できます"
   }
 }

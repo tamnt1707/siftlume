@@ -15,14 +15,16 @@
     "text": "Текст",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "Markdown"
+    "markdown": "Markdown",
+    "video": "Видео"
   },
   "kindShort": {
     "webpage": "Веб",
     "text": "Текст",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "MD"
+    "markdown": "MD",
+    "video": "Видео"
   },
   "history": {
     "empty": "История пока пуста.",

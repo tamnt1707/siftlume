@@ -34,5 +34,11 @@
   },
   "file": {
     "unsupported": "Type de fichier non pris en charge : « {{type}} ». Formats pris en charge : PDF, CSV, MD, TXT, HTML, JSON."
+  },
+  "video": {
+    "notVideo": "Aucune vidéo YouTube dans cet onglet.",
+    "live": "C’est un direct. Résumez-le une fois terminé.",
+    "noCaptions": "Cette vidéo n’a pas de sous-titres : il n’y a rien à résumer.",
+    "transcriptFailed": "Impossible de lire les sous-titres de cette vidéo. Rechargez l’onglet YouTube et réessayez."
   }
 }

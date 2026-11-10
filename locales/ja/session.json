@@ -24,7 +24,9 @@
     "highlighted": "ページ内でハイライトしました。",
     "quoteNotFound": "この引用はページ内に見つかりませんでした。",
     "tabGone": "元のタブは閉じられたか、別のページに移動しました。",
-    "copied": "コピーしました。"
+    "copied": "コピーしました。",
+    "playingFrom": "{{time}} から再生",
+    "momentNotFound": "動画内でその場面が見つかりませんでした。"
   },
   "warnings": {
     "invalidUi_other": "モデルが無効なUI記述を {{count}} 件生成しました。表示できた部分のみ表示しています。",

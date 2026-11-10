@@ -34,5 +34,11 @@
   },
   "file": {
     "unsupported": "Tipo de archivo no admitido: “{{type}}”. Admitidos: PDF, CSV, MD, TXT, HTML, JSON."
+  },
+  "video": {
+    "notVideo": "No hay ningún vídeo de YouTube en esta pestaña.",
+    "live": "Es una emisión en directo. Resúmela cuando termine.",
+    "noCaptions": "Este vídeo no tiene subtítulos, así que no hay nada que resumir.",
+    "transcriptFailed": "No se pudieron leer los subtítulos del vídeo. Recarga la pestaña de YouTube y vuelve a intentarlo."
   }
 }

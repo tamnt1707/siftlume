@@ -15,14 +15,16 @@
     "text": "Văn bản",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "Markdown"
+    "markdown": "Markdown",
+    "video": "Video"
   },
   "kindShort": {
     "webpage": "Web",
     "text": "Văn bản",
     "pdf": "PDF",
     "csv": "CSV",
-    "markdown": "MD"
+    "markdown": "MD",
+    "video": "Video"
   },
   "history": {
     "empty": "Chưa có lịch sử.",

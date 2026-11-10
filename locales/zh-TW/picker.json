@@ -18,5 +18,17 @@
     "explain": "講解文字",
     "critique": "評析文字",
     "action": "擷取待辦事項"
+  },
+  "runVideo": {
+    "summary": "摘要這部影片",
+    "explain": "講解這部影片",
+    "critique": "檢視這部影片",
+    "action": "擷取待辦事項"
+  },
+  "video": {
+    "captions": "字幕：{{label}}",
+    "autoCaptions": "自動字幕：{{label}}",
+    "noCaptions": "這部影片沒有字幕，無法摘要",
+    "live": "直播結束後才能摘要"
   }
 }

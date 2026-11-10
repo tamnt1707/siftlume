@@ -24,7 +24,9 @@
     "highlighted": "已在页面中高亮。",
     "quoteNotFound": "在页面中找不到这段引文。",
     "tabGone": "原标签页已关闭或已跳转到其他页面。",
-    "copied": "已复制。"
+    "copied": "已复制。",
+    "playingFrom": "从 {{time}} 开始播放",
+    "momentNotFound": "在视频中找不到这一段。"
   },
   "warnings": {
     "invalidUi_other": "模型生成了 {{count}} 条无效的界面语句;仅显示可渲染的部分。",

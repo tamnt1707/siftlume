@@ -24,7 +24,9 @@
     "highlighted": "Highlighted in the page.",
     "quoteNotFound": "Could not find that quote in the page.",
     "tabGone": "The original tab was closed or navigated away.",
-    "copied": "Copied."
+    "copied": "Copied.",
+    "playingFrom": "Playing from {{time}}",
+    "momentNotFound": "Could not find that moment in the video."
   },
   "warnings": {
     "invalidUi_one": "The model produced {{count}} invalid UI statement; showing what rendered.",

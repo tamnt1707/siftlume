@@ -18,5 +18,17 @@
     "explain": "텍스트 설명",
     "critique": "텍스트 비평",
     "action": "할 일 뽑기"
+  },
+  "runVideo": {
+    "summary": "이 동영상 요약",
+    "explain": "이 동영상 설명",
+    "critique": "이 동영상 비판적 검토",
+    "action": "할 일 뽑기"
+  },
+  "video": {
+    "captions": "자막: {{label}}",
+    "autoCaptions": "자동 자막: {{label}}",
+    "noCaptions": "이 동영상에는 자막이 없어 요약할 수 없습니다",
+    "live": "라이브 방송은 끝난 뒤 요약할 수 있습니다"
   }
 }
