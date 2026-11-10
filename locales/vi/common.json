@@ -16,7 +16,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "Markdown",
-    "video": "Video"
+    "video": "Video",
+    "multi": "Nhiều tab"
   },
   "kindShort": {
     "webpage": "Web",
@@ -24,7 +25,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "MD",
-    "video": "Video"
+    "video": "Video",
+    "multi": "Tab"
   },
   "history": {
     "empty": "Chưa có lịch sử.",

@@ -130,5 +130,6 @@
     "value": "値",
     "verdict": "評価",
     "source": "出典"
-  }
+  },
+  "tabsSkipped": "読み取れなかったタブ: {{titles}}"
 }

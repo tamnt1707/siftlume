@@ -31,5 +31,15 @@
     "noCaptions": "This video has no captions, so it can’t be summarized",
     "live": "Live streams can be summarized after they end"
   },
-  "runCustom": "Read as “{{name}}”"
+  "runCustom": "Read as “{{name}}”",
+  "tabs": {
+    "open": "Combine open tabs",
+    "hint": "Summarize and compare up to {{max}} tabs together. Siftlume asks to see your tabs, then to read the ones you pick.",
+    "title": "Tabs in this window",
+    "count": "{{count}}/{{max}} selected",
+    "refresh": "Refresh the list",
+    "none": "Open at least two web pages in this window to combine them.",
+    "run": "Combine and compare ({{count}})",
+    "denied": "Siftlume needs that permission to read your tabs."
+  }
 }

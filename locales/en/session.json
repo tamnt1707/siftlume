@@ -135,5 +135,6 @@
     "value": "Value",
     "verdict": "Verdict",
     "source": "Source"
-  }
+  },
+  "tabsSkipped": "Could not read: {{titles}}"
 }

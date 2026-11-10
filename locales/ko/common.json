@@ -16,7 +16,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "Markdown",
-    "video": "동영상"
+    "video": "동영상",
+    "multi": "여러 탭"
   },
   "kindShort": {
     "webpage": "웹",
@@ -24,7 +25,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "MD",
-    "video": "동영상"
+    "video": "동영상",
+    "multi": "탭"
   },
   "history": {
     "empty": "아직 기록이 없습니다.",

@@ -26,6 +26,8 @@ export default defineConfig({
     ],
     // Requested at runtime for the provider API domain (Settings → Save), so calls bypass CORS.
     optional_host_permissions: ['<all_urls>'],
+    // Asked for only when the user combines several tabs: lists the open tabs to pick from.
+    optional_permissions: ['tabs'],
     action: { default_title: '__MSG_actionTitle__' },
     commands: {
       // Opens the popup.

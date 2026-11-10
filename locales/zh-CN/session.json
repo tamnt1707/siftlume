@@ -130,5 +130,6 @@
     "value": "数值",
     "verdict": "结论",
     "source": "来源"
-  }
+  },
+  "tabsSkipped": "无法读取：{{titles}}"
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Clock01Icon, FileUploadIcon, Settings02Icon, SparklesIcon } from '@hugeicons/core-free-icons';
+import { Clock01Icon, FileUploadIcon, Layers01Icon, Settings02Icon, SparklesIcon } from '@hugeicons/core-free-icons';
 import { Icon } from '@/components/Icon';
 import { Themed } from '@/components/Themed';
 import { browser, type Browser } from '#imports';
@@ -123,7 +123,11 @@ export default function Popup() {
           )}
         </div>
 
-        {/* File pickers can close the popup, so files are picked on the full page. */}
+        {/* Permission prompts and file pickers close the popup, so both happen on the full page. */}
+        <button className="btn btn--block" onClick={() => show({ view: 'tabs' })}>
+          <Icon icon={Layers01Icon} size={16} />
+          {t('picker:tabs.open')}
+        </button>
         <button className="btn btn--block" onClick={() => show({ view: 'new' })}>
           <Icon icon={FileUploadIcon} size={16} />
           {t('upload')}

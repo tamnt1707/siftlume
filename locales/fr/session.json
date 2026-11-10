@@ -140,5 +140,6 @@
     "value": "Valeur",
     "verdict": "Verdict",
     "source": "Source"
-  }
+  },
+  "tabsSkipped": "Illisible : {{titles}}"
 }

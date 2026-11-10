@@ -696,6 +696,86 @@ kbd {
   gap: 8px;
 }
 
+/* Start screen: combine several open tabs */
+.tabs-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tabs-picker .hint {
+  margin: 0;
+}
+
+.tabs-picker--open {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.tabs-picker__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+}
+
+.tabs-picker__head .muted {
+  margin-left: auto;
+  font-size: 12.5px;
+}
+
+.tabs-picker__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 280px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.tabs-picker__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  border-radius: var(--r-sm, 8px);
+  cursor: pointer;
+}
+
+.tabs-picker__item:hover {
+  background: var(--accent-soft);
+}
+
+.tabs-picker__item input {
+  width: auto;
+  margin: 0;
+  flex: none;
+  accent-color: var(--accent);
+}
+
+.tabs-picker__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tabs-picker__title {
+  overflow: hidden;
+  font-size: 13.5px;
+  color: var(--ink);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tabs-picker__host {
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
 .dropzone {
   display: flex;
   flex-direction: column;
@@ -752,6 +832,54 @@ kbd {
   min-width: 0;
   font-size: 13px;
   color: var(--ink-2);
+}
+
+/* A combined source: its tabs, numbered as the summary cites them. */
+.source__parts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  grid-column: 1 / -1;
+}
+
+.source__parts a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 260px;
+  padding: 3px 9px 3px 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.source__parts a:hover {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.source__part-index {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  flex: none;
+}
+
+.source__part-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .source__favicon {

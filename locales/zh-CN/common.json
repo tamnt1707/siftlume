@@ -16,7 +16,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "Markdown",
-    "video": "视频"
+    "video": "视频",
+    "multi": "多个标签页"
   },
   "kindShort": {
     "webpage": "网页",
@@ -24,7 +25,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "MD",
-    "video": "视频"
+    "video": "视频",
+    "multi": "标签页"
   },
   "history": {
     "empty": "暂无历史记录。",

@@ -135,5 +135,6 @@
     "value": "Wert",
     "verdict": "Fazit",
     "source": "Quelle"
-  }
+  },
+  "tabsSkipped": "Nicht lesbar: {{titles}}"
 }

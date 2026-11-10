@@ -16,7 +16,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "Markdown",
-    "video": "วิดีโอ"
+    "video": "วิดีโอ",
+    "multi": "หลายแท็บ"
   },
   "kindShort": {
     "webpage": "เว็บ",
@@ -24,7 +25,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "MD",
-    "video": "วิดีโอ"
+    "video": "วิดีโอ",
+    "multi": "แท็บ"
   },
   "history": {
     "empty": "ยังไม่มีประวัติ",

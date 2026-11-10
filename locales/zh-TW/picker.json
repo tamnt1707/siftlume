@@ -31,5 +31,15 @@
     "noCaptions": "這部影片沒有字幕，無法摘要",
     "live": "直播結束後才能摘要"
   },
-  "runCustom": "以「{{name}}」閱讀"
+  "runCustom": "以「{{name}}」閱讀",
+  "tabs": {
+    "open": "合併開啟的分頁",
+    "hint": "一次摘要並比較最多 {{max}} 個分頁。Siftlume 會先要求查看分頁清單，再要求讀取你選取的分頁。",
+    "title": "此視窗中的分頁",
+    "count": "已選 {{count}}/{{max}}",
+    "refresh": "重新整理清單",
+    "none": "請在此視窗中至少開啟兩個網頁再合併。",
+    "run": "合併並比較（{{count}}）",
+    "denied": "Siftlume 需要該權限才能讀取分頁。"
+  }
 }

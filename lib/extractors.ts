@@ -5,7 +5,7 @@ import { gfm } from '@joplin/turndown-plugin-gfm';
 import Papa from 'papaparse';
 import type { CsvDataset, CsvRow } from './csv-tools';
 
-export type SourceKind = 'webpage' | 'text' | 'pdf' | 'csv' | 'markdown' | 'video';
+export type SourceKind = 'webpage' | 'text' | 'pdf' | 'csv' | 'markdown' | 'video' | 'multi';
 
 export interface ExtractedSource {
   kind: SourceKind;
@@ -15,6 +15,10 @@ export interface ExtractedSource {
   content: string;
   /** Set when kind = "csv": parsed data for in-browser Query tools. */
   csv?: CsvDataset;
+  /** Set when kind = "multi": the tabs combined into this source, in document order. */
+  parts?: { title: string; origin: string; tabId: number; kind: SourceKind }[];
+  /** Set when kind = "multi": titles of chosen tabs that could not be read. */
+  skipped?: string[];
 }
 
 /** Max CSV rows kept for tools (and stored in history). */

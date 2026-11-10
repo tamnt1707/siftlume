@@ -375,6 +375,7 @@ function Pickers() {
             ctrl={idle}
             settings={settings}
             page={{ id: 1, title: 'How vaccines train the immune system', readable: true }}
+            startTabs={query.has('tabs')}
           />
         </div>
       </main>

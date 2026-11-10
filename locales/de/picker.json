@@ -31,5 +31,15 @@
     "noCaptions": "Dieses Video hat keine Untertitel und kann nicht zusammengefasst werden",
     "live": "Livestreams lassen sich nach dem Ende zusammenfassen"
   },
-  "runCustom": "Lesen als „{{name}}“"
+  "runCustom": "Lesen als „{{name}}“",
+  "tabs": {
+    "open": "Offene Tabs kombinieren",
+    "hint": "Bis zu {{max}} Tabs gemeinsam zusammenfassen und vergleichen. Siftlume fragt nach Zugriff auf deine Tabs und dann auf die ausgewählten.",
+    "title": "Tabs in diesem Fenster",
+    "count": "{{count}}/{{max}} ausgewählt",
+    "refresh": "Liste aktualisieren",
+    "none": "Öffne mindestens zwei Webseiten in diesem Fenster, um sie zu kombinieren.",
+    "run": "Kombinieren und vergleichen ({{count}})",
+    "denied": "Siftlume braucht diese Berechtigung, um deine Tabs zu lesen."
+  }
 }

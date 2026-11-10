@@ -7,6 +7,7 @@ import type { Settings } from '@/lib/settings';
 import type { ModeId } from '@/lib/modes';
 import { AnalysisChoice, runLabel } from './ModePicker';
 import { useVideoProbe } from './useVideoProbe';
+import { TabsPicker } from './TabsPicker';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
 
@@ -26,10 +27,13 @@ export function SourcePicker({
   ctrl,
   page,
   settings,
+  startTabs,
 }: {
   ctrl: SessionController;
   page?: PageTarget;
   settings: Settings;
+  /** Opened from the popup's "Combine tabs": list the open tabs right away. */
+  startTabs?: boolean;
 }) {
   const { t } = useTranslation('picker');
   const [text, setText] = useState('');
@@ -119,6 +123,8 @@ export function SourcePicker({
           e.target.value = '';
         }}
       />
+
+      <TabsPicker ctrl={ctrl} mode={mode} currentTabId={page?.id} startOpen={startTabs} />
 
       {ctrl.phase === 'extracting' && <p className="muted center">{t('reading')}</p>}
       {!page && <p className="hint">{t('pageHint')}</p>}

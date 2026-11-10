@@ -3,6 +3,7 @@ import { t } from '@/lib/i18n';
 import { describeError } from '@/lib/llm';
 import { generateAnswer, generateSummary } from '@/lib/generate';
 import { extractTab } from '@/lib/page';
+import { extractTabs } from '@/lib/multi';
 import { extractFile, truncate, type ExtractedSource } from '@/lib/extractors';
 import { newId, readStored, saveSession, writeStored, type Session, type SessionOptions } from '@/lib/history';
 import { configProblem, type Settings } from '@/lib/settings';
@@ -79,14 +80,15 @@ export function useSession(settings: Settings) {
 
   /** Creates a session from an extracted source and summarizes it right away. */
   const start = useCallback(
-    async (src: ExtractedSource & { tabId?: number }, mode: ModeId = 'summary') => {
+    async (src: ExtractedSource & { tabId?: number; truncated?: boolean }, mode: ModeId = 'summary') => {
       const missing = checkSettings();
       if (missing) {
         finish();
         return setError(missing);
       }
       const { content, truncated } = truncate(src.content, settingsRef.current.maxChars);
-      const source = { ...src, content, truncated };
+      // A combined source was already cut to fit, each tab to its share.
+      const source = { ...src, content, truncated: truncated || Boolean(src.truncated) };
       const now = Date.now();
       // Mode and length belong to the session: reopening it later keeps its kind of analysis.
       const base: Session = {
@@ -109,6 +111,24 @@ export function useSession(settings: Settings) {
       const ctrl = begin('extracting');
       try {
         const src = await extractTab(tabId);
+        if (ctrl.signal.aborted) return;
+        await start(src, mode);
+      } catch (e) {
+        if (abortRef.current === ctrl) {
+          setError(describeError(e, settingsRef.current));
+          finish();
+        }
+      }
+    },
+    [start],
+  );
+
+  /** Several tabs summarized and compared together. */
+  const fromTabs = useCallback(
+    async (tabIds: number[], mode?: ModeId) => {
+      const ctrl = begin('extracting');
+      try {
+        const src = await extractTabs(tabIds, settingsRef.current.maxChars);
         if (ctrl.signal.aborted) return;
         await start(src, mode);
       } catch (e) {
@@ -298,6 +318,7 @@ export function useSession(settings: Settings) {
     warning,
     setError,
     fromTab,
+    fromTabs,
     fromText,
     fromFile,
     refine,

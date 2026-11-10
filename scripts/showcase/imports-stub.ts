@@ -34,7 +34,16 @@ export const storage = {
 export const browser: any = {
   runtime: { id: 'showcase', getManifest: () => ({ version: '0.1.0' }) },
   i18n: { getUILanguage: () => new URLSearchParams(location.search).get('lang') ?? 'en' },
-  permissions: { request: async () => true, remove: async () => true },
+  permissions: { request: async () => true, remove: async () => true, contains: async () => true },
+  /** ?tabs: open tabs for the "Combine open tabs" picker. */
+  tabs: {
+    query: async () => [
+      { id: 1, title: 'How vaccines train the immune system', url: 'https://www.example-health.org/vaccines' },
+      { id: 2, title: 'mRNA vaccines: a decade of research', url: 'https://science.example.com/mrna' },
+      { id: 3, title: 'Vaccine myths, checked', url: 'https://factcheck.example.net/vaccine-myths' },
+      { id: 4, title: 'WHO immunization schedule', url: 'https://www.who.int/immunization' },
+    ],
+  },
   declarativeNetRequest: { updateSessionRules: async () => {} },
 };
 export type Browser = any;

@@ -116,6 +116,8 @@ const KIND_RULES: Record<SourceKind, string> = {
   markdown: 'The source is a Markdown document. Do not use @HighlightInPage.',
   video:
     'The source is the transcript of a YouTube video: paragraphs led by [m:ss] timestamps. Summarize what is said, not the transcript format; automatic captions may misspell names and terms, so fix obvious slips silently. Give key moments with their timestamps (Timeline with when set to the timestamp, e.g. "12:34"). Pass the video as the only item of Card sources and cite it as [1]. For SourceQuote and @HighlightInPage, copy a short phrase verbatim from the transcript without the timestamp: clicking it plays the video from that moment.',
+  multi:
+    'The source is several documents from different browser tabs, each wrapped in <document index title url type>. Combine and compare them: lead with what they agree on, then where they differ or contradict (Comparison for products, plans or options; Perspectives for viewpoints; ClaimCheck when they disagree on facts), then what only one of them covers. Say which document a point comes from (its site or a short title). List every document as Card sources in index order and cite them as [1], [2]… Omit SummaryHero source. For SourceQuote and @HighlightInPage copy a short phrase verbatim from one document: clicking it opens that tab.',
   csv: 'The source is a CSV dataset. Describe what it contains, important columns, ranges, trends and outliers. Use Query("csv_group", ...) and Query("csv_rows", ...) for charts and tables instead of hard-coding numbers, and add a filter Form with a Select bound to a $variable when a text column has few distinct values. Do not use @HighlightInPage.',
 };
 

@@ -100,7 +100,7 @@ Full policy: [tamnt1707.github.io/siftlume/privacy.html](https://tamnt1707.githu
 
 - API keys are stored only in this browser (`chrome.storage.local`) and are never synced.
 - Page content is sent only to the provider you configured, and only when you ask for a summary.
-- Page access comes from `activeTab`, granted for the tab where you click the icon or use the context menu. The only host permission requested is the API domain of your provider, when you save Settings.
+- Page access comes from `activeTab`, granted for the tab where you click the icon or use the context menu. Host permissions are requested only for the API domain of your provider, when you save Settings, and for the sites of the tabs you pick in "Combine open tabs" (which also asks for the optional `tabs` permission to list them).
 
 ## Development
 

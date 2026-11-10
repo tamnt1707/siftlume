@@ -31,5 +31,15 @@
     "noCaptions": "这个视频没有字幕，无法总结",
     "live": "直播结束后才能总结"
   },
-  "runCustom": "按“{{name}}”阅读"
+  "runCustom": "按“{{name}}”阅读",
+  "tabs": {
+    "open": "合并打开的标签页",
+    "hint": "一次总结并比较最多 {{max}} 个标签页。Siftlume 会先请求查看标签页列表，再请求读取你选中的标签页。",
+    "title": "此窗口中的标签页",
+    "count": "已选 {{count}}/{{max}}",
+    "refresh": "刷新列表",
+    "none": "请在此窗口中至少打开两个网页再合并。",
+    "run": "合并并比较（{{count}}）",
+    "denied": "Siftlume 需要该权限才能读取标签页。"
+  }
 }

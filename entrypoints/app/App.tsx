@@ -56,6 +56,8 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
   const [toast, setToast] = useState<string | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const routed = useRef(false);
+  /** ?view=tabs (the popup's "Combine tabs"): the start screen lists the open tabs. */
+  const [startTabs, setStartTabs] = useState(false);
   /** Set by ?print=1: print once the opened session's summary has rendered. */
   const printWhenReady = useRef(false);
 
@@ -129,6 +131,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
     const requestId = params.get('request');
     const sessionId = params.get('session');
     if (params.get('view') === 'history') setView('history');
+    if (params.get('view') === 'tabs') setStartTabs(true);
 
     if (requestId) {
       void takeRequest(requestId).then(run);
@@ -294,7 +297,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
           <SiftLoader stage="reading" title={t('loader.reading')} onStop={ctrl.stop} />
         ) : (
           <div className="narrow">
-            <SourcePicker ctrl={ctrl} page={pageTarget} settings={settings} />
+            <SourcePicker ctrl={ctrl} page={pageTarget} settings={settings} startTabs={startTabs} />
           </div>
         )}
       </main>

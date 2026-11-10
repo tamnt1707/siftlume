@@ -16,7 +16,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "Markdown",
-    "video": "Vídeo"
+    "video": "Vídeo",
+    "multi": "Várias abas"
   },
   "kindShort": {
     "webpage": "Web",
@@ -24,7 +25,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "MD",
-    "video": "Vídeo"
+    "video": "Vídeo",
+    "multi": "Abas"
   },
   "history": {
     "empty": "Ainda não há histórico.",

@@ -16,7 +16,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "Markdown",
-    "video": "影片"
+    "video": "影片",
+    "multi": "多個分頁"
   },
   "kindShort": {
     "webpage": "網頁",
@@ -24,7 +25,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "MD",
-    "video": "影片"
+    "video": "影片",
+    "multi": "分頁"
   },
   "history": {
     "empty": "尚無歷史紀錄。",

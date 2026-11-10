@@ -31,5 +31,15 @@
     "noCaptions": "Cette vidéo n’a pas de sous-titres, elle ne peut donc pas être résumée",
     "live": "Les directs peuvent être résumés une fois terminés"
   },
-  "runCustom": "Lire en mode « {{name}} »"
+  "runCustom": "Lire en mode « {{name}} »",
+  "tabs": {
+    "open": "Combiner les onglets ouverts",
+    "hint": "Résumez et comparez jusqu’à {{max}} onglets ensemble. Siftlume demande à voir vos onglets, puis à lire ceux que vous choisissez.",
+    "title": "Onglets de cette fenêtre",
+    "count": "{{count}}/{{max}} sélectionnés",
+    "refresh": "Actualiser la liste",
+    "none": "Ouvrez au moins deux pages web dans cette fenêtre pour les combiner.",
+    "run": "Combiner et comparer ({{count}})",
+    "denied": "Siftlume a besoin de cette autorisation pour lire vos onglets."
+  }
 }

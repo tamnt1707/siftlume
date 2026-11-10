@@ -7,6 +7,7 @@ import { readStored, type QaTurn } from '@/lib/history';
 import { splitInline } from '@/lib/openui';
 import { highlightInTab } from '@/lib/page';
 import { findMoment, formatTime, seekVideo, youTubeVideoId } from '@/lib/youtube';
+import { partContent, partForQuote } from '@/lib/multi';
 import { ArrowExpand01Icon, ArrowUp02Icon, MagicWand01Icon, RefreshIcon, StopIcon } from '@hugeicons/core-free-icons';
 import { REFINE_PROMPTS, type RefineId } from '@/lib/refine';
 import { GenUI, type GenUIAction } from './GenUI';
@@ -71,6 +72,58 @@ export function SessionView({
     if (ctrl.phase === 'answering') bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }, [ctrl.phase, ctrl.streamRaw, session.qa.length]);
 
+  /**
+   * Shows a quote where it came from: highlighted in the web page, or the video played from that
+   * moment. For several tabs, in the tab whose text contains it.
+   */
+  const showQuote = async (text: string) => {
+    let target: { kind: string; tabId?: number; origin?: string; content: string } = source;
+    if (source.kind === 'multi' && source.parts) {
+      const i = partForQuote(source.content, text);
+      const part = i === null ? undefined : source.parts[i];
+      if (!part) return notify(t('toast.quoteNotFound'));
+      target = { ...part, content: partContent(source.content, i!) };
+    }
+    const { tabId, origin } = target;
+
+    if (target.kind === 'video' && tabId && origin) {
+      // Videos: play from the moment the quote is said.
+      const at = findMoment(target.content, text);
+      if (at === null) return notify(t('toast.momentNotFound'));
+      const played = t('toast.playingFrom', { time: formatTime(at) });
+      // The tab moved on to another video (or was closed): open this one at that moment.
+      const openAt = () => {
+        const url = new URL(origin);
+        url.searchParams.set('t', `${Math.floor(at)}s`);
+        return url.href;
+      };
+      try {
+        const current = await browser.tabs.get(tabId);
+        if (youTubeVideoId(current.url) !== youTubeVideoId(origin)) {
+          await browser.tabs.update(tabId, { url: openAt(), active: true });
+          return notify(played);
+        }
+        const tab = await browser.tabs.update(tabId, { active: true });
+        if (tab?.windowId !== undefined) await browser.windows.update(tab.windowId, { focused: true });
+        return notify((await seekVideo(tabId, at)) ? played : t('toast.tabGone'));
+      } catch {
+        await browser.tabs.create({ url: openAt() });
+        return notify(played);
+      }
+    }
+
+    if (target.kind !== 'webpage' || !tabId) return notify(t('toast.highlightOnlyWeb'));
+    try {
+      // Bring the original tab to the front, then highlight.
+      const tab = await browser.tabs.update(tabId, { active: true });
+      if (tab?.windowId !== undefined) await browser.windows.update(tab.windowId, { focused: true });
+      const found = await highlightInTab(tabId, text);
+      notify(found ? t('toast.highlighted') : t('toast.quoteNotFound'));
+    } catch {
+      notify(t('toast.tabGone'));
+    }
+  };
+
   const onAction = async (event: GenUIAction) => {
     switch (event.type) {
       case 'continue_conversation': {
@@ -86,45 +139,9 @@ export function SessionView({
       case 'open_url':
         if (typeof event.params.url === 'string') void browser.tabs.create({ url: event.params.url });
         break;
-      case 'HighlightInPage': {
-        if (source.kind === 'video' && source.tabId) {
-          // Videos: play from the moment the quote is said.
-          const at = findMoment(source.content, event.params.text);
-          if (at === null) return notify(t('toast.momentNotFound'));
-          const played = t('toast.playingFrom', { time: formatTime(at) });
-          // The tab moved on to another video (or was closed): open this one at that moment.
-          const openAt = () => {
-            const url = new URL(source.origin!);
-            url.searchParams.set('t', `${Math.floor(at)}s`);
-            return url.href;
-          };
-          try {
-            const current = await browser.tabs.get(source.tabId);
-            if (youTubeVideoId(current.url) !== youTubeVideoId(source.origin)) {
-              await browser.tabs.update(source.tabId, { url: openAt(), active: true });
-              return notify(played);
-            }
-            const tab = await browser.tabs.update(source.tabId, { active: true });
-            if (tab?.windowId !== undefined) await browser.windows.update(tab.windowId, { focused: true });
-            notify((await seekVideo(source.tabId, at)) ? played : t('toast.tabGone'));
-          } catch {
-            await browser.tabs.create({ url: openAt() });
-            notify(played);
-          }
-          break;
-        }
-        if (source.kind !== 'webpage' || !source.tabId) return notify(t('toast.highlightOnlyWeb'));
-        try {
-          // Bring the original tab to the front, then highlight.
-          const tab = await browser.tabs.update(source.tabId, { active: true });
-          if (tab?.windowId !== undefined) await browser.windows.update(tab.windowId, { focused: true });
-          const found = await highlightInTab(source.tabId, event.params.text);
-          notify(found ? t('toast.highlighted') : t('toast.quoteNotFound'));
-        } catch {
-          notify(t('toast.tabGone'));
-        }
+      case 'HighlightInPage':
+        await showQuote(event.params.text);
         break;
-      }
       case 'CopyText':
         await navigator.clipboard.writeText(event.params.text);
         notify(t('toast.copied'));
@@ -208,6 +225,22 @@ export function SessionView({
             </button>
           )}
         </div>
+        {source.parts && (
+          <ol className="source__parts">
+            {source.parts.map((part, i) => (
+              <li key={i}>
+                <a href={part.origin} target="_blank" rel="noreferrer" title={part.title}>
+                  <span className="source__part-index">{i + 1}</span>
+                  {HAS_FAVICON_CACHE && <img className="source__favicon" src={faviconUrl(part.origin)} alt="" />}
+                  <span className="source__part-title">{part.title}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        )}
+        {source.skipped?.length ? (
+          <p className="hint">{t('tabsSkipped', { titles: source.skipped.join(', ') })}</p>
+        ) : null}
         {source.truncated && <p className="hint">{t('truncated')}</p>}
       </header>
 
@@ -231,7 +264,7 @@ export function SessionView({
               <span className="muted">{t('toolbar.sourceWords', { count: reading.words })}</span>
             </header>
             <div className="source-text__body">
-              {source.kind === 'pdf' || source.kind === 'text' || source.kind === 'video' ? (
+              {['pdf', 'text', 'video', 'multi'].includes(source.kind) ? (
                 <pre>{source.content}</pre>
               ) : (
                 <MarkDownRenderer textMarkdown={source.content} variant="clear" />

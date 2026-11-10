@@ -140,5 +140,6 @@
     "value": "Valor",
     "verdict": "Veredito",
     "source": "Fonte"
-  }
+  },
+  "tabsSkipped": "Não foi possível ler: {{titles}}"
 }

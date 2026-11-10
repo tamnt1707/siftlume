@@ -40,5 +40,8 @@
     "live": "This is a live stream. Summarize it after it ends.",
     "noCaptions": "This video has no captions, so there is nothing to summarize.",
     "transcriptFailed": "Could not read this video’s captions. Reload the YouTube tab and try again."
+  },
+  "multi": {
+    "tooFew": "At least two of the tabs must be readable. {{reason}}"
   }
 }

@@ -130,5 +130,6 @@
     "value": "값",
     "verdict": "평가",
     "source": "출처"
-  }
+  },
+  "tabsSkipped": "읽지 못한 탭: {{titles}}"
 }

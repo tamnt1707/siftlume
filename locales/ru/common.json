@@ -16,7 +16,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "Markdown",
-    "video": "Видео"
+    "video": "Видео",
+    "multi": "Несколько вкладок"
   },
   "kindShort": {
     "webpage": "Веб",
@@ -24,7 +25,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "MD",
-    "video": "Видео"
+    "video": "Видео",
+    "multi": "Вкладки"
   },
   "history": {
     "empty": "История пока пуста.",

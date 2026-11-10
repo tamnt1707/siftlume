@@ -16,7 +16,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "Markdown",
-    "video": "動画"
+    "video": "動画",
+    "multi": "複数のタブ"
   },
   "kindShort": {
     "webpage": "Web",
@@ -24,7 +25,8 @@
     "pdf": "PDF",
     "csv": "CSV",
     "markdown": "MD",
-    "video": "動画"
+    "video": "動画",
+    "multi": "タブ"
   },
   "history": {
     "empty": "履歴はまだありません。",

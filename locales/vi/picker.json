@@ -31,5 +31,15 @@
     "noCaptions": "Video này không có phụ đề nên không tóm tắt được",
     "live": "Livestream tóm tắt được sau khi kết thúc"
   },
-  "runCustom": "Đọc theo “{{name}}”"
+  "runCustom": "Đọc theo “{{name}}”",
+  "tabs": {
+    "open": "Gộp các tab đang mở",
+    "hint": "Tóm tắt và so sánh tối đa {{max}} tab cùng lúc. Siftlume sẽ xin quyền xem danh sách tab, rồi quyền đọc các tab bạn chọn.",
+    "title": "Các tab trong cửa sổ này",
+    "count": "Đã chọn {{count}}/{{max}}",
+    "refresh": "Làm mới danh sách",
+    "none": "Mở ít nhất hai trang web trong cửa sổ này để gộp.",
+    "run": "Gộp và so sánh ({{count}})",
+    "denied": "Siftlume cần quyền đó để đọc các tab."
+  }
 }

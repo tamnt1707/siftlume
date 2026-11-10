@@ -31,5 +31,15 @@
     "noCaptions": "Este vídeo no tiene subtítulos, así que no se puede resumir",
     "live": "Las emisiones en directo se pueden resumir cuando terminan"
   },
-  "runCustom": "Leer como «{{name}}»"
+  "runCustom": "Leer como «{{name}}»",
+  "tabs": {
+    "open": "Combinar pestañas abiertas",
+    "hint": "Resume y compara hasta {{max}} pestañas a la vez. Siftlume pedirá ver tus pestañas y luego leer las que elijas.",
+    "title": "Pestañas de esta ventana",
+    "count": "{{count}}/{{max}} seleccionadas",
+    "refresh": "Actualizar la lista",
+    "none": "Abre al menos dos páginas web en esta ventana para combinarlas.",
+    "run": "Combinar y comparar ({{count}})",
+    "denied": "Siftlume necesita ese permiso para leer tus pestañas."
+  }
 }

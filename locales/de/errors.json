@@ -40,5 +40,8 @@
     "live": "Das ist ein Livestream. Fasse ihn nach dem Ende zusammen.",
     "noCaptions": "Dieses Video hat keine Untertitel, daher gibt es nichts zusammenzufassen.",
     "transcriptFailed": "Die Untertitel dieses Videos konnten nicht gelesen werden. Lade den YouTube-Tab neu und versuche es noch einmal."
+  },
+  "multi": {
+    "tooFew": "Mindestens zwei Tabs müssen lesbar sein. {{reason}}"
   }
 }

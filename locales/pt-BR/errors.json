@@ -40,5 +40,8 @@
     "live": "Esta é uma transmissão ao vivo. Resuma depois que ela terminar.",
     "noCaptions": "Este vídeo não tem legendas, então não há o que resumir.",
     "transcriptFailed": "Não foi possível ler as legendas do vídeo. Recarregue a aba do YouTube e tente de novo."
+  },
+  "multi": {
+    "tooFew": "Pelo menos duas abas precisam ser legíveis. {{reason}}"
   }
 }

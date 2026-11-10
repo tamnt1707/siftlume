@@ -31,5 +31,15 @@
     "noCaptions": "Este vídeo não tem legendas, então não pode ser resumido",
     "live": "Transmissões ao vivo podem ser resumidas depois que terminam"
   },
-  "runCustom": "Ler como “{{name}}”"
+  "runCustom": "Ler como “{{name}}”",
+  "tabs": {
+    "open": "Combinar abas abertas",
+    "hint": "Resuma e compare até {{max}} abas juntas. O Siftlume pede para ver suas abas e depois para ler as que você escolher.",
+    "title": "Abas desta janela",
+    "count": "{{count}}/{{max}} selecionadas",
+    "refresh": "Atualizar a lista",
+    "none": "Abra pelo menos duas páginas nesta janela para combiná-las.",
+    "run": "Combinar e comparar ({{count}})",
+    "denied": "O Siftlume precisa dessa permissão para ler suas abas."
+  }
 }

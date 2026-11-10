@@ -40,5 +40,8 @@
     "live": "Đây là livestream. Hãy tóm tắt sau khi buổi phát kết thúc.",
     "noCaptions": "Video này không có phụ đề nên không có gì để tóm tắt.",
     "transcriptFailed": "Không đọc được phụ đề của video. Tải lại tab YouTube rồi thử lại."
+  },
+  "multi": {
+    "tooFew": "Cần đọc được ít nhất hai tab. {{reason}}"
   }
 }

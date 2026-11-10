@@ -40,5 +40,8 @@
     "live": "C’est un direct. Résumez-le une fois terminé.",
     "noCaptions": "Cette vidéo n’a pas de sous-titres : il n’y a rien à résumer.",
     "transcriptFailed": "Impossible de lire les sous-titres de cette vidéo. Rechargez l’onglet YouTube et réessayez."
+  },
+  "multi": {
+    "tooFew": "Au moins deux onglets doivent être lisibles. {{reason}}"
   }
 }

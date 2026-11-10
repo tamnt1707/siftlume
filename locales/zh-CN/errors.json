@@ -40,5 +40,8 @@
     "live": "这是直播，请在直播结束后再总结。",
     "noCaptions": "这个视频没有字幕，没有可总结的内容。",
     "transcriptFailed": "无法读取视频字幕。请刷新 YouTube 标签页后重试。"
+  },
+  "multi": {
+    "tooFew": "至少需要两个可读取的标签页。{{reason}}"
   }
 }

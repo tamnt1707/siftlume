@@ -130,5 +130,6 @@
     "value": "Giá trị",
     "verdict": "Đánh giá",
     "source": "Nguồn"
-  }
+  },
+  "tabsSkipped": "Không đọc được: {{titles}}"
 }

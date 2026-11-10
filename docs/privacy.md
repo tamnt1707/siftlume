@@ -24,7 +24,7 @@ Siftlume is a browser extension that summarizes the page you are reading, text y
 | API keys and settings                                                   | When you save Settings                                                                  | Stored only in your browser (`chrome.storage.local`). Never synced to your Google account and never sent anywhere except as authentication to the provider you selected.       |
 | Summary history                                                         | After each summary                                                                      | Stored only in your browser (`chrome.storage.local`). You can delete items at any time; uninstalling the extension removes them.                                               |
 
-Siftlume does not read pages in the background. It reads a page only after you click the extension icon or use its context menu on that page.
+Siftlume does not read pages in the background. It reads a page only after you click the extension icon or use its context menu on that page, or after you pick it in "Combine open tabs". For YouTube videos it reads the captions from the video page you are on.
 
 ## Third-party AI providers
 
@@ -41,7 +41,8 @@ When you summarize content, it is processed by the AI provider you chose, under 
 | `declarativeNetRequestWithHostAccess` | Let requests from the extension reach a local AI server (such as Ollama) that would otherwise reject the extension's origin. It only applies to the extension's own requests to servers you granted. |
 | `favicon`                             | Show the website's icon next to a summary.                                                                                                                                                           |
 | `clipboardWrite`                      | Copy a summary or a quote when you click Copy.                                                                                                                                                       |
-| Optional host access                  | Requested only when you save Settings, for the domain of the AI provider you configured, so the extension can call its API.                                                                          |
+| Optional `tabs`                       | Requested only when you choose "Combine open tabs", to list the tabs in the current window so you can pick which ones to summarize together.                                                         |
+| Optional host access                  | Requested only when you save Settings, for the domain of the AI provider you configured, and when you combine tabs, for the sites of the tabs you picked.                                            |
 
 ## Children
 
