@@ -25,6 +25,9 @@ Open an article, report or documentation page and click the Siftlume icon. You g
 
 WHAT YOU CAN SUMMARIZE
 • The page you are reading, or just a selection (right-click, then Summarize selection)
+• YouTube videos, from their captions; quotes jump to that moment in the video
+• Several open tabs at once, compared side by side
+• A page together with the pages it links to (Deep read)
 • Text you paste
 • Documents and spreadsheets you open from your computer
 
@@ -38,7 +41,8 @@ MADE FOR THE CONTENT
 TOOLS
 • Refine in one click: shorter, more detail, action items, timeline, simpler
 • Change the length or language of a single summary
-• Copy or download as Markdown, listen, or print
+• Write your own reading modes next to Summary, Explain, Critique and Action
+• Copy, download as HTML or Markdown, listen, or print
 • Jump to a quoted passage in the original page
 • History of past summaries
 

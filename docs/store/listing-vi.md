@@ -26,6 +26,9 @@ Mở một bài báo, báo cáo hay trang tài liệu rồi bấm biểu tượn
 
 TÓM TẮT ĐƯỢC GÌ
 • Trang bạn đang đọc, hoặc chỉ đoạn bạn bôi đen (chuột phải → Tóm tắt đoạn chọn)
+• Video YouTube, đọc từ phụ đề; bấm trích dẫn là phát đúng đoạn đó
+• Nhiều tab đang mở cùng lúc, so sánh với nhau
+• Một trang cùng các trang nó liên kết tới (Đọc sâu)
 • Văn bản bạn dán vào
 • Tài liệu và bảng tính mở từ máy: PDF, CSV, Markdown, TXT, HTML, JSON
 
@@ -50,7 +53,8 @@ BỐ CỤC THEO NỘI DUNG
 CÔNG CỤ
 • Tinh chỉnh một chạm: ngắn hơn, chi tiết hơn, việc cần làm, dòng thời gian, đơn giản hơn
 • Đổi độ dài hoặc ngôn ngữ của từng bản tóm tắt
-• Sao chép hoặc tải về dạng Markdown, nghe đọc, in hoặc lưu PDF
+• Tự tạo cách đọc của riêng bạn, bên cạnh Tóm tắt, Giải thích, Phản biện và Hành động
+• Sao chép hoặc tải về dạng HTML hay Markdown, nghe đọc, in hoặc lưu PDF
 • Bấm vào trích dẫn để nhảy tới đúng đoạn trong trang gốc
 • Lịch sử các bản tóm tắt
 
@@ -85,7 +89,7 @@ Siftlume trả về bản tóm tắt nhìn là hiểu:
 
 Dùng khóa AI của bạn (OpenAI, Claude, Gemini, OpenRouter, Groq…) hoặc chạy model trên máy bằng Ollama. Không có máy chủ trung gian, không tài khoản, không theo dõi. Giao diện có tiếng Việt.
 
-Cài từ Chrome Web Store (tìm "Siftlume") hoặc xem mã nguồn: https://github.com/tamnt1707/siftlume
+Cài từ Chrome Web Store (https://chromewebstore.google.com/detail/siftlume/ohbbflajppmdigjgbdhgaphmjidmfafa) hoặc xem mã nguồn: https://github.com/tamnt1707/siftlume
 
 Mọi người dùng thử và góp ý giúp mình, nhất là những loại trang nó tóm tắt chưa tốt nhé!
 ```
