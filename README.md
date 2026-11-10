@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <a href="https://chromewebstore.google.com/detail/siftlume/ohbbflajppmdigjgbdhgaphmjidmfafa"><img alt="Chrome Web Store" src="https://img.shields.io/chrome-web-store/v/ohbbflajppmdigjgbdhgaphmjidmfafa?label=Chrome%20Web%20Store&logo=googlechrome&logoColor=white&color=0B7A83"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-0B7A83"></a>
   <a href="CONTRIBUTING.md"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-2E7D46"></a>
   <a href="https://ko-fi.com/tamnt"><img alt="Support on Ko-fi" src="https://img.shields.io/badge/Ko--fi-support-FFE45C?logo=ko-fi&logoColor=1A2236"></a>
@@ -64,7 +65,13 @@ The screenshots show the real interface rendering example content. Regenerate th
 
 ## Install
 
-Siftlume is not on the Chrome Web Store yet. To install it from source:
+**[Add Siftlume to Chrome from the Chrome Web Store](https://chromewebstore.google.com/detail/siftlume/ohbbflajppmdigjgbdhgaphmjidmfafa)**. It also works in other Chromium browsers that install from the Chrome Web Store, such as Edge, Brave and Arc.
+
+1. Click **Add to Chrome**.
+2. Click the Siftlume icon in the toolbar (pin it from the puzzle-piece menu so it stays visible). On first run Settings opens with step-by-step instructions to get an API key from the provider you pick. Google Gemini, Groq, OpenRouter and Mistral have free tiers; Ollama and LM Studio run on your computer with no key.
+3. Paste the key, click **Save**, then open any article and click the icon to summarize it.
+
+### From source
 
 1. Build it (see [Development](#development)): `pnpm install && pnpm build`.
 2. Open `chrome://extensions` and turn on **Developer mode**.
