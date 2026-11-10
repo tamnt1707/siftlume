@@ -74,5 +74,6 @@
       "title": "Handeln",
       "desc": "Was zu tun ist: Schritte, Fristen, Entscheidungen"
     }
-  }
+  },
+  "deepOf": "{{title}} · tiefer gelesen"
 }

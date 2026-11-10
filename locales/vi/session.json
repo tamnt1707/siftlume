@@ -143,5 +143,18 @@
     "verdict": "Đánh giá",
     "source": "Nguồn"
   },
-  "tabsSkipped": "Không đọc được: {{titles}}"
+  "tabsSkipped": "Không đọc được: {{titles}}",
+  "deep": {
+    "button": "Đọc sâu",
+    "buttonTitle": "Đọc thêm các trang mà bài này liên kết tới",
+    "title": "Liên kết trong bài",
+    "hint": "Chọn tối đa {{max}} liên kết để đọc và gộp vào bản tóm tắt. Trang nào không tải được sẽ mở ngầm trong một tab rồi tự đóng.",
+    "aiPick": "Để AI chọn",
+    "aiPicking": "Đang chọn…",
+    "aiNone": "AI không thấy liên kết nào cần đọc thêm.",
+    "run": "Đọc sâu ({{count}})",
+    "cancel": "Huỷ",
+    "denied": "Siftlume cần quyền truy cập các trang đó để đọc.",
+    "count": "{{count}}/{{max}}"
+  }
 }

@@ -148,5 +148,18 @@
     "verdict": "Fazit",
     "source": "Quelle"
   },
-  "tabsSkipped": "Nicht lesbar: {{titles}}"
+  "tabsSkipped": "Nicht lesbar: {{titles}}",
+  "deep": {
+    "button": "Tiefer lesen",
+    "buttonTitle": "Auch verlinkte Seiten lesen",
+    "title": "Links auf dieser Seite",
+    "hint": "Wähle bis zu {{max}} Links, die gelesen und in die Zusammenfassung aufgenommen werden. Eine Seite, die sich nicht laden lässt, öffnet sich kurz in einem Hintergrund-Tab.",
+    "aiPick": "KI wählen lassen",
+    "aiPicking": "Wähle…",
+    "aiNone": "Die KI hat keine lesenswerten Links gefunden.",
+    "run": "Tiefer lesen ({{count}})",
+    "cancel": "Abbrechen",
+    "denied": "Siftlume braucht Zugriff auf diese Seiten, um sie zu lesen.",
+    "count": "{{count}}/{{max}}"
+  }
 }

@@ -43,5 +43,8 @@
   },
   "multi": {
     "tooFew": "Mindestens zwei Tabs müssen lesbar sein. {{reason}}"
+  },
+  "deep": {
+    "noneRead": "Keiner der gewählten Links konnte gelesen werden."
   }
 }

@@ -43,5 +43,8 @@
   },
   "multi": {
     "tooFew": "Al menos dos pestañas deben poder leerse. {{reason}}"
+  },
+  "deep": {
+    "noneRead": "No se pudo leer ninguno de los enlaces elegidos."
   }
 }

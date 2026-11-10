@@ -75,5 +75,6 @@
       "title": "Acción",
       "desc": "Qué hacer: pasos, plazos, decisiones"
     }
-  }
+  },
+  "deepOf": "{{title}} · lectura profunda"
 }

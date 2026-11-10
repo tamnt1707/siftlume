@@ -43,5 +43,8 @@
   },
   "multi": {
     "tooFew": "Au moins deux onglets doivent être lisibles. {{reason}}"
+  },
+  "deep": {
+    "noneRead": "Aucun des liens choisis n’a pu être lu."
   }
 }

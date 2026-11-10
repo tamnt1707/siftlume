@@ -15,6 +15,7 @@ import { Icon } from '../../components/Icon';
 import { Themed } from '../../components/Themed';
 import { SiftLoader } from '../../components/SiftLoader';
 import { SourcePicker } from '../../components/SourcePicker';
+import { DeepRead } from '../../components/DeepRead';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../../lib/mode-example';
 import { SettingsForm } from '../../components/SettingsForm';
 import { ResultToolbar } from '../../components/ResultToolbar';
@@ -242,12 +243,27 @@ const stubSession = {
     kind: 'webpage',
     title: 'Acme investor report',
     origin: 'https://ir.acme.example',
-    content: '',
+    // Links for Deep read: the report points to its filing, a call transcript and a press release.
+    content:
+      'Acme reported Q3 results. Details are in the [full 10-Q filing](https://sec.example.gov/acme-10q), the [earnings call transcript](https://ir.acme.example/q3-call) and the [cloud segment press release](https://news.acme.example/cloud-q3). Follow us on [LinkedIn](https://linkedin.com/company/acme).',
     truncated: false,
   },
   summary: null,
   qa: [],
 } as Session;
+
+/** Deep read's link picker, as it opens under the source line (`?view=deep`). */
+function DeepPicker() {
+  return (
+    <Themed settings={settings} className="app app--panel sc-components">
+      <main className="content" style={{ maxWidth: 420 }}>
+        <div className="source">
+          <DeepRead ctrl={stubCtrl} session={stubSession} settings={settings} onClose={() => {}} />
+        </div>
+      </main>
+    </Themed>
+  );
+}
 
 /** Full-page tab with charts and the Questions column. */
 function FullPage() {
@@ -509,6 +525,7 @@ const views: Record<string, () => ReactElement> = {
   components: Components,
   loader: Loaders,
   pickers: Pickers,
+  deep: DeepPicker,
 };
 const View = views[view] ?? Compare;
 ReactDOM.createRoot(document.getElementById('root')!).render(<View />);

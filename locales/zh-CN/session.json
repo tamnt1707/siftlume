@@ -143,5 +143,18 @@
     "verdict": "结论",
     "source": "来源"
   },
-  "tabsSkipped": "无法读取：{{titles}}"
+  "tabsSkipped": "无法读取：{{titles}}",
+  "deep": {
+    "button": "深度阅读",
+    "buttonTitle": "同时阅读本页链接到的页面",
+    "title": "本页中的链接",
+    "hint": "选择最多 {{max}} 个链接，读取后合并到总结中。无法下载的页面会在后台标签页中打开，读完后关闭。",
+    "aiPick": "让 AI 选",
+    "aiPicking": "正在选择…",
+    "aiNone": "AI 没有找到值得阅读的链接。",
+    "run": "深度阅读（{{count}}）",
+    "cancel": "取消",
+    "denied": "Siftlume 需要访问这些页面才能读取。",
+    "count": "{{count}}/{{max}}"
+  }
 }

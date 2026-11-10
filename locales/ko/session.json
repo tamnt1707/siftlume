@@ -143,5 +143,18 @@
     "verdict": "평가",
     "source": "출처"
   },
-  "tabsSkipped": "읽지 못한 탭: {{titles}}"
+  "tabsSkipped": "읽지 못한 탭: {{titles}}",
+  "deep": {
+    "button": "깊이 읽기",
+    "buttonTitle": "이 페이지가 링크한 페이지도 읽기",
+    "title": "이 페이지의 링크",
+    "hint": "최대 {{max}}개의 링크를 골라 읽고 요약에 더합니다. 가져올 수 없는 페이지는 백그라운드 탭에서 열었다가 닫습니다.",
+    "aiPick": "AI가 고르기",
+    "aiPicking": "고르는 중…",
+    "aiNone": "읽을 만한 링크를 찾지 못했습니다.",
+    "run": "깊이 읽기 ({{count}})",
+    "cancel": "취소",
+    "denied": "페이지를 읽으려면 접근 권한이 필요합니다.",
+    "count": "{{count}}/{{max}}"
+  }
 }

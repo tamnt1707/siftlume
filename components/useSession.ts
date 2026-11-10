@@ -4,6 +4,7 @@ import { describeError } from '@/lib/llm';
 import { generateAnswer, generateSummary } from '@/lib/generate';
 import { extractTab } from '@/lib/page';
 import { extractTabs } from '@/lib/multi';
+import { deepSource } from '@/lib/deep';
 import { extractFile, truncate, type ExtractedSource } from '@/lib/extractors';
 import { newId, readStored, saveSession, writeStored, type Session, type SessionOptions } from '@/lib/history';
 import { configProblem, type Settings } from '@/lib/settings';
@@ -131,6 +132,27 @@ export function useSession(settings: Settings) {
         const src = await extractTabs(tabIds, settingsRef.current.maxChars);
         if (ctrl.signal.aborted) return;
         await start(src, mode);
+      } catch (e) {
+        if (abortRef.current === ctrl) {
+          setError(describeError(e, settingsRef.current));
+          finish();
+        }
+      }
+    },
+    [start],
+  );
+
+  /** Deep read: the current page plus pages it links to, summarized together as a new session. */
+  const deepen = useCallback(
+    async (urls: string[]) => {
+      const current = sessionRef.current;
+      if (!current || !urls.length) return;
+      const ctrl = begin('extracting');
+      try {
+        const { truncated: _cut, ...page } = current.source;
+        const src = await deepSource(page, urls, settingsRef.current.maxChars, ctrl.signal);
+        if (ctrl.signal.aborted) return;
+        await start(src, current.options?.mode);
       } catch (e) {
         if (abortRef.current === ctrl) {
           setError(describeError(e, settingsRef.current));
@@ -319,6 +341,7 @@ export function useSession(settings: Settings) {
     setError,
     fromTab,
     fromTabs,
+    deepen,
     fromText,
     fromFile,
     refine,

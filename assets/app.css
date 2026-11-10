@@ -929,6 +929,18 @@ kbd {
   color: var(--ink-2);
 }
 
+/* Result screen: Deep read's link picker, under the source line. */
+.deep-read {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+}
+
+.deep-read__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
 /* A combined source: its tabs, numbered as the summary cites them. */
 .source__parts {
   display: flex;

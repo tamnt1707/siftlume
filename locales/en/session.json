@@ -148,5 +148,18 @@
     "verdict": "Verdict",
     "source": "Source"
   },
-  "tabsSkipped": "Could not read: {{titles}}"
+  "tabsSkipped": "Could not read: {{titles}}",
+  "deep": {
+    "button": "Deep read",
+    "buttonTitle": "Also read pages this one links to",
+    "title": "Links in this page",
+    "hint": "Pick up to {{max}} links to read and add to the summary. A page that cannot be fetched opens in a background tab, then closes.",
+    "aiPick": "Let AI choose",
+    "aiPicking": "Choosing…",
+    "aiNone": "The AI found no links worth reading.",
+    "run": "Deep read ({{count}})",
+    "cancel": "Cancel",
+    "denied": "Siftlume needs access to those pages to read them.",
+    "count": "{{count}}/{{max}}"
+  }
 }

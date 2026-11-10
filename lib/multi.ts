@@ -15,7 +15,8 @@ export const MAX_TABS = 6;
 export interface SourcePart {
   title: string;
   origin: string;
-  tabId: number;
+  /** Unset for a linked page read without a tab (Deep read). */
+  tabId?: number;
   kind: SourceKind;
 }
 
@@ -77,6 +78,19 @@ export async function extractTabs(
     );
   }
 
+  return combineSources(read, maxChars, skipped);
+}
+
+/**
+ * Joins sources into one 'multi' source. Each gets an equal share of `maxChars`, so a long first
+ * page cannot crowd out the others; `skipped` names those that could not be read.
+ */
+export function combineSources(
+  read: (ExtractedSource & { tabId?: number })[],
+  maxChars: number,
+  skipped: string[],
+  extra: Partial<ExtractedSource> = {},
+): ExtractedSource & { truncated: boolean; parts: SourcePart[]; skipped: string[] } {
   // Room for each document, after its wrapper tags.
   const share = Math.max(2000, Math.floor(maxChars / read.length) - 200);
   let truncated = false;
@@ -96,6 +110,7 @@ export async function extractTabs(
     truncated,
     parts: read.map((src) => ({ title: src.title, origin: src.origin ?? '', tabId: src.tabId, kind: src.kind })),
     skipped,
+    ...extra,
   };
 }
 

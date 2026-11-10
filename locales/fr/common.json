@@ -75,5 +75,6 @@
       "title": "Action",
       "desc": "Quoi faire : étapes, échéances, décisions"
     }
-  }
+  },
+  "deepOf": "{{title}} · lecture approfondie"
 }

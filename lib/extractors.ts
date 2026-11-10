@@ -16,9 +16,11 @@ export interface ExtractedSource {
   /** Set when kind = "csv": parsed data for in-browser Query tools. */
   csv?: CsvDataset;
   /** Set when kind = "multi": the tabs combined into this source, in document order. */
-  parts?: { title: string; origin: string; tabId: number; kind: SourceKind }[];
+  parts?: { title: string; origin: string; tabId?: number; kind: SourceKind }[];
   /** Set when kind = "multi": titles of chosen tabs that could not be read. */
   skipped?: string[];
+  /** Deep read: document 1 is the page being read, the others pages it links to. */
+  deep?: boolean;
 }
 
 /** Max CSV rows kept for tools (and stored in history). */

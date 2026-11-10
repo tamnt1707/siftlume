@@ -74,5 +74,6 @@
       "title": "Action",
       "desc": "What to do: steps, deadlines, decisions"
     }
-  }
+  },
+  "deepOf": "{{title}} · deep read"
 }

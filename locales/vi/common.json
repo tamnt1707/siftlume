@@ -73,5 +73,6 @@
       "title": "Hành động",
       "desc": "Việc cần làm: bước, hạn chót, quyết định"
     }
-  }
+  },
+  "deepOf": "{{title}} · đọc sâu"
 }

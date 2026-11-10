@@ -153,5 +153,18 @@
     "verdict": "Veredicto",
     "source": "Fuente"
   },
-  "tabsSkipped": "No se pudo leer: {{titles}}"
+  "tabsSkipped": "No se pudo leer: {{titles}}",
+  "deep": {
+    "button": "Lectura profunda",
+    "buttonTitle": "Leer también las páginas enlazadas",
+    "title": "Enlaces de esta página",
+    "hint": "Elige hasta {{max}} enlaces para leer y añadir al resumen. Una página que no se pueda descargar se abre en una pestaña en segundo plano y se cierra.",
+    "aiPick": "Que elija la IA",
+    "aiPicking": "Eligiendo…",
+    "aiNone": "La IA no encontró enlaces que valga la pena leer.",
+    "run": "Lectura profunda ({{count}})",
+    "cancel": "Cancelar",
+    "denied": "Siftlume necesita acceso a esas páginas para leerlas.",
+    "count": "{{count}}/{{max}}"
+  }
 }

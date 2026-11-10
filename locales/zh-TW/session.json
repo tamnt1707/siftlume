@@ -143,5 +143,18 @@
     "verdict": "結論",
     "source": "來源"
   },
-  "tabsSkipped": "無法讀取：{{titles}}"
+  "tabsSkipped": "無法讀取：{{titles}}",
+  "deep": {
+    "button": "深度閱讀",
+    "buttonTitle": "同時閱讀本頁連結到的頁面",
+    "title": "本頁中的連結",
+    "hint": "選擇最多 {{max}} 個連結，讀取後合併到摘要中。無法下載的頁面會在背景分頁中開啟，讀完後關閉。",
+    "aiPick": "讓 AI 選",
+    "aiPicking": "正在選擇…",
+    "aiNone": "AI 沒有找到值得閱讀的連結。",
+    "run": "深度閱讀（{{count}}）",
+    "cancel": "取消",
+    "denied": "Siftlume 需要存取這些頁面才能讀取。",
+    "count": "{{count}}/{{max}}"
+  }
 }

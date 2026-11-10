@@ -153,5 +153,18 @@
     "verdict": "Verdict",
     "source": "Source"
   },
-  "tabsSkipped": "Illisible : {{titles}}"
+  "tabsSkipped": "Illisible : {{titles}}",
+  "deep": {
+    "button": "Lecture approfondie",
+    "buttonTitle": "Lire aussi les pages liées",
+    "title": "Liens de cette page",
+    "hint": "Choisissez jusqu’à {{max}} liens à lire et à ajouter au résumé. Une page impossible à télécharger s’ouvre dans un onglet en arrière-plan, puis se ferme.",
+    "aiPick": "Laisser l’IA choisir",
+    "aiPicking": "Choix en cours…",
+    "aiNone": "L’IA n’a trouvé aucun lien utile à lire.",
+    "run": "Lecture approfondie ({{count}})",
+    "cancel": "Annuler",
+    "denied": "Siftlume a besoin d’accéder à ces pages pour les lire.",
+    "count": "{{count}}/{{max}}"
+  }
 }

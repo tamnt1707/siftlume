@@ -43,5 +43,8 @@
   },
   "multi": {
     "tooFew": "Pelo menos duas abas precisam ser legíveis. {{reason}}"
+  },
+  "deep": {
+    "noneRead": "Nenhum dos links escolhidos pôde ser lido."
   }
 }

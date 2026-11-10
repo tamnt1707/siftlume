@@ -8,7 +8,15 @@ import { splitInline } from '@/lib/openui';
 import { highlightInTab } from '@/lib/page';
 import { findMoment, formatTime, seekVideo, youTubeVideoId } from '@/lib/youtube';
 import { partContent, partForQuote } from '@/lib/multi';
-import { ArrowExpand01Icon, ArrowUp02Icon, MagicWand01Icon, RefreshIcon, StopIcon } from '@hugeicons/core-free-icons';
+import {
+  ArrowExpand01Icon,
+  ArrowUp02Icon,
+  Link04Icon,
+  MagicWand01Icon,
+  RefreshIcon,
+  StopIcon,
+} from '@hugeicons/core-free-icons';
+import { canDeepRead, DeepRead } from './DeepRead';
 import { REFINE_PROMPTS, type RefineId } from '@/lib/refine';
 import { GenUI, type GenUIAction } from './GenUI';
 import { ResultToolbar, readingMinutes } from './ResultToolbar';
@@ -59,6 +67,8 @@ export function SessionView({
   const [refineText, setRefineText] = useState('');
   const [question, setQuestion] = useState('');
   const [sourceOpen, setSourceOpen] = useState(false);
+  const [deepOpen, setDeepOpen] = useState(false);
+  const deepable = useMemo(() => canDeepRead(session), [session]);
   const reading = useMemo(() => readingMinutes(source.content), [source.content]);
   const bottomRef = useRef<HTMLDivElement>(null);
 
@@ -85,6 +95,21 @@ export function SessionView({
       target = { ...part, content: partContent(source.content, i!) };
     }
     const { tabId, origin } = target;
+    // A linked page read without a tab (Deep read): open it, then highlight once it has loaded.
+    if (!tabId && origin?.startsWith('http')) {
+      const tab = await browser.tabs.create({ url: origin });
+      if (target.kind !== 'webpage' || tab.id === undefined) return;
+      const id = tab.id;
+      const onUpdated = (changed: number, change: { status?: string }) => {
+        if (changed !== id || change.status !== 'complete') return;
+        browser.tabs.onUpdated.removeListener(onUpdated);
+        void highlightInTab(id, text)
+          .then((found) => notify(found ? t('toast.highlighted') : t('toast.quoteNotFound')))
+          .catch(() => {});
+      };
+      browser.tabs.onUpdated.addListener(onUpdated);
+      return;
+    }
 
     if (target.kind === 'video' && tabId && origin) {
       // Videos: play from the moment the quote is said.
@@ -207,6 +232,18 @@ export function SessionView({
           )}
         </div>
         <div className="source__actions">
+          {deepable && summary.content && (
+            <button
+              className={`tool-btn ${deepOpen ? 'tool-btn--on' : ''}`}
+              onClick={() => setDeepOpen((v) => !v)}
+              disabled={busy}
+              aria-expanded={deepOpen}
+              title={t('deep.buttonTitle')}
+            >
+              <Icon icon={Link04Icon} size={16} />
+              <span>{t('deep.button')}</span>
+            </button>
+          )}
           {session.summary !== null && (
             <button
               className="tool-btn"
@@ -225,6 +262,7 @@ export function SessionView({
             </button>
           )}
         </div>
+        {deepOpen && <DeepRead ctrl={ctrl} session={session} settings={settings} onClose={() => setDeepOpen(false)} />}
         {source.parts && (
           <ol className="source__parts">
             {source.parts.map((part, i) => (
