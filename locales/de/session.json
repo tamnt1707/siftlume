@@ -165,6 +165,7 @@
     "toggleHint": "Auch bis zu {{max}} Links lesen, die die KI für lesenswert hält, und in die Zusammenfassung aufnehmen",
     "consent": "Lesenswerte Links: {{count}}. Siftlume braucht Zugriff auf diese Seiten, um sie zu lesen.",
     "allow": "Erlauben und lesen",
-    "pageOnly": "Nur diese Seite zusammenfassen"
+    "pageOnly": "Nur diese Seite zusammenfassen",
+    "consentTitle": "Auch die verlinkten Seiten lesen?"
   }
 }

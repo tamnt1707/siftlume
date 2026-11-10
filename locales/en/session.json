@@ -165,6 +165,7 @@
     "toggleHint": "Also read up to {{max}} links the AI finds worth it, and add them to the summary",
     "consent": "Links worth reading: {{count}}. Siftlume needs access to those sites to read them.",
     "allow": "Allow and read",
-    "pageOnly": "Summarize this page only"
+    "pageOnly": "Summarize this page only",
+    "consentTitle": "Read the linked pages too?"
   }
 }

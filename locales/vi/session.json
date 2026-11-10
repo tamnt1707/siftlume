@@ -160,6 +160,7 @@
     "toggleHint": "Đọc thêm tối đa {{max}} liên kết mà AI thấy đáng đọc, rồi gộp vào bản tóm tắt",
     "consent": "Số liên kết nên đọc thêm: {{count}}. Siftlume cần quyền truy cập các trang đó để đọc.",
     "allow": "Cho phép và đọc",
-    "pageOnly": "Chỉ tóm tắt trang này"
+    "pageOnly": "Chỉ tóm tắt trang này",
+    "consentTitle": "Đọc thêm các trang được liên kết?"
   }
 }

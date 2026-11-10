@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SparklesIcon } from '@hugeicons/core-free-icons';
-import { findLinks, MAX_LINKS, pickLinks, requestLinksAccess } from '@/lib/deep';
+import { findLinks, MAX_LINKS, pickLinks, requestAllSites, requestLinksAccess } from '@/lib/deep';
 import { describeError } from '@/lib/llm';
 import type { Settings } from '@/lib/settings';
 import type { Session } from '@/lib/history';
@@ -29,7 +29,16 @@ export function DeepToggle({
   const { t } = useTranslation('session');
   return (
     <label className={`deep-toggle ${checked ? 'is-on' : ''}`}>
-      <input type="checkbox" checked={checked} disabled={disabled} onChange={(e) => onChange(e.target.checked)} />
+      <input
+        type="checkbox"
+        checked={checked}
+        disabled={disabled}
+        onChange={(e) => {
+          // Turning it on is the click that may ask for site access (no prompt once allowed).
+          if (e.target.checked) void requestAllSites().catch(() => false);
+          onChange(e.target.checked);
+        }}
+      />
       <span className="deep-toggle__text">
         <strong>{t('deep.toggle')}</strong>
         <span>{t('deep.toggleHint', { max: MAX_LINKS })}</span>

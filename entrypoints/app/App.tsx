@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Add01Icon, Clock01Icon, Settings02Icon } from '@hugeicons/core-free-icons';
+import { Add01Icon, Clock01Icon, FileSearchIcon, Settings02Icon } from '@hugeicons/core-free-icons';
 import { Icon } from '@/components/Icon';
 import { Themed } from '@/components/Themed';
 import { browser } from '#imports';
@@ -287,23 +287,6 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
           </div>
         )}
         {ctrl.warning && <div className="banner banner--warn">{ctrl.warning}</div>}
-        {ctrl.pendingDeep && (
-          <div className="banner deep-consent" role="alertdialog">
-            <span>{t('session:deep.consent', { count: ctrl.pendingDeep.urls.length })}</span>
-            <span className="deep-consent__actions">
-              <button
-                className="btn btn--primary btn--sm"
-                // No await before the request: Chrome only prompts during the click.
-                onClick={() => void requestLinksAccess(ctrl.pendingDeep!.urls).then((ok) => ctrl.resolveDeep(ok))}
-              >
-                {t('session:deep.allow')}
-              </button>
-              <button className="btn btn--sm" onClick={() => void ctrl.resolveDeep(false)}>
-                {t('session:deep.pageOnly')}
-              </button>
-            </span>
-          </div>
-        )}
 
         {view === 'settings' ? (
           <SettingsForm
@@ -328,6 +311,26 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
           />
         ) : ctrl.phase === 'extracting' ? (
           <SiftLoader stage="reading" title={t('loader.reading')} onStop={ctrl.stop} />
+        ) : ctrl.pendingDeep ? (
+          // Deep read waiting for site access: asked in the middle of the screen, where the
+          // progress was, with the page-only summary as the other choice.
+          <section className="deep-consent" role="alertdialog" aria-labelledby="deep-consent-title">
+            <Icon icon={FileSearchIcon} size={28} />
+            <h2 id="deep-consent-title">{t('session:deep.consentTitle')}</h2>
+            <p>{t('session:deep.consent', { count: ctrl.pendingDeep.urls.length })}</p>
+            <div className="deep-consent__actions">
+              <button
+                className="btn btn--primary"
+                // No await before the request: Chrome only prompts during the click.
+                onClick={() => void requestLinksAccess(ctrl.pendingDeep!.urls).then((ok) => ctrl.resolveDeep(ok))}
+              >
+                {t('session:deep.allow')}
+              </button>
+              <button className="btn" onClick={() => void ctrl.resolveDeep(false)}>
+                {t('session:deep.pageOnly')}
+              </button>
+            </div>
+          </section>
         ) : !loaded || !pageChecked ? null : (
           <div className="narrow">
             <SourcePicker ctrl={ctrl} page={pageTarget} settings={settings} startTabs={startTabs} />

@@ -160,6 +160,7 @@
     "toggleHint": "另外讀取 AI 認為值得讀的最多 {{max}} 個連結，並合併到摘要中",
     "consent": "值得閱讀的連結：{{count}} 個。Siftlume 需要存取這些網站才能讀取。",
     "allow": "允許並讀取",
-    "pageOnly": "只摘要此頁"
+    "pageOnly": "只摘要此頁",
+    "consentTitle": "也讀取連結的頁面嗎？"
   }
 }

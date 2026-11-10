@@ -66,6 +66,13 @@ export function requestLinksAccess(urls: string[]) {
   return browser.permissions.request({ origins });
 }
 
+/**
+ * Turning Deep read on asks once for access to all sites: the links are only known after the page
+ * is read and the AI has picked them, when Chrome no longer allows a prompt. Refused, each deep
+ * read asks for the picked sites instead. Call it first thing in a click handler.
+ */
+export const requestAllSites = () => browser.permissions.request({ origins: ['<all_urls>'] });
+
 /** Whether the sites of these links are already allowed (no prompt needed). */
 export function linksAllowed(urls: string[]) {
   const origins = [...new Set(urls.map(originPattern).filter((o): o is string => Boolean(o)))];

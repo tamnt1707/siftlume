@@ -170,6 +170,7 @@
     "toggleHint": "Lire aussi jusqu’à {{max}} liens que l’IA juge utiles et les ajouter au résumé",
     "consent": "Liens utiles à lire : {{count}}. Siftlume a besoin d’accéder à ces sites pour les lire.",
     "allow": "Autoriser et lire",
-    "pageOnly": "Résumer seulement cette page"
+    "pageOnly": "Résumer seulement cette page",
+    "consentTitle": "Lire aussi les pages liées ?"
   }
 }
