@@ -9,6 +9,7 @@ import type { ModeId } from '@/lib/modes';
 import { AnalysisChoice, runLabel } from './ModePicker';
 import { useVideoProbe } from './useVideoProbe';
 import { TabsPicker } from './TabsPicker';
+import { requestTabsPermission } from '@/lib/multi';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
 
@@ -65,6 +66,14 @@ export function SourcePicker({
     if (startTabs) setSource('tabs');
   }, [startTabs]);
 
+  // Several tabs: ask to see the tabs in the same click that opens it (Chrome only shows the
+  // prompt during a click), so the list appears without a second button. No prompt if allowed.
+  const [tabsGranted, setTabsGranted] = useState<boolean>();
+  const pickSource = (next: string) => {
+    setSource(next as Source);
+    if (next === 'tabs') void requestTabsPermission().then(setTabsGranted);
+  };
+
   // A file dropped anywhere on the start screen is read, whatever source is selected.
   const onFiles = (files: FileList | null) => {
     const file = files?.[0];
@@ -88,7 +97,7 @@ export function SourcePicker({
       }}
     >
       {!page && <h1 className="picker__title">{t('title')}</h1>}
-      <Tabs.Root value={source} onValueChange={(v) => setSource(v as Source)} className="source-tabs">
+      <Tabs.Root value={source} onValueChange={pickSource} className="source-tabs">
         <Tabs.List className="source-tabs__list" aria-label={t('sources.label')}>
           {sources.map((id) => (
             <Tabs.Trigger key={id} value={id} className="source-tabs__tab">
@@ -127,7 +136,7 @@ export function SourcePicker({
         )}
 
         <Tabs.Content value="tabs" className="source-tabs__panel">
-          <TabsPicker ctrl={ctrl} mode={mode} currentTabId={page?.id} startOpen={startTabs} />
+          <TabsPicker ctrl={ctrl} mode={mode} currentTabId={page?.id} granted={tabsGranted} />
         </Tabs.Content>
 
         <Tabs.Content value="text" className="source-tabs__panel">

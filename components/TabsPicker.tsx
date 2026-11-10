@@ -27,14 +27,17 @@ export function TabsPicker({
   ctrl,
   mode,
   currentTabId,
-  startOpen,
+  granted,
 }: {
   ctrl: SessionController;
   mode: ModeId;
   /** The side panel's own tab, ticked to start with. */
   currentTabId?: number;
-  /** Opened from the popup's "Combine tabs": list the tabs right away if allowed. */
-  startOpen?: boolean;
+  /**
+   * Answer to the permission request the parent made when this tab was clicked (a click is
+   * needed for the prompt). Undefined until answered.
+   */
+  granted?: boolean;
 }) {
   const { t } = useTranslation('picker');
   const [tabs, setTabs] = useState<TabChoice[] | null>(null);
@@ -53,11 +56,17 @@ export function TabsPicker({
       });
     });
 
+  // Already allowed (earlier visit, or opened from the popup): list the tabs straight away.
   useEffect(() => {
-    if (!startOpen) return;
     void browser.permissions.contains({ permissions: ['tabs'] }).then((ok) => ok && load());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [startOpen]);
+  }, []);
+
+  useEffect(() => {
+    if (granted) load();
+    else if (granted === false) setError(t('tabs.denied'));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [granted]);
 
   const open = () => {
     setError(null);
