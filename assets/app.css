@@ -2082,6 +2082,14 @@ button.ui-menu__item {
   text-align: left;
 }
 
+/* The description sits under the title and wraps, instead of pushing the menu wider. */
+button.ui-menu__item .ui-menu__hint {
+  margin-left: 0;
+  overflow: visible;
+  white-space: normal;
+  line-height: 1.35;
+}
+
 button.ui-menu__item:hover,
 button.ui-menu__item:focus-visible {
   background: var(--accent-soft);
