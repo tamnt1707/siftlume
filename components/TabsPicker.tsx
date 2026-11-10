@@ -5,6 +5,7 @@ import { browser } from '#imports';
 import { listTabs, MAX_TABS, requestTabsAccess, requestTabsPermission, type TabChoice } from '@/lib/multi';
 import type { ModeId } from '@/lib/modes';
 import { HAS_FAVICON_CACHE } from '@/lib/platform';
+import { probeVideo, youTubeVideoId, type VideoProbe } from '@/lib/youtube';
 import { Icon } from './Icon';
 import type { SessionController } from './useSession';
 
@@ -39,11 +40,44 @@ export function TabsPicker({
    */
   granted?: boolean;
 }) {
-  const { t } = useTranslation('picker');
+  const { t } = useTranslation(['picker', 'common']);
   const [tabs, setTabs] = useState<TabChoice[] | null>(null);
   const [selected, setSelected] = useState<number[]>([]);
   const [error, setError] = useState<string | null>(null);
   const busy = ctrl.phase !== 'idle';
+  // YouTube tabs: whether each video has captions. Null when the page cannot be checked yet (no
+  // access to youtube.com before the first combine), so the video is read and judged then.
+  const [probes, setProbes] = useState<Record<number, VideoProbe | null>>({});
+  const blocked = (id: number) => {
+    const p = probes[id];
+    return Boolean(p && (p.live || !p.captions));
+  };
+
+  useEffect(() => {
+    const videos = (tabs ?? []).filter((tab) => youTubeVideoId(tab.url));
+    if (!videos.length) return;
+    let live = true;
+    void Promise.all(videos.map(async (tab) => [tab.id, await probeVideo(tab.id)] as const)).then((pairs) => {
+      if (!live) return;
+      const next = Object.fromEntries(pairs);
+      setProbes(next);
+      // A video that cannot be summarized is never ticked (the panel's own tab may have been).
+      setSelected((sel) => sel.filter((id) => !(next[id] && (next[id]!.live || !next[id]!.captions))));
+    });
+    return () => {
+      live = false;
+    };
+  }, [tabs]);
+
+  /** Caption line under a YouTube tab: which captions it will read, or why it cannot. */
+  const videoNote = (id: number) => {
+    const p = probes[id];
+    if (!p) return null;
+    if (p.live) return t('video.live');
+    if (!p.captions) return t('video.noCaptions');
+    const label = p.captions.label.replace(/\s*\(.*\)$/, '');
+    return label ? t(p.captions.auto ? 'video.autoCaptions' : 'video.captions', { label }) : null;
+  };
 
   const load = () =>
     void listTabs().then((list) => {
@@ -115,19 +149,24 @@ export function TabsPicker({
         <ul className="tabs-picker__list">
           {tabs.map((tab) => {
             const on = selected.includes(tab.id);
+            const isVideo = Boolean(youTubeVideoId(tab.url));
+            const note = isVideo ? videoNote(tab.id) : null;
             return (
               <li key={tab.id}>
-                <label className={`tabs-picker__item ${on ? 'is-on' : ''}`}>
+                <label className={`tabs-picker__item ${on ? 'is-on' : ''} ${blocked(tab.id) ? 'is-blocked' : ''}`}>
                   <input
                     type="checkbox"
                     checked={on}
-                    disabled={busy || (!on && selected.length >= MAX_TABS)}
+                    disabled={busy || blocked(tab.id) || (!on && selected.length >= MAX_TABS)}
                     onChange={() => toggle(tab.id)}
                   />
                   {HAS_FAVICON_CACHE && <img className="source__favicon" src={faviconUrl(tab.url)} alt="" />}
                   <span className="tabs-picker__text">
                     <span className="tabs-picker__title">{tab.title}</span>
-                    <span className="tabs-picker__host">{hostOf(tab.url)}</span>
+                    <span className="tabs-picker__host">
+                      {isVideo && <span className="badge badge--sm">{t('common:kind.video')}</span>}
+                      {note ?? hostOf(tab.url)}
+                    </span>
                   </span>
                 </label>
               </li>

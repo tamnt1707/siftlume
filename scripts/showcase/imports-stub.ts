@@ -42,6 +42,20 @@ export const browser: any = {
       { id: 2, title: 'mRNA vaccines: a decade of research', url: 'https://science.example.com/mrna' },
       { id: 3, title: 'Vaccine myths, checked', url: 'https://factcheck.example.net/vaccine-myths' },
       { id: 4, title: 'WHO immunization schedule', url: 'https://www.who.int/immunization' },
+      { id: 5, title: 'How mRNA vaccines work (explainer)', url: 'https://www.youtube.com/watch?v=aaaaaaaaaaa' },
+      { id: 6, title: 'Lab B-roll, no narration', url: 'https://www.youtube.com/watch?v=bbbbbbbbbbb' },
+    ],
+  },
+  /** Caption checks for the YouTube tabs above: tab 5 has automatic captions, tab 6 none. */
+  scripting: {
+    executeScript: async ({ target }: { target: { tabId: number } }) => [
+      {
+        result: {
+          videoId: 'x',
+          live: false,
+          captions: target.tabId === 5 ? { label: 'English (auto-generated)', auto: true } : null,
+        },
+      },
     ],
   },
   declarativeNetRequest: { updateSessionRules: async () => {} },
