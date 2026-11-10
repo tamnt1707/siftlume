@@ -282,14 +282,16 @@ export function findMoment(transcript: string, quote: string): number | null {
   // Full quote, then shorter openings (the model may stitch two caption lines or trim the end).
   const tries = [words.join(' '), words.slice(0, 8).join(' '), words.slice(0, 4).join(' ')].filter(Boolean);
   const lines = transcript.split('\n');
+  const stamped = lines.flatMap((line) => {
+    const stamp = line.match(/^\[(\d+(?::\d\d){1,2})\]\s*/);
+    return stamp ? [{ at: toSec(stamp[1]!), text: norm(line.slice(stamp[0].length)) }] : [];
+  });
   for (const needle of tries) {
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i]!;
-      const stamp = line.match(/^\[(\d+(?::\d\d){1,2})\]/)?.[1];
-      // A quote may run across two paragraphs: check this line joined with the next.
-      const hay = norm(`${line} ${lines[i + 1]?.replace(/^\[[\d:]+\]\s*/, '') ?? ''}`);
-      if (stamp && hay.includes(needle)) return toSec(stamp);
-    }
+    // The paragraph that contains the quote; then one where it starts and runs into the next.
+    const inside = stamped.find((p) => p.text.includes(needle));
+    if (inside) return inside.at;
+    const across = stamped.find((p, i) => `${p.text} ${stamped[i + 1]?.text ?? ''}`.includes(needle));
+    if (across) return across.at;
   }
   return null;
 }
