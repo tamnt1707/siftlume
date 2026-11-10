@@ -47,8 +47,8 @@ export interface ProviderPreset {
    * model list, so the suggestion follows new releases without a code change.
    */
   fastModels?: RegExp[];
-  /** How keys from this provider start; a different prefix gets a soft warning in Settings. */
-  keyPrefix?: string;
+  /** How keys from this provider start; any other prefix gets a soft warning in Settings. */
+  keyPrefix?: string[];
   /** Has a free tier, so it is a good first choice; shown as a badge in Settings. */
   free?: boolean;
   /** Runs on the user's machine; shown with setup steps. */
@@ -63,7 +63,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultModel: 'gpt-5-mini',
     needsKey: true,
     fastModels: [/^gpt-[\d.]+-nano$/, /^gpt-[\d.]+-mini$/, /^gpt-[\d.]+o-mini$/],
-    keyPrefix: 'sk-',
+    keyPrefix: ['sk-'],
     keyUrl: 'https://platform.openai.com/api-keys',
   },
   anthropic: {
@@ -74,7 +74,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     recommendedModel: 'claude-haiku-5-5',
     needsKey: true,
     fastModels: [/haiku/],
-    keyPrefix: 'sk-ant-',
+    keyPrefix: ['sk-ant-'],
     keyUrl: 'https://console.anthropic.com/settings/keys',
   },
   google: {
@@ -85,7 +85,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     recommendedModel: 'gemini-3.5-flash-lite',
     needsKey: true,
     fastModels: [/^gemini-[\d.]+-flash-lite/, /^gemini-[\d.]+-flash/],
-    keyPrefix: 'AIza',
+    keyPrefix: ['AIza', 'AQ.'],
     free: true,
     keyUrl: 'https://aistudio.google.com/apikey',
   },
@@ -101,7 +101,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
       /^anthropic\/claude-haiku/,
       /^google\/gemini-[\d.]+-flash/,
     ],
-    keyPrefix: 'sk-or-',
+    keyPrefix: ['sk-or-'],
     free: true,
     keyUrl: 'https://openrouter.ai/keys',
   },
@@ -112,7 +112,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultModel: 'llama-3.3-70b-versatile',
     needsKey: true,
     fastModels: [/instant/, /^llama-[\d.]+-8b/],
-    keyPrefix: 'gsk_',
+    keyPrefix: ['gsk_'],
     free: true,
     keyUrl: 'https://console.groq.com/keys',
   },
@@ -142,7 +142,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultModel: 'grok-4',
     needsKey: true,
     fastModels: [/fast-non-reasoning/, /fast/, /mini/],
-    keyPrefix: 'xai-',
+    keyPrefix: ['xai-'],
     keyUrl: 'https://console.x.ai/',
   },
   together: {

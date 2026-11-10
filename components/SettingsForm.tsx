@@ -178,10 +178,15 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
   const dirty = baseline !== null && JSON.stringify(settings) !== JSON.stringify(baseline);
 
   // Problems with the selected provider. Missing values block saving; a key that does not look
-  // like this provider's only warns, since formats change.
+  // like this provider's only warns, since formats change. A key the provider accepted (the model
+  // list loaded) is never flagged.
   const keyMissing = preset.needsKey && !cfg.apiKey.trim();
   const keyLooksWrong = Boolean(
-    !keyMissing && preset.keyPrefix && cfg.apiKey && !cfg.apiKey.startsWith(preset.keyPrefix),
+    !keyMissing &&
+    load.status !== 'ok' &&
+    preset.keyPrefix &&
+    cfg.apiKey &&
+    !preset.keyPrefix.some((p) => cfg.apiKey.trim().startsWith(p)),
   );
   const urlInvalid = Boolean(cfg.baseUrl && !originPattern(cfg.baseUrl));
   const urlMissing = !baseUrl;
@@ -439,7 +444,7 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
                 )}
                 {keyLooksWrong && (
                   <p className="hint hint--warn">
-                    {t('validate.keyFormat', { provider: preset.label, prefix: preset.keyPrefix })}
+                    {t('validate.keyFormat', { provider: preset.label, prefix: preset.keyPrefix?.join(', ') })}
                   </p>
                 )}
               </div>
