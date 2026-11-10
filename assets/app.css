@@ -2320,3 +2320,113 @@ kbd {
     break-inside: avoid;
   }
 }
+
+/* ── First run and key guide (Settings → AI model) ───────── */
+
+.setup {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.setup p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.setup__steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: setup;
+  font-size: 13.5px;
+  font-weight: 560;
+}
+
+.setup__steps li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  counter-increment: setup;
+}
+
+.setup__steps li::before {
+  content: counter(setup);
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--paper);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.setup p.setup__tip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  color: var(--ink);
+}
+
+.setup--ready h2::before {
+  content: '✓ ';
+  color: var(--up);
+}
+
+.provider {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.provider__badge {
+  font-size: 11.5px;
+  font-weight: 520;
+  color: var(--up);
+}
+
+.key-guide {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.key-guide > summary {
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+
+.key-guide__steps {
+  margin: 10px 0 8px;
+  padding-left: 22px;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.key-guide__steps li + li {
+  margin-top: 3px;
+}
+
+.key-guide .hint {
+  margin: 0 0 10px;
+}
+
+.key-guide__open {
+  display: inline-flex;
+  color: var(--accent);
+  text-decoration: none;
+}

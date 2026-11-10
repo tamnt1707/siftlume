@@ -35,8 +35,11 @@ export interface ProviderPreset {
   /** Suggested model used until the user loads the live model list. */
   defaultModel: string;
   needsKey: boolean;
+  /** Where the user creates a key (keyed providers) or downloads the app (local ones). */
   keyUrl?: string;
-  /** Runs on the user's machine; shown with setup hints. */
+  /** Has a free tier, so it is a good first choice; shown as a badge in Settings. */
+  free?: boolean;
+  /** Runs on the user's machine; shown with setup steps. */
   local?: boolean;
 }
 
@@ -63,6 +66,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://generativelanguage.googleapis.com/v1beta',
     defaultModel: 'gemini-2.5-flash',
     needsKey: true,
+    free: true,
     keyUrl: 'https://aistudio.google.com/apikey',
   },
   openrouter: {
@@ -71,6 +75,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://openrouter.ai/api/v1',
     defaultModel: 'openai/gpt-5-mini',
     needsKey: true,
+    free: true,
     keyUrl: 'https://openrouter.ai/keys',
   },
   groq: {
@@ -79,6 +84,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.groq.com/openai/v1',
     defaultModel: 'llama-3.3-70b-versatile',
     needsKey: true,
+    free: true,
     keyUrl: 'https://console.groq.com/keys',
   },
   deepseek: {
@@ -95,6 +101,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.mistral.ai/v1',
     defaultModel: 'mistral-small-latest',
     needsKey: true,
+    free: true,
     keyUrl: 'https://console.mistral.ai/api-keys',
   },
   xai: {
@@ -103,7 +110,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.x.ai/v1',
     defaultModel: 'grok-4',
     needsKey: true,
-    keyUrl: 'https://console.x.ai',
+    keyUrl: 'https://console.x.ai/',
   },
   together: {
     label: 'Together AI',
@@ -119,6 +126,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'http://localhost:11434/v1',
     defaultModel: '',
     needsKey: false,
+    keyUrl: 'https://ollama.com/download',
     local: true,
   },
   lmstudio: {
@@ -127,6 +135,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'http://localhost:1234/v1',
     defaultModel: '',
     needsKey: false,
+    keyUrl: 'https://lmstudio.ai',
     local: true,
   },
   custom: {

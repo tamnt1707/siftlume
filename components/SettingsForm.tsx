@@ -19,6 +19,7 @@ import { Themed } from '@/components/Themed';
 import { fetchModels, isProviderConnected, modelCacheItem, type ModelCache, type ModelOption } from '@/lib/models';
 import { HAS_SIDE_PANEL } from '@/lib/platform';
 import {
+  configProblem,
   DEFAULT_SETTINGS,
   getProviderConfig,
   getSettings,
@@ -53,6 +54,42 @@ interface SettingsFormProps {
   onClose?: () => void;
   /** Tab shown first (default: AI model). */
   initialTab?: SettingsTab;
+  /** Opened before any provider was set up: called once a save makes the configuration usable. */
+  onReady?: () => void;
+}
+
+/** Providers with setup steps in locales/<lang>/settings.json → keyGuide. */
+type GuideId = Exclude<ProviderId, 'custom'>;
+
+/** Numbered steps to get a key (or install a local app), a cost note and a link to the provider. */
+function KeyGuide({ id, open }: { id: GuideId; open: boolean }) {
+  const { t } = useTranslation('settings');
+  const preset = PROVIDERS[id];
+  const steps = t(`keyGuide.steps.${id}`, { returnObjects: true }) as string[];
+  const site = preset.keyUrl ? new URL(preset.keyUrl).hostname : '';
+  // Decided once: typing a key must not fold the steps away while they are being followed.
+  const [initiallyOpen] = useState(open);
+  return (
+    <details className="key-guide" open={initiallyOpen}>
+      <summary>
+        {preset.local
+          ? t('keyGuide.localHeading', { provider: preset.label })
+          : t('keyGuide.heading', { provider: preset.label })}
+      </summary>
+      <ol className="key-guide__steps">
+        {steps.map((step) => (
+          <li key={step}>{step}</li>
+        ))}
+        {!preset.local && <li>{t('keyGuide.paste')}</li>}
+      </ol>
+      <p className="hint">{t(`keyGuide.note.${id}`)}</p>
+      {preset.keyUrl && (
+        <a className="btn btn--sm key-guide__open" href={preset.keyUrl} target="_blank" rel="noreferrer">
+          {t('keyGuide.open', { site })} ↗
+        </a>
+      )}
+    </details>
+  );
 }
 
 /**
@@ -60,7 +97,7 @@ interface SettingsFormProps {
  * Used by the options page and, embedded, by the side panel and result tab (gear button).
  * Edits are a draft until Save; the appearance preview follows the draft live.
  */
-export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: SettingsFormProps) {
+export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onReady }: SettingsFormProps) {
   const { t } = useTranslation(['settings', 'common']);
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
   const [loaded, setLoaded] = useState(false);
@@ -75,6 +112,9 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: S
   const [showKey, setShowKey] = useState(false);
   const [saved, setSaved] = useState(false);
   const [tab, setTab] = useState<SettingsTab>(initialTab);
+  // First run: nothing usable was saved yet, so the form leads with a welcome and the key steps.
+  const [setup, setSetup] = useState(false);
+  const [ready, setReady] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
 
   const id = settings.provider;
@@ -85,6 +125,7 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: S
   useEffect(() => {
     void getSettings().then((s) => {
       setSettings(s);
+      setSetup(configProblem(s) !== null);
       setLoaded(true);
     });
   }, []);
@@ -146,6 +187,12 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: S
     void granted.then(async (ok) => {
       await settingsItem.setValue(settings);
       setSaved(true);
+      if (setup && !configProblem(settings)) {
+        setSetup(false);
+        setReady(true);
+        if (onReady) onReady();
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
       if (!ok)
         setLoad({
           status: 'error',
@@ -168,8 +215,34 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: S
             onChange={(uiLanguage) => setSettings((s) => ({ ...s, uiLanguage }))}
           />
         </div>
-        <p className="muted">{t('intro')}</p>
+        {!setup && !ready && <p className="muted">{t('intro')}</p>}
       </header>
+
+      {setup && (
+        <section className="panel setup">
+          <h2>{t('setup.title')}</h2>
+          <p>{t('setup.lead')}</p>
+          <ol className="setup__steps">
+            <li>{t('setup.step1')}</li>
+            <li>{t('setup.step2')}</li>
+            <li>{t('setup.step3')}</li>
+          </ol>
+          {id !== 'google' && (
+            <p className="setup__tip">
+              <span>{t('setup.tip')}</span>
+              <button className="btn btn--sm" onClick={() => update({ provider: 'google' })}>
+                {t('setup.useGemini')}
+              </button>
+            </p>
+          )}
+        </section>
+      )}
+      {ready && (
+        <section className="panel setup setup--ready" role="status">
+          <h2>{t('setup.readyTitle')}</h2>
+          <p>{t('setup.readyBody')}</p>
+        </section>
+      )}
 
       <Tabs.Root
         value={tab}
@@ -196,7 +269,12 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: S
                   className={`provider ${pid === id ? 'provider--active' : ''}`}
                   onClick={() => update({ provider: pid })}
                 >
-                  {PROVIDERS[pid].label}
+                  <span>{PROVIDERS[pid].label}</span>
+                  {(PROVIDERS[pid].free || PROVIDERS[pid].local) && (
+                    <span className="provider__badge">
+                      {PROVIDERS[pid].local ? t('provider.local') : t('provider.free')}
+                    </span>
+                  )}
                   {isProviderConnected(settings, pid, modelCache) && (
                     <span className="provider__dot" title={t('provider.connected')} />
                   )}
@@ -231,12 +309,11 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: S
                     {showKey ? t('connect.hide') : t('connect.show')}
                   </button>
                 </div>
-                {preset.keyUrl && (
-                  <a className="hint" href={preset.keyUrl} target="_blank" rel="noreferrer">
-                    {t('connect.getKey', { provider: preset.label })} ↗
-                  </a>
-                )}
               </div>
+            )}
+
+            {id !== 'custom' && (
+              <KeyGuide key={id} id={id} open={setup || (preset.local ? !models.length : !cfg.apiKey)} />
             )}
 
             <details className="field" open={id === 'custom' || preset.local}>
@@ -248,9 +325,6 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai' }: S
                 value={cfg.baseUrl}
                 onChange={(e) => updateProvider({ baseUrl: e.target.value.trim() })}
               />
-              {preset.local && (
-                <p className="hint">{id === 'ollama' ? t('connect.ollamaHint') : t('connect.lmstudioHint')}</p>
-              )}
             </details>
           </section>
 

@@ -1,9 +1,22 @@
 {
   "title": "Settings",
   "intro": "Bring your own key. Requests go straight from your browser to the provider, with no server in between.",
+  "setup": {
+    "title": "Welcome to Siftlume",
+    "lead": "One step before your first summary: connect an AI provider. Siftlume uses your own API key, and requests go straight from your browser to that provider.",
+    "step1": "Pick a provider",
+    "step2": "Get an API key and paste it",
+    "step3": "Click Save, then summarize any page",
+    "tip": "New to API keys? Google Gemini has a free tier and needs no credit card.",
+    "useGemini": "Use Google Gemini",
+    "readyTitle": "You’re all set",
+    "readyBody": "Open any article and click the Siftlume icon in the toolbar to summarize it."
+  },
   "provider": {
     "heading": "1. Provider",
-    "connected": "Connected"
+    "connected": "Connected",
+    "free": "Free tier",
+    "local": "On your computer"
   },
   "connect": {
     "heading": "2. Connect",
@@ -13,10 +26,85 @@
     "keyOptionalPlaceholder": "Leave empty if not required",
     "show": "Show",
     "hide": "Hide",
-    "getKey": "Get your {{provider}} key",
-    "baseUrl": "Base URL",
-    "ollamaHint": "Make sure Ollama is running (ollama serve). Click Save to grant access, then pick a model that supports chat.",
-    "lmstudioHint": "Start the local server in LM Studio (Developer → Start server) and enable CORS."
+    "baseUrl": "Base URL"
+  },
+  "keyGuide": {
+    "heading": "How to get a {{provider}} key",
+    "localHeading": "How to set up {{provider}}",
+    "open": "Open {{site}}",
+    "paste": "Paste the key in the API key field and click Save.",
+    "steps": {
+      "openai": [
+        "Sign in at platform.openai.com (your ChatGPT account works).",
+        "Go to Settings → Billing and add credit.",
+        "Open API keys and click Create new secret key.",
+        "Copy the key now. It is shown only once."
+      ],
+      "anthropic": [
+        "Sign in at console.anthropic.com.",
+        "Go to Settings → Billing and buy credits.",
+        "Open API keys and click Create key.",
+        "Copy the key now. It is shown only once."
+      ],
+      "google": [
+        "Sign in at aistudio.google.com with your Google account.",
+        "Click Get API key, then Create API key.",
+        "Copy the key. It starts with AIza."
+      ],
+      "openrouter": [
+        "Sign in at openrouter.ai.",
+        "Open Keys and click Create API key.",
+        "Copy the key now. It is shown only once."
+      ],
+      "groq": [
+        "Sign in at console.groq.com.",
+        "Open API Keys and click Create API Key.",
+        "Copy the key now. It is shown only once."
+      ],
+      "deepseek": [
+        "Sign in at platform.deepseek.com.",
+        "Top up your balance.",
+        "Open API keys, click Create new API key and copy it."
+      ],
+      "mistral": [
+        "Sign in at console.mistral.ai.",
+        "Choose a plan (Experiment is free) and verify your phone number.",
+        "Open API Keys, click Create new key and copy it."
+      ],
+      "xai": [
+        "Sign in at console.x.ai.",
+        "Add credits under Billing.",
+        "Open API Keys, click Create API key and copy it."
+      ],
+      "together": [
+        "Sign in at api.together.ai.",
+        "Add credit under Billing.",
+        "Open Settings → API Keys and copy your key."
+      ],
+      "ollama": [
+        "Install Ollama from ollama.com and open it.",
+        "Download a model in a terminal: ollama pull llama3.2",
+        "Click Save here, then pick the model under Model."
+      ],
+      "lmstudio": [
+        "Install LM Studio from lmstudio.ai and download a model.",
+        "Open the Developer tab, start the server and turn on CORS.",
+        "Click Save here, then pick the model under Model."
+      ]
+    },
+    "note": {
+      "openai": "Paid. The API is billed separately from a ChatGPT subscription.",
+      "anthropic": "Paid. The API is billed separately from a Claude Pro or Max plan.",
+      "google": "Free tier with daily limits, no credit card needed. On the free tier Google may use your prompts to improve its products.",
+      "openrouter": "One key for hundreds of models. Models ending in :free cost nothing; the others use prepaid credits.",
+      "groq": "Free tier with rate limits. Runs open models such as Llama very fast.",
+      "deepseek": "Paid, at a low price. The key works once your balance is above zero.",
+      "mistral": "A new key can take a few minutes to start working.",
+      "xai": "Paid. The key works once you have credits.",
+      "together": "Paid. The key works once you have credit.",
+      "ollama": "Free and private: the model runs on your computer, so nothing leaves it.",
+      "lmstudio": "Free and private: the model runs on your computer, so nothing leaves it."
+    }
   },
   "model": {
     "heading": "3. Model",

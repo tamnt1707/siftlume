@@ -1,9 +1,22 @@
 {
   "title": "Cài đặt",
   "intro": "Dùng API key của riêng bạn. Yêu cầu đi thẳng từ trình duyệt đến nhà cung cấp, không qua máy chủ trung gian.",
+  "setup": {
+    "title": "Chào mừng bạn đến với Siftlume",
+    "lead": "Còn một bước trước bản tóm tắt đầu tiên: kết nối một nhà cung cấp AI. Siftlume dùng API key của chính bạn, yêu cầu đi thẳng từ trình duyệt tới nhà cung cấp đó.",
+    "step1": "Chọn nhà cung cấp",
+    "step2": "Lấy API key và dán vào",
+    "step3": "Bấm Lưu, rồi tóm tắt bất kỳ trang nào",
+    "tip": "Chưa từng dùng API key? Google Gemini có gói miễn phí, không cần thẻ thanh toán.",
+    "useGemini": "Dùng Google Gemini",
+    "readyTitle": "Xong rồi!",
+    "readyBody": "Mở một bài viết bất kỳ rồi bấm biểu tượng Siftlume trên thanh công cụ để tóm tắt."
+  },
   "provider": {
     "heading": "1. Nhà cung cấp",
-    "connected": "Đã kết nối"
+    "connected": "Đã kết nối",
+    "free": "Có gói miễn phí",
+    "local": "Chạy trên máy"
   },
   "connect": {
     "heading": "2. Kết nối",
@@ -13,10 +26,85 @@
     "keyOptionalPlaceholder": "Để trống nếu không cần",
     "show": "Hiện",
     "hide": "Ẩn",
-    "getKey": "Lấy API key {{provider}}",
-    "baseUrl": "Base URL",
-    "ollamaHint": "Hãy chắc Ollama đang chạy (ollama serve). Bấm Lưu để cấp quyền truy cập, sau đó chọn một model hỗ trợ chat.",
-    "lmstudioHint": "Khởi động máy chủ cục bộ trong LM Studio (Developer → Start server) và bật CORS."
+    "baseUrl": "Base URL"
+  },
+  "keyGuide": {
+    "heading": "Cách lấy API key {{provider}}",
+    "localHeading": "Cách cài đặt {{provider}}",
+    "open": "Mở {{site}}",
+    "paste": "Dán key vào ô API key ở trên rồi bấm Lưu.",
+    "steps": {
+      "openai": [
+        "Đăng nhập platform.openai.com (dùng tài khoản ChatGPT được).",
+        "Vào Settings → Billing và nạp tiền.",
+        "Mở API keys, bấm Create new secret key.",
+        "Sao chép key ngay, key chỉ hiện một lần."
+      ],
+      "anthropic": [
+        "Đăng nhập console.anthropic.com.",
+        "Vào Settings → Billing và mua credit.",
+        "Mở API keys, bấm Create key.",
+        "Sao chép key ngay, key chỉ hiện một lần."
+      ],
+      "google": [
+        "Đăng nhập aistudio.google.com bằng tài khoản Google.",
+        "Bấm Get API key, rồi Create API key.",
+        "Sao chép key (bắt đầu bằng AIza)."
+      ],
+      "openrouter": [
+        "Đăng nhập openrouter.ai.",
+        "Mở Keys, bấm Create API key.",
+        "Sao chép key ngay, key chỉ hiện một lần."
+      ],
+      "groq": [
+        "Đăng nhập console.groq.com.",
+        "Mở API Keys, bấm Create API Key.",
+        "Sao chép key ngay, key chỉ hiện một lần."
+      ],
+      "deepseek": [
+        "Đăng nhập platform.deepseek.com.",
+        "Nạp tiền vào tài khoản (Top up).",
+        "Mở API keys, bấm Create new API key rồi sao chép."
+      ],
+      "mistral": [
+        "Đăng nhập console.mistral.ai.",
+        "Chọn gói (Experiment là miễn phí) và xác minh số điện thoại.",
+        "Mở API Keys, bấm Create new key rồi sao chép."
+      ],
+      "xai": [
+        "Đăng nhập console.x.ai.",
+        "Nạp credit trong Billing.",
+        "Mở API Keys, bấm Create API key rồi sao chép."
+      ],
+      "together": [
+        "Đăng nhập api.together.ai.",
+        "Nạp credit trong Billing.",
+        "Mở Settings → API Keys và sao chép key."
+      ],
+      "ollama": [
+        "Cài Ollama từ ollama.com và mở lên.",
+        "Tải một model trong Terminal: ollama pull llama3.2",
+        "Bấm Lưu ở đây, rồi chọn model trong mục Model."
+      ],
+      "lmstudio": [
+        "Cài LM Studio từ lmstudio.ai và tải một model.",
+        "Mở tab Developer, bật server và bật CORS.",
+        "Bấm Lưu ở đây, rồi chọn model trong mục Model."
+      ]
+    },
+    "note": {
+      "openai": "Trả phí. API tính tiền riêng, không dùng chung với gói ChatGPT Plus.",
+      "anthropic": "Trả phí. API tính tiền riêng, không dùng chung với gói Claude Pro hay Max.",
+      "google": "Gói miễn phí có giới hạn mỗi ngày, không cần thẻ. Ở gói miễn phí, Google có thể dùng nội dung bạn gửi để cải thiện sản phẩm.",
+      "openrouter": "Một key dùng cho hàng trăm model. Model có đuôi :free thì miễn phí, các model khác trừ vào credit nạp trước.",
+      "groq": "Có gói miễn phí, giới hạn số lượt. Chạy các model mở như Llama rất nhanh.",
+      "deepseek": "Trả phí, giá rẻ. Key chỉ dùng được khi tài khoản còn tiền.",
+      "mistral": "Key mới có thể mất vài phút mới bắt đầu hoạt động.",
+      "xai": "Trả phí. Key dùng được khi tài khoản có credit.",
+      "together": "Trả phí. Key dùng được khi tài khoản có credit.",
+      "ollama": "Miễn phí và riêng tư: model chạy ngay trên máy bạn, dữ liệu không đi đâu cả.",
+      "lmstudio": "Miễn phí và riêng tư: model chạy ngay trên máy bạn, dữ liệu không đi đâu cả."
+    }
   },
   "model": {
     "heading": "3. Model",

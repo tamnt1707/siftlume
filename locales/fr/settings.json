@@ -1,9 +1,22 @@
 {
   "title": "Paramètres",
   "intro": "Utilisez votre propre clé. Les requêtes partent directement de votre navigateur vers le fournisseur, sans serveur intermédiaire.",
+  "setup": {
+    "title": "Bienvenue dans Siftlume",
+    "lead": "Une étape avant votre premier résumé : connectez un fournisseur d’IA. Siftlume utilise votre propre clé API, et les requêtes vont directement de votre navigateur à ce fournisseur.",
+    "step1": "Choisissez un fournisseur",
+    "step2": "Obtenez une clé API et collez-la",
+    "step3": "Cliquez sur Enregistrer, puis résumez n’importe quelle page",
+    "tip": "Première clé API ? Google Gemini propose une offre gratuite, sans carte bancaire.",
+    "useGemini": "Utiliser Google Gemini",
+    "readyTitle": "Tout est prêt",
+    "readyBody": "Ouvrez un article et cliquez sur l’icône Siftlume dans la barre d’outils pour le résumer."
+  },
   "provider": {
     "heading": "1. Fournisseur",
-    "connected": "Connecté"
+    "connected": "Connecté",
+    "free": "Offre gratuite",
+    "local": "Sur votre ordinateur"
   },
   "connect": {
     "heading": "2. Connexion",
@@ -13,10 +26,85 @@
     "keyOptionalPlaceholder": "Laissez vide si inutile",
     "show": "Afficher",
     "hide": "Masquer",
-    "getKey": "Obtenir une clé {{provider}}",
-    "baseUrl": "URL de base",
-    "ollamaHint": "Vérifiez qu’Ollama est lancé (ollama serve). Cliquez sur Enregistrer pour autoriser l’accès, puis choisissez un modèle compatible chat.",
-    "lmstudioHint": "Démarrez le serveur local dans LM Studio (Developer → Start server) et activez CORS."
+    "baseUrl": "URL de base"
+  },
+  "keyGuide": {
+    "heading": "Obtenir une clé {{provider}}",
+    "localHeading": "Configurer {{provider}}",
+    "open": "Ouvrir {{site}}",
+    "paste": "Collez la clé dans le champ Clé API et cliquez sur Enregistrer.",
+    "steps": {
+      "openai": [
+        "Connectez-vous sur platform.openai.com (votre compte ChatGPT fonctionne).",
+        "Allez dans Settings → Billing et ajoutez du crédit.",
+        "Ouvrez API keys et cliquez sur Create new secret key.",
+        "Copiez la clé tout de suite : elle ne s’affiche qu’une fois."
+      ],
+      "anthropic": [
+        "Connectez-vous sur console.anthropic.com.",
+        "Allez dans Settings → Billing et achetez des crédits.",
+        "Ouvrez API keys et cliquez sur Create key.",
+        "Copiez la clé tout de suite : elle ne s’affiche qu’une fois."
+      ],
+      "google": [
+        "Connectez-vous sur aistudio.google.com avec votre compte Google.",
+        "Cliquez sur Get API key, puis Create API key.",
+        "Copiez la clé (elle commence par AIza)."
+      ],
+      "openrouter": [
+        "Connectez-vous sur openrouter.ai.",
+        "Ouvrez Keys et cliquez sur Create API key.",
+        "Copiez la clé tout de suite : elle ne s’affiche qu’une fois."
+      ],
+      "groq": [
+        "Connectez-vous sur console.groq.com.",
+        "Ouvrez API Keys et cliquez sur Create API Key.",
+        "Copiez la clé tout de suite : elle ne s’affiche qu’une fois."
+      ],
+      "deepseek": [
+        "Connectez-vous sur platform.deepseek.com.",
+        "Rechargez votre solde (Top up).",
+        "Ouvrez API keys, cliquez sur Create new API key et copiez-la."
+      ],
+      "mistral": [
+        "Connectez-vous sur console.mistral.ai.",
+        "Choisissez une offre (Experiment est gratuite) et vérifiez votre numéro.",
+        "Ouvrez API Keys, cliquez sur Create new key et copiez-la."
+      ],
+      "xai": [
+        "Connectez-vous sur console.x.ai.",
+        "Ajoutez des crédits dans Billing.",
+        "Ouvrez API Keys, cliquez sur Create API key et copiez-la."
+      ],
+      "together": [
+        "Connectez-vous sur api.together.ai.",
+        "Ajoutez du crédit dans Billing.",
+        "Ouvrez Settings → API Keys et copiez votre clé."
+      ],
+      "ollama": [
+        "Installez Ollama depuis ollama.com et lancez-le.",
+        "Téléchargez un modèle dans un terminal : ollama pull llama3.2",
+        "Cliquez sur Enregistrer ici, puis choisissez le modèle sous Modèle."
+      ],
+      "lmstudio": [
+        "Installez LM Studio depuis lmstudio.ai et téléchargez un modèle.",
+        "Ouvrez l’onglet Developer, démarrez le serveur et activez CORS.",
+        "Cliquez sur Enregistrer ici, puis choisissez le modèle sous Modèle."
+      ]
+    },
+    "note": {
+      "openai": "Payant. L’API est facturée séparément de l’abonnement ChatGPT.",
+      "anthropic": "Payant. L’API est facturée séparément des offres Claude Pro ou Max.",
+      "google": "Offre gratuite avec limites quotidiennes, sans carte. Avec l’offre gratuite, Google peut utiliser vos envois pour améliorer ses produits.",
+      "openrouter": "Une clé pour des centaines de modèles. Ceux qui finissent par :free sont gratuits ; les autres utilisent des crédits prépayés.",
+      "groq": "Offre gratuite avec limites d’usage. Exécute très vite des modèles ouverts comme Llama.",
+      "deepseek": "Payant, à petit prix. La clé fonctionne dès que votre solde est positif.",
+      "mistral": "Une nouvelle clé peut mettre quelques minutes à fonctionner.",
+      "xai": "Payant. La clé fonctionne une fois des crédits ajoutés.",
+      "together": "Payant. La clé fonctionne une fois du crédit ajouté.",
+      "ollama": "Gratuit et privé : le modèle tourne sur votre ordinateur, rien n’en sort.",
+      "lmstudio": "Gratuit et privé : le modèle tourne sur votre ordinateur, rien n’en sort."
+    }
   },
   "model": {
     "heading": "3. Modèle",

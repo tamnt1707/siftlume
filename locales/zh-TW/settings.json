@@ -1,9 +1,22 @@
 {
   "title": "設定",
   "intro": "使用你自己的 API 金鑰。請求會直接從瀏覽器傳送到服務供應商,不經過任何中間伺服器。",
+  "setup": {
+    "title": "歡迎使用 Siftlume",
+    "lead": "產生第一份摘要前還差一步：連接一個 AI 服務商。Siftlume 使用你自己的 API 金鑰，請求會直接從瀏覽器送到該服務商。",
+    "step1": "選擇服務商",
+    "step2": "取得 API 金鑰並貼上",
+    "step3": "點擊儲存，然後摘要任何網頁",
+    "tip": "第一次使用 API 金鑰？Google Gemini 提供免費額度，不需要信用卡。",
+    "useGemini": "使用 Google Gemini",
+    "readyTitle": "設定完成",
+    "readyBody": "開啟任何文章，點擊工具列中的 Siftlume 圖示即可產生摘要。"
+  },
   "provider": {
     "heading": "1. 服務供應商",
-    "connected": "已連線"
+    "connected": "已連線",
+    "free": "有免費額度",
+    "local": "在本機執行"
   },
   "connect": {
     "heading": "2. 連線",
@@ -13,10 +26,85 @@
     "keyOptionalPlaceholder": "不需要時可留空",
     "show": "顯示",
     "hide": "隱藏",
-    "getKey": "取得 {{provider}} 金鑰",
-    "baseUrl": "Base URL",
-    "ollamaHint": "請確認 Ollama 正在執行(ollama serve)。點擊儲存以授予存取權限,然後選擇支援對話的模型。",
-    "lmstudioHint": "在 LM Studio 中啟動本機伺服器(Developer → Start server)並啟用 CORS。"
+    "baseUrl": "Base URL"
+  },
+  "keyGuide": {
+    "heading": "如何取得 {{provider}} 金鑰",
+    "localHeading": "如何設定 {{provider}}",
+    "open": "開啟 {{site}}",
+    "paste": "把金鑰貼到 API 金鑰欄位，然後點擊儲存。",
+    "steps": {
+      "openai": [
+        "登入 platform.openai.com（可用 ChatGPT 帳號）。",
+        "前往 Settings → Billing 儲值。",
+        "開啟 API keys，點擊 Create new secret key。",
+        "立即複製金鑰，它只會顯示一次。"
+      ],
+      "anthropic": [
+        "登入 console.anthropic.com。",
+        "前往 Settings → Billing 購買額度。",
+        "開啟 API keys，點擊 Create key。",
+        "立即複製金鑰，它只會顯示一次。"
+      ],
+      "google": [
+        "用 Google 帳號登入 aistudio.google.com。",
+        "點擊 Get API key，再點擊 Create API key。",
+        "複製金鑰（以 AIza 開頭）。"
+      ],
+      "openrouter": [
+        "登入 openrouter.ai。",
+        "開啟 Keys，點擊 Create API key。",
+        "立即複製金鑰，它只會顯示一次。"
+      ],
+      "groq": [
+        "登入 console.groq.com。",
+        "開啟 API Keys，點擊 Create API Key。",
+        "立即複製金鑰，它只會顯示一次。"
+      ],
+      "deepseek": [
+        "登入 platform.deepseek.com。",
+        "為帳戶儲值（Top up）。",
+        "開啟 API keys，點擊 Create new API key 並複製。"
+      ],
+      "mistral": [
+        "登入 console.mistral.ai。",
+        "選擇方案（Experiment 免費）並驗證手機號碼。",
+        "開啟 API Keys，點擊 Create new key 並複製。"
+      ],
+      "xai": [
+        "登入 console.x.ai。",
+        "在 Billing 中儲值。",
+        "開啟 API Keys，點擊 Create API key 並複製。"
+      ],
+      "together": [
+        "登入 api.together.ai。",
+        "在 Billing 中儲值。",
+        "開啟 Settings → API Keys 並複製金鑰。"
+      ],
+      "ollama": [
+        "從 ollama.com 安裝 Ollama 並開啟。",
+        "在終端機下載模型：ollama pull llama3.2",
+        "在這裡點擊儲存，然後在「模型」中選擇模型。"
+      ],
+      "lmstudio": [
+        "從 lmstudio.ai 安裝 LM Studio 並下載一個模型。",
+        "開啟 Developer 分頁，啟動伺服器並開啟 CORS。",
+        "在這裡點擊儲存，然後在「模型」中選擇模型。"
+      ]
+    },
+    "note": {
+      "openai": "付費。API 與 ChatGPT 訂閱分開計費。",
+      "anthropic": "付費。API 與 Claude Pro 或 Max 方案分開計費。",
+      "google": "免費額度有每日上限，不需要信用卡。使用免費額度時，Google 可能會用你送出的內容改進其產品。",
+      "openrouter": "一個金鑰可用數百個模型。以 :free 結尾的模型免費，其他模型使用預付額度。",
+      "groq": "有免費額度，具速率限制。執行 Llama 等開源模型速度很快。",
+      "deepseek": "付費，價格低。帳戶有餘額時金鑰才可使用。",
+      "mistral": "新金鑰可能需要幾分鐘才會生效。",
+      "xai": "付費。帳戶有額度時金鑰才可使用。",
+      "together": "付費。帳戶有額度時金鑰才可使用。",
+      "ollama": "免費且私密：模型在你的電腦上執行，資料不會外傳。",
+      "lmstudio": "免費且私密：模型在你的電腦上執行，資料不會外傳。"
+    }
   },
   "model": {
     "heading": "3. 模型",
