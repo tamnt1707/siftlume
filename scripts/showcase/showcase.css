@@ -167,6 +167,35 @@ body {
   min-height: 0;
 }
 
+/* ?view=post: taller, so most of the summary fits in one image. */
+.sc-compare--post {
+  height: 1240px;
+}
+
+.sc-compare--post .sc-browser,
+.sc-compare--post .sc-panel {
+  height: 1130px;
+}
+
+.sc-compare--post .sc-panel .content {
+  height: calc(1130px - 52px);
+}
+
+.sc-code {
+  margin: 0 0 16px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: #1a2236;
+  color: #e6ebf2;
+  font:
+    12.5px/1.55 ui-monospace,
+    'SF Mono',
+    Menlo,
+    monospace;
+  white-space: pre;
+  overflow: hidden;
+}
+
 /* Static shells: no fixed bars or sticky rails in screenshots. */
 .sc-full .session--page > .session__side {
   position: static;

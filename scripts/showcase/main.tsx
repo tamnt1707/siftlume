@@ -26,19 +26,28 @@ import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE 
 import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from '../../lib/analysis-example';
 import { DEFAULT_SETTINGS, type Settings } from '../../lib/settings';
 import { ARTICLE, SUMMARY } from './content';
+import { POSTS } from './posts-vi';
 
 const query = new URLSearchParams(location.search);
 const view = query.get('view') ?? 'compare';
 const dark = new URLSearchParams(location.search).has('dark');
 const settings: Settings = { ...DEFAULT_SETTINGS, theme: dark ? 'dark' : 'light' };
 
-function Topbar({ wide }: { wide?: boolean }) {
+function Topbar({
+  wide,
+  provider = 'Anthropic',
+  model = 'Claude Haiku 5.5',
+}: {
+  wide?: boolean;
+  provider?: string;
+  model?: string;
+}) {
   return (
     <header className="topbar">
       <span className="brand">Siftlume</span>
       <span className="model-switch">
-        <span className="model-switch__provider">Anthropic</span>
-        <span className="model-switch__model">Claude Haiku 5.5</span>
+        <span className="model-switch__provider">{provider}</span>
+        <span className="model-switch__model">{model}</span>
       </span>
       <nav>
         {wide ? <span className="btn btn--sm">New</span> : null}
@@ -53,13 +62,13 @@ function Topbar({ wide }: { wide?: boolean }) {
   );
 }
 
-function SourceRow({ title, panel }: { title: string; panel?: boolean }) {
+function SourceRow({ title, panel, saved = '~12 min saved' }: { title: string; panel?: boolean; saved?: string }) {
   return (
     <header className="source">
       <div className="source__meta">
-        <span className="sc-favicon">D</span>
+        <span className="sc-favicon">{title[0]!.toUpperCase()}</span>
         <span className="source__title">{title}</span>
-        <span className="time-saved">~12 min saved</span>
+        <span className="time-saved">{saved}</span>
       </div>
       <div className="source__actions">
         <span className="tool-btn">
@@ -145,6 +154,69 @@ function Compare() {
                 <section className="summary">
                   <div className="genui">
                     <Renderer library={library} response={SUMMARY} isStreaming={false} />
+                  </div>
+                </section>
+              </div>
+            </div>
+          </main>
+        </Themed>
+      </section>
+    </div>
+  );
+}
+
+/**
+ * An English tech article next to the summary written in Vietnamese, for posts in Vietnamese
+ * communities. `?view=post&post=passkeys|database|docker|microservices&lang=vi`.
+ */
+function PostCompare() {
+  const post = POSTS[query.get('post') ?? 'passkeys'] ?? POSTS.passkeys!;
+  const host = post.url.split('/')[0]!;
+  return (
+    <div className="sc-compare sc-compare--post">
+      <section className="sc-col">
+        <p className="sc-label">
+          Bài gốc <span>tiếng Anh, {post.minutes} phút đọc</span>
+        </p>
+        <div className="sc-browser">
+          <div className="sc-chrome">
+            <i />
+            <i />
+            <i />
+            <span>{post.url}</span>
+          </div>
+          <article className="sc-article">
+            <p className="sc-site">{post.site}</p>
+            <p className="sc-section">{post.section}</p>
+            <h1>{post.title}</h1>
+            <p className="sc-dek">{post.dek}</p>
+            <p className="sc-byline">{post.byline}</p>
+            <div className="sc-ad">Advertisement</div>
+            {post.paragraphs.map((p, i) => (
+              <div key={i}>
+                <p>{p}</p>
+                {post.code && i === post.codeAfter && <pre className="sc-code">{post.code}</pre>}
+              </div>
+            ))}
+          </article>
+        </div>
+      </section>
+      <div className="sc-arrow" aria-hidden="true">
+        →
+      </div>
+      <section className="sc-col sc-col--after">
+        <p className="sc-label">
+          Siftlume <span>tóm tắt tiếng Việt · {post.mode}</span>
+        </p>
+        <Themed settings={settings} className="app app--panel sc-panel">
+          <Topbar provider="Google" model="Gemini 2.5 Flash" />
+          <main className="content">
+            <div className="session session--panel">
+              <SourceRow title={host} panel saved={`Tiết kiệm ~${post.minutes - 2} phút`} />
+              <div className="session__main">
+                <section className="summary">
+                  <div className="genui">
+                    <Renderer library={library} response={post.summary} isStreaming={false} />
                   </div>
                 </section>
               </div>
@@ -425,6 +497,7 @@ const views: Record<string, () => ReactElement> = {
   'promo-small': PromoSmall,
   'promo-marquee': PromoMarquee,
   compare: Compare,
+  post: PostCompare,
   fullpage: FullPage,
   settings: SettingsView,
   components: Components,
