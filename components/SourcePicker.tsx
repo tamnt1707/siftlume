@@ -4,8 +4,8 @@ import { FileUploadIcon, SparklesIcon } from '@hugeicons/core-free-icons';
 import { Icon } from './Icon';
 import type { SessionController } from './useSession';
 import type { Settings } from '@/lib/settings';
-import type { AnalysisMode } from '@/lib/modes';
-import { AnalysisChoice } from './ModePicker';
+import type { ModeId } from '@/lib/modes';
+import { AnalysisChoice, runLabel } from './ModePicker';
 import { useVideoProbe } from './useVideoProbe';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
@@ -35,7 +35,7 @@ export function SourcePicker({
   const [text, setText] = useState('');
   const [dragging, setDragging] = useState(false);
   // Every visit starts as a summary; another mode applies to the next run only.
-  const [mode, setMode] = useState<AnalysisMode>('summary');
+  const [mode, setMode] = useState<ModeId>('summary');
   const fileInput = useRef<HTMLInputElement>(null);
   const busy = ctrl.phase !== 'idle';
   const video = useVideoProbe(page?.readable ? page.id : undefined, page?.url);
@@ -72,7 +72,9 @@ export function SourcePicker({
           >
             <span className="btn__label">
               <Icon icon={SparklesIcon} />
-              {ctrl.phase === 'extracting' ? t('reading') : t(video.isVideo ? `runVideo.${mode}` : `run.${mode}`)}
+              {ctrl.phase === 'extracting'
+                ? t('reading')
+                : runLabel(video.isVideo ? 'runVideo' : 'run', mode, settings.customModes)}
             </span>
             {page.title && <span className="btn__sub">{page.readable ? page.title : t('cannotRead')}</span>}
             {(video.blocked || video.note) && <span className="btn__sub">{video.blocked ?? video.note}</span>}
@@ -97,7 +99,7 @@ export function SourcePicker({
         />
         {text.trim() && (
           <button className="btn btn--primary btn--block" disabled={busy} onClick={() => ctrl.fromText(text, { mode })}>
-            {t(`runText.${mode}`)} <kbd>⌘/Ctrl ↵</kbd>
+            {runLabel('runText', mode, settings.customModes)} <kbd>⌘/Ctrl ↵</kbd>
           </button>
         )}
       </div>

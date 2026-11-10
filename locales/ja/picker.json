@@ -30,5 +30,6 @@
     "autoCaptions": "自動字幕: {{label}}",
     "noCaptions": "この動画には字幕がないため要約できません",
     "live": "ライブ配信は終了後に要約できます"
-  }
+  },
+  "runCustom": "「{{name}}」で読む"
 }

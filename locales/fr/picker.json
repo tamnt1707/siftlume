@@ -30,5 +30,6 @@
     "autoCaptions": "Sous-titres automatiques : {{label}}",
     "noCaptions": "Cette vidéo n’a pas de sous-titres, elle ne peut donc pas être résumée",
     "live": "Les directs peuvent être résumés une fois terminés"
-  }
+  },
+  "runCustom": "Lire en mode « {{name}} »"
 }

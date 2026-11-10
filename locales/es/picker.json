@@ -30,5 +30,6 @@
     "autoCaptions": "Subtítulos automáticos: {{label}}",
     "noCaptions": "Este vídeo no tiene subtítulos, así que no se puede resumir",
     "live": "Las emisiones en directo se pueden resumir cuando terminan"
-  }
+  },
+  "runCustom": "Leer como «{{name}}»"
 }

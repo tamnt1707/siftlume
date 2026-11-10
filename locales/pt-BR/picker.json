@@ -30,5 +30,6 @@
     "autoCaptions": "Legendas automáticas: {{label}}",
     "noCaptions": "Este vídeo não tem legendas, então não pode ser resumido",
     "live": "Transmissões ao vivo podem ser resumidas depois que terminam"
-  }
+  },
+  "runCustom": "Ler como “{{name}}”"
 }

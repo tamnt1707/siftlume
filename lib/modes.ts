@@ -49,3 +49,39 @@ export const MODE_QA_RULES: Record<AnalysisMode, string> = {
     'The reader is evaluating the source: say what evidence the source gives for the answer and what is missing.',
   action: 'The reader wants to act: answer with the concrete steps, dates or requirements from the source.',
 };
+
+// ── Custom reading modes ───────────────────────────────────────────────────────
+
+/** A reading mode the user wrote: a name, what they want, and the built-in mode it builds on. */
+export interface CustomMode {
+  id: string;
+  name: string;
+  /** The reader's own instructions, in any language. */
+  instruction: string;
+  /** Built-in mode whose layout and examples it starts from. */
+  base: AnalysisMode;
+}
+
+/** A built-in mode, or "custom:<id>" for one of the user's. */
+export type ModeId = AnalysisMode | `custom:${string}`;
+
+export const MAX_CUSTOM_MODES = 8;
+export const customModeId = (m: CustomMode): ModeId => `custom:${m.id}`;
+
+/** Custom modes that can run: named and with instructions. */
+export const usableCustomModes = (modes: CustomMode[] = []) =>
+  modes.filter((m) => m.name.trim() && m.instruction.trim());
+
+/** The built-in mode to build on and, for a custom mode, its definition. Unknown ids fall back to a summary. */
+export function resolveMode(
+  id: ModeId | undefined,
+  custom: CustomMode[] = [],
+): { base: AnalysisMode; custom?: CustomMode } {
+  if (id && ANALYSIS_MODES.includes(id as AnalysisMode)) return { base: id as AnalysisMode };
+  const found = id?.startsWith('custom:') ? usableCustomModes(custom).find((m) => customModeId(m) === id) : undefined;
+  return found ? { base: found.base, custom: found } : { base: 'summary' };
+}
+
+/** Prompt rule for a custom mode, added after the built-in mode's rules. */
+export const customModeRule = (m: CustomMode) =>
+  `CUSTOM READING MODE "${m.name.trim()}", written by the reader. Follow it; where it conflicts with the mode goal above, it wins, but every other rule (OpenUI syntax, use only the source, length) still applies: ${m.instruction.trim()}`;

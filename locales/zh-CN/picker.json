@@ -30,5 +30,6 @@
     "autoCaptions": "自动字幕：{{label}}",
     "noCaptions": "这个视频没有字幕，无法总结",
     "live": "直播结束后才能总结"
-  }
+  },
+  "runCustom": "按“{{name}}”阅读"
 }

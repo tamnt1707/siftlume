@@ -30,5 +30,6 @@
     "autoCaptions": "Phụ đề tự động: {{label}}",
     "noCaptions": "Video này không có phụ đề nên không tóm tắt được",
     "live": "Livestream tóm tắt được sau khi kết thúc"
-  }
+  },
+  "runCustom": "Đọc theo “{{name}}”"
 }

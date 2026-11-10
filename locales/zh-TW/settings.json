@@ -231,5 +231,17 @@
     "supportText": "Siftlume 免費且開源。如果它幫你省下時間,請我喝杯咖啡就能支持它繼續發展。",
     "supportButton": "請我喝杯咖啡",
     "license": "免費開源,授權條款:"
+  },
+  "customModes": {
+    "title": "你的閱讀方式",
+    "hint": "寫下你想要的結果，它會顯示在摘要、講解、檢視和行動旁邊。",
+    "add": "新增閱讀方式",
+    "name": "名稱",
+    "namePlaceholder": "例如：給主管的簡報",
+    "instruction": "你想要什麼",
+    "instructionPlaceholder": "例如：三點忙碌的主管 20 秒能讀完的重點，接著是需要做的決定和期限。",
+    "base": "以此為基礎",
+    "remove": "刪除",
+    "incomplete": "填寫名稱和內容後才能使用這個閱讀方式。"
   }
 }

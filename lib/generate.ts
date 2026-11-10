@@ -12,7 +12,13 @@ import {
 } from './openui';
 import { readStored, type QaTurn, type SessionSource } from './history';
 import type { Settings } from './settings';
-import { MODE_TASK } from './modes';
+import { MODE_TASK, resolveMode } from './modes';
+
+/** The user turn asking for the analysis in the session's mode. */
+function modeTask(settings: Settings) {
+  const { base, custom } = resolveMode(settings.mode, settings.customModes);
+  return custom ? `${MODE_TASK[base]} Use my reading mode "${custom.name.trim()}".` : MODE_TASK[base];
+}
 
 const fence = (code: string) => '```openui-lang\n' + code + '\n```';
 
@@ -100,7 +106,7 @@ export function generateSummary(
 ): Promise<GenerateResult> {
   const { settings, source, previousProgram = '', instruction } = args;
   const messages: ModelMessage[] = [
-    { role: 'user', content: `${buildSourceMessage(source, source.truncated)}\n\n${MODE_TASK[settings.mode]}` },
+    { role: 'user', content: `${buildSourceMessage(source, source.truncated)}\n\n${modeTask(settings)}` },
   ];
   if (previousProgram && instruction) {
     // Edit mode: the model sees the current merged program and returns only changed statements.
@@ -121,7 +127,7 @@ export function generateAnswer(
 ): Promise<GenerateResult> {
   const { settings, source, history, question, summaryProgram } = args;
   const messages: ModelMessage[] = [
-    { role: 'user', content: `${buildSourceMessage(source, source.truncated)}\n\n${MODE_TASK[settings.mode]}` },
+    { role: 'user', content: `${buildSourceMessage(source, source.truncated)}\n\n${modeTask(settings)}` },
   ];
   if (summaryProgram) messages.push({ role: 'assistant', content: fence(summaryProgram) });
   for (const turn of history) {

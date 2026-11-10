@@ -232,5 +232,17 @@
     "supportText": "Siftlume ist kostenlos und Open Source. Wenn es dir Zeit spart, hilft ein Kaffee, es weiterzuentwickeln.",
     "supportButton": "Spendier mir einen Kaffee",
     "license": "Kostenlos und Open Source unter der Lizenz"
+  },
+  "customModes": {
+    "title": "Eigene Lesarten",
+    "hint": "Beschreibe, welches Ergebnis du willst; es erscheint neben Zusammenfassung, Erklären, Kritik und Aufgaben.",
+    "add": "Lesart hinzufügen",
+    "name": "Name",
+    "namePlaceholder": "z. B. Kurzbericht für die Chefin",
+    "instruction": "Was du willst",
+    "instructionPlaceholder": "z. B. Drei Punkte, die eine beschäftigte Führungskraft in 20 Sekunden liest, dann die nötige Entscheidung und bis wann.",
+    "base": "Ausgehend von",
+    "remove": "Entfernen",
+    "incomplete": "Gib einen Namen und eine Beschreibung ein, um diese Lesart zu nutzen."
   }
 }

@@ -233,5 +233,17 @@
     "supportText": "O Siftlume é gratuito e de código aberto. Se ele economiza seu tempo, um café ajuda a mantê-lo vivo.",
     "supportButton": "Me pague um café",
     "license": "Gratuito e de código aberto sob a licença"
+  },
+  "customModes": {
+    "title": "Seus modos de leitura",
+    "hint": "Descreva o resultado que você quer; ele aparece ao lado de Resumo, Explicar, Crítica e Ação.",
+    "add": "Adicionar modo de leitura",
+    "name": "Nome",
+    "namePlaceholder": "ex.: Resumo rápido para a chefe",
+    "instruction": "O que você quer",
+    "instructionPlaceholder": "ex.: Três pontos que alguém ocupado lê em 20 segundos, depois a decisão a tomar e o prazo.",
+    "base": "Baseado em",
+    "remove": "Remover",
+    "incomplete": "Adicione um nome e o que você quer para usar este modo."
   }
 }

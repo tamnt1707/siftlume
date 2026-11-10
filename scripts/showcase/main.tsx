@@ -1,4 +1,5 @@
 import '../../lib/no-openui-devtools';
+import { SHOWCASE_CUSTOM_MODES } from './imports-stub';
 import type { ReactElement } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Renderer } from '@openuidev/react-lang';
@@ -31,7 +32,11 @@ import { POSTS } from './posts-vi';
 const query = new URLSearchParams(location.search);
 const view = query.get('view') ?? 'compare';
 const dark = new URLSearchParams(location.search).has('dark');
-const settings: Settings = { ...DEFAULT_SETTINGS, theme: dark ? 'dark' : 'light' };
+const settings: Settings = {
+  ...DEFAULT_SETTINGS,
+  theme: dark ? 'dark' : 'light',
+  customModes: SHOWCASE_CUSTOM_MODES as Settings['customModes'],
+};
 
 function Topbar({
   wide,

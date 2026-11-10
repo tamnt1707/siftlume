@@ -231,5 +231,17 @@
     "supportText": "Siftlume 免费且开源。如果它帮你节省了时间,请我喝杯咖啡就能支持它继续发展。",
     "supportButton": "请我喝杯咖啡",
     "license": "免费开源,许可证:"
+  },
+  "customModes": {
+    "title": "你的阅读方式",
+    "hint": "写下你想要的结果，它会显示在总结、讲解、审视和行动旁边。",
+    "add": "添加阅读方式",
+    "name": "名称",
+    "namePlaceholder": "例如：给领导的简报",
+    "instruction": "你想要什么",
+    "instructionPlaceholder": "例如：三条忙碌的领导 20 秒能读完的要点，然后是需要做的决定和期限。",
+    "base": "基于",
+    "remove": "删除",
+    "incomplete": "填写名称和内容后才能使用这个阅读方式。"
   }
 }

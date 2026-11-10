@@ -570,6 +570,79 @@ kbd {
   font-size: 13px;
 }
 
+/* The user's own modes: their instructions can be long, so the description stays at two lines. */
+.mode-option > svg {
+  flex-shrink: 0;
+}
+
+.mode-option--custom .mode-option__text {
+  min-width: 0;
+}
+
+.mode-option--custom .mode-option__text strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mode-option--custom .mode-option__text span {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* Settings → Summary → Your reading modes */
+.custom-modes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 4px 0 10px;
+}
+
+.custom-modes:empty {
+  display: none;
+}
+
+.custom-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.custom-mode__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 220px) auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.custom-mode__row > * {
+  width: 100%;
+  min-width: 0;
+}
+
+.custom-mode__row > .icon-btn {
+  width: auto;
+}
+
+.app--panel .custom-mode__row {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.app--panel .custom-mode__row > .ui-select {
+  grid-row: 2;
+  grid-column: 1 / -1;
+}
+
+.custom-mode .hint {
+  margin: 0;
+}
+
 .analysis-choice {
   display: flex;
   flex-direction: column;

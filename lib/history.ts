@@ -2,7 +2,7 @@ import { buildMessage, parseMessage } from '@openuidev/react-lang';
 import { storage } from '#imports';
 import type { ExtractedSource } from './extractors';
 import type { SummaryLength } from './settings';
-import type { AnalysisMode } from './modes';
+import type { ModeId } from './modes';
 
 /**
  * History uses the OpenUI Message Protocol: every response is stored with buildMessage
@@ -32,7 +32,7 @@ export interface Session {
 }
 
 export interface SessionOptions {
-  mode?: AnalysisMode;
+  mode?: ModeId;
   length?: SummaryLength;
   language?: string;
 }

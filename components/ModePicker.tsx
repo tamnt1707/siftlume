@@ -1,7 +1,21 @@
 import { useId } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Idea01Icon, JusticeScale01Icon, TaskDone01Icon, TextAlignLeftIcon } from '@hugeicons/core-free-icons';
-import { ANALYSIS_MODES, type AnalysisMode } from '@/lib/modes';
+import {
+  Idea01Icon,
+  JusticeScale01Icon,
+  TaskDone01Icon,
+  TextAlignLeftIcon,
+  UserEdit01Icon,
+} from '@hugeicons/core-free-icons';
+import { t } from '@/lib/i18n';
+import {
+  ANALYSIS_MODES,
+  customModeId,
+  resolveMode,
+  usableCustomModes,
+  type CustomMode,
+  type ModeId,
+} from '@/lib/modes';
 import { settingsItem, type Settings, type SummaryLength } from '@/lib/settings';
 import { Icon } from './Icon';
 
@@ -17,6 +31,22 @@ const saveLength = (settings: Settings, length: SummaryLength) => void settingsI
 
 export const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed'];
 
+/** Label of the start button: "Summarize this page", "Explain text"…, or the custom mode's name. */
+export function runLabel(kind: 'run' | 'runText' | 'runVideo', mode: ModeId, custom: CustomMode[]) {
+  const resolved = resolveMode(mode, custom);
+  return resolved.custom
+    ? t('picker:runCustom', { name: resolved.custom.name.trim() })
+    : t(`picker:${kind}.${resolved.base}`);
+}
+
+/** Built-in and custom modes as Select options. */
+export function modeOptions(custom: CustomMode[]) {
+  return [
+    ...ANALYSIS_MODES.map((m) => ({ value: m as string, label: t(`common:modes.${m}.title`) as string })),
+    ...usableCustomModes(custom).map((m) => ({ value: customModeId(m) as string, label: m.name.trim() })),
+  ];
+}
+
 /**
  * Everything to choose before the first analysis: what kind (mode) and how long. Picking both up
  * front avoids running once and then re-running at another length. The mode is for this run only
@@ -31,8 +61,8 @@ export function AnalysisChoice({
   compact,
 }: {
   settings: Settings;
-  mode: AnalysisMode;
-  onModeChange: (mode: AnalysisMode) => void;
+  mode: ModeId;
+  onModeChange: (mode: ModeId) => void;
   disabled?: boolean;
   compact?: boolean;
 }) {
@@ -40,7 +70,13 @@ export function AnalysisChoice({
   const labelId = useId();
   return (
     <div className={`analysis-choice ${compact ? 'analysis-choice--compact' : ''}`}>
-      <ModePicker value={mode} onChange={onModeChange} disabled={disabled} descriptions={!compact} />
+      <ModePicker
+        value={mode}
+        onChange={onModeChange}
+        disabled={disabled}
+        descriptions={!compact}
+        custom={settings.customModes}
+      />
       <div className="analysis-choice__length">
         <span className="analysis-choice__label" id={labelId}>
           {t('summary.length')}
@@ -76,11 +112,14 @@ export function ModePicker({
   onChange,
   disabled,
   descriptions = true,
+  custom,
 }: {
-  value: AnalysisMode;
-  onChange: (mode: AnalysisMode) => void;
+  value: ModeId;
+  onChange: (mode: ModeId) => void;
   disabled?: boolean;
   descriptions?: boolean;
+  /** The user's own modes, shown after the built-in ones. */
+  custom?: CustomMode[];
 }) {
   const { t } = useTranslation('common');
   return (
@@ -107,6 +146,27 @@ export function ModePicker({
           </span>
         </button>
       ))}
+      {usableCustomModes(custom).map((c) => {
+        const id = customModeId(c);
+        return (
+          <button
+            key={id}
+            type="button"
+            role="radio"
+            aria-checked={value === id}
+            className={`mode-option mode-option--custom ${value === id ? 'is-on' : ''}`}
+            disabled={disabled}
+            title={c.instruction}
+            onClick={() => id !== value && onChange(id)}
+          >
+            <Icon icon={UserEdit01Icon} size={18} />
+            <span className="mode-option__text">
+              <strong>{c.name}</strong>
+              {descriptions && <span>{c.instruction}</span>}
+            </span>
+          </button>
+        );
+      })}
     </div>
   );
 }

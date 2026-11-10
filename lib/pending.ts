@@ -1,4 +1,4 @@
-import type { AnalysisMode } from './modes';
+import type { ModeId } from './modes';
 import { browser, storage } from '#imports';
 
 /**
@@ -7,11 +7,10 @@ import { browser, storage } from '#imports';
  * does not have to travel in the URL.
  */
 export type PendingRequest = (
-  | { type: 'tab'; tabId: number }
-  | { type: 'text'; text: string; title?: string; url?: string; tabId?: number }
+  { type: 'tab'; tabId: number } | { type: 'text'; text: string; title?: string; url?: string; tabId?: number }
 ) & {
   /** Analysis mode picked in the popup; missing means a summary. */
-  mode?: AnalysisMode;
+  mode?: ModeId;
 };
 
 const requestsItem = storage.defineItem<Record<string, PendingRequest & { at: number }>>('session:requests', {

@@ -30,5 +30,6 @@
     "autoCaptions": "Automatische Untertitel: {{label}}",
     "noCaptions": "Dieses Video hat keine Untertitel und kann nicht zusammengefasst werden",
     "live": "Livestreams lassen sich nach dem Ende zusammenfassen"
-  }
+  },
+  "runCustom": "Lesen als „{{name}}“"
 }

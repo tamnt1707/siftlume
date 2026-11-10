@@ -231,5 +231,17 @@
     "supportText": "Siftlume는 무료 오픈 소스입니다. 시간을 아끼는 데 도움이 되었다면 커피 한 잔으로 개발을 응원해 주세요.",
     "supportButton": "커피 한 잔 사기",
     "license": "무료 오픈 소스, 라이선스:"
+  },
+  "customModes": {
+    "title": "나만의 읽기 방식",
+    "hint": "원하는 결과를 적어 주세요. 요약, 설명, 비판, 실행 옆에 표시됩니다.",
+    "add": "읽기 방식 추가",
+    "name": "이름",
+    "namePlaceholder": "예: 팀장님용 짧은 보고",
+    "instruction": "원하는 내용",
+    "instructionPlaceholder": "예: 바쁜 팀장이 20초 안에 읽을 핵심 3가지와, 내려야 할 결정 및 기한.",
+    "base": "기본 방식",
+    "remove": "삭제",
+    "incomplete": "이 읽기 방식을 쓰려면 이름과 내용을 입력하세요."
   }
 }

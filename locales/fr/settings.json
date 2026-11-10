@@ -233,5 +233,17 @@
     "supportText": "Siftlume est gratuit et open source. S’il vous fait gagner du temps, un café aide à le faire vivre.",
     "supportButton": "Offrez-moi un café",
     "license": "Gratuit et open source sous licence"
+  },
+  "customModes": {
+    "title": "Vos modes de lecture",
+    "hint": "Décrivez le résultat voulu ; il apparaît à côté de Résumé, Expliquer, Critique et Actions.",
+    "add": "Ajouter un mode de lecture",
+    "name": "Nom",
+    "namePlaceholder": "ex. Point rapide pour ma responsable",
+    "instruction": "Ce que vous voulez",
+    "instructionPlaceholder": "ex. Trois points lisibles en 20 secondes par une personne pressée, puis la décision à prendre et pour quand.",
+    "base": "À partir de",
+    "remove": "Supprimer",
+    "incomplete": "Ajoutez un nom et une description pour utiliser ce mode."
   }
 }

@@ -6,7 +6,7 @@ import { extractTab } from '@/lib/page';
 import { extractFile, truncate, type ExtractedSource } from '@/lib/extractors';
 import { newId, readStored, saveSession, writeStored, type Session, type SessionOptions } from '@/lib/history';
 import { configProblem, type Settings } from '@/lib/settings';
-import type { AnalysisMode } from '@/lib/modes';
+import type { ModeId } from '@/lib/modes';
 
 export type Phase = 'idle' | 'extracting' | 'summarizing' | 'refining' | 'answering';
 
@@ -79,7 +79,7 @@ export function useSession(settings: Settings) {
 
   /** Creates a session from an extracted source and summarizes it right away. */
   const start = useCallback(
-    async (src: ExtractedSource & { tabId?: number }, mode: AnalysisMode = 'summary') => {
+    async (src: ExtractedSource & { tabId?: number }, mode: ModeId = 'summary') => {
       const missing = checkSettings();
       if (missing) {
         finish();
@@ -105,7 +105,7 @@ export function useSession(settings: Settings) {
   );
 
   const fromTab = useCallback(
-    async (tabId: number, mode?: AnalysisMode) => {
+    async (tabId: number, mode?: ModeId) => {
       const ctrl = begin('extracting');
       try {
         const src = await extractTab(tabId);
@@ -122,7 +122,7 @@ export function useSession(settings: Settings) {
   );
 
   const fromText = useCallback(
-    (text: string, opts: { title?: string; origin?: string; tabId?: number; mode?: AnalysisMode } = {}) => {
+    (text: string, opts: { title?: string; origin?: string; tabId?: number; mode?: ModeId } = {}) => {
       if (!text.trim()) return setError(t('errors:nothingToSummarize'));
       const { title = t('common:pastedText'), origin, tabId, mode } = opts;
       void start({ kind: 'text', title, origin, content: text, tabId }, mode);
@@ -131,7 +131,7 @@ export function useSession(settings: Settings) {
   );
 
   const fromFile = useCallback(
-    async (file: File, mode?: AnalysisMode) => {
+    async (file: File, mode?: ModeId) => {
       const ctrl = begin('extracting');
       try {
         const src = await extractFile(file);

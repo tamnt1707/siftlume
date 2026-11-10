@@ -232,5 +232,17 @@
     "supportText": "Siftlume is free and open source. If it saves you time, a coffee helps keep it going.",
     "supportButton": "Buy me a coffee",
     "license": "Free and open source under the"
+  },
+  "customModes": {
+    "title": "Your reading modes",
+    "hint": "Write the kind of result you want; it appears next to Summary, Explain, Critique and Action.",
+    "add": "Add a reading mode",
+    "name": "Name",
+    "namePlaceholder": "e.g. Brief for my manager",
+    "instruction": "What you want",
+    "instructionPlaceholder": "e.g. Three points a busy manager can read in 20 seconds, then the decision they need to make and by when.",
+    "base": "Start from",
+    "remove": "Remove",
+    "incomplete": "Add a name and what you want to use this mode."
   }
 }

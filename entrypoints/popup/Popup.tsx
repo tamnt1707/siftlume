@@ -6,8 +6,8 @@ import { Themed } from '@/components/Themed';
 import { browser, type Browser } from '#imports';
 import { HistoryList } from '@/components/HistoryList';
 import { ModelSwitcher } from '@/components/ModelSwitcher';
-import { AnalysisChoice } from '@/components/ModePicker';
-import type { AnalysisMode } from '@/lib/modes';
+import { AnalysisChoice, runLabel } from '@/components/ModePicker';
+import type { ModeId } from '@/lib/modes';
 import { useSettings } from '@/components/useSettings';
 import { useVideoProbe } from '@/components/useVideoProbe';
 import { getActiveTab, isReadableUrl } from '@/lib/page';
@@ -27,7 +27,7 @@ export default function Popup() {
   const [tab, setTab] = useState<Browser.tabs.Tab | null>(null);
   const [text, setText] = useState('');
   // Every popup starts as a summary; another mode applies to this request only.
-  const [mode, setMode] = useState<AnalysisMode>('summary');
+  const [mode, setMode] = useState<ModeId>('summary');
 
   useEffect(() => {
     void getActiveTab().then((t) => setTab(t ?? null));
@@ -94,7 +94,7 @@ export default function Popup() {
         >
           <span className="btn__label">
             <Icon icon={SparklesIcon} />
-            {t(video.isVideo ? `picker:runVideo.${mode}` : `picker:run.${mode}`)}
+            {runLabel(video.isVideo ? 'runVideo' : 'run', mode, settings.customModes)}
           </span>
           {tab?.title && <span className="btn__sub">{canReadTab ? tab.title : t('picker:cannotRead')}</span>}
           {(video.blocked || video.note) && <span className="btn__sub">{video.blocked ?? video.note}</span>}
@@ -118,7 +118,7 @@ export default function Popup() {
               disabled={Boolean(problem)}
               onClick={() => submit({ type: 'text', text, tabId: tab?.id })}
             >
-              {t(`picker:runText.${mode}`)} <kbd>⌘/Ctrl ↵</kbd>
+              {runLabel('runText', mode, settings.customModes)} <kbd>⌘/Ctrl ↵</kbd>
             </button>
           )}
         </div>

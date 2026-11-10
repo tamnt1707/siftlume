@@ -30,5 +30,6 @@
     "autoCaptions": "Auto captions: {{label}}",
     "noCaptions": "This video has no captions, so it can’t be summarized",
     "live": "Live streams can be summarized after they end"
-  }
+  },
+  "runCustom": "Read as “{{name}}”"
 }

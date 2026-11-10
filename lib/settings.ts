@@ -2,7 +2,7 @@ import { browser, storage } from '#imports';
 import { t } from '@/lib/i18n';
 import { DEFAULT_APPEARANCE, type Appearance, type ColorMode } from './appearance';
 import { SUMMARY_STYLES, type SummaryStyle } from './refine';
-import { ANALYSIS_MODES, type AnalysisMode } from './modes';
+import { ANALYSIS_MODES, MAX_CUSTOM_MODES, type CustomMode, type ModeId } from './modes';
 import { HAS_SIDE_PANEL } from './platform';
 
 /**
@@ -199,7 +199,9 @@ export interface Settings {
   /** Output language. "auto" = same language as the source. */
   language: string;
   /** What the reader wants: summary, explanation, critique or action items. Last choice is kept. */
-  mode: AnalysisMode;
+  mode: ModeId;
+  /** Reading modes the user wrote (Settings → Summary), offered next to the built-in ones. */
+  customModes: CustomMode[];
   length: SummaryLength;
   /** Styles applied to every new summary (Settings → Summary → Always include). */
   styles: SummaryStyle[];
@@ -221,6 +223,7 @@ export const DEFAULT_SETTINGS: Settings = {
   uiLanguage: 'auto',
   language: 'auto',
   mode: 'summary',
+  customModes: [],
   length: 'medium',
   styles: [],
   customInstructions: '',
@@ -279,6 +282,17 @@ export function normalizeSettings(raw: Partial<Settings> | null | undefined): Se
   s.mode = DEFAULT_SETTINGS.mode;
   if (s.theme !== 'light' && s.theme !== 'dark' && s.theme !== 'system') s.theme = DEFAULT_SETTINGS.theme;
   s.appearance = { ...DEFAULT_APPEARANCE, ...s.appearance };
+  s.customModes = Array.isArray(s.customModes)
+    ? s.customModes
+        .filter((m) => m && typeof m.id === 'string')
+        .slice(0, MAX_CUSTOM_MODES)
+        .map((m) => ({
+          id: m.id,
+          name: String(m.name ?? ''),
+          instruction: String(m.instruction ?? ''),
+          base: ANALYSIS_MODES.includes(m.base) ? m.base : 'summary',
+        }))
+    : [];
   s.styles = Array.isArray(s.styles) ? s.styles.filter((x) => SUMMARY_STYLES.includes(x)) : [];
   return s;
 }

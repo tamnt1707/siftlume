@@ -231,5 +231,17 @@
     "supportText": "Siftlume miễn phí và mã nguồn mở. Nếu nó giúp bạn tiết kiệm thời gian, một ly cà phê sẽ giúp dự án tiếp tục phát triển.",
     "supportButton": "Mời một ly cà phê",
     "license": "Miễn phí, mã nguồn mở theo giấy phép"
+  },
+  "customModes": {
+    "title": "Cách đọc của bạn",
+    "hint": "Tự viết kiểu kết quả bạn muốn; nó sẽ hiện cạnh Tóm tắt, Giải thích, Phản biện và Hành động.",
+    "add": "Thêm cách đọc",
+    "name": "Tên",
+    "namePlaceholder": "VD: Báo cáo nhanh cho sếp",
+    "instruction": "Bạn muốn gì",
+    "instructionPlaceholder": "VD: Ba ý sếp đọc trong 20 giây, sau đó là quyết định cần đưa ra và hạn chót.",
+    "base": "Dựa trên",
+    "remove": "Xoá",
+    "incomplete": "Thêm tên và nội dung để dùng cách đọc này."
   }
 }

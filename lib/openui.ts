@@ -11,7 +11,7 @@ import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from './review-example';
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from './domain-example';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from './mode-example';
 import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from './analysis-example';
-import { MODE_QA_RULES, MODE_RULES, type AnalysisMode } from './modes';
+import { customModeRule, MODE_QA_RULES, MODE_RULES, resolveMode, type AnalysisMode } from './modes';
 import type { ExtractedSource, SourceKind } from './extractors';
 import type { Settings, SummaryLength } from './settings';
 
@@ -167,7 +167,7 @@ function cachedPrompt(key: string, build: () => string) {
  * mergeStatements). inlineMode: the model may add a short sentence outside the code fence.
  */
 export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) {
-  const mode = settings.mode;
+  const { base: mode, custom } = resolveMode(settings.mode, settings.customModes);
   const base = cachedPrompt(`summary:${mode}:${source.kind}:${!!source.csv}`, () =>
     library.prompt({
       ...basePromptOptions(),
@@ -182,6 +182,7 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
   );
   const rules = [
     ...MODE_RULES[mode],
+    ...(custom ? [customModeRule(custom)] : []),
     ...VISUAL_RULES,
     ...CHART_RULES,
     ...DIAGRAM_RULES,
@@ -194,6 +195,11 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
     ...userRules(settings),
   ];
   return `${base}\n\n## Analysis task\n${rules.map((r) => `- ${r}`).join('\n')}`;
+}
+
+function qaModeRules(settings: Settings) {
+  const { base, custom } = resolveMode(settings.mode, settings.customModes);
+  return [MODE_QA_RULES[base], ...(custom ? [customModeRule(custom)] : [])];
 }
 
 /** Q&A prompt. inlineMode: simple questions get plain text, structured answers get a UI. */
@@ -214,7 +220,7 @@ export function buildQaPrompt(settings: Settings, source: ExtractedSource) {
     'Short factual answers: 1-3 plain sentences. Answers with structure (comparisons, steps, lists, numbers): a compact openui-lang Card in a fence, visual first with minimal text.',
     layoutRule(settings),
     'If the source does not contain the answer, say so plainly instead of guessing.',
-    MODE_QA_RULES[settings.mode],
+    ...qaModeRules(settings),
     KIND_RULES[source.kind],
     ...userRules(settings),
   ];

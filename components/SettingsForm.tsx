@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 import { AppearancePanel } from '@/components/AppearancePanel';
 import { LanguagePicker } from '@/components/LanguagePicker';
 import { Select } from '@/components/Select';
+import { CustomModesEditor } from '@/components/CustomModesEditor';
 import { SUMMARY_STYLES } from '@/lib/refine';
 import { OUTPUT_LANGUAGES } from '@/lib/languages';
 import { Themed } from '@/components/Themed';
@@ -645,6 +646,7 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
                 onChange={(e) => update({ customInstructions: e.target.value })}
               />
             </div>
+            <CustomModesEditor modes={settings.customModes} onChange={(customModes) => update({ customModes })} />
           </section>
         </Tabs.Content>
 

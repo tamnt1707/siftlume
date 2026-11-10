@@ -30,5 +30,6 @@
     "autoCaptions": "自動字幕：{{label}}",
     "noCaptions": "這部影片沒有字幕，無法摘要",
     "live": "直播結束後才能摘要"
-  }
+  },
+  "runCustom": "以「{{name}}」閱讀"
 }

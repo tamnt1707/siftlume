@@ -14,7 +14,8 @@ import { markdownToSpeech, programToMarkdown } from '@/lib/markdown';
 import type { Settings, SummaryLength } from '@/lib/settings';
 import { Icon } from './Icon';
 import { Select } from './Select';
-import { ANALYSIS_MODES } from '@/lib/modes';
+import { resolveMode } from '@/lib/modes';
+import { modeOptions } from './ModePicker';
 import type { SessionController } from './useSession';
 
 const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed'];
@@ -65,7 +66,9 @@ export function ResultToolbar({
   const { t } = useTranslation(['session', 'settings', 'common']);
   const [speaking, setSpeaking] = useState(false);
   const busy = ctrl.phase !== 'idle';
-  const mode = session.options?.mode ?? settings.mode;
+  // A custom mode deleted since shows as the summary it falls back to.
+  const chosen = session.options?.mode ?? settings.mode;
+  const mode = resolveMode(chosen, settings.customModes).custom ? chosen : resolveMode(chosen).base;
   const length = session.options?.length ?? settings.length;
   const language = session.options?.language ?? settings.language;
 
@@ -113,7 +116,7 @@ export function ResultToolbar({
           disabled={busy}
           aria-label={t('common:modeLabel')}
           onChange={(value) => value !== mode && ctrl.resummarize({ mode: value as typeof mode })}
-          options={ANALYSIS_MODES.map((m) => ({ value: m, label: t(`common:modes.${m}.title`) }))}
+          options={modeOptions(settings.customModes)}
         />
       </div>
       <div className="segmented segmented--sm" role="group" aria-label={t('settings:summary.length')}>
