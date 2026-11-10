@@ -37,8 +37,16 @@ export interface ProviderPreset {
   needsKey: boolean;
   /** Where the user creates a key (keyed providers) or downloads the app (local ones). */
   keyUrl?: string;
-  /** Fast, cheap model suggested in Settings when another one is selected. */
+  /**
+   * Fast, cheap model suggested in Settings before the live model list is loaded. Once it is,
+   * the suggestion comes from `fastModels` instead (see recommendModel in lib/models.ts).
+   */
   recommendedModel?: string;
+  /**
+   * Name patterns of this provider's fast, low-cost models, best first. Matched against the live
+   * model list, so the suggestion follows new releases without a code change.
+   */
+  fastModels?: RegExp[];
   /** How keys from this provider start; a different prefix gets a soft warning in Settings. */
   keyPrefix?: string;
   /** Has a free tier, so it is a good first choice; shown as a badge in Settings. */
@@ -54,6 +62,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.openai.com/v1',
     defaultModel: 'gpt-5-mini',
     needsKey: true,
+    fastModels: [/^gpt-[\d.]+-nano$/, /^gpt-[\d.]+-mini$/, /^gpt-[\d.]+o-mini$/],
     keyPrefix: 'sk-',
     keyUrl: 'https://platform.openai.com/api-keys',
   },
@@ -62,7 +71,9 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     api: 'anthropic',
     defaultBaseUrl: 'https://api.anthropic.com/v1',
     defaultModel: 'claude-haiku-5-5',
+    recommendedModel: 'claude-haiku-5-5',
     needsKey: true,
+    fastModels: [/haiku/],
     keyPrefix: 'sk-ant-',
     keyUrl: 'https://console.anthropic.com/settings/keys',
   },
@@ -73,6 +84,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultModel: 'gemini-3.5-flash-lite',
     recommendedModel: 'gemini-3.5-flash-lite',
     needsKey: true,
+    fastModels: [/^gemini-[\d.]+-flash-lite/, /^gemini-[\d.]+-flash/],
     keyPrefix: 'AIza',
     free: true,
     keyUrl: 'https://aistudio.google.com/apikey',
@@ -83,6 +95,12 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://openrouter.ai/api/v1',
     defaultModel: 'openai/gpt-5-mini',
     needsKey: true,
+    fastModels: [
+      /^google\/gemini-[\d.]+-flash-lite/,
+      /^openai\/gpt-[\d.]+-nano$/,
+      /^anthropic\/claude-haiku/,
+      /^google\/gemini-[\d.]+-flash/,
+    ],
     keyPrefix: 'sk-or-',
     free: true,
     keyUrl: 'https://openrouter.ai/keys',
@@ -93,6 +111,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.groq.com/openai/v1',
     defaultModel: 'llama-3.3-70b-versatile',
     needsKey: true,
+    fastModels: [/instant/, /^llama-[\d.]+-8b/],
     keyPrefix: 'gsk_',
     free: true,
     keyUrl: 'https://console.groq.com/keys',
@@ -103,6 +122,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.deepseek.com/v1',
     defaultModel: 'deepseek-chat',
     needsKey: true,
+    fastModels: [/^deepseek-chat$/],
     keyUrl: 'https://platform.deepseek.com/api_keys',
   },
   mistral: {
@@ -111,6 +131,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.mistral.ai/v1',
     defaultModel: 'mistral-small-latest',
     needsKey: true,
+    fastModels: [/^ministral-8b/, /^ministral/, /^mistral-small/],
     free: true,
     keyUrl: 'https://console.mistral.ai/api-keys',
   },
@@ -120,6 +141,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.x.ai/v1',
     defaultModel: 'grok-4',
     needsKey: true,
+    fastModels: [/fast-non-reasoning/, /fast/, /mini/],
     keyPrefix: 'xai-',
     keyUrl: 'https://console.x.ai/',
   },
@@ -129,6 +151,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.together.xyz/v1',
     defaultModel: 'meta-llama/Llama-3.3-70B-Instruct-Turbo',
     needsKey: true,
+    fastModels: [/8b-instruct-turbo/i, /instruct-turbo/i],
     keyUrl: 'https://api.together.ai/settings/api-keys',
   },
   ollama: {

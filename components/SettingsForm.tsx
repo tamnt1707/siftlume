@@ -19,6 +19,7 @@ import { OUTPUT_LANGUAGES } from '@/lib/languages';
 import { Themed } from '@/components/Themed';
 import { fetchModels, isProviderConnected, modelCacheItem, type ModelCache, type ModelOption } from '@/lib/models';
 import { HAS_SIDE_PANEL } from '@/lib/platform';
+import { recommendModel } from '@/lib/recommend';
 import {
   configProblem,
   DEFAULT_SETTINGS,
@@ -134,6 +135,8 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
   // Two-step "Remove connection": the first click asks, the second deletes.
   const [confirmRemove, setConfirmRemove] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
+  // The user picked a model themselves: first-run setup stops choosing the suggested one for them.
+  const modelTouched = useRef(false);
   // What is in storage, to tell whether the draft has unsaved edits.
   const [baseline, setBaseline] = useState<Settings | null>(null);
   // Missing fields are flagged after a save attempt, not while the user is still typing.
@@ -217,10 +220,13 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
       setLoad({ status: 'ok', message: t('model.available', { count: list.length }) });
       const cache = await modelCacheItem.getValue();
       await modelCacheItem.setValue({ ...cache, [id]: list });
-      // Pick a sensible model if the current one is not offered.
-      if (list.length && !list.some((m) => m.id === cfg.model)) {
-        const preferred = list.find((m) => m.id === preset.defaultModel) ?? list[0]!;
-        updateProvider({ model: preferred.id });
+      // Pick the suggested fast model when the current one is not offered, and during first-run
+      // setup until the user chooses one.
+      const suggested = recommendModel(preset, list);
+      const offered = list.some((m) => m.id === cfg.model);
+      if (list.length && (!offered || (setup && !modelTouched.current && suggested && suggested !== cfg.model))) {
+        const preferred = suggested ?? list.find((m) => m.id === preset.defaultModel)?.id ?? list[0]!.id;
+        updateProvider({ model: preferred });
       }
     } catch (e) {
       if (!ctrl.signal.aborted) setLoad({ status: 'error', message: e instanceof Error ? e.message : String(e) });
@@ -304,11 +310,20 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
     setLoad({ status: 'ok', message: t('connect.removed', { provider: preset.label }) });
   };
 
+  /** The provider's fastest, cheapest model: from the live list once loaded, else the preset's. */
+  const recommended = useMemo(() => recommendModel(preset, models), [preset, models]);
+  /** Users choosing a model themselves (typing, a chip, the suggestion). */
+  const pickModel = (model: string) => {
+    modelTouched.current = true;
+    updateProvider({ model });
+  };
+
   /** The recommended model first, so it is easy to find in a long list. */
-  const sortedModels = useMemo(() => {
-    const rec = preset.recommendedModel;
-    return rec ? [...models].sort((a, b) => Number(b.id === rec) - Number(a.id === rec)) : models;
-  }, [models, preset.recommendedModel]);
+  const sortedModels = useMemo(
+    () =>
+      recommended ? [...models].sort((a, b) => Number(b.id === recommended) - Number(a.id === recommended)) : models,
+    [models, recommended],
+  );
 
   const modelLabel = useMemo(() => models.find((m) => m.id === cfg.model)?.label, [models, cfg.model]);
 
@@ -484,7 +499,7 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
                 placeholder={models.length ? t('model.searchPlaceholder') : t('model.idPlaceholder')}
                 value={cfg.model}
                 aria-invalid={showErrors && modelMissing}
-                onChange={(e) => updateProvider({ model: e.target.value })}
+                onChange={(e) => pickModel(e.target.value)}
               />
               <button className="btn" onClick={onLoadClick} disabled={load.status === 'loading'}>
                 {load.status === 'loading' ? t('model.loading') : models.length ? t('model.refresh') : t('model.load')}
@@ -499,11 +514,11 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
             </datalist>
             {modelLabel && <p className="hint">{modelLabel}</p>}
             {showErrors && modelMissing && <p className="hint hint--error">{t('validate.model')}</p>}
-            {preset.recommendedModel && cfg.model !== preset.recommendedModel && (
+            {recommended && cfg.model !== recommended && (
               <p className="model-tip">
-                <span>{t('model.recommended', { model: preset.recommendedModel })}</span>
-                <button className="btn btn--sm" onClick={() => updateProvider({ model: preset.recommendedModel })}>
-                  {t('model.useRecommended', { model: preset.recommendedModel })}
+                <span>{t('model.recommended', { model: recommended })}</span>
+                <button className="btn btn--sm" onClick={() => recommended && pickModel(recommended)}>
+                  {t('model.useRecommended', { model: recommended })}
                 </button>
               </p>
             )}
@@ -517,13 +532,11 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
                   <button
                     key={m.id}
                     className={`chip ${m.id === cfg.model ? 'chip--active' : ''}`}
-                    onClick={() => updateProvider({ model: m.id })}
+                    onClick={() => pickModel(m.id)}
                     title={m.label}
                   >
                     {m.id}
-                    {m.id === preset.recommendedModel && (
-                      <span className="chip__badge">{t('model.recommendedBadge')}</span>
-                    )}
+                    {m.id === recommended && <span className="chip__badge">{t('model.recommendedBadge')}</span>}
                   </button>
                 ))}
               </div>
