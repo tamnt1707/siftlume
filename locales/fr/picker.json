@@ -41,5 +41,13 @@
     "none": "Ouvrez au moins deux pages web dans cette fenêtre pour les combiner.",
     "run": "Combiner et comparer ({{count}})",
     "denied": "Siftlume a besoin de cette autorisation pour lire vos onglets."
+  },
+  "sources": {
+    "label": "Que lire",
+    "page": "Cette page",
+    "video": "Cette vidéo",
+    "tabs": "Plusieurs onglets",
+    "text": "Texte",
+    "file": "Fichier"
   }
 }

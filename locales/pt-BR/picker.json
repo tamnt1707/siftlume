@@ -41,5 +41,13 @@
     "none": "Abra pelo menos duas páginas nesta janela para combiná-las.",
     "run": "Combinar e comparar ({{count}})",
     "denied": "O Siftlume precisa dessa permissão para ler suas abas."
+  },
+  "sources": {
+    "label": "O que ler",
+    "page": "Esta página",
+    "video": "Este vídeo",
+    "tabs": "Várias abas",
+    "text": "Texto",
+    "file": "Arquivo"
   }
 }

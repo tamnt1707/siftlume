@@ -41,5 +41,13 @@
     "none": "Open at least two web pages in this window to combine them.",
     "run": "Combine and compare ({{count}})",
     "denied": "Siftlume needs that permission to read your tabs."
+  },
+  "sources": {
+    "label": "What to read",
+    "page": "This page",
+    "video": "This video",
+    "tabs": "Several tabs",
+    "text": "Text",
+    "file": "File"
   }
 }

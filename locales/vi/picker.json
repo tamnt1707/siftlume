@@ -41,5 +41,13 @@
     "none": "Mở ít nhất hai trang web trong cửa sổ này để gộp.",
     "run": "Gộp và so sánh ({{count}})",
     "denied": "Siftlume cần quyền đó để đọc các tab."
+  },
+  "sources": {
+    "label": "Đọc gì",
+    "page": "Trang này",
+    "video": "Video này",
+    "tabs": "Nhiều tab",
+    "text": "Văn bản",
+    "file": "Tệp"
   }
 }

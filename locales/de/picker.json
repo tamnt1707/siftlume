@@ -41,5 +41,13 @@
     "none": "Öffne mindestens zwei Webseiten in diesem Fenster, um sie zu kombinieren.",
     "run": "Kombinieren und vergleichen ({{count}})",
     "denied": "Siftlume braucht diese Berechtigung, um deine Tabs zu lesen."
+  },
+  "sources": {
+    "label": "Was lesen",
+    "page": "Diese Seite",
+    "video": "Dieses Video",
+    "tabs": "Mehrere Tabs",
+    "text": "Text",
+    "file": "Datei"
   }
 }

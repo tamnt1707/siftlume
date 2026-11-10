@@ -696,6 +696,63 @@ kbd {
   gap: 8px;
 }
 
+/* Start screen: one tab per kind of source */
+.source-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.source-tabs__list {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.source-tabs__tab {
+  display: inline-flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: -1px;
+  padding: 9px 10px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--ink-2);
+  font-size: 13.5px;
+  font-weight: 560;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.source-tabs__tab:hover {
+  color: var(--ink);
+}
+
+.source-tabs__tab[data-state='active'] {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+.source-tabs__tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.source-tabs__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.source-tabs__panel:focus-visible {
+  outline: none;
+}
+
 /* Start screen: combine several open tabs */
 .tabs-picker {
   display: flex;
