@@ -750,9 +750,10 @@ kbd {
   color: var(--accent);
 }
 
+/* No focus box: the tabs take focus on click, and the underline already marks the current one. */
+.source-tabs__tab:focus,
 .source-tabs__tab:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: -2px;
+  outline: none;
 }
 
 .source-tabs__panel {
