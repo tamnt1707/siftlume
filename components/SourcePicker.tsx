@@ -30,8 +30,9 @@ export interface PageTarget {
 }
 
 /**
- * Start screen: the analysis choice, then one tab per kind of source (this page, several tabs,
- * pasted text, a file), so only one set of controls shows at a time. In a tab's side panel it
+ * Start screen: one tab per kind of source (this page, several tabs,
+ * pasted text, a file) holding the analysis choice and that source's controls, so only one set
+ * shows at a time. In a tab's side panel it
  * opens on "This page"; on the full page, web pages are summarized from the popup or the context
  * menu, so it opens on pasted text.
  */
@@ -87,7 +88,6 @@ export function SourcePicker({
       }}
     >
       {!page && <h1 className="picker__title">{t('title')}</h1>}
-      <AnalysisChoice settings={settings} mode={mode} onModeChange={setMode} disabled={busy} compact={Boolean(page)} />
       <Tabs.Root value={source} onValueChange={(v) => setSource(v as Source)} className="source-tabs">
         <Tabs.List className="source-tabs__list" aria-label={t('sources.label')}>
           {sources.map((id) => (
@@ -97,6 +97,15 @@ export function SourcePicker({
             </Tabs.Trigger>
           ))}
         </Tabs.List>
+
+        {/* Same choice for every source: what kind of analysis, and how long. */}
+        <AnalysisChoice
+          settings={settings}
+          mode={mode}
+          onModeChange={setMode}
+          disabled={busy}
+          compact={Boolean(page)}
+        />
 
         {page && (
           <Tabs.Content value="page" className="source-tabs__panel">
