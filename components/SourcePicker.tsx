@@ -55,9 +55,11 @@ export function SourcePicker({
   const fileInput = useRef<HTMLInputElement>(null);
   const busy = ctrl.phase !== 'idle';
   const video = useVideoProbe(page?.readable ? page.id : undefined, page?.url);
-  // One source at a time: the panel's own page first, otherwise pasted text.
+  // One source at a time. Until the user picks one, it is this page whenever there is one (the
+  // side panel learns its tab a moment after the first render), otherwise pasted text.
   const sources: Source[] = page ? ['page', 'tabs', 'text', 'file'] : ['text', 'file', 'tabs'];
-  const [source, setSource] = useState<Source>(startTabs ? 'tabs' : sources[0]!);
+  const [chosen, setSource] = useState<Source | null>(startTabs ? 'tabs' : null);
+  const source: Source = chosen && sources.includes(chosen) ? chosen : page ? 'page' : 'text';
   useEffect(() => {
     if (startTabs) setSource('tabs');
   }, [startTabs]);
