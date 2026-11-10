@@ -70,6 +70,13 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* Not in the side panel: Chrome leaves the reserved gutter unpainted there, so a dark strip
+   flashed at its right edge whenever the page repainted (hover, streaming). The panel's width is
+   fixed and its scrollbar overlays the content, so there is nothing to reserve. */
+html:has(> body .app--panel) {
+  scrollbar-gutter: auto;
+}
+
 body {
   margin: 0;
 }
