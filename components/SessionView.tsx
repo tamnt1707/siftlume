@@ -11,7 +11,7 @@ import { partContent, partForQuote } from '@/lib/multi';
 import {
   ArrowExpand01Icon,
   ArrowUp02Icon,
-  Link04Icon,
+  FileSearchIcon,
   MagicWand01Icon,
   RefreshIcon,
   StopIcon,
@@ -240,7 +240,7 @@ export function SessionView({
               aria-expanded={deepOpen}
               title={t('deep.buttonTitle')}
             >
-              <Icon icon={Link04Icon} size={16} />
+              <Icon icon={FileSearchIcon} size={16} />
               <span>{t('deep.button')}</span>
             </button>
           )}
