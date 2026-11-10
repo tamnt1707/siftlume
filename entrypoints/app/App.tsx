@@ -107,13 +107,20 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
 
   // Side panel: the tab this panel belongs to, for "Summarize this page".
   const [pageTarget, setPageTarget] = useState<PageTarget | undefined>();
+  /**
+   * Whether the panel has asked for its tab yet. Until then the start screen waits: drawing it
+   * without the page first showed the taller Text tab, then swapped to This page, and the
+   * scrollbar flashed on and off.
+   */
+  const [pageChecked, setPageChecked] = useState(!isPanel || !Number.isFinite(panelTabId));
   useEffect(() => {
     if (!isPanel || !Number.isFinite(panelTabId)) return;
     const load = () =>
       void browser.tabs
         .get(panelTabId)
         .then((t) => setPageTarget({ id: panelTabId, title: t.title, url: t.url, readable: isReadableUrl(t.url) }))
-        .catch(() => setPageTarget(undefined));
+        .catch(() => setPageTarget(undefined))
+        .finally(() => setPageChecked(true));
     load();
     const onUpdated = (id: number, change: { title?: string; url?: string }) => {
       if (id === panelTabId && (change.title || change.url)) load();
@@ -295,7 +302,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
           />
         ) : ctrl.phase === 'extracting' ? (
           <SiftLoader stage="reading" title={t('loader.reading')} onStop={ctrl.stop} />
-        ) : (
+        ) : !loaded || !pageChecked ? null : (
           <div className="narrow">
             <SourcePicker ctrl={ctrl} page={pageTarget} settings={settings} startTabs={startTabs} />
           </div>

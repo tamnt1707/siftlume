@@ -475,6 +475,11 @@ kbd {
   margin: 28px auto 0;
 }
 
+/* The side panel is already narrow, and its top bar sits right above: no extra gap. */
+.app--panel .narrow {
+  margin-top: 0;
+}
+
 .section-title {
   margin: 0 0 10px;
   font-size: 15px;
