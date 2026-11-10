@@ -14,10 +14,12 @@ Nội dung để đăng Siftlume lên các trang giới thiệu sản phẩm, di
 ## Mô tả ngắn (khoảng 300 ký tự)
 
 ```
-Siftlume là tiện ích Chrome miễn phí, mã nguồn mở, biến bài báo, báo cáo, PDF hay file CSV thành bản tóm tắt đọc lướt trong vài giây: ý chính một dòng, các con số quan trọng, biểu đồ, dòng thời gian và sơ đồ. Hỏi thêm về nội dung, câu trả lời chỉ lấy từ bài gốc. Dùng khóa AI của bạn (OpenAI, Claude, Gemini) hoặc chạy model trên máy.
+Siftlume là tiện ích Chrome miễn phí, mã nguồn mở, biến bài báo, báo cáo, PDF hay file CSV thành bản tóm tắt đọc lướt trong vài giây: ý chính một dòng, các con số quan trọng, biểu đồ, dòng thời gian và sơ đồ. Hỏi thêm về nội dung, câu trả lời chỉ lấy từ bài gốc. Dùng khóa API của nhà cung cấp AI bạn đang dùng, hoặc chạy model ngay trên máy.
 ```
 
 ## Mô tả đầy đủ
+
+Dùng cho Chrome Web Store. Không liệt kê tên các nhà cung cấp AI hay các định dạng tệp: Store đã từ chối bản 0.4.0 vì lý do "keyword spam" khi mô tả có những danh sách đó.
 
 ```
 Siftlume biến những trang dài thành bản tóm tắt bạn đọc lướt được trong vài giây.
@@ -30,7 +32,7 @@ TÓM TẮT ĐƯỢC GÌ
 • Nhiều tab đang mở cùng lúc, so sánh với nhau
 • Một trang cùng các trang nó liên kết tới (Đọc sâu)
 • Văn bản bạn dán vào
-• Tài liệu và bảng tính mở từ máy: PDF, CSV, Markdown, TXT, HTML, JSON
+• Tài liệu và bảng tính mở từ máy
 
 BỐN CÁCH ĐỌC
 • Tóm tắt: nắm nhanh ý chính
@@ -59,7 +61,7 @@ CÔNG CỤ
 • Lịch sử các bản tóm tắt
 
 AI CỦA BẠN, KHÓA CỦA BẠN
-Kết nối nhà cung cấp AI bạn đang dùng bằng khóa API của riêng bạn: OpenAI, Anthropic Claude, Google Gemini, OpenRouter, Groq, DeepSeek, Mistral, xAI và các dịch vụ tương thích OpenAI. Hoặc chạy model ngay trên máy với Ollama hay LM Studio, không cần khóa. Yêu cầu đi thẳng từ trình duyệt tới nhà cung cấp đó, không qua máy chủ nào của Siftlume.
+Kết nối nhà cung cấp AI bạn đang dùng bằng khóa API của riêng bạn, hoặc chạy model ngay trên máy, không cần khóa. Yêu cầu đi thẳng từ trình duyệt tới nhà cung cấp đó, không qua máy chủ nào của Siftlume.
 
 RIÊNG TƯ NGAY TỪ THIẾT KẾ
 • Không cần tài khoản, không thống kê, không theo dõi
