@@ -81,12 +81,6 @@ body {
   margin: 0;
 }
 
-/* During an analysis (App.tsx): no scrolling, so the streaming result does not make the scrollbar
-   flicker. The gutter stays reserved, so the width does not change either. */
-html.is-working {
-  overflow: hidden;
-}
-
 .app,
 .options,
 .popup {

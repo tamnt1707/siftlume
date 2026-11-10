@@ -174,14 +174,6 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
     return () => clearTimeout(timer);
   }, [hasSummary, ctrl.phase]);
 
-  // While reading or analyzing, the page does not scroll: the result grows as it streams, and the
-  // scrollbar kept appearing and resizing. It scrolls again once the analysis is done.
-  const working = ctrl.phase !== 'idle';
-  useEffect(() => {
-    document.documentElement.classList.toggle('is-working', working);
-    return () => document.documentElement.classList.remove('is-working');
-  }, [working]);
-
   // Nothing works without a provider: a first run opens on Settings instead of the start screen.
   const setupShown = useRef(false);
   useEffect(() => {
