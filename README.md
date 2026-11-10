@@ -17,6 +17,10 @@
 </p>
 
 <p align="center">
+  <a href="https://www.producthunt.com/products/siftlume?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-siftlume" target="_blank" rel="noopener noreferrer"><img alt="Siftlume - Turn any page into a visual summary with your own AI key | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1309833&amp;theme=light&amp;t=1794299728792"></a>
+</p>
+
+<p align="center">
   <img src="docs/screenshots/compare.png" alt="Before: a long news article with ads. After: the Siftlume side panel with a one-line TL;DR, key figures, takeaways, a timeline and a source quote." width="900">
 </p>
 
