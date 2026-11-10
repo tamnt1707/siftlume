@@ -155,6 +155,11 @@
     "run": "深度閱讀（{{count}}）",
     "cancel": "取消",
     "denied": "Siftlume 需要存取這些頁面才能讀取。",
-    "count": "{{count}}/{{max}}"
+    "count": "{{count}}/{{max}}",
+    "toggle": "深度閱讀",
+    "toggleHint": "另外讀取 AI 認為值得讀的最多 {{max}} 個連結，並合併到摘要中",
+    "consent": "值得閱讀的連結：{{count}} 個。Siftlume 需要存取這些網站才能讀取。",
+    "allow": "允許並讀取",
+    "pageOnly": "只摘要此頁"
   }
 }

@@ -16,6 +16,28 @@ const hostOf = (url: string) => {
   }
 };
 
+/** Start screen and popup: "Deep read" switch under the Summarize this page button. */
+export function DeepToggle({
+  checked,
+  onChange,
+  disabled,
+}: {
+  checked: boolean;
+  onChange: (on: boolean) => void;
+  disabled?: boolean;
+}) {
+  const { t } = useTranslation('session');
+  return (
+    <label className={`deep-toggle ${checked ? 'is-on' : ''}`}>
+      <input type="checkbox" checked={checked} disabled={disabled} onChange={(e) => onChange(e.target.checked)} />
+      <span className="deep-toggle__text">
+        <strong>{t('deep.toggle')}</strong>
+        <span>{t('deep.toggleHint', { max: MAX_LINKS })}</span>
+      </span>
+    </label>
+  );
+}
+
 /** Deep read is offered for pages with links in their main text. */
 export const canDeepRead = (session: Session) =>
   (session.source.kind === 'webpage' || session.source.kind === 'markdown') && findLinks(session.source).length > 0;

@@ -10,6 +10,7 @@ import { AnalysisChoice, runLabel } from '@/components/ModePicker';
 import type { ModeId } from '@/lib/modes';
 import { useSettings } from '@/components/useSettings';
 import { useVideoProbe } from '@/components/useVideoProbe';
+import { DeepToggle } from '@/components/DeepRead';
 import { getActiveTab, isReadableUrl } from '@/lib/page';
 import { openApp, queueRequest, type AppRoute, type PendingRequest } from '@/lib/pending';
 import { configProblem } from '@/lib/settings';
@@ -40,6 +41,7 @@ export default function Popup() {
   }, [problem]);
   const canReadTab = Boolean(tab?.id) && isReadableUrl(tab?.url);
   const video = useVideoProbe(canReadTab ? tab?.id : undefined, tab?.url);
+  const [deep, setDeep] = useState(false);
 
   /** History, uploads and past sessions always open as a full page. */
   const show = (route: AppRoute) => void openApp(route, tab ?? undefined).then(() => window.close());
@@ -87,10 +89,11 @@ export default function Popup() {
 
         <AnalysisChoice settings={settings} mode={mode} onModeChange={setMode} compact />
 
+        {canReadTab && !video.isVideo && <DeepToggle checked={deep} onChange={setDeep} />}
         <button
           className="btn btn--primary btn--hero"
           disabled={!canReadTab || Boolean(problem) || Boolean(video.blocked)}
-          onClick={() => tab?.id && submit({ type: 'tab', tabId: tab.id })}
+          onClick={() => tab?.id && submit({ type: 'tab', tabId: tab.id, deep: deep && !video.isVideo })}
         >
           <span className="btn__label">
             <Icon icon={SparklesIcon} />

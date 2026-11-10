@@ -4,7 +4,7 @@ import { describeError } from '@/lib/llm';
 import { generateAnswer, generateSummary } from '@/lib/generate';
 import { extractTab } from '@/lib/page';
 import { extractTabs } from '@/lib/multi';
-import { deepSource } from '@/lib/deep';
+import { deepSource, findLinks, linksAllowed, pickLinks } from '@/lib/deep';
 import { extractFile, truncate, type ExtractedSource } from '@/lib/extractors';
 import { newId, readStored, saveSession, writeStored, type Session, type SessionOptions } from '@/lib/history';
 import { configProblem, type Settings } from '@/lib/settings';
@@ -19,6 +19,15 @@ export function useSession(settings: Settings) {
   const [pendingQuestion, setPendingQuestion] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [warning, setWarning] = useState<string | null>(null);
+  /**
+   * Deep read from the start screen, waiting for access to the sites of the links the AI picked:
+   * Chrome only asks during a click, and the click that started it is long over by then.
+   */
+  const [pendingDeep, setPendingDeep] = useState<{
+    page: ExtractedSource & { tabId?: number };
+    urls: string[];
+    mode?: ModeId;
+  } | null>(null);
 
   const abortRef = useRef<AbortController | null>(null);
   const sessionRef = useRef<Session | null>(null);
@@ -108,11 +117,28 @@ export function useSession(settings: Settings) {
   );
 
   const fromTab = useCallback(
-    async (tabId: number, mode?: ModeId) => {
+    async (tabId: number, mode?: ModeId, opts: { deep?: boolean } = {}) => {
       const ctrl = begin('extracting');
+      setPendingDeep(null);
       try {
         const src = await extractTab(tabId);
         if (ctrl.signal.aborted) return;
+        // Deep read: the AI picks the links worth reading, then they are read with the page.
+        const links = opts.deep && (src.kind === 'webpage' || src.kind === 'markdown') ? findLinks(src) : [];
+        if (links.length) {
+          const picked = await pickLinks(settingsRef.current, src, links, ctrl.signal).catch(() => []);
+          if (ctrl.signal.aborted) return;
+          const urls = picked.map((i) => links[i]!.url);
+          if (urls.length && (await linksAllowed(urls))) {
+            const deep = await deepSource(src, urls, settingsRef.current.maxChars, ctrl.signal).catch(() => null);
+            if (ctrl.signal.aborted) return;
+            return await start(deep ?? src, mode);
+          }
+          if (urls.length) {
+            setPendingDeep({ page: src, urls, mode });
+            return finish();
+          }
+        }
         await start(src, mode);
       } catch (e) {
         if (abortRef.current === ctrl) {
@@ -161,6 +187,23 @@ export function useSession(settings: Settings) {
       }
     },
     [start],
+  );
+
+  /** Answer to the access request for a pending deep read: read the links, or summarize the page alone. */
+  const resolveDeep = useCallback(
+    async (allowed: boolean) => {
+      const pending = pendingDeep;
+      if (!pending) return;
+      setPendingDeep(null);
+      if (!allowed) return start(pending.page, pending.mode);
+      const ctrl = begin('extracting');
+      const deep = await deepSource(pending.page, pending.urls, settingsRef.current.maxChars, ctrl.signal).catch(
+        () => null,
+      );
+      if (ctrl.signal.aborted) return;
+      await start(deep ?? pending.page, pending.mode);
+    },
+    [pendingDeep, start],
   );
 
   const fromText = useCallback(
@@ -342,6 +385,8 @@ export function useSession(settings: Settings) {
     fromTab,
     fromTabs,
     deepen,
+    pendingDeep,
+    resolveDeep,
     fromText,
     fromFile,
     refine,

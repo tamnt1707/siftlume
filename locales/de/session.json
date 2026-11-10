@@ -160,6 +160,11 @@
     "run": "Tiefer lesen ({{count}})",
     "cancel": "Abbrechen",
     "denied": "Siftlume braucht Zugriff auf diese Seiten, um sie zu lesen.",
-    "count": "{{count}}/{{max}}"
+    "count": "{{count}}/{{max}}",
+    "toggle": "Tiefer lesen",
+    "toggleHint": "Auch bis zu {{max}} Links lesen, die die KI für lesenswert hält, und in die Zusammenfassung aufnehmen",
+    "consent": "Lesenswerte Links: {{count}}. Siftlume braucht Zugriff auf diese Seiten, um sie zu lesen.",
+    "allow": "Erlauben und lesen",
+    "pageOnly": "Nur diese Seite zusammenfassen"
   }
 }

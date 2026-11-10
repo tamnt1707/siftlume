@@ -155,6 +155,11 @@
     "run": "Đọc sâu ({{count}})",
     "cancel": "Huỷ",
     "denied": "Siftlume cần quyền truy cập các trang đó để đọc.",
-    "count": "{{count}}/{{max}}"
+    "count": "{{count}}/{{max}}",
+    "toggle": "Đọc sâu",
+    "toggleHint": "Đọc thêm tối đa {{max}} liên kết mà AI thấy đáng đọc, rồi gộp vào bản tóm tắt",
+    "consent": "Số liên kết nên đọc thêm: {{count}}. Siftlume cần quyền truy cập các trang đó để đọc.",
+    "allow": "Cho phép và đọc",
+    "pageOnly": "Chỉ tóm tắt trang này"
   }
 }

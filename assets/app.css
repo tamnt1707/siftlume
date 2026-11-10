@@ -929,6 +929,54 @@ kbd {
   color: var(--ink-2);
 }
 
+/* Start screen and popup: the Deep read switch under Summarize this page. */
+.deep-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.deep-toggle.is-on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.deep-toggle input {
+  flex: none;
+  width: auto;
+  margin: 2px 0 0;
+  accent-color: var(--accent);
+}
+
+.deep-toggle__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+}
+
+.deep-toggle__text span {
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+.deep-consent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.deep-consent__actions {
+  display: flex;
+  gap: 8px;
+}
+
 /* Result screen: Deep read's link picker, under the source line. */
 .deep-read {
   grid-column: 1 / -1;

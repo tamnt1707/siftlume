@@ -155,6 +155,11 @@
     "run": "深度阅读（{{count}}）",
     "cancel": "取消",
     "denied": "Siftlume 需要访问这些页面才能读取。",
-    "count": "{{count}}/{{max}}"
+    "count": "{{count}}/{{max}}",
+    "toggle": "深度阅读",
+    "toggleHint": "另外读取 AI 认为值得读的最多 {{max}} 个链接，并合并到总结中",
+    "consent": "值得阅读的链接：{{count}} 个。Siftlume 需要访问这些网站才能读取。",
+    "allow": "允许并读取",
+    "pageOnly": "只总结此页"
   }
 }

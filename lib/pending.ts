@@ -11,6 +11,8 @@ export type PendingRequest = (
 ) & {
   /** Analysis mode picked in the popup; missing means a summary. */
   mode?: ModeId;
+  /** Deep read ticked in the popup: also read the links the AI picks. */
+  deep?: boolean;
 };
 
 const requestsItem = storage.defineItem<Record<string, PendingRequest & { at: number }>>('session:requests', {

@@ -160,6 +160,11 @@
     "run": "Deep read ({{count}})",
     "cancel": "Cancel",
     "denied": "Siftlume needs access to those pages to read them.",
-    "count": "{{count}}/{{max}}"
+    "count": "{{count}}/{{max}}",
+    "toggle": "Deep read",
+    "toggleHint": "Also read up to {{max}} links the AI finds worth it, and add them to the summary",
+    "consent": "Links worth reading: {{count}}. Siftlume needs access to those sites to read them.",
+    "allow": "Allow and read",
+    "pageOnly": "Summarize this page only"
   }
 }

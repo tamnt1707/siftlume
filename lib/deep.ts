@@ -66,6 +66,12 @@ export function requestLinksAccess(urls: string[]) {
   return browser.permissions.request({ origins });
 }
 
+/** Whether the sites of these links are already allowed (no prompt needed). */
+export function linksAllowed(urls: string[]) {
+  const origins = [...new Set(urls.map(originPattern).filter((o): o is string => Boolean(o)))];
+  return browser.permissions.contains({ origins });
+}
+
 /** Too little text to be the page itself: a script-built page, a login or a paywall. */
 const tooThin = (text: string) => text.replace(/\s+/g, ' ').trim().length < 600;
 

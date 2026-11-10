@@ -52,7 +52,11 @@ export const Perspectives = defineComponent({
         {props.heading && <h2 className="g-heading">{props.heading}</h2>}
         {props.issue && <p className="g-views__issue">{props.issue}</p>}
         {stances.length >= 3 && (
-          <div className="g-views__bar" role="img" aria-label={counts.map(([s, n]) => `${t(`genui.stance.${s}`)}: ${n}`).join(', ')}>
+          <div
+            className="g-views__bar"
+            role="img"
+            aria-label={counts.map(([s, n]) => `${t(`genui.stance.${s}`)}: ${n}`).join(', ')}
+          >
             {counts.map(([s, n]) => (
               <span key={s} className={`g-views__seg g-view--${s}`} style={{ flexGrow: n }}>
                 {t(`genui.stance.${s}`)} · {n}
@@ -68,7 +72,8 @@ export const Perspectives = defineComponent({
 
 export const Shift = defineComponent({
   name: 'Shift',
-  description: 'One thing that changes: the aspect (1-4 words), how it was before and how it is after (max 12 words each).',
+  description:
+    'One thing that changes: the aspect (1-4 words), how it was before and how it is after (max 12 words each).',
   props: z.object({
     aspect: z.string(),
     before: z.string(),

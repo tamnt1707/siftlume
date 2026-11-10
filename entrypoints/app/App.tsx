@@ -16,6 +16,7 @@ import { useSettings } from '@/components/useSettings';
 import { historyItem, type Session } from '@/lib/history';
 import { openApp, takePanelRequest, takeRequest, watchPanelRequests, type PendingRequest } from '@/lib/pending';
 import { configProblem } from '@/lib/settings';
+import { requestLinksAccess } from '@/lib/deep';
 
 type View = 'main' | 'history' | 'settings';
 
@@ -49,7 +50,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
   const isPanel = surface === 'panel';
   // Layout only: a narrow page looks like the panel but keeps the page's behavior.
   const compact = useNarrow() || isPanel;
-  const { t } = useTranslation(['common', 'errors']);
+  const { t } = useTranslation(['common', 'errors', 'session']);
   const { settings, loaded } = useSettings();
   const ctrl = useSession(settings);
   const [view, setView] = useState<View>('main');
@@ -81,7 +82,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
         return setView('settings');
       }
       setView('main');
-      if (req.type === 'tab') void ctrl.fromTab(req.tabId, req.mode);
+      if (req.type === 'tab') void ctrl.fromTab(req.tabId, req.mode, { deep: req.deep });
       else
         ctrl.fromText(req.text, {
           title: req.title ? t('selectionOf', { title: req.title }) : t('pastedText'),
@@ -286,6 +287,23 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
           </div>
         )}
         {ctrl.warning && <div className="banner banner--warn">{ctrl.warning}</div>}
+        {ctrl.pendingDeep && (
+          <div className="banner deep-consent" role="alertdialog">
+            <span>{t('session:deep.consent', { count: ctrl.pendingDeep.urls.length })}</span>
+            <span className="deep-consent__actions">
+              <button
+                className="btn btn--primary btn--sm"
+                // No await before the request: Chrome only prompts during the click.
+                onClick={() => void requestLinksAccess(ctrl.pendingDeep!.urls).then((ok) => ctrl.resolveDeep(ok))}
+              >
+                {t('session:deep.allow')}
+              </button>
+              <button className="btn btn--sm" onClick={() => void ctrl.resolveDeep(false)}>
+                {t('session:deep.pageOnly')}
+              </button>
+            </span>
+          </div>
+        )}
 
         {view === 'settings' ? (
           <SettingsForm

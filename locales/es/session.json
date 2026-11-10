@@ -165,6 +165,11 @@
     "run": "Lectura profunda ({{count}})",
     "cancel": "Cancelar",
     "denied": "Siftlume necesita acceso a esas páginas para leerlas.",
-    "count": "{{count}}/{{max}}"
+    "count": "{{count}}/{{max}}",
+    "toggle": "Lectura profunda",
+    "toggleHint": "Leer también hasta {{max}} enlaces que la IA considere útiles y añadirlos al resumen",
+    "consent": "Enlaces que vale la pena leer: {{count}}. Siftlume necesita acceso a esos sitios para leerlos.",
+    "allow": "Permitir y leer",
+    "pageOnly": "Resumir solo esta página"
   }
 }

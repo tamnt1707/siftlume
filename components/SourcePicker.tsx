@@ -9,6 +9,7 @@ import type { ModeId } from '@/lib/modes';
 import { AnalysisChoice, runLabel } from './ModePicker';
 import { useVideoProbe } from './useVideoProbe';
 import { TabsPicker } from './TabsPicker';
+import { DeepToggle } from './DeepRead';
 import { requestTabsPermission } from '@/lib/multi';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
@@ -57,6 +58,8 @@ export function SourcePicker({
   const fileInput = useRef<HTMLInputElement>(null);
   const busy = ctrl.phase !== 'idle';
   const video = useVideoProbe(page?.readable ? page.id : undefined, page?.url);
+  // Deep read: also read the links the AI finds worth reading. Off unless ticked, every time.
+  const [deep, setDeep] = useState(false);
   // One source at a time. Until the user picks one, it is this page whenever there is one (the
   // side panel learns its tab a moment after the first render), otherwise pasted text.
   const sources: Source[] = page ? ['page', 'tabs', 'text', 'file'] : ['text', 'file', 'tabs'];
@@ -118,10 +121,11 @@ export function SourcePicker({
 
         {page && (
           <Tabs.Content value="page" className="source-tabs__panel">
+            {!video.isVideo && <DeepToggle checked={deep} onChange={setDeep} disabled={busy || !page.readable} />}
             <button
               className="btn btn--primary btn--hero"
               disabled={busy || !page.readable || Boolean(video.blocked)}
-              onClick={() => void ctrl.fromTab(page.id, mode)}
+              onClick={() => void ctrl.fromTab(page.id, mode, { deep: deep && !video.isVideo })}
             >
               <span className="btn__label">
                 <Icon icon={SparklesIcon} />
