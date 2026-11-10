@@ -115,7 +115,7 @@
     "copy": "Markdown でコピー",
     "copyShort": "コピー",
     "copied": "Markdown としてコピーしました。",
-    "download": "Markdown (.md) でダウンロード",
+    "download": "ダウンロード",
     "listen": "読み上げる",
     "listenShort": "聞く",
     "stopListening": "読み上げを停止",
@@ -124,7 +124,19 @@
     "source": "抽出した元のテキストを表示",
     "sourceTitle": "元のテキスト",
     "sourceWords_other": "{{count}} 語",
-    "timeSaved_other": "約 {{count}} 分の節約"
+    "timeSaved_other": "約 {{count}} 分の節約",
+    "downloadShort": "保存",
+    "formats": {
+      "html": {
+        "title": "HTML (.html)",
+        "desc": "この要約の見た目のまま、どのブラウザでも開けます"
+      },
+      "md": {
+        "title": "Markdown (.md)",
+        "desc": "メモアプリや文書向けのプレーンテキスト"
+      }
+    },
+    "madeWith": "Siftlume で作成"
   },
   "export": {
     "value": "値",

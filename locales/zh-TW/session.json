@@ -115,7 +115,7 @@
     "copy": "複製為 Markdown",
     "copyShort": "複製",
     "copied": "已複製為 Markdown。",
-    "download": "下載為 Markdown (.md)",
+    "download": "下載",
     "listen": "朗讀",
     "listenShort": "收聽",
     "stopListening": "停止朗讀",
@@ -124,7 +124,19 @@
     "source": "顯示擷取的原文",
     "sourceTitle": "原文",
     "sourceWords_other": "{{count}} 個詞",
-    "timeSaved_other": "節省約 {{count}} 分鐘"
+    "timeSaved_other": "節省約 {{count}} 分鐘",
+    "downloadShort": "下載",
+    "formats": {
+      "html": {
+        "title": "HTML (.html)",
+        "desc": "保留此摘要的樣式，任何瀏覽器都能開啟"
+      },
+      "md": {
+        "title": "Markdown (.md)",
+        "desc": "純文字，適合筆記應用程式和文件"
+      }
+    },
+    "madeWith": "由 Siftlume 產生"
   },
   "export": {
     "value": "數值",

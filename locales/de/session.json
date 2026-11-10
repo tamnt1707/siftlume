@@ -118,7 +118,7 @@
     "copy": "Als Markdown kopieren",
     "copyShort": "Kopieren",
     "copied": "Als Markdown kopiert.",
-    "download": "Als Markdown (.md) herunterladen",
+    "download": "Herunterladen",
     "listen": "Vorlesen",
     "listenShort": "Anhören",
     "stopListening": "Vorlesen stoppen",
@@ -129,7 +129,19 @@
     "sourceWords_one": "{{count}} Wort",
     "sourceWords_other": "{{count}} Wörter",
     "timeSaved_one": "~{{count}} Min. gespart",
-    "timeSaved_other": "~{{count}} Min. gespart"
+    "timeSaved_other": "~{{count}} Min. gespart",
+    "downloadShort": "Laden",
+    "formats": {
+      "html": {
+        "title": "HTML (.html)",
+        "desc": "Sieht aus wie diese Zusammenfassung, öffnet in jedem Browser"
+      },
+      "md": {
+        "title": "Markdown (.md)",
+        "desc": "Reiner Text für Notiz-Apps und Dokumente"
+      }
+    },
+    "madeWith": "Erstellt mit Siftlume"
   },
   "export": {
     "value": "Wert",

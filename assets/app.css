@@ -2069,6 +2069,24 @@ kbd {
   user-select: none;
 }
 
+/* Plain menus (the download formats): buttons with a title and a one-line description. */
+button.ui-menu__item {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  width: 100%;
+  padding-right: 10px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+}
+
+button.ui-menu__item:hover,
+button.ui-menu__item:focus-visible {
+  background: var(--accent-soft);
+}
+
 /* Radix marks the keyboard/hover item with data-highlighted, cmdk with data-selected. */
 .ui-menu__item[data-highlighted],
 .ui-menu__item[data-selected='true'] {

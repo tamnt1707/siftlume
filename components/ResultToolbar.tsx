@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import * as Popover from '@radix-ui/react-popover';
 import { useTranslation } from 'react-i18next';
 import {
+  ArrowDown01Icon,
   Copy01Icon,
   Download04Icon,
   FileViewIcon,
@@ -11,12 +13,15 @@ import {
 import type { Session } from '@/lib/history';
 import { OUTPUT_LANGUAGES, speechTagFor } from '@/lib/languages';
 import { markdownToSpeech, programToMarkdown } from '@/lib/markdown';
+import { summaryHtml } from '@/lib/export-html';
+import i18n from '@/lib/i18n';
 import type { Settings, SummaryLength } from '@/lib/settings';
 import { Icon } from './Icon';
 import { Select } from './Select';
 import { resolveMode } from '@/lib/modes';
 import { modeOptions } from './ModePicker';
 import type { SessionController } from './useSession';
+import { usePortalContainer } from './portal';
 
 const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed'];
 /** Average adult reading speed, words per minute. */
@@ -28,7 +33,7 @@ export function readingMinutes(text: string) {
   return { words, minutes: Math.round(words / WPM) };
 }
 
-const fileName = (title: string) =>
+const fileName = (title: string, ext: 'md' | 'html') =>
   `${
     title
       .normalize('NFKD')
@@ -37,7 +42,7 @@ const fileName = (title: string) =>
       .replace(/\s+/g, '-')
       .toLowerCase()
       .slice(0, 60) || 'summary'
-  }.md`;
+  }.${ext}`;
 
 /**
  * Result screen tools: re-summarize at another length or in another language (this session only),
@@ -84,13 +89,33 @@ export function ResultToolbar({
     notify(t('toolbar.copied'));
   };
 
-  const download = () => {
-    const url = URL.createObjectURL(new Blob([markdown()], { type: 'text/markdown;charset=utf-8' }));
+  const [saveOpen, setSaveOpen] = useState(false);
+  const container = usePortalContainer();
+
+  const save = (blob: Blob, name: string) => {
+    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = fileName(session.source.title);
+    a.download = name;
     a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+
+  const download = (format: 'md' | 'html') => {
+    setSaveOpen(false);
+    const name = fileName(session.source.title, format);
+    if (format === 'md') return save(new Blob([markdown()], { type: 'text/markdown;charset=utf-8' }), name);
+    // HTML: the summary as it looks now, with the page's styles.
+    const el = document.querySelector<HTMLElement>('.session .summary');
+    if (!el) return;
+    const html = summaryHtml(el, {
+      title: session.source.title,
+      origin: session.source.origin,
+      sourceLabel: t('export.source'),
+      lang: i18n.language,
+      generator: t('toolbar.madeWith'),
+    });
+    save(new Blob([html], { type: 'text/html;charset=utf-8' }), name);
   };
 
   const listen = () => {
@@ -151,10 +176,31 @@ export function ResultToolbar({
           <Icon icon={Copy01Icon} size={16} />
           <span>{t('toolbar.copyShort')}</span>
         </button>
-        <button className="tool-btn" disabled={!program} onClick={download} title={t('toolbar.download')}>
-          <Icon icon={Download04Icon} size={16} />
-          <span>.md</span>
-        </button>
+        <Popover.Root open={saveOpen} onOpenChange={setSaveOpen}>
+          <Popover.Trigger className="tool-btn" disabled={!program} title={t('toolbar.download')}>
+            <Icon icon={Download04Icon} size={16} />
+            <span>{t('toolbar.downloadShort')}</span>
+            <Icon icon={ArrowDown01Icon} size={12} />
+          </Popover.Trigger>
+          <Popover.Portal container={container}>
+            <Popover.Content className="ui-menu" align="end" sideOffset={6} collisionPadding={8}>
+              <div className="ui-menu__viewport" role="menu">
+                {(['html', 'md'] as const).map((format) => (
+                  <button
+                    key={format}
+                    type="button"
+                    role="menuitem"
+                    className="ui-menu__item"
+                    onClick={() => download(format)}
+                  >
+                    <span className="ui-menu__label">{t(`toolbar.formats.${format}.title`)}</span>
+                    <span className="ui-menu__hint">{t(`toolbar.formats.${format}.desc`)}</span>
+                  </button>
+                ))}
+              </div>
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
         <button
           className={`tool-btn ${speaking ? 'tool-btn--on' : ''}`}
           disabled={!program}

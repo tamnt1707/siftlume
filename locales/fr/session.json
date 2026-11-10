@@ -121,7 +121,7 @@
     "copy": "Copier en Markdown",
     "copyShort": "Copier",
     "copied": "Copié en Markdown.",
-    "download": "Télécharger en Markdown (.md)",
+    "download": "Télécharger",
     "listen": "Lire à voix haute",
     "listenShort": "Écouter",
     "stopListening": "Arrêter la lecture",
@@ -134,7 +134,19 @@
     "sourceWords_other": "{{count}} mots",
     "timeSaved_one": "~{{count}} min gagnée",
     "timeSaved_many": "~{{count}} min gagnées",
-    "timeSaved_other": "~{{count}} min gagnées"
+    "timeSaved_other": "~{{count}} min gagnées",
+    "downloadShort": "Télécharger",
+    "formats": {
+      "html": {
+        "title": "HTML (.html)",
+        "desc": "Identique à ce résumé ; s’ouvre dans tout navigateur"
+      },
+      "md": {
+        "title": "Markdown (.md)",
+        "desc": "Texte brut pour les applis de notes et documents"
+      }
+    },
+    "madeWith": "Créé avec Siftlume"
   },
   "export": {
     "value": "Valeur",

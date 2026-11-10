@@ -124,7 +124,7 @@
     "copy": "Скопировать как Markdown",
     "copyShort": "Копировать",
     "copied": "Скопировано как Markdown.",
-    "download": "Скачать как Markdown (.md)",
+    "download": "Скачать",
     "listen": "Прочитать вслух",
     "listenShort": "Слушать",
     "stopListening": "Остановить чтение",
@@ -139,7 +139,19 @@
     "timeSaved_one": "Экономия ~{{count}} минуты",
     "timeSaved_few": "Экономия ~{{count}} минут",
     "timeSaved_many": "Экономия ~{{count}} минут",
-    "timeSaved_other": "Экономия ~{{count}} минуты"
+    "timeSaved_other": "Экономия ~{{count}} минуты",
+    "downloadShort": "Скачать",
+    "formats": {
+      "html": {
+        "title": "HTML (.html)",
+        "desc": "Выглядит как этот пересказ, открывается в любом браузере"
+      },
+      "md": {
+        "title": "Markdown (.md)",
+        "desc": "Простой текст для заметок и документов"
+      }
+    },
+    "madeWith": "Сделано в Siftlume"
   },
   "export": {
     "value": "Значение",

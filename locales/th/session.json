@@ -115,7 +115,7 @@
     "copy": "คัดลอกเป็น Markdown",
     "copyShort": "คัดลอก",
     "copied": "คัดลอกเป็น Markdown แล้ว",
-    "download": "ดาวน์โหลดเป็น Markdown (.md)",
+    "download": "ดาวน์โหลด",
     "listen": "อ่านออกเสียง",
     "listenShort": "ฟัง",
     "stopListening": "หยุดอ่าน",
@@ -124,7 +124,19 @@
     "source": "แสดงข้อความต้นฉบับที่ดึงมา",
     "sourceTitle": "ข้อความต้นฉบับ",
     "sourceWords_other": "{{count}} คำ",
-    "timeSaved_other": "ประหยัด ~{{count}} นาที"
+    "timeSaved_other": "ประหยัด ~{{count}} นาที",
+    "downloadShort": "บันทึก",
+    "formats": {
+      "html": {
+        "title": "HTML (.html)",
+        "desc": "หน้าตาเหมือนสรุปนี้ เปิดได้ในทุกเบราว์เซอร์"
+      },
+      "md": {
+        "title": "Markdown (.md)",
+        "desc": "ข้อความล้วนสำหรับแอปจดบันทึกและเอกสาร"
+      }
+    },
+    "madeWith": "สร้างด้วย Siftlume"
   },
   "export": {
     "value": "ค่า",

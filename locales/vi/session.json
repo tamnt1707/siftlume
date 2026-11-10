@@ -115,7 +115,7 @@
     "copy": "Sao chép dạng Markdown",
     "copyShort": "Sao chép",
     "copied": "Đã sao chép dạng Markdown.",
-    "download": "Tải về dạng Markdown (.md)",
+    "download": "Tải xuống",
     "listen": "Đọc to",
     "listenShort": "Nghe",
     "stopListening": "Dừng đọc",
@@ -124,7 +124,19 @@
     "source": "Xem văn bản gốc đã trích xuất",
     "sourceTitle": "Văn bản gốc",
     "sourceWords_other": "{{count}} từ",
-    "timeSaved_other": "Tiết kiệm ~{{count}} phút"
+    "timeSaved_other": "Tiết kiệm ~{{count}} phút",
+    "downloadShort": "Tải",
+    "formats": {
+      "html": {
+        "title": "HTML (.html)",
+        "desc": "Giữ nguyên giao diện bản tóm tắt, mở bằng trình duyệt nào cũng được"
+      },
+      "md": {
+        "title": "Markdown (.md)",
+        "desc": "Văn bản thuần cho ứng dụng ghi chú và tài liệu"
+      }
+    },
+    "madeWith": "Tạo bằng Siftlume"
   },
   "export": {
     "value": "Giá trị",
