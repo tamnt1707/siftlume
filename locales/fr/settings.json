@@ -26,7 +26,12 @@
     "keyOptionalPlaceholder": "Laissez vide si inutile",
     "show": "Afficher",
     "hide": "Masquer",
-    "baseUrl": "URL de base"
+    "baseUrl": "URL de base",
+    "remove": "Supprimer la connexion",
+    "removeConfirm": "Supprimer de ce navigateur la clé, le modèle et la liste des modèles {{provider}} enregistrés ?",
+    "removeYes": "Supprimer",
+    "removeNo": "Garder",
+    "removed": "{{provider}} déconnecté."
   },
   "keyGuide": {
     "heading": "Obtenir une clé {{provider}}",

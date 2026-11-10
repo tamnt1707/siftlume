@@ -26,7 +26,12 @@
     "keyOptionalPlaceholder": "Leave empty if not required",
     "show": "Show",
     "hide": "Hide",
-    "baseUrl": "Base URL"
+    "baseUrl": "Base URL",
+    "remove": "Remove connection",
+    "removeConfirm": "Delete the saved {{provider}} key, model and model list from this browser?",
+    "removeYes": "Remove",
+    "removeNo": "Keep",
+    "removed": "{{provider}} disconnected."
   },
   "keyGuide": {
     "heading": "How to get a {{provider}} key",

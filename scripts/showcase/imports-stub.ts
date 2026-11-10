@@ -14,7 +14,7 @@ export const storage = {
 export const browser: any = {
   runtime: { id: 'showcase', getManifest: () => ({ version: '0.1.0' }) },
   i18n: { getUILanguage: () => new URLSearchParams(location.search).get('lang') ?? 'en' },
-  permissions: { request: async () => true },
+  permissions: { request: async () => true, remove: async () => true },
   declarativeNetRequest: { updateSessionRules: async () => {} },
 };
 export type Browser = any;

@@ -26,7 +26,12 @@
     "keyOptionalPlaceholder": "เว้นว่างได้หากไม่จำเป็น",
     "show": "แสดง",
     "hide": "ซ่อน",
-    "baseUrl": "Base URL"
+    "baseUrl": "Base URL",
+    "remove": "ลบการเชื่อมต่อ",
+    "removeConfirm": "ลบ key, โมเดล และรายการโมเดลของ {{provider}} ที่บันทึกไว้ในเบราว์เซอร์นี้หรือไม่",
+    "removeYes": "ลบ",
+    "removeNo": "เก็บไว้",
+    "removed": "ยกเลิกการเชื่อมต่อ {{provider}} แล้ว"
   },
   "keyGuide": {
     "heading": "วิธีรับ key ของ {{provider}}",

@@ -26,7 +26,12 @@
     "keyOptionalPlaceholder": "필요 없으면 비워 두세요",
     "show": "표시",
     "hide": "숨기기",
-    "baseUrl": "Base URL"
+    "baseUrl": "Base URL",
+    "remove": "연결 삭제",
+    "removeConfirm": "이 브라우저에 저장된 {{provider}} 키, 모델, 모델 목록을 삭제할까요?",
+    "removeYes": "삭제",
+    "removeNo": "유지",
+    "removed": "{{provider}} 연결을 해제했습니다."
   },
   "keyGuide": {
     "heading": "{{provider}} 키 발급 방법",

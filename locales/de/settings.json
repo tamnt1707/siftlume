@@ -26,7 +26,12 @@
     "keyOptionalPlaceholder": "Leer lassen, falls nicht nötig",
     "show": "Anzeigen",
     "hide": "Verbergen",
-    "baseUrl": "Basis-URL"
+    "baseUrl": "Basis-URL",
+    "remove": "Verbindung entfernen",
+    "removeConfirm": "Gespeicherten {{provider}}-Schlüssel, Modell und Modellliste aus diesem Browser löschen?",
+    "removeYes": "Entfernen",
+    "removeNo": "Behalten",
+    "removed": "{{provider}} getrennt."
   },
   "keyGuide": {
     "heading": "So bekommst du einen {{provider}}-Schlüssel",

@@ -26,7 +26,12 @@
     "keyOptionalPlaceholder": "不需要時可留空",
     "show": "顯示",
     "hide": "隱藏",
-    "baseUrl": "Base URL"
+    "baseUrl": "Base URL",
+    "remove": "移除連線",
+    "removeConfirm": "從此瀏覽器刪除已儲存的 {{provider}} 金鑰、模型和模型清單？",
+    "removeYes": "移除",
+    "removeNo": "保留",
+    "removed": "已中斷 {{provider}}。"
   },
   "keyGuide": {
     "heading": "如何取得 {{provider}} 金鑰",

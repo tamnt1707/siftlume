@@ -26,7 +26,12 @@
     "keyOptionalPlaceholder": "Để trống nếu không cần",
     "show": "Hiện",
     "hide": "Ẩn",
-    "baseUrl": "Base URL"
+    "baseUrl": "Base URL",
+    "remove": "Xoá kết nối",
+    "removeConfirm": "Xoá API key, model và danh sách model {{provider}} đã lưu trong trình duyệt này?",
+    "removeYes": "Xoá",
+    "removeNo": "Giữ lại",
+    "removed": "Đã ngắt kết nối {{provider}}."
   },
   "keyGuide": {
     "heading": "Cách lấy API key {{provider}}",

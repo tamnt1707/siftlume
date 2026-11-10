@@ -26,7 +26,12 @@
     "keyOptionalPlaceholder": "不需要时可留空",
     "show": "显示",
     "hide": "隐藏",
-    "baseUrl": "Base URL"
+    "baseUrl": "Base URL",
+    "remove": "移除连接",
+    "removeConfirm": "从此浏览器删除已保存的 {{provider}} 密钥、模型和模型列表？",
+    "removeYes": "移除",
+    "removeNo": "保留",
+    "removed": "已断开 {{provider}}。"
   },
   "keyGuide": {
     "heading": "如何获取 {{provider}} 密钥",

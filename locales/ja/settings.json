@@ -26,7 +26,12 @@
     "keyOptionalPlaceholder": "不要な場合は空欄のまま",
     "show": "表示",
     "hide": "隠す",
-    "baseUrl": "ベースURL"
+    "baseUrl": "ベースURL",
+    "remove": "接続を削除",
+    "removeConfirm": "このブラウザーに保存された {{provider}} のキー、モデル、モデル一覧を削除しますか？",
+    "removeYes": "削除",
+    "removeNo": "残す",
+    "removed": "{{provider}} との接続を削除しました。"
   },
   "keyGuide": {
     "heading": "{{provider}} のキーを取得する方法",

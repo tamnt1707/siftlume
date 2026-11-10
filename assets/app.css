@@ -2430,3 +2430,32 @@ kbd {
   color: var(--accent);
   text-decoration: none;
 }
+
+/* Settings → Connect: forget the saved key and models of a provider. */
+.remove-connection {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.remove-connection--ask {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--ink);
+}
+
+.link--danger {
+  color: var(--down);
+}
+
+.btn--danger {
+  border-color: var(--down);
+  background: var(--down);
+  color: var(--paper);
+}
+
+.btn--danger:hover {
+  filter: brightness(1.08);
+}

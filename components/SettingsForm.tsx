@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { browser } from '#imports';
 import * as Tabs from '@radix-ui/react-tabs';
 import {
   AiBrain01Icon,
@@ -58,6 +59,13 @@ interface SettingsFormProps {
   onReady?: () => void;
 }
 
+/** A copy of a per-provider record without one provider. */
+function without<T>(record: Partial<Record<ProviderId, T>>, id: ProviderId): Partial<Record<ProviderId, T>> {
+  const copy = { ...record };
+  delete copy[id];
+  return copy;
+}
+
 /** Providers with setup steps in locales/<lang>/settings.json → keyGuide. */
 type GuideId = Exclude<ProviderId, 'custom'>;
 
@@ -115,6 +123,8 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
   // First run: nothing usable was saved yet, so the form leads with a welcome and the key steps.
   const [setup, setSetup] = useState(false);
   const [ready, setReady] = useState(false);
+  // Two-step "Remove connection": the first click asks, the second deletes.
+  const [confirmRemove, setConfirmRemove] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
 
   const id = settings.provider;
@@ -135,6 +145,7 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
     if (!loaded) return;
     void modelCacheItem.getValue().then((c) => setModels(c[id] ?? []));
     setLoad({ status: 'idle' });
+    setConfirmRemove(false);
   }, [id, loaded]);
 
   // Auto-load models shortly after the key or URL changes. This may fail without host permission;
@@ -199,6 +210,34 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
           message: t('savedNoPermission'),
         });
     });
+  };
+
+  /** Something is stored for this provider: a key, a chosen model or a loaded model list. */
+  const hasConnection = Boolean(settings.providers[id] || modelCache[id]?.length);
+
+  /**
+   * Forgets this provider right away (not on Save): its key, model and cached model list, and the
+   * host permission for its API when no other saved provider uses the same origin.
+   */
+  const onRemove = async () => {
+    setConfirmRemove(false);
+    abortRef.current?.abort();
+    setSettings((s) => ({ ...s, providers: without(s.providers, id) }));
+    setModels([]);
+
+    const stored = await getSettings();
+    const storedRest = without(stored.providers, id);
+    await settingsItem.setValue({ ...stored, providers: storedRest });
+    await modelCacheItem.setValue(without(await modelCacheItem.getValue(), id));
+
+    const pattern = originPattern(baseUrl);
+    const shared = (Object.keys(storedRest) as ProviderId[]).some((other) => {
+      const url = storedRest[other]?.baseUrl || PROVIDERS[other].defaultBaseUrl;
+      return originPattern(url) === pattern;
+    });
+    if (pattern && !shared) await browser.permissions?.remove({ origins: [pattern] }).catch(() => false);
+
+    setLoad({ status: 'ok', message: t('connect.removed', { provider: preset.label }) });
   };
 
   const modelLabel = useMemo(() => models.find((m) => m.id === cfg.model)?.label, [models, cfg.model]);
@@ -326,6 +365,27 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
                 onChange={(e) => updateProvider({ baseUrl: e.target.value.trim() })}
               />
             </details>
+
+            {hasConnection &&
+              (confirmRemove ? (
+                <div className="remove-connection remove-connection--ask" role="alert">
+                  <span>{t('connect.removeConfirm', { provider: preset.label })}</span>
+                  <div className="row">
+                    <button className="btn btn--sm btn--danger" onClick={() => void onRemove()}>
+                      {t('connect.removeYes')}
+                    </button>
+                    <button className="btn btn--sm" onClick={() => setConfirmRemove(false)}>
+                      {t('connect.removeNo')}
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="remove-connection">
+                  <button className="link link--danger" onClick={() => setConfirmRemove(true)}>
+                    {t('connect.remove')}
+                  </button>
+                </div>
+              ))}
           </section>
 
           <section className="panel">

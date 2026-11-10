@@ -26,7 +26,12 @@
     "keyOptionalPlaceholder": "Оставьте пустым, если не нужен",
     "show": "Показать",
     "hide": "Скрыть",
-    "baseUrl": "Базовый URL"
+    "baseUrl": "Базовый URL",
+    "remove": "Удалить подключение",
+    "removeConfirm": "Удалить из этого браузера сохранённый ключ {{provider}}, модель и список моделей?",
+    "removeYes": "Удалить",
+    "removeNo": "Оставить",
+    "removed": "{{provider}} отключён."
   },
   "keyGuide": {
     "heading": "Как получить ключ {{provider}}",

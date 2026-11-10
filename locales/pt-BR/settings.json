@@ -26,7 +26,12 @@
     "keyOptionalPlaceholder": "Deixe em branco se não for necessário",
     "show": "Mostrar",
     "hide": "Ocultar",
-    "baseUrl": "URL base"
+    "baseUrl": "URL base",
+    "remove": "Remover conexão",
+    "removeConfirm": "Apagar deste navegador a chave, o modelo e a lista de modelos da {{provider}}?",
+    "removeYes": "Remover",
+    "removeNo": "Manter",
+    "removed": "{{provider}} desconectado."
   },
   "keyGuide": {
     "heading": "Como conseguir uma chave da {{provider}}",
