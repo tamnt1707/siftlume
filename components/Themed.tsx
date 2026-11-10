@@ -49,8 +49,12 @@ export function Themed({
   useEffect(() => {
     if (!root) return;
     // The page background outside the app (overscroll, side panel edges) follows the mode too.
+    const background = dark ? '#141821' : '#F5F7FB';
     document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
-    document.body.style.background = dark ? '#141821' : '#F5F7FB';
+    // Paint the root too: the reserved scrollbar gutter and any area the app does not cover show
+    // the root's background, which is otherwise the system's (dark in dark mode) and flashes.
+    document.documentElement.style.background = background;
+    document.body.style.background = background;
   }, [dark, root]);
 
   return (
