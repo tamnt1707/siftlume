@@ -37,6 +37,10 @@ export interface ProviderPreset {
   needsKey: boolean;
   /** Where the user creates a key (keyed providers) or downloads the app (local ones). */
   keyUrl?: string;
+  /** Fast, cheap model suggested in Settings when another one is selected. */
+  recommendedModel?: string;
+  /** How keys from this provider start; a different prefix gets a soft warning in Settings. */
+  keyPrefix?: string;
   /** Has a free tier, so it is a good first choice; shown as a badge in Settings. */
   free?: boolean;
   /** Runs on the user's machine; shown with setup steps. */
@@ -50,6 +54,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.openai.com/v1',
     defaultModel: 'gpt-5-mini',
     needsKey: true,
+    keyPrefix: 'sk-',
     keyUrl: 'https://platform.openai.com/api-keys',
   },
   anthropic: {
@@ -58,14 +63,17 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.anthropic.com/v1',
     defaultModel: 'claude-haiku-5-5',
     needsKey: true,
+    keyPrefix: 'sk-ant-',
     keyUrl: 'https://console.anthropic.com/settings/keys',
   },
   google: {
     label: 'Google Gemini',
     api: 'google',
     defaultBaseUrl: 'https://generativelanguage.googleapis.com/v1beta',
-    defaultModel: 'gemini-2.5-flash',
+    defaultModel: 'gemini-3.5-flash-lite',
+    recommendedModel: 'gemini-3.5-flash-lite',
     needsKey: true,
+    keyPrefix: 'AIza',
     free: true,
     keyUrl: 'https://aistudio.google.com/apikey',
   },
@@ -75,6 +83,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://openrouter.ai/api/v1',
     defaultModel: 'openai/gpt-5-mini',
     needsKey: true,
+    keyPrefix: 'sk-or-',
     free: true,
     keyUrl: 'https://openrouter.ai/keys',
   },
@@ -84,6 +93,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.groq.com/openai/v1',
     defaultModel: 'llama-3.3-70b-versatile',
     needsKey: true,
+    keyPrefix: 'gsk_',
     free: true,
     keyUrl: 'https://console.groq.com/keys',
   },
@@ -110,6 +120,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
     defaultBaseUrl: 'https://api.x.ai/v1',
     defaultModel: 'grok-4',
     needsKey: true,
+    keyPrefix: 'xai-',
     keyUrl: 'https://console.x.ai/',
   },
   together: {

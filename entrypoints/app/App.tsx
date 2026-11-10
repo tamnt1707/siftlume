@@ -7,7 +7,7 @@ import { browser } from '#imports';
 import { HistoryList } from '@/components/HistoryList';
 import { ModelSwitcher } from '@/components/ModelSwitcher';
 import { SessionView } from '@/components/SessionView';
-import { SettingsForm } from '@/components/SettingsForm';
+import { SettingsForm, type SettingsGuard } from '@/components/SettingsForm';
 import { SourcePicker, type PageTarget } from '@/components/SourcePicker';
 import { SiftLoader } from '@/components/SiftLoader';
 import { isReadableUrl } from '@/lib/page';
@@ -179,12 +179,18 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
     run(req);
   }, [problem, run]);
 
+  // Settings registers a guard here; leaving it with unsaved edits asks to save or discard first.
+  const settingsGuard = useRef<SettingsGuard | null>(null);
+  const leaveSettings = (proceed: () => void) =>
+    view === 'settings' && settingsGuard.current ? settingsGuard.current(proceed) : proceed();
+
   const route = (params: Record<string, string>) => !isPanel && setRoute(params);
-  const goNew = () => {
-    ctrl.reset();
-    setView('main');
-    route({ view: 'new' });
-  };
+  const goNew = () =>
+    leaveSettings(() => {
+      ctrl.reset();
+      setView('main');
+      route({ view: 'new' });
+    });
   const openSession = (s: Session) => {
     // A tab's panel only shows that page's summaries; other sessions open as a full page.
     if (isPanel && s.source.tabId !== panelTabId) {
@@ -220,12 +226,14 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
           )}
           <button
             className={`icon-btn ${view === 'history' ? 'active' : ''}`}
-            onClick={() => {
-              const next = view === 'history' ? 'main' : 'history';
-              setView(next);
-              if (next === 'history') route({ view: 'history' });
-              else if (sessionId) route({ session: sessionId });
-            }}
+            onClick={() =>
+              leaveSettings(() => {
+                const next = view === 'history' ? 'main' : 'history';
+                setView(next);
+                if (next === 'history') route({ view: 'history' });
+                else if (sessionId) route({ session: sessionId });
+              })
+            }
             title={t('actions.history')}
             aria-label={t('actions.history')}
           >
@@ -233,7 +241,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
           </button>
           <button
             className={`icon-btn ${view === 'settings' ? 'active' : ''}`}
-            onClick={() => setView(view === 'settings' ? 'main' : 'settings')}
+            onClick={() => (view === 'settings' ? leaveSettings(() => setView('main')) : setView('settings'))}
             title={t('actions.settings')}
             aria-label={t('actions.settings')}
           >
@@ -262,7 +270,12 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
         {ctrl.warning && <div className="banner banner--warn">{ctrl.warning}</div>}
 
         {view === 'settings' ? (
-          <SettingsForm embedded onClose={() => setView('main')} onReady={() => setView('main')} />
+          <SettingsForm
+            embedded
+            guardRef={settingsGuard}
+            onClose={() => setView('main')}
+            onReady={() => setView('main')}
+          />
         ) : view === 'history' ? (
           <div className="narrow">
             <h2 className="section-title">{t('actions.history')}</h2>

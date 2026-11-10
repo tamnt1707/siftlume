@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type MutableRefObject } from 'react';
 import { browser } from '#imports';
 import * as Tabs from '@radix-ui/react-tabs';
 import {
@@ -57,7 +57,15 @@ interface SettingsFormProps {
   initialTab?: SettingsTab;
   /** Opened before any provider was set up: called once a save makes the configuration usable. */
   onReady?: () => void;
+  /**
+   * Embedded only: set to a function the host calls before leaving Settings. It runs `proceed`
+   * right away, or first asks to save or discard unsaved edits.
+   */
+  guardRef?: MutableRefObject<((proceed: () => void) => void) | null>;
 }
+
+/** Leave-without-saving guard type, for hosts that pass `guardRef`. */
+export type SettingsGuard = (proceed: () => void) => void;
 
 /** A copy of a per-provider record without one provider. */
 function without<T>(record: Partial<Record<ProviderId, T>>, id: ProviderId): Partial<Record<ProviderId, T>> {
@@ -105,7 +113,7 @@ function KeyGuide({ id, open }: { id: GuideId; open: boolean }) {
  * Used by the options page and, embedded, by the side panel and result tab (gear button).
  * Edits are a draft until Save; the appearance preview follows the draft live.
  */
-export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onReady }: SettingsFormProps) {
+export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onReady, guardRef }: SettingsFormProps) {
   const { t } = useTranslation(['settings', 'common']);
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
   const [loaded, setLoaded] = useState(false);
@@ -126,6 +134,12 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
   // Two-step "Remove connection": the first click asks, the second deletes.
   const [confirmRemove, setConfirmRemove] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
+  // What is in storage, to tell whether the draft has unsaved edits.
+  const [baseline, setBaseline] = useState<Settings | null>(null);
+  // Missing fields are flagged after a save attempt, not while the user is still typing.
+  const [showErrors, setShowErrors] = useState(false);
+  // Set while asking whether to save before leaving: what to do once the user decides.
+  const [pendingLeave, setPendingLeave] = useState<(() => void) | null>(null);
 
   const id = settings.provider;
   const preset = PROVIDERS[id];
@@ -135,6 +149,7 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
   useEffect(() => {
     void getSettings().then((s) => {
       setSettings(s);
+      setBaseline(s);
       setSetup(configProblem(s) !== null);
       setLoaded(true);
     });
@@ -156,6 +171,31 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, cfg.apiKey, cfg.baseUrl, loaded]);
+
+  const dirty = baseline !== null && JSON.stringify(settings) !== JSON.stringify(baseline);
+
+  // Problems with the selected provider. Missing values block saving; a key that does not look
+  // like this provider's only warns, since formats change.
+  const keyMissing = preset.needsKey && !cfg.apiKey.trim();
+  const keyLooksWrong = Boolean(
+    !keyMissing && preset.keyPrefix && cfg.apiKey && !cfg.apiKey.startsWith(preset.keyPrefix),
+  );
+  const urlInvalid = Boolean(cfg.baseUrl && !originPattern(cfg.baseUrl));
+  const urlMissing = !baseUrl;
+  const modelMissing = !cfg.model.trim();
+  const invalid = keyMissing || urlInvalid || urlMissing || modelMissing;
+
+  // Closing or reloading the page with unsaved edits: the browser asks first.
+  useEffect(() => {
+    if (!dirty) return;
+    const onBeforeUnload = (e: BeforeUnloadEvent) => e.preventDefault();
+    window.addEventListener('beforeunload', onBeforeUnload);
+    return () => window.removeEventListener('beforeunload', onBeforeUnload);
+  }, [dirty]);
+
+  /** Runs `proceed` now, or asks to save or discard first when there are unsaved edits. */
+  const guard: SettingsGuard = (proceed) => (dirty ? setPendingLeave(() => proceed) : proceed());
+  if (guardRef) guardRef.current = guard;
 
   const update = (patch: Partial<Settings>) => {
     setSaved(false);
@@ -193,10 +233,20 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
     void granted.then((ok) => (ok ? loadModels() : setLoad({ status: 'error', message: t('permissionDenied') })));
   };
 
-  const onSave = () => {
-    const granted = baseUrl && originPattern(baseUrl) ? requestOriginPermission(baseUrl) : Promise.resolve(true);
-    void granted.then(async (ok) => {
+  /** Validates, then saves. Resolves false when nothing was saved. */
+  const save = (): Promise<boolean> => {
+    if (invalid) {
+      setShowErrors(true);
+      setTab('ai');
+      setLoad({ status: 'error', message: t('validate.fix') });
+      return Promise.resolve(false);
+    }
+    setShowErrors(false);
+    // Request the API origin synchronously, inside the click (user gesture).
+    const granted = originPattern(baseUrl) ? requestOriginPermission(baseUrl) : Promise.resolve(true);
+    return granted.then(async (ok) => {
       await settingsItem.setValue(settings);
+      setBaseline(settings);
       setSaved(true);
       if (setup && !configProblem(settings)) {
         setSetup(false);
@@ -204,12 +254,25 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
         if (onReady) onReady();
         else window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-      if (!ok)
-        setLoad({
-          status: 'error',
-          message: t('savedNoPermission'),
-        });
+      if (!ok) setLoad({ status: 'error', message: t('savedNoPermission') });
+      else if (load.status === 'error' && load.message === t('validate.fix')) setLoad({ status: 'idle' });
+      return true;
     });
+  };
+
+  const onSave = () => void save();
+
+  /** The leave prompt: save then leave, leave without saving, or stay. */
+  const leaveSaving = () => {
+    const proceed = pendingLeave;
+    setPendingLeave(null);
+    void save().then((ok) => ok && proceed?.());
+  };
+  const leaveDiscarding = () => {
+    const proceed = pendingLeave;
+    setPendingLeave(null);
+    if (baseline) setSettings(baseline);
+    proceed?.();
   };
 
   /** Something is stored for this provider: a key, a chosen model or a loaded model list. */
@@ -228,6 +291,7 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
     const stored = await getSettings();
     const storedRest = without(stored.providers, id);
     await settingsItem.setValue({ ...stored, providers: storedRest });
+    setBaseline((b) => (b ? { ...b, providers: without(b.providers, id) } : b));
     await modelCacheItem.setValue(without(await modelCacheItem.getValue(), id));
 
     const pattern = originPattern(baseUrl);
@@ -239,6 +303,12 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
 
     setLoad({ status: 'ok', message: t('connect.removed', { provider: preset.label }) });
   };
+
+  /** The recommended model first, so it is easy to find in a long list. */
+  const sortedModels = useMemo(() => {
+    const rec = preset.recommendedModel;
+    return rec ? [...models].sort((a, b) => Number(b.id === rec) - Number(a.id === rec)) : models;
+  }, [models, preset.recommendedModel]);
 
   const modelLabel = useMemo(() => models.find((m) => m.id === cfg.model)?.label, [models, cfg.model]);
 
@@ -342,12 +412,21 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
                         : t('connect.keyOptionalPlaceholder')
                     }
                     value={cfg.apiKey}
+                    aria-invalid={showErrors && keyMissing}
                     onChange={(e) => updateProvider({ apiKey: e.target.value.trim() })}
                   />
                   <button className="btn" onClick={() => setShowKey(!showKey)}>
                     {showKey ? t('connect.hide') : t('connect.show')}
                   </button>
                 </div>
+                {showErrors && keyMissing && (
+                  <p className="hint hint--error">{t('validate.keyRequired', { provider: preset.label })}</p>
+                )}
+                {keyLooksWrong && (
+                  <p className="hint hint--warn">
+                    {t('validate.keyFormat', { provider: preset.label, prefix: preset.keyPrefix })}
+                  </p>
+                )}
               </div>
             )}
 
@@ -355,15 +434,22 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
               <KeyGuide key={id} id={id} open={setup || (preset.local ? !models.length : !cfg.apiKey)} />
             )}
 
-            <details className="field" open={id === 'custom' || preset.local}>
+            <details
+              className="field"
+              open={id === 'custom' || preset.local || urlInvalid || (showErrors && urlMissing)}
+            >
               <summary>{t('connect.baseUrl')}</summary>
               <input
                 className="input"
                 spellCheck={false}
                 placeholder={preset.defaultBaseUrl || 'https://your-server/v1'}
                 value={cfg.baseUrl}
+                aria-invalid={urlInvalid || (showErrors && urlMissing)}
                 onChange={(e) => updateProvider({ baseUrl: e.target.value.trim() })}
               />
+              {(urlInvalid || (showErrors && urlMissing)) && (
+                <p className="hint hint--error">{t('validate.baseUrl')}</p>
+              )}
             </details>
 
             {hasConnection &&
@@ -397,6 +483,7 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
                 spellCheck={false}
                 placeholder={models.length ? t('model.searchPlaceholder') : t('model.idPlaceholder')}
                 value={cfg.model}
+                aria-invalid={showErrors && modelMissing}
                 onChange={(e) => updateProvider({ model: e.target.value })}
               />
               <button className="btn" onClick={onLoadClick} disabled={load.status === 'loading'}>
@@ -411,13 +498,22 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
               ))}
             </datalist>
             {modelLabel && <p className="hint">{modelLabel}</p>}
+            {showErrors && modelMissing && <p className="hint hint--error">{t('validate.model')}</p>}
+            {preset.recommendedModel && cfg.model !== preset.recommendedModel && (
+              <p className="model-tip">
+                <span>{t('model.recommended', { model: preset.recommendedModel })}</span>
+                <button className="btn btn--sm" onClick={() => updateProvider({ model: preset.recommendedModel })}>
+                  {t('model.useRecommended', { model: preset.recommendedModel })}
+                </button>
+              </p>
+            )}
             {load.message && (
               <p className={`hint ${load.status === 'error' ? 'hint--error' : 'hint--ok'}`}>{load.message}</p>
             )}
 
             {models.length > 0 && (
               <div className="model-list">
-                {models.slice(0, 60).map((m) => (
+                {sortedModels.slice(0, 60).map((m) => (
                   <button
                     key={m.id}
                     className={`chip ${m.id === cfg.model ? 'chip--active' : ''}`}
@@ -425,6 +521,9 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
                     title={m.label}
                   >
                     {m.id}
+                    {m.id === preset.recommendedModel && (
+                      <span className="chip__badge">{t('model.recommendedBadge')}</span>
+                    )}
                   </button>
                 ))}
               </div>
@@ -566,14 +665,36 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
       </Tabs.Root>
 
       <footer className="options__footer">
-        {embedded && onClose && (
-          <button className="btn" onClick={onClose}>
-            {saved ? t('footer.done') : t('footer.cancel')}
-          </button>
+        {pendingLeave ? (
+          <div className="unsaved" role="alertdialog" aria-labelledby="unsaved-title">
+            <p className="unsaved__text">
+              <strong id="unsaved-title">{t('unsaved.title')}</strong> {t('unsaved.body')}
+            </p>
+            <div className="unsaved__actions">
+              <button className="btn" onClick={() => setPendingLeave(null)}>
+                {t('unsaved.keep')}
+              </button>
+              <button className="btn" onClick={leaveDiscarding}>
+                {t('unsaved.discard')}
+              </button>
+              <button className="btn btn--primary" onClick={leaveSaving}>
+                {t('footer.save')}
+              </button>
+            </div>
+          </div>
+        ) : (
+          <>
+            {dirty && <span className="unsaved-badge">{t('unsaved.badge')}</span>}
+            {embedded && onClose && (
+              <button className="btn" onClick={() => guard(onClose)}>
+                {saved && !dirty ? t('footer.done') : t('footer.cancel')}
+              </button>
+            )}
+            <button className="btn btn--primary" onClick={onSave}>
+              {saved && !dirty ? t('footer.saved') : t('footer.save')}
+            </button>
+          </>
         )}
-        <button className="btn btn--primary" onClick={onSave}>
-          {saved ? t('footer.saved') : t('footer.save')}
-        </button>
       </footer>
     </Themed>
   );

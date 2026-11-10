@@ -120,7 +120,10 @@
     "load": "Cargar modelos",
     "available_one": "{{count}} modelo disponible",
     "available_many": "{{count}} modelos disponibles",
-    "available_other": "{{count}} modelos disponibles"
+    "available_other": "{{count}} modelos disponibles",
+    "recommended": "Recomendado: {{model}}. Rápido, barato y de sobra para resúmenes.",
+    "useRecommended": "Usar {{model}}",
+    "recommendedBadge": "Recomendado"
   },
   "summary": {
     "showIn": "Mostrar resultados en",
@@ -199,6 +202,20 @@
     "saved": "Guardado ✓",
     "cancel": "Cancelar",
     "done": "Listo"
+  },
+  "validate": {
+    "keyRequired": "Pega tu clave de API de {{provider}}. Sin ella no se pueden hacer resúmenes.",
+    "keyFormat": "No parece una clave de {{provider}} (empiezan por {{prefix}}). Comprueba que elegiste el proveedor correcto.",
+    "baseUrl": "Escribe una dirección completa que empiece por http:// o https://.",
+    "model": "Elige o escribe un modelo.",
+    "fix": "Corrige los campos marcados y vuelve a guardar."
+  },
+  "unsaved": {
+    "title": "Tienes cambios sin guardar",
+    "body": "¿Guardarlos antes de salir?",
+    "discard": "Descartar",
+    "keep": "Seguir editando",
+    "badge": "Sin guardar"
   },
   "permissionDenied": "Se denegó el permiso para el dominio de la API.",
   "savedNoPermission": "Guardado, pero se denegó el permiso para el dominio de la API. Las solicitudes pueden fallar.",

@@ -119,7 +119,10 @@
     "refresh": "Refresh",
     "load": "Load models",
     "available_one": "{{count}} model available",
-    "available_other": "{{count}} models available"
+    "available_other": "{{count}} models available",
+    "recommended": "Recommended: {{model}}. Fast and low cost, and plenty for summaries.",
+    "useRecommended": "Use {{model}}",
+    "recommendedBadge": "Recommended"
   },
   "summary": {
     "showIn": "Show results in",
@@ -198,6 +201,20 @@
     "saved": "Saved ✓",
     "cancel": "Cancel",
     "done": "Done"
+  },
+  "validate": {
+    "keyRequired": "Paste your {{provider}} API key. Summaries can’t run without it.",
+    "keyFormat": "This doesn’t look like a {{provider}} key (they start with {{prefix}}). Check that the right provider is selected.",
+    "baseUrl": "Enter a full address starting with http:// or https://.",
+    "model": "Pick or type a model.",
+    "fix": "Fix the highlighted fields, then save again."
+  },
+  "unsaved": {
+    "title": "You have unsaved changes",
+    "body": "Save them before leaving?",
+    "discard": "Discard",
+    "keep": "Keep editing",
+    "badge": "Unsaved changes"
   },
   "permissionDenied": "Permission for the API domain was denied.",
   "savedNoPermission": "Saved, but permission for the API domain was denied. Requests may fail.",

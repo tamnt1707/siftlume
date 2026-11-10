@@ -118,7 +118,10 @@
     "loading": "불러오는 중…",
     "refresh": "새로 고침",
     "load": "모델 목록 불러오기",
-    "available_other": "사용 가능한 모델 {{count}}개"
+    "available_other": "사용 가능한 모델 {{count}}개",
+    "recommended": "추천: {{model}}. 빠르고 저렴하며 요약에는 충분합니다.",
+    "useRecommended": "{{model}} 사용",
+    "recommendedBadge": "추천"
   },
   "summary": {
     "showIn": "결과 표시 위치",
@@ -197,6 +200,20 @@
     "saved": "저장됨 ✓",
     "cancel": "취소",
     "done": "완료"
+  },
+  "validate": {
+    "keyRequired": "{{provider}} API 키를 붙여넣으세요. 키가 없으면 요약할 수 없습니다.",
+    "keyFormat": "{{provider}} 키가 아닌 것 같습니다({{prefix}}(으)로 시작). 제공업체를 올바르게 선택했는지 확인하세요.",
+    "baseUrl": "http:// 또는 https://로 시작하는 전체 주소를 입력하세요.",
+    "model": "모델을 선택하거나 입력하세요.",
+    "fix": "표시된 항목을 고친 뒤 다시 저장하세요."
+  },
+  "unsaved": {
+    "title": "저장하지 않은 변경 사항이 있습니다",
+    "body": "나가기 전에 저장할까요?",
+    "discard": "변경 취소",
+    "keep": "계속 편집",
+    "badge": "저장 안 됨"
   },
   "permissionDenied": "API 도메인 접근 권한이 거부되었습니다.",
   "savedNoPermission": "저장했지만 API 도메인 접근 권한이 거부되었습니다. 요청이 실패할 수 있습니다.",

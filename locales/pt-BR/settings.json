@@ -120,7 +120,10 @@
     "load": "Carregar modelos",
     "available_one": "{{count}} modelo disponível",
     "available_many": "{{count}} modelos disponíveis",
-    "available_other": "{{count}} modelos disponíveis"
+    "available_other": "{{count}} modelos disponíveis",
+    "recommended": "Recomendado: {{model}}. Rápido, barato e mais que suficiente para resumos.",
+    "useRecommended": "Usar {{model}}",
+    "recommendedBadge": "Recomendado"
   },
   "summary": {
     "showIn": "Mostrar resultados em",
@@ -199,6 +202,20 @@
     "saved": "Salvo ✓",
     "cancel": "Cancelar",
     "done": "Concluído"
+  },
+  "validate": {
+    "keyRequired": "Cole sua chave de API da {{provider}}. Sem ela não dá para resumir.",
+    "keyFormat": "Isso não parece uma chave da {{provider}} (elas começam com {{prefix}}). Confira se escolheu o provedor certo.",
+    "baseUrl": "Digite um endereço completo começando com http:// ou https://.",
+    "model": "Escolha ou digite um modelo.",
+    "fix": "Corrija os campos marcados e salve de novo."
+  },
+  "unsaved": {
+    "title": "Você tem alterações não salvas",
+    "body": "Salvar antes de sair?",
+    "discard": "Descartar",
+    "keep": "Continuar editando",
+    "badge": "Não salvo"
   },
   "permissionDenied": "A permissão para o domínio da API foi negada.",
   "savedNoPermission": "Salvo, mas a permissão para o domínio da API foi negada. As solicitações podem falhar.",

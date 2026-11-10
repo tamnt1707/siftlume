@@ -2459,3 +2459,81 @@ kbd {
 .btn--danger:hover {
   filter: brightness(1.08);
 }
+
+/* ── Settings: validation and unsaved changes ─────────────── */
+
+.hint--warn {
+  color: color-mix(in srgb, var(--ink) 55%, #b7791f);
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--down);
+}
+
+.model-tip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: var(--r-md);
+  background: var(--accent-soft);
+  font-size: 13px;
+}
+
+.chip__badge {
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--up);
+}
+
+.unsaved-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  margin-right: 10px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.unsaved-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d69e2e;
+}
+
+.unsaved {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  width: 100%;
+  max-width: 760px;
+}
+
+.unsaved__text {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ink-2);
+}
+
+.unsaved__text strong {
+  color: var(--ink);
+}
+
+.unsaved__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.options__footer .unsaved .btn {
+  min-width: 0;
+  flex: none;
+}

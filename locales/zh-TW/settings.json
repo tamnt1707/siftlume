@@ -118,7 +118,10 @@
     "loading": "載入中…",
     "refresh": "重新整理",
     "load": "載入模型清單",
-    "available_other": "共 {{count}} 個可用模型"
+    "available_other": "共 {{count}} 個可用模型",
+    "recommended": "推薦：{{model}}。速度快、成本低，做摘要綽綽有餘。",
+    "useRecommended": "使用 {{model}}",
+    "recommendedBadge": "推薦"
   },
   "summary": {
     "showIn": "結果顯示位置",
@@ -197,6 +200,20 @@
     "saved": "已儲存 ✓",
     "cancel": "取消",
     "done": "完成"
+  },
+  "validate": {
+    "keyRequired": "請貼上你的 {{provider}} API 金鑰。沒有金鑰就無法產生摘要。",
+    "keyFormat": "這看起來不像 {{provider}} 的金鑰（通常以 {{prefix}} 開頭）。請確認是否選對了服務商。",
+    "baseUrl": "請輸入以 http:// 或 https:// 開頭的完整網址。",
+    "model": "請選擇或輸入模型。",
+    "fix": "請修正標示的欄位後再儲存。"
+  },
+  "unsaved": {
+    "title": "有尚未儲存的變更",
+    "body": "離開前要儲存嗎？",
+    "discard": "捨棄變更",
+    "keep": "繼續編輯",
+    "badge": "未儲存"
   },
   "permissionDenied": "API 網域的存取權限遭到拒絕。",
   "savedNoPermission": "已儲存,但 API 網域的存取權限遭到拒絕,請求可能會失敗。",

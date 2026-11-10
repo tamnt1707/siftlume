@@ -119,7 +119,10 @@
     "refresh": "Aktualisieren",
     "load": "Modelle laden",
     "available_one": "{{count}} Modell verfügbar",
-    "available_other": "{{count}} Modelle verfügbar"
+    "available_other": "{{count}} Modelle verfügbar",
+    "recommended": "Empfohlen: {{model}}. Schnell, günstig und für Zusammenfassungen völlig ausreichend.",
+    "useRecommended": "{{model}} verwenden",
+    "recommendedBadge": "Empfohlen"
   },
   "summary": {
     "showIn": "Ergebnisse anzeigen in",
@@ -198,6 +201,20 @@
     "saved": "Gespeichert ✓",
     "cancel": "Abbrechen",
     "done": "Fertig"
+  },
+  "validate": {
+    "keyRequired": "Füge deinen {{provider}}-API-Schlüssel ein. Ohne ihn sind keine Zusammenfassungen möglich.",
+    "keyFormat": "Das sieht nicht nach einem {{provider}}-Schlüssel aus (sie beginnen mit {{prefix}}). Prüfe, ob der richtige Anbieter gewählt ist.",
+    "baseUrl": "Gib eine vollständige Adresse ein, die mit http:// oder https:// beginnt.",
+    "model": "Wähle ein Modell oder gib es ein.",
+    "fix": "Korrigiere die markierten Felder und speichere erneut."
+  },
+  "unsaved": {
+    "title": "Du hast ungespeicherte Änderungen",
+    "body": "Vor dem Verlassen speichern?",
+    "discard": "Verwerfen",
+    "keep": "Weiter bearbeiten",
+    "badge": "Nicht gespeichert"
   },
   "permissionDenied": "Die Berechtigung für die API-Domain wurde verweigert.",
   "savedNoPermission": "Gespeichert, aber die Berechtigung für die API-Domain wurde verweigert. Anfragen können fehlschlagen.",

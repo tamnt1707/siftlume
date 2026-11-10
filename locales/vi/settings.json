@@ -118,7 +118,10 @@
     "loading": "Đang tải…",
     "refresh": "Làm mới",
     "load": "Tải danh sách model",
-    "available_other": "Có {{count}} model"
+    "available_other": "Có {{count}} model",
+    "recommended": "Gợi ý: {{model}}. Nhanh, rẻ và đủ tốt để tóm tắt.",
+    "useRecommended": "Dùng {{model}}",
+    "recommendedBadge": "Gợi ý"
   },
   "summary": {
     "showIn": "Hiển thị kết quả ở",
@@ -197,6 +200,20 @@
     "saved": "Đã lưu ✓",
     "cancel": "Huỷ",
     "done": "Xong"
+  },
+  "validate": {
+    "keyRequired": "Hãy dán API key {{provider}}. Không có key thì không tóm tắt được.",
+    "keyFormat": "Key này không giống key {{provider}} (thường bắt đầu bằng {{prefix}}). Kiểm tra xem đã chọn đúng nhà cung cấp chưa.",
+    "baseUrl": "Nhập địa chỉ đầy đủ, bắt đầu bằng http:// hoặc https://.",
+    "model": "Chọn hoặc nhập tên model.",
+    "fix": "Sửa các ô được đánh dấu rồi lưu lại."
+  },
+  "unsaved": {
+    "title": "Bạn có thay đổi chưa lưu",
+    "body": "Lưu lại trước khi rời đi?",
+    "discard": "Bỏ thay đổi",
+    "keep": "Tiếp tục sửa",
+    "badge": "Chưa lưu"
   },
   "permissionDenied": "Quyền truy cập tên miền API đã bị từ chối.",
   "savedNoPermission": "Đã lưu, nhưng quyền truy cập tên miền API bị từ chối. Yêu cầu có thể thất bại.",

@@ -120,7 +120,10 @@
     "load": "Charger les modèles",
     "available_one": "{{count}} modèle disponible",
     "available_many": "{{count}} modèles disponibles",
-    "available_other": "{{count}} modèles disponibles"
+    "available_other": "{{count}} modèles disponibles",
+    "recommended": "Recommandé : {{model}}. Rapide, peu coûteux et largement suffisant pour résumer.",
+    "useRecommended": "Utiliser {{model}}",
+    "recommendedBadge": "Recommandé"
   },
   "summary": {
     "showIn": "Afficher les résultats dans",
@@ -199,6 +202,20 @@
     "saved": "Enregistré ✓",
     "cancel": "Annuler",
     "done": "Terminé"
+  },
+  "validate": {
+    "keyRequired": "Collez votre clé API {{provider}}. Sans elle, impossible de résumer.",
+    "keyFormat": "Cela ne ressemble pas à une clé {{provider}} (elles commencent par {{prefix}}). Vérifiez le fournisseur choisi.",
+    "baseUrl": "Saisissez une adresse complète commençant par http:// ou https://.",
+    "model": "Choisissez ou saisissez un modèle.",
+    "fix": "Corrigez les champs signalés, puis enregistrez à nouveau."
+  },
+  "unsaved": {
+    "title": "Vous avez des modifications non enregistrées",
+    "body": "Les enregistrer avant de partir ?",
+    "discard": "Abandonner",
+    "keep": "Continuer",
+    "badge": "Non enregistré"
   },
   "permissionDenied": "L’autorisation pour le domaine de l’API a été refusée.",
   "savedNoPermission": "Enregistré, mais l’autorisation pour le domaine de l’API a été refusée. Les requêtes risquent d’échouer.",
