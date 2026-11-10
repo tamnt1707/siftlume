@@ -173,6 +173,11 @@ body {
   height: auto;
 }
 
+.sc-settings--narrow {
+  width: 420px;
+  padding: 0 14px;
+}
+
 .sc-settings .options__footer {
   display: none;
 }

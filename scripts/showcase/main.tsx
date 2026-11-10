@@ -307,7 +307,10 @@ function Pickers() {
 
 function SettingsView() {
   return (
-    <Themed settings={settings} className="app app--page sc-settings">
+    <Themed
+      settings={settings}
+      className={query.has('narrow') ? 'app app--panel sc-settings sc-settings--narrow' : 'app app--page sc-settings'}
+    >
       <main className="content">
         <SettingsForm
           embedded
