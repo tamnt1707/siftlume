@@ -55,6 +55,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
   const ctrl = useSession(settings);
   const [view, setView] = useState<View>('main');
   const [toast, setToast] = useState<string | null>(null);
+  const [toolbarSlot, setToolbarSlot] = useState<HTMLDivElement | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const routed = useRef(false);
   /** ?view=tabs (the popup's "Combine tabs"): the start screen lists the open tabs. */
@@ -219,6 +220,8 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
           {t('appName')}
         </button>
         <ModelSwitcher settings={settings} disabled={ctrl.phase !== 'idle'} onManage={() => setView('settings')} />
+        {/* Full page: the open summary's toolbar (mode, length, language, save, print) lives here. */}
+        {!compact && view === 'main' && ctrl.session && <div className="topbar__tools" ref={setToolbarSlot} />}
         <nav>
           {isPanel ? (
             <button
@@ -300,6 +303,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
             settings={settings}
             onExpand={isPanel && sessionId ? () => void openApp({ session: sessionId }) : undefined}
             onPrint={isPanel && sessionId ? () => void openApp({ session: sessionId, print: '1' }) : undefined}
+            toolbarSlot={compact ? null : toolbarSlot}
           />
         ) : ctrl.phase === 'extracting' ? (
           <SiftLoader stage="reading" title={t('loader.reading')} onStop={ctrl.stop} />

@@ -2612,6 +2612,72 @@ button.ui-menu__item:focus-visible {
   color: var(--accent);
 }
 
+/* Full page: the toolbar sits in the top bar, between the model and the navigation. */
+.topbar__tools {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  justify-content: center;
+}
+
+.topbar__tools:empty {
+  display: none;
+}
+
+.topbar .result-toolbar {
+  flex-wrap: nowrap;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.topbar .result-toolbar__actions {
+  flex-wrap: nowrap;
+  margin-left: 4px;
+}
+
+/* In the bar, actions are icons; labels stay as tooltips. */
+.topbar .result-toolbar .tool-btn {
+  padding: 5px 7px;
+}
+
+.topbar .result-toolbar .tool-btn span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* Not enough room for one row: the tools take a second row of the bar. */
+@media (max-width: 1279px) {
+  .topbar:has(.topbar__tools:not(:empty)) {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .topbar__tools {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
+
+  .topbar .result-toolbar__actions {
+    margin-left: auto;
+  }
+
+  .topbar .result-toolbar {
+    width: 100%;
+  }
+}
+
+/* Two-row bar: the sticky Questions column starts below it. */
+@media (min-width: 1000px) and (max-width: 1279px) {
+  .app--page:has(.topbar__tools:not(:empty)) .session--page > .session__side {
+    top: 116px;
+    height: calc(100vh - 136px);
+  }
+}
+
 /* Side panel: tools wrap under the controls, icons only. */
 .app--panel .result-toolbar__actions {
   margin-left: 0;

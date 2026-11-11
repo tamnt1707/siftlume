@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { MarkDownRenderer } from '@openuidev/react-ui';
 import { useTranslation } from 'react-i18next';
 import { browser } from '#imports';
@@ -49,6 +50,7 @@ export function SessionView({
   onExpand,
   onPrint,
   settings,
+  toolbarSlot,
 }: {
   ctrl: SessionController;
   notify: (msg: string) => void;
@@ -60,6 +62,8 @@ export function SessionView({
   onPrint?: () => void;
   /** Global settings; the result toolbar shows this session's overrides on top of them. */
   settings: Settings;
+  /** Full page: the top bar's slot, where the result toolbar stays in view while reading. */
+  toolbarSlot?: HTMLElement | null;
 }) {
   const { t } = useTranslation(['session', 'common']);
   const session = ctrl.session!;
@@ -208,6 +212,18 @@ export function SessionView({
       />
     );
   const dimmed = reworking && Boolean(summary.content);
+  const toolbar = summary.content ? (
+    <ResultToolbar
+      ctrl={ctrl}
+      session={session}
+      settings={settings}
+      program={summary.content}
+      notify={notify}
+      sourceOpen={sourceOpen}
+      onToggleSource={() => setSourceOpen((v) => !v)}
+      onPrint={onPrint}
+    />
+  ) : null;
 
   return (
     <div className={`session session--${layout}`}>
@@ -283,18 +299,7 @@ export function SessionView({
       </header>
 
       <div className="session__main">
-        {summary.content && (
-          <ResultToolbar
-            ctrl={ctrl}
-            session={session}
-            settings={settings}
-            program={summary.content}
-            notify={notify}
-            sourceOpen={sourceOpen}
-            onToggleSource={() => setSourceOpen((v) => !v)}
-            onPrint={onPrint}
-          />
-        )}
+        {toolbar && (toolbarSlot ? createPortal(toolbar, toolbarSlot) : toolbar)}
         {sourceOpen && (
           <section className="source-text">
             <header>

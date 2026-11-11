@@ -43,10 +43,13 @@ function Topbar({
   wide,
   provider = 'Anthropic',
   model = 'Claude Haiku 5.5',
+  tools,
 }: {
   wide?: boolean;
   provider?: string;
   model?: string;
+  /** Full page: the result toolbar, as the app places it in the bar. */
+  tools?: ReactElement;
 }) {
   return (
     <header className="topbar">
@@ -55,6 +58,7 @@ function Topbar({
         <span className="model-switch__provider">{provider}</span>
         <span className="model-switch__model">{model}</span>
       </span>
+      {tools && <div className="topbar__tools">{tools}</div>}
       <nav>
         {wide ? <span className="btn btn--sm">New</span> : null}
         <span className="icon-btn">
@@ -269,20 +273,26 @@ function DeepPicker() {
 function FullPage() {
   return (
     <Themed settings={settings} className="app app--page sc-full">
-      <Topbar wide />
+      {/* `&width=1100`: a narrower window, where the bar's tools take a second row. */}
+      {query.has('width') && <style>{`.sc-full { width: ${Number(query.get('width'))}px; }`}</style>}
+      <Topbar
+        wide
+        tools={
+          <ResultToolbar
+            ctrl={stubCtrl}
+            session={stubSession}
+            settings={settings}
+            program={CHART_SUMMARY_EXAMPLE}
+            notify={() => {}}
+            sourceOpen={false}
+            onToggleSource={() => {}}
+          />
+        }
+      />
       <main className="content">
         <div className="session session--page">
           <SourceRow title="ir.acme.example" />
           <div className="session__main">
-            <ResultToolbar
-              ctrl={stubCtrl}
-              session={stubSession}
-              settings={settings}
-              program={CHART_SUMMARY_EXAMPLE}
-              notify={() => {}}
-              sourceOpen={false}
-              onToggleSource={() => {}}
-            />
             <section className="summary">
               <div className="genui">
                 <Renderer library={library} response={CHART_SUMMARY_EXAMPLE} isStreaming={false} />
