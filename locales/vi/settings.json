@@ -252,7 +252,7 @@
     "downloaded": "Đã tải",
     "models": {
       "gemma": "Chất lượng tốt nhất, viết được tiếng Việt và hầu hết ngôn ngữ",
-      "qwen": "Nhanh gấp khoảng 2 lần, nhẹ hơn; chủ yếu viết tiếng Anh"
+      "lfm": "Nhanh hơn (khoảng 20 giây), nhẹ hơn; viết được tiếng Việt, câu chữ đơn giản hơn"
     },
     "size": "{{size}} GB",
     "download": "Tải về",

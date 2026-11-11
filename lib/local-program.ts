@@ -125,3 +125,55 @@ export function parsePartialJson(text: string): LocalSummary | null {
   }
   return null;
 }
+
+/**
+ * Repairs the brackets of a JSON object written without enforced output: closes what a model
+ * left open, drops closers it added by mistake or in the wrong order, and trailing commas. Stops
+ * at the end of the first object. Strings are kept as they are.
+ */
+export function repairJson(text: string) {
+  const start = text.indexOf('{');
+  if (start < 0) return '';
+  const out: string[] = [];
+  const stack: string[] = [];
+  let inString = false;
+  let escaped = false;
+  const dropTrailingComma = () => {
+    for (let j = out.length - 1; j >= 0; j--) {
+      if (/\s/.test(out[j]!)) continue;
+      if (out[j] === ',') out.splice(j, 1);
+      return;
+    }
+  };
+  for (let i = start; i < text.length; i++) {
+    const ch = text[i]!;
+    if (inString) {
+      out.push(ch);
+      if (escaped) escaped = false;
+      else if (ch === '\\') escaped = true;
+      else if (ch === '"') inString = false;
+      continue;
+    }
+    if (ch === '"') {
+      inString = true;
+      out.push(ch);
+    } else if (ch === '{' || ch === '[') {
+      stack.push(ch === '{' ? '}' : ']');
+      out.push(ch);
+    } else if (ch === '}' || ch === ']') {
+      const at = stack.lastIndexOf(ch);
+      // A closer for nothing open: a mistake, skip it.
+      if (at < 0) continue;
+      // Closes something deeper: close what was left open above it first.
+      dropTrailingComma();
+      while (stack.length > at + 1) out.push(stack.pop()!);
+      stack.pop();
+      out.push(ch);
+      if (!stack.length) return out.join('');
+    } else out.push(ch);
+  }
+  if (inString) out.push('"');
+  dropTrailingComma();
+  while (stack.length) out.push(stack.pop()!);
+  return out.join('');
+}

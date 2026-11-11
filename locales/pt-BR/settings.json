@@ -254,7 +254,7 @@
     "downloaded": "Baixado",
     "models": {
       "gemma": "Melhor qualidade, escreve em vietnamita e na maioria dos idiomas",
-      "qwen": "Cerca de duas vezes mais rápido e menor; escreve principalmente em inglês"
+      "lfm": "Mais rápido (cerca de 20 s) e leve; escreve vietnamita e outros idiomas, com frases mais simples"
     },
     "size": "{{size}} GB",
     "download": "Baixar",

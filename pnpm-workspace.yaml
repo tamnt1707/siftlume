@@ -1,5 +1,8 @@
 allowBuilds:
   '@openuidev/lang-core': true
   esbuild: true
+  # Node-only parts of transformers.js; the extension uses the web build.
+  onnxruntime-node: false
+  protobufjs: false
 minimumReleaseAgeExclude:
   - '@mlc-ai/web-llm@0.2.88'

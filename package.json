@@ -28,6 +28,7 @@
     "@fontsource-variable/source-serif-4": "^5.3.1",
     "@hugeicons/core-free-icons": "^4.4.0",
     "@hugeicons/react": "^1.1.10",
+    "@huggingface/transformers": "^4.3.2",
     "@joplin/turndown-plugin-gfm": "^1.0.68",
     "@mlc-ai/web-llm": "0.2.88",
     "@mozilla/readability": "^0.6.0",

@@ -253,7 +253,7 @@
     "downloaded": "Heruntergeladen",
     "models": {
       "gemma": "Beste Qualität, schreibt Vietnamesisch und die meisten Sprachen",
-      "qwen": "Etwa doppelt so schnell, kleiner; schreibt meist Englisch"
+      "lfm": "Schneller (etwa 20 s) und leichter; schreibt Vietnamesisch und andere Sprachen, einfacher formuliert"
     },
     "size": "{{size}} GB",
     "download": "Herunterladen",

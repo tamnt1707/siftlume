@@ -1,4 +1,17 @@
 import { defineConfig } from 'wxt';
+import type { Plugin } from 'vite';
+
+/**
+ * ONNX Runtime's bundle points at its WebAssembly file, so Vite emits a copy of it (27 MB). The
+ * transformers.js worker loads the copy in public/ort instead (lib/transformers.worker.ts), so
+ * the emitted one is dropped.
+ */
+const dropOrtWasm = (): Plugin => ({
+  name: 'drop-unused-ort-wasm',
+  generateBundle(_, bundle) {
+    for (const name of Object.keys(bundle)) if (/ort-wasm-simd-threaded[^/]*\.wasm$/.test(name)) delete bundle[name];
+  },
+});
 
 /** Browsers without chrome.sidePanel or the _favicon endpoint. */
 const CHROMIUM_ONLY_SKIP = ['safari', 'firefox'];
@@ -6,6 +19,7 @@ const CHROMIUM_ONLY_SKIP = ['safari', 'firefox'];
 // See https://wxt.dev/api/reference/wxt/interfaces/inlineconfig.html
 export default defineConfig({
   modules: ['@wxt-dev/module-react'],
+  vite: () => ({ plugins: [dropOrtWasm()], worker: { plugins: () => [dropOrtWasm()] } }),
   // Safari (macOS and iOS) also runs Manifest V3; WXT would default it to V2.
   manifestVersion: 3,
   manifest: ({ browser }) => ({

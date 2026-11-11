@@ -13,7 +13,7 @@ import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../lib/review-examp
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from '../lib/domain-example';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../lib/mode-example';
 import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from '../lib/analysis-example';
-import { localProgram } from '../lib/local-program';
+import { localProgram, repairJson } from '../lib/local-program';
 
 /** An in-browser model's answer with every field filled, for a web page and for a file. */
 const LOCAL_ANSWER = {
@@ -85,5 +85,24 @@ for (const [name, program] of Object.entries(examples)) {
     failed++;
     console.error(`✗ ${name}\n  - ${problems.join('\n  - ')}`);
   } else console.log(`✓ ${name}`);
+}
+// Brackets a model without enforced output got wrong (lib/local-model.ts reads its answers so).
+for (const [broken, fixed] of [
+  ['{"a": [1, 2}', '{"a":[1,2]}'],
+  ['{"a": {"b": 1]}, "c": 2}', '{"a":{"b":1},"c":2}'],
+  ['Here: {"t": "x", "y": [{"z": "q"]} more', '{"t":"x","y":[{"z":"q"}]}'],
+  ['{"s": [{"h": "x", "p": ["a"]}]}]\n], "f": ["q"]}', '{"s":[{"h":"x","p":["a"]}]}'],
+]) {
+  let got = '';
+  try {
+    got = JSON.stringify(JSON.parse(repairJson(broken!)));
+  } catch {
+    got = 'invalid';
+  }
+  if (got === fixed) console.log(`✓ repairJson ${broken}`);
+  else {
+    failed++;
+    console.error(`✗ repairJson ${broken}\n  - got ${got}`);
+  }
 }
 if (failed) process.exit(1);
