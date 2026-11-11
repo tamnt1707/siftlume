@@ -196,7 +196,16 @@
   },
   "advanced": {
     "maxChars": "Max characters sent to the model",
-    "privacy": "Keys are stored only in this browser (chrome.storage.local) and are never synced."
+    "privacy": "Keys are stored only in this browser (chrome.storage.local) and are never synced.",
+    "reasoning": "AI thinking before answering",
+    "reasoningHint": "Off is fastest and enough for summaries: answers start in about a second. More thinking can help critiques and hard questions, but the answer starts 10–20 seconds later and uses more tokens. Applied as each provider supports it; some models cannot turn it off and use their lowest level.",
+    "reasoningLevels": {
+      "none": "Off (fastest)",
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "provider-default": "Provider's default"
+    }
   },
   "footer": {
     "save": "Save",

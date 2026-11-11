@@ -197,7 +197,16 @@
   },
   "advanced": {
     "maxChars": "Máximo de caracteres enviados al modelo",
-    "privacy": "Las claves se guardan solo en este navegador (chrome.storage.local) y nunca se sincronizan."
+    "privacy": "Las claves se guardan solo en este navegador (chrome.storage.local) y nunca se sincronizan.",
+    "reasoning": "Razonamiento de la IA antes de responder",
+    "reasoningHint": "Desactivado es lo más rápido y basta para resumir: la respuesta empieza en un segundo aprox. Razonar más puede ayudar en críticas y preguntas difíciles, pero la respuesta empieza 10–20 segundos después y usa más tokens. Se aplica según lo que admite cada proveedor; algunos modelos no pueden desactivarlo y usan su nivel más bajo.",
+    "reasoningLevels": {
+      "none": "Desactivado (lo más rápido)",
+      "low": "Bajo",
+      "medium": "Medio",
+      "high": "Alto",
+      "provider-default": "Predeterminado del proveedor"
+    }
   },
   "footer": {
     "save": "Guardar",

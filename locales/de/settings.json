@@ -196,7 +196,16 @@
   },
   "advanced": {
     "maxChars": "Maximale Zeichenzahl an das Modell",
-    "privacy": "Schlüssel werden nur in diesem Browser gespeichert (chrome.storage.local) und nie synchronisiert."
+    "privacy": "Schlüssel werden nur in diesem Browser gespeichert (chrome.storage.local) und nie synchronisiert.",
+    "reasoning": "Nachdenken der KI vor der Antwort",
+    "reasoningHint": "Aus ist am schnellsten und reicht für Zusammenfassungen: Antworten beginnen nach etwa einer Sekunde. Mehr Nachdenken kann bei Kritik und schweren Fragen helfen, aber die Antwort beginnt 10–20 Sekunden später und braucht mehr Tokens. Wird so angewendet, wie der Anbieter es unterstützt; manche Modelle können es nicht ausschalten und nutzen ihre niedrigste Stufe.",
+    "reasoningLevels": {
+      "none": "Aus (am schnellsten)",
+      "low": "Niedrig",
+      "medium": "Mittel",
+      "high": "Hoch",
+      "provider-default": "Standard des Anbieters"
+    }
   },
   "footer": {
     "save": "Speichern",

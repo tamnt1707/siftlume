@@ -35,6 +35,8 @@ import {
   type ProviderId,
   type Settings,
   type SummaryLength,
+  type ReasoningLevel,
+  REASONING_LEVELS,
 } from '@/lib/settings';
 
 const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed', 'full'];
@@ -671,6 +673,16 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
 
         <Tabs.Content value="advanced" className="settings-tabs__panel">
           <section className="panel">
+            <div className="field">
+              <label htmlFor="reasoning">{t('advanced.reasoning')}</label>
+              <Select
+                id="reasoning"
+                value={settings.reasoning}
+                onChange={(reasoning) => update({ reasoning: reasoning as ReasoningLevel })}
+                options={REASONING_LEVELS.map((value) => ({ value, label: t(`advanced.reasoningLevels.${value}`) }))}
+              />
+              <p className="hint">{t('advanced.reasoningHint')}</p>
+            </div>
             <div className="field">
               <label htmlFor="max">{t('advanced.maxChars')}</label>
               <input

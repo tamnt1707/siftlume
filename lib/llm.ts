@@ -41,18 +41,42 @@ export interface StreamOptions {
   onText: (fullText: string) => void;
 }
 
+const CACHE = { anthropic: { cacheControl: { type: 'ephemeral' as const } } };
+
+/** Marks the first user message (the source) as a cache breakpoint. */
+function markSource(messages: ModelMessage[]): ModelMessage[] {
+  const i = messages.findIndex((m) => m.role === 'user');
+  if (i < 0) return messages;
+  const first = messages[i]!;
+  const content =
+    typeof first.content === 'string'
+      ? [{ type: 'text' as const, text: first.content, providerOptions: CACHE }]
+      : first.content;
+  return messages.map((m, j) => (j === i ? ({ ...first, content } as ModelMessage) : m));
+}
+
 /** Streams a completion and resolves with the final text. */
 export async function streamCompletion({ settings, system, messages, signal, onText }: StreamOptions) {
   if (getActiveProvider(settings).preset.builtin) {
     const input = messages.map((m) => (typeof m.content === 'string' ? m.content : '')).join('\n\n');
     return localComplete({ settings, system, input, signal, onText });
   }
-  await allowLocalOrigin(getActiveProvider(settings).resolvedBaseUrl);
+  const provider = getActiveProvider(settings);
+  await allowLocalOrigin(provider.resolvedBaseUrl);
+  const api = provider.preset.api;
+  // OpenAI, Anthropic and Google map the level to their own setting per model. OpenAI-compatible
+  // servers would get it as is, and some reject it: they get it only when the user chose one.
+  const reasoning =
+    api !== 'compatible' || settings.reasoning !== 'none' ? settings.reasoning : ('provider-default' as const);
+  // Anthropic caches only what is marked: the long system prompt and the source (first message)
+  // are read from the cache on the next request. OpenAI and Gemini cache prompts on their own.
+  const cached = api === 'anthropic';
   let streamError: unknown;
   const result = streamText({
     model: createModel(settings),
-    system,
-    messages,
+    instructions: cached ? { role: 'system', content: system, providerOptions: CACHE } : system,
+    messages: cached ? markSource(messages) : messages,
+    reasoning,
     abortSignal: signal,
     onError: ({ error }) => {
       streamError = error;

@@ -195,7 +195,16 @@
   },
   "advanced": {
     "maxChars": "Số ký tự tối đa gửi cho model",
-    "privacy": "API key chỉ được lưu trong trình duyệt này (chrome.storage.local) và không bao giờ được đồng bộ."
+    "privacy": "API key chỉ được lưu trong trình duyệt này (chrome.storage.local) và không bao giờ được đồng bộ.",
+    "reasoning": "Mức suy nghĩ của AI trước khi trả lời",
+    "reasoningHint": "Tắt là nhanh nhất và đủ cho việc tóm tắt: câu trả lời bắt đầu sau khoảng 1 giây. Suy nghĩ nhiều hơn có thể giúp phản biện và câu hỏi khó, nhưng câu trả lời bắt đầu chậm hơn 10–20 giây và tốn token hơn. Áp dụng theo khả năng của từng nhà cung cấp; một số model không tắt được và sẽ dùng mức thấp nhất.",
+    "reasoningLevels": {
+      "none": "Tắt (nhanh nhất)",
+      "low": "Thấp",
+      "medium": "Vừa",
+      "high": "Cao",
+      "provider-default": "Mặc định của nhà cung cấp"
+    }
   },
   "footer": {
     "save": "Lưu",

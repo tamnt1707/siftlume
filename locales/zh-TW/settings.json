@@ -195,7 +195,16 @@
   },
   "advanced": {
     "maxChars": "傳送給模型的最大字元數",
-    "privacy": "金鑰只會儲存在此瀏覽器中(chrome.storage.local),絕不會同步。"
+    "privacy": "金鑰只會儲存在此瀏覽器中(chrome.storage.local),絕不會同步。",
+    "reasoning": "AI 回答前的思考",
+    "reasoningHint": "關閉最快，摘要也夠用：約 1 秒開始回答。更多思考有助於批評和難題，但回答會晚 10–20 秒開始，並消耗更多 token。依各供應商支援的方式套用；無法關閉的模型會使用最低等級。",
+    "reasoningLevels": {
+      "none": "關閉（最快）",
+      "low": "低",
+      "medium": "中",
+      "high": "高",
+      "provider-default": "供應商預設"
+    }
   },
   "footer": {
     "save": "儲存",

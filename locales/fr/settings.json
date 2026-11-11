@@ -197,7 +197,16 @@
   },
   "advanced": {
     "maxChars": "Nombre maximal de caractères envoyés au modèle",
-    "privacy": "Les clés sont stockées uniquement dans ce navigateur (chrome.storage.local) et ne sont jamais synchronisées."
+    "privacy": "Les clés sont stockées uniquement dans ce navigateur (chrome.storage.local) et ne sont jamais synchronisées.",
+    "reasoning": "Réflexion de l'IA avant de répondre",
+    "reasoningHint": "Désactivée, c'est le plus rapide et suffisant pour résumer : la réponse commence en une seconde environ. Plus de réflexion peut aider les critiques et les questions difficiles, mais la réponse commence 10 à 20 secondes plus tard et consomme plus de jetons. Appliqué selon ce que chaque fournisseur permet ; certains modèles ne peuvent pas la désactiver et utilisent leur niveau le plus bas.",
+    "reasoningLevels": {
+      "none": "Désactivée (le plus rapide)",
+      "low": "Faible",
+      "medium": "Moyenne",
+      "high": "Élevée",
+      "provider-default": "Par défaut du fournisseur"
+    }
   },
   "footer": {
     "save": "Enregistrer",

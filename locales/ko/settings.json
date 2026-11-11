@@ -195,7 +195,16 @@
   },
   "advanced": {
     "maxChars": "모델에 보낼 최대 글자 수",
-    "privacy": "키는 이 브라우저(chrome.storage.local)에만 저장되며 동기화되지 않습니다."
+    "privacy": "키는 이 브라우저(chrome.storage.local)에만 저장되며 동기화되지 않습니다.",
+    "reasoning": "답하기 전 AI의 생각",
+    "reasoningHint": "끄기가 가장 빠르고 요약에는 충분합니다. 약 1초 만에 답이 시작됩니다. 생각을 늘리면 비평이나 어려운 질문에 도움이 될 수 있지만 답이 10~20초 늦게 시작되고 토큰을 더 씁니다. 제공업체가 지원하는 방식으로 적용되며, 끌 수 없는 모델은 가장 낮은 단계를 씁니다.",
+    "reasoningLevels": {
+      "none": "끄기(가장 빠름)",
+      "low": "낮음",
+      "medium": "보통",
+      "high": "높음",
+      "provider-default": "제공업체 기본값"
+    }
   },
   "footer": {
     "save": "저장",

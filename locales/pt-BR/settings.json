@@ -197,7 +197,16 @@
   },
   "advanced": {
     "maxChars": "Máximo de caracteres enviados ao modelo",
-    "privacy": "As chaves ficam salvas só neste navegador (chrome.storage.local) e nunca são sincronizadas."
+    "privacy": "As chaves ficam salvas só neste navegador (chrome.storage.local) e nunca são sincronizadas.",
+    "reasoning": "Raciocínio da IA antes de responder",
+    "reasoningHint": "Desligado é o mais rápido e basta para resumos: a resposta começa em cerca de um segundo. Mais raciocínio pode ajudar em críticas e perguntas difíceis, mas a resposta começa 10–20 segundos depois e usa mais tokens. Aplicado conforme cada provedor permite; alguns modelos não podem desligá-lo e usam o nível mais baixo.",
+    "reasoningLevels": {
+      "none": "Desligado (mais rápido)",
+      "low": "Baixo",
+      "medium": "Médio",
+      "high": "Alto",
+      "provider-default": "Padrão do provedor"
+    }
   },
   "footer": {
     "save": "Salvar",

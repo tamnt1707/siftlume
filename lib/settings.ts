@@ -196,6 +196,15 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
 
 export type SummaryLength = 'short' | 'medium' | 'detailed' | 'full';
 
+/**
+ * How much the model thinks before answering (AI SDK's portable `reasoning`, mapped by each
+ * provider to its own setting and rounded to what the model supports). "none" by default: a
+ * summary needs no long reasoning, and thinking made Claude Haiku 5.5 take 11-18 s to start
+ * writing instead of under 1 s.
+ */
+export type ReasoningLevel = 'none' | 'low' | 'medium' | 'high' | 'provider-default';
+export const REASONING_LEVELS: ReasoningLevel[] = ['none', 'low', 'medium', 'high', 'provider-default'];
+
 export interface ProviderConfig {
   apiKey: string;
   /** Empty = provider default. */
@@ -221,6 +230,8 @@ export interface Settings {
   customInstructions: string;
   /** Max characters of source content sent to the model. */
   maxChars: number;
+  /** How much the model thinks before answering (Settings → Advanced). */
+  reasoning: ReasoningLevel;
   theme: ColorMode;
   /** Inkmark design system choices: preset or custom colors, corners, reading font. */
   appearance: Appearance;
@@ -241,6 +252,7 @@ export const DEFAULT_SETTINGS: Settings = {
   styles: [],
   customInstructions: '',
   maxChars: 60_000,
+  reasoning: 'none',
   theme: 'system',
   appearance: DEFAULT_APPEARANCE,
   display: 'sidepanel',
@@ -296,6 +308,7 @@ export function normalizeSettings(raw: Partial<Settings> | null | undefined): Se
   s.mode = DEFAULT_SETTINGS.mode;
   if (s.theme !== 'light' && s.theme !== 'dark' && s.theme !== 'system') s.theme = DEFAULT_SETTINGS.theme;
   s.appearance = { ...DEFAULT_APPEARANCE, ...s.appearance };
+  if (!REASONING_LEVELS.includes(s.reasoning)) s.reasoning = DEFAULT_SETTINGS.reasoning;
   s.customModes = Array.isArray(s.customModes)
     ? s.customModes
         .filter((m) => m && typeof m.id === 'string')
