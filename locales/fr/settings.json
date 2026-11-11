@@ -137,14 +137,16 @@
     "lengths": {
       "short": "Court",
       "medium": "Moyen",
-      "detailed": "Détaillé"
+      "detailed": "Détaillé",
+      "full": "Complet"
     },
     "customInstructions": "Instructions personnalisées",
     "customPlaceholder": "ex. : Mettre l’accent sur les détails techniques. Toujours inclure une section « Pourquoi c’est important ».",
     "lengthHints": {
       "short": "TL;DR et jusqu’à 3 points clés. Idéal pour un coup d’œil.",
       "medium": "TL;DR, chiffres clés, 3 à 6 points et détails repliés. Un bon réglage par défaut.",
-      "detailed": "Tout l’essentiel, avec l’approfondissement dans des sections repliées."
+      "detailed": "Tout l’essentiel, avec l’approfondissement dans des sections repliées.",
+      "full": "Un rapport complet : chaque sujet de la source dans l'ordre, avec ses faits, chiffres et exemples. Plus long à lire."
     },
     "alwaysInclude": "Toujours inclure",
     "alwaysIncludeHint": "S’applique à chaque nouveau résumé. Vous pouvez aussi l’ajouter ensuite avec les boutons sous le résumé.",

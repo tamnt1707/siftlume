@@ -23,7 +23,7 @@ import { modeOptions } from './ModePicker';
 import type { SessionController } from './useSession';
 import { usePortalContainer } from './portal';
 
-const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed'];
+const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed', 'full'];
 /** Average adult reading speed, words per minute. */
 const WPM = 230;
 

@@ -137,14 +137,16 @@
     "lengths": {
       "short": "Curto",
       "medium": "Médio",
-      "detailed": "Detalhado"
+      "detailed": "Detalhado",
+      "full": "Completo"
     },
     "customInstructions": "Instruções personalizadas",
     "customPlaceholder": "ex.: Foque nos detalhes técnicos. Sempre inclua uma seção “Por que importa”.",
     "lengthHints": {
       "short": "TL;DR e até 3 pontos-chave. Bom para uma olhada rápida.",
       "medium": "TL;DR, números-chave, 3–6 pontos e detalhes recolhidos. Um bom padrão.",
-      "detailed": "Tudo o que importa, com o aprofundamento em seções recolhidas."
+      "detailed": "Tudo o que importa, com o aprofundamento em seções recolhidas.",
+      "full": "Um relatório completo: cada tema da fonte em ordem, com fatos, números e exemplos. Leva mais tempo para ler."
     },
     "alwaysInclude": "Sempre incluir",
     "alwaysIncludeHint": "Vale para todo resumo novo. Você ainda pode adicionar depois com os botões abaixo do resumo.",

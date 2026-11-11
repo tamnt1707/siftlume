@@ -194,7 +194,7 @@ export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
   },
 };
 
-export type SummaryLength = 'short' | 'medium' | 'detailed';
+export type SummaryLength = 'short' | 'medium' | 'detailed' | 'full';
 
 export interface ProviderConfig {
   apiKey: string;

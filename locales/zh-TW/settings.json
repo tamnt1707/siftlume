@@ -135,14 +135,16 @@
     "lengths": {
       "short": "簡短",
       "medium": "適中",
-      "detailed": "詳細"
+      "detailed": "詳細",
+      "full": "完整"
     },
     "customInstructions": "自訂指示",
     "customPlaceholder": "例如:著重技術細節。一律包含「為何重要」段落。",
     "lengthHints": {
       "short": "TL;DR 和最多 3 個重點。適合快速瀏覽。",
       "medium": "TL;DR、關鍵數據、3–6 個重點與可收合的細節。建議的預設值。",
-      "detailed": "涵蓋所有重要內容,深入部分收合顯示。"
+      "detailed": "涵蓋所有重要內容,深入部分收合顯示。",
+      "full": "完整報告：依序涵蓋原文的每個主題，保留事實、數字和例子。閱讀時間較長。"
     },
     "alwaysInclude": "一律包含",
     "alwaysIncludeHint": "套用到每一份新摘要。之後也可以用摘要下方的按鈕加入。",

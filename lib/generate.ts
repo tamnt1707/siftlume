@@ -13,6 +13,7 @@ import {
 import { readStored, type QaTurn, type SessionSource } from './history';
 import { getActiveProvider, type Settings } from './settings';
 import { nanoAnswer, nanoSummary } from './nano';
+import { digestSource, needsDigest } from './longread';
 import { MODE_TASK, resolveMode } from './modes';
 
 /** The user turn asking for the analysis in the session's mode. */
@@ -36,6 +37,16 @@ export interface GenerateResult {
   /** Errors left after the repair attempt (empty when valid). */
   errors: string[];
   repaired: boolean;
+  /** Notes taken on a long source during this call, to keep with the session. */
+  digest?: string;
+}
+
+/** A long source gets its notes first (lib/longread.ts); the result carries them to be kept. */
+async function withDigest<A extends BaseArgs>(args: A, run: (args: A) => Promise<GenerateResult>) {
+  if (!needsDigest(args.settings, args.source)) return run(args);
+  const digest = await digestSource(args.settings, args.source, args.signal);
+  const res = await run({ ...args, source: { ...args.source, digest } });
+  return { ...res, digest };
 }
 
 interface BaseArgs {
@@ -108,6 +119,10 @@ async function generateWithRepair(
 export function generateSummary(
   args: BaseArgs & { previousProgram?: string; instruction?: string },
 ): Promise<GenerateResult> {
+  return withDigest(args, summaryTurn);
+}
+
+function summaryTurn(args: BaseArgs & { previousProgram?: string; instruction?: string }): Promise<GenerateResult> {
   const { settings, source, previousProgram = '', instruction } = args;
   if (getActiveProvider(settings).preset.builtin) return nanoGenerate(args);
   const messages: ModelMessage[] = [
@@ -143,7 +158,13 @@ async function nanoGenerate(args: BaseArgs & { instruction?: string }): Promise<
   return { program, prose: note, raw: fence(program), errors: [], repaired: false };
 }
 
-export async function generateAnswer(
+export function generateAnswer(
+  args: BaseArgs & { history: QaTurn[]; question: string; summaryProgram: string },
+): Promise<GenerateResult> {
+  return withDigest(args, answerTurn);
+}
+
+async function answerTurn(
   args: BaseArgs & { history: QaTurn[]; question: string; summaryProgram: string },
 ): Promise<GenerateResult> {
   const { settings, source, history, question, summaryProgram } = args;

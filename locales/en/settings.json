@@ -136,14 +136,16 @@
     "lengths": {
       "short": "Short",
       "medium": "Medium",
-      "detailed": "Detailed"
+      "detailed": "Detailed",
+      "full": "Full"
     },
     "customInstructions": "Custom instructions",
     "customPlaceholder": "e.g. Focus on technical details. Always include a “Why it matters” section.",
     "lengthHints": {
       "short": "TL;DR and up to 3 key points. Best for a quick look.",
       "medium": "TL;DR, key figures, 3–6 points and folded details. A good default.",
-      "detailed": "Everything important, with depth kept in folded sections."
+      "detailed": "Everything important, with depth kept in folded sections.",
+      "full": "A complete report: every topic of the source in order, with its facts, figures and examples. Takes longer to read."
     },
     "alwaysInclude": "Always include",
     "alwaysIncludeHint": "Applied to every new summary. You can still add them later with the buttons under a summary.",

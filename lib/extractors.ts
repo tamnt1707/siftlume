@@ -21,6 +21,8 @@ export interface ExtractedSource {
   skipped?: string[];
   /** Deep read: document 1 is the page being read, the others pages it links to. */
   deep?: boolean;
+  /** A long source: notes taken on it part by part (lib/longread.ts), read instead of it. */
+  digest?: string;
 }
 
 /** Max CSV rows kept for tools (and stored in history). */

@@ -6,9 +6,14 @@ import { extractTab } from '@/lib/page';
 import { extractTabs } from '@/lib/multi';
 import { deepSource, findLinks, linksAllowed, pickLinks } from '@/lib/deep';
 import { extractFile, truncate, type ExtractedSource } from '@/lib/extractors';
+import { keepChars } from '@/lib/longread';
 import { newId, readStored, saveSession, writeStored, type Session, type SessionOptions } from '@/lib/history';
 import { configProblem, type Settings } from '@/lib/settings';
 import type { ModeId } from '@/lib/modes';
+
+/** Keeps the notes taken on a long source, so later turns do not read it again. */
+const withNotes = <S extends Session['source']>(source: S, digest?: string): S =>
+  digest ? { ...source, digest } : source;
 
 export type Phase = 'idle' | 'extracting' | 'summarizing' | 'refining' | 'answering';
 
@@ -78,7 +83,12 @@ export function useSession(settings: Settings) {
         });
         reportRemaining(res.errors);
         if (!res.program && res.prose) setWarning(t('session:warnings.textInstead'));
-        commit({ ...base, summary: writeStored(res.program, { note: res.prose }), updatedAt: Date.now() });
+        commit({
+          ...base,
+          source: withNotes(src, res.digest),
+          summary: writeStored(res.program, { note: res.prose }),
+          updatedAt: Date.now(),
+        });
       } catch (e) {
         if (!ctrl.signal.aborted) setError(describeError(e, settingsRef.current));
       } finally {
@@ -96,7 +106,8 @@ export function useSession(settings: Settings) {
         finish();
         return setError(missing);
       }
-      const { content, truncated } = truncate(src.content, settingsRef.current.maxChars);
+      // Long sources are kept whole up to several parts; they are read part by part (lib/longread.ts).
+      const { content, truncated } = truncate(src.content, keepChars(settingsRef.current));
       // A combined source was already cut to fit, each tab to its share.
       const source = { ...src, content, truncated: truncated || Boolean(src.truncated) };
       const now = Date.now();
@@ -255,6 +266,7 @@ export function useSession(settings: Settings) {
         reportRemaining(res.errors);
         commit({
           ...current,
+          source: withNotes(current.source, res.digest),
           summary: writeStored(res.program, { formState: context.formState, note: res.prose }),
           updatedAt: Date.now(),
         });
@@ -306,6 +318,7 @@ export function useSession(settings: Settings) {
         const latest = sessionRef.current ?? current;
         commit({
           ...latest,
+          source: withNotes(latest.source, res.digest),
           qa: [...latest.qa, { id: newId(), question, answer: writeStored(res.raw) }],
           updatedAt: Date.now(),
         });

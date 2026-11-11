@@ -136,14 +136,16 @@
     "lengths": {
       "short": "Kurz",
       "medium": "Mittel",
-      "detailed": "Ausführlich"
+      "detailed": "Ausführlich",
+      "full": "Vollständig"
     },
     "customInstructions": "Eigene Anweisungen",
     "customPlaceholder": "z. B. Auf technische Details achten. Immer einen Abschnitt „Warum das wichtig ist“ einfügen.",
     "lengthHints": {
       "short": "TL;DR und bis zu 3 Kernpunkte. Gut für einen schnellen Blick.",
       "medium": "TL;DR, Kennzahlen, 3–6 Punkte und eingeklappte Details. Eine gute Voreinstellung.",
-      "detailed": "Alles Wichtige, Details in eingeklappten Abschnitten."
+      "detailed": "Alles Wichtige, Details in eingeklappten Abschnitten.",
+      "full": "Ein vollständiger Bericht: jedes Thema der Quelle in Reihenfolge, mit Fakten, Zahlen und Beispielen. Braucht mehr Lesezeit."
     },
     "alwaysInclude": "Immer einbeziehen",
     "alwaysIncludeHint": "Gilt für jede neue Zusammenfassung. Du kannst es auch später über die Schaltflächen unter der Zusammenfassung hinzufügen.",

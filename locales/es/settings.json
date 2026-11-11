@@ -137,14 +137,16 @@
     "lengths": {
       "short": "Corto",
       "medium": "Medio",
-      "detailed": "Detallado"
+      "detailed": "Detallado",
+      "full": "Completo"
     },
     "customInstructions": "Instrucciones personalizadas",
     "customPlaceholder": "p. ej., Céntrate en los detalles técnicos. Incluye siempre una sección “Por qué importa”.",
     "lengthHints": {
       "short": "TL;DR y hasta 3 puntos clave. Ideal para un vistazo rápido.",
       "medium": "TL;DR, cifras clave, 3–6 puntos y detalles plegados. Un buen valor por defecto.",
-      "detailed": "Todo lo importante, con la profundidad en secciones plegadas."
+      "detailed": "Todo lo importante, con la profundidad en secciones plegadas.",
+      "full": "Un informe completo: cada tema de la fuente en orden, con sus datos, cifras y ejemplos. Lleva más tiempo leerlo."
     },
     "alwaysInclude": "Incluir siempre",
     "alwaysIncludeHint": "Se aplica a cada resumen nuevo. También puedes añadirlo después con los botones bajo el resumen.",

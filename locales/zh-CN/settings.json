@@ -135,14 +135,16 @@
     "lengths": {
       "short": "简短",
       "medium": "适中",
-      "detailed": "详细"
+      "detailed": "详细",
+      "full": "完整"
     },
     "customInstructions": "自定义指令",
     "customPlaceholder": "例如:侧重技术细节。始终包含“为何重要”部分。",
     "lengthHints": {
       "short": "TL;DR 和最多 3 个要点。适合快速浏览。",
       "medium": "TL;DR、关键数据、3–6 个要点和可折叠的细节。推荐的默认设置。",
-      "detailed": "涵盖所有重要内容,深入部分折叠显示。"
+      "detailed": "涵盖所有重要内容,深入部分折叠显示。",
+      "full": "完整报告：按顺序涵盖原文的每个主题，保留事实、数字和例子。阅读时间更长。"
     },
     "alwaysInclude": "始终包含",
     "alwaysIncludeHint": "应用于每一份新摘要。之后也可以通过摘要下方的按钮添加。",

@@ -26,6 +26,7 @@ const LENGTH_RULES: Record<SummaryLength, string> = {
     'Length: medium. SummaryHero plus 3-6 blocks; add a folded SectionBlock only if important detail would otherwise be lost.',
   detailed:
     'Length: detailed, but still visual. SummaryHero plus 5-9 blocks, then a folded SectionBlock covering the remaining important topics. Depth goes into folded sections, never into long paragraphs at the top.',
+  full: 'Length: full report. This overrides the minimal-text limits above (block counts, 12-word takeaways, 2-sentence paragraphs) but not the choice of blocks. The reader wants everything important without reading the source: cover every main topic and section of the source, in its order. After SummaryHero and the visual blocks that fit (numbers, charts, timeline…), add SectionBlock([...], false) (not foldable: everything shown open) with one SectionItem per topic of the source; each holds MarkDownRenderer text of 2-5 short paragraphs or bullet lists keeping every important fact, number, name, example and argument of that topic. Takeaway details may be 1-2 full sentences. Completeness wins over brevity; still never pad or repeat.',
 };
 
 /**
@@ -235,9 +236,12 @@ export function buildSourceMessage(source: ExtractedSource, truncated: boolean) 
     `Title: ${source.title}`,
     source.origin ? `Origin: ${source.origin}` : '',
     truncated ? 'Note: the source was truncated to fit the context window.' : '',
+    source.digest
+      ? 'Note: the source is long, so it was read part by part; below are thorough notes on every part, in order. Cover all parts, not only the first. Quotes in quotation marks are verbatim from the source.'
+      : '',
     '',
     '<source>',
-    source.content,
+    source.digest ?? source.content,
     '</source>',
   ]
     .filter((l) => l !== '')

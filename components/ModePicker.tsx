@@ -29,7 +29,7 @@ export const MODE_ICONS = {
 /** Saves the length right away (no Save button): the last length is kept for the next analysis. */
 const saveLength = (settings: Settings, length: SummaryLength) => void settingsItem.setValue({ ...settings, length });
 
-export const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed'];
+export const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed', 'full'];
 
 /** Label of the start button: "Summarize this page", "Explain text"…, or the custom mode's name. */
 export function runLabel(kind: 'run' | 'runText' | 'runVideo', mode: ModeId, custom: CustomMode[]) {

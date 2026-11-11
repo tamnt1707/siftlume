@@ -220,16 +220,18 @@ async function fitSource(
 // ── Summary ─────────────────────────────────────────────────────────────────────
 
 /** Longest JSON answer accepted before it is cut (a model repeating itself). */
-const MAX_JSON: Record<SummaryLength, number> = { short: 2500, medium: 4000, detailed: 6000 };
+const MAX_JSON: Record<SummaryLength, number> = { short: 2500, medium: 4000, detailed: 6000, full: 9000 };
 
 const COUNTS: Record<SummaryLength, { takeaways: number; sections: number }> = {
   short: { takeaways: 3, sections: 0 },
   medium: { takeaways: 5, sections: 2 },
   detailed: { takeaways: 7, sections: 4 },
+  full: { takeaways: 8, sections: 6 },
 };
 
 function schema(length: SummaryLength) {
   const c = COUNTS[length];
+  const full = length === 'full';
   const str = (maxLength: number) => ({ type: 'string', maxLength });
   return {
     type: 'object',
@@ -246,7 +248,7 @@ function schema(length: SummaryLength) {
         type: 'array',
         minItems: 1,
         maxItems: c.takeaways,
-        items: { type: 'object', required: ['text'], properties: { text: str(120), detail: str(200) } },
+        items: { type: 'object', required: ['text'], properties: { text: str(120), detail: str(full ? 400 : 200) } },
       },
       steps: { type: 'array', maxItems: 8, items: str(160) },
       sections: {
@@ -257,7 +259,7 @@ function schema(length: SummaryLength) {
           required: ['heading', 'points'],
           properties: {
             heading: str,
-            points: { type: 'array', minItems: 1, maxItems: 6, items: str(200) },
+            points: { type: 'array', minItems: 1, maxItems: 6, items: str(full ? 320 : 200) },
           },
         },
       },
@@ -342,6 +344,7 @@ export async function nanoSummary(args: {
     const input = `${fitted.notes ? 'Notes taken on' : 'Document'}: ${source.title}\n\n${fitted.text}`;
     const words = source.content.trim().split(/\s+/).length;
     const minutes = Math.max(1, Math.round(words / WPM));
+    const foldable = settings.length !== 'full';
     // The JSON streams in: show what is complete so far, as a summary that grows.
     const raw = await streamJson(
       session,
@@ -350,7 +353,7 @@ export async function nanoSummary(args: {
       signal,
       MAX_JSON[settings.length],
       (partial) => {
-        if (partial?.title || partial?.tldr) onProgram?.(nanoProgram(partial, source, minutes));
+        if (partial?.title || partial?.tldr) onProgram?.(nanoProgram(partial, source, minutes, foldable));
       },
     );
     let data: NanoSummary;
@@ -361,7 +364,7 @@ export async function nanoSummary(args: {
       if (!partial?.tldr) throw new Error(t('errors:nano.badAnswer'));
       data = partial;
     }
-    const program = nanoProgram(data, source, minutes);
+    const program = nanoProgram(data, source, minutes, foldable);
     const note = out.fallback ? t('errors:nano.englishOnly') : '';
     return { program, note };
   } finally {

@@ -135,14 +135,16 @@
     "lengths": {
       "short": "Ngắn",
       "medium": "Vừa",
-      "detailed": "Chi tiết"
+      "detailed": "Chi tiết",
+      "full": "Đầy đủ"
     },
     "customInstructions": "Hướng dẫn riêng",
     "customPlaceholder": "Ví dụ: Tập trung vào chi tiết kỹ thuật. Luôn có phần “Vì sao quan trọng”.",
     "lengthHints": {
       "short": "TL;DR và tối đa 3 ý chính. Hợp để xem nhanh.",
       "medium": "TL;DR, số liệu chính, 3–6 ý và phần chi tiết thu gọn. Mức mặc định nên dùng.",
-      "detailed": "Đầy đủ mọi ý quan trọng, phần sâu được thu gọn để mở khi cần."
+      "detailed": "Mọi ý quan trọng, phần sâu được thu gọn để mở khi cần.",
+      "full": "Bản báo cáo đầy đủ: từng chủ đề của nguồn theo thứ tự, giữ số liệu, dữ kiện và ví dụ. Đọc lâu hơn."
     },
     "alwaysInclude": "Luôn bao gồm",
     "alwaysIncludeHint": "Áp dụng cho mọi bản tóm tắt mới. Vẫn có thể thêm sau bằng các nút bên dưới bản tóm tắt.",

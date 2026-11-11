@@ -38,7 +38,7 @@ import {
   type SummaryLength,
 } from '@/lib/settings';
 
-const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed'];
+const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed', 'full'];
 
 /** Vertical tabs (horizontal on narrow screens such as the side panel). */
 const TABS = [
