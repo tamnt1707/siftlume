@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Add01Icon, Clock01Icon, FileSearchIcon, Settings02Icon } from '@hugeicons/core-free-icons';
 import { Icon } from '@/components/Icon';
 import { Themed } from '@/components/Themed';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { browser } from '#imports';
 import { HistoryView } from '@/components/HistoryView';
 import { ModelSwitcher } from '@/components/ModelSwitcher';
@@ -252,6 +253,8 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
           >
             <Icon icon={Clock01Icon} />
           </button>
+          {/* Settings has its own theme control (and an unsaved draft of it). */}
+          {view !== 'settings' && <ThemeToggle settings={settings} />}
           <button
             className={`icon-btn ${view === 'settings' ? 'active' : ''}`}
             onClick={() => (view === 'settings' ? leaveSettings(() => setView('main')) : setView('settings'))}

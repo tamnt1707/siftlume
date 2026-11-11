@@ -8,7 +8,9 @@
     "delete": "삭제",
     "dismiss": "닫기",
     "openSettings": "설정 열기",
-    "stop": "중지"
+    "stop": "중지",
+    "lightMode": "라이트 모드로 전환",
+    "darkMode": "다크 모드로 전환"
   },
   "kind": {
     "webpage": "웹 페이지",

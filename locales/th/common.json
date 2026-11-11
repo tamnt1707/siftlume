@@ -8,7 +8,9 @@
     "delete": "ลบ",
     "dismiss": "ปิด",
     "openSettings": "เปิดการตั้งค่า",
-    "stop": "หยุด"
+    "stop": "หยุด",
+    "lightMode": "เปลี่ยนเป็นโหมดสว่าง",
+    "darkMode": "เปลี่ยนเป็นโหมดมืด"
   },
   "kind": {
     "webpage": "หน้าเว็บ",

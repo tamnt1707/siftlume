@@ -8,7 +8,9 @@
     "delete": "Supprimer",
     "dismiss": "Fermer",
     "openSettings": "Ouvrir les paramètres",
-    "stop": "Arrêter"
+    "stop": "Arrêter",
+    "lightMode": "Passer en mode clair",
+    "darkMode": "Passer en mode sombre"
   },
   "kind": {
     "webpage": "Page web",

@@ -21,6 +21,7 @@ import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../../lib/mod
 import { SettingsForm } from '../../components/SettingsForm';
 import { ResultToolbar } from '../../components/ResultToolbar';
 import type { SessionController } from '../../components/useSession';
+import { ThemeToggle } from '../../components/ThemeToggle';
 import type { Session } from '../../lib/history';
 import { library } from '../../lib/library';
 import { CHART_SUMMARY_EXAMPLE } from '../../lib/chart-example';
@@ -65,6 +66,7 @@ function Topbar({
         <span className="icon-btn">
           <Icon icon={Clock01Icon} />
         </span>
+        <ThemeToggle settings={settings} />
         <span className="icon-btn">
           <Icon icon={Settings02Icon} />
         </span>

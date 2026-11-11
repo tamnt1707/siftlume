@@ -8,7 +8,9 @@
     "delete": "刪除",
     "dismiss": "關閉",
     "openSettings": "開啟設定",
-    "stop": "停止"
+    "stop": "停止",
+    "lightMode": "切換到淺色模式",
+    "darkMode": "切換到深色模式"
   },
   "kind": {
     "webpage": "網頁",

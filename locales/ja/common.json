@@ -8,7 +8,9 @@
     "delete": "削除",
     "dismiss": "閉じる",
     "openSettings": "設定を開く",
-    "stop": "停止"
+    "stop": "停止",
+    "lightMode": "ライトモードに切り替え",
+    "darkMode": "ダークモードに切り替え"
   },
   "kind": {
     "webpage": "Webページ",

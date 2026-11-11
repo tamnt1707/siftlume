@@ -8,7 +8,9 @@
     "delete": "删除",
     "dismiss": "关闭",
     "openSettings": "打开设置",
-    "stop": "停止"
+    "stop": "停止",
+    "lightMode": "切换到浅色模式",
+    "darkMode": "切换到深色模式"
   },
   "kind": {
     "webpage": "网页",

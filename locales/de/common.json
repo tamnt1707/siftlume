@@ -8,7 +8,9 @@
     "delete": "Löschen",
     "dismiss": "Schließen",
     "openSettings": "Einstellungen öffnen",
-    "stop": "Stopp"
+    "stop": "Stopp",
+    "lightMode": "Zum hellen Modus wechseln",
+    "darkMode": "Zum dunklen Modus wechseln"
   },
   "kind": {
     "webpage": "Webseite",

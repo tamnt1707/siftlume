@@ -8,7 +8,9 @@
     "delete": "Delete",
     "dismiss": "Dismiss",
     "openSettings": "Open Settings",
-    "stop": "Stop"
+    "stop": "Stop",
+    "lightMode": "Switch to light mode",
+    "darkMode": "Switch to dark mode"
   },
   "kind": {
     "webpage": "Web page",

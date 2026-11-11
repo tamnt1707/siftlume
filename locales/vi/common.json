@@ -8,7 +8,9 @@
     "delete": "Xoá",
     "dismiss": "Đóng",
     "openSettings": "Mở Cài đặt",
-    "stop": "Dừng"
+    "stop": "Dừng",
+    "lightMode": "Chuyển sang giao diện sáng",
+    "darkMode": "Chuyển sang giao diện tối"
   },
   "kind": {
     "webpage": "Trang web",

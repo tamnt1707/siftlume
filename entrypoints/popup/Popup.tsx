@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Clock01Icon, FileUploadIcon, Layers01Icon, Settings02Icon, SparklesIcon } from '@hugeicons/core-free-icons';
 import { Icon } from '@/components/Icon';
 import { Themed } from '@/components/Themed';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { browser, type Browser } from '#imports';
 import { HistoryList } from '@/components/HistoryList';
 import { ModelSwitcher } from '@/components/ModelSwitcher';
@@ -66,6 +67,7 @@ export default function Popup() {
           >
             <Icon icon={Clock01Icon} />
           </button>
+          <ThemeToggle settings={settings} />
           <button
             className="icon-btn"
             title={t('common:actions.settings')}
