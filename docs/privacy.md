@@ -5,7 +5,7 @@ permalink: /privacy.html
 
 # Siftlume privacy policy
 
-_Last updated: November 8, 2026_
+_Last updated: November 11, 2026_
 
 Siftlume is a browser extension that summarizes the page you are reading, text you paste, or a file you choose, using an AI provider that **you** configure with **your own** API key. Siftlume has no server of its own. This page explains what data the extension handles and where it goes.
 
@@ -29,6 +29,10 @@ Siftlume does not read pages in the background. It reads a page only after you c
 ## Third-party AI providers
 
 When you summarize content, it is processed by the AI provider you chose, under that provider's own terms and privacy policy. Review your provider's policies to understand how they handle requests. If you use a local model (for example Ollama or LM Studio), the content never leaves your computer.
+
+## Models that run in the browser
+
+Siftlume can also run a small AI model (Gemma or Qwen) inside your browser, on your computer's graphics chip. You download it from Settings with a click: the model files come from Hugging Face (huggingface.co) and are kept in the browser's storage for the extension until you delete them in Settings or uninstall the extension. Downloading sends Hugging Face an ordinary file request, with no content you read. When you use these models, what you summarize and ask is processed on your computer and never sent anywhere.
 
 ## Permissions
 
