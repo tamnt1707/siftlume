@@ -75,7 +75,7 @@ async function generateWithRepair(
 ): Promise<GenerateResult> {
   const { settings, system, messages, signal, onStream, previousProgram, editMode } = args;
 
-  const raw = await streamCompletion({ settings, system, messages, signal, onText: onStream });
+  const raw = await streamCompletion({ settings, system, messages, signal, onText: onStream, cache: true });
   const first = splitInline(raw);
   // Text-only answer (inline mode): nothing to validate.
   if (!first.code) return { program: previousProgram, prose: first.prose, raw, errors: [], repaired: false };
@@ -87,6 +87,7 @@ async function generateWithRepair(
   const repairRaw = await streamCompletion({
     settings,
     system,
+    cache: true,
     signal,
     messages: [
       ...messages,

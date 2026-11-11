@@ -39,6 +39,12 @@ export interface StreamOptions {
   signal?: AbortSignal;
   /** Called with the full text received so far. */
   onText: (fullText: string) => void;
+  /**
+   * Anthropic: mark the system prompt and the source for caching, for calls that are followed by
+   * others on the same source (summary, refinements, questions). Off for one-off calls: writing
+   * the cache costs 25% more than a plain request.
+   */
+  cache?: boolean;
 }
 
 const CACHE = { anthropic: { cacheControl: { type: 'ephemeral' as const } } };
@@ -56,7 +62,7 @@ function markSource(messages: ModelMessage[]): ModelMessage[] {
 }
 
 /** Streams a completion and resolves with the final text. */
-export async function streamCompletion({ settings, system, messages, signal, onText }: StreamOptions) {
+export async function streamCompletion({ settings, system, messages, signal, onText, cache = false }: StreamOptions) {
   if (getActiveProvider(settings).preset.builtin) {
     const input = messages.map((m) => (typeof m.content === 'string' ? m.content : '')).join('\n\n');
     return localComplete({ settings, system, input, signal, onText });
@@ -70,7 +76,7 @@ export async function streamCompletion({ settings, system, messages, signal, onT
     api !== 'compatible' || settings.reasoning !== 'none' ? settings.reasoning : ('provider-default' as const);
   // Anthropic caches only what is marked: the long system prompt and the source (first message)
   // are read from the cache on the next request. OpenAI and Gemini cache prompts on their own.
-  const cached = api === 'anthropic';
+  const cached = cache && api === 'anthropic';
   let streamError: unknown;
   const result = streamText({
     model: createModel(settings),
