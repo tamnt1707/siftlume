@@ -30,7 +30,13 @@
   },
   "history": {
     "empty": "尚無歷史紀錄。",
-    "questions_other": "{{count}} 個問題"
+    "questions_other": "{{count}} 個問題",
+    "searchPlaceholder": "搜尋你的摘要，或就它們提問…",
+    "ask": "提問",
+    "askHint": "讓 AI 根據你讀過的摘要回答",
+    "asking": "正在閱讀你的摘要…",
+    "sources": "用到的摘要",
+    "noMatch": "沒有摘要包含這些字詞。點選提問，依意思尋找。"
   },
   "model": {
     "label": "模型",

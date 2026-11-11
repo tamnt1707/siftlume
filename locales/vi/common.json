@@ -30,7 +30,13 @@
   },
   "history": {
     "empty": "Chưa có lịch sử.",
-    "questions_other": "{{count}} câu hỏi"
+    "questions_other": "{{count}} câu hỏi",
+    "searchPlaceholder": "Tìm trong các bản tóm tắt, hoặc đặt câu hỏi…",
+    "ask": "Hỏi",
+    "askHint": "Hỏi AI, trả lời dựa trên các bản tóm tắt bạn đã đọc",
+    "asking": "Đang đọc các bản tóm tắt…",
+    "sources": "Bản tóm tắt đã dùng",
+    "noMatch": "Không bản tóm tắt nào có các từ này. Bấm Hỏi để AI tìm theo ý nghĩa."
   },
   "model": {
     "label": "Model",

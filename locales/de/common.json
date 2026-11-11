@@ -31,7 +31,13 @@
   "history": {
     "empty": "Noch kein Verlauf.",
     "questions_one": "{{count}} Frage",
-    "questions_other": "{{count}} Fragen"
+    "questions_other": "{{count}} Fragen",
+    "searchPlaceholder": "Zusammenfassungen durchsuchen oder etwas fragen…",
+    "ask": "Fragen",
+    "askHint": "KI fragen, beantwortet aus deinen gelesenen Zusammenfassungen",
+    "asking": "Zusammenfassungen werden gelesen…",
+    "sources": "Verwendete Zusammenfassungen",
+    "noMatch": "Keine Zusammenfassung enthält diese Wörter. Klicke auf Fragen, um nach Bedeutung zu suchen."
   },
   "model": {
     "label": "Modell",

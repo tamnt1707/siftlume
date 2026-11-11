@@ -31,7 +31,13 @@
   "history": {
     "empty": "No history yet.",
     "questions_one": "{{count}} question",
-    "questions_other": "{{count}} questions"
+    "questions_other": "{{count}} questions",
+    "searchPlaceholder": "Search your summaries, or ask about them…",
+    "ask": "Ask",
+    "askHint": "Ask AI, answered from the summaries you have read",
+    "asking": "Reading your summaries…",
+    "sources": "Summaries used",
+    "noMatch": "No summary contains these words. Click Ask to search by meaning."
   },
   "model": {
     "label": "Model",

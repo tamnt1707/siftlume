@@ -29,6 +29,31 @@ const memory: Record<string, unknown> = {
     ...(q.has('nano') ? { provider: 'chrome' } : {}),
   },
 };
+/** ?view=history: a few saved summaries for the search box. */
+if (q.get('view') === 'history') {
+  const day = 86_400_000;
+  const now = Date.UTC(2026, 10, 11, 9);
+  memory['local:historyIndex'] = [
+    ['Học máy cơ bản cho người mới', 'webpage', 'Mạng nơ-ron học từ dữ liệu bằng đạo hàm và lan truyền ngược.', 0, 2],
+    ['Acme Q3 earnings', 'pdf', 'Cloud drove 18% revenue growth while hardware kept shrinking.', 1, 0],
+    [
+      'How mRNA vaccines work (explainer)',
+      'video',
+      'The vaccine teaches cells to make a harmless spike protein.',
+      2,
+      1,
+    ],
+    ['Giá xe điện năm 2026', 'webpage', 'Pin rẻ hơn khiến xe điện có giá ngang xe xăng.', 4, 0],
+  ].map(([title, kind, text, ago, qa], i) => ({
+    id: `h${i}`,
+    title,
+    kind,
+    text,
+    qa,
+    createdAt: now - (ago as number) * day,
+    updatedAt: now - (ago as number) * day,
+  }));
+}
 if (q.has('nano'))
   (globalThis as Record<string, unknown>).LanguageModel = {
     availability: async () => q.get('nano') || 'downloadable',

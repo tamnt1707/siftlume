@@ -32,7 +32,13 @@
     "empty": "Aún no hay historial.",
     "questions_one": "{{count}} pregunta",
     "questions_many": "{{count}} preguntas",
-    "questions_other": "{{count}} preguntas"
+    "questions_other": "{{count}} preguntas",
+    "searchPlaceholder": "Busca en tus resúmenes o pregunta sobre ellos…",
+    "ask": "Preguntar",
+    "askHint": "Pregunta a la IA, con respuestas basadas en los resúmenes que has leído",
+    "asking": "Leyendo tus resúmenes…",
+    "sources": "Resúmenes usados",
+    "noMatch": "Ningún resumen contiene estas palabras. Pulsa Preguntar para buscar por significado."
   },
   "model": {
     "label": "Modelo",

@@ -16,6 +16,7 @@ import { Themed } from '../../components/Themed';
 import { SiftLoader } from '../../components/SiftLoader';
 import { SourcePicker } from '../../components/SourcePicker';
 import { DeepRead } from '../../components/DeepRead';
+import { HistoryView } from '../../components/HistoryView';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../../lib/mode-example';
 import { SettingsForm } from '../../components/SettingsForm';
 import { ResultToolbar } from '../../components/ResultToolbar';
@@ -524,6 +525,20 @@ function PromoMarquee() {
   );
 }
 
+/** History with its search box (`?view=history&q=…` types a query). */
+function HistoryShot() {
+  return (
+    <Themed settings={settings} className="app app--page">
+      <main className="content">
+        <div className="narrow">
+          <h2 className="section-title">History</h2>
+          <HistoryView settings={settings} onOpen={() => {}} />
+        </div>
+      </main>
+    </Themed>
+  );
+}
+
 const views: Record<string, () => ReactElement> = {
   store: StoreShot,
   'promo-small': PromoSmall,
@@ -536,6 +551,7 @@ const views: Record<string, () => ReactElement> = {
   loader: Loaders,
   pickers: Pickers,
   deep: DeepPicker,
+  history: HistoryShot,
 };
 const View = views[view] ?? Compare;
 ReactDOM.createRoot(document.getElementById('root')!).render(<View />);

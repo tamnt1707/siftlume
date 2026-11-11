@@ -30,7 +30,13 @@
   },
   "history": {
     "empty": "履歴はまだありません。",
-    "questions_other": "質問 {{count}} 件"
+    "questions_other": "質問 {{count}} 件",
+    "searchPlaceholder": "要約を検索、または質問…",
+    "ask": "質問",
+    "askHint": "読んだ要約をもとに AI が答えます",
+    "asking": "要約を読んでいます…",
+    "sources": "使った要約",
+    "noMatch": "これらの語を含む要約はありません。「質問」で意味から探せます。"
   },
   "model": {
     "label": "モデル",

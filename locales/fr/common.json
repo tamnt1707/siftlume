@@ -32,7 +32,13 @@
     "empty": "Aucun historique pour l’instant.",
     "questions_one": "{{count}} question",
     "questions_many": "{{count}} questions",
-    "questions_other": "{{count}} questions"
+    "questions_other": "{{count}} questions",
+    "searchPlaceholder": "Cherchez dans vos résumés, ou posez une question…",
+    "ask": "Demander",
+    "askHint": "Demandez à l'IA, réponse tirée des résumés que vous avez lus",
+    "asking": "Lecture de vos résumés…",
+    "sources": "Résumés utilisés",
+    "noMatch": "Aucun résumé ne contient ces mots. Cliquez sur Demander pour chercher par le sens."
   },
   "model": {
     "label": "Modèle",

@@ -4,7 +4,7 @@ import { Add01Icon, Clock01Icon, FileSearchIcon, Settings02Icon } from '@hugeico
 import { Icon } from '@/components/Icon';
 import { Themed } from '@/components/Themed';
 import { browser } from '#imports';
-import { HistoryList } from '@/components/HistoryList';
+import { HistoryView } from '@/components/HistoryView';
 import { ModelSwitcher } from '@/components/ModelSwitcher';
 import { SessionView } from '@/components/SessionView';
 import { SettingsForm, type SettingsGuard } from '@/components/SettingsForm';
@@ -13,7 +13,7 @@ import { SiftLoader } from '@/components/SiftLoader';
 import { isReadableUrl } from '@/lib/page';
 import { useSession } from '@/components/useSession';
 import { useSettings } from '@/components/useSettings';
-import { historyItem, type Session } from '@/lib/history';
+import { getSession, type Session } from '@/lib/history';
 import { openApp, takePanelRequest, takeRequest, watchPanelRequests, type PendingRequest } from '@/lib/pending';
 import { configProblem } from '@/lib/settings';
 import { requestLinksAccess } from '@/lib/deep';
@@ -146,8 +146,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
       void takeRequest(requestId).then(run);
     } else if (sessionId) {
       printWhenReady.current = params.get('print') === '1';
-      void historyItem.getValue().then((list) => {
-        const s = list.find((x) => x.id === sessionId);
+      void getSession(sessionId).then((s) => {
         if (s) ctrl.open(s);
         else ctrl.setError(t('errors:notInHistory'));
       });
@@ -293,7 +292,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
         ) : view === 'history' ? (
           <div className="narrow">
             <h2 className="section-title">{t('actions.history')}</h2>
-            <HistoryList onOpen={openSession} />
+            <HistoryView settings={settings} onOpen={openSession} />
           </div>
         ) : ctrl.session ? (
           <SessionView

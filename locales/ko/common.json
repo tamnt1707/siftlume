@@ -30,7 +30,13 @@
   },
   "history": {
     "empty": "아직 기록이 없습니다.",
-    "questions_other": "질문 {{count}}개"
+    "questions_other": "질문 {{count}}개",
+    "searchPlaceholder": "요약 검색 또는 질문…",
+    "ask": "질문",
+    "askHint": "읽은 요약을 바탕으로 AI가 답합니다",
+    "asking": "요약을 읽는 중…",
+    "sources": "사용한 요약",
+    "noMatch": "이 단어가 들어간 요약이 없습니다. 질문을 눌러 의미로 찾아보세요."
   },
   "model": {
     "label": "모델",
