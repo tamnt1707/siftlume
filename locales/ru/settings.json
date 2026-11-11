@@ -207,7 +207,10 @@
       "medium": "Средний",
       "high": "Высокий",
       "provider-default": "По умолчанию у поставщика"
-    }
+    },
+    "githubToken": "Токен GitHub",
+    "githubTokenHint": "Нужен для pull request в приватных репозиториях и для более чем 60 запросов к GitHub в час (один pull request — около 7). Используйте fine-grained токен только с правом чтения Pull requests, Contents и Checks. Он отправляется только на api.github.com.",
+    "githubTokenCreate": "Создать токен"
   },
   "footer": {
     "save": "Сохранить",

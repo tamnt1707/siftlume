@@ -206,7 +206,10 @@
       "medium": "Moyenne",
       "high": "Élevée",
       "provider-default": "Par défaut du fournisseur"
-    }
+    },
+    "githubToken": "Jeton GitHub",
+    "githubTokenHint": "Pour les pull requests de dépôts privés, et plus de 60 lectures GitHub par heure (une pull request en demande environ 7). Utilisez un jeton fine-grained en lecture seule sur Pull requests, Contents et Checks. Il n’est envoyé qu’à api.github.com.",
+    "githubTokenCreate": "Créer un jeton"
   },
   "footer": {
     "save": "Enregistrer",

@@ -52,5 +52,14 @@
     "noF16": "This graphics chip lacks a feature the in-browser models need (16-bit shaders). Choose another AI provider in Settings.",
     "notDownloaded": "The model is not downloaded yet. Open Settings → AI and click Download.",
     "badAnswer": "The model gave an answer that could not be read. Try again."
+  },
+  "github": {
+    "network": "Could not reach GitHub. Check your connection and try again.",
+    "rateLimit": "GitHub allows 60 reads an hour without a token, and they are used up. Try again after {{time}}, or add a GitHub token in Settings → Advanced.",
+    "rateLimitToken": "Your GitHub token reached its hourly limit. Try again after {{time}}.",
+    "badToken": "GitHub rejected the token. Check it in Settings → Advanced.",
+    "notFound": "GitHub did not find this pull request. If the repository is private, add a GitHub token in Settings → Advanced.",
+    "noAccessToken": "Your GitHub token cannot read this pull request. Give it read access to this repository (Pull requests, Contents).",
+    "failed": "GitHub could not return this pull request (HTTP {{status}})."
   }
 }

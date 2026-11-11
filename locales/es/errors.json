@@ -52,5 +52,14 @@
     "noF16": "A este chip gráfico le falta una función que necesitan los modelos (shaders de 16 bits). Elige otro proveedor de IA en Ajustes.",
     "notDownloaded": "El modelo aún no está descargado. Abre Ajustes → IA y pulsa Descargar.",
     "badAnswer": "La respuesta del modelo no se pudo leer. Inténtalo de nuevo."
+  },
+  "github": {
+    "network": "No se pudo conectar con GitHub. Revisa tu conexión e inténtalo de nuevo.",
+    "rateLimit": "Sin token, GitHub permite 60 lecturas por hora y ya se agotaron. Inténtalo después de las {{time}} o añade un token de GitHub en Ajustes → Avanzado.",
+    "rateLimitToken": "Tu token de GitHub alcanzó su límite por hora. Inténtalo después de las {{time}}.",
+    "badToken": "GitHub rechazó el token. Revísalo en Ajustes → Avanzado.",
+    "notFound": "GitHub no encontró este pull request. Si el repositorio es privado, añade un token de GitHub en Ajustes → Avanzado.",
+    "noAccessToken": "Tu token de GitHub no puede leer este pull request. Dale acceso de lectura a este repositorio (Pull requests, Contents).",
+    "failed": "GitHub no pudo devolver este pull request (HTTP {{status}})."
   }
 }

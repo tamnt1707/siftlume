@@ -232,6 +232,11 @@ export interface Settings {
   maxChars: number;
   /** How much the model thinks before answering (Settings → Advanced). */
   reasoning: ReasoningLevel;
+  /**
+   * Optional read-only GitHub token (Settings → Advanced), for pull requests in private
+   * repositories and a higher API limit. Sent only to api.github.com.
+   */
+  githubToken: string;
   theme: ColorMode;
   /** Inkmark design system choices: preset or custom colors, corners, reading font. */
   appearance: Appearance;
@@ -253,6 +258,7 @@ export const DEFAULT_SETTINGS: Settings = {
   customInstructions: '',
   maxChars: 60_000,
   reasoning: 'none',
+  githubToken: '',
   theme: 'system',
   appearance: DEFAULT_APPEARANCE,
   display: 'sidepanel',
@@ -309,6 +315,7 @@ export function normalizeSettings(raw: Partial<Settings> | null | undefined): Se
   if (s.theme !== 'light' && s.theme !== 'dark' && s.theme !== 'system') s.theme = DEFAULT_SETTINGS.theme;
   s.appearance = { ...DEFAULT_APPEARANCE, ...s.appearance };
   if (!REASONING_LEVELS.includes(s.reasoning)) s.reasoning = DEFAULT_SETTINGS.reasoning;
+  s.githubToken = typeof s.githubToken === 'string' ? s.githubToken.trim() : '';
   s.customModes = Array.isArray(s.customModes)
     ? s.customModes
         .filter((m) => m && typeof m.id === 'string')

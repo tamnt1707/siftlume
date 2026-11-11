@@ -206,7 +206,10 @@
       "medium": "Medio",
       "high": "Alto",
       "provider-default": "Predeterminado del proveedor"
-    }
+    },
+    "githubToken": "Token de GitHub",
+    "githubTokenHint": "Para pull requests en repositorios privados y más de 60 lecturas de GitHub por hora (un pull request usa unas 7). Usa un token fine-grained con acceso de solo lectura a Pull requests, Contents y Checks. Solo se envía a api.github.com.",
+    "githubTokenCreate": "Crear un token"
   },
   "footer": {
     "save": "Guardar",

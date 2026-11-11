@@ -48,6 +48,13 @@
     "video": "Dieses Video",
     "tabs": "Mehrere Tabs",
     "text": "Text",
-    "file": "Datei"
+    "file": "Datei",
+    "pr": "Dieser Pull Request"
+  },
+  "runPr": {
+    "summary": "Diesen Pull Request zusammenfassen",
+    "explain": "Diesen Pull Request erklären",
+    "critique": "Diesen Pull Request reviewen",
+    "action": "Checkliste vor dem Merge"
   }
 }

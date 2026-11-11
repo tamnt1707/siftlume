@@ -48,6 +48,13 @@
     "video": "Это видео",
     "tabs": "Несколько вкладок",
     "text": "Текст",
-    "file": "Файл"
+    "file": "Файл",
+    "pr": "Этот pull request"
+  },
+  "runPr": {
+    "summary": "Кратко о pull request",
+    "explain": "Объяснить pull request",
+    "critique": "Ревью pull request",
+    "action": "Чек-лист перед слиянием"
   }
 }

@@ -52,5 +52,14 @@
     "noF16": "Diesem Grafikchip fehlt eine Funktion, die die Modelle brauchen (16-Bit-Shader). Wähle in den Einstellungen einen anderen KI-Anbieter.",
     "notDownloaded": "Das Modell ist noch nicht geladen. Öffne Einstellungen → KI und klicke auf Herunterladen.",
     "badAnswer": "Die Antwort des Modells war nicht lesbar. Versuche es erneut."
+  },
+  "github": {
+    "network": "GitHub ist nicht erreichbar. Prüfe die Verbindung und versuche es erneut.",
+    "rateLimit": "Ohne Token erlaubt GitHub 60 Abrufe pro Stunde, und sie sind aufgebraucht. Versuche es nach {{time}} erneut oder füge unter Einstellungen → Erweitert ein GitHub-Token hinzu.",
+    "rateLimitToken": "Dein GitHub-Token hat sein Stundenlimit erreicht. Versuche es nach {{time}} erneut.",
+    "badToken": "GitHub hat das Token abgelehnt. Prüfe es unter Einstellungen → Erweitert.",
+    "notFound": "GitHub hat diesen Pull Request nicht gefunden. Ist das Repository privat, füge unter Einstellungen → Erweitert ein GitHub-Token hinzu.",
+    "noAccessToken": "Dein GitHub-Token kann diesen Pull Request nicht lesen. Gib ihm Lesezugriff auf dieses Repository (Pull requests, Contents).",
+    "failed": "GitHub konnte diesen Pull Request nicht liefern (HTTP {{status}})."
   }
 }

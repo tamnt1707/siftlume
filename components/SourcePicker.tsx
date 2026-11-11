@@ -11,6 +11,7 @@ import { useVideoProbe } from './useVideoProbe';
 import { TabsPicker } from './TabsPicker';
 import { DeepToggle } from './DeepRead';
 import { requestTabsPermission } from '@/lib/multi';
+import { pullRequestRef } from '@/lib/github';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
 
@@ -58,6 +59,10 @@ export function SourcePicker({
   const fileInput = useRef<HTMLInputElement>(null);
   const busy = ctrl.phase !== 'idle';
   const video = useVideoProbe(page?.readable ? page.id : undefined, page?.url);
+  // A GitHub pull request is read through GitHub's API, with its diff and reviews.
+  const isPr = Boolean(pullRequestRef(page?.url));
+  // Deep read follows an article's links; a video or a pull request has none worth it.
+  const canDeep = !video.isVideo && !isPr;
   // Deep read: also read the links the AI finds worth reading. Off unless ticked, every time.
   const [deep, setDeep] = useState(false);
   // One source at a time. Until the user picks one, it is this page whenever there is one (the
@@ -105,7 +110,7 @@ export function SourcePicker({
           {sources.map((id) => (
             <Tabs.Trigger key={id} value={id} className="source-tabs__tab">
               <Icon icon={SOURCE_ICONS[id]} size={16} />
-              <span>{t(`sources.${id === 'page' && video.isVideo ? 'video' : id}`)}</span>
+              <span>{t(`sources.${id !== 'page' ? id : video.isVideo ? 'video' : isPr ? 'pr' : id}`)}</span>
             </Tabs.Trigger>
           ))}
         </Tabs.List>
@@ -121,17 +126,17 @@ export function SourcePicker({
 
         {page && (
           <Tabs.Content value="page" className="source-tabs__panel">
-            {!video.isVideo && <DeepToggle checked={deep} onChange={setDeep} disabled={busy || !page.readable} />}
+            {canDeep && <DeepToggle checked={deep} onChange={setDeep} disabled={busy || !page.readable} />}
             <button
               className="btn btn--primary btn--hero"
               disabled={busy || !page.readable || Boolean(video.blocked)}
-              onClick={() => void ctrl.fromTab(page.id, mode, { deep: deep && !video.isVideo })}
+              onClick={() => void ctrl.fromTab(page.id, mode, { deep: deep && canDeep })}
             >
               <span className="btn__label">
                 <Icon icon={SparklesIcon} />
                 {ctrl.phase === 'extracting'
                   ? t('reading')
-                  : runLabel(video.isVideo ? 'runVideo' : 'run', mode, settings.customModes)}
+                  : runLabel(video.isVideo ? 'runVideo' : isPr ? 'runPr' : 'run', mode, settings.customModes)}
               </span>
               {page.title && <span className="btn__sub">{page.readable ? page.title : t('cannotRead')}</span>}
               {(video.blocked || video.note) && <span className="btn__sub">{video.blocked ?? video.note}</span>}

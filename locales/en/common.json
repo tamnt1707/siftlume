@@ -19,7 +19,8 @@
     "csv": "CSV",
     "markdown": "Markdown",
     "video": "Video",
-    "multi": "Several tabs"
+    "multi": "Several tabs",
+    "pr": "Pull request"
   },
   "kindShort": {
     "webpage": "Web",
@@ -28,7 +29,8 @@
     "csv": "CSV",
     "markdown": "MD",
     "video": "Video",
-    "multi": "Tabs"
+    "multi": "Tabs",
+    "pr": "PR"
   },
   "history": {
     "empty": "No history yet.",

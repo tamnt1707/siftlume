@@ -19,7 +19,8 @@
     "csv": "CSV",
     "markdown": "Markdown",
     "video": "Видео",
-    "multi": "Несколько вкладок"
+    "multi": "Несколько вкладок",
+    "pr": "Pull request"
   },
   "kindShort": {
     "webpage": "Веб",
@@ -28,7 +29,8 @@
     "csv": "CSV",
     "markdown": "MD",
     "video": "Видео",
-    "multi": "Вкладки"
+    "multi": "Вкладки",
+    "pr": "PR"
   },
   "history": {
     "empty": "История пока пуста.",

@@ -204,7 +204,10 @@
       "medium": "中",
       "high": "高",
       "provider-default": "提供商默认"
-    }
+    },
+    "githubToken": "GitHub 令牌",
+    "githubTokenHint": "用于读取私有仓库的拉取请求，以及每小时超过 60 次 GitHub 读取（一个拉取请求约需 7 次）。请使用对 Pull requests、Contents 和 Checks 只读的 fine-grained 令牌。令牌只发送到 api.github.com。",
+    "githubTokenCreate": "创建令牌"
   },
   "footer": {
     "save": "保存",

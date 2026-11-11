@@ -204,7 +204,10 @@
       "medium": "中",
       "high": "高",
       "provider-default": "供應商預設"
-    }
+    },
+    "githubToken": "GitHub 權杖",
+    "githubTokenHint": "用於讀取私人儲存庫的拉取請求，以及每小時超過 60 次 GitHub 讀取（一個拉取請求約需 7 次）。請使用對 Pull requests、Contents 和 Checks 唯讀的 fine-grained 權杖。權杖只會傳送到 api.github.com。",
+    "githubTokenCreate": "建立權杖"
   },
   "footer": {
     "save": "儲存",

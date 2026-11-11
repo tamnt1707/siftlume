@@ -48,6 +48,13 @@
     "video": "Cette vidéo",
     "tabs": "Plusieurs onglets",
     "text": "Texte",
-    "file": "Fichier"
+    "file": "Fichier",
+    "pr": "Cette pull request"
+  },
+  "runPr": {
+    "summary": "Résumer cette pull request",
+    "explain": "Expliquer cette pull request",
+    "critique": "Relire cette pull request",
+    "action": "Checklist avant le merge"
   }
 }

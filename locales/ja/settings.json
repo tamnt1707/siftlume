@@ -204,7 +204,10 @@
       "medium": "中",
       "high": "高",
       "provider-default": "プロバイダの既定"
-    }
+    },
+    "githubToken": "GitHub トークン",
+    "githubTokenHint": "非公開リポジトリのプルリクエストを読むときや、GitHub の読み取りを 1 時間 60 回より多く使うときに使います（プルリクエスト 1 件で約 7 回）。Pull requests、Contents、Checks の読み取り専用の fine-grained トークンを使ってください。送信先は api.github.com のみです。",
+    "githubTokenCreate": "トークンを作成"
   },
   "footer": {
     "save": "保存",

@@ -204,7 +204,10 @@
       "medium": "Vừa",
       "high": "Cao",
       "provider-default": "Mặc định của nhà cung cấp"
-    }
+    },
+    "githubToken": "GitHub token",
+    "githubTokenHint": "Dùng cho pull request trong repo riêng tư, và để đọc GitHub nhiều hơn 60 lần mỗi giờ (mỗi pull request cần khoảng 7 lần). Dùng token fine-grained chỉ có quyền đọc Pull requests, Contents và Checks. Token chỉ được gửi tới api.github.com.",
+    "githubTokenCreate": "Tạo token"
   },
   "footer": {
     "save": "Lưu",

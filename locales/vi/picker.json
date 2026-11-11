@@ -48,6 +48,13 @@
     "video": "Video này",
     "tabs": "Nhiều tab",
     "text": "Văn bản",
-    "file": "Tệp"
+    "file": "Tệp",
+    "pr": "Pull request này"
+  },
+  "runPr": {
+    "summary": "Tóm tắt pull request này",
+    "explain": "Giải thích pull request này",
+    "critique": "Review pull request này",
+    "action": "Lấy checklist trước khi merge"
   }
 }

@@ -204,7 +204,10 @@
       "medium": "보통",
       "high": "높음",
       "provider-default": "제공업체 기본값"
-    }
+    },
+    "githubToken": "GitHub 토큰",
+    "githubTokenHint": "비공개 저장소의 풀 리퀘스트를 읽거나 GitHub를 시간당 60회보다 많이 읽을 때 필요합니다(풀 리퀘스트 하나에 약 7회). Pull requests, Contents, Checks 읽기 전용 fine-grained 토큰을 사용하세요. api.github.com으로만 전송됩니다.",
+    "githubTokenCreate": "토큰 만들기"
   },
   "footer": {
     "save": "저장",

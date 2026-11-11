@@ -19,7 +19,8 @@
     "csv": "CSV",
     "markdown": "Markdown",
     "video": "Vidéo",
-    "multi": "Plusieurs onglets"
+    "multi": "Plusieurs onglets",
+    "pr": "Pull request"
   },
   "kindShort": {
     "webpage": "Web",
@@ -28,7 +29,8 @@
     "csv": "CSV",
     "markdown": "MD",
     "video": "Vidéo",
-    "multi": "Onglets"
+    "multi": "Onglets",
+    "pr": "PR"
   },
   "history": {
     "empty": "Aucun historique pour l’instant.",

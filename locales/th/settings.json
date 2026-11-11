@@ -204,7 +204,10 @@
       "medium": "ปานกลาง",
       "high": "สูง",
       "provider-default": "ค่าเริ่มต้นของผู้ให้บริการ"
-    }
+    },
+    "githubToken": "โทเค็น GitHub",
+    "githubTokenHint": "ใช้สำหรับ pull request ใน repository ส่วนตัว และเพื่ออ่าน GitHub ได้มากกว่า 60 ครั้งต่อชั่วโมง (pull request หนึ่งรายการใช้ราว 7 ครั้ง) ใช้โทเค็นแบบ fine-grained ที่อ่านได้อย่างเดียวสำหรับ Pull requests, Contents และ Checks โทเค็นจะถูกส่งไปที่ api.github.com เท่านั้น",
+    "githubTokenCreate": "สร้างโทเค็น"
   },
   "footer": {
     "save": "บันทึก",

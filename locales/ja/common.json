@@ -19,7 +19,8 @@
     "csv": "CSV",
     "markdown": "Markdown",
     "video": "動画",
-    "multi": "複数のタブ"
+    "multi": "複数のタブ",
+    "pr": "プルリクエスト"
   },
   "kindShort": {
     "webpage": "Web",
@@ -28,7 +29,8 @@
     "csv": "CSV",
     "markdown": "MD",
     "video": "動画",
-    "multi": "タブ"
+    "multi": "タブ",
+    "pr": "PR"
   },
   "history": {
     "empty": "履歴はまだありません。",

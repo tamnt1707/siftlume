@@ -131,6 +131,7 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
   }, []);
   const [load, setLoad] = useState<LoadState>({ status: 'idle' });
   const [showKey, setShowKey] = useState(false);
+  const [showGithubToken, setShowGithubToken] = useState(false);
   const [saved, setSaved] = useState(false);
   const [tab, setTab] = useState<SettingsTab>(initialTab);
   // First run: nothing usable was saved yet, so the form leads with a welcome and the key steps.
@@ -696,6 +697,32 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
                   update({ maxChars: Math.max(2000, Number(e.target.value) || DEFAULT_SETTINGS.maxChars) })
                 }
               />
+            </div>
+            <div className="field">
+              <label htmlFor="github-token">
+                {t('advanced.githubToken')} <span className="muted">{t('connect.optional')}</span>
+              </label>
+              <div className="row">
+                <input
+                  id="github-token"
+                  className="input"
+                  type={showGithubToken ? 'text' : 'password'}
+                  autoComplete="off"
+                  spellCheck={false}
+                  placeholder="github_pat_…"
+                  value={settings.githubToken}
+                  onChange={(e) => update({ githubToken: e.target.value.trim() })}
+                />
+                <button className="btn" onClick={() => setShowGithubToken(!showGithubToken)}>
+                  {showGithubToken ? t('connect.hide') : t('connect.show')}
+                </button>
+              </div>
+              <p className="hint">
+                {t('advanced.githubTokenHint')}{' '}
+                <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noreferrer">
+                  {t('advanced.githubTokenCreate')}
+                </a>
+              </p>
             </div>
             <p className="hint">{t('advanced.privacy')}</p>
           </section>

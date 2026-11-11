@@ -2,6 +2,8 @@ import { browser } from '#imports';
 import { t } from '@/lib/i18n';
 import { extractPdf, htmlToMarkdown, type ExtractedSource } from './extractors';
 import { extractVideo, youTubeVideoId } from './youtube';
+import { extractPullRequest, pullRequestRef } from './github';
+import { getSettings } from './settings';
 
 export async function getActiveTab() {
   const [tab] = await browser.tabs.query({ active: true, lastFocusedWindow: true });
@@ -29,7 +31,8 @@ async function fetchPdf(url: string) {
 }
 
 /**
- * Reads a tab: HTML → Markdown via Readability, PDF via pdf.js, YouTube videos from their captions.
+ * Reads a tab: HTML → Markdown via Readability, PDF via pdf.js, YouTube videos from their captions,
+ * GitHub pull requests through GitHub's API (lib/github.ts).
  * Access comes from activeTab, granted when the user opens the popup or uses the context menu on
  * that tab. The grant outlives the popup, so the result page can read the tab afterwards.
  */
@@ -39,6 +42,8 @@ export async function extractTab(tabId: number): Promise<ExtractedSource & { tab
   if (!isReadableUrl(tab.url)) throw new Error(t('errors:page.restricted'));
 
   if (youTubeVideoId(tab.url)) return extractVideo(tabId, tab.url);
+  const pr = pullRequestRef(tab.url);
+  if (pr) return { ...(await extractPullRequest(pr, (await getSettings()).githubToken)), tabId };
   if (isPdfUrl(tab.url)) {
     return { kind: 'pdf', title: tab.title || tab.url, origin: tab.url, content: await fetchPdf(tab.url), tabId };
   }

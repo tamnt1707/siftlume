@@ -32,7 +32,7 @@ const saveLength = (settings: Settings, length: SummaryLength) => void settingsI
 export const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed', 'full'];
 
 /** Label of the start button: "Summarize this page", "Explain text"…, or the custom mode's name. */
-export function runLabel(kind: 'run' | 'runText' | 'runVideo', mode: ModeId, custom: CustomMode[]) {
+export function runLabel(kind: 'run' | 'runText' | 'runVideo' | 'runPr', mode: ModeId, custom: CustomMode[]) {
   const resolved = resolveMode(mode, custom);
   return resolved.custom
     ? t('picker:runCustom', { name: resolved.custom.name.trim() })

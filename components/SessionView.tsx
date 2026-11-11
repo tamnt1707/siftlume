@@ -43,6 +43,9 @@ const hostOf = (url: string) => {
   }
 };
 
+/** Sources whose quotes can be highlighted in the page they came from. */
+const inPage = (kind: string) => kind === 'webpage' || kind === 'pr';
+
 export function SessionView({
   ctrl,
   notify,
@@ -102,7 +105,7 @@ export function SessionView({
     // A linked page read without a tab (Deep read): open it, then highlight once it has loaded.
     if (!tabId && origin?.startsWith('http')) {
       const tab = await browser.tabs.create({ url: origin });
-      if (target.kind !== 'webpage' || tab.id === undefined) return;
+      if (!inPage(target.kind) || tab.id === undefined) return;
       const id = tab.id;
       const onUpdated = (changed: number, change: { status?: string }) => {
         if (changed !== id || change.status !== 'complete') return;
@@ -141,7 +144,7 @@ export function SessionView({
       }
     }
 
-    if (target.kind !== 'webpage' || !tabId) return notify(t('toast.highlightOnlyWeb'));
+    if (!inPage(target.kind) || !tabId) return notify(t('toast.highlightOnlyWeb'));
     try {
       // Bring the original tab to the front, then highlight.
       const tab = await browser.tabs.update(tabId, { active: true });

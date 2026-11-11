@@ -48,6 +48,13 @@
     "video": "วิดีโอนี้",
     "tabs": "หลายแท็บ",
     "text": "ข้อความ",
-    "file": "ไฟล์"
+    "file": "ไฟล์",
+    "pr": "Pull request นี้"
+  },
+  "runPr": {
+    "summary": "สรุป pull request นี้",
+    "explain": "อธิบาย pull request นี้",
+    "critique": "รีวิว pull request นี้",
+    "action": "เช็กลิสต์ก่อน merge"
   }
 }

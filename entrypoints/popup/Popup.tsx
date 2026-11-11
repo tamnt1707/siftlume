@@ -10,6 +10,7 @@ import { ModelSwitcher } from '@/components/ModelSwitcher';
 import { AnalysisChoice, runLabel } from '@/components/ModePicker';
 import type { ModeId } from '@/lib/modes';
 import { useSettings } from '@/components/useSettings';
+import { pullRequestRef } from '@/lib/github';
 import { useVideoProbe } from '@/components/useVideoProbe';
 import { DeepToggle } from '@/components/DeepRead';
 import { getActiveTab, isReadableUrl } from '@/lib/page';
@@ -42,6 +43,8 @@ export default function Popup() {
   }, [problem]);
   const canReadTab = Boolean(tab?.id) && isReadableUrl(tab?.url);
   const video = useVideoProbe(canReadTab ? tab?.id : undefined, tab?.url);
+  const isPr = Boolean(pullRequestRef(tab?.url));
+  const canDeep = canReadTab && !video.isVideo && !isPr;
   const [deep, setDeep] = useState(false);
 
   /** History, uploads and past sessions always open as a full page. */
@@ -91,15 +94,15 @@ export default function Popup() {
 
         <AnalysisChoice settings={settings} mode={mode} onModeChange={setMode} compact />
 
-        {canReadTab && !video.isVideo && <DeepToggle checked={deep} onChange={setDeep} />}
+        {canDeep && <DeepToggle checked={deep} onChange={setDeep} />}
         <button
           className="btn btn--primary btn--hero"
           disabled={!canReadTab || Boolean(problem) || Boolean(video.blocked)}
-          onClick={() => tab?.id && submit({ type: 'tab', tabId: tab.id, deep: deep && !video.isVideo })}
+          onClick={() => tab?.id && submit({ type: 'tab', tabId: tab.id, deep: deep && canDeep })}
         >
           <span className="btn__label">
             <Icon icon={SparklesIcon} />
-            {runLabel(video.isVideo ? 'runVideo' : 'run', mode, settings.customModes)}
+            {runLabel(video.isVideo ? 'runVideo' : isPr ? 'runPr' : 'run', mode, settings.customModes)}
           </span>
           {tab?.title && <span className="btn__sub">{canReadTab ? tab.title : t('picker:cannotRead')}</span>}
           {(video.blocked || video.note) && <span className="btn__sub">{video.blocked ?? video.note}</span>}

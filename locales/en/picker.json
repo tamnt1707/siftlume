@@ -48,6 +48,13 @@
     "video": "This video",
     "tabs": "Several tabs",
     "text": "Text",
-    "file": "File"
+    "file": "File",
+    "pr": "This pull request"
+  },
+  "runPr": {
+    "summary": "Summarize this pull request",
+    "explain": "Explain this pull request",
+    "critique": "Review this pull request",
+    "action": "Get the merge checklist"
   }
 }

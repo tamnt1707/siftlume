@@ -19,7 +19,8 @@
     "csv": "CSV",
     "markdown": "Markdown",
     "video": "影片",
-    "multi": "多個分頁"
+    "multi": "多個分頁",
+    "pr": "拉取請求"
   },
   "kindShort": {
     "webpage": "網頁",
@@ -28,7 +29,8 @@
     "csv": "CSV",
     "markdown": "MD",
     "video": "影片",
-    "multi": "分頁"
+    "multi": "分頁",
+    "pr": "PR"
   },
   "history": {
     "empty": "尚無歷史紀錄。",
