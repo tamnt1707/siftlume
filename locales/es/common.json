@@ -55,7 +55,8 @@
       "sift": "Filtrar",
       "draw": "Crear"
     },
-    "elapsed": "{{seconds}} s"
+    "elapsed": "{{seconds}} s",
+    "nanoSlow": "Gemini Nano funciona en este ordenador, así que es lento: normalmente 1–3 minutos, más en páginas largas."
   },
   "modeLabel": "Análisis",
   "modes": {

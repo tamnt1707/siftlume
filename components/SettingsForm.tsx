@@ -10,6 +10,8 @@ import {
 } from '@hugeicons/core-free-icons';
 import { AboutPanel } from '@/components/AboutPanel';
 import { Icon } from '@/components/Icon';
+import { NanoSetup } from '@/components/NanoSetup';
+import { hasNano } from '@/lib/nano';
 import { useTranslation } from 'react-i18next';
 import { AppearancePanel } from '@/components/AppearancePanel';
 import { LanguagePicker } from '@/components/LanguagePicker';
@@ -77,7 +79,7 @@ function without<T>(record: Partial<Record<ProviderId, T>>, id: ProviderId): Par
 }
 
 /** Providers with setup steps in locales/<lang>/settings.json → keyGuide. */
-type GuideId = Exclude<ProviderId, 'custom'>;
+type GuideId = Exclude<ProviderId, 'custom' | 'chrome'>;
 
 /** Numbered steps to get a key (or install a local app), a cost note and a link to the provider. */
 function KeyGuide({ id, open }: { id: GuideId; open: boolean }) {
@@ -190,7 +192,7 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
     !preset.keyPrefix.some((p) => cfg.apiKey.trim().startsWith(p)),
   );
   const urlInvalid = Boolean(cfg.baseUrl && !originPattern(cfg.baseUrl));
-  const urlMissing = !baseUrl;
+  const urlMissing = !preset.builtin && !baseUrl;
   const modelMissing = !cfg.model.trim();
   const invalid = keyMissing || urlInvalid || urlMissing || modelMissing;
 
@@ -393,23 +395,26 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
           <section className="panel">
             <h2>{t('provider.heading')}</h2>
             <div className="provider-grid">
-              {(Object.keys(PROVIDERS) as ProviderId[]).map((pid) => (
-                <button
-                  key={pid}
-                  className={`provider ${pid === id ? 'provider--active' : ''}`}
-                  onClick={() => update({ provider: pid })}
-                >
-                  <span>{PROVIDERS[pid].label}</span>
-                  {(PROVIDERS[pid].free || PROVIDERS[pid].local) && (
-                    <span className="provider__badge">
-                      {PROVIDERS[pid].local ? t('provider.local') : t('provider.free')}
-                    </span>
-                  )}
-                  {isProviderConnected(settings, pid, modelCache) && (
-                    <span className="provider__dot" title={t('provider.connected')} />
-                  )}
-                </button>
-              ))}
+              {(Object.keys(PROVIDERS) as ProviderId[])
+                // Gemini Nano only where the browser has it (Chrome desktop).
+                .filter((pid) => !PROVIDERS[pid].builtin || hasNano() || pid === id)
+                .map((pid) => (
+                  <button
+                    key={pid}
+                    className={`provider ${pid === id ? 'provider--active' : ''}`}
+                    onClick={() => update({ provider: pid })}
+                  >
+                    <span>{PROVIDERS[pid].label}</span>
+                    {(PROVIDERS[pid].free || PROVIDERS[pid].local) && (
+                      <span className="provider__badge">
+                        {PROVIDERS[pid].local ? t('provider.local') : t('provider.free')}
+                      </span>
+                    )}
+                    {isProviderConnected(settings, pid, modelCache) && (
+                      <span className="provider__dot" title={t('provider.connected')} />
+                    )}
+                  </button>
+                ))}
             </div>
           </section>
 
@@ -451,27 +456,30 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
               </div>
             )}
 
-            {id !== 'custom' && (
+            {preset.builtin && <NanoSetup />}
+            {id !== 'custom' && id !== 'chrome' && (
               <KeyGuide key={id} id={id} open={setup || (preset.local ? !models.length : !cfg.apiKey)} />
             )}
 
-            <details
-              className="field"
-              open={id === 'custom' || preset.local || urlInvalid || (showErrors && urlMissing)}
-            >
-              <summary>{t('connect.baseUrl')}</summary>
-              <input
-                className="input"
-                spellCheck={false}
-                placeholder={preset.defaultBaseUrl || 'https://your-server/v1'}
-                value={cfg.baseUrl}
-                aria-invalid={urlInvalid || (showErrors && urlMissing)}
-                onChange={(e) => updateProvider({ baseUrl: e.target.value.trim() })}
-              />
-              {(urlInvalid || (showErrors && urlMissing)) && (
-                <p className="hint hint--error">{t('validate.baseUrl')}</p>
-              )}
-            </details>
+            {!preset.builtin && (
+              <details
+                className="field"
+                open={id === 'custom' || preset.local || urlInvalid || (showErrors && urlMissing)}
+              >
+                <summary>{t('connect.baseUrl')}</summary>
+                <input
+                  className="input"
+                  spellCheck={false}
+                  placeholder={preset.defaultBaseUrl || 'https://your-server/v1'}
+                  value={cfg.baseUrl}
+                  aria-invalid={urlInvalid || (showErrors && urlMissing)}
+                  onChange={(e) => updateProvider({ baseUrl: e.target.value.trim() })}
+                />
+                {(urlInvalid || (showErrors && urlMissing)) && (
+                  <p className="hint hint--error">{t('validate.baseUrl')}</p>
+                )}
+              </details>
+            )}
 
             {hasConnection &&
               (confirmRemove ? (
@@ -495,59 +503,65 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
               ))}
           </section>
 
-          <section className="panel">
-            <h2>{t('model.heading')}</h2>
-            <div className="row">
-              <input
-                className="input"
-                list="model-list"
-                spellCheck={false}
-                placeholder={models.length ? t('model.searchPlaceholder') : t('model.idPlaceholder')}
-                value={cfg.model}
-                aria-invalid={showErrors && modelMissing}
-                onChange={(e) => pickModel(e.target.value)}
-              />
-              <button className="btn" onClick={onLoadClick} disabled={load.status === 'loading'}>
-                {load.status === 'loading' ? t('model.loading') : models.length ? t('model.refresh') : t('model.load')}
-              </button>
-            </div>
-            <datalist id="model-list">
-              {models.map((m) => (
-                <option key={m.id} value={m.id}>
-                  {m.label}
-                </option>
-              ))}
-            </datalist>
-            {modelLabel && <p className="hint">{modelLabel}</p>}
-            {showErrors && modelMissing && <p className="hint hint--error">{t('validate.model')}</p>}
-            {recommended && cfg.model !== recommended && (
-              <p className="model-tip">
-                <span>{t('model.recommended', { model: recommended })}</span>
-                <button className="btn btn--sm" onClick={() => recommended && pickModel(recommended)}>
-                  {t('model.useRecommended', { model: recommended })}
+          {!preset.builtin && (
+            <section className="panel">
+              <h2>{t('model.heading')}</h2>
+              <div className="row">
+                <input
+                  className="input"
+                  list="model-list"
+                  spellCheck={false}
+                  placeholder={models.length ? t('model.searchPlaceholder') : t('model.idPlaceholder')}
+                  value={cfg.model}
+                  aria-invalid={showErrors && modelMissing}
+                  onChange={(e) => pickModel(e.target.value)}
+                />
+                <button className="btn" onClick={onLoadClick} disabled={load.status === 'loading'}>
+                  {load.status === 'loading'
+                    ? t('model.loading')
+                    : models.length
+                      ? t('model.refresh')
+                      : t('model.load')}
                 </button>
-              </p>
-            )}
-            {load.message && (
-              <p className={`hint ${load.status === 'error' ? 'hint--error' : 'hint--ok'}`}>{load.message}</p>
-            )}
-
-            {models.length > 0 && (
-              <div className="model-list">
-                {sortedModels.slice(0, 60).map((m) => (
-                  <button
-                    key={m.id}
-                    className={`chip ${m.id === cfg.model ? 'chip--active' : ''}`}
-                    onClick={() => pickModel(m.id)}
-                    title={m.label}
-                  >
-                    {m.id}
-                    {m.id === recommended && <span className="chip__badge">{t('model.recommendedBadge')}</span>}
-                  </button>
-                ))}
               </div>
-            )}
-          </section>
+              <datalist id="model-list">
+                {models.map((m) => (
+                  <option key={m.id} value={m.id}>
+                    {m.label}
+                  </option>
+                ))}
+              </datalist>
+              {modelLabel && <p className="hint">{modelLabel}</p>}
+              {showErrors && modelMissing && <p className="hint hint--error">{t('validate.model')}</p>}
+              {recommended && cfg.model !== recommended && (
+                <p className="model-tip">
+                  <span>{t('model.recommended', { model: recommended })}</span>
+                  <button className="btn btn--sm" onClick={() => recommended && pickModel(recommended)}>
+                    {t('model.useRecommended', { model: recommended })}
+                  </button>
+                </p>
+              )}
+              {load.message && (
+                <p className={`hint ${load.status === 'error' ? 'hint--error' : 'hint--ok'}`}>{load.message}</p>
+              )}
+
+              {models.length > 0 && (
+                <div className="model-list">
+                  {sortedModels.slice(0, 60).map((m) => (
+                    <button
+                      key={m.id}
+                      className={`chip ${m.id === cfg.model ? 'chip--active' : ''}`}
+                      onClick={() => pickModel(m.id)}
+                      title={m.label}
+                    >
+                      {m.id}
+                      {m.id === recommended && <span className="chip__badge">{t('model.recommendedBadge')}</span>}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </section>
+          )}
         </Tabs.Content>
 
         <Tabs.Content value="summary" className="settings-tabs__panel">

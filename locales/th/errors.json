@@ -46,5 +46,14 @@
   },
   "deep": {
     "noneRead": "อ่านลิงก์ที่เลือกไม่ได้เลย"
+  },
+  "nano": {
+    "unsupported": "เบราว์เซอร์นี้ไม่มี Gemini Nano เลือกผู้ให้บริการ AI อื่นในการตั้งค่า",
+    "unavailable": "อุปกรณ์นี้ใช้ Gemini Nano ไม่ได้ เลือกผู้ให้บริการ AI อื่นในการตั้งค่า",
+    "notDownloaded": "ยังไม่ได้ดาวน์โหลด Gemini Nano เปิดการตั้งค่า → AI แล้วกดดาวน์โหลด Gemini Nano",
+    "badAnswer": "อ่านคำตอบของ Gemini Nano ไม่ได้ ลองอีกครั้ง",
+    "englishOnly": "Gemini Nano ยังเขียนภาษานี้ไม่ได้ สรุปจึงเป็นภาษาอังกฤษ",
+    "tooLong": "ยาวเกินไปสำหรับ Gemini Nano ลองข้อความที่สั้นลงหรือผู้ให้บริการ AI อื่น",
+    "notSupported": "Gemini Nano ไม่รองรับภาษาหรือคำขอนี้"
   }
 }

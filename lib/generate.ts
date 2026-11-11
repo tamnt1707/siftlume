@@ -11,7 +11,8 @@ import {
   validateProgram,
 } from './openui';
 import { readStored, type QaTurn, type SessionSource } from './history';
-import type { Settings } from './settings';
+import { getActiveProvider, type Settings } from './settings';
+import { nanoAnswer, nanoSummary } from './nano';
 import { MODE_TASK, resolveMode } from './modes';
 
 /** The user turn asking for the analysis in the session's mode. */
@@ -108,6 +109,7 @@ export function generateSummary(
   args: BaseArgs & { previousProgram?: string; instruction?: string },
 ): Promise<GenerateResult> {
   const { settings, source, previousProgram = '', instruction } = args;
+  if (getActiveProvider(settings).preset.builtin) return nanoGenerate(args);
   const messages: ModelMessage[] = [
     { role: 'user', content: `${buildSourceMessage(source, source.truncated)}\n\n${modeTask(settings, source)}` },
   ];
@@ -125,10 +127,37 @@ export function generateSummary(
   });
 }
 
-export function generateAnswer(
+/**
+ * Gemini Nano fills a JSON schema instead of writing openui-lang (see lib/nano.ts). A change
+ * request makes a new version from the source, with the request added.
+ */
+async function nanoGenerate(args: BaseArgs & { instruction?: string }): Promise<GenerateResult> {
+  const { program, note } = await nanoSummary({
+    settings: args.settings,
+    source: args.source,
+    instruction: args.instruction,
+    signal: args.signal,
+    onProgram: (program) => args.onStream(fence(program)),
+  });
+  args.onStream(fence(program));
+  return { program, prose: note, raw: fence(program), errors: [], repaired: false };
+}
+
+export async function generateAnswer(
   args: BaseArgs & { history: QaTurn[]; question: string; summaryProgram: string },
 ): Promise<GenerateResult> {
   const { settings, source, history, question, summaryProgram } = args;
+  if (getActiveProvider(settings).preset.builtin) {
+    const text = await nanoAnswer({
+      settings,
+      source,
+      question,
+      signal: args.signal,
+      onText: args.onStream,
+      history: history.map((h) => ({ question: h.question, answer: readStored(h.answer).content })),
+    });
+    return { program: '', prose: text, raw: text, errors: [], repaired: false };
+  }
   const messages: ModelMessage[] = [
     { role: 'user', content: `${buildSourceMessage(source, source.truncated)}\n\n${modeTask(settings, source)}` },
   ];

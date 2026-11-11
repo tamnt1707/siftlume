@@ -167,6 +167,23 @@ export async function extractFile(file: File): Promise<ExtractedSource> {
   throw new Error(t('errors:file.unsupported', { type: ext || file.type }));
 }
 
+/** Splits text at paragraph breaks into parts of at most `size` characters. */
+export function splitParts(text: string, size: number) {
+  const out: string[] = [];
+  let current = '';
+  for (const para of text.split(/\n{2,}/)) {
+    if (current && current.length + para.length + 2 > size) {
+      out.push(current);
+      current = '';
+    }
+    if (para.length > size) {
+      for (let i = 0; i < para.length; i += size) out.push(para.slice(i, i + size));
+    } else current = current ? `${current}\n\n${para}` : para;
+  }
+  if (current) out.push(current);
+  return out;
+}
+
 export function truncate(content: string, maxChars: number): { content: string; truncated: boolean } {
   if (content.length <= maxChars) return { content, truncated: false };
   return { content: content.slice(0, maxChars), truncated: true };

@@ -46,5 +46,14 @@
   },
   "deep": {
     "noneRead": "選んだリンクはどれも読み取れませんでした。"
+  },
+  "nano": {
+    "unsupported": "このブラウザには Gemini Nano がありません。設定で別の AI プロバイダを選んでください。",
+    "unavailable": "この端末では Gemini Nano を実行できません。設定で別の AI プロバイダを選んでください。",
+    "notDownloaded": "Gemini Nano はまだダウンロードされていません。設定 → AI で「Gemini Nano をダウンロード」をクリックしてください。",
+    "badAnswer": "Gemini Nano の回答を読み取れませんでした。もう一度お試しください。",
+    "englishOnly": "Gemini Nano はまだこの言語を書けないため、要約は英語です。",
+    "tooLong": "Gemini Nano には長すぎます。短いテキストか別の AI プロバイダをお試しください。",
+    "notSupported": "Gemini Nano はこの言語またはリクエストに対応していません。"
   }
 }

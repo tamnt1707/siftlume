@@ -27,9 +27,12 @@ export function SiftLoader({
   title,
   variant = 'block',
   onStop,
+  note,
 }: {
   stage: SiftStage;
   title: string;
+  /** A line under the steps, e.g. that an on-device model is slow. */
+  note?: string;
   variant?: 'block' | 'overlay' | 'strip';
   onStop?: () => void;
 }) {
@@ -60,6 +63,7 @@ export function SiftLoader({
             </li>
           ))}
         </ol>
+        {note && <p className="sift-loader__note">{note}</p>}
       </div>
       <span className="sift-loader__time">{seconds >= 2 ? t('loader.elapsed', { seconds }) : ''}</span>
       {onStop && (

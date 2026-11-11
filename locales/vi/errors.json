@@ -46,5 +46,14 @@
   },
   "deep": {
     "noneRead": "Không đọc được liên kết nào trong số đã chọn."
+  },
+  "nano": {
+    "unsupported": "Trình duyệt này không có Gemini Nano. Hãy chọn nhà cung cấp AI khác trong Cài đặt.",
+    "unavailable": "Máy này không chạy được Gemini Nano. Hãy chọn nhà cung cấp AI khác trong Cài đặt.",
+    "notDownloaded": "Chưa tải Gemini Nano. Mở Cài đặt → AI và bấm Tải Gemini Nano.",
+    "badAnswer": "Gemini Nano trả về kết quả không đọc được. Hãy thử lại.",
+    "englishOnly": "Gemini Nano chưa viết được ngôn ngữ này nên bản tóm tắt là tiếng Anh.",
+    "tooLong": "Quá dài với Gemini Nano. Hãy chọn đoạn ngắn hơn hoặc dùng nhà cung cấp AI khác.",
+    "notSupported": "Gemini Nano không hỗ trợ ngôn ngữ hoặc yêu cầu này."
   }
 }

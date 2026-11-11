@@ -46,5 +46,14 @@
   },
   "deep": {
     "noneRead": "所选链接都无法读取。"
+  },
+  "nano": {
+    "unsupported": "此浏览器没有 Gemini Nano。请在设置中选择其他 AI 提供商。",
+    "unavailable": "此设备无法运行 Gemini Nano。请在设置中选择其他 AI 提供商。",
+    "notDownloaded": "尚未下载 Gemini Nano。打开设置 → AI，点击下载 Gemini Nano。",
+    "badAnswer": "无法读取 Gemini Nano 的回答。请重试。",
+    "englishOnly": "Gemini Nano 暂时无法用这种语言写作，所以摘要是英文的。",
+    "tooLong": "内容对 Gemini Nano 来说太长。请尝试更短的文本或其他 AI 提供商。",
+    "notSupported": "Gemini Nano 不支持此语言或请求。"
   }
 }

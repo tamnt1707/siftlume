@@ -21,7 +21,7 @@ import { canDeepRead, DeepRead } from './DeepRead';
 import { REFINE_PROMPTS, type RefineId } from '@/lib/refine';
 import { GenUI, type GenUIAction } from './GenUI';
 import { ResultToolbar, readingMinutes } from './ResultToolbar';
-import type { Settings } from '@/lib/settings';
+import { PROVIDERS, type Settings } from '@/lib/settings';
 import { Icon } from './Icon';
 import { SiftLoader } from './SiftLoader';
 import type { SessionController } from './useSession';
@@ -183,6 +183,8 @@ export function SessionView({
   const streamedCode = ctrl.phase === 'summarizing' ? splitInline(ctrl.streamRaw).code : '';
   const summaryResponse = streamedCode || summary.content;
   const summaryStreaming = ctrl.phase === 'summarizing';
+  // Gemini Nano runs on the device: say up front that it takes a while.
+  const nano = PROVIDERS[settings.provider]?.builtin;
 
   /**
    * One loading state for every (re)analysis:
@@ -209,6 +211,7 @@ export function SessionView({
         )}
         variant={summary.content ? 'overlay' : 'block'}
         onStop={ctrl.stop}
+        note={nano ? t('common:loader.nanoSlow') : undefined}
       />
     );
   const dimmed = reworking && Boolean(summary.content);

@@ -245,5 +245,17 @@
     "base": "Baseado em",
     "remove": "Remover",
     "incomplete": "Adicione um nome e o que você quer para usar este modo."
+  },
+  "nano": {
+    "about": "O Gemini Nano vem no Chrome e roda neste computador: grátis, sem chave de API, e nada do que você lê sai do seu dispositivo. Ele é bem menor que os modelos na nuvem, então os resumos são mais simples (sem gráficos ou diagramas) e páginas longas demoram mais.",
+    "unsupported": "Este navegador não tem o Gemini Nano. É preciso o Chrome 138 ou mais recente no Windows, macOS, Linux ou em um Chromebook Plus.",
+    "unavailable": "O Gemini Nano não roda neste dispositivo. O Chrome precisa de 22 GB livres em disco e de uma GPU com mais de 4 GB de memória (ou 16 GB de RAM e 4 núcleos).",
+    "ready": "O Gemini Nano está pronto neste dispositivo.",
+    "downloading": "Baixando o Gemini Nano… {{percent}}%",
+    "download": "Baixar o Gemini Nano",
+    "resume": "Continuar o download",
+    "downloadHint": "Um único download de alguns GB, de preferência em uma conexão sem limite de dados.",
+    "limits": "O Gemini Nano escreve em inglês, japonês, espanhol, alemão e francês. Resumos em outros idiomas são escritos em inglês.",
+    "slow": "Lento: um resumo costuma levar 1–3 minutos, e páginas longas vários minutos. Modelos na nuvem levam segundos."
   }
 }

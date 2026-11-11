@@ -13,6 +13,21 @@ import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../lib/review-examp
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from '../lib/domain-example';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../lib/mode-example';
 import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from '../lib/analysis-example';
+import { nanoProgram } from '../lib/nano-program';
+
+/** Gemini Nano's answer with every field filled, for a web page and for a file. */
+const NANO_ANSWER = {
+  title: 'Acme "Q3" earnings',
+  tldr: 'Cloud grew 18% while hardware shrank.',
+  keyNumbers: [
+    { value: '$4.2B', label: 'revenue' },
+    { value: '31%', label: 'margin' },
+  ],
+  takeaways: [{ text: 'Cloud leads growth', detail: 'Subscriptions replace servers' }, { text: 'Hardware fell again' }],
+  steps: ['Read the 10-Q', 'Check guidance'],
+  sections: [{ heading: 'Risks', points: ['Chip supply', 'FX: \\ and "quotes"\nnew line'] }],
+  followUps: ['What is the 2026 outlook?'],
+};
 
 const parser = createParser(library.toJSONSchema(), 'Card');
 const examples: Record<string, string> = {
@@ -30,6 +45,8 @@ const examples: Record<string, string> = {
   'policy-debate-example': POLICY_DEBATE_EXAMPLE,
   'decision-example': DECISION_EXAMPLE,
   'code-tutorial-example': CODE_TUTORIAL_EXAMPLE,
+  'nano-program-web': nanoProgram(NANO_ANSWER, { title: 'Acme', origin: 'https://ir.acme.example' }, 6),
+  'nano-program-file': nanoProgram({ title: '', tldr: 'Short.', takeaways: [{ text: 'One' }] }, { title: 'a.pdf' }, 1),
   ...Object.fromEntries(CSV_TOOL_EXAMPLES.map((e, i) => [`csv-tools[${i}]`, e])),
 };
 

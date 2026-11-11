@@ -46,5 +46,14 @@
   },
   "deep": {
     "noneRead": "None of the chosen links could be read."
+  },
+  "nano": {
+    "unsupported": "This browser does not have Gemini Nano. Choose another AI provider in Settings.",
+    "unavailable": "Gemini Nano cannot run on this device. Choose another AI provider in Settings.",
+    "notDownloaded": "Gemini Nano is not downloaded yet. Open Settings → AI and click Download Gemini Nano.",
+    "badAnswer": "Gemini Nano gave an answer that could not be read. Try again.",
+    "englishOnly": "Gemini Nano cannot write this language yet, so the summary is in English.",
+    "tooLong": "Too long for Gemini Nano. Try a shorter selection or another AI provider.",
+    "notSupported": "Gemini Nano does not support this language or request."
   }
 }

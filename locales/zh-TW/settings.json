@@ -243,5 +243,17 @@
     "base": "以此為基礎",
     "remove": "刪除",
     "incomplete": "填寫名稱和內容後才能使用這個閱讀方式。"
+  },
+  "nano": {
+    "about": "Gemini Nano 內建於 Chrome，在這台電腦上執行：免費、不需 API 金鑰，你閱讀的內容不會離開裝置。它比雲端模型小得多，所以摘要較簡單（沒有圖表和示意圖），長頁面也較慢。",
+    "unsupported": "此瀏覽器沒有 Gemini Nano。需要 Windows、macOS、Linux 或 Chromebook Plus 上的 Chrome 138 以上版本。",
+    "unavailable": "此裝置無法執行 Gemini Nano。Chrome 需要 22 GB 可用磁碟空間和記憶體超過 4 GB 的 GPU（或 16 GB RAM 和 4 核心 CPU）。",
+    "ready": "Gemini Nano 已在此裝置上就緒。",
+    "downloading": "正在下載 Gemini Nano… {{percent}}%",
+    "download": "下載 Gemini Nano",
+    "resume": "繼續下載",
+    "downloadHint": "只需下載一次，約幾 GB，建議使用不限流量的網路。",
+    "limits": "Gemini Nano 可以用英文、日文、西班牙文、德文和法文寫作。其他語言的摘要會用英文寫。",
+    "slow": "較慢：一次摘要通常需要 1–3 分鐘，長頁面可能要幾分鐘。雲端模型只需幾秒。"
   }
 }

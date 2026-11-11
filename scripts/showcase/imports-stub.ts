@@ -22,8 +22,18 @@ export const SHOWCASE_CUSTOM_MODES = q.has('custom')
     ]
   : [];
 const memory: Record<string, unknown> = {
-  'local:settings': { theme: q.has('dark') ? 'dark' : 'light', customModes: SHOWCASE_CUSTOM_MODES },
+  'local:settings': {
+    theme: q.has('dark') ? 'dark' : 'light',
+    customModes: SHOWCASE_CUSTOM_MODES,
+    // ?nano=<availability>: Settings with Gemini Nano chosen, in that state.
+    ...(q.has('nano') ? { provider: 'chrome' } : {}),
+  },
 };
+if (q.has('nano'))
+  (globalThis as Record<string, unknown>).LanguageModel = {
+    availability: async () => q.get('nano') || 'downloadable',
+    create: async () => ({ destroy() {} }),
+  };
 export const storage = {
   defineItem: (key: string, opts: { fallback: unknown }) => ({
     getValue: async () => memory[key] ?? opts.fallback,

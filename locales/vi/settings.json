@@ -243,5 +243,17 @@
     "base": "Dựa trên",
     "remove": "Xoá",
     "incomplete": "Thêm tên và nội dung để dùng cách đọc này."
+  },
+  "nano": {
+    "about": "Gemini Nano có sẵn trong Chrome và chạy ngay trên máy này: miễn phí, không cần API key, nội dung bạn đọc không rời khỏi máy. Model nhỏ hơn nhiều so với model trên mây nên bản tóm tắt đơn giản hơn (không có biểu đồ, sơ đồ) và trang dài sẽ chậm hơn.",
+    "unsupported": "Trình duyệt này không có Gemini Nano. Cần Chrome 138 trở lên trên Windows, macOS, Linux hoặc Chromebook Plus.",
+    "unavailable": "Máy này không chạy được Gemini Nano. Chrome cần 22 GB trống trên ổ đĩa và GPU có hơn 4 GB bộ nhớ (hoặc 16 GB RAM và CPU 4 nhân).",
+    "ready": "Gemini Nano đã sẵn sàng trên máy này.",
+    "downloading": "Đang tải Gemini Nano… {{percent}}%",
+    "download": "Tải Gemini Nano",
+    "resume": "Tải tiếp",
+    "downloadHint": "Chỉ tải một lần, vài GB, nên dùng mạng không giới hạn dung lượng.",
+    "limits": "Gemini Nano viết được tiếng Anh, Nhật, Tây Ban Nha, Đức và Pháp. Tóm tắt bằng ngôn ngữ khác sẽ được viết bằng tiếng Anh.",
+    "slow": "Chậm: mỗi bản tóm tắt thường mất 1–3 phút, trang dài có thể vài phút. Model trên mây chỉ mất vài giây."
   }
 }

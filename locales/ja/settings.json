@@ -243,5 +243,17 @@
     "base": "ベース",
     "remove": "削除",
     "incomplete": "この読み方を使うには名前と内容を入力してください。"
+  },
+  "nano": {
+    "about": "Gemini Nano は Chrome に組み込まれ、このパソコン上で動きます。無料で API キー不要、読んだ内容は端末の外に出ません。クラウドのモデルよりずっと小さいため、要約はシンプルになり（グラフや図なし）、長いページは時間がかかります。",
+    "unsupported": "このブラウザには Gemini Nano がありません。Windows、macOS、Linux、Chromebook Plus の Chrome 138 以降が必要です。",
+    "unavailable": "この端末では Gemini Nano を実行できません。22 GB の空き容量と 4 GB を超えるメモリの GPU（または 16 GB の RAM と 4 コアの CPU）が必要です。",
+    "ready": "Gemini Nano はこの端末で使えます。",
+    "downloading": "Gemini Nano をダウンロード中… {{percent}}%",
+    "download": "Gemini Nano をダウンロード",
+    "resume": "ダウンロードを続ける",
+    "downloadHint": "数 GB を一度だけダウンロードします。通信量に制限のない回線で行ってください。",
+    "limits": "Gemini Nano が書けるのは英語、日本語、スペイン語、ドイツ語、フランス語です。ほかの言語の要約は英語で書かれます。",
+    "slow": "低速：要約には通常 1〜3 分、長いページでは数分かかります。クラウドのモデルなら数秒です。"
   }
 }

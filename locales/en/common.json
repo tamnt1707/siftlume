@@ -54,7 +54,8 @@
       "sift": "Sift",
       "draw": "Draw"
     },
-    "elapsed": "{{seconds}} s"
+    "elapsed": "{{seconds}} s",
+    "nanoSlow": "Gemini Nano runs on this computer, so it is slow: usually 1–3 minutes, longer for long pages."
   },
   "modeLabel": "Analysis",
   "modes": {
