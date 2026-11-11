@@ -292,7 +292,7 @@
       "เปิด \"สร้างโทเค็นบน GitHub\" ด้านล่างแล้วลงชื่อเข้าใช้ จะเปิด GitHub → Settings → Developer settings → Fine-grained tokens",
       "ตั้งชื่อ (เช่น Siftlume) วันหมดอายุ และ Resource owner: ตัวคุณ หรือองค์กรที่คุณรีวิว repository",
       "Repository access: \"All repositories\" หรือ \"Only select repositories\" สำหรับเฉพาะที่คุณรีวิว",
-      "ใน Permissions → Repositories ตั้ง Pull requests, Contents และ Checks เป็น \"Read-only\" GitHub จะเพิ่ม Metadata ให้เอง ไม่ต้องเพิ่มอย่างอื่น",
+      "ใน Permissions → Repositories เพิ่ม Pull requests และ Contents ตั้งเป็น \"Read-only\" ทั้งคู่ หากต้องการผล CI ให้เพิ่ม Actions และ Commit statuses เป็น \"Read-only\" ด้วย (ไม่บังคับ) GitHub จะเพิ่ม Metadata ให้เอง ไม่ต้องเพิ่มอย่างอื่น",
       "กด Generate token คัดลอก วางในช่องด้านบน กดตรวจสอบ แล้วบันทึก"
     ],
     "create": "สร้างโทเค็นบน GitHub"

@@ -292,7 +292,7 @@
       "Bấm \"Tạo token trên GitHub\" bên dưới rồi đăng nhập. Nút này mở GitHub → Settings → Developer settings → Fine-grained tokens.",
       "Đặt tên (ví dụ Siftlume), chọn ngày hết hạn, và chọn Resource owner: chính bạn, hoặc tổ chức có các repo bạn hay review.",
       "Repository access: chọn \"All repositories\", hoặc \"Only select repositories\" nếu chỉ cần vài repo.",
-      "Ở Permissions → Repositories, đặt Pull requests, Contents và Checks thành \"Read-only\". GitHub tự thêm Metadata. Không thêm gì khác.",
+      "Ở Permissions → Repositories, thêm Pull requests và Contents, đều để \"Read-only\". Muốn xem kết quả CI thì thêm Actions và Commit statuses, cũng \"Read-only\" (không bắt buộc). GitHub tự thêm Metadata. Không thêm gì khác.",
       "Bấm Generate token, sao chép, dán vào ô ở trên, bấm Kiểm tra rồi Lưu."
     ],
     "create": "Tạo token trên GitHub"

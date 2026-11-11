@@ -292,7 +292,7 @@
       "下の「GitHub でトークンを作成」を開いてサインインします。GitHub → Settings → Developer settings → Fine-grained tokens が開きます。",
       "名前（例：Siftlume）、有効期限、Resource owner（自分、またはレビューするリポジトリの組織）を設定します。",
       "Repository access：「All repositories」、またはレビューするものだけなら「Only select repositories」。",
-      "Permissions → Repositories で Pull requests、Contents、Checks を「Read-only」にします。Metadata は自動で追加されます。他は追加しません。",
+      "Permissions → Repositories で Pull requests と Contents を追加し、どちらも「Read-only」にします。CI の結果も見たい場合は Actions と Commit statuses も「Read-only」で追加します（任意）。Metadata は自動で追加されます。他は追加しません。",
       "Generate token を押してコピーし、上に貼り付け、「確認」を押してから保存します。"
     ],
     "create": "GitHub でトークンを作成"

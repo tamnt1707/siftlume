@@ -294,7 +294,7 @@
       "Ouvrez « Créer un jeton sur GitHub » ci-dessous et connectez-vous. Cela ouvre GitHub → Settings → Developer settings → Fine-grained tokens.",
       "Donnez-lui un nom (par exemple Siftlume), une date d’expiration et un Resource owner : vous, ou l’organisation dont vous relisez les dépôts.",
       "Repository access : « All repositories », ou « Only select repositories » pour ceux que vous relisez.",
-      "Dans Permissions → Repositories, réglez Pull requests, Contents et Checks sur « Read-only ». GitHub ajoute Metadata tout seul. Rien d’autre.",
+      "Dans Permissions → Repositories, ajoutez Pull requests et Contents, tous deux en « Read-only ». Pour les résultats de CI, ajoutez aussi Actions et Commit statuses en « Read-only » (facultatif). GitHub ajoute Metadata tout seul. Rien d’autre.",
       "Cliquez sur Generate token, copiez-le, collez-le ci-dessus, cliquez sur Vérifier, puis Enregistrer."
     ],
     "create": "Créer un jeton sur GitHub"

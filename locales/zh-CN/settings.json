@@ -292,7 +292,7 @@
       "打开下方的“在 GitHub 上创建令牌”并登录。它会打开 GitHub → Settings → Developer settings → Fine-grained tokens。",
       "填写名称（例如 Siftlume）、过期时间和 Resource owner：你自己，或你审查的仓库所属的组织。",
       "Repository access：选择“All repositories”，或只需部分仓库时选择“Only select repositories”。",
-      "在 Permissions → Repositories 中，把 Pull requests、Contents 和 Checks 设为“Read-only”。Metadata 由 GitHub 自动添加。不要添加其他权限。",
+      "在 Permissions → Repositories 中添加 Pull requests 和 Contents，都设为“Read-only”。如需查看 CI 结果，再添加 Actions 和 Commit statuses，同样设为“Read-only”（可选）。Metadata 由 GitHub 自动添加。不要添加其他权限。",
       "点击 Generate token，复制并粘贴到上方，点击“检查”，然后保存。"
     ],
     "create": "在 GitHub 上创建令牌"

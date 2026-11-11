@@ -292,7 +292,7 @@
       "아래 'GitHub에서 토큰 만들기'를 열고 로그인합니다. GitHub → Settings → Developer settings → Fine-grained tokens가 열립니다.",
       "이름(예: Siftlume), 만료일, Resource owner(본인 또는 리뷰하는 저장소의 조직)를 정합니다.",
       "Repository access: 'All repositories' 또는 리뷰하는 저장소만 'Only select repositories'.",
-      "Permissions → Repositories에서 Pull requests, Contents, Checks를 'Read-only'로 설정합니다. Metadata는 자동으로 추가됩니다. 다른 것은 추가하지 않습니다.",
+      "Permissions → Repositories에서 Pull requests와 Contents를 추가하고 둘 다 'Read-only'로 설정합니다. CI 결과도 보려면 Actions와 Commit statuses도 'Read-only'로 추가합니다(선택). Metadata는 자동으로 추가됩니다. 다른 것은 추가하지 않습니다.",
       "Generate token을 눌러 복사하고 위에 붙여 넣은 뒤 '확인'을 누르고 저장합니다."
     ],
     "create": "GitHub에서 토큰 만들기"

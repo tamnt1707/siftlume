@@ -295,7 +295,7 @@
       "Откройте «Создать токен на GitHub» ниже и войдите. Откроется GitHub → Settings → Developer settings → Fine-grained tokens.",
       "Укажите имя (например, Siftlume), срок действия и Resource owner: вы или организация, чьи репозитории вы проверяете.",
       "Repository access: «All repositories» или «Only select repositories», чтобы выбрать только нужные.",
-      "В Permissions → Repositories установите Pull requests, Contents и Checks в «Read-only». Metadata GitHub добавит сам. Больше ничего.",
+      "В Permissions → Repositories добавьте Pull requests и Contents, оба «Read-only». Чтобы видеть результаты CI, добавьте также Actions и Commit statuses как «Read-only» (необязательно). Metadata GitHub добавит сам. Больше ничего.",
       "Нажмите Generate token, скопируйте, вставьте выше, нажмите «Проверить», затем «Сохранить»."
     ],
     "create": "Создать токен на GitHub"

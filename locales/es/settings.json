@@ -294,7 +294,7 @@
       "Abre «Crear un token en GitHub» abajo e inicia sesión. Abre GitHub → Settings → Developer settings → Fine-grained tokens.",
       "Ponle un nombre (por ejemplo Siftlume), una fecha de caducidad y el Resource owner: tú o la organización cuyos repositorios revisas.",
       "Repository access: «All repositories», u «Only select repositories» para solo los que revisas.",
-      "En Permissions → Repositories, pon Pull requests, Contents y Checks en «Read-only». GitHub añade Metadata solo. Nada más.",
+      "En Permissions → Repositories, añade Pull requests y Contents, ambos en «Read-only». Para ver resultados de CI, añade también Actions y Commit statuses en «Read-only» (opcional). GitHub añade Metadata solo. Nada más.",
       "Pulsa Generate token, cópialo, pégalo arriba, pulsa Comprobar y luego Guardar."
     ],
     "create": "Crear un token en GitHub"

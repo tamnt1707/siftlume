@@ -292,7 +292,7 @@
       "開啟下方的「在 GitHub 上建立權杖」並登入。它會開啟 GitHub → Settings → Developer settings → Fine-grained tokens。",
       "填寫名稱（例如 Siftlume）、到期日和 Resource owner：你自己，或你審查的儲存庫所屬的組織。",
       "Repository access：選擇「All repositories」，或只需部分儲存庫時選擇「Only select repositories」。",
-      "在 Permissions → Repositories 中，把 Pull requests、Contents 和 Checks 設為「Read-only」。Metadata 由 GitHub 自動加入。不要加入其他權限。",
+      "在 Permissions → Repositories 中加入 Pull requests 和 Contents，都設為「Read-only」。如需查看 CI 結果，再加入 Actions 和 Commit statuses，同樣設為「Read-only」（選用）。Metadata 由 GitHub 自動加入。不要加入其他權限。",
       "按 Generate token，複製並貼到上方，按「檢查」，然後儲存。"
     ],
     "create": "在 GitHub 上建立權杖"

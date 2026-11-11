@@ -165,6 +165,38 @@ export async function checkGithubToken(token: string) {
   return data.resources.core;
 }
 
+/**
+ * CI results for a commit. Check runs need the "Checks" permission, which fine-grained tokens
+ * cannot have; then GitHub Actions runs ("Actions: read") and commit statuses from other CI
+ * ("Commit statuses: read") stand in. CI is a detail: a pull request still reads without it.
+ */
+async function ciChecks(base: string, sha: string, token: string): Promise<CheckRuns | null> {
+  try {
+    return (await call<CheckRuns>(`${base}/commits/${sha}/check-runs?per_page=100`, token)).data;
+  } catch {
+    const [runs, statuses] = await Promise.all([
+      call<{ workflow_runs: { name: string; status: string; conclusion: string | null }[] }>(
+        `${base}/actions/runs?head_sha=${sha}&per_page=100`,
+        token,
+      )
+        .then((r) => r.data.workflow_runs)
+        .catch(() => []),
+      call<{ statuses: { context: string; state: string }[] }>(`${base}/commits/${sha}/status`, token)
+        .then((r) => r.data.statuses)
+        .catch(() => []),
+    ]);
+    const check_runs = [
+      ...runs.map(({ name, status, conclusion }) => ({ name, status, conclusion })),
+      ...statuses.map((x) => ({
+        name: x.context,
+        status: x.state === 'pending' ? 'in_progress' : 'completed',
+        conclusion: x.state === 'success' ? 'success' : x.state === 'pending' ? null : 'failure',
+      })),
+    ];
+    return check_runs.length ? { check_runs } : null;
+  }
+}
+
 // ── Formatting ─────────────────────────────────────────────────────────────────
 
 /** Files whose diff tells a reader nothing: lockfiles, build output, minified or generated code. */
@@ -322,10 +354,7 @@ export async function extractPullRequest(ref: PullRequestRef, token: string): Pr
     list<Review>(`${base}/pulls/${ref.number}/reviews`, token, 200),
     pr.review_comments ? list<ReviewComment>(`${base}/pulls/${ref.number}/comments`, token, 300) : [],
     list<Commit>(`${base}/pulls/${ref.number}/commits`, token, 250),
-    // CI is a detail: a pull request still reads without it.
-    call<CheckRuns>(`${base}/commits/${pr.head.sha}/check-runs?per_page=100`, token)
-      .then((r) => r.data)
-      .catch(() => null),
+    ciChecks(base, pr.head.sha, token),
   ]);
 
   const url = pullRequestUrl(ref);
