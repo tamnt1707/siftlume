@@ -206,10 +206,7 @@
       "medium": "Médio",
       "high": "Alto",
       "provider-default": "Padrão do provedor"
-    },
-    "githubToken": "Token do GitHub",
-    "githubTokenHint": "Para pull requests em repositórios privados e mais de 60 leituras do GitHub por hora (um pull request usa cerca de 7). Use um token fine-grained com acesso somente leitura a Pull requests, Contents e Checks. Ele só é enviado para api.github.com.",
-    "githubTokenCreate": "Criar um token"
+    }
   },
   "footer": {
     "save": "Salvar",
@@ -238,7 +235,8 @@
     "summary": "Resumo",
     "appearance": "Aparência",
     "advanced": "Avançado",
-    "about": "Sobre"
+    "about": "Sobre",
+    "github": "GitHub"
   },
   "about": {
     "tagline": "Resuma qualquer página e fique só com o que importa.",
@@ -275,5 +273,30 @@
     "deleteYes": "Excluir e liberar {{size}} GB",
     "deleteNo": "Manter",
     "storage": "Baixado do Hugging Face e guardado no armazenamento do navegador para a extensão. Precisa de uma GPU com WebGPU (a maioria dos computadores dos últimos anos)."
+  },
+  "github": {
+    "heading": "GitHub",
+    "intro": "Para resumir ou revisar um pull request, o Siftlume o lê pela API do GitHub (api.github.com): descrição, comentários, revisões, commits, checks de CI e arquivos alterados. Repositórios públicos funcionam sem token.",
+    "token": "Token do GitHub",
+    "check": "Verificar",
+    "checking": "Verificando…",
+    "checkOk": "O token funciona: restam {{remaining}} de {{limit}} leituras nesta hora.",
+    "doesHeading": "Para que serve o token",
+    "does": [
+      "Abre pull requests de repositórios privados que você vê no GitHub, inclusive os da sua organização, se ela permitir tokens.",
+      "Aumenta o limite de 60 para 5.000 leituras do GitHub por hora. Um pull request usa cerca de 7, então sem token dá para ler uns 8 por hora.",
+      "Só leitura. O Siftlume nunca comenta, aprova, faz merge nem altera nada no GitHub, e um token somente leitura também não conseguiria.",
+      "Fica neste navegador (chrome.storage.local), nunca é sincronizado e só é enviado para api.github.com. Seu provedor de IA nunca o vê."
+    ],
+    "withoutToken": "Sem token: só pull requests públicos, cerca de 8 por hora. Se isso basta, deixe o campo vazio.",
+    "howHeading": "Criar um token somente leitura",
+    "steps": [
+      "Abra “Criar um token no GitHub” abaixo e faça login. Ele abre GitHub → Settings → Developer settings → Fine-grained tokens.",
+      "Dê um nome (por exemplo Siftlume), uma data de validade e o Resource owner: você ou a organização cujos repositórios você revisa.",
+      "Repository access: “All repositories” ou “Only select repositories” para só os que você revisa.",
+      "Em Permissions → Repositories, defina Pull requests, Contents e Checks como “Read-only”. O GitHub adiciona Metadata sozinho. Nada mais.",
+      "Clique em Generate token, copie, cole acima, clique em Verificar e depois em Salvar."
+    ],
+    "create": "Criar um token no GitHub"
   }
 }

@@ -204,10 +204,7 @@
       "medium": "Vừa",
       "high": "Cao",
       "provider-default": "Mặc định của nhà cung cấp"
-    },
-    "githubToken": "GitHub token",
-    "githubTokenHint": "Dùng cho pull request trong repo riêng tư, và để đọc GitHub nhiều hơn 60 lần mỗi giờ (mỗi pull request cần khoảng 7 lần). Dùng token fine-grained chỉ có quyền đọc Pull requests, Contents và Checks. Token chỉ được gửi tới api.github.com.",
-    "githubTokenCreate": "Tạo token"
+    }
   },
   "footer": {
     "save": "Lưu",
@@ -236,7 +233,8 @@
     "summary": "Tóm tắt",
     "appearance": "Giao diện",
     "advanced": "Nâng cao",
-    "about": "Giới thiệu"
+    "about": "Giới thiệu",
+    "github": "GitHub"
   },
   "about": {
     "tagline": "Tóm tắt mọi trang, giữ lại những gì quan trọng.",
@@ -273,5 +271,30 @@
     "deleteYes": "Xoá và giải phóng {{size}} GB",
     "deleteNo": "Giữ lại",
     "storage": "Tải từ Hugging Face và lưu trong bộ nhớ của trình duyệt dành cho extension. Cần GPU hỗ trợ WebGPU (hầu hết máy tính vài năm gần đây)."
+  },
+  "github": {
+    "heading": "GitHub",
+    "intro": "Để tóm tắt hoặc review một pull request, Siftlume đọc nó qua API của GitHub (api.github.com): mô tả, bình luận, review, commit, kết quả CI và các file thay đổi. Repo công khai đọc được mà không cần token.",
+    "token": "GitHub token",
+    "check": "Kiểm tra",
+    "checking": "Đang kiểm tra…",
+    "checkOk": "Token hoạt động: còn {{remaining}}/{{limit}} lượt đọc trong giờ này.",
+    "doesHeading": "Token dùng để làm gì",
+    "does": [
+      "Mở được pull request trong repo riêng tư mà bạn xem được trên GitHub, kể cả repo của tổ chức, nếu tổ chức cho phép dùng token.",
+      "Nâng giới hạn từ 60 lên 5.000 lượt đọc GitHub mỗi giờ. Mỗi pull request cần khoảng 7 lượt, nên không có token thì đọc được khoảng 8 PR mỗi giờ.",
+      "Chỉ đọc. Siftlume không bao giờ bình luận, approve, merge hay thay đổi bất cứ thứ gì trên GitHub, và token chỉ-đọc cũng không làm được những việc đó.",
+      "Lưu trong trình duyệt này (chrome.storage.local), không đồng bộ, và chỉ được gửi tới api.github.com. Nhà cung cấp AI không bao giờ thấy token."
+    ],
+    "withoutToken": "Không có token: chỉ đọc được pull request công khai, khoảng 8 PR mỗi giờ. Như vậy là đủ thì cứ để trống.",
+    "howHeading": "Tạo token chỉ-đọc",
+    "steps": [
+      "Bấm \"Tạo token trên GitHub\" bên dưới rồi đăng nhập. Nút này mở GitHub → Settings → Developer settings → Fine-grained tokens.",
+      "Đặt tên (ví dụ Siftlume), chọn ngày hết hạn, và chọn Resource owner: chính bạn, hoặc tổ chức có các repo bạn hay review.",
+      "Repository access: chọn \"All repositories\", hoặc \"Only select repositories\" nếu chỉ cần vài repo.",
+      "Ở Permissions → Repositories, đặt Pull requests, Contents và Checks thành \"Read-only\". GitHub tự thêm Metadata. Không thêm gì khác.",
+      "Bấm Generate token, sao chép, dán vào ô ở trên, bấm Kiểm tra rồi Lưu."
+    ],
+    "create": "Tạo token trên GitHub"
   }
 }

@@ -204,10 +204,7 @@
       "medium": "中",
       "high": "高",
       "provider-default": "提供商默认"
-    },
-    "githubToken": "GitHub 令牌",
-    "githubTokenHint": "用于读取私有仓库的拉取请求，以及每小时超过 60 次 GitHub 读取（一个拉取请求约需 7 次）。请使用对 Pull requests、Contents 和 Checks 只读的 fine-grained 令牌。令牌只发送到 api.github.com。",
-    "githubTokenCreate": "创建令牌"
+    }
   },
   "footer": {
     "save": "保存",
@@ -236,7 +233,8 @@
     "summary": "摘要",
     "appearance": "外观",
     "advanced": "高级",
-    "about": "关于"
+    "about": "关于",
+    "github": "GitHub"
   },
   "about": {
     "tagline": "总结任何页面,只留下重要内容。",
@@ -273,5 +271,30 @@
     "deleteYes": "删除并释放 {{size}} GB",
     "deleteNo": "保留",
     "storage": "从 Hugging Face 下载，保存在浏览器为扩展提供的存储中。需要支持 WebGPU 的 GPU（近几年的大多数电脑）。"
+  },
+  "github": {
+    "heading": "GitHub",
+    "intro": "总结或审查拉取请求时，Siftlume 通过 GitHub API（api.github.com）读取它：描述、评论、审查、提交、CI 检查和更改的文件。公开仓库无需令牌即可使用。",
+    "token": "GitHub 令牌",
+    "check": "检查",
+    "checking": "正在检查…",
+    "checkOk": "令牌可用：本小时还剩 {{remaining}}/{{limit}} 次读取。",
+    "doesHeading": "令牌的作用",
+    "does": [
+      "打开你在 GitHub 上能看到的私有仓库中的拉取请求，包括组织的仓库（如果组织允许使用令牌）。",
+      "把 GitHub 读取上限从每小时 60 次提高到 5,000 次。一个拉取请求约需 7 次，所以没有令牌时每小时大约能读 8 个。",
+      "只读。Siftlume 从不在 GitHub 上评论、批准、合并或更改任何内容，只读令牌本来也做不到。",
+      "只保存在此浏览器中（chrome.storage.local），从不同步，只发送到 api.github.com。你的 AI 服务商永远看不到它。"
+    ],
+    "withoutToken": "没有令牌：只能读公开的拉取请求，每小时约 8 个。如果够用，留空即可。",
+    "howHeading": "创建只读令牌",
+    "steps": [
+      "打开下方的“在 GitHub 上创建令牌”并登录。它会打开 GitHub → Settings → Developer settings → Fine-grained tokens。",
+      "填写名称（例如 Siftlume）、过期时间和 Resource owner：你自己，或你审查的仓库所属的组织。",
+      "Repository access：选择“All repositories”，或只需部分仓库时选择“Only select repositories”。",
+      "在 Permissions → Repositories 中，把 Pull requests、Contents 和 Checks 设为“Read-only”。Metadata 由 GitHub 自动添加。不要添加其他权限。",
+      "点击 Generate token，复制并粘贴到上方，点击“检查”，然后保存。"
+    ],
+    "create": "在 GitHub 上创建令牌"
   }
 }

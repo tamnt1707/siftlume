@@ -55,10 +55,10 @@
   },
   "github": {
     "network": "Impossible de joindre GitHub. Vérifiez votre connexion et réessayez.",
-    "rateLimit": "Sans jeton, GitHub autorise 60 lectures par heure, et elles sont épuisées. Réessayez après {{time}} ou ajoutez un jeton GitHub dans Réglages → Avancé.",
+    "rateLimit": "Sans jeton, GitHub autorise 60 lectures par heure, et elles sont épuisées. Réessayez après {{time}} ou ajoutez un jeton GitHub dans Réglages → GitHub.",
     "rateLimitToken": "Votre jeton GitHub a atteint sa limite horaire. Réessayez après {{time}}.",
-    "badToken": "GitHub a refusé le jeton. Vérifiez-le dans Réglages → Avancé.",
-    "notFound": "GitHub n’a pas trouvé cette pull request. Si le dépôt est privé, ajoutez un jeton GitHub dans Réglages → Avancé.",
+    "badToken": "GitHub a refusé le jeton. Vérifiez-le dans Réglages → GitHub.",
+    "notFound": "GitHub n’a pas trouvé cette pull request. Si le dépôt est privé, ajoutez un jeton GitHub dans Réglages → GitHub.",
     "noAccessToken": "Votre jeton GitHub ne peut pas lire cette pull request. Donnez-lui l’accès en lecture à ce dépôt (Pull requests, Contents).",
     "failed": "GitHub n’a pas pu renvoyer cette pull request (HTTP {{status}})."
   }

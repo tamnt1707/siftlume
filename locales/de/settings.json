@@ -205,10 +205,7 @@
       "medium": "Mittel",
       "high": "Hoch",
       "provider-default": "Standard des Anbieters"
-    },
-    "githubToken": "GitHub-Token",
-    "githubTokenHint": "Für Pull Requests in privaten Repositorys und mehr als 60 GitHub-Abrufe pro Stunde (ein Pull Request braucht etwa 7). Nutze ein Fine-grained-Token mit reinem Lesezugriff auf Pull requests, Contents und Checks. Es wird nur an api.github.com gesendet.",
-    "githubTokenCreate": "Token erstellen"
+    }
   },
   "footer": {
     "save": "Speichern",
@@ -237,7 +234,8 @@
     "summary": "Zusammenfassung",
     "appearance": "Darstellung",
     "advanced": "Erweitert",
-    "about": "Über"
+    "about": "Über",
+    "github": "GitHub"
   },
   "about": {
     "tagline": "Jede Seite zusammengefasst, nur das Wichtige bleibt.",
@@ -274,5 +272,30 @@
     "deleteYes": "Löschen und {{size}} GB freigeben",
     "deleteNo": "Behalten",
     "storage": "Von Hugging Face geladen und im Browserspeicher der Erweiterung abgelegt. Benötigt eine GPU mit WebGPU (die meisten Computer der letzten Jahre)."
+  },
+  "github": {
+    "heading": "GitHub",
+    "intro": "Um einen Pull Request zusammenzufassen oder zu reviewen, liest Siftlume ihn über die GitHub-API (api.github.com): Beschreibung, Kommentare, Reviews, Commits, CI-Checks und geänderte Dateien. Öffentliche Repositorys funktionieren ohne Token.",
+    "token": "GitHub-Token",
+    "check": "Prüfen",
+    "checking": "Wird geprüft…",
+    "checkOk": "Das Token funktioniert: noch {{remaining}} von {{limit}} Abrufen in dieser Stunde.",
+    "doesHeading": "Wofür das Token da ist",
+    "does": [
+      "Öffnet Pull Requests in privaten Repositorys, die du auf GitHub sehen kannst, auch die deiner Organisation, sofern sie Tokens erlaubt.",
+      "Hebt das Limit von 60 auf 5.000 GitHub-Abrufe pro Stunde. Ein Pull Request braucht etwa 7, ohne Token also etwa 8 pro Stunde.",
+      "Nur lesen. Siftlume kommentiert, genehmigt, merged oder ändert nie etwas auf GitHub, und ein Nur-Lese-Token könnte das auch nicht.",
+      "Bleibt in diesem Browser (chrome.storage.local), wird nie synchronisiert und nur an api.github.com gesendet. Dein KI-Anbieter sieht es nie."
+    ],
+    "withoutToken": "Ohne Token: nur öffentliche Pull Requests, etwa 8 pro Stunde. Reicht das, lass das Feld leer.",
+    "howHeading": "Ein Nur-Lese-Token erstellen",
+    "steps": [
+      "Öffne unten „Token auf GitHub erstellen“ und melde dich an. Es öffnet GitHub → Settings → Developer settings → Fine-grained tokens.",
+      "Gib einen Namen (z. B. Siftlume), ein Ablaufdatum und den Resource owner an: dich oder die Organisation, deren Repositorys du reviewst.",
+      "Repository access: „All repositories“ oder „Only select repositories“ für nur die, die du reviewst.",
+      "Unter Permissions → Repositories Pull requests, Contents und Checks auf „Read-only“ setzen. Metadata fügt GitHub selbst hinzu. Sonst nichts.",
+      "Generate token klicken, kopieren, oben einfügen, Prüfen klicken, dann Speichern."
+    ],
+    "create": "Token auf GitHub erstellen"
   }
 }

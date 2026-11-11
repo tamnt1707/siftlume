@@ -55,10 +55,10 @@
   },
   "github": {
     "network": "GitHub ist nicht erreichbar. Prüfe die Verbindung und versuche es erneut.",
-    "rateLimit": "Ohne Token erlaubt GitHub 60 Abrufe pro Stunde, und sie sind aufgebraucht. Versuche es nach {{time}} erneut oder füge unter Einstellungen → Erweitert ein GitHub-Token hinzu.",
+    "rateLimit": "Ohne Token erlaubt GitHub 60 Abrufe pro Stunde, und sie sind aufgebraucht. Versuche es nach {{time}} erneut oder füge unter Einstellungen → GitHub ein GitHub-Token hinzu.",
     "rateLimitToken": "Dein GitHub-Token hat sein Stundenlimit erreicht. Versuche es nach {{time}} erneut.",
-    "badToken": "GitHub hat das Token abgelehnt. Prüfe es unter Einstellungen → Erweitert.",
-    "notFound": "GitHub hat diesen Pull Request nicht gefunden. Ist das Repository privat, füge unter Einstellungen → Erweitert ein GitHub-Token hinzu.",
+    "badToken": "GitHub hat das Token abgelehnt. Prüfe es unter Einstellungen → GitHub.",
+    "notFound": "GitHub hat diesen Pull Request nicht gefunden. Ist das Repository privat, füge unter Einstellungen → GitHub ein GitHub-Token hinzu.",
     "noAccessToken": "Dein GitHub-Token kann diesen Pull Request nicht lesen. Gib ihm Lesezugriff auf dieses Repository (Pull requests, Contents).",
     "failed": "GitHub konnte diesen Pull Request nicht liefern (HTTP {{status}})."
   }

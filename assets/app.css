@@ -2411,8 +2411,9 @@ button.ui-menu__item:focus-visible {
   }
 }
 
-/* Very narrow side panels: icons only, labels stay as the accessible name. */
-@container (max-width: 380px) {
+/* Until the vertical rail fits (side panels): icons only, labels stay as the accessible name
+   and tooltip. Six labels do not fit in one row below that. */
+@container (max-width: 519px) {
   .settings-tabs__tab span {
     position: absolute;
     width: 1px;
@@ -2420,6 +2421,11 @@ button.ui-menu__item:focus-visible {
     overflow: hidden;
     clip: rect(0 0 0 0);
   }
+}
+
+/* Settings → GitHub: the intro sits above the token field. */
+.github-intro {
+  margin-bottom: 14px;
 }
 
 /* ── "Always include" style toggles (Settings → Summary) ──── */

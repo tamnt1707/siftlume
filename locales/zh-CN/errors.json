@@ -55,10 +55,10 @@
   },
   "github": {
     "network": "无法连接 GitHub。请检查网络后重试。",
-    "rateLimit": "没有令牌时，GitHub 每小时只允许读取 60 次，现已用完。请在 {{time}} 之后重试，或在 设置 → 高级 中添加 GitHub 令牌。",
+    "rateLimit": "没有令牌时，GitHub 每小时只允许读取 60 次，现已用完。请在 {{time}} 之后重试，或在 设置 → GitHub 中添加 GitHub 令牌。",
     "rateLimitToken": "你的 GitHub 令牌已达到每小时上限。请在 {{time}} 之后重试。",
-    "badToken": "GitHub 拒绝了该令牌。请在 设置 → 高级 中检查。",
-    "notFound": "GitHub 找不到此拉取请求。如果仓库是私有的，请在 设置 → 高级 中添加 GitHub 令牌。",
+    "badToken": "GitHub 拒绝了该令牌。请在 设置 → GitHub 中检查。",
+    "notFound": "GitHub 找不到此拉取请求。如果仓库是私有的，请在 设置 → GitHub 中添加 GitHub 令牌。",
     "noAccessToken": "你的 GitHub 令牌无法读取此拉取请求。请授予它对此仓库的读取权限（Pull requests、Contents）。",
     "failed": "GitHub 无法返回此拉取请求（HTTP {{status}}）。"
   }

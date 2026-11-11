@@ -204,10 +204,7 @@
       "medium": "中",
       "high": "高",
       "provider-default": "プロバイダの既定"
-    },
-    "githubToken": "GitHub トークン",
-    "githubTokenHint": "非公開リポジトリのプルリクエストを読むときや、GitHub の読み取りを 1 時間 60 回より多く使うときに使います（プルリクエスト 1 件で約 7 回）。Pull requests、Contents、Checks の読み取り専用の fine-grained トークンを使ってください。送信先は api.github.com のみです。",
-    "githubTokenCreate": "トークンを作成"
+    }
   },
   "footer": {
     "save": "保存",
@@ -236,7 +233,8 @@
     "summary": "要約",
     "appearance": "外観",
     "advanced": "詳細設定",
-    "about": "このアプリについて"
+    "about": "このアプリについて",
+    "github": "GitHub"
   },
   "about": {
     "tagline": "どんなページも要約して、大事なところだけ残す。",
@@ -273,5 +271,30 @@
     "deleteYes": "削除して {{size}} GB を解放",
     "deleteNo": "残す",
     "storage": "Hugging Face からダウンロードし、拡張機能用のブラウザストレージに保存します。WebGPU 対応の GPU が必要です（ここ数年のほとんどのパソコン）。"
+  },
+  "github": {
+    "heading": "GitHub",
+    "intro": "プルリクエストを要約・レビューするとき、Siftlume は GitHub の API（api.github.com）から説明、コメント、レビュー、コミット、CI チェック、変更ファイルを読み取ります。公開リポジトリはトークンなしで使えます。",
+    "token": "GitHub トークン",
+    "check": "確認",
+    "checking": "確認中…",
+    "checkOk": "トークンは有効です。この 1 時間の残り：{{remaining}} / {{limit}} 回。",
+    "doesHeading": "トークンでできること",
+    "does": [
+      "GitHub で閲覧できる非公開リポジトリのプルリクエストを開けます。組織がトークンを許可していれば、組織のリポジトリも対象です。",
+      "GitHub の読み取り上限が 1 時間 60 回から 5,000 回になります。プルリクエスト 1 件で約 7 回なので、トークンなしでは 1 時間に約 8 件です。",
+      "読み取りのみです。Siftlume が GitHub でコメント、承認、マージ、変更をすることはなく、読み取り専用トークンではそもそもできません。",
+      "このブラウザ（chrome.storage.local）にのみ保存され、同期されず、api.github.com にだけ送信されます。AI プロバイダーには送られません。"
+    ],
+    "withoutToken": "トークンなし：公開プルリクエストのみ、1 時間に約 8 件。それで足りるなら空欄のままで構いません。",
+    "howHeading": "読み取り専用トークンを作成",
+    "steps": [
+      "下の「GitHub でトークンを作成」を開いてサインインします。GitHub → Settings → Developer settings → Fine-grained tokens が開きます。",
+      "名前（例：Siftlume）、有効期限、Resource owner（自分、またはレビューするリポジトリの組織）を設定します。",
+      "Repository access：「All repositories」、またはレビューするものだけなら「Only select repositories」。",
+      "Permissions → Repositories で Pull requests、Contents、Checks を「Read-only」にします。Metadata は自動で追加されます。他は追加しません。",
+      "Generate token を押してコピーし、上に貼り付け、「確認」を押してから保存します。"
+    ],
+    "create": "GitHub でトークンを作成"
   }
 }

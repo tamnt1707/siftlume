@@ -204,10 +204,7 @@
       "medium": "ปานกลาง",
       "high": "สูง",
       "provider-default": "ค่าเริ่มต้นของผู้ให้บริการ"
-    },
-    "githubToken": "โทเค็น GitHub",
-    "githubTokenHint": "ใช้สำหรับ pull request ใน repository ส่วนตัว และเพื่ออ่าน GitHub ได้มากกว่า 60 ครั้งต่อชั่วโมง (pull request หนึ่งรายการใช้ราว 7 ครั้ง) ใช้โทเค็นแบบ fine-grained ที่อ่านได้อย่างเดียวสำหรับ Pull requests, Contents และ Checks โทเค็นจะถูกส่งไปที่ api.github.com เท่านั้น",
-    "githubTokenCreate": "สร้างโทเค็น"
+    }
   },
   "footer": {
     "save": "บันทึก",
@@ -236,7 +233,8 @@
     "summary": "การสรุป",
     "appearance": "รูปลักษณ์",
     "advanced": "ขั้นสูง",
-    "about": "เกี่ยวกับ"
+    "about": "เกี่ยวกับ",
+    "github": "GitHub"
   },
   "about": {
     "tagline": "สรุปทุกหน้า เก็บไว้เฉพาะสิ่งที่สำคัญ",
@@ -273,5 +271,30 @@
     "deleteYes": "ลบและคืนพื้นที่ {{size}} GB",
     "deleteNo": "เก็บไว้",
     "storage": "ดาวน์โหลดจาก Hugging Face และเก็บในพื้นที่จัดเก็บของเบราว์เซอร์สำหรับส่วนขยาย ต้องมี GPU ที่รองรับ WebGPU (คอมพิวเตอร์ส่วนใหญ่ในไม่กี่ปีที่ผ่านมา)"
+  },
+  "github": {
+    "heading": "GitHub",
+    "intro": "เมื่อสรุปหรือรีวิว pull request Siftlume จะอ่านผ่าน API ของ GitHub (api.github.com): คำอธิบาย ความคิดเห็น รีวิว commit ผลตรวจ CI และไฟล์ที่เปลี่ยน repository สาธารณะใช้ได้โดยไม่ต้องมีโทเค็น",
+    "token": "โทเค็น GitHub",
+    "check": "ตรวจสอบ",
+    "checking": "กำลังตรวจสอบ…",
+    "checkOk": "โทเค็นใช้งานได้: เหลือ {{remaining}} จาก {{limit}} ครั้งในชั่วโมงนี้",
+    "doesHeading": "โทเค็นใช้ทำอะไร",
+    "does": [
+      "เปิด pull request ใน repository ส่วนตัวที่คุณดูได้บน GitHub รวมถึงขององค์กร หากองค์กรอนุญาตให้ใช้โทเค็น",
+      "เพิ่มขีดจำกัดจาก 60 เป็น 5,000 ครั้งต่อชั่วโมง pull request หนึ่งรายการใช้ราว 7 ครั้ง หากไม่มีโทเค็นจึงอ่านได้ราว 8 รายการต่อชั่วโมง",
+      "อ่านอย่างเดียว Siftlume ไม่เคยแสดงความคิดเห็น อนุมัติ merge หรือเปลี่ยนแปลงอะไรบน GitHub และโทเค็นแบบอ่านอย่างเดียวก็ทำไม่ได้อยู่แล้ว",
+      "เก็บไว้ในเบราว์เซอร์นี้เท่านั้น (chrome.storage.local) ไม่ซิงค์ และส่งไปที่ api.github.com เท่านั้น ผู้ให้บริการ AI ไม่เห็นโทเค็น"
+    ],
+    "withoutToken": "ไม่มีโทเค็น: อ่านได้เฉพาะ pull request สาธารณะ ราว 8 รายการต่อชั่วโมง หากพอแล้วก็เว้นว่างไว้",
+    "howHeading": "สร้างโทเค็นแบบอ่านอย่างเดียว",
+    "steps": [
+      "เปิด \"สร้างโทเค็นบน GitHub\" ด้านล่างแล้วลงชื่อเข้าใช้ จะเปิด GitHub → Settings → Developer settings → Fine-grained tokens",
+      "ตั้งชื่อ (เช่น Siftlume) วันหมดอายุ และ Resource owner: ตัวคุณ หรือองค์กรที่คุณรีวิว repository",
+      "Repository access: \"All repositories\" หรือ \"Only select repositories\" สำหรับเฉพาะที่คุณรีวิว",
+      "ใน Permissions → Repositories ตั้ง Pull requests, Contents และ Checks เป็น \"Read-only\" GitHub จะเพิ่ม Metadata ให้เอง ไม่ต้องเพิ่มอย่างอื่น",
+      "กด Generate token คัดลอก วางในช่องด้านบน กดตรวจสอบ แล้วบันทึก"
+    ],
+    "create": "สร้างโทเค็นบน GitHub"
   }
 }

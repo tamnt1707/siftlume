@@ -204,10 +204,7 @@
       "medium": "中",
       "high": "高",
       "provider-default": "供應商預設"
-    },
-    "githubToken": "GitHub 權杖",
-    "githubTokenHint": "用於讀取私人儲存庫的拉取請求，以及每小時超過 60 次 GitHub 讀取（一個拉取請求約需 7 次）。請使用對 Pull requests、Contents 和 Checks 唯讀的 fine-grained 權杖。權杖只會傳送到 api.github.com。",
-    "githubTokenCreate": "建立權杖"
+    }
   },
   "footer": {
     "save": "儲存",
@@ -236,7 +233,8 @@
     "summary": "摘要",
     "appearance": "外觀",
     "advanced": "進階",
-    "about": "關於"
+    "about": "關於",
+    "github": "GitHub"
   },
   "about": {
     "tagline": "摘要任何頁面,只留下重要內容。",
@@ -273,5 +271,30 @@
     "deleteYes": "刪除並釋放 {{size}} GB",
     "deleteNo": "保留",
     "storage": "從 Hugging Face 下載，儲存在瀏覽器為擴充功能提供的空間中。需要支援 WebGPU 的 GPU（近幾年的大多數電腦）。"
+  },
+  "github": {
+    "heading": "GitHub",
+    "intro": "摘要或審查拉取請求時，Siftlume 透過 GitHub API（api.github.com）讀取：說明、留言、審查、提交、CI 檢查和變更的檔案。公開儲存庫不需權杖即可使用。",
+    "token": "GitHub 權杖",
+    "check": "檢查",
+    "checking": "檢查中…",
+    "checkOk": "權杖可用：本小時還剩 {{remaining}}/{{limit}} 次讀取。",
+    "doesHeading": "權杖的用途",
+    "does": [
+      "開啟你在 GitHub 上看得到的私人儲存庫中的拉取請求，包括組織的儲存庫（若組織允許使用權杖）。",
+      "把 GitHub 讀取上限從每小時 60 次提高到 5,000 次。一個拉取請求約需 7 次，所以沒有權杖時每小時約可讀 8 個。",
+      "唯讀。Siftlume 絕不會在 GitHub 上留言、核准、合併或更改任何內容，唯讀權杖本來也做不到。",
+      "只儲存在此瀏覽器中（chrome.storage.local），不會同步，只傳送到 api.github.com。你的 AI 服務商永遠看不到它。"
+    ],
+    "withoutToken": "沒有權杖：只能讀公開的拉取請求，每小時約 8 個。如果夠用，留空即可。",
+    "howHeading": "建立唯讀權杖",
+    "steps": [
+      "開啟下方的「在 GitHub 上建立權杖」並登入。它會開啟 GitHub → Settings → Developer settings → Fine-grained tokens。",
+      "填寫名稱（例如 Siftlume）、到期日和 Resource owner：你自己，或你審查的儲存庫所屬的組織。",
+      "Repository access：選擇「All repositories」，或只需部分儲存庫時選擇「Only select repositories」。",
+      "在 Permissions → Repositories 中，把 Pull requests、Contents 和 Checks 設為「Read-only」。Metadata 由 GitHub 自動加入。不要加入其他權限。",
+      "按 Generate token，複製並貼到上方，按「檢查」，然後儲存。"
+    ],
+    "create": "在 GitHub 上建立權杖"
   }
 }

@@ -55,10 +55,10 @@
   },
   "github": {
     "network": "Không kết nối được GitHub. Kiểm tra mạng rồi thử lại.",
-    "rateLimit": "Không có token, GitHub chỉ cho đọc 60 lần mỗi giờ và đã hết lượt. Thử lại sau {{time}}, hoặc thêm GitHub token trong Cài đặt → Nâng cao.",
+    "rateLimit": "Không có token, GitHub chỉ cho đọc 60 lần mỗi giờ và đã hết lượt. Thử lại sau {{time}}, hoặc thêm GitHub token trong Cài đặt → GitHub.",
     "rateLimitToken": "GitHub token đã hết lượt đọc trong giờ này. Thử lại sau {{time}}.",
-    "badToken": "GitHub từ chối token. Kiểm tra lại trong Cài đặt → Nâng cao.",
-    "notFound": "GitHub không tìm thấy pull request này. Nếu repo là riêng tư, hãy thêm GitHub token trong Cài đặt → Nâng cao.",
+    "badToken": "GitHub từ chối token. Kiểm tra lại trong Cài đặt → GitHub.",
+    "notFound": "GitHub không tìm thấy pull request này. Nếu repo là riêng tư, hãy thêm GitHub token trong Cài đặt → GitHub.",
     "noAccessToken": "GitHub token không đọc được pull request này. Cấp cho token quyền đọc repo này (Pull requests, Contents).",
     "failed": "GitHub không trả về pull request này (HTTP {{status}})."
   }

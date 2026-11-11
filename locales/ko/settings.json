@@ -204,10 +204,7 @@
       "medium": "보통",
       "high": "높음",
       "provider-default": "제공업체 기본값"
-    },
-    "githubToken": "GitHub 토큰",
-    "githubTokenHint": "비공개 저장소의 풀 리퀘스트를 읽거나 GitHub를 시간당 60회보다 많이 읽을 때 필요합니다(풀 리퀘스트 하나에 약 7회). Pull requests, Contents, Checks 읽기 전용 fine-grained 토큰을 사용하세요. api.github.com으로만 전송됩니다.",
-    "githubTokenCreate": "토큰 만들기"
+    }
   },
   "footer": {
     "save": "저장",
@@ -236,7 +233,8 @@
     "summary": "요약",
     "appearance": "모양",
     "advanced": "고급",
-    "about": "정보"
+    "about": "정보",
+    "github": "GitHub"
   },
   "about": {
     "tagline": "어떤 페이지든 요약하고, 중요한 것만 남깁니다.",
@@ -273,5 +271,30 @@
     "deleteYes": "삭제하고 {{size}}GB 확보",
     "deleteNo": "유지",
     "storage": "Hugging Face에서 다운로드해 확장 프로그램용 브라우저 저장소에 보관합니다. WebGPU를 지원하는 GPU가 필요합니다(최근 몇 년의 대부분 컴퓨터)."
+  },
+  "github": {
+    "heading": "GitHub",
+    "intro": "풀 리퀘스트를 요약하거나 리뷰할 때 Siftlume은 GitHub API(api.github.com)에서 설명, 댓글, 리뷰, 커밋, CI 체크, 변경된 파일을 읽습니다. 공개 저장소는 토큰 없이 사용할 수 있습니다.",
+    "token": "GitHub 토큰",
+    "check": "확인",
+    "checking": "확인 중…",
+    "checkOk": "토큰이 작동합니다. 이번 시간 남은 횟수: {{remaining}}/{{limit}}회.",
+    "doesHeading": "토큰으로 할 수 있는 일",
+    "does": [
+      "GitHub에서 볼 수 있는 비공개 저장소의 풀 리퀘스트를 엽니다. 조직이 토큰을 허용하면 조직 저장소도 포함됩니다.",
+      "GitHub 읽기 한도를 시간당 60회에서 5,000회로 늘립니다. 풀 리퀘스트 하나에 약 7회가 필요하므로 토큰 없이는 시간당 약 8개입니다.",
+      "읽기만 합니다. Siftlume은 GitHub에서 댓글, 승인, 머지, 변경을 절대 하지 않으며, 읽기 전용 토큰으로는 할 수도 없습니다.",
+      "이 브라우저(chrome.storage.local)에만 저장되고 동기화되지 않으며 api.github.com으로만 전송됩니다. AI 제공업체는 토큰을 보지 못합니다."
+    ],
+    "withoutToken": "토큰 없이: 공개 풀 리퀘스트만, 시간당 약 8개. 이것으로 충분하면 비워 두세요.",
+    "howHeading": "읽기 전용 토큰 만들기",
+    "steps": [
+      "아래 'GitHub에서 토큰 만들기'를 열고 로그인합니다. GitHub → Settings → Developer settings → Fine-grained tokens가 열립니다.",
+      "이름(예: Siftlume), 만료일, Resource owner(본인 또는 리뷰하는 저장소의 조직)를 정합니다.",
+      "Repository access: 'All repositories' 또는 리뷰하는 저장소만 'Only select repositories'.",
+      "Permissions → Repositories에서 Pull requests, Contents, Checks를 'Read-only'로 설정합니다. Metadata는 자동으로 추가됩니다. 다른 것은 추가하지 않습니다.",
+      "Generate token을 눌러 복사하고 위에 붙여 넣은 뒤 '확인'을 누르고 저장합니다."
+    ],
+    "create": "GitHub에서 토큰 만들기"
   }
 }

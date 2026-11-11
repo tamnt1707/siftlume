@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, type MutableRefObject } from 'rea
 import { browser } from '#imports';
 import * as Tabs from '@radix-ui/react-tabs';
 import {
+  GithubIcon,
   AiBrain01Icon,
   InformationCircleIcon,
   PaintBoardIcon,
@@ -11,6 +12,7 @@ import {
 import { AboutPanel } from '@/components/AboutPanel';
 import { Icon } from '@/components/Icon';
 import { LocalModels } from '@/components/LocalModels';
+import { GitHubPanel } from '@/components/GitHubPanel';
 import { useTranslation } from 'react-i18next';
 import { AppearancePanel } from '@/components/AppearancePanel';
 import { LanguagePicker } from '@/components/LanguagePicker';
@@ -46,6 +48,7 @@ const TABS = [
   { id: 'ai', icon: AiBrain01Icon },
   { id: 'summary', icon: TextAlignLeftIcon },
   { id: 'appearance', icon: PaintBoardIcon },
+  { id: 'github', icon: GithubIcon },
   { id: 'advanced', icon: SlidersHorizontalIcon },
   { id: 'about', icon: InformationCircleIcon },
 ] as const;
@@ -131,7 +134,6 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
   }, []);
   const [load, setLoad] = useState<LoadState>({ status: 'idle' });
   const [showKey, setShowKey] = useState(false);
-  const [showGithubToken, setShowGithubToken] = useState(false);
   const [saved, setSaved] = useState(false);
   const [tab, setTab] = useState<SettingsTab>(initialTab);
   // First run: nothing usable was saved yet, so the form leads with a welcome and the key steps.
@@ -672,6 +674,10 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
           />
         </Tabs.Content>
 
+        <Tabs.Content value="github" className="settings-tabs__panel">
+          <GitHubPanel token={settings.githubToken} onChange={(githubToken) => update({ githubToken })} />
+        </Tabs.Content>
+
         <Tabs.Content value="advanced" className="settings-tabs__panel">
           <section className="panel">
             <div className="field">
@@ -697,32 +703,6 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
                   update({ maxChars: Math.max(2000, Number(e.target.value) || DEFAULT_SETTINGS.maxChars) })
                 }
               />
-            </div>
-            <div className="field">
-              <label htmlFor="github-token">
-                {t('advanced.githubToken')} <span className="muted">{t('connect.optional')}</span>
-              </label>
-              <div className="row">
-                <input
-                  id="github-token"
-                  className="input"
-                  type={showGithubToken ? 'text' : 'password'}
-                  autoComplete="off"
-                  spellCheck={false}
-                  placeholder="github_pat_…"
-                  value={settings.githubToken}
-                  onChange={(e) => update({ githubToken: e.target.value.trim() })}
-                />
-                <button className="btn" onClick={() => setShowGithubToken(!showGithubToken)}>
-                  {showGithubToken ? t('connect.hide') : t('connect.show')}
-                </button>
-              </div>
-              <p className="hint">
-                {t('advanced.githubTokenHint')}{' '}
-                <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noreferrer">
-                  {t('advanced.githubTokenCreate')}
-                </a>
-              </p>
             </div>
             <p className="hint">{t('advanced.privacy')}</p>
           </section>

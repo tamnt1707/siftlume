@@ -156,6 +156,15 @@ async function list<T>(path: string, token: string, max: number): Promise<T[]> {
   return out.slice(0, max);
 }
 
+/**
+ * Checks a token (Settings → GitHub) with the rate limit endpoint, which does not count against
+ * the limit: how many reads an hour it allows and how many are left.
+ */
+export async function checkGithubToken(token: string) {
+  const { data } = await call<{ resources: { core: { limit: number; remaining: number } } }>('/rate_limit', token);
+  return data.resources.core;
+}
+
 // ── Formatting ─────────────────────────────────────────────────────────────────
 
 /** Files whose diff tells a reader nothing: lockfiles, build output, minified or generated code. */

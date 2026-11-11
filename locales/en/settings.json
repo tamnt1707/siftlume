@@ -205,10 +205,7 @@
       "medium": "Medium",
       "high": "High",
       "provider-default": "Provider's default"
-    },
-    "githubToken": "GitHub token",
-    "githubTokenHint": "For pull requests in private repositories, and more than 60 GitHub reads an hour (one pull request takes about 7). Use a fine-grained token with read-only access to Pull requests, Contents and Checks. It is sent only to api.github.com.",
-    "githubTokenCreate": "Create a token"
+    }
   },
   "footer": {
     "save": "Save",
@@ -237,7 +234,8 @@
     "summary": "Summary",
     "appearance": "Appearance",
     "advanced": "Advanced",
-    "about": "About"
+    "about": "About",
+    "github": "GitHub"
   },
   "about": {
     "tagline": "Summarize any page, keep what matters.",
@@ -274,5 +272,30 @@
     "deleteYes": "Delete and free {{size}} GB",
     "deleteNo": "Keep",
     "storage": "Downloaded from Hugging Face and kept in this browser's storage for the extension. Needs a GPU with WebGPU (most computers from the last few years)."
+  },
+  "github": {
+    "heading": "GitHub",
+    "intro": "To summarize or review a pull request, Siftlume reads it from GitHub's API (api.github.com): description, comments, reviews, commits, CI checks and changed files. Public repositories work without a token.",
+    "token": "GitHub token",
+    "check": "Check",
+    "checking": "Checking…",
+    "checkOk": "The token works: {{remaining}} of {{limit}} reads left this hour.",
+    "doesHeading": "What the token does",
+    "does": [
+      "Opens pull requests in private repositories you can see on GitHub, including your organization's, if the organization allows tokens.",
+      "Raises the limit from 60 to 5,000 GitHub reads an hour. One pull request takes about 7 reads, so without a token you can read about 8 an hour.",
+      "Only reads. Siftlume never comments, approves, merges or changes anything on GitHub, and a read-only token could not do it anyway.",
+      "Stays in this browser (chrome.storage.local), is never synced, and is sent only to api.github.com. Your AI provider never sees it."
+    ],
+    "withoutToken": "Without a token: public pull requests only, about 8 an hour. Leave the field empty if that is enough.",
+    "howHeading": "Create a read-only token",
+    "steps": [
+      "Open \"Create a token on GitHub\" below and sign in. It opens GitHub → Settings → Developer settings → Fine-grained tokens.",
+      "Give it a name (for example Siftlume), an expiration date, and a resource owner: you, or the organization whose repositories you review.",
+      "Repository access: \"All repositories\", or \"Only select repositories\" for just the ones you review.",
+      "Under Permissions → Repositories, set Pull requests, Contents and Checks to \"Read-only\". GitHub adds Metadata by itself. Add nothing else.",
+      "Click Generate token, copy it, paste it above, click Check, then Save."
+    ],
+    "create": "Create a token on GitHub"
   }
 }

@@ -206,10 +206,7 @@
       "medium": "Moyenne",
       "high": "Élevée",
       "provider-default": "Par défaut du fournisseur"
-    },
-    "githubToken": "Jeton GitHub",
-    "githubTokenHint": "Pour les pull requests de dépôts privés, et plus de 60 lectures GitHub par heure (une pull request en demande environ 7). Utilisez un jeton fine-grained en lecture seule sur Pull requests, Contents et Checks. Il n’est envoyé qu’à api.github.com.",
-    "githubTokenCreate": "Créer un jeton"
+    }
   },
   "footer": {
     "save": "Enregistrer",
@@ -238,7 +235,8 @@
     "summary": "Résumé",
     "appearance": "Apparence",
     "advanced": "Avancé",
-    "about": "À propos"
+    "about": "À propos",
+    "github": "GitHub"
   },
   "about": {
     "tagline": "Résumez n’importe quelle page, gardez l’essentiel.",
@@ -275,5 +273,30 @@
     "deleteYes": "Supprimer et libérer {{size}} Go",
     "deleteNo": "Garder",
     "storage": "Téléchargé depuis Hugging Face et conservé dans le stockage du navigateur pour l'extension. Nécessite un GPU avec WebGPU (la plupart des ordinateurs récents)."
+  },
+  "github": {
+    "heading": "GitHub",
+    "intro": "Pour résumer ou relire une pull request, Siftlume la lit via l’API de GitHub (api.github.com) : description, commentaires, revues, commits, checks de CI et fichiers modifiés. Les dépôts publics fonctionnent sans jeton.",
+    "token": "Jeton GitHub",
+    "check": "Vérifier",
+    "checking": "Vérification…",
+    "checkOk": "Le jeton fonctionne : il reste {{remaining}} lectures sur {{limit}} cette heure-ci.",
+    "doesHeading": "À quoi sert le jeton",
+    "does": [
+      "Ouvre les pull requests des dépôts privés que vous voyez sur GitHub, y compris ceux de votre organisation, si elle autorise les jetons.",
+      "Fait passer la limite de 60 à 5 000 lectures GitHub par heure. Une pull request en demande environ 7 : sans jeton, environ 8 par heure.",
+      "Lecture seule. Siftlume ne commente, n’approuve, ne fusionne ni ne modifie jamais rien sur GitHub, et un jeton en lecture seule ne le pourrait pas.",
+      "Reste dans ce navigateur (chrome.storage.local), n’est jamais synchronisé et n’est envoyé qu’à api.github.com. Votre fournisseur d’IA ne le voit jamais."
+    ],
+    "withoutToken": "Sans jeton : pull requests publiques seulement, environ 8 par heure. Si cela suffit, laissez le champ vide.",
+    "howHeading": "Créer un jeton en lecture seule",
+    "steps": [
+      "Ouvrez « Créer un jeton sur GitHub » ci-dessous et connectez-vous. Cela ouvre GitHub → Settings → Developer settings → Fine-grained tokens.",
+      "Donnez-lui un nom (par exemple Siftlume), une date d’expiration et un Resource owner : vous, ou l’organisation dont vous relisez les dépôts.",
+      "Repository access : « All repositories », ou « Only select repositories » pour ceux que vous relisez.",
+      "Dans Permissions → Repositories, réglez Pull requests, Contents et Checks sur « Read-only ». GitHub ajoute Metadata tout seul. Rien d’autre.",
+      "Cliquez sur Generate token, copiez-le, collez-le ci-dessus, cliquez sur Vérifier, puis Enregistrer."
+    ],
+    "create": "Créer un jeton sur GitHub"
   }
 }
