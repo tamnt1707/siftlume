@@ -1,9 +1,9 @@
 /**
- * Gemini Nano's structured answer (lib/nano.ts) turned into an openui-lang program of the app's
+ * An in-browser model's structured answer (lib/local-model.ts) turned into an openui-lang program of the app's
  * own blocks. No runtime imports, so pnpm check:examples validates its output.
  */
 
-export interface NanoSummary {
+export interface LocalSummary {
   title: string;
   tldr: string;
   keyNumbers?: { value: string; label: string }[];
@@ -16,8 +16,8 @@ export interface NanoSummary {
 const q = (s: unknown) => JSON.stringify(String(s ?? '').trim());
 
 /** Turns the JSON answer into an openui-lang program of the app's own blocks. */
-export function nanoProgram(
-  data: NanoSummary,
+export function localProgram(
+  data: LocalSummary,
   source: { title: string; origin?: string },
   readMinutes: number,
   /** Folded sections (false: shown open, for the full length). */
@@ -93,7 +93,7 @@ const hostOf = (url: string) => {
  * Parses JSON that is still streaming: closes the open string, arrays and objects, and drops a
  * trailing comma or a key still waiting for its value. Null while nothing usable has arrived.
  */
-export function parsePartialJson(text: string): NanoSummary | null {
+export function parsePartialJson(text: string): LocalSummary | null {
   const stack: string[] = [];
   let inString = false;
   let escaped = false;
@@ -118,7 +118,7 @@ export function parsePartialJson(text: string): NanoSummary | null {
   ];
   for (const candidate of candidates) {
     try {
-      return JSON.parse(candidate) as NanoSummary;
+      return JSON.parse(candidate) as LocalSummary;
     } catch {
       /* try the next cut */
     }

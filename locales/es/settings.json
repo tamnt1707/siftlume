@@ -248,16 +248,20 @@
     "remove": "Quitar",
     "incomplete": "Añade un nombre y lo que quieres para usar esta forma de leer."
   },
-  "nano": {
-    "about": "Gemini Nano viene integrado en Chrome y funciona en este ordenador: gratis, sin clave de API y nada de lo que lees sale de tu dispositivo. Es mucho más pequeño que los modelos en la nube, así que los resúmenes son más sencillos (sin gráficos ni diagramas) y las páginas largas tardan más.",
-    "unsupported": "Este navegador no tiene Gemini Nano. Necesita Chrome 138 o posterior en Windows, macOS, Linux o un Chromebook Plus.",
-    "unavailable": "Gemini Nano no puede funcionar en este dispositivo. Chrome necesita 22 GB libres en disco y una GPU con más de 4 GB de memoria (o 16 GB de RAM y 4 núcleos).",
-    "ready": "Gemini Nano está listo en este dispositivo.",
-    "downloading": "Descargando Gemini Nano… {{percent}} %",
-    "download": "Descargar Gemini Nano",
-    "resume": "Continuar la descarga",
-    "downloadHint": "Una sola descarga de unos pocos GB, mejor con una conexión sin límite de datos.",
-    "limits": "Gemini Nano escribe en inglés, japonés, español, alemán y francés. Los resúmenes en otros idiomas se escriben en inglés.",
-    "slow": "Lento: un resumen suele tardar 1–3 minutos y las páginas largas varios minutos. Los modelos en la nube tardan segundos."
+  "local": {
+    "about": "Estos modelos funcionan en tu navegador con el chip gráfico de este ordenador: gratis, sin clave de API y nada de lo que lees sale de tu dispositivo. Se descargan una vez y quedan en el navegador hasta que los borres aquí. Son pequeños, así que los resúmenes son más sencillos que con modelos en la nube (sin gráficos ni diagramas).",
+    "slow": "Más lentos que los modelos en la nube: normalmente 20–60 segundos por resumen; el primero tras abrir el panel tarda unos segundos más en cargar el modelo.",
+    "downloaded": "Descargado",
+    "models": {
+      "gemma": "La mejor calidad, escribe vietnamita y la mayoría de idiomas",
+      "qwen": "Unas dos veces más rápido y más ligero; escribe sobre todo en inglés"
+    },
+    "size": "{{size}} GB",
+    "download": "Descargar",
+    "cancel": "Cancelar",
+    "delete": "Borrar",
+    "deleteYes": "Borrar y liberar {{size}} GB",
+    "deleteNo": "Conservar",
+    "storage": "Se descarga de Hugging Face y se guarda en el almacenamiento del navegador para la extensión. Necesita una GPU con WebGPU (la mayoría de ordenadores de los últimos años)."
   }
 }

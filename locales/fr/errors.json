@@ -47,13 +47,10 @@
   "deep": {
     "noneRead": "Aucun des liens choisis n’a pu être lu."
   },
-  "nano": {
-    "unsupported": "Ce navigateur n'a pas Gemini Nano. Choisissez un autre fournisseur d'IA dans les Réglages.",
-    "unavailable": "Gemini Nano ne peut pas fonctionner sur cet appareil. Choisissez un autre fournisseur d'IA dans les Réglages.",
-    "notDownloaded": "Gemini Nano n'est pas encore téléchargé. Ouvrez Réglages → IA et cliquez sur Télécharger Gemini Nano.",
-    "badAnswer": "La réponse de Gemini Nano est illisible. Réessayez.",
-    "englishOnly": "Gemini Nano ne sait pas encore écrire cette langue : le résumé est en anglais.",
-    "tooLong": "Trop long pour Gemini Nano. Essayez un texte plus court ou un autre fournisseur d'IA.",
-    "notSupported": "Gemini Nano ne prend pas en charge cette langue ou cette demande."
+  "local": {
+    "noWebGpu": "Ce navigateur ou cet ordinateur n'a pas WebGPU, nécessaire aux modèles dans le navigateur. Choisissez un autre fournisseur d'IA dans les Réglages.",
+    "noF16": "Cette puce graphique n'a pas une fonction nécessaire aux modèles (shaders 16 bits). Choisissez un autre fournisseur d'IA dans les Réglages.",
+    "notDownloaded": "Le modèle n'est pas encore téléchargé. Ouvrez Réglages → IA et cliquez sur Télécharger.",
+    "badAnswer": "La réponse du modèle est illisible. Réessayez."
   }
 }

@@ -11,12 +11,12 @@ import { HAS_SIDE_PANEL } from './platform';
  * - "anthropic":  Anthropic Messages API via @ai-sdk/anthropic
  * - "google":     Gemini API via @ai-sdk/google
  * - "compatible": any OpenAI-compatible Chat Completions endpoint
- * - "builtin":    Gemini Nano in Chrome (Prompt API), on the device; see lib/nano.ts
+ * - "builtin":    models run in the browser on the GPU (WebLLM); see lib/local-model.ts
  */
 export type ProviderApi = 'openai' | 'anthropic' | 'google' | 'compatible' | 'builtin';
 
 export type ProviderId =
-  | 'chrome'
+  | 'browser'
   | 'openai'
   | 'anthropic'
   | 'google'
@@ -60,11 +60,11 @@ export interface ProviderPreset {
 }
 
 export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
-  chrome: {
-    label: 'Gemini Nano (Chrome)',
+  browser: {
+    label: 'In-browser (Gemma, Qwen)',
     api: 'builtin',
     defaultBaseUrl: '',
-    defaultModel: 'gemini-nano',
+    defaultModel: 'gemma-4-E2B-it-q4f16_1-MLC',
     needsKey: false,
     local: true,
     builtin: true,
@@ -272,7 +272,7 @@ export function getActiveProvider(s: Settings): ActiveProvider {
 /** Returns a user-facing problem with the configuration, or null when it is usable. */
 export function configProblem(s: Settings): string | null {
   const p = getActiveProvider(s);
-  if (p.preset.builtin) return 'LanguageModel' in globalThis ? null : t('errors:nano.unsupported');
+  if (p.preset.builtin) return 'gpu' in navigator ? null : t('errors:local.noWebGpu');
   if (!p.resolvedBaseUrl) return t('errors:config.baseUrl');
   if (p.preset.needsKey && !p.apiKey.trim()) return t('errors:config.apiKey', { provider: p.preset.label });
   if (!p.model.trim()) return t('errors:config.model');

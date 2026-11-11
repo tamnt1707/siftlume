@@ -20,8 +20,8 @@ const NON_CHAT =
  */
 export async function fetchModels(id: ProviderId, cfg: ProviderConfig, signal?: AbortSignal): Promise<ModelOption[]> {
   const preset = PROVIDERS[id];
-  // Gemini Nano: one model, built into Chrome.
-  if (preset.builtin) return [{ id: preset.defaultModel, label: 'Gemini Nano' }];
+  // In-browser models: the ones downloaded in Settings (see LocalModels).
+  if (preset.builtin) return [];
   const base = (cfg.baseUrl || preset.defaultBaseUrl).replace(/\/+$/, '');
   if (!base) throw new Error(t('errors:models.baseUrlRequired'));
   await allowLocalOrigin(base);

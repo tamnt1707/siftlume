@@ -47,13 +47,10 @@
   "deep": {
     "noneRead": "所選連結都無法讀取。"
   },
-  "nano": {
-    "unsupported": "此瀏覽器沒有 Gemini Nano。請在設定中選擇其他 AI 供應商。",
-    "unavailable": "此裝置無法執行 Gemini Nano。請在設定中選擇其他 AI 供應商。",
-    "notDownloaded": "尚未下載 Gemini Nano。開啟設定 → AI，點選下載 Gemini Nano。",
-    "badAnswer": "無法讀取 Gemini Nano 的回答。請再試一次。",
-    "englishOnly": "Gemini Nano 暫時無法用這種語言寫作，所以摘要是英文的。",
-    "tooLong": "內容對 Gemini Nano 來說太長。請嘗試較短的文字或其他 AI 供應商。",
-    "notSupported": "Gemini Nano 不支援此語言或要求。"
+  "local": {
+    "noWebGpu": "此瀏覽器或電腦沒有瀏覽器內模型所需的 WebGPU。請在設定中選擇其他 AI 供應商。",
+    "noF16": "此顯示晶片缺少模型所需的功能（16 位元著色器）。請在設定中選擇其他 AI 供應商。",
+    "notDownloaded": "尚未下載模型。開啟設定 → AI，點選下載。",
+    "badAnswer": "無法讀取模型的回答。請再試一次。"
   }
 }

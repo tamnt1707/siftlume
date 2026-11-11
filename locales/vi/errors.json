@@ -47,13 +47,10 @@
   "deep": {
     "noneRead": "Không đọc được liên kết nào trong số đã chọn."
   },
-  "nano": {
-    "unsupported": "Trình duyệt này không có Gemini Nano. Hãy chọn nhà cung cấp AI khác trong Cài đặt.",
-    "unavailable": "Máy này không chạy được Gemini Nano. Hãy chọn nhà cung cấp AI khác trong Cài đặt.",
-    "notDownloaded": "Chưa tải Gemini Nano. Mở Cài đặt → AI và bấm Tải Gemini Nano.",
-    "badAnswer": "Gemini Nano trả về kết quả không đọc được. Hãy thử lại.",
-    "englishOnly": "Gemini Nano chưa viết được ngôn ngữ này nên bản tóm tắt là tiếng Anh.",
-    "tooLong": "Quá dài với Gemini Nano. Hãy chọn đoạn ngắn hơn hoặc dùng nhà cung cấp AI khác.",
-    "notSupported": "Gemini Nano không hỗ trợ ngôn ngữ hoặc yêu cầu này."
+  "local": {
+    "noWebGpu": "Trình duyệt hoặc máy này không có WebGPU, thứ model trong trình duyệt cần. Hãy chọn nhà cung cấp AI khác trong Cài đặt.",
+    "noF16": "Chip đồ hoạ này thiếu tính năng model trong trình duyệt cần (shader 16-bit). Hãy chọn nhà cung cấp AI khác trong Cài đặt.",
+    "notDownloaded": "Chưa tải model. Mở Cài đặt → AI và bấm Tải về.",
+    "badAnswer": "Model trả về kết quả không đọc được. Hãy thử lại."
   }
 }

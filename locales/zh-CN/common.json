@@ -60,7 +60,7 @@
       "draw": "呈现"
     },
     "elapsed": "{{seconds}} 秒",
-    "nanoSlow": "Gemini Nano 在这台电脑上运行，所以较慢：通常 1–3 分钟，长页面更久。"
+    "localSlow": "模型在这台电脑上运行：通常 20–60 秒。"
   },
   "modeLabel": "分析类型",
   "modes": {

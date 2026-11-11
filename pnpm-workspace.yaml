@@ -1,3 +1,5 @@
 allowBuilds:
   '@openuidev/lang-core': true
   esbuild: true
+minimumReleaseAgeExclude:
+  - '@mlc-ai/web-llm@0.2.88'

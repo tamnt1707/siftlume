@@ -61,7 +61,7 @@
       "draw": "Gestalten"
     },
     "elapsed": "{{seconds}} s",
-    "nanoSlow": "Gemini Nano läuft auf diesem Computer und ist daher langsam: meist 1–3 Minuten, bei langen Seiten länger."
+    "localSlow": "Das Modell läuft auf diesem Computer: meist 20–60 Sekunden."
   },
   "modeLabel": "Analyse",
   "modes": {

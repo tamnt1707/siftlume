@@ -4,7 +4,7 @@ import { createOpenAI } from '@ai-sdk/openai';
 import { createAnthropic } from '@ai-sdk/anthropic';
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { allowLocalOrigin, isLocalUrl } from './local-origin';
-import { nanoComplete } from './nano';
+import { localComplete } from './local-model';
 import { getActiveProvider, type Settings } from './settings';
 
 /** Builds an AI SDK model that calls the provider directly from the extension (BYOK, no backend). */
@@ -27,7 +27,7 @@ export function createModel(settings: Settings) {
     case 'compatible':
     case 'builtin':
       // OpenAI-compatible servers implement Chat Completions, not the Responses API.
-      // (Gemini Nano never gets here: streamCompletion and lib/generate.ts call lib/nano.ts.)
+      // (In-browser models never get here: streamCompletion and lib/generate.ts call lib/local-model.ts.)
       return createOpenAI({ apiKey: p.apiKey || 'not-needed', baseURL, name: p.id }).chat(p.model);
   }
 }
@@ -45,7 +45,7 @@ export interface StreamOptions {
 export async function streamCompletion({ settings, system, messages, signal, onText }: StreamOptions) {
   if (getActiveProvider(settings).preset.builtin) {
     const input = messages.map((m) => (typeof m.content === 'string' ? m.content : '')).join('\n\n');
-    return nanoComplete({ system, input, signal, onText });
+    return localComplete({ settings, system, input, signal, onText });
   }
   await allowLocalOrigin(getActiveProvider(settings).resolvedBaseUrl);
   let streamError: unknown;
@@ -72,8 +72,6 @@ export async function streamCompletion({ settings, system, messages, signal, onT
 export function describeError(err: unknown, settings?: Settings): string {
   if (err instanceof Error) {
     if (err.name === 'AbortError') return t('errors:llm.stopped');
-    if (err.name === 'QuotaExceededError') return t('errors:nano.tooLong');
-    if (err.name === 'NotSupportedError') return t('errors:nano.notSupported');
     const status = (err as { statusCode?: number }).statusCode;
     const local = settings ? isLocalUrl(getActiveProvider(settings).resolvedBaseUrl) : false;
     if (status === 403 && local) return t('errors:llm.localRefused');

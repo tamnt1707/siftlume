@@ -183,8 +183,8 @@ export function SessionView({
   const streamedCode = ctrl.phase === 'summarizing' ? splitInline(ctrl.streamRaw).code : '';
   const summaryResponse = streamedCode || summary.content;
   const summaryStreaming = ctrl.phase === 'summarizing';
-  // Gemini Nano runs on the device: say up front that it takes a while.
-  const nano = PROVIDERS[settings.provider]?.builtin;
+  // In-browser models run on this device: say up front that it takes a while.
+  const local = PROVIDERS[settings.provider]?.builtin;
 
   /**
    * One loading state for every (re)analysis:
@@ -211,7 +211,7 @@ export function SessionView({
         )}
         variant={summary.content ? 'overlay' : 'block'}
         onStop={ctrl.stop}
-        note={nano ? t('common:loader.nanoSlow') : undefined}
+        note={local ? t('common:loader.localSlow') : undefined}
       />
     );
   const dimmed = reworking && Boolean(summary.content);

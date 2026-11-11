@@ -60,7 +60,7 @@
       "draw": "그리기"
     },
     "elapsed": "{{seconds}}초",
-    "nanoSlow": "Gemini Nano는 이 컴퓨터에서 실행되어 느립니다. 보통 1~3분, 긴 페이지는 더 걸립니다."
+    "localSlow": "모델이 이 컴퓨터에서 실행 중입니다. 보통 20~60초 걸립니다."
   },
   "modeLabel": "분석 유형",
   "modes": {

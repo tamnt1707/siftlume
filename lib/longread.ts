@@ -14,7 +14,7 @@ export const MAX_PARTS = 6;
 /** Parts read at the same time. */
 const PARALLEL = 3;
 
-/** How much of a source to keep when it is opened: Gemini Nano reads in parts on its own. */
+/** How much of a source to keep when it is opened: in-browser models read in parts on their own. */
 export const keepChars = (settings: Settings) =>
   getActiveProvider(settings).preset.builtin ? settings.maxChars : settings.maxChars * MAX_PARTS;
 

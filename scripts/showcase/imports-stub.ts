@@ -25,8 +25,8 @@ const memory: Record<string, unknown> = {
   'local:settings': {
     theme: q.has('dark') ? 'dark' : 'light',
     customModes: SHOWCASE_CUSTOM_MODES,
-    // ?nano=<availability>: Settings with Gemini Nano chosen, in that state.
-    ...(q.has('nano') ? { provider: 'chrome' } : {}),
+    // ?local: Settings with the in-browser models chosen.
+    ...(q.has('local') ? { provider: 'browser' } : {}),
   },
 };
 /** ?view=history: a few saved summaries for the search box. */
@@ -54,11 +54,6 @@ if (q.get('view') === 'history') {
     updatedAt: now - (ago as number) * day,
   }));
 }
-if (q.has('nano'))
-  (globalThis as Record<string, unknown>).LanguageModel = {
-    availability: async () => q.get('nano') || 'downloadable',
-    create: async () => ({ destroy() {} }),
-  };
 export const storage = {
   defineItem: (key: string, opts: { fallback: unknown }) => ({
     getValue: async () => memory[key] ?? opts.fallback,
@@ -67,7 +62,7 @@ export const storage = {
   }),
 };
 export const browser: any = {
-  runtime: { id: 'showcase', getManifest: () => ({ version: '0.1.0' }) },
+  runtime: { id: 'showcase', getManifest: () => ({ version: '0.1.0' }), getURL: (p: string) => location.origin + p },
   i18n: { getUILanguage: () => new URLSearchParams(location.search).get('lang') ?? 'en' },
   permissions: { request: async () => true, remove: async () => true, contains: async () => true },
   /** ?tabs: open tabs for the "Combine open tabs" picker. */

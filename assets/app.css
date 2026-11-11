@@ -3007,30 +3007,89 @@ button.ui-menu__item:focus-visible {
   flex: none;
 }
 
-/* ── Gemini Nano setup (Settings → AI) ────────────────────── */
+/* ── In-browser models (Settings → AI) ───────────────────── */
 
-.nano-setup {
+.local-models {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.nano-setup .hint {
+.local-models .hint {
   margin: 0;
 }
 
-.nano-setup__download,
-.nano-setup__progress {
+.local-models__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 4px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.local-model {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   gap: 8px 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.local-model.is-chosen {
+  border-color: var(--accent);
+}
+
+.local-model__pick {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  flex: 1 1 260px;
+  cursor: pointer;
+}
+
+.local-model__pick input {
+  margin-top: 3px;
+  accent-color: var(--accent);
+}
+
+.local-model__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   font-size: 13px;
 }
 
-.nano-setup__progress progress {
-  flex: 1;
-  max-width: 280px;
+.local-model__text strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.local-model__ready {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.local-model__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+}
+
+.local-model__actions progress {
+  width: 120px;
   accent-color: var(--accent);
 }
 

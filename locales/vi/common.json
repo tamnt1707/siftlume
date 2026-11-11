@@ -60,7 +60,7 @@
       "draw": "Dựng"
     },
     "elapsed": "{{seconds}} giây",
-    "nanoSlow": "Gemini Nano chạy trên máy nên khá chậm: thường 1–3 phút, trang dài lâu hơn."
+    "localSlow": "Model chạy trên máy này: thường 20–60 giây."
   },
   "modeLabel": "Kiểu phân tích",
   "modes": {

@@ -12,7 +12,7 @@ import {
 } from './openui';
 import { readStored, type QaTurn, type SessionSource } from './history';
 import { getActiveProvider, type Settings } from './settings';
-import { nanoAnswer, nanoSummary } from './nano';
+import { localAnswer, localSummary } from './local-model';
 import { digestSource, needsDigest } from './longread';
 import { MODE_TASK, resolveMode } from './modes';
 
@@ -124,7 +124,7 @@ export function generateSummary(
 
 function summaryTurn(args: BaseArgs & { previousProgram?: string; instruction?: string }): Promise<GenerateResult> {
   const { settings, source, previousProgram = '', instruction } = args;
-  if (getActiveProvider(settings).preset.builtin) return nanoGenerate(args);
+  if (getActiveProvider(settings).preset.builtin) return localGenerate(args);
   const messages: ModelMessage[] = [
     { role: 'user', content: `${buildSourceMessage(source, source.truncated)}\n\n${modeTask(settings, source)}` },
   ];
@@ -143,11 +143,11 @@ function summaryTurn(args: BaseArgs & { previousProgram?: string; instruction?: 
 }
 
 /**
- * Gemini Nano fills a JSON schema instead of writing openui-lang (see lib/nano.ts). A change
- * request makes a new version from the source, with the request added.
+ * In-browser models fill a JSON schema instead of writing openui-lang (see lib/local-model.ts).
+ * A change request makes a new version from the source, with the request added.
  */
-async function nanoGenerate(args: BaseArgs & { instruction?: string }): Promise<GenerateResult> {
-  const { program, note } = await nanoSummary({
+async function localGenerate(args: BaseArgs & { instruction?: string }): Promise<GenerateResult> {
+  const program = await localSummary({
     settings: args.settings,
     source: args.source,
     instruction: args.instruction,
@@ -155,7 +155,7 @@ async function nanoGenerate(args: BaseArgs & { instruction?: string }): Promise<
     onProgram: (program) => args.onStream(fence(program)),
   });
   args.onStream(fence(program));
-  return { program, prose: note, raw: fence(program), errors: [], repaired: false };
+  return { program, prose: '', raw: fence(program), errors: [], repaired: false };
 }
 
 export function generateAnswer(
@@ -169,7 +169,7 @@ async function answerTurn(
 ): Promise<GenerateResult> {
   const { settings, source, history, question, summaryProgram } = args;
   if (getActiveProvider(settings).preset.builtin) {
-    const text = await nanoAnswer({
+    const text = await localAnswer({
       settings,
       source,
       question,

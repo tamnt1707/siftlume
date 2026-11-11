@@ -248,16 +248,20 @@
     "remove": "Supprimer",
     "incomplete": "Ajoutez un nom et une description pour utiliser ce mode."
   },
-  "nano": {
-    "about": "Gemini Nano est intégré à Chrome et fonctionne sur cet ordinateur : gratuit, sans clé d'API, et rien de ce que vous lisez ne quitte votre appareil. Il est bien plus petit que les modèles en ligne : les résumés sont plus simples (pas de graphiques ni de schémas) et les longues pages prennent plus de temps.",
-    "unsupported": "Ce navigateur n'a pas Gemini Nano. Il faut Chrome 138 ou plus récent sous Windows, macOS, Linux ou sur un Chromebook Plus.",
-    "unavailable": "Gemini Nano ne peut pas fonctionner sur cet appareil. Chrome a besoin de 22 Go libres et d'un GPU avec plus de 4 Go de mémoire (ou de 16 Go de RAM et 4 cœurs).",
-    "ready": "Gemini Nano est prêt sur cet appareil.",
-    "downloading": "Téléchargement de Gemini Nano… {{percent}} %",
-    "download": "Télécharger Gemini Nano",
-    "resume": "Reprendre le téléchargement",
-    "downloadHint": "Un seul téléchargement de quelques Go, de préférence sans limite de données.",
-    "limits": "Gemini Nano écrit en anglais, japonais, espagnol, allemand et français. Les résumés dans d'autres langues sont écrits en anglais.",
-    "slow": "Lent : un résumé prend en général 1 à 3 minutes, et plusieurs minutes pour une longue page. Les modèles en ligne prennent quelques secondes."
+  "local": {
+    "about": "Ces modèles tournent dans votre navigateur sur la puce graphique de cet ordinateur : gratuits, sans clé d'API, et rien de ce que vous lisez ne quitte votre appareil. Téléchargez-en un une fois ; il reste dans le navigateur jusqu'à ce que vous le supprimiez ici. Ils sont petits : les résumés sont plus simples qu'avec les modèles en ligne (pas de graphiques ni de schémas).",
+    "slow": "Plus lents que les modèles en ligne : en général 20 à 60 secondes par résumé ; le premier après l'ouverture du panneau charge le modèle quelques secondes de plus.",
+    "downloaded": "Téléchargé",
+    "models": {
+      "gemma": "Meilleure qualité, écrit le vietnamien et la plupart des langues",
+      "qwen": "Environ deux fois plus rapide, plus léger ; écrit surtout en anglais"
+    },
+    "size": "{{size}} Go",
+    "download": "Télécharger",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "deleteYes": "Supprimer et libérer {{size}} Go",
+    "deleteNo": "Garder",
+    "storage": "Téléchargé depuis Hugging Face et conservé dans le stockage du navigateur pour l'extension. Nécessite un GPU avec WebGPU (la plupart des ordinateurs récents)."
   }
 }

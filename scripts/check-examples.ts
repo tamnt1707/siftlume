@@ -13,10 +13,10 @@ import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../lib/review-examp
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from '../lib/domain-example';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../lib/mode-example';
 import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from '../lib/analysis-example';
-import { nanoProgram } from '../lib/nano-program';
+import { localProgram } from '../lib/local-program';
 
-/** Gemini Nano's answer with every field filled, for a web page and for a file. */
-const NANO_ANSWER = {
+/** An in-browser model's answer with every field filled, for a web page and for a file. */
+const LOCAL_ANSWER = {
   title: 'Acme "Q3" earnings',
   tldr: 'Cloud grew 18% while hardware shrank.',
   keyNumbers: [
@@ -45,8 +45,12 @@ const examples: Record<string, string> = {
   'policy-debate-example': POLICY_DEBATE_EXAMPLE,
   'decision-example': DECISION_EXAMPLE,
   'code-tutorial-example': CODE_TUTORIAL_EXAMPLE,
-  'nano-program-web': nanoProgram(NANO_ANSWER, { title: 'Acme', origin: 'https://ir.acme.example' }, 6),
-  'nano-program-file': nanoProgram({ title: '', tldr: 'Short.', takeaways: [{ text: 'One' }] }, { title: 'a.pdf' }, 1),
+  'local-program-web': localProgram(LOCAL_ANSWER, { title: 'Acme', origin: 'https://ir.acme.example' }, 6),
+  'local-program-file': localProgram(
+    { title: '', tldr: 'Short.', takeaways: [{ text: 'One' }] },
+    { title: 'a.pdf' },
+    1,
+  ),
   ...Object.fromEntries(CSV_TOOL_EXAMPLES.map((e, i) => [`csv-tools[${i}]`, e])),
 };
 

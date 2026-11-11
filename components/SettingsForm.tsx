@@ -10,8 +10,7 @@ import {
 } from '@hugeicons/core-free-icons';
 import { AboutPanel } from '@/components/AboutPanel';
 import { Icon } from '@/components/Icon';
-import { NanoSetup } from '@/components/NanoSetup';
-import { hasNano } from '@/lib/nano';
+import { LocalModels } from '@/components/LocalModels';
 import { useTranslation } from 'react-i18next';
 import { AppearancePanel } from '@/components/AppearancePanel';
 import { LanguagePicker } from '@/components/LanguagePicker';
@@ -79,7 +78,7 @@ function without<T>(record: Partial<Record<ProviderId, T>>, id: ProviderId): Par
 }
 
 /** Providers with setup steps in locales/<lang>/settings.json → keyGuide. */
-type GuideId = Exclude<ProviderId, 'custom' | 'chrome'>;
+type GuideId = Exclude<ProviderId, 'custom' | 'browser'>;
 
 /** Numbered steps to get a key (or install a local app), a cost note and a link to the provider. */
 function KeyGuide({ id, open }: { id: GuideId; open: boolean }) {
@@ -395,26 +394,23 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
           <section className="panel">
             <h2>{t('provider.heading')}</h2>
             <div className="provider-grid">
-              {(Object.keys(PROVIDERS) as ProviderId[])
-                // Gemini Nano only where the browser has it (Chrome desktop).
-                .filter((pid) => !PROVIDERS[pid].builtin || hasNano() || pid === id)
-                .map((pid) => (
-                  <button
-                    key={pid}
-                    className={`provider ${pid === id ? 'provider--active' : ''}`}
-                    onClick={() => update({ provider: pid })}
-                  >
-                    <span>{PROVIDERS[pid].label}</span>
-                    {(PROVIDERS[pid].free || PROVIDERS[pid].local) && (
-                      <span className="provider__badge">
-                        {PROVIDERS[pid].local ? t('provider.local') : t('provider.free')}
-                      </span>
-                    )}
-                    {isProviderConnected(settings, pid, modelCache) && (
-                      <span className="provider__dot" title={t('provider.connected')} />
-                    )}
-                  </button>
-                ))}
+              {(Object.keys(PROVIDERS) as ProviderId[]).map((pid) => (
+                <button
+                  key={pid}
+                  className={`provider ${pid === id ? 'provider--active' : ''}`}
+                  onClick={() => update({ provider: pid })}
+                >
+                  <span>{PROVIDERS[pid].label}</span>
+                  {(PROVIDERS[pid].free || PROVIDERS[pid].local) && (
+                    <span className="provider__badge">
+                      {PROVIDERS[pid].local ? t('provider.local') : t('provider.free')}
+                    </span>
+                  )}
+                  {isProviderConnected(settings, pid, modelCache) && (
+                    <span className="provider__dot" title={t('provider.connected')} />
+                  )}
+                </button>
+              ))}
             </div>
           </section>
 
@@ -456,8 +452,8 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
               </div>
             )}
 
-            {preset.builtin && <NanoSetup />}
-            {id !== 'custom' && id !== 'chrome' && (
+            {preset.builtin && <LocalModels model={cfg.model} onChoose={(model) => updateProvider({ model })} />}
+            {id !== 'custom' && id !== 'browser' && (
               <KeyGuide key={id} id={id} open={setup || (preset.local ? !models.length : !cfg.apiKey)} />
             )}
 

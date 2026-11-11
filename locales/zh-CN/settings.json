@@ -246,16 +246,20 @@
     "remove": "删除",
     "incomplete": "填写名称和内容后才能使用这个阅读方式。"
   },
-  "nano": {
-    "about": "Gemini Nano 内置于 Chrome，在这台电脑上运行：免费、无需 API 密钥，你阅读的内容不会离开设备。它比云端模型小得多，所以摘要更简单（没有图表和示意图），长页面也更慢。",
-    "unsupported": "此浏览器没有 Gemini Nano。需要 Windows、macOS、Linux 或 Chromebook Plus 上的 Chrome 138 或更高版本。",
-    "unavailable": "此设备无法运行 Gemini Nano。Chrome 需要 22 GB 可用磁盘空间和显存超过 4 GB 的 GPU（或 16 GB 内存和 4 核 CPU）。",
-    "ready": "Gemini Nano 已在此设备上就绪。",
-    "downloading": "正在下载 Gemini Nano… {{percent}}%",
-    "download": "下载 Gemini Nano",
-    "resume": "继续下载",
-    "downloadHint": "只需下载一次，约几 GB，建议使用不限流量的网络。",
-    "limits": "Gemini Nano 可以用英语、日语、西班牙语、德语和法语写作。其他语言的摘要会用英语写。",
-    "slow": "较慢：一次摘要通常需要 1–3 分钟，长页面可能要几分钟。云端模型只需几秒。"
+  "local": {
+    "about": "这些模型在浏览器中用这台电脑的显卡运行：免费、无需 API 密钥，你阅读的内容不会离开设备。只需下载一次，模型会留在浏览器中，直到你在这里删除。模型较小，所以摘要比云端模型简单（没有图表和示意图）。",
+    "slow": "比云端模型慢：每次摘要通常 20–60 秒；打开面板后的第一次还要多几秒加载模型。",
+    "downloaded": "已下载",
+    "models": {
+      "gemma": "质量最好，能写越南语和大多数语言",
+      "qwen": "快约 2 倍、更小；主要用英语写"
+    },
+    "size": "{{size}} GB",
+    "download": "下载",
+    "cancel": "取消",
+    "delete": "删除",
+    "deleteYes": "删除并释放 {{size}} GB",
+    "deleteNo": "保留",
+    "storage": "从 Hugging Face 下载，保存在浏览器为扩展提供的存储中。需要支持 WebGPU 的 GPU（近几年的大多数电脑）。"
   }
 }

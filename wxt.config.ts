@@ -28,6 +28,10 @@ export default defineConfig({
     optional_host_permissions: ['<all_urls>'],
     // Asked for only when the user combines several tabs: lists the open tabs to pick from.
     optional_permissions: ['tabs'],
+    // The in-browser models (lib/local-model.ts) run compiled WebAssembly shipped in the package.
+    // MV3's default policy blocks WebAssembly; 'wasm-unsafe-eval' allows it and nothing else
+    // (no eval, no remote code).
+    content_security_policy: { extension_pages: "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';" },
     action: { default_title: '__MSG_actionTitle__' },
     commands: {
       // Opens the popup.
