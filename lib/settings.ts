@@ -61,7 +61,7 @@ export interface ProviderPreset {
 
 export const PROVIDERS: Record<ProviderId, ProviderPreset> = {
   browser: {
-    label: 'In-browser (Gemma, Qwen)',
+    label: 'In-browser (Gemma, LFM)',
     api: 'builtin',
     defaultBaseUrl: '',
     defaultModel: 'gemma-4-E2B-it-q4f16_1-MLC',

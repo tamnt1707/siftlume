@@ -32,7 +32,7 @@ When you summarize content, it is processed by the AI provider you chose, under 
 
 ## Models that run in the browser
 
-Siftlume can also run a small AI model (Gemma or Qwen) inside your browser, on your computer's graphics chip. You download it from Settings with a click: the model files come from Hugging Face (huggingface.co) and are kept in the browser's storage for the extension until you delete them in Settings or uninstall the extension. Downloading sends Hugging Face an ordinary file request, with no content you read. When you use these models, what you summarize and ask is processed on your computer and never sent anywhere.
+Siftlume can also run a small AI model (Gemma or LFM) inside your browser, on your computer's graphics chip. You download it from Settings with a click: the model files come from Hugging Face (huggingface.co) and are kept in the browser's storage for the extension until you delete them in Settings or uninstall the extension. Downloading sends Hugging Face an ordinary file request, with no content you read. When you use these models, what you summarize and ask is processed on your computer and never sent anywhere.
 
 ## Permissions
 

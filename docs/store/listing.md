@@ -5,7 +5,7 @@ Everything to paste into the [Chrome Developer Dashboard](https://chrome.google.
 ## Package
 
 - Build: `pnpm check && pnpm zip`
-- Upload `.output/siftlume-<version>-chrome.zip` (0.1.1 after the keyword-spam fix)
+- Upload `.output/siftlume-<version>-chrome.zip` (0.5.0 now; 0.4.0 is the last published)
 - Before each update, bump `version` in `package.json`.
 
 ## Store listing tab
@@ -15,6 +15,8 @@ Everything to paste into the [Chrome Developer Dashboard](https://chrome.google.
 **Summary** (from the manifest, max 132 characters):
 
 > Summarize web pages, text and files into interactive visual summaries. Bring your own LLM key.
+
+The summary comes from the manifest, so it is not edited here.
 
 **Description** (keep it free of long lists of brand names or file types; the store rejected an earlier version for "keyword spam"):
 
@@ -30,6 +32,7 @@ WHAT YOU CAN SUMMARIZE
 • A page together with the pages it links to (Deep read)
 • Text you paste
 • Documents and spreadsheets you open from your computer
+• Long reports and books: read part by part, so nothing after the first pages is cut
 
 MADE FOR THE CONTENT
 • Numbers become charts, chosen from the shape of the data
@@ -39,19 +42,22 @@ MADE FOR THE CONTENT
 • Spreadsheet data gets filters that update instantly
 
 TOOLS
+• Four lengths, from a quick look to a full report that covers every topic in order
 • Refine in one click: shorter, more detail, action items, timeline, simpler
 • Change the length or language of a single summary
 • Write your own reading modes next to Summary, Explain, Critique and Action
 • Copy, download as HTML or Markdown, listen, or print
 • Jump to a quoted passage in the original page
-• History of past summaries
+• Search every past summary, or ask a question answered from what you have read
 
 YOUR AI, YOUR KEY
 Connect the AI provider you already use with your own API key, or run a model locally on your computer. Requests go straight from your browser to that provider. There is no Siftlume server.
 
+No key? Download a small AI model once from Settings and it runs inside the browser, on your computer's graphics chip: free, offline after the download, and nothing you read leaves your device. You can delete it any time.
+
 PRIVATE BY DESIGN
 • No account, no analytics, no tracking
-• Keys, settings and history stay in your browser
+• Keys, settings, history and downloaded models stay in your browser
 • A page is read only when you ask for a summary
 
 Side panel or full-page tab, light or dark mode, your own colors, and an interface in 12 languages.
@@ -78,7 +84,7 @@ Free and open source (MIT): https://github.com/tamnt1707/siftlume
 
 **Single purpose**:
 
-> Summarize the page the user is reading, text they paste, or a file they choose into a visual summary, using an AI provider the user configures with their own API key.
+> Summarize the page the user is reading, text they paste, or a file they choose into a visual summary, using an AI provider the user configures with their own API key, or an AI model the user downloads to run in the browser.
 
 **Permission justifications**:
 
@@ -96,11 +102,15 @@ Free and open source (MIT): https://github.com/tamnt1707/siftlume
 | `tabs` (optional)                         | Declared as optional and never granted at install. Requested only when the user opens the "Several tabs" source on the start screen, to list the titles and addresses of the tabs in the current window so the user can pick 2–6 of them to summarize and compare together.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | Host permissions (optional, `<all_urls>`) | Declared as optional and never granted at install. When the user saves Settings, the extension requests access to the single domain of the AI provider they configured (for example api.openai.com or localhost for Ollama), so it can call that API. Users can configure any OpenAI-compatible endpoint, so the domain is not known in advance. When the user combines tabs, it requests access to the sites of the tabs they picked, to read them. When the user turns on Deep read, it requests access to all sites once, because the linked pages worth reading are only known after the page is read and the AI has picked them; if refused, it asks for just the picked sites each time. Linked pages are read only during a summary the user started. |
 
-**Remote code**: No, I am not using remote code. (All code, including PDF and diagram renderers, is bundled. The OpenUI development widget, which loads from a CDN, is disabled.)
+**Remote code**: No, I am not using remote code. (All code, including PDF and diagram renderers, is bundled. The OpenUI development widget, which loads from a CDN, is disabled.) Since 0.5.0 the in-browser AI models run compiled WebAssembly that is also bundled (`webllm/` and `ort/` in the package); only the model weights, which are data, are downloaded from Hugging Face when the user clicks Download in Settings.
+
+**Content security policy** (new in 0.5.0, no field in the dashboard; for a reviewer who asks): `extension_pages` adds `'wasm-unsafe-eval'`, which only allows running the bundled WebAssembly of the in-browser models. It allows no `eval` and no remote scripts.
+
+> The extension can run a small AI model on the user's device. Its runtime is WebAssembly bundled in the package, which Manifest V3 runs only with 'wasm-unsafe-eval'. No code is downloaded at runtime; model weights (data) are downloaded from Hugging Face only when the user clicks Download in Settings, and can be deleted there.
 
 **Data usage**: check what the extension handles. Content goes only to the AI provider the user configured, at the user's request:
 
-- [x] **Website content**: the text of the page, selection, pasted text or file the user asks to summarize, sent to the user's chosen AI provider.
+- [x] **Website content**: the text of the page, selection, pasted text or file the user asks to summarize, sent to the user's chosen AI provider (or processed on the device by an in-browser model, sent nowhere).
 - [x] **Authentication information**: the user's own API key, stored locally and sent only to their chosen provider as authentication.
 - [ ] Everything else (personally identifiable information, health, financial, personal communications, location, web history, user activity): not collected.
 
@@ -128,6 +138,8 @@ Siftlume needs an AI provider. Any of these works:
 Option A, API key: open the extension's Settings (gear icon), choose OpenAI (or Anthropic / Google Gemini / OpenRouter), paste an API key, click "Load models", pick a model, then Save.
 
 Option B, local model, no key: install Ollama (https://ollama.com), run `ollama pull llama3.2` and `ollama serve`, choose "Ollama (local)" in Settings, click Save, then pick the model.
+
+Option C, model in the browser, no key and nothing to install (needs a computer with a recent GPU): choose "In-browser (Gemma, LFM)" in Settings, click Download next to LFM3 1.7B (about 1.1 GB, a few minutes), then Save. A summary takes about 20 seconds. Delete removes the model.
 
 Then open any article (for example a Wikipedia page), click the Siftlume icon and "Summarize this page". Try the refine buttons (Shorter, Timeline…), ask a question in the box at the bottom, and the toolbar (Copy, Listen, Print). To summarize a file, click "Upload a file" in the popup or drop a PDF/CSV on the start screen.
 
