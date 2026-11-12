@@ -7,6 +7,8 @@ import { render, PeleError } from 'pele';
 import { library } from '../lib/library';
 import { CSV_TOOL_EXAMPLES, csvColumnNames, parseNumber } from '../lib/csv-tools';
 import { duration } from '../lib/structured';
+import { pickForQuestion, searchHistory, tokenize } from '../lib/library-search';
+import type { HistoryEntry } from '../lib/history';
 import { VISUAL_SUMMARY_EXAMPLE } from '../lib/summary-example';
 import { CHART_SUMMARY_EXAMPLE } from '../lib/chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from '../lib/diagram-example';
@@ -160,6 +162,64 @@ for (const [iso, want] of [
   else {
     failed++;
     console.error(`✗ duration ${iso}\n  - got ${got}`);
+  }
+}
+// History search (BM25): rare words, titles and phrases rank first; accents ignored; CJK pairs.
+{
+  const day = 86_400_000;
+  const entry = (id: string, title: string, text: string, age = 0): HistoryEntry => ({
+    id,
+    title,
+    text,
+    kind: 'webpage',
+    createdAt: 1e12 - age * day,
+    updatedAt: 1e12 - age * day,
+    qa: 0,
+  });
+  const filler = 'Bài viết này nói về cách làm việc hiệu quả, đọc tài liệu và ghi chú. ';
+  const entries = [
+    entry('vdb', 'Pinecone vs Qdrant: vector database nào tốt hơn', 'Pinecone và Qdrant lưu vector để tìm kiếm.', 5),
+    entry('ml', 'Học máy cơ bản cho người mới', 'Học máy là một nhánh của trí tuệ nhân tạo. ' + filler, 3),
+    entry('css', 'Vector graphics in CSS', 'SVG paths, strokes and vector shapes for the web.', 1),
+    entry('long', 'Ghi chú tuần', filler.repeat(30) + 'Có nhắc tới database một lần.', 0),
+    entry('rag', 'RAG trong thực tế', 'Retrieval augmented generation: tìm đoạn văn rồi đưa cho model. ' + filler, 8),
+    entry('zh', '机器学习入门', '机器学习是人工智能的一个分支。', 2),
+    entry('may', 'Máy pha cà phê', 'Đánh giá máy pha cà phê tại nhà, học cách chọn máy.', 4),
+  ];
+  const ids = (list: HistoryEntry[]) => list.map((e) => e.id);
+  for (const [what, got, want] of [
+    [
+      'search "so sánh vector database" → the vector DB post first',
+      ids(searchHistory(entries, 'so sánh vector database'))[0],
+      'vdb',
+    ],
+    ['search "hoc may" → the phrase beats the coffee machine', ids(searchHistory(entries, 'hoc may'))[0], 'ml'],
+    [
+      'search "vect" (still typing) finds both vector posts',
+      ids(searchHistory(entries, 'vect')).sort().join(),
+      'css,vdb',
+    ],
+    ['search "机器学习" finds the Chinese post', ids(searchHistory(entries, '机器学习')).join(), 'zh'],
+    [
+      'search "database" → the short post before the long one',
+      ids(searchHistory(entries, 'database')).join(),
+      'vdb,long',
+    ],
+    ['search "quantum" → nothing', ids(searchHistory(entries, 'quantum')).join(), ''],
+    ['search "" → everything, as stored', ids(searchHistory(entries, '')).length, entries.length],
+    [
+      'question about RAG ignores "mình đã đọc gì"',
+      ids(pickForQuestion(entries, 'Mình đã đọc gì về RAG?', 3))[0],
+      'rag',
+    ],
+    ['question with no match → the most recent', ids(pickForQuestion(entries, 'Kubernetes?', 2)).join(), 'long,css'],
+    ['tokenize "Đà Lạt, GPT模型"', tokenize('Đà Lạt, GPT模型').join(' '), 'da lat gpt 模型'],
+  ] as const) {
+    if (got === want) console.log(`✓ ${what}`);
+    else {
+      failed++;
+      console.error(`✗ ${what}\n  - got ${JSON.stringify(got)}, want ${JSON.stringify(want)}`);
+    }
   }
 }
 if (failed) process.exit(1);
