@@ -217,6 +217,12 @@ export function useSession(settings: Settings) {
     [pendingDeep, start],
   );
 
+  /** An already extracted source (a meeting transcript from the side panel). */
+  const fromSource = useCallback(
+    (src: ExtractedSource & { tabId?: number }, mode?: ModeId) => void start(src, mode),
+    [start],
+  );
+
   const fromText = useCallback(
     (text: string, opts: { title?: string; origin?: string; tabId?: number; mode?: ModeId } = {}) => {
       if (!text.trim()) return setError(t('errors:nothingToSummarize'));
@@ -401,6 +407,7 @@ export function useSession(settings: Settings) {
     pendingDeep,
     resolveDeep,
     fromText,
+    fromSource,
     fromFile,
     refine,
     resummarize,

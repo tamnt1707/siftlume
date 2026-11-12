@@ -3178,3 +3178,108 @@ button.ui-menu__item:focus-visible {
   gap: 8px;
   text-align: left;
 }
+
+/* ── Meeting recorder (start screen on a Google Meet tab) ── */
+
+.meet {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.meet__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+}
+
+.meet__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--down);
+  animation: meet-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes meet-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meet__dot {
+    animation: none;
+  }
+}
+
+.meet__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 46vh;
+  margin: 0;
+  padding: 10px 12px;
+  overflow-y: auto;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.meet__lines li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 8px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.meet__lines strong {
+  font-family: var(--font-sans);
+  font-weight: 650;
+}
+
+.meet__lines li > span:last-child {
+  grid-column: 1 / -1;
+  font-family: var(--font-reading);
+  color: var(--ink);
+}
+
+.meet__time {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+}
+
+.meet__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.meet__actions .btn {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.meet__previous {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meet__again {
+  align-self: flex-start;
+}
+
+.meet__log {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  font-size: 13px;
+}

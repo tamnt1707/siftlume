@@ -20,7 +20,8 @@
     "markdown": "Markdown",
     "video": "视频",
     "multi": "多个标签页",
-    "pr": "拉取请求"
+    "pr": "拉取请求",
+    "meeting": "会议"
   },
   "kindShort": {
     "webpage": "网页",
@@ -30,7 +31,8 @@
     "markdown": "MD",
     "video": "视频",
     "multi": "标签页",
-    "pr": "PR"
+    "pr": "PR",
+    "meeting": "会议"
   },
   "history": {
     "empty": "暂无历史记录。",

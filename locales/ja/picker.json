@@ -53,7 +53,8 @@
     "doc": "このドキュメント",
     "sheet": "このスプレッドシート",
     "slides": "このプレゼンテーション",
-    "drive": "この PDF"
+    "drive": "この PDF",
+    "meet": "この会議"
   },
   "runPr": {
     "summary": "このプルリクエストを要約",
@@ -84,5 +85,24 @@
     "explain": "この PDF を解説",
     "critique": "この PDF を批判的に検討",
     "action": "やることを抽出"
+  },
+  "meet": {
+    "intro": "Siftlume は Meet のライブ字幕を誰が話したかと一緒に記録し、会議を要約します：決定事項、担当者付きのアクション、未解決の質問。先に通話に参加してください。",
+    "start": "記録を開始",
+    "starting": "開始中…",
+    "recording": "記録中",
+    "speakers": "話者：{{count}}",
+    "noCaptions": "字幕がまだありません。Meet で字幕をオンにしてください（CC ボタンまたは c キー）。表示されしだい記録します。",
+    "notInCall": "通話に参加すると発言の記録が始まります。",
+    "summarizeNow": "ここまでを要約",
+    "stopAndSummarize": "停止して要約",
+    "previous": "前回の記録",
+    "ended": "会議は終了しました",
+    "summarize": "会議を要約",
+    "discard": "破棄",
+    "exportLog": "デバッグログを書き出す",
+    "empty": "まだ何も記録されていません。",
+    "privacy": "字幕は要約するまでこのブラウザ内にあり、要約時に他のページと同じく AI プロバイダーへ送られます。",
+    "openPanel": "サイドパネルでこの会議を記録"
   }
 }

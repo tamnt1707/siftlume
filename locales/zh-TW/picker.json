@@ -53,7 +53,8 @@
     "doc": "此文件",
     "sheet": "此試算表",
     "slides": "此簡報",
-    "drive": "此 PDF"
+    "drive": "此 PDF",
+    "meet": "此會議"
   },
   "runPr": {
     "summary": "摘要此拉取請求",
@@ -84,5 +85,24 @@
     "explain": "解說此 PDF",
     "critique": "批判性分析此 PDF",
     "action": "擷取待辦事項"
+  },
+  "meet": {
+    "intro": "Siftlume 會記錄 Meet 的即時字幕及發言者，用來摘要會議：決定、附負責人的待辦事項、未決問題。請先加入通話。",
+    "start": "開始記錄",
+    "starting": "正在開始…",
+    "recording": "正在記錄",
+    "speakers": "發言者：{{count}}",
+    "noCaptions": "還沒有字幕。請在 Meet 中開啟字幕（CC 按鈕或按 c 鍵），字幕一出現就會開始記錄。",
+    "notInCall": "加入通話後才會開始記錄發言。",
+    "summarizeNow": "摘要到目前為止",
+    "stopAndSummarize": "停止並摘要",
+    "previous": "上次記錄",
+    "ended": "會議已結束",
+    "summarize": "摘要會議",
+    "discard": "捨棄",
+    "exportLog": "匯出偵錯記錄",
+    "empty": "還沒有記錄到內容。",
+    "privacy": "字幕在你摘要之前只保存在此瀏覽器中；摘要時，記錄會像其他頁面一樣傳送給你的 AI 服務商。",
+    "openPanel": "在側邊欄中記錄此會議"
   }
 }

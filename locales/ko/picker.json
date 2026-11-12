@@ -53,7 +53,8 @@
     "doc": "이 문서",
     "sheet": "이 스프레드시트",
     "slides": "이 프레젠테이션",
-    "drive": "이 PDF"
+    "drive": "이 PDF",
+    "meet": "이 회의"
   },
   "runPr": {
     "summary": "이 풀 리퀘스트 요약",
@@ -84,5 +85,24 @@
     "explain": "이 PDF 설명",
     "critique": "이 PDF 비판적 검토",
     "action": "할 일 뽑기"
+  },
+  "meet": {
+    "intro": "Siftlume은 Meet의 실시간 자막을 누가 말했는지와 함께 기록해 회의를 요약합니다: 결정 사항, 담당자가 있는 할 일, 남은 질문. 먼저 통화에 참여하세요.",
+    "start": "기록 시작",
+    "starting": "시작하는 중…",
+    "recording": "기록 중",
+    "speakers": "발언자: {{count}}",
+    "noCaptions": "아직 자막이 없습니다. Meet에서 자막을 켜세요(CC 버튼 또는 c 키). 자막이 나타나는 즉시 기록합니다.",
+    "notInCall": "통화에 참여하면 발언 기록이 시작됩니다.",
+    "summarizeNow": "지금까지 요약",
+    "stopAndSummarize": "중지하고 요약",
+    "previous": "최근 기록",
+    "ended": "회의가 끝났습니다",
+    "summarize": "회의 요약",
+    "discard": "삭제",
+    "exportLog": "디버그 로그 내보내기",
+    "empty": "아직 기록된 내용이 없습니다.",
+    "privacy": "자막은 요약할 때까지 이 브라우저에만 있고, 요약하면 다른 페이지처럼 AI 제공업체로 전송됩니다.",
+    "openPanel": "사이드 패널에서 이 회의 기록"
   }
 }

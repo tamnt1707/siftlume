@@ -53,7 +53,8 @@
     "doc": "Tài liệu này",
     "sheet": "Bảng tính này",
     "slides": "Bài trình bày này",
-    "drive": "File PDF này"
+    "drive": "File PDF này",
+    "meet": "Cuộc họp này"
   },
   "runPr": {
     "summary": "Tóm tắt pull request này",
@@ -84,5 +85,24 @@
     "explain": "Giải thích file PDF này",
     "critique": "Phản biện file PDF này",
     "action": "Lấy việc cần làm"
+  },
+  "meet": {
+    "intro": "Siftlume ghi phụ đề trực tiếp của Meet, kèm ai nói gì, để tóm tắt cuộc họp: quyết định, việc cần làm kèm người phụ trách, câu hỏi còn bỏ ngỏ. Hãy vào cuộc gọi trước.",
+    "start": "Bắt đầu ghi",
+    "starting": "Đang bắt đầu…",
+    "recording": "Đang ghi",
+    "speakers": "Người nói: {{count}}",
+    "noCaptions": "Chưa thấy phụ đề. Bật phụ đề trong Meet (nút CC, hoặc nhấn c); bản ghi sẽ bắt đầu ngay khi phụ đề xuất hiện.",
+    "notInCall": "Hãy vào cuộc gọi để bắt đầu ghi lời nói.",
+    "summarizeNow": "Tóm tắt đến lúc này",
+    "stopAndSummarize": "Dừng và tóm tắt",
+    "previous": "Bản ghi gần nhất",
+    "ended": "Cuộc họp đã kết thúc",
+    "summarize": "Tóm tắt cuộc họp",
+    "discard": "Bỏ bản ghi",
+    "exportLog": "Xuất nhật ký debug",
+    "empty": "Chưa ghi được gì.",
+    "privacy": "Phụ đề chỉ nằm trong trình duyệt này cho tới khi bạn tóm tắt; lúc đó bản ghi được gửi tới nhà cung cấp AI như mọi trang khác.",
+    "openPanel": "Ghi cuộc họp này trong bảng bên"
   }
 }

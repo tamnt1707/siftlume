@@ -53,7 +53,8 @@
     "doc": "This document",
     "sheet": "This spreadsheet",
     "slides": "This presentation",
-    "drive": "This PDF"
+    "drive": "This PDF",
+    "meet": "This meeting"
   },
   "runPr": {
     "summary": "Summarize this pull request",
@@ -84,5 +85,24 @@
     "explain": "Explain this PDF",
     "critique": "Critique this PDF",
     "action": "Get action items"
+  },
+  "meet": {
+    "intro": "Siftlume records Meet's live captions, with who said what, so it can summarize the meeting: decisions, action items with owners, open questions. Join the call first.",
+    "start": "Start recording",
+    "starting": "Starting…",
+    "recording": "Recording",
+    "speakers": "Speakers: {{count}}",
+    "noCaptions": "No captions yet. Turn on captions in Meet (the CC button, or press c); recording picks them up as soon as they appear.",
+    "notInCall": "Join the call to start capturing what is said.",
+    "summarizeNow": "Summarize so far",
+    "stopAndSummarize": "Stop and summarize",
+    "previous": "Last recording",
+    "ended": "The meeting ended",
+    "summarize": "Summarize the meeting",
+    "discard": "Discard",
+    "exportLog": "Export debug log",
+    "empty": "Nothing has been captured yet.",
+    "privacy": "Captions stay in this browser until you summarize; then the transcript goes to your AI provider like any page.",
+    "openPanel": "Record this meeting in the side panel"
   }
 }

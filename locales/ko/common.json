@@ -20,7 +20,8 @@
     "markdown": "Markdown",
     "video": "동영상",
     "multi": "여러 탭",
-    "pr": "풀 리퀘스트"
+    "pr": "풀 리퀘스트",
+    "meeting": "회의"
   },
   "kindShort": {
     "webpage": "웹",
@@ -30,7 +31,8 @@
     "markdown": "MD",
     "video": "동영상",
     "multi": "탭",
-    "pr": "PR"
+    "pr": "PR",
+    "meeting": "회의"
   },
   "history": {
     "empty": "아직 기록이 없습니다.",

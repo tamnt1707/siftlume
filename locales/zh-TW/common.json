@@ -20,7 +20,8 @@
     "markdown": "Markdown",
     "video": "影片",
     "multi": "多個分頁",
-    "pr": "拉取請求"
+    "pr": "拉取請求",
+    "meeting": "會議"
   },
   "kindShort": {
     "webpage": "網頁",
@@ -30,7 +31,8 @@
     "markdown": "MD",
     "video": "影片",
     "multi": "分頁",
-    "pr": "PR"
+    "pr": "PR",
+    "meeting": "會議"
   },
   "history": {
     "empty": "尚無歷史紀錄。",

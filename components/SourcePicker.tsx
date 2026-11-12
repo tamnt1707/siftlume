@@ -12,6 +12,7 @@ import { TabsPicker } from './TabsPicker';
 import { DeepToggle } from './DeepRead';
 import { requestTabsPermission } from '@/lib/multi';
 import { RUN_LABELS, specialPage } from '@/lib/special-page';
+import { MeetPanel } from './MeetPanel';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
 
@@ -124,7 +125,12 @@ export function SourcePicker({
           compact={Boolean(page)}
         />
 
-        {page && (
+        {page && special === 'meet' && (
+          <Tabs.Content value="page" className="source-tabs__panel">
+            <MeetPanel tabId={page.id} ctrl={ctrl} mode={mode} />
+          </Tabs.Content>
+        )}
+        {page && special !== 'meet' && (
           <Tabs.Content value="page" className="source-tabs__panel">
             {canDeep && <DeepToggle checked={deep} onChange={setDeep} disabled={busy || !page.readable} />}
             <button

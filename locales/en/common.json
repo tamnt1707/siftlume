@@ -20,7 +20,8 @@
     "markdown": "Markdown",
     "video": "Video",
     "multi": "Several tabs",
-    "pr": "Pull request"
+    "pr": "Pull request",
+    "meeting": "Meeting"
   },
   "kindShort": {
     "webpage": "Web",
@@ -30,7 +31,8 @@
     "markdown": "MD",
     "video": "Video",
     "multi": "Tabs",
-    "pr": "PR"
+    "pr": "PR",
+    "meeting": "Meet"
   },
   "history": {
     "empty": "No history yet.",

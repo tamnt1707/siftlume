@@ -20,7 +20,8 @@
     "markdown": "Markdown",
     "video": "Видео",
     "multi": "Несколько вкладок",
-    "pr": "Pull request"
+    "pr": "Pull request",
+    "meeting": "Встреча"
   },
   "kindShort": {
     "webpage": "Веб",
@@ -30,7 +31,8 @@
     "markdown": "MD",
     "video": "Видео",
     "multi": "Вкладки",
-    "pr": "PR"
+    "pr": "PR",
+    "meeting": "Встреча"
   },
   "history": {
     "empty": "История пока пуста.",

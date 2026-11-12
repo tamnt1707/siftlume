@@ -20,7 +20,8 @@
     "markdown": "Markdown",
     "video": "動画",
     "multi": "複数のタブ",
-    "pr": "プルリクエスト"
+    "pr": "プルリクエスト",
+    "meeting": "会議"
   },
   "kindShort": {
     "webpage": "Web",
@@ -30,7 +31,8 @@
     "markdown": "MD",
     "video": "動画",
     "multi": "タブ",
-    "pr": "PR"
+    "pr": "PR",
+    "meeting": "会議"
   },
   "history": {
     "empty": "履歴はまだありません。",

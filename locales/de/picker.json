@@ -53,7 +53,8 @@
     "doc": "Dieses Dokument",
     "sheet": "Diese Tabelle",
     "slides": "Diese Präsentation",
-    "drive": "Dieses PDF"
+    "drive": "Dieses PDF",
+    "meet": "Dieses Meeting"
   },
   "runPr": {
     "summary": "Diesen Pull Request zusammenfassen",
@@ -84,5 +85,24 @@
     "explain": "Dieses PDF erklären",
     "critique": "Dieses PDF kritisch prüfen",
     "action": "Aufgaben herausziehen"
+  },
+  "meet": {
+    "intro": "Siftlume zeichnet die Live-Untertitel von Meet auf, mit wer was gesagt hat, und fasst das Meeting zusammen: Entscheidungen, Aufgaben mit Verantwortlichen, offene Fragen. Tritt zuerst dem Anruf bei.",
+    "start": "Aufnahme starten",
+    "starting": "Wird gestartet…",
+    "recording": "Aufnahme läuft",
+    "speakers": "Sprecher: {{count}}",
+    "noCaptions": "Noch keine Untertitel. Schalte sie in Meet ein (CC-Taste oder c); die Aufnahme übernimmt sie, sobald sie erscheinen.",
+    "notInCall": "Tritt dem Anruf bei, damit Gesprochenes erfasst wird.",
+    "summarizeNow": "Bisher zusammenfassen",
+    "stopAndSummarize": "Stoppen und zusammenfassen",
+    "previous": "Letzte Aufnahme",
+    "ended": "Das Meeting ist beendet",
+    "summarize": "Meeting zusammenfassen",
+    "discard": "Verwerfen",
+    "exportLog": "Debug-Protokoll exportieren",
+    "empty": "Noch nichts erfasst.",
+    "privacy": "Untertitel bleiben in diesem Browser, bis du zusammenfasst; dann geht das Transkript wie jede Seite an deinen KI-Anbieter.",
+    "openPanel": "Dieses Meeting in der Seitenleiste aufzeichnen"
   }
 }

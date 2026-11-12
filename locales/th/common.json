@@ -20,7 +20,8 @@
     "markdown": "Markdown",
     "video": "วิดีโอ",
     "multi": "หลายแท็บ",
-    "pr": "Pull request"
+    "pr": "Pull request",
+    "meeting": "การประชุม"
   },
   "kindShort": {
     "webpage": "เว็บ",
@@ -30,7 +31,8 @@
     "markdown": "MD",
     "video": "วิดีโอ",
     "multi": "แท็บ",
-    "pr": "PR"
+    "pr": "PR",
+    "meeting": "ประชุม"
   },
   "history": {
     "empty": "ยังไม่มีประวัติ",

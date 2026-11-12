@@ -21,6 +21,37 @@ export const SHOWCASE_CUSTOM_MODES = q.has('custom')
       },
     ]
   : [];
+/** A recording of scripts/meet-test/meeting.txt, about four minutes in. */
+function meetRecording(state: string | null) {
+  const turns: [string, string][] = [
+    ['Ana', "Morning everyone. Let's review the launch plan for the new mobile app."],
+    ['Bao', 'Morning. Before we start, the QA run on Android is not finished yet.'],
+    ['Ana', 'How much is left?'],
+    ['Bao', 'About forty test cases. I can finish them by Wednesday.'],
+    ['Ana', "Okay. Then we can't ship on Friday as planned."],
+    ['Bao', "I'd suggest Monday the twentieth instead. That gives us the weekend for fixes."],
+  ];
+  const now = Date.now();
+  return {
+    status: state === 'ended' ? 'ended' : 'recording',
+    title: 'Mobile launch sync',
+    url: 'https://meet.google.com/abc-defg-hij',
+    startedAt: now - 252_000,
+    updatedAt: now,
+    blocks:
+      state === 'nocaptions'
+        ? []
+        : turns.map(([speaker, text], i) => ({
+            id: i,
+            speaker,
+            versions: [text],
+            start: i * 38_000,
+            end: i * 38_000 + 9_000,
+          })),
+    captions: state !== 'nocaptions',
+    inCall: true,
+  };
+}
 const memory: Record<string, unknown> = {
   'local:settings': {
     theme: q.has('dark') ? 'dark' : 'light',
@@ -28,6 +59,8 @@ const memory: Record<string, unknown> = {
     // ?local: Settings with the in-browser models chosen.
     ...(q.has('local') ? { provider: 'browser' } : {}),
   },
+  // ?view=meet: a meeting being recorded (&meet=ended: one that ended; &meet=nocaptions: captions off).
+  ...(q.get('view') === 'meet' ? { 'local:meet:1': meetRecording(q.get('meet')) } : {}),
 };
 /** ?view=history: a few saved summaries for the search box. */
 if (q.get('view') === 'history') {
@@ -58,6 +91,7 @@ export const storage = {
   defineItem: (key: string, opts: { fallback: unknown }) => ({
     getValue: async () => memory[key] ?? opts.fallback,
     setValue: async (v: unknown) => void (memory[key] = v),
+    removeValue: async () => void delete memory[key],
     watch: () => () => {},
   }),
 };

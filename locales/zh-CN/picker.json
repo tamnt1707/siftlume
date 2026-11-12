@@ -53,7 +53,8 @@
     "doc": "此文档",
     "sheet": "此电子表格",
     "slides": "此演示文稿",
-    "drive": "此 PDF"
+    "drive": "此 PDF",
+    "meet": "此会议"
   },
   "runPr": {
     "summary": "总结此拉取请求",
@@ -84,5 +85,24 @@
     "explain": "解释此 PDF",
     "critique": "批判性分析此 PDF",
     "action": "提取待办事项"
+  },
+  "meet": {
+    "intro": "Siftlume 会记录 Meet 的实时字幕及发言人，用来总结会议：决定、带负责人的待办事项、未决问题。请先加入通话。",
+    "start": "开始记录",
+    "starting": "正在开始…",
+    "recording": "正在记录",
+    "speakers": "发言人：{{count}}",
+    "noCaptions": "还没有字幕。请在 Meet 中开启字幕（CC 按钮或按 c 键），字幕一出现就会开始记录。",
+    "notInCall": "加入通话后才会开始记录发言。",
+    "summarizeNow": "总结到目前为止",
+    "stopAndSummarize": "停止并总结",
+    "previous": "上次记录",
+    "ended": "会议已结束",
+    "summarize": "总结会议",
+    "discard": "丢弃",
+    "exportLog": "导出调试日志",
+    "empty": "还没有记录到内容。",
+    "privacy": "字幕在你总结之前只保存在此浏览器中；总结时，记录会像其他页面一样发送给你的 AI 服务商。",
+    "openPanel": "在侧边栏中记录此会议"
   }
 }

@@ -64,8 +64,15 @@ const panelRequestsItem = storage.defineItem<Record<string, { id: string; at: nu
 /** URL each panel was opened for, so navigation away from it can close the panel. */
 export const panelUrlsItem = storage.defineItem<Record<string, string>>('session:panelUrls', { fallback: {} });
 
-/** Compares URLs without the fragment: in-page anchors keep the panel open. */
-export const sameDocument = (a?: string, b?: string) => Boolean(a && b) && a!.split('#')[0] === b!.split('#')[0];
+const meetingCode = (url: string) => url.match(/^https:\/\/meet\.google\.com\/([a-z]+-[a-z]+-[a-z]+)/)?.[1];
+
+/**
+ * Compares URLs without the fragment: in-page anchors keep the panel open. A Meet call keeps its
+ * panel (and recording) while Meet changes the query string as you join.
+ */
+export const sameDocument = (a?: string, b?: string) =>
+  Boolean(a && b) &&
+  (a!.split('#')[0] === b!.split('#')[0] || (Boolean(meetingCode(a!)) && meetingCode(a!) === meetingCode(b!)));
 
 /**
  * Enables and opens the side panel for one tab. Must be called synchronously inside the click /

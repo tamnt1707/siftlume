@@ -14,7 +14,15 @@ import { RUN_LABELS, specialPage } from '@/lib/special-page';
 import { useVideoProbe } from '@/components/useVideoProbe';
 import { DeepToggle } from '@/components/DeepRead';
 import { getActiveTab, isReadableUrl } from '@/lib/page';
-import { openApp, queueRequest, type AppRoute, type PendingRequest } from '@/lib/pending';
+import {
+  openApp,
+  openSidePanelForTab,
+  queueRequest,
+  rememberPanelUrl,
+  type AppRoute,
+  type PendingRequest,
+} from '@/lib/pending';
+import { HAS_SIDE_PANEL } from '@/lib/platform';
 import { configProblem } from '@/lib/settings';
 
 const openSettings = () => void browser.runtime.openOptionsPage();
@@ -95,18 +103,35 @@ export default function Popup() {
         <AnalysisChoice settings={settings} mode={mode} onModeChange={setMode} compact />
 
         {canDeep && <DeepToggle checked={deep} onChange={setDeep} />}
-        <button
-          className="btn btn--primary btn--hero"
-          disabled={!canReadTab || Boolean(problem) || Boolean(video.blocked)}
-          onClick={() => tab?.id && submit({ type: 'tab', tabId: tab.id, deep: deep && canDeep })}
-        >
-          <span className="btn__label">
-            <Icon icon={SparklesIcon} />
-            {runLabel(special ? RUN_LABELS[special] : 'run', mode, settings.customModes)}
-          </span>
-          {tab?.title && <span className="btn__sub">{canReadTab ? tab.title : t('picker:cannotRead')}</span>}
-          {(video.blocked || video.note) && <span className="btn__sub">{video.blocked ?? video.note}</span>}
-        </button>
+        {special === 'meet' && HAS_SIDE_PANEL && tab?.id ? (
+          // Meetings are recorded from the tab's side panel, which stays open during the call.
+          <button
+            className="btn btn--primary btn--hero"
+            onClick={() => {
+              void openSidePanelForTab(tab.id!);
+              if (tab.url) void rememberPanelUrl(tab.id!, tab.url);
+              window.close();
+            }}
+          >
+            <span className="btn__label">
+              <Icon icon={SparklesIcon} />
+              {t('picker:meet.openPanel')}
+            </span>
+          </button>
+        ) : (
+          <button
+            className="btn btn--primary btn--hero"
+            disabled={!canReadTab || Boolean(problem) || Boolean(video.blocked)}
+            onClick={() => tab?.id && submit({ type: 'tab', tabId: tab.id, deep: deep && canDeep })}
+          >
+            <span className="btn__label">
+              <Icon icon={SparklesIcon} />
+              {runLabel(special ? RUN_LABELS[special] : 'run', mode, settings.customModes)}
+            </span>
+            {tab?.title && <span className="btn__sub">{canReadTab ? tab.title : t('picker:cannotRead')}</span>}
+            {(video.blocked || video.note) && <span className="btn__sub">{video.blocked ?? video.note}</span>}
+          </button>
+        )}
 
         <div className="paste">
           <textarea

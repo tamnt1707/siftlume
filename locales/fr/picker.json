@@ -53,7 +53,8 @@
     "doc": "Ce document",
     "sheet": "Cette feuille de calcul",
     "slides": "Cette présentation",
-    "drive": "Ce PDF"
+    "drive": "Ce PDF",
+    "meet": "Cette réunion"
   },
   "runPr": {
     "summary": "Résumer cette pull request",
@@ -84,5 +85,24 @@
     "explain": "Expliquer ce PDF",
     "critique": "Analyser ce PDF",
     "action": "Extraire les actions"
+  },
+  "meet": {
+    "intro": "Siftlume enregistre les sous-titres en direct de Meet, avec qui a dit quoi, pour résumer la réunion : décisions, actions avec responsables, questions ouvertes. Rejoignez d’abord l’appel.",
+    "start": "Démarrer l’enregistrement",
+    "starting": "Démarrage…",
+    "recording": "Enregistrement",
+    "speakers": "Intervenants : {{count}}",
+    "noCaptions": "Pas encore de sous-titres. Activez-les dans Meet (bouton CC ou touche c) ; l’enregistrement les prend dès qu’ils apparaissent.",
+    "notInCall": "Rejoignez l’appel pour commencer à capter ce qui est dit.",
+    "summarizeNow": "Résumer jusqu’ici",
+    "stopAndSummarize": "Arrêter et résumer",
+    "previous": "Dernier enregistrement",
+    "ended": "La réunion est terminée",
+    "summarize": "Résumer la réunion",
+    "discard": "Supprimer",
+    "exportLog": "Exporter le journal de débogage",
+    "empty": "Rien n’a encore été capté.",
+    "privacy": "Les sous-titres restent dans ce navigateur jusqu’au résumé ; la transcription part alors vers votre fournisseur d’IA comme n’importe quelle page.",
+    "openPanel": "Enregistrer cette réunion dans le panneau latéral"
   }
 }

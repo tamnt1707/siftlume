@@ -6,7 +6,7 @@ import Papa from 'papaparse';
 import { csvColumnNames, parseNumber, type CsvDataset, type CsvRow } from './csv-tools';
 import type { StructuredType } from './structured';
 
-export type SourceKind = 'webpage' | 'text' | 'pdf' | 'csv' | 'markdown' | 'video' | 'pr' | 'multi';
+export type SourceKind = 'webpage' | 'text' | 'pdf' | 'csv' | 'markdown' | 'video' | 'pr' | 'meeting' | 'multi';
 
 export interface ExtractedSource {
   kind: SourceKind;

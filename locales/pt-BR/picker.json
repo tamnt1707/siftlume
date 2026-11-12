@@ -53,7 +53,8 @@
     "doc": "Este documento",
     "sheet": "Esta planilha",
     "slides": "Esta apresentação",
-    "drive": "Este PDF"
+    "drive": "Este PDF",
+    "meet": "Esta reunião"
   },
   "runPr": {
     "summary": "Resumir este pull request",
@@ -84,5 +85,24 @@
     "explain": "Explicar este PDF",
     "critique": "Analisar criticamente este PDF",
     "action": "Obter tarefas"
+  },
+  "meet": {
+    "intro": "O Siftlume grava as legendas ao vivo do Meet, com quem disse o quê, para resumir a reunião: decisões, tarefas com responsáveis e perguntas em aberto. Entre na chamada primeiro.",
+    "start": "Começar a gravar",
+    "starting": "Começando…",
+    "recording": "Gravando",
+    "speakers": "Participantes: {{count}}",
+    "noCaptions": "Ainda sem legendas. Ative-as no Meet (botão CC ou tecla c); a gravação as captura assim que aparecerem.",
+    "notInCall": "Entre na chamada para começar a captar o que é dito.",
+    "summarizeNow": "Resumir até agora",
+    "stopAndSummarize": "Parar e resumir",
+    "previous": "Última gravação",
+    "ended": "A reunião terminou",
+    "summarize": "Resumir a reunião",
+    "discard": "Descartar",
+    "exportLog": "Exportar log de depuração",
+    "empty": "Nada foi captado ainda.",
+    "privacy": "As legendas ficam neste navegador até você resumir; então a transcrição vai para o seu provedor de IA como qualquer página.",
+    "openPanel": "Gravar esta reunião no painel lateral"
   }
 }

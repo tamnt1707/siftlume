@@ -24,6 +24,7 @@ import type { SessionController } from '../../components/useSession';
 import { PR_REVIEW_EXAMPLE, PRODUCT_EVENT_EXAMPLE, RECIPE_EXAMPLE } from '../../lib/component-example';
 import { MarkDownRenderer } from '@openuidev/react-ui';
 import { VISUAL_SUMMARY_EXAMPLE } from '../../lib/summary-example';
+import { MeetPanel } from '../../components/MeetPanel';
 import { GenUI } from '../../components/GenUI';
 import { ThemeToggle } from '../../components/ThemeToggle';
 import type { Session } from '../../lib/history';
@@ -532,6 +533,20 @@ function PromoMarquee() {
   );
 }
 
+/** The meeting recorder in a Meet tab's side panel (`?view=meet`, `&meet=ended|nocaptions`). */
+function MeetSample() {
+  const idle = { phase: 'idle', fromSource: () => {} } as unknown as SessionController;
+  return (
+    <Themed settings={settings} className="app app--panel sc-panel">
+      <main className="content">
+        <div className="narrow">
+          <MeetPanel tabId={1} ctrl={idle} mode="summary" />
+        </div>
+      </main>
+    </Themed>
+  );
+}
+
 const LONG_NOTE = `**Đánh giá độ tin cậy: khoảng 7/10.**
 
 **Điểm mạnh**
@@ -585,6 +600,7 @@ const views: Record<string, () => ReactElement> = {
   settings: SettingsView,
   components: Components,
   note: NoteSample,
+  meet: MeetSample,
   loader: Loaders,
   pickers: Pickers,
   deep: DeepPicker,

@@ -20,7 +20,8 @@
     "markdown": "Markdown",
     "video": "Video",
     "multi": "Nhiều tab",
-    "pr": "Pull request"
+    "pr": "Pull request",
+    "meeting": "Cuộc họp"
   },
   "kindShort": {
     "webpage": "Web",
@@ -30,7 +31,8 @@
     "markdown": "MD",
     "video": "Video",
     "multi": "Tab",
-    "pr": "PR"
+    "pr": "PR",
+    "meeting": "Họp"
   },
   "history": {
     "empty": "Chưa có lịch sử.",

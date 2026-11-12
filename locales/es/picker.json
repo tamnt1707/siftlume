@@ -53,7 +53,8 @@
     "doc": "Este documento",
     "sheet": "Esta hoja de cálculo",
     "slides": "Esta presentación",
-    "drive": "Este PDF"
+    "drive": "Este PDF",
+    "meet": "Esta reunión"
   },
   "runPr": {
     "summary": "Resumir este pull request",
@@ -84,5 +85,24 @@
     "explain": "Explicar este PDF",
     "critique": "Analizar críticamente este PDF",
     "action": "Obtener tareas"
+  },
+  "meet": {
+    "intro": "Siftlume graba los subtítulos en directo de Meet, con quién dijo qué, para resumir la reunión: decisiones, tareas con responsables y preguntas abiertas. Únete primero a la llamada.",
+    "start": "Empezar a grabar",
+    "starting": "Empezando…",
+    "recording": "Grabando",
+    "speakers": "Participantes: {{count}}",
+    "noCaptions": "Aún no hay subtítulos. Actívalos en Meet (botón CC o tecla c); la grabación los recoge en cuanto aparezcan.",
+    "notInCall": "Únete a la llamada para empezar a captar lo que se dice.",
+    "summarizeNow": "Resumir hasta ahora",
+    "stopAndSummarize": "Detener y resumir",
+    "previous": "Última grabación",
+    "ended": "La reunión terminó",
+    "summarize": "Resumir la reunión",
+    "discard": "Descartar",
+    "exportLog": "Exportar registro de depuración",
+    "empty": "Todavía no se ha captado nada.",
+    "privacy": "Los subtítulos se quedan en este navegador hasta que resumes; entonces la transcripción va a tu proveedor de IA como cualquier página.",
+    "openPanel": "Grabar esta reunión en el panel lateral"
   }
 }
