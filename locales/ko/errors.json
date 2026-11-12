@@ -61,5 +61,12 @@
     "notFound": "GitHub에서 이 풀 리퀘스트를 찾지 못했습니다. 비공개 저장소라면 설정 → GitHub에서 GitHub 토큰을 추가하세요.",
     "noAccessToken": "GitHub 토큰으로 이 풀 리퀘스트를 읽을 수 없습니다. 이 저장소의 읽기 권한(Pull requests, Contents)을 부여하세요.",
     "failed": "GitHub에서 이 풀 리퀘스트를 가져오지 못했습니다(HTTP {{status}})."
+  },
+  "gdocs": {
+    "blocked": "Google이 Siftlume의 파일 다운로드를 허용하지 않았습니다. 소유자나 조직이 다운로드를 껐거나 댓글 권한만 있을 수 있습니다. 파일을 열 수 있는 Google 계정으로 로그인했는지 확인하거나 다운로드 권한을 요청하세요.",
+    "network": "Google에 연결할 수 없습니다. 연결을 확인하고 다시 시도하세요.",
+    "failed": "Google이 이 파일을 내보내지 못했습니다(HTTP {{status}}). 탭을 새로고침하고 다시 시도하세요.",
+    "emptyDoc": "이 문서에는 요약할 텍스트가 없습니다.",
+    "emptySheet": "이 시트는 비어 있습니다."
   }
 }

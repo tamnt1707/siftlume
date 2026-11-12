@@ -49,12 +49,26 @@
     "tabs": "Несколько вкладок",
     "text": "Текст",
     "file": "Файл",
-    "pr": "Этот pull request"
+    "pr": "Этот pull request",
+    "doc": "Этот документ",
+    "sheet": "Эта таблица"
   },
   "runPr": {
     "summary": "Кратко о pull request",
     "explain": "Объяснить pull request",
     "critique": "Ревью pull request",
     "action": "Чек-лист перед слиянием"
+  },
+  "runDoc": {
+    "summary": "Кратко о документе",
+    "explain": "Объяснить документ",
+    "critique": "Критический разбор документа",
+    "action": "Список задач"
+  },
+  "runSheet": {
+    "summary": "Кратко о таблице",
+    "explain": "Объяснить таблицу",
+    "critique": "Проверить таблицу",
+    "action": "Список задач"
   }
 }

@@ -61,5 +61,12 @@
     "notFound": "GitHub không tìm thấy pull request này. Nếu repo là riêng tư, hãy thêm GitHub token trong Cài đặt → GitHub.",
     "noAccessToken": "GitHub token không đọc được pull request này. Cấp cho token quyền đọc repo này (Pull requests, Contents).",
     "failed": "GitHub không trả về pull request này (HTTP {{status}})."
+  },
+  "gdocs": {
+    "blocked": "Google không cho Siftlume tải file này. Có thể chủ file hoặc tổ chức của bạn đã tắt tải xuống, hoặc bạn chỉ có quyền bình luận. Kiểm tra bạn đang đăng nhập đúng tài khoản Google mở được file, hoặc xin quyền tải xuống.",
+    "network": "Không kết nối được Google. Kiểm tra mạng rồi thử lại.",
+    "failed": "Google không xuất được file này (HTTP {{status}}). Tải lại tab rồi thử lại.",
+    "emptyDoc": "Tài liệu này không có chữ để tóm tắt.",
+    "emptySheet": "Sheet này đang trống."
   }
 }

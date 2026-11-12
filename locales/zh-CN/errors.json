@@ -61,5 +61,12 @@
     "notFound": "GitHub 找不到此拉取请求。如果仓库是私有的，请在 设置 → GitHub 中添加 GitHub 令牌。",
     "noAccessToken": "你的 GitHub 令牌无法读取此拉取请求。请授予它对此仓库的读取权限（Pull requests、Contents）。",
     "failed": "GitHub 无法返回此拉取请求（HTTP {{status}}）。"
+  },
+  "gdocs": {
+    "blocked": "Google 不允许 Siftlume 下载此文件。可能是所有者或你的组织关闭了下载，或者你只有评论权限。请确认已登录能打开此文件的 Google 账号，或申请下载权限。",
+    "network": "无法连接 Google。请检查网络后重试。",
+    "failed": "Google 无法导出此文件（HTTP {{status}}）。请重新加载标签页后重试。",
+    "emptyDoc": "此文档没有可总结的文字。",
+    "emptySheet": "此工作表是空的。"
   }
 }

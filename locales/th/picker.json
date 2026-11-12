@@ -49,12 +49,26 @@
     "tabs": "หลายแท็บ",
     "text": "ข้อความ",
     "file": "ไฟล์",
-    "pr": "Pull request นี้"
+    "pr": "Pull request นี้",
+    "doc": "เอกสารนี้",
+    "sheet": "สเปรดชีตนี้"
   },
   "runPr": {
     "summary": "สรุป pull request นี้",
     "explain": "อธิบาย pull request นี้",
     "critique": "รีวิว pull request นี้",
     "action": "เช็กลิสต์ก่อน merge"
+  },
+  "runDoc": {
+    "summary": "สรุปเอกสารนี้",
+    "explain": "อธิบายเอกสารนี้",
+    "critique": "วิเคราะห์เอกสารนี้อย่างมีวิจารณญาณ",
+    "action": "ดึงรายการสิ่งที่ต้องทำ"
+  },
+  "runSheet": {
+    "summary": "สรุปสเปรดชีตนี้",
+    "explain": "อธิบายสเปรดชีตนี้",
+    "critique": "ตรวจสอบสเปรดชีตนี้",
+    "action": "ดึงรายการสิ่งที่ต้องทำ"
   }
 }

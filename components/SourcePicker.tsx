@@ -11,7 +11,7 @@ import { useVideoProbe } from './useVideoProbe';
 import { TabsPicker } from './TabsPicker';
 import { DeepToggle } from './DeepRead';
 import { requestTabsPermission } from '@/lib/multi';
-import { pullRequestRef } from '@/lib/github';
+import { RUN_LABELS, specialPage } from '@/lib/special-page';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
 
@@ -59,10 +59,10 @@ export function SourcePicker({
   const fileInput = useRef<HTMLInputElement>(null);
   const busy = ctrl.phase !== 'idle';
   const video = useVideoProbe(page?.readable ? page.id : undefined, page?.url);
-  // A GitHub pull request is read through GitHub's API, with its diff and reviews.
-  const isPr = Boolean(pullRequestRef(page?.url));
-  // Deep read follows an article's links; a video or a pull request has none worth it.
-  const canDeep = !video.isVideo && !isPr;
+  // Videos, pull requests, Google Docs and Sheets are read their own way.
+  const special = specialPage(page?.url);
+  // Deep read follows an article's links; the special pages have none worth it.
+  const canDeep = !special;
   // Deep read: also read the links the AI finds worth reading. Off unless ticked, every time.
   const [deep, setDeep] = useState(false);
   // One source at a time. Until the user picks one, it is this page whenever there is one (the
@@ -110,7 +110,7 @@ export function SourcePicker({
           {sources.map((id) => (
             <Tabs.Trigger key={id} value={id} className="source-tabs__tab">
               <Icon icon={SOURCE_ICONS[id]} size={16} />
-              <span>{t(`sources.${id !== 'page' ? id : video.isVideo ? 'video' : isPr ? 'pr' : id}`)}</span>
+              <span>{t(`sources.${id === 'page' && special ? special : id}`)}</span>
             </Tabs.Trigger>
           ))}
         </Tabs.List>
@@ -136,7 +136,7 @@ export function SourcePicker({
                 <Icon icon={SparklesIcon} />
                 {ctrl.phase === 'extracting'
                   ? t('reading')
-                  : runLabel(video.isVideo ? 'runVideo' : isPr ? 'runPr' : 'run', mode, settings.customModes)}
+                  : runLabel(special ? RUN_LABELS[special] : 'run', mode, settings.customModes)}
               </span>
               {page.title && <span className="btn__sub">{page.readable ? page.title : t('cannotRead')}</span>}
               {(video.blocked || video.note) && <span className="btn__sub">{video.blocked ?? video.note}</span>}

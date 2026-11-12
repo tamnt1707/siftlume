@@ -49,12 +49,26 @@
     "tabs": "多個分頁",
     "text": "文字",
     "file": "檔案",
-    "pr": "此拉取請求"
+    "pr": "此拉取請求",
+    "doc": "此文件",
+    "sheet": "此試算表"
   },
   "runPr": {
     "summary": "摘要此拉取請求",
     "explain": "解說此拉取請求",
     "critique": "審查此拉取請求",
     "action": "合併前檢查清單"
+  },
+  "runDoc": {
+    "summary": "摘要此文件",
+    "explain": "解說此文件",
+    "critique": "批判性分析此文件",
+    "action": "擷取待辦事項"
+  },
+  "runSheet": {
+    "summary": "摘要此試算表",
+    "explain": "解說此試算表",
+    "critique": "檢查此試算表",
+    "action": "擷取待辦事項"
   }
 }

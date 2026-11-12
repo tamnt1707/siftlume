@@ -49,12 +49,26 @@
     "tabs": "Várias abas",
     "text": "Texto",
     "file": "Arquivo",
-    "pr": "Este pull request"
+    "pr": "Este pull request",
+    "doc": "Este documento",
+    "sheet": "Esta planilha"
   },
   "runPr": {
     "summary": "Resumir este pull request",
     "explain": "Explicar este pull request",
     "critique": "Revisar este pull request",
     "action": "Checklist antes do merge"
+  },
+  "runDoc": {
+    "summary": "Resumir este documento",
+    "explain": "Explicar este documento",
+    "critique": "Analisar criticamente este documento",
+    "action": "Obter tarefas"
+  },
+  "runSheet": {
+    "summary": "Resumir esta planilha",
+    "explain": "Explicar esta planilha",
+    "critique": "Verificar esta planilha",
+    "action": "Obter tarefas"
   }
 }

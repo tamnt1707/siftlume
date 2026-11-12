@@ -49,12 +49,26 @@
     "tabs": "Plusieurs onglets",
     "text": "Texte",
     "file": "Fichier",
-    "pr": "Cette pull request"
+    "pr": "Cette pull request",
+    "doc": "Ce document",
+    "sheet": "Cette feuille de calcul"
   },
   "runPr": {
     "summary": "Résumer cette pull request",
     "explain": "Expliquer cette pull request",
     "critique": "Relire cette pull request",
     "action": "Checklist avant le merge"
+  },
+  "runDoc": {
+    "summary": "Résumer ce document",
+    "explain": "Expliquer ce document",
+    "critique": "Analyser ce document",
+    "action": "Extraire les actions"
+  },
+  "runSheet": {
+    "summary": "Résumer cette feuille de calcul",
+    "explain": "Expliquer cette feuille de calcul",
+    "critique": "Vérifier cette feuille de calcul",
+    "action": "Extraire les actions"
   }
 }

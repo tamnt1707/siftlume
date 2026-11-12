@@ -49,12 +49,26 @@
     "tabs": "Mehrere Tabs",
     "text": "Text",
     "file": "Datei",
-    "pr": "Dieser Pull Request"
+    "pr": "Dieser Pull Request",
+    "doc": "Dieses Dokument",
+    "sheet": "Diese Tabelle"
   },
   "runPr": {
     "summary": "Diesen Pull Request zusammenfassen",
     "explain": "Diesen Pull Request erklären",
     "critique": "Diesen Pull Request reviewen",
     "action": "Checkliste vor dem Merge"
+  },
+  "runDoc": {
+    "summary": "Dieses Dokument zusammenfassen",
+    "explain": "Dieses Dokument erklären",
+    "critique": "Dieses Dokument kritisch prüfen",
+    "action": "Aufgaben herausziehen"
+  },
+  "runSheet": {
+    "summary": "Diese Tabelle zusammenfassen",
+    "explain": "Diese Tabelle erklären",
+    "critique": "Diese Tabelle prüfen",
+    "action": "Aufgaben herausziehen"
   }
 }

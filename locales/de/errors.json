@@ -61,5 +61,12 @@
     "notFound": "GitHub hat diesen Pull Request nicht gefunden. Ist das Repository privat, füge unter Einstellungen → GitHub ein GitHub-Token hinzu.",
     "noAccessToken": "Dein GitHub-Token kann diesen Pull Request nicht lesen. Gib ihm Lesezugriff auf dieses Repository (Pull requests, Contents).",
     "failed": "GitHub konnte diesen Pull Request nicht liefern (HTTP {{status}})."
+  },
+  "gdocs": {
+    "blocked": "Google hat Siftlume diese Datei nicht herunterladen lassen. Der Eigentümer oder deine Organisation hat das Herunterladen vielleicht deaktiviert, oder du darfst nur kommentieren. Prüfe, ob du mit dem Google-Konto angemeldet bist, das die Datei öffnen kann, oder bitte um Download-Zugriff.",
+    "network": "Google ist nicht erreichbar. Prüfe die Verbindung und versuche es erneut.",
+    "failed": "Google konnte diese Datei nicht exportieren (HTTP {{status}}). Lade den Tab neu und versuche es erneut.",
+    "emptyDoc": "Dieses Dokument enthält keinen Text zum Zusammenfassen.",
+    "emptySheet": "Dieses Tabellenblatt ist leer."
   }
 }

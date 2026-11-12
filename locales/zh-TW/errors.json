@@ -61,5 +61,12 @@
     "notFound": "GitHub 找不到此拉取請求。如果儲存庫是私人的，請在 設定 → GitHub 中新增 GitHub 權杖。",
     "noAccessToken": "你的 GitHub 權杖無法讀取此拉取請求。請授予它此儲存庫的讀取權限（Pull requests、Contents）。",
     "failed": "GitHub 無法傳回此拉取請求（HTTP {{status}}）。"
+  },
+  "gdocs": {
+    "blocked": "Google 不允許 Siftlume 下載此檔案。可能是擁有者或你的組織關閉了下載，或你只有留言權限。請確認已登入能開啟此檔案的 Google 帳戶，或要求下載權限。",
+    "network": "無法連線到 Google。請檢查網路後再試一次。",
+    "failed": "Google 無法匯出此檔案（HTTP {{status}}）。請重新載入分頁後再試一次。",
+    "emptyDoc": "此文件沒有可摘要的文字。",
+    "emptySheet": "此工作表是空的。"
   }
 }

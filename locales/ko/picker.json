@@ -49,12 +49,26 @@
     "tabs": "여러 탭",
     "text": "텍스트",
     "file": "파일",
-    "pr": "이 풀 리퀘스트"
+    "pr": "이 풀 리퀘스트",
+    "doc": "이 문서",
+    "sheet": "이 스프레드시트"
   },
   "runPr": {
     "summary": "이 풀 리퀘스트 요약",
     "explain": "이 풀 리퀘스트 설명",
     "critique": "이 풀 리퀘스트 리뷰",
     "action": "머지 전 체크리스트"
+  },
+  "runDoc": {
+    "summary": "이 문서 요약",
+    "explain": "이 문서 설명",
+    "critique": "이 문서 비판적 검토",
+    "action": "할 일 뽑기"
+  },
+  "runSheet": {
+    "summary": "이 스프레드시트 요약",
+    "explain": "이 스프레드시트 설명",
+    "critique": "이 스프레드시트 점검",
+    "action": "할 일 뽑기"
   }
 }

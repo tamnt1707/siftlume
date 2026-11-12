@@ -49,12 +49,26 @@
     "tabs": "Varias pestañas",
     "text": "Texto",
     "file": "Archivo",
-    "pr": "Este pull request"
+    "pr": "Este pull request",
+    "doc": "Este documento",
+    "sheet": "Esta hoja de cálculo"
   },
   "runPr": {
     "summary": "Resumir este pull request",
     "explain": "Explicar este pull request",
     "critique": "Revisar este pull request",
     "action": "Lista de tareas antes del merge"
+  },
+  "runDoc": {
+    "summary": "Resumir este documento",
+    "explain": "Explicar este documento",
+    "critique": "Analizar críticamente este documento",
+    "action": "Obtener tareas"
+  },
+  "runSheet": {
+    "summary": "Resumir esta hoja de cálculo",
+    "explain": "Explicar esta hoja de cálculo",
+    "critique": "Revisar esta hoja de cálculo",
+    "action": "Obtener tareas"
   }
 }

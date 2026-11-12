@@ -61,5 +61,12 @@
     "notFound": "GitHub n’a pas trouvé cette pull request. Si le dépôt est privé, ajoutez un jeton GitHub dans Réglages → GitHub.",
     "noAccessToken": "Votre jeton GitHub ne peut pas lire cette pull request. Donnez-lui l’accès en lecture à ce dépôt (Pull requests, Contents).",
     "failed": "GitHub n’a pas pu renvoyer cette pull request (HTTP {{status}})."
+  },
+  "gdocs": {
+    "blocked": "Google n’a pas laissé Siftlume télécharger ce fichier. Le propriétaire ou votre organisation a peut-être désactivé le téléchargement, ou vous n’avez qu’un accès commentaire. Vérifiez que vous êtes connecté au compte Google qui peut l’ouvrir, ou demandez l’accès au téléchargement.",
+    "network": "Impossible de joindre Google. Vérifiez votre connexion et réessayez.",
+    "failed": "Google n’a pas pu exporter ce fichier (HTTP {{status}}). Rechargez l’onglet et réessayez.",
+    "emptyDoc": "Ce document ne contient aucun texte à résumer.",
+    "emptySheet": "Cette feuille est vide."
   }
 }

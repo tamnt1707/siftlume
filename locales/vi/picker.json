@@ -49,12 +49,26 @@
     "tabs": "Nhiều tab",
     "text": "Văn bản",
     "file": "Tệp",
-    "pr": "Pull request này"
+    "pr": "Pull request này",
+    "doc": "Tài liệu này",
+    "sheet": "Bảng tính này"
   },
   "runPr": {
     "summary": "Tóm tắt pull request này",
     "explain": "Giải thích pull request này",
     "critique": "Review pull request này",
     "action": "Lấy checklist trước khi merge"
+  },
+  "runDoc": {
+    "summary": "Tóm tắt tài liệu này",
+    "explain": "Giải thích tài liệu này",
+    "critique": "Phản biện tài liệu này",
+    "action": "Lấy việc cần làm"
+  },
+  "runSheet": {
+    "summary": "Tóm tắt bảng tính này",
+    "explain": "Giải thích bảng tính này",
+    "critique": "Kiểm tra bảng tính này",
+    "action": "Lấy việc cần làm"
   }
 }

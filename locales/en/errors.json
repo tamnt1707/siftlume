@@ -61,5 +61,12 @@
     "notFound": "GitHub did not find this pull request. If the repository is private, add a GitHub token in Settings → GitHub.",
     "noAccessToken": "Your GitHub token cannot read this pull request. Give it read access to this repository (Pull requests, Contents).",
     "failed": "GitHub could not return this pull request (HTTP {{status}})."
+  },
+  "gdocs": {
+    "blocked": "Google did not let Siftlume download this file. The owner or your organization may have turned off downloading, or you may only have comment access. Check that you are signed in to the Google account that can open it, or ask for download access.",
+    "network": "Could not reach Google. Check your connection and try again.",
+    "failed": "Google could not export this file (HTTP {{status}}). Reload the tab and try again.",
+    "emptyDoc": "This document has no text to summarize.",
+    "emptySheet": "This sheet is empty."
   }
 }
