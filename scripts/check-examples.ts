@@ -5,7 +5,7 @@
 import { createParser } from '@openuidev/react-lang';
 import { render, PeleError } from 'pele';
 import { library } from '../lib/library';
-import { CSV_TOOL_EXAMPLES } from '../lib/csv-tools';
+import { CSV_TOOL_EXAMPLES, parseNumber } from '../lib/csv-tools';
 import { VISUAL_SUMMARY_EXAMPLE } from '../lib/summary-example';
 import { CHART_SUMMARY_EXAMPLE } from '../lib/chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from '../lib/diagram-example';
@@ -103,6 +103,29 @@ for (const [broken, fixed] of [
   else {
     failed++;
     console.error(`✗ repairJson ${broken}\n  - got ${got}`);
+  }
+}
+// Numbers as spreadsheets export them (Google Sheets CSV keeps the display format).
+for (const [text, want] of [
+  ['1234', 1234],
+  ['-3.5', -3.5],
+  ['1,234,567.89', 1234567.89],
+  ['$1,200', 1200],
+  ['-$1,200.50', -1200.5],
+  ['(450)', -450],
+  ['12%', 12],
+  ['€ 30', 30],
+  ['30 ₫', 30],
+  ['1,5', null],
+  ['12,34', null],
+  ['abc', null],
+  ['', null],
+] as const) {
+  const got = parseNumber(text);
+  if (got === want) console.log(`✓ parseNumber ${JSON.stringify(text)}`);
+  else {
+    failed++;
+    console.error(`✗ parseNumber ${JSON.stringify(text)}\n  - got ${got}, want ${want}`);
   }
 }
 if (failed) process.exit(1);

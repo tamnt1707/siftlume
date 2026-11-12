@@ -168,3 +168,22 @@ chart = HorizontalBarChart(byProduct.rows.key, [Series("Revenue", byProduct.rows
 tbl = Table([Col("Product", topRows.rows.product), Col("Revenue", topRows.rows.revenue, "number")])
 followUps = FollowUpBlock([FollowUpItem("Which month had the highest revenue?"), FollowUpItem("Are there any outliers?")])`,
 ];
+
+/**
+ * A number as spreadsheets display it: "1234", "-3.5", "1,234,567.89", "$1,200", "12%", "€ 30".
+ * Comma decimals ("1,5") stay text: they cannot be told apart from thousands reliably.
+ */
+export function parseNumber(value: string): number | null {
+  let v = value.trim();
+  if (!v) return null;
+  const negative = /^\(.*\)$/.test(v);
+  if (negative) v = v.slice(1, -1).trim();
+  v = v
+    .replace(/^(-?)\s*[$€£¥₫₹]\s*/, '$1')
+    .replace(/\s*[$€£¥₫₹]$/, '')
+    .replace(/%$/, '');
+  if (/^-?\d{1,3}(,\d{3})+(\.\d+)?$/.test(v)) v = v.replace(/,/g, '');
+  if (!/^-?(\d+\.?\d*|\.\d+)(e-?\d+)?$/i.test(v)) return null;
+  const n = Number(v);
+  return Number.isFinite(n) ? (negative ? -n : n) : null;
+}

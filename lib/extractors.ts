@@ -3,7 +3,7 @@ import { t } from '@/lib/i18n';
 import TurndownService from 'turndown';
 import { gfm } from '@joplin/turndown-plugin-gfm';
 import Papa from 'papaparse';
-import type { CsvDataset, CsvRow } from './csv-tools';
+import { parseNumber, type CsvDataset, type CsvRow } from './csv-tools';
 
 export type SourceKind = 'webpage' | 'text' | 'pdf' | 'csv' | 'markdown' | 'video' | 'pr' | 'multi';
 
@@ -89,7 +89,7 @@ export function extractCsv(text: string, sampleRows = 30): { content: string; da
 
   const numericColumns = columns.filter((col) => {
     const values = raw.map((r) => r[col]).filter((v) => v !== undefined && v !== '');
-    const nums = values.filter((v) => Number.isFinite(Number(v)));
+    const nums = values.filter((v) => parseNumber(v!) !== null);
     return values.length > 0 && nums.length / values.length > 0.9;
   });
 
@@ -98,7 +98,7 @@ export function extractCsv(text: string, sampleRows = 30): { content: string; da
     for (const c of columns) {
       const v = r[c];
       if (v === undefined || v === '') row[c] = null;
-      else row[c] = numericColumns.includes(c) && Number.isFinite(Number(v)) ? Number(v) : v;
+      else row[c] = numericColumns.includes(c) ? (parseNumber(v) ?? v) : v;
     }
     return row;
   });
