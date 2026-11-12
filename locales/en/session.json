@@ -146,7 +146,9 @@
       "count_one": "{{formatted}} rating",
       "count_other": "{{formatted}} ratings",
       "outOf": "{{value}} out of {{max}}"
-    }
+    },
+    "relatedQueries": "Suggested questions",
+    "sources": "Sources"
   },
   "refineHint": {
     "shorter": "Keep only the most important points.",

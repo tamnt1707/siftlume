@@ -140,7 +140,9 @@
     "rating": {
       "count_other": "평가 {{formatted}}개",
       "outOf": "{{max}}점 중 {{value}}점"
-    }
+    },
+    "relatedQueries": "추천 질문",
+    "sources": "출처"
   },
   "refineHint": {
     "shorter": "가장 중요한 내용만 남깁니다.",

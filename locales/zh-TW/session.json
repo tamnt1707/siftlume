@@ -140,7 +140,9 @@
     "rating": {
       "count_other": "{{formatted}} 則評分",
       "outOf": "{{value}} / {{max}}"
-    }
+    },
+    "relatedQueries": "推薦問題",
+    "sources": "來源"
   },
   "refineHint": {
     "shorter": "只保留最重要的重點。",

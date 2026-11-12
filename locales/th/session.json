@@ -140,7 +140,9 @@
     "rating": {
       "count_other": "{{formatted}} คะแนน",
       "outOf": "{{value}} จาก {{max}}"
-    }
+    },
+    "relatedQueries": "คำถามแนะนำ",
+    "sources": "แหล่งที่มา"
   },
   "refineHint": {
     "shorter": "เก็บไว้เฉพาะประเด็นที่สำคัญที่สุด",

@@ -23,6 +23,8 @@ import { ResultToolbar } from '../../components/ResultToolbar';
 import type { SessionController } from '../../components/useSession';
 import { PR_REVIEW_EXAMPLE, PRODUCT_EVENT_EXAMPLE, RECIPE_EXAMPLE } from '../../lib/component-example';
 import { MarkDownRenderer } from '@openuidev/react-ui';
+import { VISUAL_SUMMARY_EXAMPLE } from '../../lib/summary-example';
+import { GenUI } from '../../components/GenUI';
 import { ThemeToggle } from '../../components/ThemeToggle';
 import type { Session } from '../../lib/history';
 import { library } from '../../lib/library';
@@ -338,6 +340,7 @@ const COMPONENT_SETS: Record<string, string[]> = {
   modes: [EXPLAIN_EXAMPLE, CRITIQUE_EXAMPLE, ACTION_EXAMPLE],
   analysis: [POLICY_DEBATE_EXAMPLE, DECISION_EXAMPLE, CODE_TUTORIAL_EXAMPLE],
   everyday: [PR_REVIEW_EXAMPLE, RECIPE_EXAMPLE, PRODUCT_EVENT_EXAMPLE],
+  visual: [VISUAL_SUMMARY_EXAMPLE],
 };
 
 function Components() {
@@ -354,9 +357,8 @@ function Components() {
           >
             <div className="session__main">
               <section className="summary">
-                <div className="genui">
-                  <Renderer library={library} response={program} isStreaming={false} />
-                </div>
+                {/* The app's wrapper, so its relabelled headings show too. */}
+                <GenUI response={program} isStreaming={false} onAction={() => {}} />
               </section>
             </div>
           </div>

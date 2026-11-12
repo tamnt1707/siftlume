@@ -146,7 +146,9 @@
       "count_one": "{{formatted}} Bewertung",
       "count_other": "{{formatted}} Bewertungen",
       "outOf": "{{value}} von {{max}}"
-    }
+    },
+    "relatedQueries": "Vorgeschlagene Fragen",
+    "sources": "Quellen"
   },
   "refineHint": {
     "shorter": "Nur die wichtigsten Punkte behalten.",

@@ -140,7 +140,9 @@
     "rating": {
       "count_other": "{{formatted}} lượt đánh giá",
       "outOf": "{{value}} trên {{max}}"
-    }
+    },
+    "relatedQueries": "Câu hỏi gợi ý",
+    "sources": "Nguồn"
   },
   "refineHint": {
     "shorter": "Chỉ giữ những ý quan trọng nhất.",

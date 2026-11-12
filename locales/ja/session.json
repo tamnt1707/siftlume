@@ -140,7 +140,9 @@
     "rating": {
       "count_other": "{{formatted}} 件の評価",
       "outOf": "{{max}} 点中 {{value}} 点"
-    }
+    },
+    "relatedQueries": "おすすめの質問",
+    "sources": "出典"
   },
   "refineHint": {
     "shorter": "最も重要なポイントだけを残します。",

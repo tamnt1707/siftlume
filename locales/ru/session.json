@@ -158,7 +158,9 @@
       "count_many": "{{formatted}} оценок",
       "count_other": "{{formatted}} оценки",
       "outOf": "{{value}} из {{max}}"
-    }
+    },
+    "relatedQueries": "Предлагаемые вопросы",
+    "sources": "Источники"
   },
   "refineHint": {
     "shorter": "Оставить только самое важное.",

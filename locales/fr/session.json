@@ -152,7 +152,9 @@
       "count_many": "{{formatted}} notes",
       "count_other": "{{formatted}} notes",
       "outOf": "{{value}} sur {{max}}"
-    }
+    },
+    "relatedQueries": "Questions suggérées",
+    "sources": "Sources"
   },
   "refineHint": {
     "shorter": "Garder uniquement les points essentiels.",

@@ -152,7 +152,9 @@
       "count_many": "{{formatted}} avaliações",
       "count_other": "{{formatted}} avaliações",
       "outOf": "{{value}} de {{max}}"
-    }
+    },
+    "relatedQueries": "Perguntas sugeridas",
+    "sources": "Fontes"
   },
   "refineHint": {
     "shorter": "Mantém só os pontos mais importantes.",
