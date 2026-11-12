@@ -35,7 +35,7 @@ export const MODE_RULES: Record<AnalysisMode, string[]> = {
   action: [
     'MODE: ACTION. Goal: what the reader should do, decide or remember. Skip background unless it is needed to act.',
     'SummaryHero tldr: the single most important thing to do or decide.',
-    'Lead with a Checklist of concrete actions, most urgent first. Then, as the source supports: deadlines and dates (Timeline), requirements, costs, contacts or eligibility (FactSheet), decisions with their options (DecisionMatrix when the source judges them, Comparison or ProsCons otherwise), costs worked out (Calculation), what changes for the reader (BeforeAfter), how-to steps (Steps), links to open on a phone (QrCode), and the risks of not acting (RiskList).',
+    'Lead with a Checklist of concrete actions, most urgent first (ActionItems instead when the source names owners, due dates or states). Then, as the source supports: deadlines and dates (Timeline), requirements, costs, contacts or eligibility (FactSheet), decisions with their options (DecisionMatrix when the source judges them, Comparison or ProsCons otherwise), costs worked out (Calculation), what changes for the reader (BeforeAfter), how-to steps (Steps), links to open on a phone (QrCode), and the risks of not acting (RiskList).',
     'If the source has nothing actionable, say so in the tldr and give the closest practical takeaways.',
   ],
 };
