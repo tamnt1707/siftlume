@@ -1,8 +1,9 @@
 /**
  * Programs using the newer blocks (ActionItems, Findings, Ingredients, EventCard,
  * RatingBreakdown), validated by `pnpm check:examples` and shown in the showcase
- * (`?view=components&set=everyday`). Not sent to the model: the component descriptions and the
- * page-type rules (lib/openui.ts) teach these.
+ * (`?view=components&set=everyday`). PR_REVIEW_EXAMPLE is also the model's example for pull
+ * request critiques and action lists (lib/openui.ts modeExamples); the others are not sent: the
+ * component descriptions and the page-type rules teach them.
  */
 export const PR_REVIEW_EXAMPLE = `root = Card([hero, findings, actions])
 hero = SummaryHero("Retry failed uploads", "Adds retries with backoff to the uploader; one bug can retry forever.", "github.com", 3)

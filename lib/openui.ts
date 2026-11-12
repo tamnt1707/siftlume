@@ -11,6 +11,7 @@ import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from './review-example';
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from './domain-example';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from './mode-example';
 import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from './analysis-example';
+import { PR_REVIEW_EXAMPLE } from './component-example';
 import { customModeRule, MODE_QA_RULES, MODE_RULES, resolveMode, type AnalysisMode } from './modes';
 import type { ExtractedSource, SourceKind } from './extractors';
 import type { StructuredType } from './structured';
@@ -58,6 +59,12 @@ const MODE_EXAMPLES: Record<AnalysisMode, string[]> = {
   critique: [CRITIQUE_EXAMPLE, POLICY_DEBATE_EXAMPLE, RESEARCH_PAPER_EXAMPLE, NEWS_ACTORS_EXAMPLE],
   action: [ACTION_EXAMPLE, DECISION_EXAMPLE, RELEASE_NOTES_EXAMPLE, PRODUCT_COMPARE_EXAMPLE],
 };
+
+/** Pull requests: a code review leads critique and action (see PR_MODE_RULES). */
+function modeExamples(mode: AnalysisMode, kind: SourceKind) {
+  if (kind === 'pr' && (mode === 'critique' || mode === 'action')) return [PR_REVIEW_EXAMPLE, CODE_TUTORIAL_EXAMPLE];
+  return MODE_EXAMPLES[mode];
+}
 
 /**
  * Visual-first rules: the reader should get the gist in a few seconds without reading paragraphs.
@@ -122,12 +129,40 @@ const KIND_RULES: Record<SourceKind, string> = {
     'The source is a GitHub pull request in Markdown: metadata (state, branches, size, review decisions, CI checks), the description, reviews, the conversation, review threads on code (each with the diff lines it is about), commits, then the diff file by file (unified diff; lockfiles and generated files are left out and only listed).',
     'Explain what the change does and why, grouped by area (API, UI, data and migrations, config, tests, docs) rather than file by file. Give the review state: who approved, who requested changes, which review threads look unanswered or unresolved and who they wait for, and failing CI checks. Flag risks visible in the diff: breaking changes, security, performance, data migrations, missing or changed tests.',
     'Refer to code as `path:line`, with line numbers of the new file read from the hunk headers (@@ -a,b +c,d @@). Use @OpenUrl with the file and thread links given in the source so the reader can jump there.',
-    "In CRITIQUE mode, review the code like a careful senior reviewer: Findings with one Finding per concrete problem in the diff (bugs, unhandled edge cases and errors, races, security issues, breaking changes, missing tests), each with location `path:line`, url = that file's link from the source, why it matters and a suggested fix, most severe first; then what is solid. Reason about the code itself, but only about code shown in the diff; say when a concern depends on code not shown. Do not repeat points reviewers already raised unless they are still open. In ACTION mode, lead with ActionItems for what must happen before merging (open review threads, requested changes, failing checks, missing tests or docs), each with its owner (the author or the reviewer it waits for) and status. In EXPLAIN mode, explain the change for someone new to the codebase.",
     'Pass the pull request as the only item of Card sources and cite it as [1]. For SourceQuote and @HighlightInPage copy a short phrase verbatim from the description or a comment, never from the diff: clicking it highlights it in the pull request page.',
   ].join(' '),
   multi:
     'The source is several documents (browser tabs, or a page and pages it links to), each wrapped in <document index title url type>. When the user says document 1 is the page they are reading, summarize document 1 and use the others to complete it: add what they say that document 1 only points to, and cite them. Otherwise combine and compare them: lead with what they agree on, then where they differ or contradict (Comparison for products, plans or options; Perspectives for viewpoints; ClaimCheck when they disagree on facts), then what only one of them covers. Say which document a point comes from (its site or a short title). List every document as Card sources in index order and cite them as [1], [2]… Documents with type="video" are YouTube transcripts led by [m:ss] timestamps: give the timestamp with points taken from them (e.g. "[2] at 12:34"). Omit SummaryHero source. For SourceQuote and @HighlightInPage copy a short phrase verbatim from one document: clicking it opens that tab.',
   csv: 'The source is a CSV dataset. Describe what it contains, important columns, ranges, trends and outliers. Use Query("csv_group", ...) and Query("csv_rows", ...) for charts and tables instead of hard-coding numbers, and add a filter Form with a Select bound to a $variable when a text column has few distinct values. Do not use @HighlightInPage.',
+};
+
+/**
+ * Reading modes for a pull request replace the general ones (lib/modes.ts MODE_RULES): a critique
+ * of code is a code review, not a check of claims and arguments, and an action list is what blocks
+ * the merge. With both sets in the prompt the model followed the general one.
+ */
+const PR_MODE_RULES: Record<AnalysisMode, string[]> = {
+  summary: [
+    'MODE: SUMMARY of a pull request. Goal: what changes, why, and whether it is ready to merge.',
+    'SummaryHero tldr: what the pull request does and its state (ready, waiting for someone, or blocked by something).',
+    'Cover: the changes grouped by area (Takeaways or ChangeList), the review state and open threads, failing CI checks, risks (RiskList), then ActionItems for what remains before merging when anything does.',
+  ],
+  explain: [
+    'MODE: EXPLAIN a pull request to someone new to the codebase. Goal: they understand the problem, the approach and how the pieces fit.',
+    'SummaryHero tldr: the problem and the fix in one plain sentence.',
+    'Build understanding in order: what was wrong or missing → the approach → how the changed parts connect (Diagram for flows, CodeWalkthrough for the key change) → terms they need (Glossary).',
+  ],
+  critique: [
+    'MODE: CRITIQUE of a pull request = CODE REVIEW. Goal: the problems in the diff the author should fix before merging.',
+    'SummaryHero tldr: merge readiness in one sentence (e.g. "One blocker: retries never stop on 4xx").',
+    "Lead with Findings: one Finding per concrete problem in the diff (bug, unhandled edge case or error, race, security issue, breaking change, missing or weak test), most severe first, 2-8 of them, each with location `path:line`, url = that file's link from the source, why it matters and a fix (a few lines of code when short). Then what is solid (short Takeaways), then ActionItems for what must happen before merging.",
+    'Do not use ClaimCheck or ArgumentMap: this is code, not an argument. Reason about the code itself, but only about code shown in the diff; say when a concern depends on code not shown. Do not repeat points reviewers already raised unless still open. If there is no real problem, say so in the tldr and keep only the nits.',
+  ],
+  action: [
+    'MODE: ACTION for a pull request. Goal: what must happen before it can merge.',
+    'SummaryHero tldr: the single thing blocking the merge, or that nothing does.',
+    'Lead with ActionItems: open review threads, requested changes, failing checks, missing tests or docs, each with its owner as @login (the author, or the reviewer it waits for) and its status. Then the failing CI checks by name, then what to verify after merging.',
+  ],
 };
 
 /**
@@ -206,7 +241,7 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
     library.prompt({
       ...basePromptOptions(),
       // Validated examples (pnpm check:examples), the mode's own first, after the library's own.
-      examples: [...(openuiChatPromptOptions.examples ?? []), ...MODE_EXAMPLES[mode]],
+      examples: [...(openuiChatPromptOptions.examples ?? []), ...modeExamples(mode, source.kind)],
       ...toolOptions(source),
       preamble:
         'You are a visual reading assistant. You turn the source content the user provides into a glanceable UI written in openui-lang (as little prose as possible), shaped by the analysis mode below, and you refine that UI when asked.',
@@ -215,7 +250,7 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
     }),
   );
   const rules = [
-    ...MODE_RULES[mode],
+    ...(source.kind === 'pr' ? PR_MODE_RULES[mode] : MODE_RULES[mode]),
     ...(custom ? [customModeRule(custom)] : []),
     ...VISUAL_RULES,
     ...CHART_RULES,
