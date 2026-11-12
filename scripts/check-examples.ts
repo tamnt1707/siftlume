@@ -7,6 +7,7 @@ import { render, PeleError } from 'pele';
 import { library } from '../lib/library';
 import { CSV_TOOL_EXAMPLES, csvColumnNames, parseNumber } from '../lib/csv-tools';
 import { duration } from '../lib/structured';
+import { mergeRolling, transcript } from '../lib/meet-transcript';
 import { VISUAL_SUMMARY_EXAMPLE } from '../lib/summary-example';
 import { CHART_SUMMARY_EXAMPLE } from '../lib/chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from '../lib/diagram-example';
@@ -160,6 +161,34 @@ for (const [iso, want] of [
   else {
     failed++;
     console.error(`✗ duration ${iso}\n  - got ${got}`);
+  }
+}
+// Meeting captions: rewrites, growth and scrolled-out words fold into what was said.
+for (const [name, got, want] of [
+  ['growth', mergeRolling('We should ship', 'We should ship on Friday'), 'We should ship on Friday'],
+  ['rewrite', mergeRolling('We should sip on Friday', 'We should ship on Friday'), 'We should ship on Friday'],
+  [
+    'scroll',
+    mergeRolling('one two three four five six seven eight', 'five six seven eight nine ten'),
+    'one two three four five six seven eight nine ten',
+  ],
+  ['restart', mergeRolling('Okay thanks', 'Next topic is hiring'), 'Okay thanks Next topic is hiring'],
+  [
+    'speakers',
+    JSON.stringify(
+      transcript([
+        { id: 0, speaker: 'Ana', versions: ['Hi all'], start: 0, end: 1 },
+        { id: 1, speaker: '', versions: ['let us start'], start: 2, end: 3 },
+        { id: 2, speaker: 'Bao', versions: ['Sure'], start: 4, end: 5 },
+      ]).map((l) => `${l.speaker}: ${l.text}`),
+    ),
+    JSON.stringify(['Ana: Hi all let us start', 'Bao: Sure']),
+  ],
+] as const) {
+  if (got === want) console.log(`✓ meet ${name}`);
+  else {
+    failed++;
+    console.error(`✗ meet ${name}\n  - got ${got}`);
   }
 }
 if (failed) process.exit(1);
