@@ -4,7 +4,21 @@ Two Chrome windows join one Google Meet call. Each uses a WAV file as its microp
 `meeting.txt` with macOS `say`, and the two files take turns, so Meet captions a two-person
 meeting with names. Nobody has to talk.
 
-## Once
+## Using a Chrome profile you already have
+
+Window A can be one of your own profiles (already signed in, Siftlume maybe already loaded): quit
+Chrome completely (Cmd+Q), then
+
+```bash
+MEET_PROFILE="Profile 2" sh scripts/meet-test/launch.sh a     # the folder name from chrome://version → Profile Path
+```
+
+The fake microphone then applies to every profile of that Chrome run, and permission prompts for
+camera and microphone are accepted automatically: quit and reopen Chrome normally when you are done.
+Window B stays separate (`launch.sh b`): one Chrome process plays one file, and B joins as a guest,
+so it needs no account.
+
+## Once (separate test profile)
 
 ```bash
 pnpm build                                       # .output/chrome-mv3
