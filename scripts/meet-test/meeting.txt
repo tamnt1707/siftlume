@@ -1,0 +1,21 @@
+# A scripted meeting for testing the Meet recorder (scripts/meet-test/README.md).
+# One turn per line: "A:" or "B:" then the words. A and B are the two Chrome windows.
+A: Morning everyone. Let's review the launch plan for the new mobile app.
+B: Morning. Before we start, the QA run on Android is not finished yet.
+A: How much is left?
+B: About forty test cases. I can finish them by Wednesday.
+A: Okay. Then we can't ship on Friday as planned.
+B: I'd suggest Monday the twentieth instead. That gives us the weekend for fixes.
+A: I'm a bit worried about Monday, marketing already booked the press release for Friday.
+B: We could keep the press release and just say the app is coming next week.
+A: That works. Decision: we launch on Monday the twentieth, and the press release stays on Friday.
+B: Agreed.
+A: Next, the budget. We have twelve thousand dollars left for ads.
+B: I'd put eight thousand on Instagram and four thousand on search.
+A: Fine with me. Let's go with eight and four.
+A: Action items. Bao finishes the Android QA by Wednesday.
+B: Yes, and I'll send the release notes to Ana by Thursday.
+A: I'll tell marketing about the new date today.
+B: One open question: do we need a separate onboarding screen for tablets?
+A: Good question. Let's decide that next week when we see the QA results.
+A: Anything else? No? Thanks everyone, talk soon.
