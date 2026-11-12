@@ -3,7 +3,7 @@ import { t } from '@/lib/i18n';
 import TurndownService from 'turndown';
 import { gfm } from '@joplin/turndown-plugin-gfm';
 import Papa from 'papaparse';
-import { parseNumber, type CsvDataset, type CsvRow } from './csv-tools';
+import { csvColumnNames, parseNumber, type CsvDataset, type CsvRow } from './csv-tools';
 
 export type SourceKind = 'webpage' | 'text' | 'pdf' | 'csv' | 'markdown' | 'video' | 'pr' | 'multi';
 
@@ -83,9 +83,18 @@ export async function extractPdf(data: ArrayBuffer): Promise<string> {
 
 /** CSV → schema, basic stats and sample rows for the prompt (not the whole file), plus the dataset for tools. */
 export function extractCsv(text: string, sampleRows = 30): { content: string; dataset: CsvDataset } {
-  const parsed = Papa.parse<Record<string, string>>(text, { header: true, skipEmptyLines: true });
-  const raw = parsed.data;
-  const columns = (parsed.meta.fields ?? []).filter(Boolean);
+  // Header row read here, not by Papa: its own renaming of duplicate headers logs a console
+  // warning (shown on the extensions page), and empty headers lost their columns.
+  const [header = [], ...body] = Papa.parse<string[]>(text, { skipEmptyLines: 'greedy' }).data;
+  const names = csvColumnNames(header, body);
+  const columns = names.filter((n): n is string => n !== null);
+  const raw: Record<string, string>[] = body.map((cells) => {
+    const record: Record<string, string> = {};
+    names.forEach((name, i) => {
+      if (name !== null) record[name] = cells[i] ?? '';
+    });
+    return record;
+  });
 
   const numericColumns = columns.filter((col) => {
     const values = raw.map((r) => r[col]).filter((v) => v !== undefined && v !== '');

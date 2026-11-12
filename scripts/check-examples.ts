@@ -5,7 +5,7 @@
 import { createParser } from '@openuidev/react-lang';
 import { render, PeleError } from 'pele';
 import { library } from '../lib/library';
-import { CSV_TOOL_EXAMPLES, parseNumber } from '../lib/csv-tools';
+import { CSV_TOOL_EXAMPLES, csvColumnNames, parseNumber } from '../lib/csv-tools';
 import { VISUAL_SUMMARY_EXAMPLE } from '../lib/summary-example';
 import { CHART_SUMMARY_EXAMPLE } from '../lib/chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from '../lib/diagram-example';
@@ -126,6 +126,20 @@ for (const [text, want] of [
   else {
     failed++;
     console.error(`✗ parseNumber ${JSON.stringify(text)}\n  - got ${got}, want ${want}`);
+  }
+}
+// Spreadsheet headers: empty and repeated names get readable, unique names; empty columns go.
+for (const [header, rows, want] of [
+  [['Name', 'Price', 'Price'], [['a', '1', '2']], ['Name', 'Price', 'Price (2)']],
+  [['Name', '', ''], [['a', 'x', '']], ['Name', 'Column B', null]],
+  [['A', 'A', 'A (2)'], [['1', '2', '3']], ['A', 'A (2)', 'A (2) (2)']],
+  [['Q1'], [['1', '2']], ['Q1', 'Column B']],
+] as [string[], string[][], (string | null)[]][]) {
+  const got = JSON.stringify(csvColumnNames(header, rows));
+  if (got === JSON.stringify(want)) console.log(`✓ csvColumnNames ${JSON.stringify(header)}`);
+  else {
+    failed++;
+    console.error(`✗ csvColumnNames ${JSON.stringify(header)}\n  - got ${got}`);
   }
 }
 if (failed) process.exit(1);

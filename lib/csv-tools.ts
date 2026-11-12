@@ -187,3 +187,44 @@ export function parseNumber(value: string): number | null {
   const n = Number(v);
   return Number.isFinite(n) ? (negative ? -n : n) : null;
 }
+
+/** Spreadsheet column letter for a 0-based index: 0 → A, 25 → Z, 26 → AA. */
+function columnLetter(i: number): string {
+  let s = '';
+  for (let n = i + 1; n > 0; n = Math.floor((n - 1) / 26)) s = String.fromCharCode(65 + ((n - 1) % 26)) + s;
+  return s;
+}
+
+/**
+ * Unique column names from a CSV header row, the way a spreadsheet user would read them: an empty
+ * header becomes "Column C", a repeated one "Price (2)". Columns with neither a header nor any
+ * value are dropped (null). Spreadsheet exports often have both.
+ */
+export function csvColumnNames(header: string[], rows: string[][]): (string | null)[] {
+  // A loop, not Math.max(...rows): a large sheet would overflow the argument list.
+  const width = rows.reduce((w, r) => Math.max(w, r.length), header.length);
+  const used = new Map<string, number>();
+  const names: (string | null)[] = [];
+  for (let i = 0; i < width; i++) {
+    let name = (header[i] ?? '').trim();
+    if (!name) {
+      if (!rows.some((r) => (r[i] ?? '').trim())) {
+        names.push(null);
+        continue;
+      }
+      name = `Column ${columnLetter(i)}`;
+    }
+    const seen = used.get(name) ?? 0;
+    used.set(name, seen + 1);
+    names.push(seen ? `${name} (${seen + 1})` : name);
+  }
+  // A renamed column could collide with a real header ("Price (2)"): number again until unique.
+  const taken = new Set<string>();
+  return names.map((n) => {
+    if (n === null) return null;
+    let unique = n;
+    for (let k = 2; taken.has(unique); k++) unique = `${n} (${k})`;
+    taken.add(unique);
+    return unique;
+  });
+}
