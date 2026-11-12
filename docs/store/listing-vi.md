@@ -29,7 +29,7 @@ Mở một bài báo, báo cáo hay trang tài liệu rồi bấm biểu tượn
 TÓM TẮT ĐƯỢC GÌ
 • Trang bạn đang đọc, hoặc chỉ đoạn bạn bôi đen (chuột phải → Tóm tắt đoạn chọn)
 • Video YouTube, đọc từ phụ đề; bấm trích dẫn là phát đúng đoạn đó
-• Google Docs và Sheets bạn mở được, kể cả tài liệu riêng tư; bảng tính có biểu đồ và bộ lọc
+• Google Docs, Sheets và Slides bạn mở được, kể cả tài liệu riêng tư, và file PDF trên Google Drive; bảng tính có biểu đồ và bộ lọc, bài trình bày giữ cả ghi chú của người thuyết trình
 • Pull request trên GitHub: đổi gì và vì sao, tình trạng review, rủi ro, và tự review phần code thay đổi
 • Nhiều tab đang mở cùng lúc, so sánh với nhau
 • Một trang cùng các trang nó liên kết tới (Đọc sâu)

@@ -28,7 +28,7 @@ Open an article, report or documentation page and click the Siftlume icon. You g
 WHAT YOU CAN SUMMARIZE
 • The page you are reading, or just a selection (right-click, then Summarize selection)
 • YouTube videos, from their captions; quotes jump to that moment in the video
-• Google Docs and Sheets you can open, including private ones; sheets get charts and filters
+• Google Docs, Sheets and Slides you can open, including private ones, and PDFs in Google Drive; sheets get charts and filters, slides keep the speaker notes
 • GitHub pull requests: what changed and why, review status, risks, and a code review of the diff
 • Several open tabs at once, compared side by side
 • A page together with the pages it links to (Deep read)
