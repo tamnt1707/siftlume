@@ -7,6 +7,8 @@
  * Pure (DOMParser only), so it can be tested in a plain browser page.
  */
 
+import { stripInlineHandlers } from './inline-handlers';
+
 export type StructuredType = 'Recipe' | 'Product' | 'JobPosting' | 'Event';
 export const STRUCTURED_TYPES: StructuredType[] = ['Recipe', 'Product', 'JobPosting', 'Event'];
 
@@ -71,7 +73,7 @@ function walk(value: unknown, out: Node[], depth = 0) {
 function plain(text: string) {
   if (!/[<&]/.test(text)) return text.replace(/\s+/g, ' ').trim();
   const doc = new DOMParser().parseFromString(
-    `<body>${text.replace(/<(br|\/p|\/li|\/h\d)\b[^>]*>/gi, '\n$&')}`,
+    `<body>${stripInlineHandlers(text).replace(/<(br|\/p|\/li|\/h\d)\b[^>]*>/gi, '\n$&')}`,
     'text/html',
   );
   return (doc.body.textContent ?? '')
@@ -357,13 +359,15 @@ const FORMAT: Record<StructuredType, (n: Node) => string> = {
  * The page's schema.org recipes, products, job postings and events as Markdown, with the types
  * found; null when it has none.
  */
+/** <script type="application/ld+json">…</script>, any attribute order and quoting. */
+const LD_SCRIPT = /<script\b[^>]*\btype\s*=\s*["']?application\/ld\+json["']?[^>]*>([\s\S]*?)<\/script\s*>/gi;
+
 export function readStructuredData(html: string): { types: StructuredType[]; markdown: string } | null {
   if (!html.includes('application/ld+json')) return null;
-  const doc = new DOMParser().parseFromString(html, 'text/html');
+  // Only the JSON-LD scripts are needed: cut them out of the HTML rather than parse the whole page
+  // (faster, and DOMParser would log a CSP violation for each inline handler on the page).
   const nodes: Node[] = [];
-  for (const script of doc.querySelectorAll('script[type="application/ld+json" i]')) {
-    walk(parseJson(script.textContent ?? ''), nodes);
-  }
+  for (const [, json] of html.matchAll(LD_SCRIPT)) walk(parseJson(json ?? ''), nodes);
   const found = new Map<StructuredType, Node[]>();
   for (const node of nodes) {
     const family = familyOf(node);

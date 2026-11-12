@@ -3,6 +3,7 @@ import { t } from '@/lib/i18n';
 import TurndownService from 'turndown';
 import { gfm } from '@joplin/turndown-plugin-gfm';
 import Papa from 'papaparse';
+import { stripInlineHandlers } from './inline-handlers';
 import { csvColumnNames, parseNumber, type CsvDataset, type CsvRow } from './csv-tools';
 import type { StructuredType } from './structured';
 
@@ -35,17 +36,6 @@ const turndown = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fen
 // GFM keeps <table> as Markdown tables: the main source of numbers for charts.
 turndown.use(gfm);
 turndown.remove(['script', 'style', 'noscript', 'iframe', 'form', 'nav', 'footer']);
-
-/** An inline event handler attribute (onclick="…", onerror=…) inside a tag. */
-const HANDLER_ATTR = /\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi;
-
-/**
- * Removes inline event handlers from page HTML. They carry no text, and parsing them in an
- * extension page makes Chrome log a Content Security Policy violation for each one (nothing runs,
- * but the console fills with errors). Only tags are touched, never the text between them.
- */
-export const stripInlineHandlers = (html: string) =>
-  html.replace(/<[a-z][^<>]*>/gi, (tag) => tag.replace(HANDLER_ATTR, ''));
 
 /** Tab HTML → Markdown of the main content. Runs in the side panel with DOMParser. */
 export function htmlToMarkdown(html: string, url: string): { title: string; content: string } {
