@@ -101,7 +101,46 @@
     },
     "before": "変更前",
     "after": "変更後",
-    "qrScan": "スキャンして開く"
+    "qrScan": "スキャンして開く",
+    "action": {
+      "owner": "担当",
+      "due": "期限",
+      "status": {
+        "todo": "未着手",
+        "doing": "進行中",
+        "done": "完了",
+        "blocked": "ブロック中"
+      }
+    },
+    "finding": {
+      "blocker": "要修正",
+      "major": "重大",
+      "minor": "軽微",
+      "nit": "細かい指摘",
+      "fix": "修正案:"
+    },
+    "ingredients": {
+      "servings_other": "{{count}} 人分",
+      "fewer": "人数を減らす",
+      "more": "人数を増やす",
+      "reset": "元に戻す"
+    },
+    "event": {
+      "scheduled": "予定どおり",
+      "cancelled": "中止",
+      "postponed": "延期",
+      "rescheduled": "日程変更",
+      "online": "オンラインに変更",
+      "tickets": "チケット",
+      "calendar": "カレンダーに追加",
+      "today": "今日",
+      "ended": "終了",
+      "inDays_other": "あと {{count}} 日"
+    },
+    "rating": {
+      "count_other": "{{formatted}} 件の評価",
+      "outOf": "{{max}} 点中 {{value}} 点"
+    }
   },
   "refineHint": {
     "shorter": "最も重要なポイントだけを残します。",

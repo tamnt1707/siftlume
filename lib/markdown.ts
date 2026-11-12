@@ -1,7 +1,11 @@
 import { createParser } from '@openuidev/react-lang';
 import {
+  ACTION_STATUSES,
   CALC_OPS,
   CHANGE_TYPES,
+  EVENT_STATUSES,
+  FINDING_SEVERITIES,
+  formatQty,
   CLAIM_STATUSES,
   library,
   qrSafe,
@@ -210,6 +214,83 @@ function render(node: unknown, level: number): string {
           )
           .join('\n')
       );
+    case 'ActionItems':
+      return (
+        heading(p.heading) +
+        list(p.items)
+          .map(props)
+          .map((x) => {
+            const status = x.status ? pick(x.status, ACTION_STATUSES, 'todo') : 'todo';
+            const meta = [
+              x.owner ? `${t('session:genui.action.owner')}: ${str(x.owner)}` : '',
+              x.due ? `${t('session:genui.action.due')}: ${str(x.due)}` : '',
+              status !== 'todo' && status !== 'done' ? t(`session:genui.action.status.${status}`) : '',
+            ].filter(Boolean);
+            return `- [${status === 'done' ? 'x' : ' '}] ${str(x.task)}${meta.length ? ` (${meta.join(' · ')})` : ''}`;
+          })
+          .join('\n')
+      );
+    case 'Findings':
+      return (
+        heading(p.heading) +
+        list(p.items)
+          .map(props)
+          .map((x) => {
+            const where = x.location
+              ? x.url
+                ? ` — [${str(x.location)}](${str(x.url)})`
+                : ` — \`${str(x.location)}\``
+              : '';
+            const fix = x.fix
+              ? /\n|[;{}()=]/.test(str(x.fix))
+                ? `\n\n  \`\`\`\n  ${str(x.fix).replace(/\n/g, '\n  ')}\n  \`\`\``
+                : `\n  ${t('session:genui.finding.fix')} ${str(x.fix)}`
+              : '';
+            return `- **${t(`session:genui.finding.${pick(x.severity, FINDING_SEVERITIES, 'minor')}`)}**: ${str(x.title)}${where}${x.why ? `\n  ${str(x.why)}` : ''}${fix}`;
+          })
+          .join('\n')
+      );
+    case 'Ingredients':
+      return (
+        heading(p.heading) +
+        `_${t('session:genui.ingredients.servings', { count: Number(p.servings) || 1 })}_\n\n` +
+        list(p.items)
+          .map(props)
+          .map((x) => {
+            const qty = typeof x.qty === 'number' ? formatQty(x.qty, str(x.unit)) : '';
+            return `- [ ] ${[qty, str(x.unit)].filter(Boolean).join(' ')}${qty || x.unit ? ' ' : ''}${str(x.name)}${x.note ? ` (${str(x.note)})` : ''}`;
+          })
+          .join('\n')
+      );
+    case 'EventCard': {
+      const s = p.status ? pick(p.status, EVENT_STATUSES, 'scheduled') : 'scheduled';
+      return [
+        `**${str(p.title)}**${s !== 'scheduled' ? ` (${t(`session:genui.event.${s}`)})` : ''}`,
+        `- ${str(p.start)}${p.end ? ` → ${str(p.end)}` : ''}`,
+        p.place ? `- ${str(p.place)}` : '',
+        p.price ? `- ${str(p.price)}` : '',
+        p.ticketUrl ? `- [${t('session:genui.event.tickets')}](${str(p.ticketUrl)})` : '',
+        p.calendarUrl ? `- [${t('session:genui.event.calendar')}](${str(p.calendarUrl)})` : '',
+      ]
+        .filter(Boolean)
+        .join('\n');
+    }
+    case 'RatingBreakdown': {
+      const max = Number(p.max) || 5;
+      const bars = list(p.bars).map(Number);
+      const total = bars.reduce((a, b) => a + (b > 0 ? b : 0), 0);
+      return [
+        `**${str(p.average)}/${max}**${p.count != null ? ` — ${t('session:genui.rating.count', { count: Number(p.count), formatted: str(p.count) })}` : ''}${p.label ? ` (${str(p.label)})` : ''}`,
+        total
+          ? table(
+              ['', '%'],
+              bars.map((n, i) => [`${max - i}★`, Math.round((n / total) * 100)]),
+            )
+          : '',
+      ]
+        .filter(Boolean)
+        .join('\n\n');
+    }
     case 'StatusBoard':
       return (
         heading(p.heading) +

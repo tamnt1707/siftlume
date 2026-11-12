@@ -107,7 +107,52 @@
     },
     "before": "Avant",
     "after": "Après",
-    "qrScan": "Scanner pour ouvrir"
+    "qrScan": "Scanner pour ouvrir",
+    "action": {
+      "owner": "Responsable",
+      "due": "Échéance",
+      "status": {
+        "todo": "À faire",
+        "doing": "En cours",
+        "done": "Fait",
+        "blocked": "Bloqué"
+      }
+    },
+    "finding": {
+      "blocker": "Bloquant",
+      "major": "Majeur",
+      "minor": "Mineur",
+      "nit": "Détail",
+      "fix": "Correction :"
+    },
+    "ingredients": {
+      "servings_one": "{{count}} portion",
+      "servings_many": "{{count}} portions",
+      "servings_other": "{{count}} portions",
+      "fewer": "Moins de portions",
+      "more": "Plus de portions",
+      "reset": "Réinitialiser"
+    },
+    "event": {
+      "scheduled": "Prévu",
+      "cancelled": "Annulé",
+      "postponed": "Reporté",
+      "rescheduled": "Reprogrammé",
+      "online": "Passe en ligne",
+      "tickets": "Billets",
+      "calendar": "Ajouter à l’agenda",
+      "today": "Aujourd’hui",
+      "ended": "Terminé",
+      "inDays_one": "Dans {{count}} jour",
+      "inDays_many": "Dans {{count}} jours",
+      "inDays_other": "Dans {{count}} jours"
+    },
+    "rating": {
+      "count_one": "{{formatted}} note",
+      "count_many": "{{formatted}} notes",
+      "count_other": "{{formatted}} notes",
+      "outOf": "{{value}} sur {{max}}"
+    }
   },
   "refineHint": {
     "shorter": "Garder uniquement les points essentiels.",

@@ -15,6 +15,7 @@ import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE 
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../lib/mode-example';
 import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from '../lib/analysis-example';
 import { localProgram, repairJson } from '../lib/local-program';
+import { PR_REVIEW_EXAMPLE, PRODUCT_EVENT_EXAMPLE, RECIPE_EXAMPLE } from '../lib/component-example';
 
 /** An in-browser model's answer with every field filled, for a web page and for a file. */
 const LOCAL_ANSWER = {
@@ -46,6 +47,9 @@ const examples: Record<string, string> = {
   'policy-debate-example': POLICY_DEBATE_EXAMPLE,
   'decision-example': DECISION_EXAMPLE,
   'code-tutorial-example': CODE_TUTORIAL_EXAMPLE,
+  'pr-review-example': PR_REVIEW_EXAMPLE,
+  'recipe-example': RECIPE_EXAMPLE,
+  'product-event-example': PRODUCT_EVENT_EXAMPLE,
   'local-program-web': localProgram(LOCAL_ANSWER, { title: 'Acme', origin: 'https://ir.acme.example' }, 6),
   'local-program-file': localProgram(
     { title: '', tldr: 'Short.', takeaways: [{ text: 'One' }] },

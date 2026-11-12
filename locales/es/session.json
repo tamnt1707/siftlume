@@ -107,7 +107,52 @@
     },
     "before": "Antes",
     "after": "Después",
-    "qrScan": "Escanea para abrir"
+    "qrScan": "Escanea para abrir",
+    "action": {
+      "owner": "Responsable",
+      "due": "Fecha límite",
+      "status": {
+        "todo": "Pendiente",
+        "doing": "En curso",
+        "done": "Hecho",
+        "blocked": "Bloqueado"
+      }
+    },
+    "finding": {
+      "blocker": "Bloqueante",
+      "major": "Grave",
+      "minor": "Menor",
+      "nit": "Detalle",
+      "fix": "Solución:"
+    },
+    "ingredients": {
+      "servings_one": "{{count}} ración",
+      "servings_many": "{{count}} raciones",
+      "servings_other": "{{count}} raciones",
+      "fewer": "Menos raciones",
+      "more": "Más raciones",
+      "reset": "Restablecer"
+    },
+    "event": {
+      "scheduled": "Programado",
+      "cancelled": "Cancelado",
+      "postponed": "Aplazado",
+      "rescheduled": "Reprogramado",
+      "online": "Pasa a online",
+      "tickets": "Entradas",
+      "calendar": "Añadir al calendario",
+      "today": "Hoy",
+      "ended": "Terminado",
+      "inDays_one": "En {{count}} día",
+      "inDays_many": "En {{count}} días",
+      "inDays_other": "En {{count}} días"
+    },
+    "rating": {
+      "count_one": "{{formatted}} valoración",
+      "count_many": "{{formatted}} valoraciones",
+      "count_other": "{{formatted}} valoraciones",
+      "outOf": "{{value}} de {{max}}"
+    }
   },
   "refineHint": {
     "shorter": "Deja solo los puntos más importantes.",

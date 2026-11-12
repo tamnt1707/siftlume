@@ -2491,3 +2491,483 @@
 .g-decision tr.is-best .g-decision__total {
   background: color-mix(in srgb, var(--up) 7%, var(--surface));
 }
+
+/* ── Action items (owner, due, status) ────────────────────── */
+
+.g-actions ul,
+.g-findings ul,
+.g-ingredients ul,
+.g-rating__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.g-action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+}
+
+.g-action:hover {
+  background: var(--accent-soft);
+}
+
+.g-action label,
+.g-ingredients label {
+  display: flex;
+  flex: 1 1 240px;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  cursor: pointer;
+  font-family: var(--font-reading);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.g-action input,
+.g-ingredients input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.g-action.is-done .g-action__task,
+.g-ingredients label.is-done span {
+  color: var(--ink-3);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--ink-3) 70%, transparent);
+}
+
+.g-action__meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-left: 28px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+.g-action__owner,
+.g-action__due,
+.g-action__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px 2px 2px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  white-space: nowrap;
+}
+
+.g-action__due,
+.g-action__status {
+  padding-left: 8px;
+}
+
+.g-action__avatar {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.g-action__status--doing {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+  color: var(--accent);
+}
+
+.g-action__status--blocked {
+  border-color: color-mix(in srgb, var(--down) 40%, var(--line));
+  color: var(--down);
+}
+
+.g-action__status--done {
+  color: var(--up);
+}
+
+/* ── Code review findings ─────────────────────────────────── */
+
+.g-findings__counts {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.g-finding__count,
+.g-finding__severity {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--tone);
+}
+
+.g-finding {
+  --tone: var(--ink-3);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--tone);
+  border-radius: var(--r-sm);
+  background: color-mix(in srgb, var(--tone) 7%, var(--surface));
+  font-family: var(--font-sans);
+}
+
+.g-finding--blocker {
+  --tone: var(--down);
+}
+
+.g-finding--major {
+  --tone: var(--caution);
+}
+
+.g-finding--minor {
+  --tone: var(--accent);
+}
+
+.g-finding__head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.g-finding__head strong {
+  font-size: 14.5px;
+  font-weight: 640;
+  color: var(--ink);
+}
+
+.g-finding__where {
+  align-self: flex-start;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12.5px;
+  color: var(--accent);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+a.g-finding__where:hover {
+  border-color: var(--accent);
+}
+
+.g-finding__why,
+.g-finding__fix-text {
+  margin: 0;
+  font-family: var(--font-reading);
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.g-finding__fix-text span {
+  font-family: var(--font-sans);
+  font-weight: 640;
+  color: var(--ink);
+}
+
+.g-finding__fix {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  overflow-x: auto;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+/* ── Ingredients (servings stepper) ───────────────────────── */
+
+.g-ingredients__servings {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 620;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.g-ingredients__servings button {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.g-ingredients__servings button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.g-ingredients__servings button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.g-ingredients__servings .g-ingredients__reset {
+  border-color: transparent;
+  color: var(--ink-2);
+  font-weight: 560;
+}
+
+.g-ingredients label {
+  padding: 7px 10px;
+  border-radius: var(--r-sm);
+}
+
+.g-ingredients label:hover {
+  background: var(--accent-soft);
+}
+
+.g-ingredient__qty {
+  flex: none;
+  min-width: 72px;
+  font-family: var(--font-sans);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.g-ingredient__note {
+  color: var(--ink-3);
+}
+
+/* ── Event card ───────────────────────────────────────────── */
+
+.g-eventcard {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.g-eventcard__date {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 68px;
+  border-radius: var(--r-sm);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--font-sans);
+  line-height: 1;
+}
+
+.g-eventcard__date span {
+  font-size: 11px;
+  white-space: nowrap;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.g-eventcard__date strong {
+  margin-top: 4px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.g-eventcard.is-off .g-eventcard__date {
+  background: color-mix(in srgb, var(--down) 10%, var(--surface));
+  color: var(--down);
+}
+
+.g-eventcard__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.g-eventcard__top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.g-eventcard__when {
+  color: var(--accent);
+}
+
+.g-eventcard__status {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--caution);
+}
+
+.g-eventcard__status--cancelled,
+.g-eventcard__status--postponed {
+  color: var(--down);
+}
+
+.genui .g-eventcard__title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 680;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.g-eventcard.is-off .g-eventcard__title {
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--down) 60%, transparent);
+}
+
+.g-eventcard__line {
+  margin: 0;
+  font-family: var(--font-reading);
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.g-eventcard__price {
+  font-family: var(--font-sans);
+  font-weight: 640;
+  color: var(--ink);
+}
+
+.g-eventcard__actions a {
+  text-decoration: none;
+}
+
+.g-eventcard__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ── Rating breakdown ─────────────────────────────────────── */
+
+.g-rating {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.g-rating__score {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  font-family: var(--font-sans);
+}
+
+.g-rating__score strong {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+}
+
+/* Five stars drawn with text; the fill width shows the average. */
+.g-rating__stars {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: var(--line-strong);
+}
+
+.g-rating__stars::before {
+  content: '★★★★★';
+}
+
+.g-rating__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--caution);
+}
+
+.g-rating__fill::before {
+  content: '★★★★★';
+}
+
+.g-rating__count {
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+.g-rating__bars {
+  flex: 1 1 220px;
+  gap: 6px;
+}
+
+.g-rating__bars li {
+  display: grid;
+  grid-template-columns: 2.4em 1fr 3.2em;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+.g-rating__pct {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.session--panel .g-eventcard {
+  padding: 12px;
+  gap: 12px;
+}
+
+.session--panel .g-eventcard__date {
+  width: 52px;
+  height: 58px;
+}

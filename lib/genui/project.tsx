@@ -1,7 +1,8 @@
-/** Projects and software: kanban-style status boards and typed changelogs. */
+/** Projects and software: kanban-style status boards, typed changelogs and owned action items. */
 import { useTranslation } from 'react-i18next';
-import { defineComponent } from '@openuidev/react-lang';
+import { defineComponent, useStateField } from '@openuidev/react-lang';
 import { z } from 'zod/v4';
+import { childProps } from './shared';
 
 export const StatusColumn = defineComponent({
   name: 'StatusColumn',
@@ -79,4 +80,99 @@ export const ChangeList = defineComponent({
       <ul>{renderNode(props.changes)}</ul>
     </section>
   ),
+});
+
+export const ACTION_STATUSES = ['todo', 'doing', 'done', 'blocked'] as const;
+
+export const ActionItem = defineComponent({
+  name: 'ActionItem',
+  description:
+    'One action: task (max 12 words), optional owner as the source names them ("@ana", "Design team"), optional due as written ("Fri 14 Nov", "before merge"), optional status "todo" | "doing" | "done" | "blocked" only when the source says it.',
+  props: z.object({
+    task: z.string(),
+    owner: z.string().optional(),
+    due: z.string().optional(),
+    status: z.enum(ACTION_STATUSES).optional(),
+  }),
+  component: () => null,
+});
+
+type ActionProps = { task?: string; owner?: string; due?: string; status?: string };
+
+/** Stable key for the ticks of one list (saved with the message, like Checklist). */
+const actionsKey = (items: ActionProps[]) => {
+  let h = 0;
+  for (const c of items.map((x) => x.task ?? '').join('\u0001')) h = (h * 31 + c.charCodeAt(0)) | 0;
+  return `actions_${Math.abs(h).toString(36)}`;
+};
+
+const initials = (name: string) =>
+  name
+    .replace(/^@/, '')
+    .split(/[\s._-]+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0]!.toUpperCase())
+    .join('');
+
+export const ActionItems = defineComponent({
+  name: 'ActionItems',
+  description:
+    'Action items with who does them and by when (2-10): meeting outcomes, a merge checklist, project next steps. Use instead of Checklist when the source names owners, dates or states; tickable.',
+  props: z.object({
+    items: z.array(ActionItem.ref),
+    heading: z.string().optional(),
+  }),
+  component: ({ props }) => {
+    const { t } = useTranslation('session');
+    const items = childProps<ActionProps>(props.items).filter((x) => x.task);
+    const field = useStateField(actionsKey(items));
+    const ticked = (Array.isArray(field.value) ? field.value : []) as number[];
+    const isDone = (x: ActionProps, i: number) => ticked.includes(i) !== (x.status === 'done');
+    const toggle = (i: number) => field.setValue(ticked.includes(i) ? ticked.filter((x) => x !== i) : [...ticked, i]);
+    const done = items.filter(isDone).length;
+    return (
+      <section className="g-actions">
+        <div className="g-checklist__head">
+          {props.heading && <h2 className="g-heading">{props.heading}</h2>}
+          <span className="g-checklist__progress">{t('genui.checklistProgress', { done, total: items.length })}</span>
+        </div>
+        <ul>
+          {items.map((x, i) => {
+            const status = (ACTION_STATUSES as readonly string[]).includes(x.status ?? '')
+              ? (x.status as (typeof ACTION_STATUSES)[number])
+              : null;
+            return (
+              <li key={i} className={`g-action ${isDone(x, i) ? 'is-done' : ''}`}>
+                <label>
+                  <input type="checkbox" checked={isDone(x, i)} onChange={() => toggle(i)} />
+                  <span className="g-action__task">{x.task}</span>
+                </label>
+                <span className="g-action__meta">
+                  {x.owner && (
+                    <span className="g-action__owner" title={t('genui.action.owner')}>
+                      <span className="g-action__avatar" aria-hidden="true">
+                        {initials(x.owner)}
+                      </span>
+                      {x.owner}
+                    </span>
+                  )}
+                  {x.due && (
+                    <span className="g-action__due" title={t('genui.action.due')}>
+                      {x.due}
+                    </span>
+                  )}
+                  {status && status !== 'todo' && (
+                    <span className={`g-action__status g-action__status--${status}`}>
+                      {t(`genui.action.status.${status}`)}
+                    </span>
+                  )}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    );
+  },
 });

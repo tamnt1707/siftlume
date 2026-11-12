@@ -104,7 +104,49 @@
     },
     "before": "Before",
     "after": "After",
-    "qrScan": "Scan to open"
+    "qrScan": "Scan to open",
+    "action": {
+      "owner": "Owner",
+      "due": "Due",
+      "status": {
+        "todo": "To do",
+        "doing": "In progress",
+        "done": "Done",
+        "blocked": "Blocked"
+      }
+    },
+    "finding": {
+      "blocker": "Blocker",
+      "major": "Major",
+      "minor": "Minor",
+      "nit": "Nit",
+      "fix": "Fix:"
+    },
+    "ingredients": {
+      "servings_one": "{{count}} serving",
+      "servings_other": "{{count}} servings",
+      "fewer": "Fewer servings",
+      "more": "More servings",
+      "reset": "Reset"
+    },
+    "event": {
+      "scheduled": "Scheduled",
+      "cancelled": "Cancelled",
+      "postponed": "Postponed",
+      "rescheduled": "Rescheduled",
+      "online": "Moved online",
+      "tickets": "Tickets",
+      "calendar": "Add to calendar",
+      "today": "Today",
+      "ended": "Ended",
+      "inDays_one": "In {{count}} day",
+      "inDays_other": "In {{count}} days"
+    },
+    "rating": {
+      "count_one": "{{formatted}} rating",
+      "count_other": "{{formatted}} ratings",
+      "outOf": "{{value}} out of {{max}}"
+    }
   },
   "refineHint": {
     "shorter": "Keep only the most important points.",

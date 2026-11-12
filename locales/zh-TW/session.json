@@ -101,7 +101,46 @@
     },
     "before": "之前",
     "after": "之後",
-    "qrScan": "掃描以開啟"
+    "qrScan": "掃描以開啟",
+    "action": {
+      "owner": "負責人",
+      "due": "截止",
+      "status": {
+        "todo": "待辦",
+        "doing": "進行中",
+        "done": "已完成",
+        "blocked": "受阻"
+      }
+    },
+    "finding": {
+      "blocker": "必須修正",
+      "major": "嚴重",
+      "minor": "輕微",
+      "nit": "小建議",
+      "fix": "修正："
+    },
+    "ingredients": {
+      "servings_other": "{{count}} 人份",
+      "fewer": "減少份數",
+      "more": "增加份數",
+      "reset": "重設"
+    },
+    "event": {
+      "scheduled": "依計畫",
+      "cancelled": "已取消",
+      "postponed": "已延期",
+      "rescheduled": "已改期",
+      "online": "改為線上",
+      "tickets": "購票",
+      "calendar": "加入行事曆",
+      "today": "今天",
+      "ended": "已結束",
+      "inDays_other": "{{count}} 天後"
+    },
+    "rating": {
+      "count_other": "{{formatted}} 則評分",
+      "outOf": "{{value}} / {{max}}"
+    }
   },
   "refineHint": {
     "shorter": "只保留最重要的重點。",

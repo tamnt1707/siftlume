@@ -110,7 +110,55 @@
     },
     "before": "До",
     "after": "После",
-    "qrScan": "Отсканируйте, чтобы открыть"
+    "qrScan": "Отсканируйте, чтобы открыть",
+    "action": {
+      "owner": "Ответственный",
+      "due": "Срок",
+      "status": {
+        "todo": "К выполнению",
+        "doing": "В работе",
+        "done": "Готово",
+        "blocked": "Заблокировано"
+      }
+    },
+    "finding": {
+      "blocker": "Блокер",
+      "major": "Серьёзно",
+      "minor": "Незначительно",
+      "nit": "Мелочь",
+      "fix": "Исправление:"
+    },
+    "ingredients": {
+      "servings_one": "{{count}} порция",
+      "servings_few": "{{count}} порции",
+      "servings_many": "{{count}} порций",
+      "servings_other": "{{count}} порции",
+      "fewer": "Меньше порций",
+      "more": "Больше порций",
+      "reset": "Сбросить"
+    },
+    "event": {
+      "scheduled": "По плану",
+      "cancelled": "Отменено",
+      "postponed": "Перенесено",
+      "rescheduled": "Новая дата",
+      "online": "Перенесено в онлайн",
+      "tickets": "Билеты",
+      "calendar": "Добавить в календарь",
+      "today": "Сегодня",
+      "ended": "Завершено",
+      "inDays_one": "Через {{count}} день",
+      "inDays_few": "Через {{count}} дня",
+      "inDays_many": "Через {{count}} дней",
+      "inDays_other": "Через {{count}} дня"
+    },
+    "rating": {
+      "count_one": "{{formatted}} оценка",
+      "count_few": "{{formatted}} оценки",
+      "count_many": "{{formatted}} оценок",
+      "count_other": "{{formatted}} оценки",
+      "outOf": "{{value}} из {{max}}"
+    }
   },
   "refineHint": {
     "shorter": "Оставить только самое важное.",

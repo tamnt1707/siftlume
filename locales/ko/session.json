@@ -101,7 +101,46 @@
     },
     "before": "이전",
     "after": "이후",
-    "qrScan": "스캔해서 열기"
+    "qrScan": "스캔해서 열기",
+    "action": {
+      "owner": "담당",
+      "due": "기한",
+      "status": {
+        "todo": "할 일",
+        "doing": "진행 중",
+        "done": "완료",
+        "blocked": "막힘"
+      }
+    },
+    "finding": {
+      "blocker": "필수 수정",
+      "major": "심각",
+      "minor": "경미",
+      "nit": "사소함",
+      "fix": "수정:"
+    },
+    "ingredients": {
+      "servings_other": "{{count}}인분",
+      "fewer": "인분 줄이기",
+      "more": "인분 늘리기",
+      "reset": "초기화"
+    },
+    "event": {
+      "scheduled": "예정대로",
+      "cancelled": "취소됨",
+      "postponed": "연기됨",
+      "rescheduled": "일정 변경",
+      "online": "온라인으로 전환",
+      "tickets": "티켓",
+      "calendar": "캘린더에 추가",
+      "today": "오늘",
+      "ended": "종료됨",
+      "inDays_other": "{{count}}일 남음"
+    },
+    "rating": {
+      "count_other": "평가 {{formatted}}개",
+      "outOf": "{{max}}점 중 {{value}}점"
+    }
   },
   "refineHint": {
     "shorter": "가장 중요한 내용만 남깁니다.",

@@ -1,5 +1,6 @@
-/** Technical: how a number is worked out, and code explained part by part. */
+/** Technical: how a number is worked out, code explained part by part, and code review findings. */
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { defineComponent } from '@openuidev/react-lang';
 import { z } from 'zod/v4';
 import { childProps } from './shared';
@@ -137,6 +138,87 @@ export const CodeWalkthrough = defineComponent({
             ))}
           </ol>
         </div>
+      </section>
+    );
+  },
+});
+
+export const FINDING_SEVERITIES = ['blocker', 'major', 'minor', 'nit'] as const;
+
+export const Finding = defineComponent({
+  name: 'Finding',
+  description:
+    'One problem found in code under review: severity "blocker" (must fix before merge: bug, data loss, security) | "major" | "minor" | "nit"; title (max 10 words); location "path:line"; url = the file or thread link given in the source; why it matters (max 25 words); fix = a short suggestion or a few lines of code.',
+  props: z.object({
+    severity: z.enum(FINDING_SEVERITIES),
+    title: z.string(),
+    location: z.string().optional(),
+    url: z.string().optional(),
+    why: z.string().optional(),
+    fix: z.string().optional(),
+  }),
+  component: ({ props }) => {
+    const { t } = useTranslation('session');
+    const severity = FINDING_SEVERITIES.includes(props.severity) ? props.severity : 'minor';
+    // Only links from the source are given; anything else is shown as text.
+    const href = props.url && /^https:\/\//.test(props.url) ? props.url : null;
+    const codeLike = props.fix && (/\n/.test(props.fix) || /[;{}()=]|=>/.test(props.fix));
+    return (
+      <li className={`g-finding g-finding--${severity}`}>
+        <div className="g-finding__head">
+          <span className="g-finding__severity">{t(`genui.finding.${severity}`)}</span>
+          <strong>{props.title}</strong>
+        </div>
+        {props.location &&
+          (href ? (
+            <a className="g-finding__where" href={href} target="_blank" rel="noreferrer">
+              {props.location}
+            </a>
+          ) : (
+            <code className="g-finding__where">{props.location}</code>
+          ))}
+        {props.why && <p className="g-finding__why">{props.why}</p>}
+        {props.fix &&
+          (codeLike ? (
+            <pre className="g-finding__fix" aria-label={t('genui.finding.fix')}>
+              <code>{props.fix}</code>
+            </pre>
+          ) : (
+            <p className="g-finding__fix-text">
+              <span>{t('genui.finding.fix')}</span> {props.fix}
+            </p>
+          ))}
+      </li>
+    );
+  },
+});
+
+export const Findings = defineComponent({
+  name: 'Findings',
+  description:
+    'Code review results (1-8), most severe first: bugs, unhandled cases, security issues, missing tests, each with where it is and how to fix it. For pull requests, diffs and code snippets the reader asks to review; not for non-code risks (use RiskList).',
+  props: z.object({
+    items: z.array(Finding.ref),
+    heading: z.string().optional(),
+  }),
+  component: ({ props, renderNode }) => {
+    const { t } = useTranslation('session');
+    const counts = FINDING_SEVERITIES.map(
+      (s) => [s, childProps<{ severity?: string }>(props.items).filter((f) => f.severity === s).length] as const,
+    ).filter(([, n]) => n);
+    return (
+      <section className="g-findings">
+        <div className="g-checklist__head">
+          {props.heading && <h2 className="g-heading">{props.heading}</h2>}
+          <span className="g-findings__counts">
+            {counts.map(([s, n]) => (
+              <span key={s} className={`g-finding__count g-finding--${s}`}>
+                {n} {t(`genui.finding.${s}`)}
+              </span>
+            ))}
+          </span>
+        </div>
+        <ul>{renderNode(props.items)}</ul>
       </section>
     );
   },

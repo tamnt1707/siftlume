@@ -101,7 +101,46 @@
     },
     "before": "Trước",
     "after": "Sau",
-    "qrScan": "Quét để mở"
+    "qrScan": "Quét để mở",
+    "action": {
+      "owner": "Người phụ trách",
+      "due": "Hạn",
+      "status": {
+        "todo": "Cần làm",
+        "doing": "Đang làm",
+        "done": "Xong",
+        "blocked": "Bị chặn"
+      }
+    },
+    "finding": {
+      "blocker": "Phải sửa",
+      "major": "Nghiêm trọng",
+      "minor": "Nhỏ",
+      "nit": "Góp ý",
+      "fix": "Cách sửa:"
+    },
+    "ingredients": {
+      "servings_other": "{{count}} phần",
+      "fewer": "Bớt một phần",
+      "more": "Thêm một phần",
+      "reset": "Về mặc định"
+    },
+    "event": {
+      "scheduled": "Theo lịch",
+      "cancelled": "Đã hủy",
+      "postponed": "Hoãn",
+      "rescheduled": "Đổi lịch",
+      "online": "Chuyển sang online",
+      "tickets": "Mua vé",
+      "calendar": "Thêm vào lịch",
+      "today": "Hôm nay",
+      "ended": "Đã kết thúc",
+      "inDays_other": "Còn {{count}} ngày"
+    },
+    "rating": {
+      "count_other": "{{formatted}} lượt đánh giá",
+      "outOf": "{{value}} trên {{max}}"
+    }
   },
   "refineHint": {
     "shorter": "Chỉ giữ những ý quan trọng nhất.",

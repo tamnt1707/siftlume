@@ -101,7 +101,46 @@
     },
     "before": "ก่อน",
     "after": "หลัง",
-    "qrScan": "สแกนเพื่อเปิด"
+    "qrScan": "สแกนเพื่อเปิด",
+    "action": {
+      "owner": "ผู้รับผิดชอบ",
+      "due": "กำหนดส่ง",
+      "status": {
+        "todo": "ต้องทำ",
+        "doing": "กำลังทำ",
+        "done": "เสร็จแล้ว",
+        "blocked": "ติดขัด"
+      }
+    },
+    "finding": {
+      "blocker": "ต้องแก้",
+      "major": "ร้ายแรง",
+      "minor": "เล็กน้อย",
+      "nit": "ข้อสังเกต",
+      "fix": "วิธีแก้:"
+    },
+    "ingredients": {
+      "servings_other": "{{count}} ที่",
+      "fewer": "ลดจำนวนที่",
+      "more": "เพิ่มจำนวนที่",
+      "reset": "รีเซ็ต"
+    },
+    "event": {
+      "scheduled": "ตามกำหนด",
+      "cancelled": "ยกเลิก",
+      "postponed": "เลื่อน",
+      "rescheduled": "เปลี่ยนวัน",
+      "online": "เปลี่ยนเป็นออนไลน์",
+      "tickets": "บัตร",
+      "calendar": "เพิ่มลงปฏิทิน",
+      "today": "วันนี้",
+      "ended": "จบแล้ว",
+      "inDays_other": "อีก {{count}} วัน"
+    },
+    "rating": {
+      "count_other": "{{formatted}} คะแนน",
+      "outOf": "{{value}} จาก {{max}}"
+    }
   },
   "refineHint": {
     "shorter": "เก็บไว้เฉพาะประเด็นที่สำคัญที่สุด",

@@ -21,6 +21,7 @@ import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../../lib/mod
 import { SettingsForm } from '../../components/SettingsForm';
 import { ResultToolbar } from '../../components/ResultToolbar';
 import type { SessionController } from '../../components/useSession';
+import { PR_REVIEW_EXAMPLE, PRODUCT_EVENT_EXAMPLE, RECIPE_EXAMPLE } from '../../lib/component-example';
 import { ThemeToggle } from '../../components/ThemeToggle';
 import type { Session } from '../../lib/history';
 import { library } from '../../lib/library';
@@ -335,6 +336,7 @@ const COMPONENT_SETS: Record<string, string[]> = {
   domain: [PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE],
   modes: [EXPLAIN_EXAMPLE, CRITIQUE_EXAMPLE, ACTION_EXAMPLE],
   analysis: [POLICY_DEBATE_EXAMPLE, DECISION_EXAMPLE, CODE_TUTORIAL_EXAMPLE],
+  everyday: [PR_REVIEW_EXAMPLE, RECIPE_EXAMPLE, PRODUCT_EVENT_EXAMPLE],
 };
 
 function Components() {

@@ -16,13 +16,14 @@ import { BarItem, BarList, Checklist, ProsCons, Verdict } from './genui/review';
 import { Glossary, People, Person, Term } from './genui/entities';
 import { CompareRow, Comparison, Fact, FactSheet, Plan, PricingPlans } from './genui/product';
 import { Claim, ClaimCheck, Risk, RiskList } from './genui/trust';
-import { Change, ChangeList, StatusBoard, StatusColumn } from './genui/project';
+import { ActionItem, ActionItems, Change, ChangeList, StatusBoard, StatusColumn } from './genui/project';
 import { ResearchBrief } from './genui/research';
 import { Analogy, Misconception, Misconceptions } from './genui/explain';
 import { Argument, ArgumentMap, CauseEffect } from './genui/reasoning';
 import { Choice, Criterion, DecisionMatrix, Matrix2x2, Quadrant, Scenario, Scenarios } from './genui/decision';
 import { BeforeAfter, Perspective, Perspectives, Shift } from './genui/viewpoints';
-import { CalcStep, Calculation, CodeNote, CodeWalkthrough } from './genui/technical';
+import { CalcStep, Calculation, CodeNote, CodeWalkthrough, Finding, Findings } from './genui/technical';
+import { EventCard, Ingredient, Ingredients, RatingBreakdown } from './genui/everyday';
 import { Branch, QrCode, Tree } from './genui/structure';
 
 /**
@@ -32,11 +33,12 @@ import { Branch, QrCode, Tree } from './genui/structure';
 
 export { highlightInPage, copyText } from './genui/actions';
 export { RISK_LEVELS, CLAIM_STATUSES } from './genui/trust';
-export { CHANGE_TYPES } from './genui/project';
+export { ACTION_STATUSES, CHANGE_TYPES } from './genui/project';
 export { ARGUMENT_STANCES } from './genui/reasoning';
 export { SCENARIO_KINDS, weightedScores } from './genui/decision';
 export { STANCES } from './genui/viewpoints';
-export { CALC_OPS, lineRange } from './genui/technical';
+export { CALC_OPS, FINDING_SEVERITIES, lineRange } from './genui/technical';
+export { EVENT_STATUSES, formatQty } from './genui/everyday';
 export { qrSafe } from './genui/structure';
 
 /**
@@ -100,6 +102,11 @@ export const library = openuiChatLibrary.extend({
       { component: CodeWalkthrough, slots: CONTENT_SLOTS },
       { component: Tree, slots: CONTENT_SLOTS },
       { component: QrCode, slots: CONTENT_SLOTS },
+      { component: ActionItems, slots: CONTENT_SLOTS },
+      { component: Findings, slots: CONTENT_SLOTS },
+      { component: Ingredients, slots: CONTENT_SLOTS },
+      { component: EventCard, slots: CONTENT_SLOTS },
+      { component: RatingBreakdown, slots: CONTENT_SLOTS },
       // Children of the blocks above; not placed directly in Card.
       KeyNumber,
       Takeaway,
@@ -125,6 +132,9 @@ export const library = openuiChatLibrary.extend({
       CalcStep,
       CodeNote,
       Branch,
+      ActionItem,
+      Finding,
+      Ingredient,
     ],
     remove: UNUSED,
   },
