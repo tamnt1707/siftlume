@@ -1399,6 +1399,29 @@ kbd {
   overflow-x: clip;
 }
 
+/* The Markdown renderer sets its own font and color on its wrapper and paragraphs. */
+.summary .note :is(div, p, li, strong, em) {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.summary .note strong {
+  font-weight: 650;
+}
+
+/* A long text the model wrote outside the program: read like the summary, not as a footnote. */
+.summary-prose {
+  margin-top: 16px;
+  font-family: var(--font-reading);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
 .note {
   margin: 10px 0 0;
   font-family: var(--font-reading);

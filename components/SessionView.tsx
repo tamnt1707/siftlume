@@ -43,6 +43,9 @@ const hostOf = (url: string) => {
   }
 };
 
+/** A note longer than a sentence: content, shown and exported like the summary. */
+const isLongNote = (note: string) => note.length > 200 || note.includes('\n');
+
 /** Sources whose quotes can be highlighted in the page they came from. */
 const inPage = (kind: string) => kind === 'webpage' || kind === 'pr';
 
@@ -224,6 +227,7 @@ export function SessionView({
       session={session}
       settings={settings}
       program={summary.content}
+      note={summary.context.note}
       notify={notify}
       sourceOpen={sourceOpen}
       onToggleSource={() => setSourceOpen((v) => !v)}
@@ -335,7 +339,13 @@ export function SessionView({
               onStateUpdate={ctrl.updateSummaryState}
             />
           )}
-          {!busy && summary.context.note && <p className="note">{summary.context.note}</p>}
+          {/* Text the model wrote outside the program: Markdown. A short note describes a change;
+              a long one is content the model should have put in the program, so it reads as such. */}
+          {!busy && summary.context.note && (
+            <div className={isLongNote(summary.context.note) ? 'summary-prose' : 'note'}>
+              <MarkDownRenderer textMarkdown={summary.context.note} variant="clear" />
+            </div>
+          )}
           {!busy && !summary.content && !summary.context.note && <p className="muted">{t('noSummary')}</p>}
         </section>
 

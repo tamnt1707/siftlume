@@ -22,6 +22,7 @@ import { SettingsForm } from '../../components/SettingsForm';
 import { ResultToolbar } from '../../components/ResultToolbar';
 import type { SessionController } from '../../components/useSession';
 import { PR_REVIEW_EXAMPLE, PRODUCT_EVENT_EXAMPLE, RECIPE_EXAMPLE } from '../../lib/component-example';
+import { MarkDownRenderer } from '@openuidev/react-ui';
 import { ThemeToggle } from '../../components/ThemeToggle';
 import type { Session } from '../../lib/history';
 import { library } from '../../lib/library';
@@ -529,6 +530,35 @@ function PromoMarquee() {
   );
 }
 
+const LONG_NOTE = `**Đánh giá độ tin cậy: khoảng 7/10.**
+
+**Điểm mạnh**
+- Nguyên nhân được nêu rõ và khớp với diff: các phép so sánh dùng \`viewport.cols\` và \`viewport.rows\` bỏ qua gốc \`viewport.x\`.
+- Có test đơn vị cho cả hai file, với viewport đặt tại (30, 1) và (30, 0).
+
+**Điểm yếu và rủi ro**
+- PR chưa có review nào và đang ở trạng thái mở.
+- Sửa góc trên/dưới bằng điều kiện \`col != viewport.x + viewport.cols - 1\` cần được xem xét kỹ.`;
+
+/** Text the model wrote outside the program, long (`?view=note`) or a short change note (`&short`). */
+function NoteSample() {
+  const short = query.has('short');
+  return (
+    <Themed settings={settings} className="app app--panel sc-panel">
+      <main className="content">
+        <section className="summary">
+          <div className={short ? 'note' : 'summary-prose'}>
+            <MarkDownRenderer
+              textMarkdown={short ? 'Đã rút gọn phần **rủi ro** còn 3 ý.' : LONG_NOTE}
+              variant="clear"
+            />
+          </div>
+        </section>
+      </main>
+    </Themed>
+  );
+}
+
 /** History with its search box (`?view=history&q=…` types a query). */
 function HistoryShot() {
   return (
@@ -552,6 +582,7 @@ const views: Record<string, () => ReactElement> = {
   fullpage: FullPage,
   settings: SettingsView,
   components: Components,
+  note: NoteSample,
   loader: Loaders,
   pickers: Pickers,
   deep: DeepPicker,

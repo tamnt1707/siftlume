@@ -53,6 +53,7 @@ export function ResultToolbar({
   session,
   settings,
   program,
+  note,
   notify,
   sourceOpen,
   onToggleSource,
@@ -62,6 +63,8 @@ export function ResultToolbar({
   session: Session;
   settings: Settings;
   program: string;
+  /** Text the model wrote outside the program (lib/history.ts StoredContext.note): exported too. */
+  note?: string;
   notify: (msg: string) => void;
   sourceOpen: boolean;
   onToggleSource: () => void;
@@ -82,7 +85,7 @@ export function ResultToolbar({
     return () => speechSynthesis.cancel();
   }, [session.id]);
 
-  const markdown = () => programToMarkdown(program, session.source);
+  const markdown = () => [programToMarkdown(program, session.source), note?.trim()].filter(Boolean).join('\n\n');
 
   const copy = async () => {
     await navigator.clipboard.writeText(markdown());
