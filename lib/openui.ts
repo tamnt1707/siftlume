@@ -226,7 +226,7 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
     layoutRule(settings),
     KIND_RULES[source.kind],
     ...structuredRules(source),
-    'First turn: output the complete program in one ```openui-lang fence. Refinement turns: output only the changed statements, with at most one short sentence outside the fence describing the change.',
+    'First turn: output the complete program in one ```openui-lang fence. Refinement turns: output only the changed statements, with at most one short sentence outside the fence describing the change. Everything the reader should read belongs inside the program (components, or TextContent for prose): never write the summary, analysis or a list outside the fence.',
     ...userRules(settings),
   ];
   return `${base}\n\n## Analysis task\n${rules.map((r) => `- ${r}`).join('\n')}`;
