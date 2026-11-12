@@ -45,7 +45,7 @@ It uses your own LLM key, or a small model that runs in the browser with no key.
 - **Result tools**: switch the length or language of a summary in place, copy or download it as Markdown (charts become tables, diagrams stay Mermaid), listen to it, print or save it as PDF, see how much reading time it saved, and check the extracted source text.
 - **Refine in one click**: Shorter, More detail, Action items, Timeline, Simpler. Styles can also be turned on for every summary in Settings.
 - **Ask follow-up questions**, answered only from the source.
-- **History you can search and ask**: every summary is kept in the browser, searchable without accents, and you can ask a question across everything you have read.
+- **History you can search and ask**: every summary is kept in the browser, searchable without accents and ranked by relevance, and you can ask a question across everything you have read.
 - **Interactive CSV**: filter and group the data in the browser without calling the model again.
 - **Source quotes** that scroll to and highlight the passage in the original page.
 - **Any provider**: OpenAI, Anthropic, Google Gemini, OpenRouter, Groq, DeepSeek, Mistral, xAI, Together, Ollama, LM Studio, or any OpenAI-compatible endpoint. The model list loads from the provider. AI thinking is off by default (fastest; Settings → Advanced), and Anthropic prompts are cached.
@@ -168,7 +168,7 @@ lib/
   refine.ts            refine buttons and default styles
   csv-tools.ts         in-browser Query tools for CSV data
   diagram.ts           Mermaid to SVG with Pele
-  extractors.ts        HTML, PDF, CSV and Markdown to text
+  extractors.ts        HTML, PDF, CSV and Markdown to text (inline-handlers.ts cleans HTML first)
   structured.ts        schema.org recipes, products, job postings and events (JSON-LD)
   youtube.ts           YouTube captions
   github.ts            GitHub pull requests through the REST API
@@ -180,7 +180,7 @@ lib/
   settings.ts          settings and the provider list
   appearance.ts        design tokens for the chrome, OpenUI, charts and diagrams
   history.ts           saved sessions (OpenUI Message Protocol), searchable index
-  library-search.ts    accent-insensitive search; ask-history.ts asks across them
+  library-search.ts    BM25 search, accents ignored; ask-history.ts asks across them
   i18n/                i18next setup
 locales/<lang>/        UI translations, one folder per language
 public/_locales/       extension name, description and menus (Chrome i18n)
