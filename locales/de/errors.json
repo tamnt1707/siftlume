@@ -67,6 +67,9 @@
     "network": "Google ist nicht erreichbar. Prüfe die Verbindung und versuche es erneut.",
     "failed": "Google konnte diese Datei nicht exportieren (HTTP {{status}}). Lade den Tab neu und versuche es erneut.",
     "emptyDoc": "Dieses Dokument enthält keinen Text zum Zusammenfassen.",
-    "emptySheet": "Dieses Tabellenblatt ist leer."
+    "emptySheet": "Dieses Tabellenblatt ist leer.",
+    "drivePdfOnly": "Siftlume liest PDFs aus Google Drive. Andere Dateien öffne in Docs, Tabellen oder Präsentationen, oder lade sie herunter und wähle auf dem Startbildschirm „Datei“.",
+    "driveTooBig": "Dieses PDF ist größer als {{size}} MB. Lade es herunter und wähle auf dem Startbildschirm „Datei“.",
+    "scannedPdf": "Dieses PDF hat keine Textebene (wahrscheinlich ein Scan), daher gibt es nichts zu lesen."
   }
 }

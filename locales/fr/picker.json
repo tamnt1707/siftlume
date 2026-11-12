@@ -51,7 +51,9 @@
     "file": "Fichier",
     "pr": "Cette pull request",
     "doc": "Ce document",
-    "sheet": "Cette feuille de calcul"
+    "sheet": "Cette feuille de calcul",
+    "slides": "Cette présentation",
+    "drive": "Ce PDF"
   },
   "runPr": {
     "summary": "Résumer cette pull request",
@@ -69,6 +71,18 @@
     "summary": "Résumer cette feuille de calcul",
     "explain": "Expliquer cette feuille de calcul",
     "critique": "Vérifier cette feuille de calcul",
+    "action": "Extraire les actions"
+  },
+  "runSlides": {
+    "summary": "Résumer cette présentation",
+    "explain": "Expliquer cette présentation",
+    "critique": "Analyser cette présentation",
+    "action": "Extraire les actions"
+  },
+  "runDrive": {
+    "summary": "Résumer ce PDF",
+    "explain": "Expliquer ce PDF",
+    "critique": "Analyser ce PDF",
     "action": "Extraire les actions"
   }
 }

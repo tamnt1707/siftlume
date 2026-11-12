@@ -33,7 +33,7 @@ export const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed', 'full'];
 
 /** Label of the start button: "Summarize this page", "Explain text"…, or the custom mode's name. */
 export function runLabel(
-  kind: 'run' | 'runText' | 'runVideo' | 'runPr' | 'runDoc' | 'runSheet',
+  kind: 'run' | 'runText' | 'runVideo' | 'runPr' | 'runDoc' | 'runSheet' | 'runSlides' | 'runDrive',
   mode: ModeId,
   custom: CustomMode[],
 ) {

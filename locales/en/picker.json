@@ -51,7 +51,9 @@
     "file": "File",
     "pr": "This pull request",
     "doc": "This document",
-    "sheet": "This spreadsheet"
+    "sheet": "This spreadsheet",
+    "slides": "This presentation",
+    "drive": "This PDF"
   },
   "runPr": {
     "summary": "Summarize this pull request",
@@ -69,6 +71,18 @@
     "summary": "Summarize this spreadsheet",
     "explain": "Explain this spreadsheet",
     "critique": "Check this spreadsheet",
+    "action": "Get action items"
+  },
+  "runSlides": {
+    "summary": "Summarize this presentation",
+    "explain": "Explain this presentation",
+    "critique": "Critique this presentation",
+    "action": "Get action items"
+  },
+  "runDrive": {
+    "summary": "Summarize this PDF",
+    "explain": "Explain this PDF",
+    "critique": "Critique this PDF",
     "action": "Get action items"
   }
 }

@@ -51,7 +51,9 @@
     "file": "文件",
     "pr": "此拉取请求",
     "doc": "此文档",
-    "sheet": "此电子表格"
+    "sheet": "此电子表格",
+    "slides": "此演示文稿",
+    "drive": "此 PDF"
   },
   "runPr": {
     "summary": "总结此拉取请求",
@@ -69,6 +71,18 @@
     "summary": "总结此电子表格",
     "explain": "解释此电子表格",
     "critique": "检查此电子表格",
+    "action": "提取待办事项"
+  },
+  "runSlides": {
+    "summary": "总结此演示文稿",
+    "explain": "解释此演示文稿",
+    "critique": "批判性分析此演示文稿",
+    "action": "提取待办事项"
+  },
+  "runDrive": {
+    "summary": "总结此 PDF",
+    "explain": "解释此 PDF",
+    "critique": "批判性分析此 PDF",
     "action": "提取待办事项"
   }
 }

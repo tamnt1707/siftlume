@@ -51,7 +51,9 @@
     "file": "Datei",
     "pr": "Dieser Pull Request",
     "doc": "Dieses Dokument",
-    "sheet": "Diese Tabelle"
+    "sheet": "Diese Tabelle",
+    "slides": "Diese Präsentation",
+    "drive": "Dieses PDF"
   },
   "runPr": {
     "summary": "Diesen Pull Request zusammenfassen",
@@ -69,6 +71,18 @@
     "summary": "Diese Tabelle zusammenfassen",
     "explain": "Diese Tabelle erklären",
     "critique": "Diese Tabelle prüfen",
+    "action": "Aufgaben herausziehen"
+  },
+  "runSlides": {
+    "summary": "Diese Präsentation zusammenfassen",
+    "explain": "Diese Präsentation erklären",
+    "critique": "Diese Präsentation kritisch prüfen",
+    "action": "Aufgaben herausziehen"
+  },
+  "runDrive": {
+    "summary": "Dieses PDF zusammenfassen",
+    "explain": "Dieses PDF erklären",
+    "critique": "Dieses PDF kritisch prüfen",
     "action": "Aufgaben herausziehen"
   }
 }

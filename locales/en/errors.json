@@ -67,6 +67,9 @@
     "network": "Could not reach Google. Check your connection and try again.",
     "failed": "Google could not export this file (HTTP {{status}}). Reload the tab and try again.",
     "emptyDoc": "This document has no text to summarize.",
-    "emptySheet": "This sheet is empty."
+    "emptySheet": "This sheet is empty.",
+    "drivePdfOnly": "Siftlume reads PDFs from Google Drive. For other files, open them in Docs, Sheets or Slides, or download them and choose File on the start screen.",
+    "driveTooBig": "This PDF is larger than {{size}} MB. Download it and choose File on the start screen instead.",
+    "scannedPdf": "This PDF has no text layer (it is probably a scan), so there is nothing to read."
   }
 }

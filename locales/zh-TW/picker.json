@@ -51,7 +51,9 @@
     "file": "檔案",
     "pr": "此拉取請求",
     "doc": "此文件",
-    "sheet": "此試算表"
+    "sheet": "此試算表",
+    "slides": "此簡報",
+    "drive": "此 PDF"
   },
   "runPr": {
     "summary": "摘要此拉取請求",
@@ -69,6 +71,18 @@
     "summary": "摘要此試算表",
     "explain": "解說此試算表",
     "critique": "檢查此試算表",
+    "action": "擷取待辦事項"
+  },
+  "runSlides": {
+    "summary": "摘要此簡報",
+    "explain": "解說此簡報",
+    "critique": "批判性分析此簡報",
+    "action": "擷取待辦事項"
+  },
+  "runDrive": {
+    "summary": "摘要此 PDF",
+    "explain": "解說此 PDF",
+    "critique": "批判性分析此 PDF",
     "action": "擷取待辦事項"
   }
 }

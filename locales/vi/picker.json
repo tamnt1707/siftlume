@@ -51,7 +51,9 @@
     "file": "Tệp",
     "pr": "Pull request này",
     "doc": "Tài liệu này",
-    "sheet": "Bảng tính này"
+    "sheet": "Bảng tính này",
+    "slides": "Bài trình bày này",
+    "drive": "File PDF này"
   },
   "runPr": {
     "summary": "Tóm tắt pull request này",
@@ -69,6 +71,18 @@
     "summary": "Tóm tắt bảng tính này",
     "explain": "Giải thích bảng tính này",
     "critique": "Kiểm tra bảng tính này",
+    "action": "Lấy việc cần làm"
+  },
+  "runSlides": {
+    "summary": "Tóm tắt bài trình bày này",
+    "explain": "Giải thích bài trình bày này",
+    "critique": "Phản biện bài trình bày này",
+    "action": "Lấy việc cần làm"
+  },
+  "runDrive": {
+    "summary": "Tóm tắt file PDF này",
+    "explain": "Giải thích file PDF này",
+    "critique": "Phản biện file PDF này",
     "action": "Lấy việc cần làm"
   }
 }

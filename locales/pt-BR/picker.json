@@ -51,7 +51,9 @@
     "file": "Arquivo",
     "pr": "Este pull request",
     "doc": "Este documento",
-    "sheet": "Esta planilha"
+    "sheet": "Esta planilha",
+    "slides": "Esta apresentação",
+    "drive": "Este PDF"
   },
   "runPr": {
     "summary": "Resumir este pull request",
@@ -69,6 +71,18 @@
     "summary": "Resumir esta planilha",
     "explain": "Explicar esta planilha",
     "critique": "Verificar esta planilha",
+    "action": "Obter tarefas"
+  },
+  "runSlides": {
+    "summary": "Resumir esta apresentação",
+    "explain": "Explicar esta apresentação",
+    "critique": "Analisar criticamente esta apresentação",
+    "action": "Obter tarefas"
+  },
+  "runDrive": {
+    "summary": "Resumir este PDF",
+    "explain": "Explicar este PDF",
+    "critique": "Analisar criticamente este PDF",
     "action": "Obter tarefas"
   }
 }

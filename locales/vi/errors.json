@@ -67,6 +67,9 @@
     "network": "Không kết nối được Google. Kiểm tra mạng rồi thử lại.",
     "failed": "Google không xuất được file này (HTTP {{status}}). Tải lại tab rồi thử lại.",
     "emptyDoc": "Tài liệu này không có chữ để tóm tắt.",
-    "emptySheet": "Sheet này đang trống."
+    "emptySheet": "Sheet này đang trống.",
+    "drivePdfOnly": "Siftlume đọc được file PDF trên Google Drive. Với loại file khác, hãy mở bằng Docs, Sheets hoặc Slides, hoặc tải về rồi chọn mục File ở màn hình bắt đầu.",
+    "driveTooBig": "File PDF này lớn hơn {{size}} MB. Hãy tải về rồi chọn mục File ở màn hình bắt đầu.",
+    "scannedPdf": "File PDF này không có lớp chữ (có lẽ là bản scan), nên không có gì để đọc."
   }
 }

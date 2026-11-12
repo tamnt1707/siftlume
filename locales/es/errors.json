@@ -67,6 +67,9 @@
     "network": "No se pudo conectar con Google. Revisa tu conexión e inténtalo de nuevo.",
     "failed": "Google no pudo exportar este archivo (HTTP {{status}}). Recarga la pestaña e inténtalo de nuevo.",
     "emptyDoc": "Este documento no tiene texto para resumir.",
-    "emptySheet": "Esta hoja está vacía."
+    "emptySheet": "Esta hoja está vacía.",
+    "drivePdfOnly": "Siftlume lee PDF de Google Drive. Para otros archivos, ábrelos en Docs, Hojas de cálculo o Presentaciones, o descárgalos y elige Archivo en la pantalla de inicio.",
+    "driveTooBig": "Este PDF pesa más de {{size}} MB. Descárgalo y elige Archivo en la pantalla de inicio.",
+    "scannedPdf": "Este PDF no tiene capa de texto (probablemente es un escaneo), así que no hay nada que leer."
   }
 }

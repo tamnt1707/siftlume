@@ -67,6 +67,9 @@
     "network": "無法連線到 Google。請檢查網路後再試一次。",
     "failed": "Google 無法匯出此檔案（HTTP {{status}}）。請重新載入分頁後再試一次。",
     "emptyDoc": "此文件沒有可摘要的文字。",
-    "emptySheet": "此工作表是空的。"
+    "emptySheet": "此工作表是空的。",
+    "drivePdfOnly": "Siftlume 可以讀取 Google 雲端硬碟中的 PDF。其他檔案請用文件、試算表或簡報開啟，或下載後在開始畫面選擇「檔案」。",
+    "driveTooBig": "此 PDF 超過 {{size}} MB。請下載後在開始畫面選擇「檔案」。",
+    "scannedPdf": "此 PDF 沒有文字層（可能是掃描檔），沒有可讀取的內容。"
   }
 }

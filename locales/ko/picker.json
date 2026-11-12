@@ -51,7 +51,9 @@
     "file": "파일",
     "pr": "이 풀 리퀘스트",
     "doc": "이 문서",
-    "sheet": "이 스프레드시트"
+    "sheet": "이 스프레드시트",
+    "slides": "이 프레젠테이션",
+    "drive": "이 PDF"
   },
   "runPr": {
     "summary": "이 풀 리퀘스트 요약",
@@ -69,6 +71,18 @@
     "summary": "이 스프레드시트 요약",
     "explain": "이 스프레드시트 설명",
     "critique": "이 스프레드시트 점검",
+    "action": "할 일 뽑기"
+  },
+  "runSlides": {
+    "summary": "이 프레젠테이션 요약",
+    "explain": "이 프레젠테이션 설명",
+    "critique": "이 프레젠테이션 비판적 검토",
+    "action": "할 일 뽑기"
+  },
+  "runDrive": {
+    "summary": "이 PDF 요약",
+    "explain": "이 PDF 설명",
+    "critique": "이 PDF 비판적 검토",
     "action": "할 일 뽑기"
   }
 }
