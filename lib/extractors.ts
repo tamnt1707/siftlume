@@ -4,6 +4,7 @@ import TurndownService from 'turndown';
 import { gfm } from '@joplin/turndown-plugin-gfm';
 import Papa from 'papaparse';
 import { csvColumnNames, parseNumber, type CsvDataset, type CsvRow } from './csv-tools';
+import type { StructuredType } from './structured';
 
 export type SourceKind = 'webpage' | 'text' | 'pdf' | 'csv' | 'markdown' | 'video' | 'pr' | 'multi';
 
@@ -23,6 +24,8 @@ export interface ExtractedSource {
   deep?: boolean;
   /** A long source: notes taken on it part by part (lib/longread.ts), read instead of it. */
   digest?: string;
+  /** Web pages: schema.org items found in the page (lib/structured.ts), placed before its text. */
+  structured?: StructuredType[];
 }
 
 /** Max CSV rows kept for tools (and stored in history). */

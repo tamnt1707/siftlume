@@ -5,6 +5,7 @@ import { extractVideo, youTubeVideoId } from './youtube';
 import { extractPullRequest, pullRequestRef } from './github';
 import { extractGoogleFile, googleFileRef } from './gdocs';
 import { getSettings } from './settings';
+import { readStructuredData } from './structured';
 
 export async function getActiveTab() {
   const [tab] = await browser.tabs.query({ active: true, lastFocusedWindow: true });
@@ -73,8 +74,18 @@ export async function extractTab(tabId: number): Promise<ExtractedSource & { tab
   }
 
   const { title, content } = htmlToMarkdown(page.html, page.url);
-  if (!content.trim()) throw new Error(t('errors:page.noText'));
-  return { kind: 'webpage', title: title || page.title, origin: page.url, content, tabId };
+  // Recipes, products, job postings, events: the page's own schema.org data goes first. It also
+  // rescues shop pages whose text is rendered by scripts Readability does not see.
+  const data = readStructuredData(page.html);
+  if (!content.trim() && !data) throw new Error(t('errors:page.noText'));
+  return {
+    kind: 'webpage',
+    title: title || page.title,
+    origin: page.url,
+    content: data ? `${data.markdown}\n\n---\n\n${content}` : content,
+    structured: data?.types,
+    tabId,
+  };
 }
 
 /** Scrolls to and highlights a quote in the original page (custom action @HighlightInPage). */

@@ -6,6 +6,7 @@ import { createParser } from '@openuidev/react-lang';
 import { render, PeleError } from 'pele';
 import { library } from '../lib/library';
 import { CSV_TOOL_EXAMPLES, csvColumnNames, parseNumber } from '../lib/csv-tools';
+import { duration } from '../lib/structured';
 import { VISUAL_SUMMARY_EXAMPLE } from '../lib/summary-example';
 import { CHART_SUMMARY_EXAMPLE } from '../lib/chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from '../lib/diagram-example';
@@ -140,6 +141,21 @@ for (const [header, rows, want] of [
   else {
     failed++;
     console.error(`✗ csvColumnNames ${JSON.stringify(header)}\n  - got ${got}`);
+  }
+}
+// schema.org durations (recipes): ISO 8601 → readable.
+for (const [iso, want] of [
+  ['PT30M', '30 min'],
+  ['PT90M', '1 h 30 min'],
+  ['PT1H15M', '1 h 15 min'],
+  ['P1DT2H', '1 d 2 h'],
+  ['20 minutes', '20 minutes'],
+] as const) {
+  const got = duration(iso);
+  if (got === want) console.log(`✓ duration ${iso}`);
+  else {
+    failed++;
+    console.error(`✗ duration ${iso}\n  - got ${got}`);
   }
 }
 if (failed) process.exit(1);

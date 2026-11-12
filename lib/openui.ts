@@ -13,6 +13,7 @@ import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from './mode-exampl
 import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from './analysis-example';
 import { customModeRule, MODE_QA_RULES, MODE_RULES, resolveMode, type AnalysisMode } from './modes';
 import type { ExtractedSource, SourceKind } from './extractors';
+import type { StructuredType } from './structured';
 import type { Settings, SummaryLength } from './settings';
 
 const parser = createParser(library.toJSONSchema(), ROOT);
@@ -129,6 +130,29 @@ const KIND_RULES: Record<SourceKind, string> = {
   csv: 'The source is a CSV dataset. Describe what it contains, important columns, ranges, trends and outliers. Use Query("csv_group", ...) and Query("csv_rows", ...) for charts and tables instead of hard-coding numbers, and add a filter Form with a Select bound to a $variable when a text column has few distinct values. Do not use @HighlightInPage.',
 };
 
+/**
+ * Layout for pages with schema.org data (lib/structured.ts): the block at the top of the source
+ * holds the page's own facts for that kind of page.
+ */
+const STRUCTURED_RULES: Record<StructuredType, string> = {
+  Recipe:
+    'The page is a recipe (see "Structured data" at the top of the source). Lead with what the dish is, then KeyNumbers for total time, yield and calories when given. Ingredients as a Checklist with quantities exactly as written, grouped as the recipe groups them; then the steps in order, numbered, under the recipe\'s own section names. Then the tips, substitutions, storage and make-ahead notes the page gives. Skip the life story before the recipe unless it holds a tip. Never invent or convert quantities unless asked.',
+  Product:
+    'The page is a product (see "Structured data" at the top of the source). Lead with a Verdict built only from the page\'s rating and reviews (who it suits, the main caveat). KeyNumbers: price with currency and availability, rating with the number of reviews. ProsCons from what reviews praise or complain about repeatedly (say how many mention it when countable). FactSheet for the key specs. Mention sale end dates and price ranges. Never invent ratings, prices or specs.',
+  JobPosting:
+    'The page is a job posting (see "Structured data" at the top of the source). Lead with role, company, location or remote, salary exactly as given (with currency and period) and the deadline. Then two Checklists: must-have and nice-to-have requirements. Then what the job involves day to day, benefits, and how to apply (Button with @OpenUrl to the apply link). Say what the posting leaves out (no salary, vague duties, unclear level).',
+  Event:
+    'The page is an event (see "Structured data" at the top of the source). Lead with what, when (date, time and time zone as given) and where (venue address, or online). A cancelled, postponed or moved-online status goes first. FactSheet for date, place, price and ticket availability; Buttons with @OpenUrl to the ticket link and to the "Add to Google Calendar" link given in the source. Then programme, speakers or performers.',
+};
+
+const STRUCTURED_SHARED =
+  'The "Structured data" block comes from the page\'s own markup: prefer it for numbers (prices, times, salaries, dates); when it disagrees with the page text, say so.';
+
+function structuredRules(source: ExtractedSource) {
+  const found = source.structured ?? [];
+  return found.length ? [...found.map((t) => STRUCTURED_RULES[t]), STRUCTURED_SHARED] : [];
+}
+
 const SHARED_RULES = [
   'Only use information present in the source. Never invent facts, numbers or quotes. SourceQuote and @HighlightInPage text must be copied verbatim from the source.',
   'Use @CopyText for things the user may want to copy (e.g. a ready-to-paste summary paragraph, commands, emails).',
@@ -201,6 +225,7 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
     ...settings.styles.map((s) => STYLE_RULES[s]),
     layoutRule(settings),
     KIND_RULES[source.kind],
+    ...structuredRules(source),
     'First turn: output the complete program in one ```openui-lang fence. Refinement turns: output only the changed statements, with at most one short sentence outside the fence describing the change.',
     ...userRules(settings),
   ];
@@ -232,6 +257,7 @@ export function buildQaPrompt(settings: Settings, source: ExtractedSource) {
     'If the source does not contain the answer, say so plainly instead of guessing.',
     ...qaModeRules(settings),
     KIND_RULES[source.kind],
+    ...(source.structured?.length ? [STRUCTURED_SHARED] : []),
     ...userRules(settings),
   ];
   return `${base}\n\n## Q&A task\n${rules.map((r) => `- ${r}`).join('\n')}`;
