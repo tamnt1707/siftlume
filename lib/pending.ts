@@ -76,7 +76,10 @@ export function openSidePanelForTab(tabId: number) {
   return browser.sidePanel.open({ tabId });
 }
 
-/** Width of the panel window, about Chrome's side panel. */
+/**
+ * Width the panel window opens at. The page then makes it the right half of its screen
+ * (fitPanelWindow): only a page can see the screen's size without the system.display permission.
+ */
 const PANEL_WINDOW_WIDTH = 420;
 /** The panel window opened for each tab, to reuse it (lost when the service worker restarts). */
 const panelWindows = new Map<number, number>();
@@ -118,7 +121,9 @@ async function openPanelWindow(
       ? Math.max(0, beside.left + beside.width - PANEL_WINDOW_WIDTH)
       : undefined;
   const win = await browser.windows.create({
-    url: browser.runtime.getURL(`/sidepanel.html?tab=${tabId}` as Parameters<typeof browser.runtime.getURL>[0]),
+    url: browser.runtime.getURL(
+      `/sidepanel.html?tab=${tabId}&window=1` as Parameters<typeof browser.runtime.getURL>[0],
+    ),
     type: 'popup',
     width: PANEL_WINDOW_WIDTH,
     height: beside?.height,
@@ -126,6 +131,27 @@ async function openPanelWindow(
     top: beside?.top,
   });
   if (win?.id !== undefined) panelWindows.set(tabId, win.id);
+}
+
+/** In the panel window (sidepanel.html?window=1): take the right half of the screen it is on. */
+export function fitPanelWindow() {
+  if (new URLSearchParams(location.search).get('window') !== '1') return;
+  const sc = screen as Screen & { availLeft?: number; availTop?: number };
+  const left = sc.availLeft ?? 0;
+  const half = Math.round(sc.availWidth / 2);
+  void browser.windows
+    .getCurrent()
+    .then((win) =>
+      win.id === undefined
+        ? undefined
+        : browser.windows.update(win.id, {
+            left: left + sc.availWidth - half,
+            top: sc.availTop ?? 0,
+            width: half,
+            height: sc.availHeight,
+          }),
+    )
+    .catch(() => {});
 }
 
 /** A window was closed: forget it if it was a panel window. */

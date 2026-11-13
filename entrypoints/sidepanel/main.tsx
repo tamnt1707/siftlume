@@ -8,6 +8,9 @@ import '@/assets/fonts';
 import '@/assets/app.css';
 import '@/assets/genui.css';
 import App from '../app/App';
+import { fitPanelWindow } from '@/lib/pending';
+
+fitPanelWindow();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
