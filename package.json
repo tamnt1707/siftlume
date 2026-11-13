@@ -2,7 +2,7 @@
   "name": "siftlume",
   "description": "Siftlume: a Chrome extension that sifts web pages, text and files into visual, interactive summaries with OpenUI. Bring your own LLM key.",
   "private": true,
-  "version": "0.6.2",
+  "version": "0.6.3",
   "type": "module",
   "scripts": {
     "dev": "wxt",
