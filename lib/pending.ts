@@ -76,6 +76,71 @@ export function openSidePanelForTab(tabId: number) {
   return browser.sidePanel.open({ tabId });
 }
 
+/** Width of the panel window, about Chrome's side panel. */
+const PANEL_WINDOW_WIDTH = 420;
+/** The panel window opened for each tab, to reuse it (lost when the service worker restarts). */
+const panelWindows = new Map<number, number>();
+
+/**
+ * Opens a tab's side panel, or, where Chrome has none (an installed web app's window, a popup
+ * window), the same panel in a narrow window beside it. Call it synchronously in the click
+ * handler: the side panel needs the user gesture.
+ */
+export async function openPanelForTab(tab: { id?: number; windowId?: number }) {
+  const tabId = tab.id!;
+  const opening = openSidePanelForTab(tabId);
+  if (tab.windowId === undefined) return opening;
+  // Not an ordinary browser window: whatever open() did, the panel would not be seen there. An
+  // installed app's window is only returned when asked for by type.
+  const win = await browser.windows
+    .get(tab.windowId, { windowTypes: ['normal', 'popup', 'app', 'devtools'] })
+    .catch(() => null);
+  if (!win || win.type !== 'normal') {
+    opening.catch(() => {});
+    return openPanelWindow(tabId, win);
+  }
+  await opening;
+}
+
+async function openPanelWindow(
+  tabId: number,
+  beside: { left?: number; top?: number; width?: number; height?: number } | null,
+) {
+  const existing = panelWindows.get(tabId);
+  if (existing !== undefined) {
+    const ok = await browser.windows.update(existing, { focused: true }).catch(() => null);
+    if (ok) return;
+    panelWindows.delete(tabId);
+  }
+  // On the right edge of the app's window, over its content, so both stay on screen.
+  const left =
+    beside?.left !== undefined && beside.width !== undefined
+      ? Math.max(0, beside.left + beside.width - PANEL_WINDOW_WIDTH)
+      : undefined;
+  const win = await browser.windows.create({
+    url: browser.runtime.getURL(`/sidepanel.html?tab=${tabId}` as Parameters<typeof browser.runtime.getURL>[0]),
+    type: 'popup',
+    width: PANEL_WINDOW_WIDTH,
+    height: beside?.height,
+    left,
+    top: beside?.top,
+  });
+  if (win?.id !== undefined) panelWindows.set(tabId, win.id);
+}
+
+/** A window was closed: forget it if it was a panel window. */
+export function forgetPanelWindow(windowId: number) {
+  for (const [tabId, id] of panelWindows) if (id === windowId) panelWindows.delete(tabId);
+}
+
+/** Closes the panel window opened for a tab, if any. */
+export async function closePanelWindowForTab(tabId: number) {
+  const id = panelWindows.get(tabId);
+  if (id === undefined) return;
+  panelWindows.delete(tabId);
+  await browser.windows.remove(id).catch(() => {});
+}
+
 /** Remembers which URL a tab's panel belongs to, so navigating away closes it. */
 export async function rememberPanelUrl(tabId: number, url: string) {
   const urls = await panelUrlsItem.getValue();

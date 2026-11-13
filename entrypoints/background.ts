@@ -1,8 +1,10 @@
 import { parseMenuId, syncContextMenus } from '@/lib/context-menus';
 import {
+  closePanelWindowForTab,
+  forgetPanelWindow,
   closeSidePanelForTab,
   openApp,
-  openSidePanelForTab,
+  openPanelForTab,
   panelUrlsItem,
   rememberPanelUrl,
   queueRequest,
@@ -51,17 +53,24 @@ export default defineBackground(() => {
       if (!change.url) return;
       void panelUrlsItem.getValue().then((urls) => {
         const url = urls[tabId];
-        if (url && !sameDocument(url, change.url)) void closeSidePanelForTab(tabId);
+        if (url && !sameDocument(url, change.url)) {
+          void closeSidePanelForTab(tabId);
+          void closePanelWindowForTab(tabId);
+        }
       });
     });
-    browser.tabs.onRemoved.addListener((tabId) => void closeSidePanelForTab(tabId));
+    browser.windows.onRemoved.addListener(forgetPanelWindow);
+    browser.tabs.onRemoved.addListener((tabId) => {
+      void closeSidePanelForTab(tabId);
+      void closePanelWindowForTab(tabId);
+    });
 
     // Only fires when the popup is disabled (side panel mode). The click grants activeTab,
     // so the panel can read this page without a permission prompt.
     browser.action.onClicked.addListener((tab) => {
       if (!tab.id) return;
       // Must be called before any await to keep the user gesture.
-      void openSidePanelForTab(tab.id).catch(console.error);
+      void openPanelForTab(tab).catch(console.error);
       if (tab.url) void rememberPanelUrl(tab.id, tab.url);
     });
   }
@@ -78,7 +87,7 @@ export default defineBackground(() => {
 
     if (display === 'sidepanel' && HAS_SIDE_PANEL) {
       // Must be called before any await to keep the user gesture.
-      void openSidePanelForTab(tab.id).catch(console.error);
+      void openPanelForTab(tab).catch(console.error);
       void sendToSidePanel(tab.id, req, tab.url);
     } else {
       void queueRequest(req).then((id) => openApp({ request: id }, tab));
