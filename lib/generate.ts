@@ -6,6 +6,7 @@ import {
   buildRepairMessage,
   buildSourceMessage,
   buildSummaryPrompt,
+  languageRule,
   splitInline,
   validateDiagrams,
   validateProgram,
@@ -20,9 +21,13 @@ import { MODE_TASK, resolveMode } from './modes';
 function modeTask(settings: Settings, source: SessionSource) {
   const { base, custom } = resolveMode(settings.mode, settings.customModes);
   const task = custom ? `${MODE_TASK[base]} Use my reading mode "${custom.name.trim()}".` : MODE_TASK[base];
-  if (source.deep)
-    return `${task} Document 1 is the page I am reading; the others are pages it links to. Use them to fill in what document 1 only mentions or points to.`;
-  return source.kind === 'multi' ? `${task} These are several sources: compare and combine them.` : task;
+  const extra = source.deep
+    ? ' Document 1 is the page I am reading; the others are pages it links to. Use them to fill in what document 1 only mentions or points to.'
+    : source.kind === 'multi'
+      ? ' These are several sources: compare and combine them.'
+      : '';
+  // The language again after the source: a long source in another language otherwise wins.
+  return `${task}${extra} ${languageRule(settings)}`;
 }
 
 const fence = (code: string) => '```openui-lang\n' + code + '\n```';

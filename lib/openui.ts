@@ -207,12 +207,17 @@ function layoutRule(settings: Settings) {
   return phone ? LAYOUT_RULES.phone : (LAYOUT_RULES[settings.display] ?? LAYOUT_RULES.tab);
 }
 
-function userRules(settings: Settings) {
+/** The output language rule. Also repeated after the source (lib/generate.ts): models follow the nearest instruction. */
+export function languageRule(settings: Settings) {
   const lang = settings.language.trim();
+  return !lang || lang === 'auto'
+    ? 'Write ALL user-facing text in the same language as the source.'
+    : `Write ALL user-facing text (titles, labels, headings, items) in ${lang}, even though the source is in another language.`;
+}
+
+function userRules(settings: Settings) {
   return [
-    !lang || lang === 'auto'
-      ? 'Write ALL user-facing text in the same language as the source.'
-      : `Write ALL user-facing text in ${lang}, even if the source is in another language.`,
+    languageRule(settings),
     settings.customInstructions.trim() && `User's own instructions: ${settings.customInstructions.trim()}`,
   ].filter(Boolean) as string[];
 }
