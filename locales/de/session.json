@@ -37,6 +37,12 @@
     "errors_one": "{{count}} Fehler beim Anzeigen dieser Ansicht",
     "errors_other": "{{count}} Fehler beim Anzeigen dieser Ansicht",
     "showInPage": "Auf der Seite zeigen",
+    "unverified": "Ungeprüft",
+    "unverifiedHint": "Keine Stelle in der Quelle nennt diese Zahl wörtlich. Prüfen Sie sie, bevor Sie sich darauf verlassen.",
+    "chartSources_one": "Woher diese Zahl stammt",
+    "chartSources_other": "Woher diese {{count}} Zahlen stammen",
+    "unverifiedCount_one": "{{count}} ungeprüft",
+    "unverifiedCount_other": "{{count}} ungeprüft",
     "copy": "Kopieren",
     "minRead_one": "{{count}} Min. Lesezeit",
     "minRead_other": "{{count}} Min. Lesezeit",
@@ -185,7 +191,9 @@
         "desc": "Reiner Text für Notiz-Apps und Dokumente"
       }
     },
-    "madeWith": "Erstellt mit Siftlume"
+    "madeWith": "Erstellt mit Siftlume",
+    "asText": "Text",
+    "asTextTitle": "Diese Antwort als reinen Text zeigen (Diagramme werden Tabellen), ohne das Modell erneut zu fragen"
   },
   "export": {
     "value": "Wert",

@@ -6,9 +6,11 @@ import { browser } from '#imports';
 import { createCsvToolProvider } from '@/lib/csv-tools';
 import { readStored, type QaTurn } from '@/lib/history';
 import { splitInline } from '@/lib/openui';
+import { programToMarkdown } from '@/lib/markdown';
 import { highlightInTab } from '@/lib/page';
 import { findMoment, formatTime, seekVideo, youTubeVideoId } from '@/lib/youtube';
 import { partContent, partForQuote } from '@/lib/multi';
+import type { Evidence } from '@/lib/evidence';
 import {
   ArrowExpand01Icon,
   ArrowUp02Icon,
@@ -49,6 +51,9 @@ const isLongNote = (note: string) => note.length > 200 || note.includes('\n');
 /** Sources whose quotes can be highlighted in the page they came from. */
 const inPage = (kind: string) => kind === 'webpage' || kind === 'pr';
 
+/** Sources a figure's passage can be shown in: highlighted in the page or tab, or played in the video. */
+const SHOWABLE = new Set(['webpage', 'pr', 'video', 'multi']);
+
 export function SessionView({
   ctrl,
   notify,
@@ -78,6 +83,9 @@ export function SessionView({
   const [question, setQuestion] = useState('');
   const [sourceOpen, setSourceOpen] = useState(false);
   const [deepOpen, setDeepOpen] = useState(false);
+  // "Show as text": the same answer, rendered locally as Markdown (no new request).
+  const [asText, setAsText] = useState(false);
+  useEffect(() => setAsText(false), [session.id]);
   const deepable = useMemo(() => canDeepRead(session), [session]);
   const reading = useMemo(() => readingMinutes(source.content), [source.content]);
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -87,6 +95,14 @@ export function SessionView({
   const summary = readStored(session.summary);
   // CSV data → toolProvider runs Query() calls in the browser.
   const toolProvider = useMemo(() => (source.csv ? createCsvToolProvider(source.csv) : null), [source.csv]);
+  // Figures are checked against the source text; CSV figures are computed from the data, not quoted.
+  const evidence = useMemo<Evidence | null>(
+    () =>
+      source.kind === 'csv' || !source.content
+        ? null
+        : { content: source.content, canShow: SHOWABLE.has(source.kind) || isWeb },
+    [source.kind, source.content, isWeb],
+  );
 
   useEffect(() => {
     if (ctrl.phase === 'answering') bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
@@ -221,6 +237,9 @@ export function SessionView({
       />
     );
   const dimmed = reworking && Boolean(summary.content);
+  // Plain text only for a finished answer; a new one streams in as components.
+  const showText = asText && !summaryStreaming && Boolean(summary.content);
+  const textView = useMemo(() => (showText ? programToMarkdown(summary.content) : ''), [showText, summary.content]);
   const toolbar = summary.content ? (
     <ResultToolbar
       ctrl={ctrl}
@@ -231,6 +250,8 @@ export function SessionView({
       notify={notify}
       sourceOpen={sourceOpen}
       onToggleSource={() => setSourceOpen((v) => !v)}
+      asText={asText}
+      onToggleText={() => setAsText((v) => !v)}
       onPrint={onPrint}
     />
   ) : null;
@@ -327,17 +348,24 @@ export function SessionView({
         )}
         <section className={`summary ${dimmed ? 'is-reworking' : ''}`} aria-busy={Boolean(loader)}>
           {loader}
-          {summaryResponse && (
-            <GenUI
-              // Keyed by session so the Renderer resets its state when switching sessions.
-              key={session.id}
-              response={summaryResponse || null}
-              isStreaming={summaryStreaming}
-              onAction={onAction}
-              toolProvider={toolProvider}
-              initialState={summary.context.formState}
-              onStateUpdate={ctrl.updateSummaryState}
-            />
+          {showText ? (
+            <div className="summary-prose summary-text">
+              <MarkDownRenderer textMarkdown={textView} variant="clear" />
+            </div>
+          ) : (
+            summaryResponse && (
+              <GenUI
+                // Keyed by session so the Renderer resets its state when switching sessions.
+                key={session.id}
+                response={summaryResponse || null}
+                isStreaming={summaryStreaming}
+                onAction={onAction}
+                toolProvider={toolProvider}
+                initialState={summary.context.formState}
+                onStateUpdate={ctrl.updateSummaryState}
+                evidence={evidence}
+              />
+            )
           )}
           {/* Text the model wrote outside the program: Markdown. A short note describes a change;
               a long one is content the model should have put in the program, so it reads as such. */}
@@ -404,13 +432,20 @@ export function SessionView({
                 turn={turn}
                 onAction={onAction}
                 toolProvider={toolProvider}
+                evidence={evidence}
                 onStateUpdate={(s) => ctrl.updateAnswerState(turn.id, s)}
               />
             ))}
             {ctrl.pendingQuestion && (
               <div className="qa__turn">
                 <div className="bubble">{ctrl.pendingQuestion}</div>
-                <Answer raw={ctrl.streamRaw} isStreaming onAction={onAction} toolProvider={toolProvider} />
+                <Answer
+                  raw={ctrl.streamRaw}
+                  isStreaming
+                  onAction={onAction}
+                  toolProvider={toolProvider}
+                  evidence={evidence}
+                />
                 {!ctrl.streamRaw && <Thinking label={t('thinking')} />}
               </div>
             )}
@@ -465,11 +500,13 @@ function QaItem({
   turn,
   onAction,
   toolProvider,
+  evidence,
   onStateUpdate,
 }: {
   turn: QaTurn;
   onAction: (e: GenUIAction) => void;
   toolProvider: ReturnType<typeof createCsvToolProvider> | null;
+  evidence: Evidence | null;
   onStateUpdate: (s: Record<string, unknown>) => void;
 }) {
   const { content, context } = readStored(turn.answer);
@@ -480,6 +517,7 @@ function QaItem({
         raw={content}
         onAction={onAction}
         toolProvider={toolProvider}
+        evidence={evidence}
         initialState={context.formState}
         onStateUpdate={onStateUpdate}
       />
@@ -493,6 +531,7 @@ function Answer({
   isStreaming,
   onAction,
   toolProvider,
+  evidence,
   initialState,
   onStateUpdate,
 }: {
@@ -500,6 +539,7 @@ function Answer({
   isStreaming?: boolean;
   onAction: (e: GenUIAction) => void;
   toolProvider: ReturnType<typeof createCsvToolProvider> | null;
+  evidence: Evidence | null;
   initialState?: Record<string, unknown>;
   onStateUpdate?: (s: Record<string, unknown>) => void;
 }) {
@@ -513,6 +553,7 @@ function Answer({
           isStreaming={isStreaming}
           onAction={onAction}
           toolProvider={toolProvider}
+          evidence={evidence}
           initialState={initialState}
           onStateUpdate={onStateUpdate}
         />

@@ -35,6 +35,10 @@
   "genui": {
     "errors_other": "{{count}} lỗi khi hiển thị phần này",
     "showInPage": "Xem trong trang",
+    "unverified": "Chưa xác minh",
+    "unverifiedHint": "Không có đoạn nào trong nguồn ghi đúng nguyên văn con số này. Hãy kiểm tra trước khi dựa vào nó.",
+    "chartSources_other": "Nguồn của {{count}} con số này",
+    "unverifiedCount_other": "{{count}} chưa xác minh",
     "copy": "Sao chép",
     "minRead_other": "{{count}} phút đọc",
     "drawing": "Đang vẽ sơ đồ…",
@@ -177,7 +181,9 @@
         "desc": "Văn bản thuần cho ứng dụng ghi chú và tài liệu"
       }
     },
-    "madeWith": "Tạo bằng Siftlume"
+    "madeWith": "Tạo bằng Siftlume",
+    "asText": "Văn bản",
+    "asTextTitle": "Hiển thị câu trả lời này dạng văn bản thuần (biểu đồ thành bảng), không cần gọi lại mô hình"
   },
   "export": {
     "value": "Giá trị",

@@ -102,6 +102,16 @@ const CHART_RULES = [
   'Do not chart the same numbers twice, and do not add a chart when there is no real numeric comparison.',
 ];
 
+/**
+ * Every figure carries the passage it comes from, so the reader can check it in the original
+ * (lib/evidence.ts marks the ones whose passage is not verbatim in the source). Not for CSV: those
+ * figures are computed from the data.
+ */
+const EVIDENCE_RULE =
+  'SOURCES FOR FIGURES: give every KeyNumber and BarItem its quote, and right after each chart add ChartSources with one ChartPoint per charted value (label as on the chart, value as written in the source, quote). A quote is 5-25 words copied character for character from the source and containing that figure; never paraphrase, translate or join two passages. A figure the source does not state verbatim gets no quote and is shown as unverified, so prefer figures you can quote.';
+
+const evidenceRules = (source: ExtractedSource) => (source.kind === 'csv' ? [] : [EVIDENCE_RULE]);
+
 /** When and how to draw Mermaid diagrams (rendered by Pele). */
 const DIAGRAM_RULES = [
   'DIAGRAMS: use Diagram(mermaid, caption) only when structure is easier to see than to read: a process or workflow with 4+ steps or branches (flowchart), decision logic (flowchart with {decision} nodes), messages between 2+ actors over time (sequenceDiagram), a lifecycle (stateDiagram-v2), a concept map (mindmap), a data model (erDiagram). At most one diagram per summary unless the source is mainly about processes.',
@@ -259,6 +269,7 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
     ...(custom ? [customModeRule(custom)] : []),
     ...VISUAL_RULES,
     ...CHART_RULES,
+    ...evidenceRules(source),
     ...DIAGRAM_RULES,
     ...STRUCTURE_RULES,
     LENGTH_RULES[settings.length],
@@ -290,6 +301,7 @@ export function buildQaPrompt(settings: Settings, source: ExtractedSource) {
   );
   const rules = [
     ...CHART_RULES,
+    ...evidenceRules(source),
     ...DIAGRAM_RULES,
     'Questions about how something works, a process or a flow: answer with a Diagram plus 1-2 lines.',
     'Short factual answers: 1-3 plain sentences. Answers with structure (comparisons, steps, lists, numbers): a compact openui-lang Card in a fence, visual first with minimal text.',

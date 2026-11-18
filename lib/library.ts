@@ -12,7 +12,7 @@ import {
   TimelineEvent,
 } from './genui/core';
 import { Diagram } from './genui/diagram';
-import { BarItem, BarList, Checklist, ProsCons, Verdict } from './genui/review';
+import { BarItem, BarList, ChartPoint, ChartSources, Checklist, ProsCons, Verdict } from './genui/review';
 import { Glossary, People, Person, Term } from './genui/entities';
 import { CompareRow, Comparison, Fact, FactSheet, Plan, PricingPlans } from './genui/product';
 import { Claim, ClaimCheck, Risk, RiskList } from './genui/trust';
@@ -78,6 +78,7 @@ export const library = openuiChatLibrary.extend({
       { component: ProsCons, slots: CONTENT_SLOTS },
       { component: Verdict, slots: CONTENT_SLOTS },
       { component: BarList, slots: CONTENT_SLOTS },
+      { component: ChartSources, slots: CONTENT_SLOTS },
       { component: Checklist, slots: CONTENT_SLOTS },
       { component: People, slots: CONTENT_SLOTS },
       { component: Glossary, slots: CONTENT_SLOTS },
@@ -112,6 +113,7 @@ export const library = openuiChatLibrary.extend({
       Takeaway,
       TimelineEvent,
       BarItem,
+      ChartPoint,
       Person,
       Term,
       Fact,

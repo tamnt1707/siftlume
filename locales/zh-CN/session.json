@@ -35,6 +35,10 @@
   "genui": {
     "errors_other": "此视图运行时出现 {{count}} 个错误",
     "showInPage": "在页面中显示",
+    "unverified": "未核实",
+    "unverifiedHint": "来源中没有逐字写出这个数字的段落。请先核对再使用。",
+    "chartSources_other": "这 {{count}} 个数字的出处",
+    "unverifiedCount_other": "{{count}} 个未核实",
     "copy": "复制",
     "minRead_other": "阅读约 {{count}} 分钟",
     "drawing": "正在绘制图表…",
@@ -177,7 +181,9 @@
         "desc": "纯文本，适合笔记应用和文档"
       }
     },
-    "madeWith": "由 Siftlume 生成"
+    "madeWith": "由 Siftlume 生成",
+    "asText": "文本",
+    "asTextTitle": "以纯文本显示此回答（图表转为表格），无需再次请求模型"
   },
   "export": {
     "value": "数值",

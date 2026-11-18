@@ -41,6 +41,16 @@
     "errors_many": "{{count}} ошибок при отображении",
     "errors_other": "{{count}} ошибки при отображении",
     "showInPage": "Показать на странице",
+    "unverified": "Не проверено",
+    "unverifiedHint": "В источнике нет фрагмента, где это число приведено дословно. Проверьте его, прежде чем на него полагаться.",
+    "chartSources_one": "Откуда это число",
+    "chartSources_few": "Откуда эти {{count}} числа",
+    "chartSources_many": "Откуда эти {{count}} чисел",
+    "chartSources_other": "Откуда эти {{count}} числа",
+    "unverifiedCount_one": "{{count}} не проверено",
+    "unverifiedCount_few": "{{count}} не проверены",
+    "unverifiedCount_many": "{{count}} не проверено",
+    "unverifiedCount_other": "{{count}} не проверено",
     "copy": "Копировать",
     "minRead_one": "{{count}} минута чтения",
     "minRead_few": "{{count}} минуты чтения",
@@ -201,7 +211,9 @@
         "desc": "Простой текст для заметок и документов"
       }
     },
-    "madeWith": "Сделано в Siftlume"
+    "madeWith": "Сделано в Siftlume",
+    "asText": "Текст",
+    "asTextTitle": "Показать ответ простым текстом (графики станут таблицами) без повторного запроса к модели"
   },
   "export": {
     "value": "Значение",
