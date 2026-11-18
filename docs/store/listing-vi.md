@@ -47,6 +47,7 @@ Chọn cách đọc và độ dài (ngắn, vừa, chi tiết, hoặc đầy đ�
 
 BỐ CỤC THEO NỘI DUNG
 • Số liệu thành biểu đồ, chọn theo dạng dữ liệu
+• Mỗi con số dẫn về đúng đoạn nó được lấy ra; số nào bài gốc không ghi nguyên văn thì bị đánh dấu Chưa xác minh
 • Bài đánh giá có kết luận kèm ưu và nhược điểm
 • Việc cần làm thành danh sách có thể đánh dấu
 • Quy trình và quyết định thành sơ đồ
@@ -58,10 +59,10 @@ BỐ CỤC THEO NỘI DUNG
 
 CÔNG CỤ
 • Tinh chỉnh một chạm: ngắn hơn, chi tiết hơn, việc cần làm, dòng thời gian, đơn giản hơn
-• Đổi độ dài hoặc ngôn ngữ của từng bản tóm tắt
+• Đổi độ dài hoặc ngôn ngữ của từng bản tóm tắt, hoặc xem dạng văn bản thuần
 • Tự tạo cách đọc của riêng bạn, bên cạnh Tóm tắt, Giải thích, Phản biện và Hành động
 • Sao chép hoặc tải về dạng HTML hay Markdown, nghe đọc, in hoặc lưu PDF
-• Bấm vào trích dẫn để nhảy tới đúng đoạn trong trang gốc
+• Bấm vào trích dẫn hoặc con số để nhảy tới đúng đoạn trong trang gốc
 • Tìm trong mọi bản tóm tắt đã đọc (gõ không dấu vẫn tìm được), hoặc hỏi AI dựa trên những gì bạn đã đọc
 
 AI CỦA BẠN, KHÓA CỦA BẠN
@@ -92,7 +93,7 @@ Siftlume trả về bản tóm tắt nhìn là hiểu:
 - Ý chính một dòng, các con số quan trọng, những điểm cần nhớ
 - Số liệu thành biểu đồ, sự kiện thành dòng thời gian, quy trình thành sơ đồ
 - Bố cục theo loại nội dung: bài đánh giá có ưu/nhược, bài tranh luận có bản đồ lập luận, chọn mua có bảng chấm điểm
-- Bấm vào trích dẫn là nhảy tới đúng đoạn trong bài
+- Bấm vào trích dẫn hay con số là nhảy tới đúng đoạn trong bài, số nào không có trong bài thì bị đánh dấu
 - Hỏi thêm, câu trả lời chỉ lấy từ nội dung gốc
 - Tìm và hỏi lại trên mọi bài đã đọc
 
