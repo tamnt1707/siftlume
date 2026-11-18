@@ -35,6 +35,10 @@
   "genui": {
     "errors_other": "この表示で {{count}} 件のエラー",
     "showInPage": "ページで表示",
+    "unverified": "未確認",
+    "unverifiedHint": "この数値をそのまま記載した箇所がソースにありません。頼る前に確認してください。",
+    "chartSources_other": "この {{count}} 件の数値の出典",
+    "unverifiedCount_other": "{{count}} 件が未確認",
     "copy": "コピー",
     "minRead_other": "{{count}} 分で読めます",
     "drawing": "図を描画中…",
@@ -177,7 +181,9 @@
         "desc": "メモアプリや文書向けのプレーンテキスト"
       }
     },
-    "madeWith": "Siftlume で作成"
+    "madeWith": "Siftlume で作成",
+    "asText": "テキスト",
+    "asTextTitle": "この回答をプレーンテキストで表示（グラフは表になります）。モデルへの再リクエストはしません"
   },
   "export": {
     "value": "値",

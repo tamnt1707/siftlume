@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Renderer, type LibraryActionEvent, type OpenUIError } from '@openuidev/react-lang';
 import { library } from '@/lib/library';
+import { EvidenceContext, type Evidence } from '@/lib/evidence';
 
 export type GenUIAction = LibraryActionEvent<typeof library>;
 export type ToolProvider = Record<string, (args: Record<string, unknown>) => Promise<unknown>>;
@@ -14,6 +15,8 @@ interface Props {
   toolProvider?: ToolProvider | null;
   initialState?: Record<string, unknown>;
   onStateUpdate?: (state: Record<string, unknown>) => void;
+  /** The source, to check figures against it and show their passage. Unset: no marks. */
+  evidence?: Evidence | null;
 }
 
 /** Renderer bound to the app library; shows runtime/tool errors once streaming is done. */
@@ -37,7 +40,7 @@ function useLibraryLabels(root: HTMLElement | null, labels: Record<string, strin
   }, [root, labels]);
 }
 
-export function GenUI({ response, isStreaming, onAction, toolProvider, initialState, onStateUpdate }: Props) {
+export function GenUI({ response, isStreaming, onAction, toolProvider, initialState, onStateUpdate, evidence }: Props) {
   const { t } = useTranslation('session');
   const [errors, setErrors] = useState<OpenUIError[]>([]);
   // Skip warnings (still renders) and parser errors (already handled by the repair loop).
@@ -53,16 +56,18 @@ export function GenUI({ response, isStreaming, onAction, toolProvider, initialSt
 
   return (
     <div className="genui" ref={setRoot}>
-      <Renderer
-        library={library}
-        response={response}
-        isStreaming={isStreaming}
-        onAction={onAction}
-        toolProvider={toolProvider ?? null}
-        initialState={initialState}
-        onStateUpdate={onStateUpdate}
-        onError={setErrors}
-      />
+      <EvidenceContext.Provider value={evidence ?? null}>
+        <Renderer
+          library={library}
+          response={response}
+          isStreaming={isStreaming}
+          onAction={onAction}
+          toolProvider={toolProvider ?? null}
+          initialState={initialState}
+          onStateUpdate={onStateUpdate}
+          onError={setErrors}
+        />
+      </EvidenceContext.Provider>
       {visible.length > 0 && (
         <details className="genui__errors">
           <summary>{t('genui.errors', { count: visible.length })}</summary>

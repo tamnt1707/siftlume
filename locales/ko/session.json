@@ -35,6 +35,10 @@
   "genui": {
     "errors_other": "이 화면을 표시하는 중 오류 {{count}}개",
     "showInPage": "페이지에서 보기",
+    "unverified": "미확인",
+    "unverifiedHint": "원문에서 이 수치를 그대로 적은 부분을 찾지 못했습니다. 믿기 전에 확인하세요.",
+    "chartSources_other": "이 수치 {{count}}개의 출처",
+    "unverifiedCount_other": "{{count}}개 미확인",
     "copy": "복사",
     "minRead_other": "{{count}}분 분량",
     "drawing": "다이어그램을 그리는 중…",
@@ -177,7 +181,9 @@
         "desc": "메모 앱과 문서용 일반 텍스트"
       }
     },
-    "madeWith": "Siftlume로 만듦"
+    "madeWith": "Siftlume로 만듦",
+    "asText": "텍스트",
+    "asTextTitle": "이 답변을 일반 텍스트로 표시합니다(차트는 표로 바뀜). 모델에 다시 요청하지 않습니다"
   },
   "export": {
     "value": "값",

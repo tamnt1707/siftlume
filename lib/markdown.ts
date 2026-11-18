@@ -128,6 +128,13 @@ function render(node: unknown, level: number): string {
             .map((b) => [b.label, b.display ?? b.value]),
         )
       );
+    case 'ChartSources': {
+      const points = list(p.points).map(props);
+      return `**${t('session:genui.chartSources', { count: points.length })}**\n\n${table(
+        ['', t('session:export.value'), t('session:export.source')],
+        points.map((x) => [x.label, x.value, x.quote ? `“${str(x.quote)}”` : '']),
+      )}`;
+    }
     case 'Checklist':
       return (
         heading(p.heading) +

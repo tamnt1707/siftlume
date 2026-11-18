@@ -37,6 +37,12 @@
     "errors_one": "{{count}} error while running this view",
     "errors_other": "{{count}} errors while running this view",
     "showInPage": "Show in page",
+    "unverified": "Unverified",
+    "unverifiedHint": "No passage in the source states this figure word for word. Check it before you rely on it.",
+    "chartSources_one": "Where this number comes from",
+    "chartSources_other": "Where these {{count}} numbers come from",
+    "unverifiedCount_one": "{{count}} unverified",
+    "unverifiedCount_other": "{{count}} unverified",
     "copy": "Copy",
     "minRead_one": "{{count}} min read",
     "minRead_other": "{{count}} min read",
@@ -185,7 +191,9 @@
         "desc": "Plain text for notes apps and docs"
       }
     },
-    "madeWith": "Made with Siftlume"
+    "madeWith": "Made with Siftlume",
+    "asText": "Text",
+    "asTextTitle": "Show this answer as plain text (charts become tables), without asking the model again"
   },
   "export": {
     "value": "Value",

@@ -5,10 +5,44 @@
  */
 import { useTranslation } from 'react-i18next';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { Copy01Icon, HighlighterIcon } from '@hugeicons/core-free-icons';
+import { Alert02Icon, Copy01Icon, HighlighterIcon } from '@hugeicons/core-free-icons';
 import { defineComponent, useIsStreaming, useTriggerAction } from '@openuidev/react-lang';
 import { z } from 'zod/v4';
+import { checkEvidence, useEvidence } from '@/lib/evidence';
 import { copyText, customAction, highlightInPage } from './actions';
+
+/**
+ * Where a figure comes from: a "Show in page" button when its passage is verbatim in the source,
+ * an "Unverified" mark when there is no such passage. Nothing outside a session (no source to check).
+ * The button always says "Show in page", like the one on source quotes: a bare icon was not read as one.
+ */
+export function EvidenceMark({ quote, value }: { quote?: string | null; value?: string | number }) {
+  const evidence = useEvidence();
+  const triggerAction = useTriggerAction();
+  const streaming = useIsStreaming();
+  const { t } = useTranslation('session');
+  // While streaming the passage may still be arriving: judge it once the program is complete.
+  if (!evidence || streaming) return null;
+  if (!checkEvidence(evidence.content, quote, value)) {
+    return (
+      <span className="g-evidence g-evidence--unverified" title={t('genui.unverifiedHint')}>
+        <HugeiconsIcon icon={Alert02Icon} size={12} strokeWidth={2} aria-hidden="true" />
+        {t('genui.unverified')}
+      </span>
+    );
+  }
+  if (!evidence.canShow) return null;
+  return (
+    <button
+      type="button"
+      className="g-evidence g-evidence--show"
+      onClick={() => triggerAction('', undefined, customAction(highlightInPage.name, { text: quote! }))}
+    >
+      <HugeiconsIcon icon={HighlighterIcon} size={13} strokeWidth={1.8} aria-hidden="true" />
+      {t('genui.showInPage')}
+    </button>
+  );
+}
 
 export const SummaryHero = defineComponent({
   name: 'SummaryHero',
@@ -43,11 +77,12 @@ export const SummaryHero = defineComponent({
 export const KeyNumber = defineComponent({
   name: 'KeyNumber',
   description:
-    'One headline figure from the source: value as written (e.g. "17M", "$4.2B", "35%"), a 1-4 word label, and an optional signed change (e.g. "+35%", "-12%").',
+    'One headline figure from the source: value as written (e.g. "17M", "$4.2B", "35%"), a 1-4 word label, an optional signed change (e.g. "+35%", "-12%"), and quote: the passage it comes from, 5-25 words copied verbatim from the source and containing the figure (pass null for change when there is none). A figure without a verbatim passage is marked unverified.',
   props: z.object({
     value: z.string(),
     label: z.string(),
     change: z.string().optional(),
+    quote: z.string().optional(),
   }),
   component: ({ props }) => {
     const dir = props.change?.trim().startsWith('-') ? 'down' : props.change ? 'up' : undefined;
@@ -55,7 +90,10 @@ export const KeyNumber = defineComponent({
       <div className="g-num">
         <span className="g-num__value">{props.value}</span>
         <span className="g-num__label">{props.label}</span>
-        {props.change && <span className={`g-num__change g-num__change--${dir}`}>{props.change}</span>}
+        <span className="g-num__foot">
+          {props.change && <span className={`g-num__change g-num__change--${dir}`}>{props.change}</span>}
+          <EvidenceMark quote={props.quote} value={props.value} />
+        </span>
       </div>
     );
   },

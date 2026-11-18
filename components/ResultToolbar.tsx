@@ -8,6 +8,7 @@ import {
   FileViewIcon,
   PrinterIcon,
   StopIcon,
+  TextIcon,
   VolumeHighIcon,
 } from '@hugeicons/core-free-icons';
 import type { Session } from '@/lib/history';
@@ -57,6 +58,8 @@ export function ResultToolbar({
   notify,
   sourceOpen,
   onToggleSource,
+  asText,
+  onToggleText,
   onPrint,
 }: {
   ctrl: SessionController;
@@ -68,6 +71,9 @@ export function ResultToolbar({
   notify: (msg: string) => void;
   sourceOpen: boolean;
   onToggleSource: () => void;
+  /** The answer is shown as plain text (charts as tables) instead of components. */
+  asText: boolean;
+  onToggleText: () => void;
   /** Replaces window.print() where it does nothing (Chrome ignores it in the side panel). */
   onPrint?: () => void;
 }) {
@@ -173,6 +179,17 @@ export function ResultToolbar({
           ]}
         />
       </div>
+
+      <button
+        className={`tool-btn ${asText ? 'tool-btn--on' : ''}`}
+        disabled={!program}
+        onClick={onToggleText}
+        aria-pressed={asText}
+        title={t('toolbar.asTextTitle')}
+      >
+        <Icon icon={TextIcon} size={16} />
+        <span>{t('toolbar.asText')}</span>
+      </button>
 
       <div className="result-toolbar__actions">
         <button className="tool-btn" disabled={!program} onClick={() => void copy()} title={t('toolbar.copy')}>

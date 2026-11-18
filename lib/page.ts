@@ -6,6 +6,7 @@ import { extractPullRequest, pullRequestRef } from './github';
 import { extractGoogleFile, googleFileRef } from './gdocs';
 import { getSettings } from './settings';
 import { readStructuredData } from './structured';
+import { highlightQuote } from './highlight-quote';
 
 export async function getActiveTab() {
   const [tab] = await browser.tabs.query({ active: true, lastFocusedWindow: true });
@@ -90,35 +91,6 @@ export async function extractTab(tabId: number): Promise<ExtractedSource & { tab
 
 /** Scrolls to and highlights a quote in the original page (custom action @HighlightInPage). */
 export async function highlightInTab(tabId: number, text: string): Promise<boolean> {
-  const [injection] = await browser.scripting.executeScript({
-    target: { tabId },
-    args: [text],
-    func: (needle: string) => {
-      const norm = (s: string) => s.replace(/\s+/g, ' ').trim().toLowerCase();
-      const target = norm(needle);
-      // Try the full quote, then shorter prefixes (models sometimes paraphrase the end).
-      const candidates = [target, target.split(' ').slice(0, 8).join(' '), target.split(' ').slice(0, 4).join(' ')];
-      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-      const nodes: Text[] = [];
-      while (walker.nextNode()) nodes.push(walker.currentNode as Text);
-
-      for (const c of candidates) {
-        if (!c) continue;
-        for (const node of nodes) {
-          const idx = norm(node.data).indexOf(c);
-          if (idx === -1) continue;
-          const el = node.parentElement;
-          if (!el) continue;
-          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          const prev = el.style.cssText;
-          el.style.cssText += ';background:#fde68a !important;outline:2px solid #f59e0b;transition:background .3s';
-          setTimeout(() => (el.style.cssText = prev), 3500);
-          return true;
-        }
-      }
-      // Fallback: the browser's own find, which matches across text nodes.
-      return (window as unknown as { find?: (s: string) => boolean }).find?.(needle.slice(0, 80)) ?? false;
-    },
-  });
+  const [injection] = await browser.scripting.executeScript({ target: { tabId }, args: [text], func: highlightQuote });
   return Boolean(injection?.result);
 }

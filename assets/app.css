@@ -3178,3 +3178,21 @@ button.ui-menu__item:focus-visible {
   gap: 8px;
   text-align: left;
 }
+
+/* "Show as text": the answer as Markdown, charts as tables. */
+.summary-text {
+  margin-top: 0;
+}
+
+.summary-text table {
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+
+.summary-text th,
+.summary-text td {
+  padding: 4px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}

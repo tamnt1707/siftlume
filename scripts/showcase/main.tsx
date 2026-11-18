@@ -293,6 +293,8 @@ function FullPage() {
             notify={() => {}}
             sourceOpen={false}
             onToggleSource={() => {}}
+            asText={false}
+            onToggleText={() => {}}
           />
         }
       />

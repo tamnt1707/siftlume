@@ -132,9 +132,19 @@
   color: var(--ink-2);
 }
 
-.g-num__change {
-  align-self: flex-start;
+.g-num__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
   margin-top: 4px;
+}
+
+.g-num__foot:empty {
+  display: none;
+}
+
+.g-num__change {
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 600;
@@ -147,6 +157,46 @@
 
 .g-num__change--down {
   color: var(--down);
+}
+
+/* ── Where a figure comes from ────────────────────────────── */
+
+.g-evidence {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* No passage verbatim in the source: a quiet warning, not an alarm. */
+.g-evidence--unverified {
+  padding: 2px 6px;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  color: var(--ink-2);
+  cursor: help;
+}
+
+.g-evidence--show {
+  padding: 2px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.g-evidence--show:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.g-evidence--show:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
 }
 
 /* ── Headings inside the summary ──────────────────────────── */
@@ -574,17 +624,27 @@
 /* ── Bar list ─────────────────────────────────────────────── */
 
 .g-bars ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  gap: 10px 12px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* One grid for all rows (subgrid), so bars stay aligned whatever each row's source mark says. */
+.g-bars ul {
+  grid-template-columns: minmax(80px, 30%) 1fr auto auto;
+}
+
+/* No source marks (outside a session): no empty last column. */
+.g-bars ul:not(:has(.g-evidence)) {
+  grid-template-columns: minmax(80px, 30%) 1fr auto;
+}
+
 .g-bar {
   display: grid;
-  grid-template-columns: minmax(80px, 30%) 1fr auto;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
   align-items: center;
   gap: 12px;
   font-family: var(--font-sans);
@@ -2970,4 +3030,118 @@ a.g-finding__where:hover {
 .session--panel .g-eventcard__date {
   width: 52px;
   height: 58px;
+}
+
+/* ── Chart sources: the passage behind each charted value ── */
+
+.g-chartsrc {
+  margin-top: -10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+/* A bar with a chevron, so it reads as "open me", not as a link. */
+.g-chartsrc summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  padding: 8px 10px;
+  list-style: none;
+  cursor: pointer;
+  font-weight: 560;
+  color: var(--ink-2);
+  border-radius: var(--r-sm);
+}
+
+.g-chartsrc summary::-webkit-details-marker {
+  display: none;
+}
+
+.g-chartsrc summary:hover {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.g-chartsrc summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.g-chartsrc__title {
+  color: var(--ink);
+}
+
+.g-chartsrc__chevron {
+  margin-left: auto;
+  transition: transform 0.15s ease;
+}
+
+.g-chartsrc[open] .g-chartsrc__chevron {
+  transform: rotate(180deg);
+}
+
+.g-chartsrc[open] summary {
+  border-bottom: 1px solid var(--line);
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
+}
+
+/* Some values have no verbatim passage: a caution pill, not grey text. */
+.g-chartsrc__count {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  background: var(--warn-bg);
+  color: var(--caution);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.g-chartsrc ul {
+  margin: 0;
+  padding: 10px 12px 12px;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.g-chartsrc li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+}
+
+.g-chartsrc__label {
+  color: var(--ink);
+}
+
+.g-chartsrc__value {
+  font-weight: 620;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.g-chartsrc__quote {
+  flex-basis: 100%;
+  font-family: var(--font-reading);
+  font-style: italic;
+}
+
+/* The charted figure inside its passage: the same marker stroke as the TL;DR. */
+.g-chartsrc__figure {
+  padding: 0 0.12em;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink);
+  background-color: transparent;
+  background-image: linear-gradient(transparent 52%, var(--marker) 52%, var(--marker) 92%, transparent 92%);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }

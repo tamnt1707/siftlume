@@ -39,6 +39,14 @@
     "errors_many": "{{count}} erros ao exibir esta visualização",
     "errors_other": "{{count}} erros ao exibir esta visualização",
     "showInPage": "Ver na página",
+    "unverified": "Não verificado",
+    "unverifiedHint": "Nenhum trecho da fonte traz este número palavra por palavra. Confira antes de confiar nele.",
+    "chartSources_one": "De onde vem este número",
+    "chartSources_many": "De onde vêm estes {{count}} números",
+    "chartSources_other": "De onde vêm estes {{count}} números",
+    "unverifiedCount_one": "{{count}} não verificado",
+    "unverifiedCount_many": "{{count}} não verificados",
+    "unverifiedCount_other": "{{count}} não verificados",
     "copy": "Copiar",
     "minRead_one": "{{count}} min de leitura",
     "minRead_many": "{{count}} min de leitura",
@@ -193,7 +201,9 @@
         "desc": "Texto simples para apps de notas e documentos"
       }
     },
-    "madeWith": "Feito com o Siftlume"
+    "madeWith": "Feito com o Siftlume",
+    "asText": "Texto",
+    "asTextTitle": "Mostrar esta resposta como texto simples (gráficos viram tabelas), sem consultar o modelo de novo"
   },
   "export": {
     "value": "Valor",
