@@ -33,7 +33,7 @@ To debug:
 ## Before you open a pull request
 
 ```bash
-pnpm check     # type-check + locale check + prompt example check
+pnpm check     # type-check + locale check + prompt example check + unit tests (tests/)
 pnpm build     # make sure the production build succeeds
 ```
 

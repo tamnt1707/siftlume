@@ -17,7 +17,9 @@
     "postinstall": "wxt prepare",
     "check:i18n": "node scripts/check-locales.mjs",
     "check:examples": "tsx scripts/check-examples.ts",
-    "check": "pnpm compile && pnpm check:i18n && pnpm check:examples",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "pnpm compile && pnpm check:i18n && pnpm check:examples && pnpm test",
     "screenshots": "node scripts/screenshots.mjs"
   },
   "dependencies": {
@@ -56,9 +58,11 @@
     "@types/react-dom": "^19.2.3",
     "@types/turndown": "^5.0.6",
     "@wxt-dev/module-react": "^1.1.5",
+    "jsdom": "^31.0.1",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3",
     "vite": "8.3.6",
+    "vitest": "5.1.0",
     "web-ext": "^10.5.0",
     "wxt": "^0.21.3"
   },

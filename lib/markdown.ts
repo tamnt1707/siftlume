@@ -550,15 +550,18 @@ export function programToMarkdown(program: string, source?: { title?: string; or
 
 /** Plain text for text-to-speech: Markdown syntax, tables and code removed. */
 export function markdownToSpeech(md: string) {
-  return md
-    .replace(/```[\s\S]*?```/g, '')
-    .replace(/^\|.*\|$/gm, '')
-    .replace(/^---.*$/gm, '')
-    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
-    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
-    .replace(/[#>*_`]/g, '')
-    .replace(/^\s*-\s*\[ \]\s*/gm, '')
-    .replace(/^\s*[-\d.]+\s+/gm, '')
-    .replace(/\n{2,}/g, '.\n')
-    .trim();
+  return (
+    md
+      .replace(/```[\s\S]*?```/g, '')
+      .replace(/^\|.*\|$/gm, '')
+      .replace(/^---.*$/gm, '')
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+      .replace(/[#>*_`]/g, '')
+      .replace(/^\s*-\s*\[ \]\s*/gm, '')
+      .replace(/^\s*[-\d.]+\s+/gm, '')
+      .trim()
+      // A pause between paragraphs, without doubling a stop the sentence already has.
+      .replace(/([.!?。！？…:;])?\s*\n{2,}/g, (_, stop: string | undefined) => `${stop ?? '.'}\n`)
+  );
 }

@@ -60,10 +60,10 @@ export function highlightQuote(needle: string): boolean {
 
   const target = norm(needle);
   const words = target.split(' ');
-  // The full quote, then shorter prefixes (models sometimes paraphrase the end).
-  const candidates = [target, words.slice(0, 8).join(' '), words.slice(0, 4).join(' ')].filter(
-    (c, i, all) => c && all.indexOf(c) === i,
-  );
+  // The full quote, then the longest prefix of at least 4 words in the page (models sometimes
+  // paraphrase the end; quotes are short, so trying each length is cheap).
+  const candidates: string[] = [];
+  for (let n = words.length; n >= Math.min(4, words.length); n--) candidates.push(words.slice(0, n).join(' '));
   let start = -1;
   let length = 0;
   for (const c of candidates) {

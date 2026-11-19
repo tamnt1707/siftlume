@@ -134,6 +134,7 @@ pnpm dev          # opens Chrome with the extension loaded, with hot reload
 | `pnpm compile`        | Type-check                                                                            |
 | `pnpm check:i18n`     | Every locale has the same keys, plural forms and placeholders as English              |
 | `pnpm check:examples` | The OpenUI Lang examples in the prompts parse cleanly and their diagrams render       |
+| `pnpm test`           | Unit tests with Vitest (`pnpm test:watch` reruns them on save)                        |
 | `pnpm check`          | All of the checks above                                                               |
 | `pnpm screenshots`    | Re-render the README screenshots (needs Chrome; set `CHROME_PATH` if it is elsewhere) |
 
