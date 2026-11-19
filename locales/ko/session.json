@@ -42,7 +42,22 @@
       "noQuote": "이 수치에는 원문 구절이 없습니다. 원문에 적힌 값이 아니라 세거나 계산한 값일 수 있습니다.",
       "short": "인용이 너무 짧아 확인할 수 없습니다: “{{quote}}”",
       "notFound": "이 구절은 원문에 그대로 있지 않습니다: “{{quote}}”",
-      "noFigure": "구절은 원문에 있지만 이 수치는 없습니다: “{{quote}}”"
+      "noFigure": "구절은 원문에 있지만 이 수치는 없습니다: “{{quote}}”",
+      "badInput": "계산에 쓰인 수치가 모두 원문에 그대로 있지는 않습니다.",
+      "mismatch": "계산에 쓰인 수치({{inputs}})와 맞지 않습니다."
+    },
+    "derived": "계산값",
+    "derivedWhy": "원문에 없는 수치입니다. 원문의 수치로 계산했으며 계산이 맞는지 확인했습니다.",
+    "derivedFrom": "원문의 다음 수치로 계산:",
+    "derivedOp": {
+      "rounded": "반올림",
+      "sum": "합계",
+      "average": "평균",
+      "difference": "차이",
+      "ratio": "비율",
+      "share": "비중",
+      "change": "변화율",
+      "product": "곱"
     },
     "chartSources_other": "이 수치 {{count}}개의 출처",
     "unverifiedCount_other": "{{count}}개 미확인",

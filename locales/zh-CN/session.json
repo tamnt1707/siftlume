@@ -42,7 +42,22 @@
       "noQuote": "这个数字没有附带来源段落。它可能是统计或计算得出的，而不是来源直接写明的。",
       "short": "引用太短，无法核对：“{{quote}}”",
       "notFound": "来源中没有逐字相同的这段话：“{{quote}}”",
-      "noFigure": "这段话在来源中，但不包含这个数字：“{{quote}}”"
+      "noFigure": "这段话在来源中，但不包含这个数字：“{{quote}}”",
+      "badInput": "用于计算的数字并非都能在原文中逐字找到。",
+      "mismatch": "与用于计算的数字（{{inputs}}）对不上。"
+    },
+    "derived": "推算",
+    "derivedWhy": "原文未直接给出：由原文中的数字计算得出，计算已核对。",
+    "derivedFrom": "由原文中的这些数字计算得出：",
+    "derivedOp": {
+      "rounded": "四舍五入",
+      "sum": "总和",
+      "average": "平均",
+      "difference": "差值",
+      "ratio": "比值",
+      "share": "占比",
+      "change": "变化率",
+      "product": "乘积"
     },
     "chartSources_other": "这 {{count}} 个数字的出处",
     "unverifiedCount_other": "{{count}} 个未核实",

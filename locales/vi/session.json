@@ -42,7 +42,22 @@
       "noQuote": "Không có đoạn nguồn nào đi kèm số này. Có thể số được đếm hoặc tính ra chứ nguồn không ghi trực tiếp.",
       "short": "Đoạn trích quá ngắn để kiểm tra: “{{quote}}”",
       "notFound": "Đoạn trích này không có nguyên văn trong nguồn: “{{quote}}”",
-      "noFigure": "Đoạn trích có trong nguồn nhưng không chứa số này: “{{quote}}”"
+      "noFigure": "Đoạn trích có trong nguồn nhưng không chứa số này: “{{quote}}”",
+      "badInput": "Số này được tính từ các số không phải đều có nguyên văn trong nguồn.",
+      "mismatch": "Số này không khớp với các số dùng để tính ra nó ({{inputs}})."
+    },
+    "derived": "Tính ra",
+    "derivedWhy": "Nguồn không ghi số này: nó được tính từ các số có trong nguồn, và phép tính đã được kiểm tra.",
+    "derivedFrom": "Tính từ các số này trong nguồn:",
+    "derivedOp": {
+      "rounded": "làm tròn",
+      "sum": "tổng",
+      "average": "trung bình",
+      "difference": "hiệu",
+      "ratio": "tỉ số",
+      "share": "tỉ lệ",
+      "change": "% thay đổi",
+      "product": "tích"
     },
     "chartSources_other": "Nguồn của {{count}} con số này",
     "unverifiedCount_other": "{{count}} chưa xác minh",

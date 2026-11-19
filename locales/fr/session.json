@@ -46,7 +46,22 @@
       "noQuote": "Aucun passage de la source n’accompagne ce chiffre. Il a peut-être été compté ou calculé plutôt qu’écrit dans la source.",
       "short": "Le passage est trop court pour être vérifié : « {{quote}} »",
       "notFound": "Ce passage ne figure pas mot pour mot dans la source : « {{quote}} »",
-      "noFigure": "Le passage est dans la source mais ne contient pas ce chiffre : « {{quote}} »"
+      "noFigure": "Le passage est dans la source mais ne contient pas ce chiffre : « {{quote}} »",
+      "badInput": "Calculé à partir de chiffres qui ne figurent pas tous mot pour mot dans la source.",
+      "mismatch": "Ne découle pas des chiffres à partir desquels il a été calculé ({{inputs}})."
+    },
+    "derived": "Calculé",
+    "derivedWhy": "Absent de la source : calculé à partir de chiffres qui y figurent, et le calcul est juste.",
+    "derivedFrom": "Calculé à partir de ces chiffres de la source :",
+    "derivedOp": {
+      "rounded": "arrondi",
+      "sum": "somme",
+      "average": "moyenne",
+      "difference": "différence",
+      "ratio": "rapport",
+      "share": "part",
+      "change": "variation en %",
+      "product": "produit"
     },
     "chartSources_one": "D’où vient ce chiffre",
     "chartSources_many": "D’où viennent ces {{count}} chiffres",

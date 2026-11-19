@@ -46,7 +46,22 @@
       "noQuote": "Este número não tem um trecho da fonte. Ele pode ter sido contado ou calculado, em vez de estar escrito na fonte.",
       "short": "O trecho é curto demais para verificar: “{{quote}}”",
       "notFound": "Este trecho não está na fonte palavra por palavra: “{{quote}}”",
-      "noFigure": "O trecho está na fonte, mas não contém este número: “{{quote}}”"
+      "noFigure": "O trecho está na fonte, mas não contém este número: “{{quote}}”",
+      "badInput": "Foi calculado a partir de números que não estão todos literalmente na fonte.",
+      "mismatch": "Não resulta dos números usados no cálculo ({{inputs}})."
+    },
+    "derived": "Calculado",
+    "derivedWhy": "Não está na fonte: foi calculado a partir de números que estão, e a conta confere.",
+    "derivedFrom": "Calculado a partir destes números da fonte:",
+    "derivedOp": {
+      "rounded": "arredondado",
+      "sum": "soma",
+      "average": "média",
+      "difference": "diferença",
+      "ratio": "razão",
+      "share": "proporção",
+      "change": "variação %",
+      "product": "produto"
     },
     "chartSources_one": "De onde vem este número",
     "chartSources_many": "De onde vêm estes {{count}} números",
