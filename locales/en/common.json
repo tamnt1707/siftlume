@@ -69,6 +69,11 @@
   },
   "modeLabel": "Analysis",
   "modes": {
+    "auto": {
+      "title": "Auto",
+      "desc": "Picks the best kind for the source",
+      "picked": "Auto · {{mode}}"
+    },
     "summary": {
       "title": "Summary",
       "desc": "The gist in seconds: key facts and points"
@@ -84,6 +89,10 @@
     "action": {
       "title": "Action",
       "desc": "What to do: steps, deadlines, decisions"
+    },
+    "guide": {
+      "title": "Guide",
+      "desc": "Step by step: what you need, the steps, how to check"
     }
   },
   "deepOf": "{{title}} · deep read"

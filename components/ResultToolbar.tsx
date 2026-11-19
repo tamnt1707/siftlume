@@ -19,7 +19,7 @@ import i18n from '@/lib/i18n';
 import type { Settings, SummaryLength } from '@/lib/settings';
 import { Icon } from './Icon';
 import { Select } from './Select';
-import { resolveMode } from '@/lib/modes';
+import { AUTO, resolveMode } from '@/lib/modes';
 import { modeOptions } from './ModePicker';
 import type { SessionController } from './useSession';
 import { usePortalContainer } from './portal';
@@ -83,7 +83,7 @@ export function ResultToolbar({
   const busy = ctrl.phase !== 'idle';
   // A custom mode deleted since shows as the summary it falls back to.
   const chosen = session.options?.mode ?? settings.mode;
-  const mode = resolveMode(chosen, settings.customModes).custom ? chosen : resolveMode(chosen).base;
+  const mode = chosen === AUTO || resolveMode(chosen, settings.customModes).custom ? chosen : resolveMode(chosen).base;
   const length = session.options?.length ?? settings.length;
   const language = session.options?.language ?? settings.language;
 
@@ -151,7 +151,7 @@ export function ResultToolbar({
           disabled={busy}
           aria-label={t('common:modeLabel')}
           onChange={(value) => value !== mode && ctrl.resummarize({ mode: value as typeof mode })}
-          options={modeOptions(settings.customModes)}
+          options={modeOptions(settings.customModes, session.source)}
         />
       </div>
       <div className="segmented segmented--sm" role="group" aria-label={t('settings:summary.length')}>

@@ -48,6 +48,27 @@ bars = BarList([BarItem("Pro | Team", 12, "12 seats")], "Plans")`;
     expect(programToMarkdown(program)).toContain('| Pro \\| Team | 12 seats |');
   });
 
+  it('keeps the commands of a guide, in a CodeBlock or in the step text', () => {
+    const program = `root = Card([steps])
+steps = Steps([s1, s2])
+s1 = StepsItem("Enable Nexus", CodeBlock("bash", "kubectl apply -f nexus.yaml"))
+s2 = StepsItem("Check", "Run:\\n\`\`\`bash\\nkubectl get pods\\n\`\`\`")`;
+    expect(programToMarkdown(program)).toBe(
+      [
+        '1. **Enable Nexus**',
+        '   ```bash',
+        '   kubectl apply -f nexus.yaml',
+        '   ```',
+        '2. **Check**',
+        '   Run:',
+        '   ```bash',
+        '   kubectl get pods',
+        '   ```',
+        '',
+      ].join('\n'),
+    );
+  });
+
   it('returns nothing for an empty program', () => {
     expect(programToMarkdown('').trim()).toBe('');
   });

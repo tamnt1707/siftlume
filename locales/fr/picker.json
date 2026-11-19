@@ -11,19 +11,22 @@
     "summary": "Résumer cette page",
     "explain": "Expliquer cette page",
     "critique": "Critiquer cette page",
-    "action": "Extraire les actions"
+    "action": "Extraire les actions",
+    "guide": "Créer un guide pas à pas"
   },
   "runText": {
     "summary": "Résumer le texte",
     "explain": "Expliquer le texte",
     "critique": "Critiquer le texte",
-    "action": "Extraire les actions"
+    "action": "Extraire les actions",
+    "guide": "Créer un guide pas à pas"
   },
   "runVideo": {
     "summary": "Résumer cette vidéo",
     "explain": "Expliquer cette vidéo",
     "critique": "Analyser cette vidéo",
-    "action": "Extraire les actions"
+    "action": "Extraire les actions",
+    "guide": "Créer un guide pas à pas"
   },
   "video": {
     "captions": "Sous-titres : {{label}}",
@@ -59,30 +62,35 @@
     "summary": "Résumer cette pull request",
     "explain": "Expliquer cette pull request",
     "critique": "Relire cette pull request",
-    "action": "Checklist avant le merge"
+    "action": "Checklist avant le merge",
+    "guide": "Créer un guide pas à pas"
   },
   "runDoc": {
     "summary": "Résumer ce document",
     "explain": "Expliquer ce document",
     "critique": "Analyser ce document",
-    "action": "Extraire les actions"
+    "action": "Extraire les actions",
+    "guide": "Créer un guide pas à pas"
   },
   "runSheet": {
     "summary": "Résumer cette feuille de calcul",
     "explain": "Expliquer cette feuille de calcul",
     "critique": "Vérifier cette feuille de calcul",
-    "action": "Extraire les actions"
+    "action": "Extraire les actions",
+    "guide": "Créer un guide pas à pas"
   },
   "runSlides": {
     "summary": "Résumer cette présentation",
     "explain": "Expliquer cette présentation",
     "critique": "Analyser cette présentation",
-    "action": "Extraire les actions"
+    "action": "Extraire les actions",
+    "guide": "Créer un guide pas à pas"
   },
   "runDrive": {
     "summary": "Résumer ce PDF",
     "explain": "Expliquer ce PDF",
     "critique": "Analyser ce PDF",
-    "action": "Extraire les actions"
+    "action": "Extraire les actions",
+    "guide": "Créer un guide pas à pas"
   }
 }

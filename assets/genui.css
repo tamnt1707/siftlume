@@ -3145,3 +3145,22 @@ a.g-finding__where:hover {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
+
+/* Guides: a phase heading (TextContent "### …") opens a group of steps, and each step's title
+   reads as the action to take, not as a caption. */
+.genui .openui-text-content h3 {
+  margin: 6px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.genui .openui-step-title {
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 600;
+}

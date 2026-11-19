@@ -508,7 +508,13 @@ function render(node: unknown, level: number): string {
     case 'Steps':
       return list(p.items)
         .map(props)
-        .map((x, i) => `${i + 1}. **${str(x.title)}** ${str(x.details)}`)
+        .map((x, i) => {
+          // Details: Markdown text or a CodeBlock; lines after the first are indented into the item.
+          const details = isNode(x.details) ? render(x.details, level + 1) : str(x.details);
+          const head = `${i + 1}. **${str(x.title)}**`;
+          if (!details.includes('\n')) return details ? `${head} ${details}` : head;
+          return `${head}\n${details.replace(/^/gm, '   ')}`;
+        })
         .join('\n');
     case 'Table': {
       const cols = list(p.columns).map(props);

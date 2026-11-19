@@ -68,6 +68,11 @@
   },
   "modeLabel": "分析类型",
   "modes": {
+    "auto": {
+      "title": "自动",
+      "desc": "按来源自动选择合适的方式",
+      "picked": "自动 · {{mode}}"
+    },
     "summary": {
       "title": "摘要",
       "desc": "几秒掌握要点：关键事实与观点"
@@ -83,6 +88,10 @@
     "action": {
       "title": "行动",
       "desc": "该做什么：步骤、期限、决定"
+    },
+    "guide": {
+      "title": "指南",
+      "desc": "按步骤：准备什么、具体步骤、如何检查"
     }
   },
   "deepOf": "{{title}} · 深度阅读"

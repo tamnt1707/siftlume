@@ -8,7 +8,7 @@ import { browser, type Browser } from '#imports';
 import { HistoryList } from '@/components/HistoryList';
 import { ModelSwitcher } from '@/components/ModelSwitcher';
 import { AnalysisChoice, runLabel } from '@/components/ModePicker';
-import type { ModeId } from '@/lib/modes';
+import { AUTO, type ModeId } from '@/lib/modes';
 import { useSettings } from '@/components/useSettings';
 import { RUN_LABELS, specialPage } from '@/lib/special-page';
 import { useVideoProbe } from '@/components/useVideoProbe';
@@ -29,8 +29,8 @@ export default function Popup() {
   const { settings, loaded } = useSettings();
   const [tab, setTab] = useState<Browser.tabs.Tab | null>(null);
   const [text, setText] = useState('');
-  // Every popup starts as a summary; another mode applies to this request only.
-  const [mode, setMode] = useState<ModeId>('summary');
+  // Every popup starts on auto; another mode applies to this request only.
+  const [mode, setMode] = useState<ModeId>(AUTO);
 
   useEffect(() => {
     void getActiveTab().then((t) => setTab(t ?? null));

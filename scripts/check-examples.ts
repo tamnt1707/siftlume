@@ -14,7 +14,7 @@ import { CHART_SUMMARY_EXAMPLE } from '../lib/chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from '../lib/diagram-example';
 import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../lib/review-example';
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from '../lib/domain-example';
-import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../lib/mode-example';
+import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE, GUIDE_EXAMPLE } from '../lib/mode-example';
 import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from '../lib/analysis-example';
 import { localProgram, repairJson } from '../lib/local-program';
 import { PR_REVIEW_EXAMPLE, PRODUCT_EVENT_EXAMPLE, RECIPE_EXAMPLE } from '../lib/component-example';
@@ -45,6 +45,7 @@ const examples: Record<string, string> = {
   'research-paper-example': RESEARCH_PAPER_EXAMPLE,
   'explain-example': EXPLAIN_EXAMPLE,
   'critique-example': CRITIQUE_EXAMPLE,
+  'guide-example': GUIDE_EXAMPLE,
   'action-example': ACTION_EXAMPLE,
   'policy-debate-example': POLICY_DEBATE_EXAMPLE,
   'decision-example': DECISION_EXAMPLE,

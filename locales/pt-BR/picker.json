@@ -11,19 +11,22 @@
     "summary": "Resumir esta página",
     "explain": "Explicar esta página",
     "critique": "Criticar esta página",
-    "action": "Extrair tarefas"
+    "action": "Extrair tarefas",
+    "guide": "Criar um guia passo a passo"
   },
   "runText": {
     "summary": "Resumir texto",
     "explain": "Explicar texto",
     "critique": "Criticar texto",
-    "action": "Extrair tarefas"
+    "action": "Extrair tarefas",
+    "guide": "Criar um guia passo a passo"
   },
   "runVideo": {
     "summary": "Resumir este vídeo",
     "explain": "Explicar este vídeo",
     "critique": "Analisar este vídeo criticamente",
-    "action": "Extrair tarefas"
+    "action": "Extrair tarefas",
+    "guide": "Criar um guia passo a passo"
   },
   "video": {
     "captions": "Legendas: {{label}}",
@@ -59,30 +62,35 @@
     "summary": "Resumir este pull request",
     "explain": "Explicar este pull request",
     "critique": "Revisar este pull request",
-    "action": "Checklist antes do merge"
+    "action": "Checklist antes do merge",
+    "guide": "Criar um guia passo a passo"
   },
   "runDoc": {
     "summary": "Resumir este documento",
     "explain": "Explicar este documento",
     "critique": "Analisar criticamente este documento",
-    "action": "Obter tarefas"
+    "action": "Obter tarefas",
+    "guide": "Criar um guia passo a passo"
   },
   "runSheet": {
     "summary": "Resumir esta planilha",
     "explain": "Explicar esta planilha",
     "critique": "Verificar esta planilha",
-    "action": "Obter tarefas"
+    "action": "Obter tarefas",
+    "guide": "Criar um guia passo a passo"
   },
   "runSlides": {
     "summary": "Resumir esta apresentação",
     "explain": "Explicar esta apresentação",
     "critique": "Analisar criticamente esta apresentação",
-    "action": "Obter tarefas"
+    "action": "Obter tarefas",
+    "guide": "Criar um guia passo a passo"
   },
   "runDrive": {
     "summary": "Resumir este PDF",
     "explain": "Explicar este PDF",
     "critique": "Analisar criticamente este PDF",
-    "action": "Obter tarefas"
+    "action": "Obter tarefas",
+    "guide": "Criar um guia passo a passo"
   }
 }

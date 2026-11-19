@@ -5,7 +5,7 @@ import { Edit02Icon, FileUploadIcon, Layers01Icon, SparklesIcon, WebDesign01Icon
 import { Icon } from './Icon';
 import type { SessionController } from './useSession';
 import type { Settings } from '@/lib/settings';
-import type { ModeId } from '@/lib/modes';
+import { AUTO, type ModeId } from '@/lib/modes';
 import { AnalysisChoice, runLabel } from './ModePicker';
 import { useVideoProbe } from './useVideoProbe';
 import { TabsPicker } from './TabsPicker';
@@ -55,8 +55,8 @@ export function SourcePicker({
   const { t } = useTranslation('picker');
   const [text, setText] = useState('');
   const [dragging, setDragging] = useState(false);
-  // Every visit starts as a summary; another mode applies to the next run only.
-  const [mode, setMode] = useState<ModeId>('summary');
+  // Every visit starts on auto; another mode applies to the next run only.
+  const [mode, setMode] = useState<ModeId>(AUTO);
   const fileInput = useRef<HTMLInputElement>(null);
   const busy = ctrl.phase !== 'idle';
   const video = useVideoProbe(page?.readable ? page.id : undefined, page?.url);

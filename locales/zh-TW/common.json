@@ -68,6 +68,11 @@
   },
   "modeLabel": "分析類型",
   "modes": {
+    "auto": {
+      "title": "自動",
+      "desc": "依來源自動選擇合適的方式",
+      "picked": "自動 · {{mode}}"
+    },
     "summary": {
       "title": "摘要",
       "desc": "幾秒掌握重點：關鍵事實與觀點"
@@ -83,6 +88,10 @@
     "action": {
       "title": "行動",
       "desc": "該做什麼：步驟、期限、決定"
+    },
+    "guide": {
+      "title": "指南",
+      "desc": "按步驟：準備什麼、具體步驟、如何檢查"
     }
   },
   "deepOf": "{{title}} · 深度閱讀"

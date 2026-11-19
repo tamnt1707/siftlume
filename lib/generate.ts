@@ -19,7 +19,7 @@ import { MODE_TASK, resolveMode } from './modes';
 
 /** The user turn asking for the analysis in the session's mode. */
 function modeTask(settings: Settings, source: SessionSource) {
-  const { base, custom } = resolveMode(settings.mode, settings.customModes);
+  const { base, custom } = resolveMode(settings.mode, settings.customModes, source);
   const task = custom ? `${MODE_TASK[base]} Use my reading mode "${custom.name.trim()}".` : MODE_TASK[base];
   const extra = source.deep
     ? ' Document 1 is the page I am reading; the others are pages it links to. Use them to fill in what document 1 only mentions or points to.'

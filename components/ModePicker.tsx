@@ -1,8 +1,10 @@
 import { useId } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
+  AiMagicIcon,
   Idea01Icon,
   JusticeScale01Icon,
+  Route01Icon,
   TaskDone01Icon,
   TextAlignLeftIcon,
   UserEdit01Icon,
@@ -10,28 +12,38 @@ import {
 import { t } from '@/lib/i18n';
 import {
   ANALYSIS_MODES,
+  AUTO,
   customModeId,
   resolveMode,
   usableCustomModes,
   type CustomMode,
   type ModeId,
+  type ModeSource,
 } from '@/lib/modes';
 import { settingsItem, type Settings, type SummaryLength } from '@/lib/settings';
 import { Icon } from './Icon';
 
 export const MODE_ICONS = {
+  auto: AiMagicIcon,
   summary: TextAlignLeftIcon,
   explain: Idea01Icon,
   critique: JusticeScale01Icon,
   action: TaskDone01Icon,
+  guide: Route01Icon,
 } as const;
+
+/** "auto" first (the default), then the built-in modes. */
+const PICKER_MODES = [AUTO, ...ANALYSIS_MODES] as const;
 
 /** Saves the length right away (no Save button): the last length is kept for the next analysis. */
 const saveLength = (settings: Settings, length: SummaryLength) => void settingsItem.setValue({ ...settings, length });
 
 export const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed', 'full'];
 
-/** Label of the start button: "Summarize this page", "Explain text"…, or the custom mode's name. */
+/**
+ * Label of the start button: "Summarize this page", "Explain text"…, or the custom mode's name.
+ * "auto" reads as a summary: what it picks depends on the source, read only once it starts.
+ */
 export function runLabel(
   kind: 'run' | 'runText' | 'runVideo' | 'runPr' | 'runDoc' | 'runSheet' | 'runSlides' | 'runDrive',
   mode: ModeId,
@@ -43,9 +55,19 @@ export function runLabel(
     : t(`picker:${kind}.${resolved.base}`);
 }
 
-/** Built-in and custom modes as Select options. */
-export function modeOptions(custom: CustomMode[]) {
+/**
+ * Built-in and custom modes as Select options. With the source, "auto" names what it picked
+ * ("Auto · Guide").
+ */
+export function modeOptions(custom: CustomMode[], source?: ModeSource) {
+  const picked = source ? resolveMode(AUTO, custom, source).base : null;
   return [
+    {
+      value: AUTO as string,
+      label: picked
+        ? t('common:modes.auto.picked', { mode: t(`common:modes.${picked}.title`) })
+        : (t('common:modes.auto.title') as string),
+    },
     ...ANALYSIS_MODES.map((m) => ({ value: m as string, label: t(`common:modes.${m}.title`) as string })),
     ...usableCustomModes(custom).map((m) => ({ value: customModeId(m) as string, label: m.name.trim() })),
   ];
@@ -54,7 +76,7 @@ export function modeOptions(custom: CustomMode[]) {
 /**
  * Everything to choose before the first analysis: what kind (mode) and how long. Picking both up
  * front avoids running once and then re-running at another length. The mode is for this run only
- * (the caller holds it and starts as a summary); the length is remembered. "compact" drops the
+ * (the caller holds it and starts on auto); the length is remembered. "compact" drops the
  * descriptions for narrow places (side panel, popup).
  */
 export function AnalysisChoice({
@@ -108,7 +130,7 @@ export function AnalysisChoice({
 }
 
 /**
- * Choice of analysis: summary, explanation, critique or action items. Each shapes the result
+ * Choice of analysis: auto, summary, explanation, critique, action items or a guide. Each shapes the result
  * differently (lib/modes.ts). "full" shows a one-line description under each option.
  */
 export function ModePicker({
@@ -132,7 +154,7 @@ export function ModePicker({
       role="radiogroup"
       aria-label={t('modeLabel')}
     >
-      {ANALYSIS_MODES.map((m) => (
+      {PICKER_MODES.map((m) => (
         <button
           key={m}
           type="button"
