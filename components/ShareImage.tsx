@@ -9,9 +9,6 @@ import type { Session } from '@/lib/history';
 import { Icon } from './Icon';
 import { usePortalContainer } from './portal';
 
-/** Where the card sends people who want Siftlume. */
-const SITE = 'tamnt1707.github.io/siftlume';
-
 const loadImage = (src: string) =>
   new Promise<HTMLImageElement | undefined>((resolve) => {
     const img = new Image();
@@ -73,7 +70,6 @@ export function ShareImage({
           ...cardStyle(appearance),
           readLabel: content.readMinutes ? t('genui.minRead', { count: content.readMinutes }) : '',
           icon,
-          site: SITE,
         });
         const blob = await canvasBlob(canvas);
         if (cancelled) return;

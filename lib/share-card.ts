@@ -92,13 +92,10 @@ export interface CardStyle {
   readLabel: string;
   /** Siftlume's icon, already loaded. */
   icon?: CanvasImageSource;
-  /** Where people get Siftlume, shown in the corner. */
-  site: string;
 }
 
 const INK = '#141821';
 const INK_2 = '#4A5163';
-const MUTED = '#7A8194';
 const LINE = '#E3E6EC';
 
 /**
@@ -190,7 +187,7 @@ export function drawShareCard(content: ShareContent, style: CardStyle, scale = 2
   const right = CARD_WIDTH - M - 52;
   const width = right - left;
 
-  // Footer: Siftlume's icon, name and site.
+  // Footer: Siftlume's icon and name.
   const footerY = CARD_HEIGHT - M - 38;
   let fx = left;
   if (style.icon) {
@@ -200,11 +197,6 @@ export function drawShareCard(content: ShareContent, style: CardStyle, scale = 2
   ctx.font = `700 22px ${SANS}`;
   ctx.fillStyle = INK;
   ctx.fillText('Siftlume', fx, footerY);
-  ctx.font = `500 19px ${SANS}`;
-  ctx.fillStyle = MUTED;
-  ctx.textAlign = 'right';
-  ctx.fillText(style.site, right, footerY);
-  ctx.textAlign = 'left';
   const footerTop = footerY - 25 - 22;
 
   // Figures (or takeaways) sit just above the footer.
