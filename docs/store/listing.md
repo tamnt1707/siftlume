@@ -5,7 +5,7 @@ Everything to paste into the [Chrome Developer Dashboard](https://chrome.google.
 ## Package
 
 - Build: `pnpm check && pnpm zip`
-- Upload `.output/siftlume-<version>-chrome.zip` (0.8.0 next, once 0.7.0 is through review; 0.6.3 is the last published)
+- Upload `.output/siftlume-<version>-chrome.zip` (0.8.0 now; 0.7.0 is the last published)
 - Before each update, bump `version` in `package.json`.
 
 ## Store listing tab
