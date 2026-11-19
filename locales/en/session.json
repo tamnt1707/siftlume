@@ -219,5 +219,19 @@
     "allow": "Allow and read",
     "pageOnly": "Summarize this page only",
     "consentTitle": "Read the linked pages too?"
+  },
+  "share": {
+    "short": "Image",
+    "title": "Share as an image: the TL;DR and key figures on a card for social media",
+    "unavailable": "This answer has no TL;DR to put on an image",
+    "making": "Making the image…",
+    "failed": "Could not make the image.",
+    "alt": "Summary card: {{title}}",
+    "hint": "Made in your browser. Nothing is uploaded until you post it.",
+    "copy": "Copy image",
+    "copied": "Image copied. Paste it into your post.",
+    "copyFailed": "Could not copy the image. Download it instead.",
+    "download": "Download PNG",
+    "share": "Share…"
   }
 }

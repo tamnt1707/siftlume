@@ -209,5 +209,19 @@
     "allow": "允许并读取",
     "pageOnly": "只总结此页",
     "consentTitle": "也读取链接的页面吗？"
+  },
+  "share": {
+    "short": "图片",
+    "title": "以图片分享：将 TL;DR 和关键数字放在一张适合社交媒体的卡片上",
+    "unavailable": "此回答没有可放到图片上的 TL;DR",
+    "making": "正在生成图片…",
+    "failed": "无法生成图片。",
+    "alt": "摘要卡片：{{title}}",
+    "hint": "在浏览器中生成。在你发布之前不会上传任何内容。",
+    "copy": "复制图片",
+    "copied": "图片已复制。粘贴到你的帖子中。",
+    "copyFailed": "无法复制图片，请改为下载。",
+    "download": "下载 PNG",
+    "share": "分享…"
   }
 }

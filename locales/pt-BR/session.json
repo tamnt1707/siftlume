@@ -229,5 +229,19 @@
     "allow": "Permitir e ler",
     "pageOnly": "Resumir só esta página",
     "consentTitle": "Ler também as páginas com link?"
+  },
+  "share": {
+    "short": "Imagem",
+    "title": "Compartilhar como imagem: o TL;DR e os números principais em um cartão para redes sociais",
+    "unavailable": "Esta resposta não tem um TL;DR para colocar em uma imagem",
+    "making": "Criando a imagem…",
+    "failed": "Não foi possível criar a imagem.",
+    "alt": "Cartão de resumo: {{title}}",
+    "hint": "Criada no seu navegador. Nada é enviado até você publicar.",
+    "copy": "Copiar imagem",
+    "copied": "Imagem copiada. Cole-a na sua publicação.",
+    "copyFailed": "Não foi possível copiar a imagem. Baixe-a.",
+    "download": "Baixar PNG",
+    "share": "Compartilhar…"
   }
 }

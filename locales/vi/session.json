@@ -209,5 +209,19 @@
     "allow": "Cho phép và đọc",
     "pageOnly": "Chỉ tóm tắt trang này",
     "consentTitle": "Đọc thêm các trang được liên kết?"
+  },
+  "share": {
+    "short": "Ảnh",
+    "title": "Chia sẻ dạng ảnh: TL;DR và các số chính trên một thẻ để đăng mạng xã hội",
+    "unavailable": "Câu trả lời này không có TL;DR để làm ảnh",
+    "making": "Đang tạo ảnh…",
+    "failed": "Không tạo được ảnh.",
+    "alt": "Thẻ tóm tắt: {{title}}",
+    "hint": "Tạo ngay trong trình duyệt. Không có gì được tải lên cho tới khi bạn đăng.",
+    "copy": "Sao chép ảnh",
+    "copied": "Đã sao chép ảnh. Dán vào bài đăng của bạn.",
+    "copyFailed": "Không sao chép được ảnh. Hãy tải về.",
+    "download": "Tải PNG",
+    "share": "Chia sẻ…"
   }
 }

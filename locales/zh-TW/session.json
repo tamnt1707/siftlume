@@ -209,5 +209,19 @@
     "allow": "允許並讀取",
     "pageOnly": "只摘要此頁",
     "consentTitle": "也讀取連結的頁面嗎？"
+  },
+  "share": {
+    "short": "圖片",
+    "title": "以圖片分享：將 TL;DR 和關鍵數字放在一張適合社群媒體的卡片上",
+    "unavailable": "此回答沒有可放到圖片上的 TL;DR",
+    "making": "正在產生圖片…",
+    "failed": "無法產生圖片。",
+    "alt": "摘要卡片：{{title}}",
+    "hint": "在瀏覽器中產生。在你發布之前不會上傳任何內容。",
+    "copy": "複製圖片",
+    "copied": "圖片已複製。貼到你的貼文中。",
+    "copyFailed": "無法複製圖片，請改為下載。",
+    "download": "下載 PNG",
+    "share": "分享…"
   }
 }

@@ -229,5 +229,19 @@
     "allow": "Autoriser et lire",
     "pageOnly": "Résumer seulement cette page",
     "consentTitle": "Lire aussi les pages liées ?"
+  },
+  "share": {
+    "short": "Image",
+    "title": "Partager en image : le TL;DR et les chiffres clés sur une carte pour les réseaux sociaux",
+    "unavailable": "Cette réponse n’a pas de TL;DR à mettre en image",
+    "making": "Création de l’image…",
+    "failed": "Impossible de créer l’image.",
+    "alt": "Carte de résumé : {{title}}",
+    "hint": "Créée dans votre navigateur. Rien n’est envoyé avant que vous ne la publiiez.",
+    "copy": "Copier l’image",
+    "copied": "Image copiée. Collez-la dans votre publication.",
+    "copyFailed": "Impossible de copier l’image. Téléchargez-la plutôt.",
+    "download": "Télécharger le PNG",
+    "share": "Partager…"
   }
 }

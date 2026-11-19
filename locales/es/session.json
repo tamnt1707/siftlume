@@ -229,5 +229,19 @@
     "allow": "Permitir y leer",
     "pageOnly": "Resumir solo esta página",
     "consentTitle": "¿Leer también las páginas enlazadas?"
+  },
+  "share": {
+    "short": "Imagen",
+    "title": "Compartir como imagen: el TL;DR y las cifras clave en una tarjeta para redes sociales",
+    "unavailable": "Esta respuesta no tiene un TL;DR para poner en una imagen",
+    "making": "Creando la imagen…",
+    "failed": "No se pudo crear la imagen.",
+    "alt": "Tarjeta de resumen: {{title}}",
+    "hint": "Se crea en tu navegador. No se sube nada hasta que lo publiques.",
+    "copy": "Copiar imagen",
+    "copied": "Imagen copiada. Pégala en tu publicación.",
+    "copyFailed": "No se pudo copiar la imagen. Descárgala.",
+    "download": "Descargar PNG",
+    "share": "Compartir…"
   }
 }
