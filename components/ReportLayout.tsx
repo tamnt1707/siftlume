@@ -21,11 +21,11 @@ export function ReportLayout({
   const { t } = useTranslation('session');
   const open = () => {
     const chosen = session.options?.mode ?? settings.mode;
-    const { base, custom } = resolveMode(chosen, settings.customModes);
+    const { base, custom, auto } = resolveMode(chosen, settings.customModes, session.source);
     const url = reportUrl({
       version: browser.runtime.getManifest().version,
       kind: session.source.kind,
-      mode: base,
+      mode: auto ? `auto (picked ${base})` : base,
       custom: Boolean(custom),
       length: session.options?.length ?? settings.length,
       language: session.options?.language ?? settings.language,
