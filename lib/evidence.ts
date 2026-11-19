@@ -12,6 +12,8 @@ export interface Evidence {
   content: string;
   /** The passage can be shown where it came from (highlighted in the page, or played in the video). */
   canShow: boolean;
+  /** It is shown in the extension's source text pane (PDFs, files, Google files), not in a page. */
+  inSource?: boolean;
 }
 
 /** Unset outside a session (showcase, examples) and for computed data (CSV): no marks at all. */
