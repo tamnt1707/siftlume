@@ -36,7 +36,12 @@
     "errors_other": "この表示で {{count}} 件のエラー",
     "showInPage": "ページで表示",
     "unverified": "未確認",
-    "unverifiedHint": "この数値をそのまま記載した箇所がソースにありません。頼る前に確認してください。",
+    "unverifiedWhy": {
+      "noQuote": "この数値には出典の箇所がありません。出典に書かれているのではなく、数えたり計算したりした値かもしれません。",
+      "short": "引用が短すぎて確認できません：「{{quote}}」",
+      "notFound": "この引用は出典にそのままの形でありません：「{{quote}}」",
+      "noFigure": "引用は出典にありますが、この数値は含まれていません：「{{quote}}」"
+    },
     "chartSources_other": "この {{count}} 件の数値の出典",
     "unverifiedCount_other": "{{count}} 件が未確認",
     "copy": "コピー",
