@@ -219,5 +219,19 @@
     "allow": "Erlauben und lesen",
     "pageOnly": "Nur diese Seite zusammenfassen",
     "consentTitle": "Auch die verlinkten Seiten lesen?"
+  },
+  "share": {
+    "short": "Bild",
+    "title": "Als Bild teilen: TL;DR und wichtigste Zahlen auf einer Karte für soziale Netzwerke",
+    "unavailable": "Diese Antwort hat kein TL;DR für ein Bild",
+    "making": "Bild wird erstellt…",
+    "failed": "Das Bild konnte nicht erstellt werden.",
+    "alt": "Zusammenfassungskarte: {{title}}",
+    "hint": "Wird in deinem Browser erstellt. Nichts wird hochgeladen, bevor du es postest.",
+    "copy": "Bild kopieren",
+    "copied": "Bild kopiert. Füge es in deinen Beitrag ein.",
+    "copyFailed": "Das Bild konnte nicht kopiert werden. Lade es stattdessen herunter.",
+    "download": "PNG herunterladen",
+    "share": "Teilen…"
   }
 }

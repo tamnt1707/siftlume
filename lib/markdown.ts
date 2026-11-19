@@ -25,6 +25,9 @@ import { t } from './i18n';
 
 const parser = createParser(library.toJSONSchema(), ROOT);
 
+/** The program's component tree (also read by lib/share-card.ts). */
+export const parseProgram = (program: string): unknown => parser.parse(program).root;
+
 type Node = { type?: string; typeName?: string; props?: Record<string, unknown> };
 
 const isNode = (v: unknown): v is Node => Boolean(v && typeof v === 'object' && (v as Node).type === 'element');
@@ -538,8 +541,7 @@ function render(node: unknown, level: number): string {
 }
 
 export function programToMarkdown(program: string, source?: { title?: string; origin?: string }) {
-  const root = parser.parse(program).root;
-  const body = render(root, 1)
+  const body = render(parseProgram(program), 1)
     .replace(/\n{3,}/g, '\n\n')
     .trim();
   const from = source?.origin?.startsWith('http')

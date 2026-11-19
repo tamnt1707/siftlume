@@ -23,6 +23,7 @@ import { resolveMode } from '@/lib/modes';
 import { modeOptions } from './ModePicker';
 import type { SessionController } from './useSession';
 import { usePortalContainer } from './portal';
+import { ShareImage } from './ShareImage';
 
 const LENGTHS: SummaryLength[] = ['short', 'medium', 'detailed', 'full'];
 /** Average adult reading speed, words per minute. */
@@ -34,7 +35,7 @@ export function readingMinutes(text: string) {
   return { words, minutes: Math.round(words / WPM) };
 }
 
-const fileName = (title: string, ext: 'md' | 'html') =>
+const fileName = (title: string, ext: 'md' | 'html' | 'png') =>
   `${
     title
       .normalize('NFKD')
@@ -47,7 +48,7 @@ const fileName = (title: string, ext: 'md' | 'html') =>
 
 /**
  * Result screen tools: re-summarize at another length or in another language (this session only),
- * copy or download as Markdown, read aloud, print or save as PDF, and show the extracted source.
+ * copy or download as Markdown, share as an image, read aloud, print or save as PDF, and show the extracted source.
  */
 export function ResultToolbar({
   ctrl,
@@ -221,6 +222,14 @@ export function ResultToolbar({
             </Popover.Content>
           </Popover.Portal>
         </Popover.Root>
+        <ShareImage
+          session={session}
+          program={program}
+          appearance={settings.appearance}
+          disabled={!program || busy}
+          notify={notify}
+          fileName={fileName(session.source.title, 'png')}
+        />
         <button
           className={`tool-btn ${speaking ? 'tool-btn--on' : ''}`}
           disabled={!program}
