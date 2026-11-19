@@ -228,5 +228,10 @@
     "copyFailed": "無法複製圖片，請改為下載。",
     "download": "下載 PNG",
     "share": "分享…"
+  },
+  "report": {
+    "question": "這個頁面的版面不合適？",
+    "action": "告訴我們",
+    "title": "開啟一個 GitHub issue，已填好來源類型、分析方式、模型和使用的區塊。不包含頁面網址和內容。"
   }
 }

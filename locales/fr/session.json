@@ -248,5 +248,10 @@
     "copyFailed": "Impossible de copier l’image. Téléchargez-la plutôt.",
     "download": "Télécharger le PNG",
     "share": "Partager…"
+  },
+  "report": {
+    "question": "La mise en page ne convient pas à cette page ?",
+    "action": "Signalez-le",
+    "title": "Ouvre un ticket GitHub avec le type de source, l’analyse, le modèle et les blocs déjà remplis. L’adresse et le contenu de la page ne sont pas inclus."
   }
 }

@@ -248,5 +248,10 @@
     "copyFailed": "Não foi possível copiar a imagem. Baixe-a.",
     "download": "Baixar PNG",
     "share": "Compartilhar…"
+  },
+  "report": {
+    "question": "O layout não combina com esta página?",
+    "action": "Avise-nos",
+    "title": "Abre uma issue no GitHub com o tipo de fonte, a análise, o modelo e os blocos já preenchidos. O endereço e o conteúdo da página não são incluídos."
   }
 }

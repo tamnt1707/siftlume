@@ -228,5 +228,10 @@
     "copyFailed": "Không sao chép được ảnh. Hãy tải về.",
     "download": "Tải PNG",
     "share": "Chia sẻ…"
+  },
+  "report": {
+    "question": "Bố cục chưa hợp với trang này?",
+    "action": "Báo cho chúng tôi",
+    "title": "Mở một issue trên GitHub, điền sẵn loại nguồn, kiểu phân tích, model và các khối đã dùng. Không gửi địa chỉ hay nội dung trang."
   }
 }

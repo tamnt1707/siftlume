@@ -238,5 +238,10 @@
     "copyFailed": "Could not copy the image. Download it instead.",
     "download": "Download PNG",
     "share": "Share…"
+  },
+  "report": {
+    "question": "Layout not right for this page?",
+    "action": "Tell us",
+    "title": "Opens a GitHub issue with the source type, analysis, model and blocks filled in. The page's address and content are not included."
   }
 }
