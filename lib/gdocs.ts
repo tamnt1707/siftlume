@@ -210,18 +210,34 @@ async function slidesInPage(path: string): Promise<InPage> {
 const MAX_DRIVE_PDF = 40 * 1024 * 1024;
 
 /**
- * Runs in the Drive tab (self-contained). Downloads the file, checks it is a PDF and not too big,
- * and returns it as base64.
+ * Drive serves a file's bytes from drive.usercontent.google.com (drive.google.com/uc only redirects
+ * there). That host answers cross-origin requests with `Access-Control-Allow-Origin: *` and no
+ * credentials, so a fetch from the Drive tab can only read files shared with "anyone with the link";
+ * for a private file Google answers with a page CORS hides, and the fetch fails as if offline.
+ * With this optional host permission the side panel downloads the file itself, with the user's
+ * Google cookies and outside CORS.
  */
-async function driveInPage(
-  id: string,
-  authuser: string | null,
-  max: number,
-): Promise<InPage & { notPdf?: boolean; tooBig?: boolean }> {
+const DRIVE_DOWNLOAD_ORIGINS = ['https://drive.usercontent.google.com/*'];
+
+/** Asks to download Drive files. Call it first thing in a click handler; resolves at once if granted. */
+export const requestDriveAccess = () => browser.permissions.request({ origins: DRIVE_DOWNLOAD_ORIGINS });
+
+/** The direct download link of a Drive file (`confirm=t` skips the large-file virus-scan page). */
+export function driveDownloadUrl(id: string, authuser?: string | null) {
+  return `https://drive.usercontent.google.com/download?id=${encodeURIComponent(id)}&export=download&confirm=t${
+    authuser ? `&authuser=${encodeURIComponent(authuser)}` : ''
+  }`;
+}
+
+/**
+ * Runs in the Drive tab (self-contained). Downloads the file without credentials (enough for a file
+ * anyone with the link can open), checks it is a PDF and not too big, and returns it as base64.
+ * `status: 0` here means the download was refused unreadably, which is almost always a private file.
+ */
+async function driveInPage(url: string, max: number): Promise<InPage & { notPdf?: boolean; tooBig?: boolean }> {
   const title = document.title.replace(/\s+-\s+Google Drive\s*$/i, '').trim();
-  const url = `${location.origin}/uc?export=download&id=${id}${authuser ? `&authuser=${authuser}` : ''}`;
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { credentials: 'omit' });
     if (!res.ok || (res.headers.get('content-type') ?? '').includes('text/html'))
       return { title, status: res.ok ? -1 : res.status };
     const size = Number(res.headers.get('content-length'));
@@ -241,6 +257,27 @@ async function driveInPage(
     return { title, status: 0 };
   }
 }
+
+/** Downloads a Drive PDF from the extension itself (host permission granted): the user's session, no CORS. */
+async function driveFromExtension(url: string): Promise<ArrayBuffer> {
+  let res: Response;
+  try {
+    res = await fetch(url, { credentials: 'include' });
+  } catch {
+    throw new Error(t('errors:gdocs.network'));
+  }
+  // Signed out or no access: Google answers with a sign-in or error page.
+  if (!res.ok || (res.headers.get('content-type') ?? '').includes('text/html'))
+    throw exportError(res.ok ? -1 : res.status);
+  if (Number(res.headers.get('content-length')) > MAX_DRIVE_PDF) throw driveTooBig();
+  const buf = await res.arrayBuffer();
+  if (buf.byteLength > MAX_DRIVE_PDF) throw driveTooBig();
+  if (String.fromCharCode(...new Uint8Array(buf, 0, Math.min(5, buf.byteLength))) !== '%PDF-')
+    throw new Error(t('errors:gdocs.drivePdfOnly'));
+  return buf;
+}
+
+const driveTooBig = () => new Error(t('errors:gdocs.driveTooBig', { size: MAX_DRIVE_PDF / 1024 / 1024 }));
 
 const base64ToBuffer = (b64: string) => Uint8Array.from(atob(b64), (c) => c.charCodeAt(0)).buffer;
 
@@ -274,19 +311,28 @@ export async function extractGoogleFile(tabId: number, url: string, ref: GoogleF
     return { kind: 'markdown', title: r.title || 'Google Slides', origin: url, content: intro + r.text };
   }
   if (ref.type === 'drive') {
-    const r = await inTab(tabId, () =>
-      browser.scripting.executeScript({
-        target: { tabId },
-        func: driveInPage,
-        args: [ref.id!, ref.authuser ?? null, MAX_DRIVE_PDF],
-      }),
-    );
-    if (r.notPdf) throw new Error(t('errors:gdocs.drivePdfOnly'));
-    if (r.tooBig) throw new Error(t('errors:gdocs.driveTooBig', { size: MAX_DRIVE_PDF / 1024 / 1024 }));
-    if (r.text === undefined) throw exportError(r.status);
-    const content = await extractPdf(base64ToBuffer(r.text));
+    const download = driveDownloadUrl(ref.id!, ref.authuser);
+    let pdf: ArrayBuffer;
+    let title: string | undefined;
+    if (await browser.permissions.contains({ origins: DRIVE_DOWNLOAD_ORIGINS })) {
+      pdf = await driveFromExtension(download);
+      const tab = await browser.tabs.get(tabId).catch(() => null);
+      title = tab?.title?.replace(/\s+-\s+Google Drive\s*$/i, '').trim();
+    } else {
+      // Without the permission only a file shared with anyone with the link can be read.
+      const r = await inTab(tabId, () =>
+        browser.scripting.executeScript({ target: { tabId }, func: driveInPage, args: [download, MAX_DRIVE_PDF] }),
+      );
+      if (r.notPdf) throw new Error(t('errors:gdocs.drivePdfOnly'));
+      if (r.tooBig) throw driveTooBig();
+      // The Drive tab itself loaded, so a failed download is a private file, not the network.
+      if (r.text === undefined) throw new Error(t('errors:gdocs.driveAccess'));
+      pdf = base64ToBuffer(r.text);
+      title = r.title;
+    }
+    const content = await extractPdf(pdf);
     if (!content.replace(/--- Page \d+ ---/g, '').trim()) throw new Error(t('errors:gdocs.scannedPdf'));
-    return { kind: 'pdf', title: r.title || 'Google Drive', origin: url, content };
+    return { kind: 'pdf', title: title || 'Google Drive', origin: url, content };
   }
   // Markdown keeps headings, lists and tables; plain text is the fallback.
   const formats = ref.type === 'document' ? ['md', 'txt'] : ['csv'];
