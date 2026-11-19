@@ -38,16 +38,18 @@ TÓM TẮT ĐƯỢC GÌ
 • Tài liệu và bảng tính mở từ máy
 • Báo cáo dài và sách: đọc theo từng phần, không bỏ sót phần sau
 
-BỐN CÁCH ĐỌC
+SÁU CÁCH ĐỌC
+• Tự động (mặc định): tự chọn cách đọc hợp với trang
 • Tóm tắt: nắm nhanh ý chính
 • Giải thích: hiểu cách nó hoạt động, có ví dụ đời thường, hiểu lầm hay gặp và thuật ngữ
 • Phản biện: đối chiếu từng nhận định với bằng chứng trong bài, chỉ ra chỗ yếu và điều cần kiểm chứng
 • Hành động: danh sách việc cần làm, hạn chót, yêu cầu và rủi ro
+• Hướng dẫn: làm theo từng bước, có đủ lệnh và thông số, cảnh báo trước bước dễ hỏng, cách kiểm tra đã xong
 Chọn cách đọc và độ dài (ngắn, vừa, chi tiết, hoặc đầy đủ như một bản báo cáo đi qua từng chủ đề) trước khi phân tích, hoặc đổi ngay trên kết quả.
 
 BỐ CỤC THEO NỘI DUNG
 • Số liệu thành biểu đồ, chọn theo dạng dữ liệu
-• Mỗi con số dẫn về đúng đoạn nó được lấy ra; số nào bài gốc không ghi nguyên văn thì bị đánh dấu Chưa xác minh
+• Mỗi con số dẫn về đúng đoạn nó được lấy ra; số nào bài gốc không ghi nguyên văn thì bị đánh dấu Chưa xác minh, kèm lý do
 • Bài đánh giá có kết luận kèm ưu và nhược điểm
 • Việc cần làm thành danh sách có thể đánh dấu
 • Quy trình và quyết định thành sơ đồ
@@ -60,9 +62,11 @@ BỐ CỤC THEO NỘI DUNG
 CÔNG CỤ
 • Tinh chỉnh một chạm: ngắn hơn, chi tiết hơn, việc cần làm, dòng thời gian, đơn giản hơn
 • Đổi độ dài hoặc ngôn ngữ của từng bản tóm tắt, hoặc xem dạng văn bản thuần
-• Tự tạo cách đọc của riêng bạn, bên cạnh Tóm tắt, Giải thích, Phản biện và Hành động
+• Tự tạo cách đọc của riêng bạn, bên cạnh các cách có sẵn
 • Sao chép hoặc tải về dạng HTML hay Markdown, nghe đọc, in hoặc lưu PDF
-• Bấm vào trích dẫn hoặc con số để nhảy tới đúng đoạn trong trang gốc
+• Chia sẻ dạng ảnh: TL;DR và các số chính trên một tấm thẻ để đăng mạng xã hội
+• Bấm vào trích dẫn hoặc con số để nhảy tới đúng đoạn trong trang gốc, hoặc trong văn bản nguồn với PDF và tệp
+• Tóm tắt lại một trang và xem có gì thay đổi từ lần đọc trước
 • Tìm trong mọi bản tóm tắt đã đọc (gõ không dấu vẫn tìm được), hoặc hỏi AI dựa trên những gì bạn đã đọc
 
 AI CỦA BẠN, KHÓA CỦA BẠN
