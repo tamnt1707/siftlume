@@ -233,5 +233,10 @@
     "copyFailed": "Das Bild konnte nicht kopiert werden. Lade es stattdessen herunter.",
     "download": "PNG herunterladen",
     "share": "Teilen…"
+  },
+  "report": {
+    "question": "Passt das Layout nicht zu dieser Seite?",
+    "action": "Sag es uns",
+    "title": "Öffnet ein GitHub-Issue mit Quelltyp, Analyse, Modell und verwendeten Blöcken. Adresse und Inhalt der Seite werden nicht übernommen."
   }
 }

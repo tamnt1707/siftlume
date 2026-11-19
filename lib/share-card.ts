@@ -1,4 +1,4 @@
-import { parseProgram } from './markdown';
+import { parseProgram, programNodes } from './markdown';
 
 /**
  * A summary as an image to post: the title, the TL;DR and up to three key figures (or takeaways
@@ -23,20 +23,7 @@ export interface ShareContent {
   points: string[];
 }
 
-type Node = { type?: string; typeName?: string; props?: Record<string, unknown> };
-
-const isNode = (v: unknown): v is Node => Boolean(v && typeof v === 'object' && (v as Node).type === 'element');
 const str = (v: unknown) => (v === null || v === undefined ? '' : String(v).trim());
-
-/** Every component in the tree, depth first, in reading order. */
-function* walk(v: unknown): Generator<Node> {
-  if (Array.isArray(v)) {
-    for (const x of v) yield* walk(x);
-  } else if (isNode(v)) {
-    yield v;
-    for (const p of Object.values(v.props ?? {})) yield* walk(p);
-  }
-}
 
 const domainOf = (origin?: string) => {
   try {
@@ -53,7 +40,7 @@ export function shareContent(program: string, source?: { title?: string; origin?
   let hero: Record<string, unknown> | undefined;
   const figures: ShareFigure[] = [];
   const points: string[] = [];
-  for (const node of walk(parseProgram(program))) {
+  for (const node of programNodes(parseProgram(program))) {
     const p = node.props ?? {};
     if (node.typeName === 'SummaryHero' && !hero) hero = p;
     else if (node.typeName === 'KeyNumber' && figures.length < MAX_FIGURES && str(p.value)) {

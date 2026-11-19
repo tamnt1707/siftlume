@@ -3240,3 +3240,10 @@ button.ui-menu__item:focus-visible {
   align-items: center;
   gap: 6px;
 }
+
+/* "Layout not right?" under a result. */
+.report-layout {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 12.5px;
+}

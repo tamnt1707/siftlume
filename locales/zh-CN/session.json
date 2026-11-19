@@ -223,5 +223,10 @@
     "copyFailed": "无法复制图片，请改为下载。",
     "download": "下载 PNG",
     "share": "分享…"
+  },
+  "report": {
+    "question": "这个页面的布局不合适？",
+    "action": "告诉我们",
+    "title": "打开一个 GitHub issue，已填好来源类型、分析方式、模型和使用的模块。不包含页面地址和内容。"
   }
 }
