@@ -3247,3 +3247,91 @@ button.ui-menu__item:focus-visible {
   color: var(--ink-2);
   font-size: 12.5px;
 }
+
+/* "You read this on …": what changed in the page since an earlier summary. */
+.whats-new__line {
+  margin: 6px 0 0;
+  color: var(--ink-2);
+  font-size: 13px;
+}
+
+.whats-new__panel {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  font-size: 14px;
+}
+
+.whats-new__panel header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.whats-new__panel header strong {
+  flex: 1;
+  font-size: 13.5px;
+}
+
+.whats-new__panel h4 {
+  margin: 12px 0 6px;
+  color: var(--ink-2);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.whats-new__count {
+  margin-left: 2px;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+.whats-new__list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-reading);
+  line-height: 1.5;
+}
+
+.whats-new__list li {
+  padding-left: 10px;
+  border-left: 3px solid var(--line-strong);
+}
+
+.whats-new__list--added li {
+  border-left-color: var(--up);
+}
+
+.whats-new__list--removed li {
+  border-left-color: var(--down);
+  color: var(--ink-2);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--down) 60%, transparent);
+}
+
+.whats-new__list ins {
+  background: color-mix(in srgb, var(--up) 22%, transparent);
+  text-decoration: none;
+}
+
+.whats-new__list del {
+  color: var(--ink-2);
+  background: color-mix(in srgb, var(--down) 18%, transparent);
+  text-decoration-color: var(--down);
+}
+
+.whats-new__list .whats-new__more {
+  border-left-color: transparent;
+  color: var(--ink-3);
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  text-decoration: none;
+}

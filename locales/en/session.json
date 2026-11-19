@@ -245,5 +245,19 @@
     "question": "Layout not right for this page?",
     "action": "Tell us",
     "title": "Opens a GitHub issue with the source type, analysis, model and blocks filled in. The page's address and content are not included."
+  },
+  "changes": {
+    "seen": "You summarized this page on {{date}}.",
+    "show": "What changed",
+    "hide": "Hide changes",
+    "title": "Changes since {{date}}",
+    "comparing": "Comparing…",
+    "none": "The text has not changed since then.",
+    "gone": "That earlier summary is no longer in your history.",
+    "edited": "Edited",
+    "added": "New",
+    "removed": "Removed",
+    "more": "+{{n}} more",
+    "partial": "Only the part of the page each summary read is compared."
   }
 }

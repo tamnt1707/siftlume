@@ -255,5 +255,19 @@
     "question": "La mise en page ne convient pas à cette page ?",
     "action": "Signalez-le",
     "title": "Ouvre un ticket GitHub avec le type de source, l’analyse, le modèle et les blocs déjà remplis. L’adresse et le contenu de la page ne sont pas inclus."
+  },
+  "changes": {
+    "seen": "Vous avez résumé cette page le {{date}}.",
+    "show": "Ce qui a changé",
+    "hide": "Masquer les changements",
+    "title": "Changements depuis le {{date}}",
+    "comparing": "Comparaison…",
+    "none": "Le texte n’a pas changé depuis.",
+    "gone": "Ce résumé précédent n’est plus dans votre historique.",
+    "edited": "Modifié",
+    "added": "Nouveau",
+    "removed": "Supprimé",
+    "more": "+{{n}} de plus",
+    "partial": "Seule la partie de la page lue par chaque résumé est comparée."
   }
 }

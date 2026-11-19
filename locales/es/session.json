@@ -255,5 +255,19 @@
     "question": "¿El diseño no encaja con esta página?",
     "action": "Avísanos",
     "title": "Abre un issue en GitHub con el tipo de fuente, el análisis, el modelo y los bloques ya rellenados. No incluye la dirección ni el contenido de la página."
+  },
+  "changes": {
+    "seen": "Resumiste esta página el {{date}}.",
+    "show": "Qué cambió",
+    "hide": "Ocultar cambios",
+    "title": "Cambios desde el {{date}}",
+    "comparing": "Comparando…",
+    "none": "El texto no ha cambiado desde entonces.",
+    "gone": "Ese resumen anterior ya no está en tu historial.",
+    "edited": "Editado",
+    "added": "Nuevo",
+    "removed": "Eliminado",
+    "more": "+{{n}} más",
+    "partial": "Solo se compara la parte de la página que leyó cada resumen."
   }
 }

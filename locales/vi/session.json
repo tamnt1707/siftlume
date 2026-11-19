@@ -235,5 +235,19 @@
     "question": "Bố cục chưa hợp với trang này?",
     "action": "Báo cho chúng tôi",
     "title": "Mở một issue trên GitHub, điền sẵn loại nguồn, kiểu phân tích, model và các khối đã dùng. Không gửi địa chỉ hay nội dung trang."
+  },
+  "changes": {
+    "seen": "Bạn đã tóm tắt trang này ngày {{date}}.",
+    "show": "Có gì thay đổi",
+    "hide": "Ẩn thay đổi",
+    "title": "Thay đổi từ {{date}}",
+    "comparing": "Đang so sánh…",
+    "none": "Nội dung chưa thay đổi từ lần đó.",
+    "gone": "Bản tóm tắt lần trước không còn trong lịch sử.",
+    "edited": "Đã sửa",
+    "added": "Mới",
+    "removed": "Đã bỏ",
+    "more": "+{{n}} mục nữa",
+    "partial": "Chỉ so sánh phần trang mà mỗi lần tóm tắt đã đọc."
   }
 }

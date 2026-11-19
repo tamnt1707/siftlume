@@ -245,5 +245,19 @@
     "question": "Passt das Layout nicht zu dieser Seite?",
     "action": "Sag es uns",
     "title": "Öffnet ein GitHub-Issue mit Quelltyp, Analyse, Modell und verwendeten Blöcken. Adresse und Inhalt der Seite werden nicht übernommen."
+  },
+  "changes": {
+    "seen": "Du hast diese Seite am {{date}} zusammengefasst.",
+    "show": "Was hat sich geändert",
+    "hide": "Änderungen ausblenden",
+    "title": "Änderungen seit {{date}}",
+    "comparing": "Wird verglichen…",
+    "none": "Der Text hat sich seitdem nicht geändert.",
+    "gone": "Diese frühere Zusammenfassung ist nicht mehr im Verlauf.",
+    "edited": "Geändert",
+    "added": "Neu",
+    "removed": "Entfernt",
+    "more": "+{{n}} weitere",
+    "partial": "Verglichen wird nur der Teil der Seite, den jede Zusammenfassung gelesen hat."
   }
 }
