@@ -36,7 +36,12 @@
     "errors_other": "此视图运行时出现 {{count}} 个错误",
     "showInPage": "在页面中显示",
     "unverified": "未核实",
-    "unverifiedHint": "来源中没有逐字写出这个数字的段落。请先核对再使用。",
+    "unverifiedWhy": {
+      "noQuote": "这个数字没有附带来源段落。它可能是统计或计算得出的，而不是来源直接写明的。",
+      "short": "引用太短，无法核对：“{{quote}}”",
+      "notFound": "来源中没有逐字相同的这段话：“{{quote}}”",
+      "noFigure": "这段话在来源中，但不包含这个数字：“{{quote}}”"
+    },
     "chartSources_other": "这 {{count}} 个数字的出处",
     "unverifiedCount_other": "{{count}} 个未核实",
     "copy": "复制",

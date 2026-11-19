@@ -20,23 +20,56 @@ export const useEvidence = () => useContext(EvidenceContext);
 
 /** Fewer words than this matches almost anywhere, so it proves nothing. */
 const MIN_WORDS = 3;
+/** Chinese and Japanese have no spaces between words: a passage of this many characters instead. */
+const MIN_CJK = 6;
+const CJK_CHAR = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/gu;
+
+/**
+ * A space next to a Chinese or Japanese character: PDFs put them between characters, and writers
+ * differ on spaces around Latin words and digits in such text ("古い cron を 7 件").
+ */
+const CJK = '\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}ー々、。「」';
+const CJK_GAP = new RegExp(`(?<=[${CJK}]) | (?=[${CJK}])`, 'gu');
 
 /**
  * Text as a reader sees it: no Markdown link targets, emphasis or table pipes, no transcript
- * timestamps, straight quotes, one space between words, lower case.
+ * timestamps, straight quotes, one space between words, lower case. Text pulled out of PDFs and
+ * files is evened out too: full-width digits and letters (１９：００), ligatures (ﬁ), soft hyphens
+ * and zero-width characters, and spaces between Chinese or Japanese characters.
  */
 export function normalizeText(s: string) {
   return s
+    .normalize('NFKC')
+    .replace(/[\u00ad\u200b-\u200d\u2060\ufeff]/g, '')
     .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1')
     .replace(/\[\d{1,2}:\d{2}(?::\d{2})?\]/g, ' ')
     .replace(/[*_`#>|~]+/g, ' ')
     .replace(/[‘’]/g, "'")
     .replace(/[“”]/g, '"')
     .replace(/[–—]/g, '-')
-    .replace(/ /g, ' ')
     .replace(/\s+/g, ' ')
+    .replace(CJK_GAP, '')
     .trim()
     .toLowerCase();
+}
+
+/**
+ * The source as normalized text, as is and with words a PDF broke across lines put back together:
+ * without the hyphen ("back-\nground" → "background") and with it ("state-\nof-the-art"); the
+ * model may quote any of them. Kept for the last source, as
+ * every figure of a summary is checked against the same one.
+ */
+let normalized: { content: string; variants: string[] } | null = null;
+function sourceVariants(content: string) {
+  if (normalized?.content !== content) {
+    const broken = /(\p{Ll})-[ \t]*\r?\n[ \t]*(\p{Ll})/gu;
+    const variants = [normalizeText(content)];
+    if (broken.test(content)) {
+      variants.push(normalizeText(content.replace(broken, '$1$2')), normalizeText(content.replace(broken, '$1-$2')));
+    }
+    normalized = { content, variants };
+  }
+  return normalized.variants;
 }
 
 /**
@@ -93,18 +126,37 @@ const sameFigure = (a: Figure, b: Figure) => {
  */
 function firstFigure(value: string | number | null | undefined) {
   if (value === undefined || value === null) return null;
-  const figure = figuresIn(String(value)).find((f) => f.digits);
+  const figure = figuresIn(String(value).normalize('NFKC')).find((f) => f.digits);
   return figure && typeof value === 'number' ? { ...figure, scaled: true } : (figure ?? null);
+}
+
+/**
+ * Why a figure is or is not backed by the source:
+ * - ok: the passage is in the source word for word and contains the figure;
+ * - noQuote: no passage was given (often a figure the model counted or worked out);
+ * - short: the passage is too short to prove anything;
+ * - notFound: the passage is not in the source word for word;
+ * - noFigure: the passage is in the source but does not contain the figure.
+ */
+export type EvidenceStatus = 'ok' | 'noQuote' | 'short' | 'notFound' | 'noFigure';
+
+export function evidenceStatus(
+  content: string,
+  quote: string | undefined | null,
+  value?: string | number | null,
+): EvidenceStatus {
+  if (!quote?.trim()) return 'noQuote';
+  const q = normalizeText(quote);
+  if (q.split(' ').length < MIN_WORDS && (q.match(CJK_CHAR)?.length ?? 0) < MIN_CJK) return 'short';
+  if (!sourceVariants(content).some((c) => c.includes(q))) return 'notFound';
+  const figure = firstFigure(value);
+  if (!figure) return 'ok';
+  return figuresIn(q).some((f) => sameFigure(figure, f)) ? 'ok' : 'noFigure';
 }
 
 /** True when `quote` is in the source and, for a figure with digits, the passage contains them. */
 export function checkEvidence(content: string, quote: string | undefined | null, value?: string | number | null) {
-  if (!quote) return false;
-  const q = normalizeText(quote);
-  if (q.split(' ').length < MIN_WORDS || !normalizeText(content).includes(q)) return false;
-  const figure = firstFigure(value);
-  if (!figure) return true;
-  return figuresIn(q).some((f) => sameFigure(figure, f));
+  return evidenceStatus(content, quote, value) === 'ok';
 }
 
 /** Where the figure sits in its passage, to mark it there: [start, end) in `quote`, or null. */

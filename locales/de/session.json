@@ -38,7 +38,12 @@
     "errors_other": "{{count}} Fehler beim Anzeigen dieser Ansicht",
     "showInPage": "Auf der Seite zeigen",
     "unverified": "Ungeprüft",
-    "unverifiedHint": "Keine Stelle in der Quelle nennt diese Zahl wörtlich. Prüfen Sie sie, bevor Sie sich darauf verlassen.",
+    "unverifiedWhy": {
+      "noQuote": "Zu dieser Zahl gibt es keine Stelle aus der Quelle. Sie wurde vielleicht gezählt oder berechnet, statt in der Quelle zu stehen.",
+      "short": "Die Stelle ist zu kurz zum Prüfen: „{{quote}}“",
+      "notFound": "Diese Stelle steht nicht wörtlich in der Quelle: „{{quote}}“",
+      "noFigure": "Die Stelle steht in der Quelle, enthält diese Zahl aber nicht: „{{quote}}“"
+    },
     "chartSources_one": "Woher diese Zahl stammt",
     "chartSources_other": "Woher diese {{count}} Zahlen stammen",
     "unverifiedCount_one": "{{count}} ungeprüft",
