@@ -251,7 +251,7 @@ export const DEFAULT_SETTINGS: Settings = {
   providers: {},
   uiLanguage: 'auto',
   language: 'auto',
-  mode: 'summary',
+  mode: 'auto',
   customModes: [],
   length: 'medium',
   styles: [],
@@ -310,7 +310,7 @@ export function normalizeSettings(raw: Partial<Settings> | null | undefined): Se
   if (!HAS_SIDE_PANEL) s.display = 'tab';
   if (!(s.provider in PROVIDERS)) s.provider = DEFAULT_SETTINGS.provider;
   // The analysis mode is chosen per run (start screen, result toolbar) and stored on the session;
-  // every new analysis starts as a summary, whatever an older version saved here.
+  // every new analysis starts on auto, whatever an older version saved here.
   s.mode = DEFAULT_SETTINGS.mode;
   if (s.theme !== 'light' && s.theme !== 'dark' && s.theme !== 'system') s.theme = DEFAULT_SETTINGS.theme;
   s.appearance = { ...DEFAULT_APPEARANCE, ...s.appearance };

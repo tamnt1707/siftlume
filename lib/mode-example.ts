@@ -1,7 +1,8 @@
 /**
  * One prompt example per non-summary analysis mode, each with its own shape, validated by
  * `pnpm check:examples`: explain (Analogy, Diagram, Misconceptions, Glossary), critique
- * (ClaimCheck, ArgumentMap, RiskList, Checklist) and action (Checklist, Timeline, FactSheet, RiskList).
+ * (ClaimCheck, ArgumentMap, RiskList, Checklist), action (Checklist, Timeline, FactSheet, RiskList)
+ * and guide (FactSheet, Checklist, Steps by phase, a warning Callout, Findings).
  */
 export const EXPLAIN_EXAMPLE = `root = Card([hero, analogy, why, how, myths, glossary, followUps])
 hero = SummaryHero("How vaccines train the immune system", "A vaccine shows your immune system a harmless copy of a germ so it reacts fast later.")
@@ -49,3 +50,24 @@ f2 = Fact("Free filing", "Income under $84,000")
 risks = RiskList([k1], "If you miss it")
 k1 = Risk("high", "Late penalty of 5% a month", "Up to 25% of the tax owed")
 followUps = FollowUpBlock([FollowUpItem("How do I request an extension?"), FollowUpItem("Which deductions can I claim?")])`;
+
+export const GUIDE_EXAMPLE = `root = Card([hero, needs, before, phase1, steps1, warn, phase2, steps2, verify, problems, followUps])
+hero = SummaryHero("Move the nightly job to the new scheduler", "Replace the old cron entries with one scheduled task; about 30 minutes with admin access.")
+needs = FactSheet([f1, f2, f3], "Before you start")
+f1 = Fact("Time", "About 30 minutes")
+f2 = Fact("Access", "Admin on the job server")
+f3 = Fact("Version", "Scheduler 2.4 or later")
+before = Checklist(["Back up the crontab: crontab -l > cron-backup.txt", "Tell the team the jobs pause for 10 minutes"], "Check first")
+phase1 = TextContent("1. Set up the new task", "small-heavy")
+steps1 = Steps([s1, s2])
+s1 = StepsItem("Install the scheduler", "Run \`sudo apt install scheduler\`, then \`scheduler --version\` should print 2.4 or later.")
+s2 = StepsItem("Create the task", "Copy \`nightly.yaml\` to \`/etc/scheduler/\` and set \`time: 19:00\` and \`timezone: Asia/Tokyo\`.")
+warn = Callout("warning", "Do not delete the old entries yet", "Both would run tonight: remove the cron lines only after the first run succeeds.")
+phase2 = TextContent("2. Switch over", "small-heavy")
+steps2 = Steps([s3, s4])
+s3 = StepsItem("Start the task", "Run \`scheduler enable nightly\`; the status shows the next run at 19:00 JST.")
+s4 = StepsItem("Remove the cron entries", "After the first successful run, delete the 7 nightly lines with \`crontab -e\` and restart the 8 workers.")
+verify = Checklist(["scheduler status nightly shows the last run as OK", "No new lines in the cron log after 19:00"], "Check it worked")
+problems = Findings([p1])
+p1 = Finding("major", "Task did not start", "/etc/scheduler/nightly.yaml", null, "The time zone is missing, so it runs at 19:00 UTC.", "Add timezone: Asia/Tokyo and run scheduler reload.")
+followUps = FollowUpBlock([FollowUpItem("How do I roll back to cron?"), FollowUpItem("Can the task retry on failure?")])`;

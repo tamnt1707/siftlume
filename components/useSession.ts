@@ -9,7 +9,7 @@ import { extractFile, truncate, type ExtractedSource } from '@/lib/extractors';
 import { keepChars } from '@/lib/longread';
 import { newId, readStored, saveSession, writeStored, type Session, type SessionOptions } from '@/lib/history';
 import { configProblem, type Settings } from '@/lib/settings';
-import type { ModeId } from '@/lib/modes';
+import { AUTO, type ModeId } from '@/lib/modes';
 
 /** Keeps the notes taken on a long source, so later turns do not read it again. */
 const withNotes = <S extends Session['source']>(source: S, digest?: string): S =>
@@ -100,7 +100,7 @@ export function useSession(settings: Settings) {
 
   /** Creates a session from an extracted source and summarizes it right away. */
   const start = useCallback(
-    async (src: ExtractedSource & { tabId?: number; truncated?: boolean }, mode: ModeId = 'summary') => {
+    async (src: ExtractedSource & { tabId?: number; truncated?: boolean }, mode: ModeId = AUTO) => {
       const missing = checkSettings();
       if (missing) {
         finish();

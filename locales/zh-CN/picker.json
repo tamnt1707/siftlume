@@ -11,19 +11,22 @@
     "summary": "摘要此页",
     "explain": "讲解此页",
     "critique": "评析此页",
-    "action": "提取待办事项"
+    "action": "提取待办事项",
+    "guide": "生成分步指南"
   },
   "runText": {
     "summary": "摘要文本",
     "explain": "讲解文本",
     "critique": "评析文本",
-    "action": "提取待办事项"
+    "action": "提取待办事项",
+    "guide": "生成分步指南"
   },
   "runVideo": {
     "summary": "总结这个视频",
     "explain": "讲解这个视频",
     "critique": "审视这个视频",
-    "action": "提取待办事项"
+    "action": "提取待办事项",
+    "guide": "生成分步指南"
   },
   "video": {
     "captions": "字幕：{{label}}",
@@ -59,30 +62,35 @@
     "summary": "总结此拉取请求",
     "explain": "解释此拉取请求",
     "critique": "审查此拉取请求",
-    "action": "合并前检查清单"
+    "action": "合并前检查清单",
+    "guide": "生成分步指南"
   },
   "runDoc": {
     "summary": "总结此文档",
     "explain": "解释此文档",
     "critique": "批判性分析此文档",
-    "action": "提取待办事项"
+    "action": "提取待办事项",
+    "guide": "生成分步指南"
   },
   "runSheet": {
     "summary": "总结此电子表格",
     "explain": "解释此电子表格",
     "critique": "检查此电子表格",
-    "action": "提取待办事项"
+    "action": "提取待办事项",
+    "guide": "生成分步指南"
   },
   "runSlides": {
     "summary": "总结此演示文稿",
     "explain": "解释此演示文稿",
     "critique": "批判性分析此演示文稿",
-    "action": "提取待办事项"
+    "action": "提取待办事项",
+    "guide": "生成分步指南"
   },
   "runDrive": {
     "summary": "总结此 PDF",
     "explain": "解释此 PDF",
     "critique": "批判性分析此 PDF",
-    "action": "提取待办事项"
+    "action": "提取待办事项",
+    "guide": "生成分步指南"
   }
 }

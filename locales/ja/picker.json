@@ -11,19 +11,22 @@
     "summary": "このページを要約",
     "explain": "このページを解説",
     "critique": "このページを批評",
-    "action": "やることを抽出"
+    "action": "やることを抽出",
+    "guide": "ステップごとのガイドを作成"
   },
   "runText": {
     "summary": "テキストを要約",
     "explain": "テキストを解説",
     "critique": "テキストを批評",
-    "action": "やることを抽出"
+    "action": "やることを抽出",
+    "guide": "ステップごとのガイドを作成"
   },
   "runVideo": {
     "summary": "この動画を要約",
     "explain": "この動画を解説",
     "critique": "この動画を批判的に検証",
-    "action": "やることを抽出"
+    "action": "やることを抽出",
+    "guide": "ステップごとのガイドを作成"
   },
   "video": {
     "captions": "字幕: {{label}}",
@@ -59,30 +62,35 @@
     "summary": "このプルリクエストを要約",
     "explain": "このプルリクエストを解説",
     "critique": "このプルリクエストをレビュー",
-    "action": "マージ前のチェックリスト"
+    "action": "マージ前のチェックリスト",
+    "guide": "ステップごとのガイドを作成"
   },
   "runDoc": {
     "summary": "このドキュメントを要約",
     "explain": "このドキュメントを解説",
     "critique": "このドキュメントを批判的に検討",
-    "action": "やることを抽出"
+    "action": "やることを抽出",
+    "guide": "ステップごとのガイドを作成"
   },
   "runSheet": {
     "summary": "このスプレッドシートを要約",
     "explain": "このスプレッドシートを解説",
     "critique": "このスプレッドシートを点検",
-    "action": "やることを抽出"
+    "action": "やることを抽出",
+    "guide": "ステップごとのガイドを作成"
   },
   "runSlides": {
     "summary": "このプレゼンテーションを要約",
     "explain": "このプレゼンテーションを解説",
     "critique": "このプレゼンテーションを批判的に検討",
-    "action": "やることを抽出"
+    "action": "やることを抽出",
+    "guide": "ステップごとのガイドを作成"
   },
   "runDrive": {
     "summary": "この PDF を要約",
     "explain": "この PDF を解説",
     "critique": "この PDF を批判的に検討",
-    "action": "やることを抽出"
+    "action": "やることを抽出",
+    "guide": "ステップごとのガイドを作成"
   }
 }

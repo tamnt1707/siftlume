@@ -11,19 +11,22 @@
     "summary": "Summarize this page",
     "explain": "Explain this page",
     "critique": "Critique this page",
-    "action": "Get action items"
+    "action": "Get action items",
+    "guide": "Make a step-by-step guide"
   },
   "runText": {
     "summary": "Summarize text",
     "explain": "Explain text",
     "critique": "Critique text",
-    "action": "Get action items"
+    "action": "Get action items",
+    "guide": "Make a step-by-step guide"
   },
   "runVideo": {
     "summary": "Summarize this video",
     "explain": "Explain this video",
     "critique": "Critique this video",
-    "action": "Get action items"
+    "action": "Get action items",
+    "guide": "Make a step-by-step guide"
   },
   "video": {
     "captions": "Captions: {{label}}",
@@ -59,30 +62,35 @@
     "summary": "Summarize this pull request",
     "explain": "Explain this pull request",
     "critique": "Review this pull request",
-    "action": "Get the merge checklist"
+    "action": "Get the merge checklist",
+    "guide": "Make a step-by-step guide"
   },
   "runDoc": {
     "summary": "Summarize this document",
     "explain": "Explain this document",
     "critique": "Critique this document",
-    "action": "Get action items"
+    "action": "Get action items",
+    "guide": "Make a step-by-step guide"
   },
   "runSheet": {
     "summary": "Summarize this spreadsheet",
     "explain": "Explain this spreadsheet",
     "critique": "Check this spreadsheet",
-    "action": "Get action items"
+    "action": "Get action items",
+    "guide": "Make a step-by-step guide"
   },
   "runSlides": {
     "summary": "Summarize this presentation",
     "explain": "Explain this presentation",
     "critique": "Critique this presentation",
-    "action": "Get action items"
+    "action": "Get action items",
+    "guide": "Make a step-by-step guide"
   },
   "runDrive": {
     "summary": "Summarize this PDF",
     "explain": "Explain this PDF",
     "critique": "Critique this PDF",
-    "action": "Get action items"
+    "action": "Get action items",
+    "guide": "Make a step-by-step guide"
   }
 }

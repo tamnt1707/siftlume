@@ -11,19 +11,22 @@
     "summary": "摘要此頁",
     "explain": "講解此頁",
     "critique": "評析此頁",
-    "action": "擷取待辦事項"
+    "action": "擷取待辦事項",
+    "guide": "產生逐步指南"
   },
   "runText": {
     "summary": "摘要文字",
     "explain": "講解文字",
     "critique": "評析文字",
-    "action": "擷取待辦事項"
+    "action": "擷取待辦事項",
+    "guide": "產生逐步指南"
   },
   "runVideo": {
     "summary": "摘要這部影片",
     "explain": "講解這部影片",
     "critique": "檢視這部影片",
-    "action": "擷取待辦事項"
+    "action": "擷取待辦事項",
+    "guide": "產生逐步指南"
   },
   "video": {
     "captions": "字幕：{{label}}",
@@ -59,30 +62,35 @@
     "summary": "摘要此拉取請求",
     "explain": "解說此拉取請求",
     "critique": "審查此拉取請求",
-    "action": "合併前檢查清單"
+    "action": "合併前檢查清單",
+    "guide": "產生逐步指南"
   },
   "runDoc": {
     "summary": "摘要此文件",
     "explain": "解說此文件",
     "critique": "批判性分析此文件",
-    "action": "擷取待辦事項"
+    "action": "擷取待辦事項",
+    "guide": "產生逐步指南"
   },
   "runSheet": {
     "summary": "摘要此試算表",
     "explain": "解說此試算表",
     "critique": "檢查此試算表",
-    "action": "擷取待辦事項"
+    "action": "擷取待辦事項",
+    "guide": "產生逐步指南"
   },
   "runSlides": {
     "summary": "摘要此簡報",
     "explain": "解說此簡報",
     "critique": "批判性分析此簡報",
-    "action": "擷取待辦事項"
+    "action": "擷取待辦事項",
+    "guide": "產生逐步指南"
   },
   "runDrive": {
     "summary": "摘要此 PDF",
     "explain": "解說此 PDF",
     "critique": "批判性分析此 PDF",
-    "action": "擷取待辦事項"
+    "action": "擷取待辦事項",
+    "guide": "產生逐步指南"
   }
 }

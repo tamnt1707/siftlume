@@ -11,19 +11,22 @@
     "summary": "Tóm tắt trang này",
     "explain": "Giải thích trang này",
     "critique": "Phản biện trang này",
-    "action": "Lấy việc cần làm"
+    "action": "Lấy việc cần làm",
+    "guide": "Tạo hướng dẫn từng bước"
   },
   "runText": {
     "summary": "Tóm tắt văn bản",
     "explain": "Giải thích văn bản",
     "critique": "Phản biện văn bản",
-    "action": "Lấy việc cần làm"
+    "action": "Lấy việc cần làm",
+    "guide": "Tạo hướng dẫn từng bước"
   },
   "runVideo": {
     "summary": "Tóm tắt video này",
     "explain": "Giải thích video này",
     "critique": "Phản biện video này",
-    "action": "Lấy việc cần làm"
+    "action": "Lấy việc cần làm",
+    "guide": "Tạo hướng dẫn từng bước"
   },
   "video": {
     "captions": "Phụ đề: {{label}}",
@@ -59,30 +62,35 @@
     "summary": "Tóm tắt pull request này",
     "explain": "Giải thích pull request này",
     "critique": "Review pull request này",
-    "action": "Lấy checklist trước khi merge"
+    "action": "Lấy checklist trước khi merge",
+    "guide": "Tạo hướng dẫn từng bước"
   },
   "runDoc": {
     "summary": "Tóm tắt tài liệu này",
     "explain": "Giải thích tài liệu này",
     "critique": "Phản biện tài liệu này",
-    "action": "Lấy việc cần làm"
+    "action": "Lấy việc cần làm",
+    "guide": "Tạo hướng dẫn từng bước"
   },
   "runSheet": {
     "summary": "Tóm tắt bảng tính này",
     "explain": "Giải thích bảng tính này",
     "critique": "Kiểm tra bảng tính này",
-    "action": "Lấy việc cần làm"
+    "action": "Lấy việc cần làm",
+    "guide": "Tạo hướng dẫn từng bước"
   },
   "runSlides": {
     "summary": "Tóm tắt bài trình bày này",
     "explain": "Giải thích bài trình bày này",
     "critique": "Phản biện bài trình bày này",
-    "action": "Lấy việc cần làm"
+    "action": "Lấy việc cần làm",
+    "guide": "Tạo hướng dẫn từng bước"
   },
   "runDrive": {
     "summary": "Tóm tắt file PDF này",
     "explain": "Giải thích file PDF này",
     "critique": "Phản biện file PDF này",
-    "action": "Lấy việc cần làm"
+    "action": "Lấy việc cần làm",
+    "guide": "Tạo hướng dẫn từng bước"
   }
 }

@@ -11,19 +11,22 @@
     "summary": "Seite zusammenfassen",
     "explain": "Seite erklären",
     "critique": "Seite kritisch prüfen",
-    "action": "Aufgaben herausziehen"
+    "action": "Aufgaben herausziehen",
+    "guide": "Schritt-für-Schritt-Anleitung erstellen"
   },
   "runText": {
     "summary": "Text zusammenfassen",
     "explain": "Text erklären",
     "critique": "Text kritisch prüfen",
-    "action": "Aufgaben herausziehen"
+    "action": "Aufgaben herausziehen",
+    "guide": "Schritt-für-Schritt-Anleitung erstellen"
   },
   "runVideo": {
     "summary": "Dieses Video zusammenfassen",
     "explain": "Dieses Video erklären",
     "critique": "Dieses Video kritisch prüfen",
-    "action": "Aufgaben herausziehen"
+    "action": "Aufgaben herausziehen",
+    "guide": "Schritt-für-Schritt-Anleitung erstellen"
   },
   "video": {
     "captions": "Untertitel: {{label}}",
@@ -59,30 +62,35 @@
     "summary": "Diesen Pull Request zusammenfassen",
     "explain": "Diesen Pull Request erklären",
     "critique": "Diesen Pull Request reviewen",
-    "action": "Checkliste vor dem Merge"
+    "action": "Checkliste vor dem Merge",
+    "guide": "Schritt-für-Schritt-Anleitung erstellen"
   },
   "runDoc": {
     "summary": "Dieses Dokument zusammenfassen",
     "explain": "Dieses Dokument erklären",
     "critique": "Dieses Dokument kritisch prüfen",
-    "action": "Aufgaben herausziehen"
+    "action": "Aufgaben herausziehen",
+    "guide": "Schritt-für-Schritt-Anleitung erstellen"
   },
   "runSheet": {
     "summary": "Diese Tabelle zusammenfassen",
     "explain": "Diese Tabelle erklären",
     "critique": "Diese Tabelle prüfen",
-    "action": "Aufgaben herausziehen"
+    "action": "Aufgaben herausziehen",
+    "guide": "Schritt-für-Schritt-Anleitung erstellen"
   },
   "runSlides": {
     "summary": "Diese Präsentation zusammenfassen",
     "explain": "Diese Präsentation erklären",
     "critique": "Diese Präsentation kritisch prüfen",
-    "action": "Aufgaben herausziehen"
+    "action": "Aufgaben herausziehen",
+    "guide": "Schritt-für-Schritt-Anleitung erstellen"
   },
   "runDrive": {
     "summary": "Dieses PDF zusammenfassen",
     "explain": "Dieses PDF erklären",
     "critique": "Dieses PDF kritisch prüfen",
-    "action": "Aufgaben herausziehen"
+    "action": "Aufgaben herausziehen",
+    "guide": "Schritt-für-Schritt-Anleitung erstellen"
   }
 }

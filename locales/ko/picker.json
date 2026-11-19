@@ -11,19 +11,22 @@
     "summary": "이 페이지 요약",
     "explain": "이 페이지 설명",
     "critique": "이 페이지 비평",
-    "action": "할 일 뽑기"
+    "action": "할 일 뽑기",
+    "guide": "단계별 가이드 만들기"
   },
   "runText": {
     "summary": "텍스트 요약",
     "explain": "텍스트 설명",
     "critique": "텍스트 비평",
-    "action": "할 일 뽑기"
+    "action": "할 일 뽑기",
+    "guide": "단계별 가이드 만들기"
   },
   "runVideo": {
     "summary": "이 동영상 요약",
     "explain": "이 동영상 설명",
     "critique": "이 동영상 비판적 검토",
-    "action": "할 일 뽑기"
+    "action": "할 일 뽑기",
+    "guide": "단계별 가이드 만들기"
   },
   "video": {
     "captions": "자막: {{label}}",
@@ -59,30 +62,35 @@
     "summary": "이 풀 리퀘스트 요약",
     "explain": "이 풀 리퀘스트 설명",
     "critique": "이 풀 리퀘스트 리뷰",
-    "action": "머지 전 체크리스트"
+    "action": "머지 전 체크리스트",
+    "guide": "단계별 가이드 만들기"
   },
   "runDoc": {
     "summary": "이 문서 요약",
     "explain": "이 문서 설명",
     "critique": "이 문서 비판적 검토",
-    "action": "할 일 뽑기"
+    "action": "할 일 뽑기",
+    "guide": "단계별 가이드 만들기"
   },
   "runSheet": {
     "summary": "이 스프레드시트 요약",
     "explain": "이 스프레드시트 설명",
     "critique": "이 스프레드시트 점검",
-    "action": "할 일 뽑기"
+    "action": "할 일 뽑기",
+    "guide": "단계별 가이드 만들기"
   },
   "runSlides": {
     "summary": "이 프레젠테이션 요약",
     "explain": "이 프레젠테이션 설명",
     "critique": "이 프레젠테이션 비판적 검토",
-    "action": "할 일 뽑기"
+    "action": "할 일 뽑기",
+    "guide": "단계별 가이드 만들기"
   },
   "runDrive": {
     "summary": "이 PDF 요약",
     "explain": "이 PDF 설명",
     "critique": "이 PDF 비판적 검토",
-    "action": "할 일 뽑기"
+    "action": "할 일 뽑기",
+    "guide": "단계별 가이드 만들기"
   }
 }

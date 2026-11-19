@@ -68,6 +68,11 @@
   },
   "modeLabel": "분석 유형",
   "modes": {
+    "auto": {
+      "title": "자동",
+      "desc": "소스에 맞는 방식을 자동으로 선택",
+      "picked": "자동 · {{mode}}"
+    },
     "summary": {
       "title": "요약",
       "desc": "몇 초 만에 핵심: 주요 사실과 요점"
@@ -83,6 +88,10 @@
     "action": {
       "title": "실행",
       "desc": "할 일: 단계, 마감, 결정"
+    },
+    "guide": {
+      "title": "가이드",
+      "desc": "단계별로: 준비물, 단계, 확인 방법"
     }
   },
   "deepOf": "{{title}} · 깊이 읽기"

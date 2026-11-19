@@ -9,9 +9,9 @@ import { CHART_SUMMARY_EXAMPLE } from './chart-example';
 import { DIAGRAM_SUMMARY_EXAMPLE } from './diagram-example';
 import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from './review-example';
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from './domain-example';
-import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from './mode-example';
+import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE, GUIDE_EXAMPLE } from './mode-example';
 import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from './analysis-example';
-import { PR_REVIEW_EXAMPLE } from './component-example';
+import { PR_REVIEW_EXAMPLE, RECIPE_EXAMPLE } from './component-example';
 import { customModeRule, MODE_QA_RULES, MODE_RULES, resolveMode, type AnalysisMode } from './modes';
 import type { ExtractedSource, SourceKind } from './extractors';
 import type { StructuredType } from './structured';
@@ -58,6 +58,7 @@ const MODE_EXAMPLES: Record<AnalysisMode, string[]> = {
   explain: [EXPLAIN_EXAMPLE, CODE_TUTORIAL_EXAMPLE, DIAGRAM_SUMMARY_EXAMPLE, CHART_SUMMARY_EXAMPLE],
   critique: [CRITIQUE_EXAMPLE, POLICY_DEBATE_EXAMPLE, RESEARCH_PAPER_EXAMPLE, NEWS_ACTORS_EXAMPLE],
   action: [ACTION_EXAMPLE, DECISION_EXAMPLE, RELEASE_NOTES_EXAMPLE, PRODUCT_COMPARE_EXAMPLE],
+  guide: [GUIDE_EXAMPLE, CODE_TUTORIAL_EXAMPLE, RECIPE_EXAMPLE, ACTION_EXAMPLE],
 };
 
 /** Pull requests: a code review leads critique and action (see PR_MODE_RULES). */
@@ -173,6 +174,11 @@ const PR_MODE_RULES: Record<AnalysisMode, string[]> = {
     'SummaryHero tldr: the single thing blocking the merge, or that nothing does.',
     'Lead with ActionItems: open review threads, requested changes, failing checks, missing tests or docs, each with its owner as @login (the author, or the reviewer it waits for) and its status. Then the failing CI checks by name, then what to verify after merging.',
   ],
+  guide: [
+    'MODE: GUIDE for a pull request. Goal: the reader can try, test and roll out the change, step by step.',
+    'SummaryHero tldr: what the change lets the reader do once it is in, and what rolling it out takes.',
+    'Steps in order, from the description, the test plan and the diff: check out and build, configuration or environment variables to set, migrations or scripts to run, how to test it (the commands and what passes), how to deploy and roll back. A Callout("warning", ...) before a step that changes data. Never invent a command the pull request does not show; say when the test plan is missing.',
+  ],
 };
 
 /**
@@ -251,7 +257,7 @@ function cachedPrompt(key: string, build: () => string) {
  * mergeStatements). inlineMode: the model may add a short sentence outside the code fence.
  */
 export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) {
-  const { base: mode, custom } = resolveMode(settings.mode, settings.customModes);
+  const { base: mode, custom } = resolveMode(settings.mode, settings.customModes, source);
   const base = cachedPrompt(`summary:${mode}:${source.kind}:${!!source.csv}`, () =>
     library.prompt({
       ...basePromptOptions(),
@@ -283,8 +289,8 @@ export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) 
   return `${base}\n\n## Analysis task\n${rules.map((r) => `- ${r}`).join('\n')}`;
 }
 
-function qaModeRules(settings: Settings) {
-  const { base, custom } = resolveMode(settings.mode, settings.customModes);
+function qaModeRules(settings: Settings, source: ExtractedSource) {
+  const { base, custom } = resolveMode(settings.mode, settings.customModes, source);
   return [MODE_QA_RULES[base], ...(custom ? [customModeRule(custom)] : [])];
 }
 
@@ -307,7 +313,7 @@ export function buildQaPrompt(settings: Settings, source: ExtractedSource) {
     'Short factual answers: 1-3 plain sentences. Answers with structure (comparisons, steps, lists, numbers): a compact openui-lang Card in a fence, visual first with minimal text.',
     layoutRule(settings),
     'If the source does not contain the answer, say so plainly instead of guessing.',
-    ...qaModeRules(settings),
+    ...qaModeRules(settings, source),
     KIND_RULES[source.kind],
     ...(source.structured?.length ? [STRUCTURED_SHARED] : []),
     ...userRules(settings),

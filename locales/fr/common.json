@@ -70,6 +70,11 @@
   },
   "modeLabel": "Analyse",
   "modes": {
+    "auto": {
+      "title": "Auto",
+      "desc": "Choisit le type qui convient à la source",
+      "picked": "Auto · {{mode}}"
+    },
     "summary": {
       "title": "Résumé",
       "desc": "L’essentiel en quelques secondes : faits et points clés"
@@ -85,6 +90,10 @@
     "action": {
       "title": "Action",
       "desc": "Quoi faire : étapes, échéances, décisions"
+    },
+    "guide": {
+      "title": "Guide",
+      "desc": "Pas à pas : ce qu’il faut, les étapes, comment vérifier"
     }
   },
   "deepOf": "{{title}} · lecture approfondie"

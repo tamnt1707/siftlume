@@ -70,6 +70,11 @@
   },
   "modeLabel": "Análisis",
   "modes": {
+    "auto": {
+      "title": "Automático",
+      "desc": "Elige el tipo que mejor encaja con la fuente",
+      "picked": "Automático · {{mode}}"
+    },
     "summary": {
       "title": "Resumen",
       "desc": "Lo esencial en segundos: datos y puntos clave"
@@ -85,6 +90,10 @@
     "action": {
       "title": "Acción",
       "desc": "Qué hacer: pasos, plazos, decisiones"
+    },
+    "guide": {
+      "title": "Guía",
+      "desc": "Paso a paso: qué necesitas, los pasos, cómo comprobarlo"
     }
   },
   "deepOf": "{{title}} · lectura profunda"

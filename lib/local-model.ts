@@ -395,10 +395,12 @@ const MODE_HINTS = {
   critique:
     'takeaways judge the main claims and how well the source supports them; sections can hold "Strengths" and "Weaknesses".',
   action: 'steps are the things the reader must do, in order; takeaways are what to decide or remember.',
+  guide:
+    'steps are the instructions in order, one action each, with the exact commands, settings or values from the document; takeaways are what you need before you start and tips.',
 } as const;
 
-function summaryInstructions(settings: Settings, lang: string, instruction?: string) {
-  const { base, custom } = resolveMode(settings.mode, settings.customModes);
+function summaryInstructions(settings: Settings, source: ExtractedSource, lang: string, instruction?: string) {
+  const { base, custom } = resolveMode(settings.mode, settings.customModes, source);
   const c = COUNTS[settings.length];
   const full = settings.length === 'full';
   return [
@@ -451,7 +453,7 @@ export async function localSummary(args: {
   const foldable = settings.length !== 'full';
   let last = 0;
   const raw = await chat(e, {
-    system: `You summarize documents for a reader who wants the gist in seconds.\n${summaryInstructions(settings, lang, instruction)}`,
+    system: `You summarize documents for a reader who wants the gist in seconds.\n${summaryInstructions(settings, source, lang, instruction)}`,
     // The language again next to the document: small models follow the nearest instruction.
     user: `${fitted.notes ? 'Notes taken on' : 'Document'}: ${source.title}\n\n${fitted.text}\n\n(Write the JSON in ${lang}.)`,
     signal,

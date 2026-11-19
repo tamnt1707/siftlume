@@ -69,6 +69,11 @@
   },
   "modeLabel": "Analyse",
   "modes": {
+    "auto": {
+      "title": "Automatisch",
+      "desc": "Wählt die passende Art für die Quelle",
+      "picked": "Automatisch · {{mode}}"
+    },
     "summary": {
       "title": "Zusammenfassung",
       "desc": "Das Wichtigste in Sekunden: Fakten und Kernpunkte"
@@ -84,6 +89,10 @@
     "action": {
       "title": "Handeln",
       "desc": "Was zu tun ist: Schritte, Fristen, Entscheidungen"
+    },
+    "guide": {
+      "title": "Anleitung",
+      "desc": "Schritt für Schritt: was du brauchst, die Schritte, wie du prüfst"
     }
   },
   "deepOf": "{{title}} · tiefer gelesen"
