@@ -20,9 +20,10 @@
   "askPlaceholder": "この内容について質問…",
   "ask": "質問",
   "toast": {
-    "highlightOnlyWeb": "ハイライトはソースが開いているWebページの場合のみ使えます。",
     "highlighted": "ページ内でハイライトしました。",
+    "highlightedInSource": "ソーステキスト内でハイライトしました。",
     "quoteNotFound": "この引用はページ内に見つかりませんでした。",
+    "quoteNotFoundInSource": "ソーステキスト内にその箇所が見つかりませんでした。",
     "tabGone": "元のタブは閉じられたか、別のページに移動しました。",
     "copied": "コピーしました。",
     "playingFrom": "{{time}} から再生",
@@ -35,6 +36,7 @@
   "genui": {
     "errors_other": "この表示で {{count}} 件のエラー",
     "showInPage": "ページで表示",
+    "showInSource": "ソースで表示",
     "unverified": "未確認",
     "unverifiedWhy": {
       "noQuote": "この数値には出典の箇所がありません。出典に書かれているのではなく、数えたり計算したりした値かもしれません。",

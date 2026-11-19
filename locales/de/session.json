@@ -20,9 +20,10 @@
   "askPlaceholder": "Frag etwas zu diesem Inhalt…",
   "ask": "Fragen",
   "toast": {
-    "highlightOnlyWeb": "Hervorheben funktioniert nur, wenn die Quelle eine geöffnete Webseite ist.",
     "highlighted": "Auf der Seite hervorgehoben.",
+    "highlightedInSource": "Im Quelltext markiert.",
     "quoteNotFound": "Dieses Zitat wurde auf der Seite nicht gefunden.",
+    "quoteNotFoundInSource": "Diese Stelle wurde im Quelltext nicht gefunden.",
     "tabGone": "Der ursprüngliche Tab wurde geschlossen oder hat die Seite gewechselt.",
     "copied": "Kopiert.",
     "playingFrom": "Wiedergabe ab {{time}}",
@@ -37,6 +38,7 @@
     "errors_one": "{{count}} Fehler beim Anzeigen dieser Ansicht",
     "errors_other": "{{count}} Fehler beim Anzeigen dieser Ansicht",
     "showInPage": "Auf der Seite zeigen",
+    "showInSource": "In der Quelle zeigen",
     "unverified": "Ungeprüft",
     "unverifiedWhy": {
       "noQuote": "Zu dieser Zahl gibt es keine Stelle aus der Quelle. Sie wurde vielleicht gezählt oder berechnet, statt in der Quelle zu stehen.",

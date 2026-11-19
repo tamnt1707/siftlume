@@ -20,9 +20,10 @@
   "askPlaceholder": "就此内容提问…",
   "ask": "提问",
   "toast": {
-    "highlightOnlyWeb": "仅当来源是已打开的网页时才能高亮。",
     "highlighted": "已在页面中高亮。",
+    "highlightedInSource": "已在来源文本中高亮。",
     "quoteNotFound": "在页面中找不到这段引文。",
+    "quoteNotFoundInSource": "在来源文本中找不到这段内容。",
     "tabGone": "原标签页已关闭或已跳转到其他页面。",
     "copied": "已复制。",
     "playingFrom": "从 {{time}} 开始播放",
@@ -35,6 +36,7 @@
   "genui": {
     "errors_other": "此视图运行时出现 {{count}} 个错误",
     "showInPage": "在页面中显示",
+    "showInSource": "在来源中查看",
     "unverified": "未核实",
     "unverifiedWhy": {
       "noQuote": "这个数字没有附带来源段落。它可能是统计或计算得出的，而不是来源直接写明的。",

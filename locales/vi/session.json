@@ -20,9 +20,10 @@
   "askPlaceholder": "Hỏi bất cứ điều gì về nội dung này…",
   "ask": "Hỏi",
   "toast": {
-    "highlightOnlyWeb": "Chỉ tô sáng được khi nguồn là một trang web đang mở.",
     "highlighted": "Đã tô sáng trong trang.",
+    "highlightedInSource": "Đã tô sáng trong văn bản nguồn.",
     "quoteNotFound": "Không tìm thấy đoạn trích này trong trang.",
+    "quoteNotFoundInSource": "Không tìm thấy đoạn này trong văn bản nguồn.",
     "tabGone": "Tab gốc đã đóng hoặc đã chuyển sang trang khác.",
     "copied": "Đã sao chép.",
     "playingFrom": "Phát từ {{time}}",
@@ -35,6 +36,7 @@
   "genui": {
     "errors_other": "{{count}} lỗi khi hiển thị phần này",
     "showInPage": "Xem trong trang",
+    "showInSource": "Xem trong nguồn",
     "unverified": "Chưa xác minh",
     "unverifiedWhy": {
       "noQuote": "Không có đoạn nguồn nào đi kèm số này. Có thể số được đếm hoặc tính ra chứ nguồn không ghi trực tiếp.",

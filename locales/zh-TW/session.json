@@ -20,9 +20,10 @@
   "askPlaceholder": "針對此內容提問…",
   "ask": "提問",
   "toast": {
-    "highlightOnlyWeb": "只有在來源是已開啟的網頁時才能醒目標示。",
     "highlighted": "已在頁面中醒目標示。",
+    "highlightedInSource": "已在來源文字中標示。",
     "quoteNotFound": "在頁面中找不到這段引文。",
+    "quoteNotFoundInSource": "在來源文字中找不到這段內容。",
     "tabGone": "原分頁已關閉或已前往其他頁面。",
     "copied": "已複製。",
     "playingFrom": "從 {{time}} 開始播放",
@@ -35,6 +36,7 @@
   "genui": {
     "errors_other": "此檢視執行時發生 {{count}} 個錯誤",
     "showInPage": "在頁面中顯示",
+    "showInSource": "在來源中查看",
     "unverified": "未查證",
     "unverifiedWhy": {
       "noQuote": "這個數字沒有附上來源段落。它可能是計算或統計得出的，而不是來源直接寫明的。",

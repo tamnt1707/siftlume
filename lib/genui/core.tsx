@@ -14,7 +14,8 @@ import { copyText, customAction, highlightInPage } from './actions';
 /**
  * Where a figure comes from: a "Show in page" button when its passage is verbatim in the source,
  * an "Unverified" mark when there is no such passage. Nothing outside a session (no source to check).
- * The button always says "Show in page", like the one on source quotes: a bare icon was not read as one.
+ * The button always has its label ("Show in page", or "Show in source" for PDFs and files), like
+ * the one on source quotes: a bare icon was not read as one.
  */
 export function EvidenceMark({ quote, value }: { quote?: string | null; value?: string | number }) {
   const evidence = useEvidence();
@@ -42,7 +43,7 @@ export function EvidenceMark({ quote, value }: { quote?: string | null; value?: 
       onClick={() => triggerAction('', undefined, customAction(highlightInPage.name, { text: quote! }))}
     >
       <HugeiconsIcon icon={HighlighterIcon} size={13} strokeWidth={1.8} aria-hidden="true" />
-      {t('genui.showInPage')}
+      {t(evidence.inSource ? 'genui.showInSource' : 'genui.showInPage')}
     </button>
   );
 }
@@ -182,6 +183,7 @@ export const SourceQuote = defineComponent({
   component: ({ props }) => {
     const triggerAction = useTriggerAction();
     const streaming = useIsStreaming();
+    const evidence = useEvidence();
     const { t } = useTranslation('session');
     return (
       <figure className="g-quote">
@@ -195,7 +197,7 @@ export const SourceQuote = defineComponent({
               onClick={() => triggerAction('', undefined, customAction(highlightInPage.name, { text: props.quote }))}
             >
               <HugeiconsIcon icon={HighlighterIcon} size={14} strokeWidth={1.8} aria-hidden="true" />
-              {t('genui.showInPage')}
+              {t(evidence?.inSource ? 'genui.showInSource' : 'genui.showInPage')}
             </button>
             <button
               type="button"
