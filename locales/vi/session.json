@@ -20,9 +20,10 @@
   "askPlaceholder": "Hỏi bất cứ điều gì về nội dung này…",
   "ask": "Hỏi",
   "toast": {
-    "highlightOnlyWeb": "Chỉ tô sáng được khi nguồn là một trang web đang mở.",
     "highlighted": "Đã tô sáng trong trang.",
+    "highlightedInSource": "Đã tô sáng trong văn bản nguồn.",
     "quoteNotFound": "Không tìm thấy đoạn trích này trong trang.",
+    "quoteNotFoundInSource": "Không tìm thấy đoạn này trong văn bản nguồn.",
     "tabGone": "Tab gốc đã đóng hoặc đã chuyển sang trang khác.",
     "copied": "Đã sao chép.",
     "playingFrom": "Phát từ {{time}}",
@@ -35,8 +36,14 @@
   "genui": {
     "errors_other": "{{count}} lỗi khi hiển thị phần này",
     "showInPage": "Xem trong trang",
+    "showInSource": "Xem trong nguồn",
     "unverified": "Chưa xác minh",
-    "unverifiedHint": "Không có đoạn nào trong nguồn ghi đúng nguyên văn con số này. Hãy kiểm tra trước khi dựa vào nó.",
+    "unverifiedWhy": {
+      "noQuote": "Không có đoạn nguồn nào đi kèm số này. Có thể số được đếm hoặc tính ra chứ nguồn không ghi trực tiếp.",
+      "short": "Đoạn trích quá ngắn để kiểm tra: “{{quote}}”",
+      "notFound": "Đoạn trích này không có nguyên văn trong nguồn: “{{quote}}”",
+      "noFigure": "Đoạn trích có trong nguồn nhưng không chứa số này: “{{quote}}”"
+    },
     "chartSources_other": "Nguồn của {{count}} con số này",
     "unverifiedCount_other": "{{count}} chưa xác minh",
     "copy": "Sao chép",
@@ -223,6 +230,11 @@
     "copyFailed": "Không sao chép được ảnh. Hãy tải về.",
     "download": "Tải PNG",
     "share": "Chia sẻ…"
+  },
+  "report": {
+    "question": "Bố cục chưa hợp với trang này?",
+    "action": "Báo cho chúng tôi",
+    "title": "Mở một issue trên GitHub, điền sẵn loại nguồn, kiểu phân tích, model và các khối đã dùng. Không gửi địa chỉ hay nội dung trang."
   },
   "changes": {
     "seen": "Bạn đã tóm tắt trang này ngày {{date}}.",

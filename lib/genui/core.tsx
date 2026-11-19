@@ -8,13 +8,14 @@ import { HugeiconsIcon } from '@hugeicons/react';
 import { Alert02Icon, Copy01Icon, HighlighterIcon } from '@hugeicons/core-free-icons';
 import { defineComponent, useIsStreaming, useTriggerAction } from '@openuidev/react-lang';
 import { z } from 'zod/v4';
-import { checkEvidence, useEvidence } from '@/lib/evidence';
+import { evidenceStatus, useEvidence } from '@/lib/evidence';
 import { copyText, customAction, highlightInPage } from './actions';
 
 /**
  * Where a figure comes from: a "Show in page" button when its passage is verbatim in the source,
  * an "Unverified" mark when there is no such passage. Nothing outside a session (no source to check).
- * The button always says "Show in page", like the one on source quotes: a bare icon was not read as one.
+ * The button always has its label ("Show in page", or "Show in source" for PDFs and files), like
+ * the one on source quotes: a bare icon was not read as one.
  */
 export function EvidenceMark({ quote, value }: { quote?: string | null; value?: string | number }) {
   const evidence = useEvidence();
@@ -23,9 +24,12 @@ export function EvidenceMark({ quote, value }: { quote?: string | null; value?: 
   const { t } = useTranslation('session');
   // While streaming the passage may still be arriving: judge it once the program is complete.
   if (!evidence || streaming) return null;
-  if (!checkEvidence(evidence.content, quote, value)) {
+  const status = evidenceStatus(evidence.content, quote, value);
+  if (status !== 'ok') {
+    // Why, with the passage the model gave: a figure it counted reads differently from a misquote.
+    const why = t(`genui.unverifiedWhy.${status}`, { quote: quote?.trim() ?? '' });
     return (
-      <span className="g-evidence g-evidence--unverified" title={t('genui.unverifiedHint')}>
+      <span className="g-evidence g-evidence--unverified" title={why} aria-label={`${t('genui.unverified')}: ${why}`}>
         <HugeiconsIcon icon={Alert02Icon} size={12} strokeWidth={2} aria-hidden="true" />
         {t('genui.unverified')}
       </span>
@@ -39,7 +43,7 @@ export function EvidenceMark({ quote, value }: { quote?: string | null; value?: 
       onClick={() => triggerAction('', undefined, customAction(highlightInPage.name, { text: quote! }))}
     >
       <HugeiconsIcon icon={HighlighterIcon} size={13} strokeWidth={1.8} aria-hidden="true" />
-      {t('genui.showInPage')}
+      {t(evidence.inSource ? 'genui.showInSource' : 'genui.showInPage')}
     </button>
   );
 }
@@ -179,6 +183,7 @@ export const SourceQuote = defineComponent({
   component: ({ props }) => {
     const triggerAction = useTriggerAction();
     const streaming = useIsStreaming();
+    const evidence = useEvidence();
     const { t } = useTranslation('session');
     return (
       <figure className="g-quote">
@@ -192,7 +197,7 @@ export const SourceQuote = defineComponent({
               onClick={() => triggerAction('', undefined, customAction(highlightInPage.name, { text: props.quote }))}
             >
               <HugeiconsIcon icon={HighlighterIcon} size={14} strokeWidth={1.8} aria-hidden="true" />
-              {t('genui.showInPage')}
+              {t(evidence?.inSource ? 'genui.showInSource' : 'genui.showInPage')}
             </button>
             <button
               type="button"

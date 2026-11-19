@@ -70,6 +70,7 @@
     "emptySheet": "此工作表是空的。",
     "drivePdfOnly": "Siftlume 可以读取 Google 云端硬盘中的 PDF。其他文件请用文档、表格或幻灯片打开，或下载后在开始界面选择“文件”。",
     "driveTooBig": "此 PDF 超过 {{size}} MB。请下载后在开始界面选择“文件”。",
+    "driveAccess": "Siftlume 无法从 Google 云端硬盘下载此文件。请在 Siftlume 面板中点击总结按钮，并允许访问 drive.usercontent.google.com（云端硬盘的下载站点）：文件将使用你自己的 Google 会话下载。不允许的话，只能读取共享给“知道链接的任何人”的文件。",
     "scannedPdf": "此 PDF 没有文字层（可能是扫描件），没有可读取的内容。"
   }
 }

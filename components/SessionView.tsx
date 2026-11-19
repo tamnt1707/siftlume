@@ -8,6 +8,7 @@ import { readStored, type QaTurn } from '@/lib/history';
 import { splitInline } from '@/lib/openui';
 import { programToMarkdown } from '@/lib/markdown';
 import { highlightInTab } from '@/lib/page';
+import { highlightQuote } from '@/lib/highlight-quote';
 import { findMoment, formatTime, seekVideo, youTubeVideoId } from '@/lib/youtube';
 import { partContent, partForQuote } from '@/lib/multi';
 import type { Evidence } from '@/lib/evidence';
@@ -23,6 +24,7 @@ import { canDeepRead, DeepRead } from './DeepRead';
 import { REFINE_PROMPTS, type RefineId } from '@/lib/refine';
 import { GenUI, type GenUIAction } from './GenUI';
 import { ResultToolbar, readingMinutes } from './ResultToolbar';
+import { ReportLayout } from './ReportLayout';
 import { WhatsNew } from './WhatsNew';
 import { PROVIDERS, type Settings } from '@/lib/settings';
 import { Icon } from './Icon';
@@ -52,7 +54,11 @@ const isLongNote = (note: string) => note.length > 200 || note.includes('\n');
 /** Sources whose quotes can be highlighted in the page they came from. */
 const inPage = (kind: string) => kind === 'webpage' || kind === 'pr';
 
-/** Sources a figure's passage can be shown in: highlighted in the page or tab, or played in the video. */
+/**
+ * Sources a passage is shown in where it came from: highlighted in the page or tab, or played in
+ * the video. Every other source (PDFs, files, pasted text, Google files) shows it highlighted in
+ * the source text pane.
+ */
 const SHOWABLE = new Set(['webpage', 'pr', 'video', 'multi']);
 
 export function SessionView({
@@ -101,9 +107,28 @@ export function SessionView({
     () =>
       source.kind === 'csv' || !source.content
         ? null
-        : { content: source.content, canShow: SHOWABLE.has(source.kind) || isWeb },
-    [source.kind, source.content, isWeb],
+        : { content: source.content, canShow: true, inSource: !SHOWABLE.has(source.kind) },
+    [source.kind, source.content],
   );
+
+  // A passage to highlight in the source text pane, once the pane is open and rendered.
+  const sourceBodyRef = useRef<HTMLDivElement>(null);
+  const [sourceQuote, setSourceQuote] = useState<string | null>(null);
+  useEffect(() => {
+    if (!sourceQuote || !sourceOpen) return;
+    // One frame for the pane's Markdown to render.
+    const id = requestAnimationFrame(() => {
+      const body = sourceBodyRef.current;
+      const found = body ? highlightQuote(sourceQuote, body) : false;
+      notify(found ? t('toast.highlightedInSource') : t('toast.quoteNotFoundInSource'));
+      setSourceQuote(null);
+    });
+    return () => cancelAnimationFrame(id);
+  }, [sourceQuote, sourceOpen, notify, t]);
+  const showInSource = (text: string) => {
+    setSourceOpen(true);
+    setSourceQuote(text);
+  };
 
   useEffect(() => {
     if (ctrl.phase === 'answering') bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
@@ -111,14 +136,15 @@ export function SessionView({
 
   /**
    * Shows a quote where it came from: highlighted in the web page, or the video played from that
-   * moment. For several tabs, in the tab whose text contains it.
+   * moment. For several tabs, in the tab whose text contains it. Sources without a page (PDFs,
+   * files, Google files) and closed tabs: highlighted in the source text pane.
    */
   const showQuote = async (text: string) => {
     let target: { kind: string; tabId?: number; origin?: string; content: string } = source;
     if (source.kind === 'multi' && source.parts) {
       const i = partForQuote(source.content, text);
       const part = i === null ? undefined : source.parts[i];
-      if (!part) return notify(t('toast.quoteNotFound'));
+      if (!part) return showInSource(text);
       target = { ...part, content: partContent(source.content, i!) };
     }
     const { tabId, origin } = target;
@@ -164,7 +190,7 @@ export function SessionView({
       }
     }
 
-    if (!inPage(target.kind) || !tabId) return notify(t('toast.highlightOnlyWeb'));
+    if (!inPage(target.kind) || !tabId) return showInSource(text);
     try {
       // Bring the original tab to the front, then highlight.
       const tab = await browser.tabs.update(tabId, { active: true });
@@ -172,7 +198,8 @@ export function SessionView({
       const found = await highlightInTab(tabId, text);
       notify(found ? t('toast.highlighted') : t('toast.quoteNotFound'));
     } catch {
-      notify(t('toast.tabGone'));
+      // The tab was closed: the source text still has the passage.
+      showInSource(text);
     }
   };
 
@@ -339,7 +366,7 @@ export function SessionView({
               <strong>{t('toolbar.sourceTitle')}</strong>
               <span className="muted">{t('toolbar.sourceWords', { count: reading.words })}</span>
             </header>
-            <div className="source-text__body">
+            <div className="source-text__body" ref={sourceBodyRef}>
               {['pdf', 'text', 'video', 'multi'].includes(source.kind) ? (
                 <pre>{source.content}</pre>
               ) : (
@@ -414,6 +441,7 @@ export function SessionView({
                 {t('apply')}
               </button>
             </form>
+            {!busy && <ReportLayout session={session} settings={settings} program={summary.content} />}
           </section>
         )}
       </div>

@@ -20,9 +20,10 @@
   "askPlaceholder": "Pregunta lo que quieras sobre esto…",
   "ask": "Preguntar",
   "toast": {
-    "highlightOnlyWeb": "Resaltar solo funciona cuando la fuente es una página web abierta.",
     "highlighted": "Resaltado en la página.",
+    "highlightedInSource": "Resaltado en el texto de la fuente.",
     "quoteNotFound": "No se encontró esa cita en la página.",
+    "quoteNotFoundInSource": "No se encontró ese pasaje en el texto de la fuente.",
     "tabGone": "La pestaña original se cerró o cambió de página.",
     "copied": "Copiado.",
     "playingFrom": "Reproduciendo desde {{time}}",
@@ -39,8 +40,14 @@
     "errors_many": "{{count}} errores al mostrar esta vista",
     "errors_other": "{{count}} errores al mostrar esta vista",
     "showInPage": "Ver en la página",
+    "showInSource": "Ver en la fuente",
     "unverified": "Sin verificar",
-    "unverifiedHint": "Ningún pasaje de la fuente da esta cifra literalmente. Compruébala antes de fiarte de ella.",
+    "unverifiedWhy": {
+      "noQuote": "Esta cifra no trae un pasaje de la fuente. Puede haberse contado o calculado en vez de estar escrita en la fuente.",
+      "short": "El pasaje es demasiado corto para comprobarlo: “{{quote}}”",
+      "notFound": "Este pasaje no está literalmente en la fuente: “{{quote}}”",
+      "noFigure": "El pasaje está en la fuente pero no contiene esta cifra: “{{quote}}”"
+    },
     "chartSources_one": "De dónde sale esta cifra",
     "chartSources_many": "De dónde salen estas {{count}} cifras",
     "chartSources_other": "De dónde salen estas {{count}} cifras",
@@ -243,6 +250,11 @@
     "copyFailed": "No se pudo copiar la imagen. Descárgala.",
     "download": "Descargar PNG",
     "share": "Compartir…"
+  },
+  "report": {
+    "question": "¿El diseño no encaja con esta página?",
+    "action": "Avísanos",
+    "title": "Abre un issue en GitHub con el tipo de fuente, el análisis, el modelo y los bloques ya rellenados. No incluye la dirección ni el contenido de la página."
   },
   "changes": {
     "seen": "Resumiste esta página el {{date}}.",
