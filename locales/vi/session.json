@@ -36,7 +36,12 @@
     "errors_other": "{{count}} lỗi khi hiển thị phần này",
     "showInPage": "Xem trong trang",
     "unverified": "Chưa xác minh",
-    "unverifiedHint": "Không có đoạn nào trong nguồn ghi đúng nguyên văn con số này. Hãy kiểm tra trước khi dựa vào nó.",
+    "unverifiedWhy": {
+      "noQuote": "Không có đoạn nguồn nào đi kèm số này. Có thể số được đếm hoặc tính ra chứ nguồn không ghi trực tiếp.",
+      "short": "Đoạn trích quá ngắn để kiểm tra: “{{quote}}”",
+      "notFound": "Đoạn trích này không có nguyên văn trong nguồn: “{{quote}}”",
+      "noFigure": "Đoạn trích có trong nguồn nhưng không chứa số này: “{{quote}}”"
+    },
     "chartSources_other": "Nguồn của {{count}} con số này",
     "unverifiedCount_other": "{{count}} chưa xác minh",
     "copy": "Sao chép",

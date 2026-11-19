@@ -108,7 +108,7 @@ const CHART_RULES = [
  * figures are computed from the data.
  */
 const EVIDENCE_RULE =
-  'SOURCES FOR FIGURES: give every KeyNumber and BarItem its quote, and right after each chart add ChartSources with one ChartPoint per charted value (label as on the chart, value as written in the source, quote). A quote is 5-25 words copied character for character from the source and containing that figure; never paraphrase, translate or join two passages. A figure the source does not state verbatim gets no quote and is shown as unverified, so prefer figures you can quote.';
+  "SOURCES FOR FIGURES: give every KeyNumber and BarItem its quote, and right after each chart add ChartSources with one ChartPoint per charted value (label as on the chart, value as written in the source, quote). A quote is 5-25 words copied character for character from the source and containing that figure; never paraphrase, translate or join two passages. A figure the source does not state verbatim gets no quote and is shown as unverified, so prefer figures you can quote. A count or total you work out yourself (7 items in a list, a sum of rows) is not stated by the source: lead with figures the source states, and quote in the source's own language and characters (full-width digits and all).";
 
 const evidenceRules = (source: ExtractedSource) => (source.kind === 'csv' ? [] : [EVIDENCE_RULE]);
 

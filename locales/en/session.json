@@ -38,7 +38,12 @@
     "errors_other": "{{count}} errors while running this view",
     "showInPage": "Show in page",
     "unverified": "Unverified",
-    "unverifiedHint": "No passage in the source states this figure word for word. Check it before you rely on it.",
+    "unverifiedWhy": {
+      "noQuote": "No source passage was given for this figure. It may have been counted or worked out rather than stated in the source.",
+      "short": "The passage given is too short to check: “{{quote}}”",
+      "notFound": "This passage is not in the source word for word: “{{quote}}”",
+      "noFigure": "The passage is in the source but does not show this figure: “{{quote}}”"
+    },
     "chartSources_one": "Where this number comes from",
     "chartSources_other": "Where these {{count}} numbers come from",
     "unverifiedCount_one": "{{count}} unverified",

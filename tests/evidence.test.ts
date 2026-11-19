@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { checkEvidence, digitCore, figureRange, normalizeText } from '@/lib/evidence';
+import { checkEvidence, digitCore, evidenceStatus, figureRange, normalizeText } from '@/lib/evidence';
 
 const SOURCE = `Employers added **186,000** jobs in [December](https://bls.gov/x), up from +133,000.
 Revenue reached $4.2B in the third quarter, up 18% from a year earlier.
@@ -105,5 +105,43 @@ describe('figureRange', () => {
   it('returns null without a figure', () => {
     expect(figureRange('no numbers here at all', '5%')).toBeNull();
     expect(figureRange('Revenue was 5%', null)).toBeNull();
+  });
+});
+
+// Text pulled out of PDFs and files.
+describe('checkEvidence on PDF text', () => {
+  it('reads full-width digits and letters', () => {
+    const pdf = '新しいスケジュールは毎日１９：００ ＪＳＴに実行されます。';
+    expect(checkEvidence(pdf, '毎日19:00 JSTに実行されます', '19:00 JST')).toBe(true);
+  });
+
+  it('ignores spaces a PDF put between Japanese characters', () => {
+    const pdf = '古 い cron ス ケ ジ ュ ー ル を 7 件 削 除 し ま す';
+    expect(checkEvidence(pdf, '古いcronスケジュールを7件削除します', '7')).toBe(true);
+  });
+
+  it('puts back words broken across lines, and keeps real hyphens', () => {
+    const pdf = 'Restart the eight back-\nground workers after the state-\nof-the-art migration.';
+    expect(checkEvidence(pdf, 'Restart the eight background workers', '8')).toBe(false);
+    expect(checkEvidence(pdf, 'Restart the eight background workers')).toBe(true);
+    expect(checkEvidence(pdf, 'the state-of-the-art migration')).toBe(true);
+  });
+
+  it('reads ligatures and drops soft hyphens', () => {
+    expect(checkEvidence('The ﬁrst run is at 19:00 on Fri\u00adday.', 'The first run is at 19:00', '19:00')).toBe(true);
+  });
+});
+
+describe('evidenceStatus', () => {
+  const src = 'Restart 8 workers after the deploy. Old schedules will be removed.';
+  it.each([
+    [undefined, '8', 'noQuote'],
+    ['', '8', 'noQuote'],
+    ['8 workers', '8', 'short'],
+    ['Restart 9 workers after the deploy', '9', 'notFound'],
+    ['Old schedules will be removed', '7', 'noFigure'],
+    ['Restart 8 workers after the deploy', '8', 'ok'],
+  ])('%s / %s → %s', (quote, value, want) => {
+    expect(evidenceStatus(src, quote, value)).toBe(want);
   });
 });
