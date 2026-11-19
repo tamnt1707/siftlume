@@ -223,5 +223,19 @@
     "copyFailed": "Không sao chép được ảnh. Hãy tải về.",
     "download": "Tải PNG",
     "share": "Chia sẻ…"
+  },
+  "changes": {
+    "seen": "Bạn đã tóm tắt trang này ngày {{date}}.",
+    "show": "Có gì thay đổi",
+    "hide": "Ẩn thay đổi",
+    "title": "Thay đổi từ {{date}}",
+    "comparing": "Đang so sánh…",
+    "none": "Nội dung chưa thay đổi từ lần đó.",
+    "gone": "Bản tóm tắt lần trước không còn trong lịch sử.",
+    "edited": "Đã sửa",
+    "added": "Mới",
+    "removed": "Đã bỏ",
+    "more": "+{{n}} mục nữa",
+    "partial": "Chỉ so sánh phần trang mà mỗi lần tóm tắt đã đọc."
   }
 }

@@ -23,6 +23,7 @@ import { canDeepRead, DeepRead } from './DeepRead';
 import { REFINE_PROMPTS, type RefineId } from '@/lib/refine';
 import { GenUI, type GenUIAction } from './GenUI';
 import { ResultToolbar, readingMinutes } from './ResultToolbar';
+import { WhatsNew } from './WhatsNew';
 import { PROVIDERS, type Settings } from '@/lib/settings';
 import { Icon } from './Icon';
 import { SiftLoader } from './SiftLoader';
@@ -327,6 +328,7 @@ export function SessionView({
           <p className="hint">{t('tabsSkipped', { titles: source.skipped.join(', ') })}</p>
         ) : null}
         {source.truncated && <p className="hint">{t('truncated')}</p>}
+        {summary.content && !busy && <WhatsNew session={session} />}
       </header>
 
       <div className="session__main">

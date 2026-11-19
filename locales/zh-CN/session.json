@@ -223,5 +223,19 @@
     "copyFailed": "无法复制图片，请改为下载。",
     "download": "下载 PNG",
     "share": "分享…"
+  },
+  "changes": {
+    "seen": "你在 {{date}} 总结过这个页面。",
+    "show": "有哪些变化",
+    "hide": "隐藏变化",
+    "title": "自 {{date}} 以来的变化",
+    "comparing": "正在比较…",
+    "none": "此后文本没有变化。",
+    "gone": "之前的总结已不在历史记录中。",
+    "edited": "已修改",
+    "added": "新增",
+    "removed": "已删除",
+    "more": "还有 {{n}} 项",
+    "partial": "只比较每次总结读取的那部分页面。"
   }
 }

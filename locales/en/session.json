@@ -233,5 +233,19 @@
     "copyFailed": "Could not copy the image. Download it instead.",
     "download": "Download PNG",
     "share": "Share…"
+  },
+  "changes": {
+    "seen": "You summarized this page on {{date}}.",
+    "show": "What changed",
+    "hide": "Hide changes",
+    "title": "Changes since {{date}}",
+    "comparing": "Comparing…",
+    "none": "The text has not changed since then.",
+    "gone": "That earlier summary is no longer in your history.",
+    "edited": "Edited",
+    "added": "New",
+    "removed": "Removed",
+    "more": "+{{n}} more",
+    "partial": "Only the part of the page each summary read is compared."
   }
 }

@@ -243,5 +243,19 @@
     "copyFailed": "Impossible de copier l’image. Téléchargez-la plutôt.",
     "download": "Télécharger le PNG",
     "share": "Partager…"
+  },
+  "changes": {
+    "seen": "Vous avez résumé cette page le {{date}}.",
+    "show": "Ce qui a changé",
+    "hide": "Masquer les changements",
+    "title": "Changements depuis le {{date}}",
+    "comparing": "Comparaison…",
+    "none": "Le texte n’a pas changé depuis.",
+    "gone": "Ce résumé précédent n’est plus dans votre historique.",
+    "edited": "Modifié",
+    "added": "Nouveau",
+    "removed": "Supprimé",
+    "more": "+{{n}} de plus",
+    "partial": "Seule la partie de la page lue par chaque résumé est comparée."
   }
 }

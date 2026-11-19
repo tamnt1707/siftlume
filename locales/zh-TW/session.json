@@ -223,5 +223,19 @@
     "copyFailed": "無法複製圖片，請改為下載。",
     "download": "下載 PNG",
     "share": "分享…"
+  },
+  "changes": {
+    "seen": "你在 {{date}} 摘要過這個頁面。",
+    "show": "有哪些變化",
+    "hide": "隱藏變化",
+    "title": "自 {{date}} 以來的變化",
+    "comparing": "正在比較…",
+    "none": "此後文字沒有變化。",
+    "gone": "之前的摘要已不在歷史紀錄中。",
+    "edited": "已修改",
+    "added": "新增",
+    "removed": "已刪除",
+    "more": "還有 {{n}} 項",
+    "partial": "只比較每次摘要讀取的那部分頁面。"
   }
 }

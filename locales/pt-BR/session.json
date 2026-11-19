@@ -243,5 +243,19 @@
     "copyFailed": "Não foi possível copiar a imagem. Baixe-a.",
     "download": "Baixar PNG",
     "share": "Compartilhar…"
+  },
+  "changes": {
+    "seen": "Você resumiu esta página em {{date}}.",
+    "show": "O que mudou",
+    "hide": "Ocultar mudanças",
+    "title": "Mudanças desde {{date}}",
+    "comparing": "Comparando…",
+    "none": "O texto não mudou desde então.",
+    "gone": "Aquele resumo anterior não está mais no seu histórico.",
+    "edited": "Editado",
+    "added": "Novo",
+    "removed": "Removido",
+    "more": "+{{n}} a mais",
+    "partial": "Só é comparada a parte da página que cada resumo leu."
   }
 }
