@@ -152,7 +152,7 @@ Option B, local model, no key: install Ollama (https://ollama.com), run `ollama 
 
 Option C, model in the browser, no key and nothing to install (needs a computer with a recent GPU): choose "In-browser (Gemma, LFM)" in Settings, click Download next to LFM3 1.7B (about 1.1 GB, a few minutes), then Save. A summary takes about 20 seconds. Delete removes the model.
 
-Then open any article (for example a Wikipedia page), click the Siftlume icon and "Summarize this page". Try the refine buttons (Shorter, Timeline…), ask a question in the box at the bottom, and the toolbar (Text, Copy, Listen, Print). On a page with numbers, click "Show in page" under a key figure or in "Where these numbers come from" below a chart. To summarize a file, click "Upload a file" in the popup or drop a PDF/CSV on the start screen.
+Then open any article (for example a Wikipedia page), click the Siftlume icon and "Summarize this page". Try the refine buttons (Shorter, Timeline…), ask a question in the box at the bottom, and the toolbar (Text, Copy, Image, Listen, Print). On a how-to page (for example a "How to…" article), the mode picker on the result toolbar shows "Auto · Guide": the steps come out in order with their commands. On a page with numbers, click "Show in page" under a key figure or in "Where these numbers come from" below a chart. To summarize a file, click "Upload a file" in the popup or drop a PDF/CSV on the start screen.
 
 Settings → Summary → "Show results in" switches between the side panel and a full-page tab.
 ```
