@@ -20,9 +20,10 @@
   "askPlaceholder": "Pergunte qualquer coisa sobre isto…",
   "ask": "Perguntar",
   "toast": {
-    "highlightOnlyWeb": "O destaque só funciona quando a fonte é uma página da web aberta.",
     "highlighted": "Destacado na página.",
+    "highlightedInSource": "Destacado no texto da fonte.",
     "quoteNotFound": "Não foi possível encontrar essa citação na página.",
+    "quoteNotFoundInSource": "Não foi possível encontrar esse trecho no texto da fonte.",
     "tabGone": "A aba original foi fechada ou mudou de página.",
     "copied": "Copiado.",
     "playingFrom": "Reproduzindo a partir de {{time}}",
@@ -39,8 +40,14 @@
     "errors_many": "{{count}} erros ao exibir esta visualização",
     "errors_other": "{{count}} erros ao exibir esta visualização",
     "showInPage": "Ver na página",
+    "showInSource": "Ver na fonte",
     "unverified": "Não verificado",
-    "unverifiedHint": "Nenhum trecho da fonte traz este número palavra por palavra. Confira antes de confiar nele.",
+    "unverifiedWhy": {
+      "noQuote": "Este número não tem um trecho da fonte. Ele pode ter sido contado ou calculado, em vez de estar escrito na fonte.",
+      "short": "O trecho é curto demais para verificar: “{{quote}}”",
+      "notFound": "Este trecho não está na fonte palavra por palavra: “{{quote}}”",
+      "noFigure": "O trecho está na fonte, mas não contém este número: “{{quote}}”"
+    },
     "chartSources_one": "De onde vem este número",
     "chartSources_many": "De onde vêm estes {{count}} números",
     "chartSources_other": "De onde vêm estes {{count}} números",
@@ -243,5 +250,24 @@
     "copyFailed": "Não foi possível copiar a imagem. Baixe-a.",
     "download": "Baixar PNG",
     "share": "Compartilhar…"
+  },
+  "report": {
+    "question": "O layout não combina com esta página?",
+    "action": "Avise-nos",
+    "title": "Abre uma issue no GitHub com o tipo de fonte, a análise, o modelo e os blocos já preenchidos. O endereço e o conteúdo da página não são incluídos."
+  },
+  "changes": {
+    "seen": "Você resumiu esta página em {{date}}.",
+    "show": "O que mudou",
+    "hide": "Ocultar mudanças",
+    "title": "Mudanças desde {{date}}",
+    "comparing": "Comparando…",
+    "none": "O texto não mudou desde então.",
+    "gone": "Aquele resumo anterior não está mais no seu histórico.",
+    "edited": "Editado",
+    "added": "Novo",
+    "removed": "Removido",
+    "more": "+{{n}} a mais",
+    "partial": "Só é comparada a parte da página que cada resumo leu."
   }
 }

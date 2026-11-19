@@ -50,6 +50,20 @@ describe('highlightQuote (selection fallback)', () => {
     expect(article.contains(getSelection()!.anchorNode)).toBe(true);
   });
 
+  it('searches only inside the given root, without the page find fallback', () => {
+    document.body.innerHTML = `
+      <section class="summary"><blockquote>Revenue reached $4.2B in the quarter</blockquote></section>
+      <section class="source-text"><pre>Intro.\nRevenue reached $4.2B in the quarter, a record.</pre></section>`;
+    const find = vi.fn(() => true);
+    vi.stubGlobal('find', find);
+    const source = document.querySelector('.source-text')!;
+    expect(highlightQuote('Revenue reached $4.2B in the quarter', source)).toBe(true);
+    expect(source.contains(getSelection()!.anchorNode)).toBe(true);
+    expect(highlightQuote('A passage that is nowhere at all', source)).toBe(false);
+    expect(find).not.toHaveBeenCalled();
+    vi.unstubAllGlobals();
+  });
+
   it('scrolls the passage into view', () => {
     highlightQuote('rate held at 4.1%');
     expect(Element.prototype.scrollIntoView).toHaveBeenCalledWith({ block: 'center' });

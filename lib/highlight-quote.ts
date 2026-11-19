@@ -5,8 +5,11 @@
  * Finds a quote in the page's visible text, even when it runs across links, bold text or other
  * inline elements, and highlights exactly that passage (not the whole block around it), then
  * scrolls it to the middle of the screen. Returns whether it was found.
+ *
+ * `root` limits the search: the extension's own source text pane uses it, so the quote is found
+ * in the source and not in the summary that cites it.
  */
-export function highlightQuote(needle: string): boolean {
+export function highlightQuote(needle: string, root: Element = document.body): boolean {
   const NAME = 'siftlume-quote';
   // Same spelling on both sides: curly quotes, dashes and non-breaking spaces vary between the
   // page and the model's copy of it.
@@ -21,7 +24,7 @@ export function highlightQuote(needle: string): boolean {
 
   // The page's text as one string, with each character mapped back to its text node and offset.
   const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'TEMPLATE']);
-  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
     acceptNode: (n) => {
       const el = n.parentElement;
       if (!el || SKIP.has(el.tagName) || el.closest('[hidden],[aria-hidden="true"]')) return NodeFilter.FILTER_REJECT;
@@ -74,7 +77,8 @@ export function highlightQuote(needle: string): boolean {
     }
   }
   if (start === -1) {
-    // Last resort: the browser's own find, which selects what it matches.
+    // Last resort in a web page: the browser's own find, which selects what it matches.
+    if (root !== document.body) return false;
     return (window as unknown as { find?: (s: string) => boolean }).find?.(needle.slice(0, 80)) ?? false;
   }
 
@@ -83,9 +87,17 @@ export function highlightQuote(needle: string): boolean {
   range.setStart(nodes[at[start]!]!, offs[start]!);
   range.setEnd(nodes[at[end]!]!, offs[end]! + 1);
 
-  // Scroll: the passage itself to the middle, not the top of a long block that holds it.
+  // Scroll: the passage itself to the middle, not the middle of a long block that holds it (a PDF's
+  // text is one <pre>). The block first, then each scrolling box around the passage, then the window.
   const el = nodes[at[start]!]!.parentElement!;
   el.scrollIntoView({ block: 'center' });
+  for (let box: Element | null = el; box && box !== document.documentElement; box = box.parentElement) {
+    const { overflowY } = getComputedStyle(box);
+    if (!/(auto|scroll)/.test(overflowY) || box.scrollHeight <= box.clientHeight) continue;
+    const r = range.getBoundingClientRect();
+    const b = box.getBoundingClientRect();
+    box.scrollTop += r.top - b.top - (box.clientHeight - r.height) / 2;
+  }
   const rect = range.getBoundingClientRect();
   if (rect.top < 0 || rect.bottom > innerHeight) {
     window.scrollBy({ top: rect.top - innerHeight / 2 + rect.height / 2 });

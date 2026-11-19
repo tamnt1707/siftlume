@@ -20,9 +20,10 @@
   "askPlaceholder": "Frag etwas zu diesem Inhalt…",
   "ask": "Fragen",
   "toast": {
-    "highlightOnlyWeb": "Hervorheben funktioniert nur, wenn die Quelle eine geöffnete Webseite ist.",
     "highlighted": "Auf der Seite hervorgehoben.",
+    "highlightedInSource": "Im Quelltext markiert.",
     "quoteNotFound": "Dieses Zitat wurde auf der Seite nicht gefunden.",
+    "quoteNotFoundInSource": "Diese Stelle wurde im Quelltext nicht gefunden.",
     "tabGone": "Der ursprüngliche Tab wurde geschlossen oder hat die Seite gewechselt.",
     "copied": "Kopiert.",
     "playingFrom": "Wiedergabe ab {{time}}",
@@ -37,8 +38,14 @@
     "errors_one": "{{count}} Fehler beim Anzeigen dieser Ansicht",
     "errors_other": "{{count}} Fehler beim Anzeigen dieser Ansicht",
     "showInPage": "Auf der Seite zeigen",
+    "showInSource": "In der Quelle zeigen",
     "unverified": "Ungeprüft",
-    "unverifiedHint": "Keine Stelle in der Quelle nennt diese Zahl wörtlich. Prüfen Sie sie, bevor Sie sich darauf verlassen.",
+    "unverifiedWhy": {
+      "noQuote": "Zu dieser Zahl gibt es keine Stelle aus der Quelle. Sie wurde vielleicht gezählt oder berechnet, statt in der Quelle zu stehen.",
+      "short": "Die Stelle ist zu kurz zum Prüfen: „{{quote}}“",
+      "notFound": "Diese Stelle steht nicht wörtlich in der Quelle: „{{quote}}“",
+      "noFigure": "Die Stelle steht in der Quelle, enthält diese Zahl aber nicht: „{{quote}}“"
+    },
     "chartSources_one": "Woher diese Zahl stammt",
     "chartSources_other": "Woher diese {{count}} Zahlen stammen",
     "unverifiedCount_one": "{{count}} ungeprüft",
@@ -233,5 +240,24 @@
     "copyFailed": "Das Bild konnte nicht kopiert werden. Lade es stattdessen herunter.",
     "download": "PNG herunterladen",
     "share": "Teilen…"
+  },
+  "report": {
+    "question": "Passt das Layout nicht zu dieser Seite?",
+    "action": "Sag es uns",
+    "title": "Öffnet ein GitHub-Issue mit Quelltyp, Analyse, Modell und verwendeten Blöcken. Adresse und Inhalt der Seite werden nicht übernommen."
+  },
+  "changes": {
+    "seen": "Du hast diese Seite am {{date}} zusammengefasst.",
+    "show": "Was hat sich geändert",
+    "hide": "Änderungen ausblenden",
+    "title": "Änderungen seit {{date}}",
+    "comparing": "Wird verglichen…",
+    "none": "Der Text hat sich seitdem nicht geändert.",
+    "gone": "Diese frühere Zusammenfassung ist nicht mehr im Verlauf.",
+    "edited": "Geändert",
+    "added": "Neu",
+    "removed": "Entfernt",
+    "more": "+{{n}} weitere",
+    "partial": "Verglichen wird nur der Teil der Seite, den jede Zusammenfassung gelesen hat."
   }
 }

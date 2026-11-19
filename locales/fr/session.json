@@ -20,9 +20,10 @@
   "askPlaceholder": "Posez une question sur ce contenu…",
   "ask": "Demander",
   "toast": {
-    "highlightOnlyWeb": "Le surlignage ne fonctionne que si la source est une page web ouverte.",
     "highlighted": "Surligné dans la page.",
+    "highlightedInSource": "Surligné dans le texte source.",
     "quoteNotFound": "Citation introuvable dans la page.",
+    "quoteNotFoundInSource": "Passage introuvable dans le texte source.",
     "tabGone": "L’onglet d’origine a été fermé ou a changé de page.",
     "copied": "Copié.",
     "playingFrom": "Lecture à partir de {{time}}",
@@ -39,8 +40,14 @@
     "errors_many": "{{count}} erreurs lors de l’affichage de cette vue",
     "errors_other": "{{count}} erreurs lors de l’affichage de cette vue",
     "showInPage": "Voir dans la page",
+    "showInSource": "Voir dans la source",
     "unverified": "Non vérifié",
-    "unverifiedHint": "Aucun passage de la source ne donne ce chiffre mot pour mot. Vérifiez-le avant de vous y fier.",
+    "unverifiedWhy": {
+      "noQuote": "Aucun passage de la source n’accompagne ce chiffre. Il a peut-être été compté ou calculé plutôt qu’écrit dans la source.",
+      "short": "Le passage est trop court pour être vérifié : « {{quote}} »",
+      "notFound": "Ce passage ne figure pas mot pour mot dans la source : « {{quote}} »",
+      "noFigure": "Le passage est dans la source mais ne contient pas ce chiffre : « {{quote}} »"
+    },
     "chartSources_one": "D’où vient ce chiffre",
     "chartSources_many": "D’où viennent ces {{count}} chiffres",
     "chartSources_other": "D’où viennent ces {{count}} chiffres",
@@ -243,5 +250,24 @@
     "copyFailed": "Impossible de copier l’image. Téléchargez-la plutôt.",
     "download": "Télécharger le PNG",
     "share": "Partager…"
+  },
+  "report": {
+    "question": "La mise en page ne convient pas à cette page ?",
+    "action": "Signalez-le",
+    "title": "Ouvre un ticket GitHub avec le type de source, l’analyse, le modèle et les blocs déjà remplis. L’adresse et le contenu de la page ne sont pas inclus."
+  },
+  "changes": {
+    "seen": "Vous avez résumé cette page le {{date}}.",
+    "show": "Ce qui a changé",
+    "hide": "Masquer les changements",
+    "title": "Changements depuis le {{date}}",
+    "comparing": "Comparaison…",
+    "none": "Le texte n’a pas changé depuis.",
+    "gone": "Ce résumé précédent n’est plus dans votre historique.",
+    "edited": "Modifié",
+    "added": "Nouveau",
+    "removed": "Supprimé",
+    "more": "+{{n}} de plus",
+    "partial": "Seule la partie de la page lue par chaque résumé est comparée."
   }
 }

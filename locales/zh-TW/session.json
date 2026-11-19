@@ -20,9 +20,10 @@
   "askPlaceholder": "針對此內容提問…",
   "ask": "提問",
   "toast": {
-    "highlightOnlyWeb": "只有在來源是已開啟的網頁時才能醒目標示。",
     "highlighted": "已在頁面中醒目標示。",
+    "highlightedInSource": "已在來源文字中標示。",
     "quoteNotFound": "在頁面中找不到這段引文。",
+    "quoteNotFoundInSource": "在來源文字中找不到這段內容。",
     "tabGone": "原分頁已關閉或已前往其他頁面。",
     "copied": "已複製。",
     "playingFrom": "從 {{time}} 開始播放",
@@ -35,8 +36,14 @@
   "genui": {
     "errors_other": "此檢視執行時發生 {{count}} 個錯誤",
     "showInPage": "在頁面中顯示",
+    "showInSource": "在來源中查看",
     "unverified": "未查證",
-    "unverifiedHint": "來源中沒有逐字寫出這個數字的段落。請先核對再使用。",
+    "unverifiedWhy": {
+      "noQuote": "這個數字沒有附上來源段落。它可能是計算或統計得出的，而不是來源直接寫明的。",
+      "short": "引用太短，無法核對：「{{quote}}」",
+      "notFound": "來源中沒有逐字相同的這段話：「{{quote}}」",
+      "noFigure": "這段話在來源中，但不包含這個數字：「{{quote}}」"
+    },
     "chartSources_other": "這 {{count}} 個數字的出處",
     "unverifiedCount_other": "{{count}} 個未查證",
     "copy": "複製",
@@ -223,5 +230,24 @@
     "copyFailed": "無法複製圖片，請改為下載。",
     "download": "下載 PNG",
     "share": "分享…"
+  },
+  "report": {
+    "question": "這個頁面的版面不合適？",
+    "action": "告訴我們",
+    "title": "開啟一個 GitHub issue，已填好來源類型、分析方式、模型和使用的區塊。不包含頁面網址和內容。"
+  },
+  "changes": {
+    "seen": "你在 {{date}} 摘要過這個頁面。",
+    "show": "有哪些變化",
+    "hide": "隱藏變化",
+    "title": "自 {{date}} 以來的變化",
+    "comparing": "正在比較…",
+    "none": "此後文字沒有變化。",
+    "gone": "之前的摘要已不在歷史紀錄中。",
+    "edited": "已修改",
+    "added": "新增",
+    "removed": "已刪除",
+    "more": "還有 {{n}} 項",
+    "partial": "只比較每次摘要讀取的那部分頁面。"
   }
 }

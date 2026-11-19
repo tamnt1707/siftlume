@@ -28,6 +28,17 @@ const parser = createParser(library.toJSONSchema(), ROOT);
 /** The program's component tree (also read by lib/share-card.ts). */
 export const parseProgram = (program: string): unknown => parser.parse(program).root;
 
+/** Every component in a parsed program, depth first, in reading order. */
+export function* programNodes(v: unknown): Generator<{ typeName?: string; props?: Record<string, unknown> }> {
+  if (Array.isArray(v)) {
+    for (const x of v) yield* programNodes(x);
+  } else if (v && typeof v === 'object' && (v as { type?: string }).type === 'element') {
+    const node = v as { typeName?: string; props?: Record<string, unknown> };
+    yield node;
+    for (const p of Object.values(node.props ?? {})) yield* programNodes(p);
+  }
+}
+
 type Node = { type?: string; typeName?: string; props?: Record<string, unknown> };
 
 const isNode = (v: unknown): v is Node => Boolean(v && typeof v === 'object' && (v as Node).type === 'element');

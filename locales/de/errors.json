@@ -70,6 +70,7 @@
     "emptySheet": "Dieses Tabellenblatt ist leer.",
     "drivePdfOnly": "Siftlume liest PDFs aus Google Drive. Andere Dateien öffne in Docs, Tabellen oder Präsentationen, oder lade sie herunter und wähle auf dem Startbildschirm „Datei“.",
     "driveTooBig": "Dieses PDF ist größer als {{size}} MB. Lade es herunter und wähle auf dem Startbildschirm „Datei“.",
+    "driveAccess": "Siftlume konnte diese Datei nicht von Google Drive herunterladen. Klicke im Siftlume-Bereich auf die Schaltfläche zum Zusammenfassen und erlaube den Zugriff auf drive.usercontent.google.com (die Download-Seite von Drive): Die Datei wird dann mit deiner eigenen Google-Sitzung geladen. Ohne diese Erlaubnis lassen sich nur Dateien lesen, die für „Jeder, der über den Link verfügt“ freigegeben sind.",
     "scannedPdf": "Dieses PDF hat keine Textebene (wahrscheinlich ein Scan), daher gibt es nichts zu lesen."
   }
 }
