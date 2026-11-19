@@ -8,7 +8,7 @@ import { HugeiconsIcon } from '@hugeicons/react';
 import { Alert02Icon, Copy01Icon, HighlighterIcon } from '@hugeicons/core-free-icons';
 import { defineComponent, useIsStreaming, useTriggerAction } from '@openuidev/react-lang';
 import { z } from 'zod/v4';
-import { checkEvidence, useEvidence } from '@/lib/evidence';
+import { evidenceStatus, useEvidence } from '@/lib/evidence';
 import { copyText, customAction, highlightInPage } from './actions';
 
 /**
@@ -24,9 +24,12 @@ export function EvidenceMark({ quote, value }: { quote?: string | null; value?: 
   const { t } = useTranslation('session');
   // While streaming the passage may still be arriving: judge it once the program is complete.
   if (!evidence || streaming) return null;
-  if (!checkEvidence(evidence.content, quote, value)) {
+  const status = evidenceStatus(evidence.content, quote, value);
+  if (status !== 'ok') {
+    // Why, with the passage the model gave: a figure it counted reads differently from a misquote.
+    const why = t(`genui.unverifiedWhy.${status}`, { quote: quote?.trim() ?? '' });
     return (
-      <span className="g-evidence g-evidence--unverified" title={t('genui.unverifiedHint')}>
+      <span className="g-evidence g-evidence--unverified" title={why} aria-label={`${t('genui.unverified')}: ${why}`}>
         <HugeiconsIcon icon={Alert02Icon} size={12} strokeWidth={2} aria-hidden="true" />
         {t('genui.unverified')}
       </span>

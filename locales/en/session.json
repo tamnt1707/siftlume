@@ -40,7 +40,12 @@
     "showInPage": "Show in page",
     "showInSource": "Show in source",
     "unverified": "Unverified",
-    "unverifiedHint": "No passage in the source states this figure word for word. Check it before you rely on it.",
+    "unverifiedWhy": {
+      "noQuote": "No source passage was given for this figure. It may have been counted or worked out rather than stated in the source.",
+      "short": "The passage given is too short to check: “{{quote}}”",
+      "notFound": "This passage is not in the source word for word: “{{quote}}”",
+      "noFigure": "The passage is in the source but does not show this figure: “{{quote}}”"
+    },
     "chartSources_one": "Where this number comes from",
     "chartSources_other": "Where these {{count}} numbers come from",
     "unverifiedCount_one": "{{count}} unverified",
@@ -235,5 +240,10 @@
     "copyFailed": "Could not copy the image. Download it instead.",
     "download": "Download PNG",
     "share": "Share…"
+  },
+  "report": {
+    "question": "Layout not right for this page?",
+    "action": "Tell us",
+    "title": "Opens a GitHub issue with the source type, analysis, model and blocks filled in. The page's address and content are not included."
   }
 }

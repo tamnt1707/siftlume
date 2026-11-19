@@ -11,6 +11,7 @@ import { useVideoProbe } from './useVideoProbe';
 import { TabsPicker } from './TabsPicker';
 import { DeepToggle } from './DeepRead';
 import { requestTabsPermission } from '@/lib/multi';
+import { googleFileRef, requestDriveAccess } from '@/lib/gdocs';
 import { RUN_LABELS, specialPage } from '@/lib/special-page';
 
 const ACCEPT = '.pdf,.csv,.tsv,.md,.markdown,.mdx,.txt,.json,.html,.htm,.log,.xml,.yaml,.yml';
@@ -130,7 +131,15 @@ export function SourcePicker({
             <button
               className="btn btn--primary btn--hero"
               disabled={busy || !page.readable || Boolean(video.blocked)}
-              onClick={() => void ctrl.fromTab(page.id, mode, { deep: deep && canDeep })}
+              onClick={() => {
+                const read = () => void ctrl.fromTab(page.id, mode, { deep: deep && canDeep });
+                // A Drive file is downloaded by the extension itself; Chrome only prompts during a click.
+                if (googleFileRef(page.url)?.type === 'drive')
+                  void requestDriveAccess()
+                    .catch(() => false)
+                    .then(read);
+                else read();
+              }}
             >
               <span className="btn__label">
                 <Icon icon={SparklesIcon} />

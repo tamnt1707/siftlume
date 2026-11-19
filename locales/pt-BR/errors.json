@@ -70,6 +70,7 @@
     "emptySheet": "Esta página da planilha está vazia.",
     "drivePdfOnly": "O Siftlume lê PDFs do Google Drive. Para outros arquivos, abra-os no Docs, Planilhas ou Apresentações, ou baixe-os e escolha Arquivo na tela inicial.",
     "driveTooBig": "Este PDF tem mais de {{size}} MB. Baixe-o e escolha Arquivo na tela inicial.",
+    "driveAccess": "O Siftlume não conseguiu baixar este arquivo do Google Drive. Clique no botão de resumir no painel do Siftlume e permita o acesso a drive.usercontent.google.com (o site de downloads do Drive): o arquivo será baixado com a sua própria sessão do Google. Sem essa permissão, só é possível ler arquivos compartilhados com \"Qualquer pessoa com o link\".",
     "scannedPdf": "Este PDF não tem camada de texto (provavelmente é uma digitalização), então não há nada para ler."
   }
 }

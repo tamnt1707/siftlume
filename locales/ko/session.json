@@ -38,7 +38,12 @@
     "showInPage": "페이지에서 보기",
     "showInSource": "원문에서 보기",
     "unverified": "미확인",
-    "unverifiedHint": "원문에서 이 수치를 그대로 적은 부분을 찾지 못했습니다. 믿기 전에 확인하세요.",
+    "unverifiedWhy": {
+      "noQuote": "이 수치에는 원문 구절이 없습니다. 원문에 적힌 값이 아니라 세거나 계산한 값일 수 있습니다.",
+      "short": "인용이 너무 짧아 확인할 수 없습니다: “{{quote}}”",
+      "notFound": "이 구절은 원문에 그대로 있지 않습니다: “{{quote}}”",
+      "noFigure": "구절은 원문에 있지만 이 수치는 없습니다: “{{quote}}”"
+    },
     "chartSources_other": "이 수치 {{count}}개의 출처",
     "unverifiedCount_other": "{{count}}개 미확인",
     "copy": "복사",
@@ -225,5 +230,10 @@
     "copyFailed": "이미지를 복사할 수 없습니다. 대신 다운로드하세요.",
     "download": "PNG 다운로드",
     "share": "공유…"
+  },
+  "report": {
+    "question": "이 페이지에 맞지 않는 레이아웃인가요?",
+    "action": "알려 주세요",
+    "title": "소스 유형, 분석 방식, 모델, 사용된 블록이 채워진 GitHub 이슈를 엽니다. 페이지 주소와 내용은 포함되지 않습니다."
   }
 }

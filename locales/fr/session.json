@@ -42,7 +42,12 @@
     "showInPage": "Voir dans la page",
     "showInSource": "Voir dans la source",
     "unverified": "Non vérifié",
-    "unverifiedHint": "Aucun passage de la source ne donne ce chiffre mot pour mot. Vérifiez-le avant de vous y fier.",
+    "unverifiedWhy": {
+      "noQuote": "Aucun passage de la source n’accompagne ce chiffre. Il a peut-être été compté ou calculé plutôt qu’écrit dans la source.",
+      "short": "Le passage est trop court pour être vérifié : « {{quote}} »",
+      "notFound": "Ce passage ne figure pas mot pour mot dans la source : « {{quote}} »",
+      "noFigure": "Le passage est dans la source mais ne contient pas ce chiffre : « {{quote}} »"
+    },
     "chartSources_one": "D’où vient ce chiffre",
     "chartSources_many": "D’où viennent ces {{count}} chiffres",
     "chartSources_other": "D’où viennent ces {{count}} chiffres",
@@ -245,5 +250,10 @@
     "copyFailed": "Impossible de copier l’image. Téléchargez-la plutôt.",
     "download": "Télécharger le PNG",
     "share": "Partager…"
+  },
+  "report": {
+    "question": "La mise en page ne convient pas à cette page ?",
+    "action": "Signalez-le",
+    "title": "Ouvre un ticket GitHub avec le type de source, l’analyse, le modèle et les blocs déjà remplis. L’adresse et le contenu de la page ne sont pas inclus."
   }
 }
