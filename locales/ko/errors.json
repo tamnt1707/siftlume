@@ -70,6 +70,7 @@
     "emptySheet": "이 시트는 비어 있습니다.",
     "drivePdfOnly": "Siftlume은 Google 드라이브의 PDF를 읽습니다. 다른 파일은 Docs, Sheets, Slides에서 열거나 다운로드한 뒤 시작 화면에서 '파일'을 선택하세요.",
     "driveTooBig": "이 PDF는 {{size}}MB보다 큽니다. 다운로드한 뒤 시작 화면에서 '파일'을 선택하세요.",
+    "driveAccess": "Siftlume가 Google Drive에서 이 파일을 다운로드하지 못했습니다. Siftlume 패널에서 요약 버튼을 클릭하고 drive.usercontent.google.com(Drive의 다운로드 사이트) 접근을 허용하세요. 그러면 내 Google 세션으로 파일을 다운로드합니다. 허용하지 않으면 '링크가 있는 모든 사용자'에게 공유된 파일만 읽을 수 있습니다.",
     "scannedPdf": "이 PDF에는 텍스트 레이어가 없어(스캔본으로 보임) 읽을 내용이 없습니다."
   }
 }
