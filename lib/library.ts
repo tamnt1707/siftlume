@@ -1,4 +1,6 @@
+import { defineComponent, type DefinedComponent } from '@openuidev/react-lang';
 import { openuiChatLibrary } from '@openuidev/react-ui';
+import { z } from 'zod/v4';
 import { copyText, highlightInPage } from './genui/actions';
 import { CONTENT_SLOTS } from './genui/shared';
 import {
@@ -61,6 +63,21 @@ const UNUSED = [
   'OptionCards',
   'OptionCard',
 ];
+
+const builtin = openuiChatLibrary.components as unknown as Record<string, DefinedComponent>;
+
+/**
+ * A step's details may be a CodeBlock as well as Markdown text. Models put a step's command in a
+ * CodeBlock; with text only, the parser dropped the whole step, and a guide lost every step that
+ * had a command. Steps already renders a component in details; only the schema refused it.
+ */
+const StepsItem = defineComponent({
+  name: 'StepsItem',
+  description:
+    'One step: a short title, and details as Markdown text (a command in a ``` fence) or a CodeBlock when the step is mainly a command.',
+  props: z.object({ title: z.string(), details: z.union([z.string(), builtin.CodeBlock!.ref]) }),
+  component: builtin.StepsItem!.component,
+});
 
 /**
  * Library shared by the summary and Q&A: openuiChatLibrary (root Card) + SourceQuote + custom
@@ -139,6 +156,7 @@ export const library = openuiChatLibrary.extend({
       Ingredient,
     ],
     remove: UNUSED,
+    override: [StepsItem],
   },
   actions: { add: [highlightInPage, copyText] },
 });
