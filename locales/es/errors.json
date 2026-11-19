@@ -70,6 +70,7 @@
     "emptySheet": "Esta hoja está vacía.",
     "drivePdfOnly": "Siftlume lee PDF de Google Drive. Para otros archivos, ábrelos en Docs, Hojas de cálculo o Presentaciones, o descárgalos y elige Archivo en la pantalla de inicio.",
     "driveTooBig": "Este PDF pesa más de {{size}} MB. Descárgalo y elige Archivo en la pantalla de inicio.",
+    "driveAccess": "Siftlume no pudo descargar este archivo de Google Drive. Haz clic en el botón de resumir del panel de Siftlume y permite el acceso a drive.usercontent.google.com (el sitio de descargas de Drive): el archivo se descargará con tu propia sesión de Google. Sin ese permiso, solo se pueden leer archivos compartidos con «Cualquier persona que tenga el enlace».",
     "scannedPdf": "Este PDF no tiene capa de texto (probablemente es un escaneo), así que no hay nada que leer."
   }
 }

@@ -70,6 +70,7 @@
     "emptySheet": "Sheet này đang trống.",
     "drivePdfOnly": "Siftlume đọc được file PDF trên Google Drive. Với loại file khác, hãy mở bằng Docs, Sheets hoặc Slides, hoặc tải về rồi chọn mục File ở màn hình bắt đầu.",
     "driveTooBig": "File PDF này lớn hơn {{size}} MB. Hãy tải về rồi chọn mục File ở màn hình bắt đầu.",
+    "driveAccess": "Siftlume chưa tải được file này từ Google Drive. Bấm nút tóm tắt trong khung Siftlume rồi cho phép truy cập drive.usercontent.google.com (trang tải xuống của Drive): file sẽ được tải bằng phiên đăng nhập Google của chính bạn. Nếu không cho phép, chỉ đọc được file chia sẻ \"Bất kỳ ai có đường liên kết\".",
     "scannedPdf": "File PDF này không có lớp chữ (có lẽ là bản scan), nên không có gì để đọc."
   }
 }
