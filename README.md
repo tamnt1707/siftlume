@@ -111,7 +111,7 @@ Full policy: [tamnt1707.github.io/siftlume/privacy.html](https://tamnt1707.githu
 
 - API keys are stored only in this browser (`chrome.storage.local`) and are never synced.
 - Page content is sent only to the provider you configured, and only when you ask for a summary.
-- Google Docs, Sheets, Slides and Drive PDFs are downloaded inside their own tab with your Google session, as File → Download does. GitHub pull requests are read from `api.github.com`; the optional GitHub token stays in this browser and is sent only there.
+- Google Docs, Sheets, Slides and Drive PDFs are downloaded with your Google session, as File → Download does: Docs, Sheets and Slides inside their own tab, Drive PDFs from `drive.usercontent.google.com` once you allow that site (asked the first time). GitHub pull requests are read from `api.github.com`; the optional GitHub token stays in this browser and is sent only there.
 - Page access comes from `activeTab`, granted for the tab where you click the icon or use the context menu. Host permissions are requested only for the API domain of your provider, when you save Settings, and for the sites of the tabs you pick in "Combine open tabs" (which also asks for the optional `tabs` permission to list them).
 
 ## Development
