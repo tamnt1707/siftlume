@@ -5,7 +5,7 @@
  */
 import { useTranslation } from 'react-i18next';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { Alert02Icon, Calculator01Icon, Copy01Icon, HighlighterIcon } from '@hugeicons/core-free-icons';
+import { Alert02Icon, Calculator01Icon, Copy01Icon, HighlighterIcon, QuoteDownIcon } from '@hugeicons/core-free-icons';
 import { defineComponent, useIsStreaming, useTriggerAction } from '@openuidev/react-lang';
 import { z } from 'zod/v4';
 import { figureCheck, type FigureInput } from '@/lib/derived';
@@ -47,6 +47,7 @@ function ShowButton({ quote }: { quote: string }) {
 /**
  * Where a figure comes from: a "Show in page" button when its passage is verbatim in the source;
  * "Derived" when it was worked out from figures that are (opens them, each with its own button);
+ * "Inferred" when its passage says it in words ("no fee" for 0; opens the passage);
  * an "Unverified" mark otherwise. Nothing outside a session (no source to check).
  * The button always has its label ("Show in page", or "Show in source" for PDFs and files), like
  * the one on source quotes: a bare icon was not read as one.
@@ -95,6 +96,22 @@ export function EvidenceMark({
               <ShowButton quote={shared} />
             </>
           )}
+        </div>
+      </details>
+    );
+  }
+  if (check.status === 'inferred') {
+    // Said in words, not digits ("no fee" for 0): the words, to judge the reading.
+    return (
+      <details className="g-evidence g-why g-inferred">
+        <summary title={t('genui.inferredWhy')}>
+          <HugeiconsIcon icon={QuoteDownIcon} size={12} strokeWidth={2} aria-hidden="true" />
+          {t('genui.inferred')}
+        </summary>
+        <div className="g-why__panel">
+          <p>{t('genui.inferredFrom')}</p>
+          <q className="g-why__quote">{check.quote}</q>
+          <ShowButton quote={check.quote!} />
         </div>
       </details>
     );

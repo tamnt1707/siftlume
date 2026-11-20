@@ -59,6 +59,9 @@
       "change": "変化率",
       "product": "積"
     },
+    "inferred": "読み取り",
+    "inferredWhy": "元の文書に数字では書かれていません。文章から読み取った値です。",
+    "inferredFrom": "元の文書は数字ではなく言葉でこう述べています:",
     "chartSources_other": "この {{count}} 件の数値の出典",
     "unverifiedCount_other": "{{count}} 件が未確認",
     "copy": "コピー",

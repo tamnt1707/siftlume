@@ -61,6 +61,9 @@
       "change": "Veränderung in %",
       "product": "Produkt"
     },
+    "inferred": "Abgeleitet",
+    "inferredWhy": "Steht nicht als Zahl in der Quelle: aus dem Wortlaut gelesen.",
+    "inferredFrom": "Die Quelle sagt das in Worten, nicht als Zahl:",
     "chartSources_one": "Woher diese Zahl stammt",
     "chartSources_other": "Woher diese {{count}} Zahlen stammen",
     "unverifiedCount_one": "{{count}} ungeprüft",

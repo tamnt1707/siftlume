@@ -61,6 +61,9 @@
       "change": "% change",
       "product": "product"
     },
+    "inferred": "Inferred",
+    "inferredWhy": "Not written as a number in the source: read from its words.",
+    "inferredFrom": "The source says this in words, not as a number:",
     "chartSources_one": "Where this number comes from",
     "chartSources_other": "Where these {{count}} numbers come from",
     "unverifiedCount_one": "{{count}} unverified",

@@ -59,6 +59,9 @@
       "change": "% thay đổi",
       "product": "tích"
     },
+    "inferred": "Suy ra",
+    "inferredWhy": "Nguồn không viết thành số: con số được suy ra từ câu chữ.",
+    "inferredFrom": "Nguồn nói điều này bằng lời, không viết thành số:",
     "chartSources_other": "Nguồn của {{count}} con số này",
     "unverifiedCount_other": "{{count}} chưa xác minh",
     "copy": "Sao chép",

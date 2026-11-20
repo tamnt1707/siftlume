@@ -59,6 +59,9 @@
       "change": "變化率",
       "product": "乘積"
     },
+    "inferred": "推斷",
+    "inferredWhy": "原文沒有寫成數字：由文字推斷得出。",
+    "inferredFrom": "原文用文字而非數字這樣說：",
     "chartSources_other": "這 {{count}} 個數字的出處",
     "unverifiedCount_other": "{{count}} 個未查證",
     "copy": "複製",

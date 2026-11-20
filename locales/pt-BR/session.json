@@ -63,6 +63,9 @@
       "change": "variação %",
       "product": "produto"
     },
+    "inferred": "Inferido",
+    "inferredWhy": "Não aparece como número na fonte: foi lido das palavras dela.",
+    "inferredFrom": "A fonte diz isso em palavras, não como número:",
     "chartSources_one": "De onde vem este número",
     "chartSources_many": "De onde vêm estes {{count}} números",
     "chartSources_other": "De onde vêm estes {{count}} números",

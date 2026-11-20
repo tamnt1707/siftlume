@@ -196,3 +196,33 @@ describe('figures found on a real page', () => {
     expect(figureCheck(page, null, '50').status).toBe('noQuote');
   });
 });
+
+// The Markdown Siftlume made from browserpod.io/blog/browserpod-40 (2026-11-20).
+describe('figures the source says in words', () => {
+  const page = readFileSync(new URL('./fixtures/browserpod-40.md', import.meta.url), 'utf8');
+
+  it.each([
+    ['0', 'No usage limit, no fee, nothing metered.'],
+    ['0', 'No account, no key, no call-home.'],
+    ['0', 'a private, isolated, zero-cost microVM that runs on their own device'],
+    ['$0', 'you can now use it as a library completely for free'],
+  ])('%s from "%s"', (value, quote) => {
+    expect(figureCheck(page, quote, value)).toEqual({ status: 'inferred', quote });
+  });
+
+  it('reads small numbers spelled out', () => {
+    const src = 'The release adds twelve new built-in programs and a dozen fixes.';
+    expect(figureCheck(src, 'The release adds twelve new built-in programs', '12').status).toBe('inferred');
+    expect(figureCheck(src, 'The release adds twelve new built-in programs', '11').status).toBe('noFigure');
+  });
+
+  it('needs the words to say it', () => {
+    expect(figureCheck(page, 'BrowserPod Pro is now Edge Pro, at the same price', '0').status).toBe('noFigure');
+    expect(figureCheck(page, 'No usage limit, no fee, nothing metered.', '5').status).toBe('noFigure');
+    expect(figureCheck(page, 'No usage limit, no fee, nothing metered.', '0%').status).toBe('noFigure');
+  });
+
+  it('needs the passage to be in the source', () => {
+    expect(figureCheck(page, 'There is no fee of any kind at all', '0').status).toBe('notFound');
+  });
+});

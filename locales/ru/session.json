@@ -65,6 +65,9 @@
       "change": "изменение в %",
       "product": "произведение"
     },
+    "inferred": "Выведено",
+    "inferredWhy": "В источнике не записано числом: выведено из его слов.",
+    "inferredFrom": "Источник говорит это словами, а не числом:",
     "chartSources_one": "Откуда это число",
     "chartSources_few": "Откуда эти {{count}} числа",
     "chartSources_many": "Откуда эти {{count}} чисел",

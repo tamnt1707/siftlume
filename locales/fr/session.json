@@ -63,6 +63,9 @@
       "change": "variation en %",
       "product": "produit"
     },
+    "inferred": "Déduit",
+    "inferredWhy": "Pas écrit en chiffres dans la source : déduit de ses mots.",
+    "inferredFrom": "La source le dit en mots, pas en chiffres :",
     "chartSources_one": "D’où vient ce chiffre",
     "chartSources_many": "D’où viennent ces {{count}} chiffres",
     "chartSources_other": "D’où viennent ces {{count}} chiffres",

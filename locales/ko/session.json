@@ -59,6 +59,9 @@
       "change": "변화율",
       "product": "곱"
     },
+    "inferred": "추론",
+    "inferredWhy": "원문에 숫자로 적혀 있지 않습니다. 문장에서 읽어 낸 값입니다.",
+    "inferredFrom": "원문은 숫자가 아니라 말로 이렇게 적고 있습니다:",
     "chartSources_other": "이 수치 {{count}}개의 출처",
     "unverifiedCount_other": "{{count}}개 미확인",
     "copy": "복사",
