@@ -48,8 +48,28 @@ import { ARTICLE, SUMMARY, SUMMARY_CHECKED } from './content';
 import { POSTS } from './posts-vi';
 
 const query = new URLSearchParams(location.search);
-/** `&lang=vi`: the showcase's own labels in Vietnamese too (the sample content stays as written). */
-const VI = query.get('lang') === 'vi';
+/**
+ * `&lang=`: the showcase's own labels in that language too. Words the app has come from its
+ * locales; the few only the showcase uses are here. The sample content stays as written.
+ */
+const OWN_WORDS: Record<string, { before: string; article: string; after: string; panel: string; question: string; answer: string }> = {
+  en: { before: 'Before', article: 'a 14-minute article', after: 'After', panel: 'Siftlume, in the side panel', question: 'Why is hardware shrinking?', answer: 'Customers are moving from on-premise servers to cloud subscriptions, so hardware revenue fell for the fourth quarter in a row while cloud grew.' },
+  vi: { before: 'Trước', article: 'một bài 14 phút đọc', after: 'Sau', panel: 'Siftlume, trong side panel', question: 'Vì sao mảng phần cứng giảm?', answer: 'Khách hàng chuyển từ máy chủ tại chỗ sang thuê bao cloud, nên doanh thu phần cứng giảm quý thứ tư liên tiếp trong khi cloud tăng.' },
+  ja: { before: '前', article: '14分で読む記事', after: '後', panel: 'サイドパネルの Siftlume', question: 'なぜハードウェアは縮小しているのですか？', answer: '顧客がオンプレミスのサーバーからクラウドのサブスクリプションへ移っているため、クラウドが伸びる一方でハードウェアの売上は4四半期連続で減少しました。' },
+  'zh-CN': { before: '之前', article: '一篇需读 14 分钟的文章', after: '之后', panel: '侧边栏中的 Siftlume', question: '为什么硬件业务在萎缩？', answer: '客户正从本地服务器转向云订阅，因此在云业务增长的同时，硬件收入连续第四个季度下滑。' },
+  'zh-TW': { before: '之前', article: '一篇需讀 14 分鐘的文章', after: '之後', panel: '側邊欄中的 Siftlume', question: '為什麼硬體業務在萎縮？', answer: '客戶正從自建伺服器轉向雲端訂閱，因此在雲端成長的同時，硬體營收連續第四季下滑。' },
+  ko: { before: '이전', article: '14분 분량의 기사', after: '이후', panel: '사이드 패널의 Siftlume', question: '하드웨어 사업은 왜 줄고 있나요?', answer: '고객이 온프레미스 서버에서 클라우드 구독으로 옮겨 가면서, 클라우드가 성장하는 동안 하드웨어 매출은 4분기 연속 감소했습니다.' },
+  es: { before: 'Antes', article: 'un artículo de 14 minutos', after: 'Después', panel: 'Siftlume, en el panel lateral', question: '¿Por qué se reduce el hardware?', answer: 'Los clientes pasan de servidores propios a suscripciones en la nube, así que los ingresos de hardware cayeron por cuarto trimestre seguido mientras la nube crecía.' },
+  fr: { before: 'Avant', article: 'un article de 14 minutes', after: 'Après', panel: 'Siftlume, dans le panneau latéral', question: 'Pourquoi le matériel recule-t-il ?', answer: 'Les clients passent de serveurs sur site à des abonnements cloud : le chiffre d’affaires du matériel a baissé pour le quatrième trimestre consécutif pendant que le cloud progressait.' },
+  de: { before: 'Vorher', article: 'ein Artikel mit 14 Minuten Lesezeit', after: 'Nachher', panel: 'Siftlume in der Seitenleiste', question: 'Warum schrumpft das Hardwaregeschäft?', answer: 'Kunden wechseln von eigenen Servern zu Cloud-Abos, daher sank der Hardwareumsatz das vierte Quartal in Folge, während die Cloud wuchs.' },
+  'pt-BR': { before: 'Antes', article: 'um artigo de 14 minutos', after: 'Depois', panel: 'Siftlume, no painel lateral', question: 'Por que o hardware está encolhendo?', answer: 'Os clientes estão trocando servidores próprios por assinaturas de nuvem, então a receita de hardware caiu pelo quarto trimestre seguido enquanto a nuvem cresceu.' },
+  ru: { before: 'До', article: 'статья на 14 минут', after: 'После', panel: 'Siftlume на боковой панели', question: 'Почему сокращается оборудование?', answer: 'Клиенты переходят с собственных серверов на облачные подписки, поэтому выручка от оборудования падает четвёртый квартал подряд, а облако растёт.' },
+  th: { before: 'ก่อน', article: 'บทความยาว 14 นาที', after: 'หลัง', panel: 'Siftlume ในแผงด้านข้าง', question: 'ทำไมธุรกิจฮาร์ดแวร์จึงหดตัว?', answer: 'ลูกค้าย้ายจากเซิร์ฟเวอร์ของตัวเองไปใช้บริการคลาวด์แบบสมัครสมาชิก รายได้ฮาร์ดแวร์จึงลดลงเป็นไตรมาสที่สี่ติดต่อกันขณะที่คลาวด์เติบโต' },
+};
+const OWN = OWN_WORDS[query.get('lang') ?? 'en'] ?? OWN_WORDS.en!;
+/** A string of the app, in the showcase's language. */
+const appText = (key: string, options: Record<string, unknown> = {}) =>
+  (i18n.t as (k: string, o: Record<string, unknown>) => string)(key, options);
 const view = query.get('view') ?? 'compare';
 const dark = new URLSearchParams(location.search).has('dark');
 const settings: Settings = {
@@ -79,7 +99,7 @@ function Topbar({
       </span>
       {tools && <div className="topbar__tools">{tools}</div>}
       <nav>
-        {wide ? <span className="btn btn--sm">{VI ? 'Mới' : 'New'}</span> : null}
+        {wide ? <span className="btn btn--sm">{appText('common:actions.new')}</span> : null}
         <span className="icon-btn">
           <Icon icon={Clock01Icon} />
         </span>
@@ -92,7 +112,7 @@ function Topbar({
   );
 }
 
-function SourceRow({ title, panel, saved = VI ? 'Tiết kiệm ~12 phút' : '~12 min saved' }: { title: string; panel?: boolean; saved?: string }) {
+function SourceRow({ title, panel, saved = appText('session:toolbar.timeSaved', { count: 12 }) }: { title: string; panel?: boolean; saved?: string }) {
   return (
     <header className="source">
       <div className="source__meta">
@@ -103,7 +123,7 @@ function SourceRow({ title, panel, saved = VI ? 'Tiết kiệm ~12 phút' : '~12
       <div className="source__actions">
         <span className="tool-btn">
           <Icon icon={RefreshIcon} size={16} />
-          {!panel && <span>{VI ? 'Tóm tắt lại' : 'Summarize again'}</span>}
+          {!panel && <span>{appText('session:summarizeAgain')}</span>}
         </span>
         {panel && (
           <span className="tool-btn">
@@ -119,7 +139,7 @@ function SourceRow({ title, panel, saved = VI ? 'Tiết kiệm ~12 phút' : '~12
 
 const Ask = () => (
   <div className="ask sc-ask">
-    <span className="input sc-placeholder">{VI ? 'Hỏi bất cứ điều gì về nội dung này…' : 'Ask anything about this…'}</span>
+    <span className="input sc-placeholder">{appText('session:askPlaceholder')}</span>
     <span className="btn btn--primary btn--icon">
       <Icon icon={ArrowUp02Icon} />
     </span>
@@ -160,7 +180,7 @@ function Compare() {
     <div className="sc-compare">
       <section className="sc-col">
         <p className="sc-label">
-          {VI ? 'Trước' : 'Before'} <span>{VI ? 'một bài 14 phút đọc' : 'a 14-minute article'}</span>
+          {OWN.before} <span>{OWN.article}</span>
         </p>
         <div className="sc-browser">
           <div className="sc-chrome">
@@ -191,7 +211,7 @@ function Compare() {
       </div>
       <section className="sc-col sc-col--after">
         <p className="sc-label">
-          {VI ? 'Sau' : 'After'} <span>{VI ? 'Siftlume, trong side panel' : 'Siftlume, in the side panel'}</span>
+          {OWN.after} <span>{OWN.panel}</span>
         </p>
         <Themed settings={settings} className="app app--panel sc-panel">
           <Topbar />
@@ -350,14 +370,12 @@ function FullPage() {
           </div>
           <aside className="session__side">
             <section className="qa">
-              <h3 className="section-title">{VI ? 'Câu hỏi' : 'Questions'}</h3>
+              <h3 className="section-title">{appText('session:questions')}</h3>
               <div className="qa__turn">
-                <div className="bubble">{VI ? 'Vì sao mảng phần cứng giảm?' : 'Why is hardware shrinking?'}</div>
+                <div className="bubble">{OWN.question}</div>
                 <div className="answer">
                   <p>
-                    {VI
-                      ? 'Khách hàng chuyển từ máy chủ tại chỗ sang thuê bao cloud, nên doanh thu phần cứng giảm quý thứ tư liên tiếp trong khi cloud tăng.'
-                      : 'Customers are moving from on-premise servers to cloud subscriptions, so hardware revenue fell for the fourth quarter in a row while cloud grew.'}
+                    {OWN.answer}
                   </p>
                 </div>
               </div>
@@ -649,7 +667,7 @@ function HistoryShot() {
     <Themed settings={settings} className="app app--page">
       <main className="content">
         <div className="narrow">
-          <h2 className="section-title">{VI ? 'Lịch sử' : 'History'}</h2>
+          <h2 className="section-title">{appText('common:actions.history')}</h2>
           <HistoryView settings={settings} onOpen={() => {}} />
         </div>
       </main>
