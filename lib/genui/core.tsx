@@ -118,7 +118,7 @@ export function EvidenceMark({
       </details>
     );
   }
-  return <ShowButton quote={quote!} />;
+  return <ShowButton quote={check.quote ?? quote!} />;
 }
 
 export const SummaryHero = defineComponent({

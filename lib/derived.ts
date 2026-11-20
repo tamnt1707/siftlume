@@ -1,4 +1,4 @@
-import { evidenceStatus, type EvidenceStatus } from './evidence';
+import { evidenceStatus, locateFigure, type EvidenceStatus } from './evidence';
 
 /**
  * Figures the model worked out itself (a total, a difference, a percentage change) have no
@@ -33,6 +33,8 @@ export interface FigureCheck {
   op?: DerivedOp;
   /** For a derived figure: the inputs it was worked out from. */
   inputs?: FigureInput[];
+  /** For a figure found in the source without the model's passage: the passage found. */
+  quote?: string;
 }
 
 /** At most this many inputs are combined: a figure worked out from more is not checkable at a glance. */
@@ -229,9 +231,22 @@ export function figuresInPassage(passage: string): string[] {
  * Whether a figure is backed by the source: its own passage first; without one, the figures it
  * was worked out from, and the arithmetic. A passage that is in the source but does not show the
  * figure may hold the figures it was worked out from ("Q3 1,510 … Q4 1,870" for "+23.8%"): those
- * count as its inputs.
+ * count as its inputs. Last, a figure the model gave no usable passage for may still be written in
+ * the source, once, in running text: that passage is used (lib/evidence.ts locateFigure).
  */
 export function figureCheck(
+  content: string,
+  quote: string | undefined | null,
+  value?: string | number | null,
+  inputs?: FigureInput[] | null,
+): FigureCheck {
+  const check = checkFigure(content, quote, value, inputs);
+  if (check.status === 'ok' || check.status === 'derived' || value === undefined || value === null) return check;
+  const found = locateFigure(content, value);
+  return found ? { status: 'ok', quote: found } : check;
+}
+
+function checkFigure(
   content: string,
   quote: string | undefined | null,
   value?: string | number | null,

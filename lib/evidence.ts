@@ -168,3 +168,43 @@ export function figureRange(quote: string, value: string | number | null | undef
   const found = figuresIn(quote).find((f) => sameFigure(figure, f));
   return found ? [found.index, found.index + found.length] : null;
 }
+
+/** Words kept on each side of a figure found in the source, for its passage. */
+const AROUND = 8;
+
+/** A line of Markdown as a reader sees it: no link targets, footnote links or emphasis. */
+const plainLine = (line: string) =>
+  line
+    .replace(/\[\[[^\]]*\]\]\([^)]*\)/g, '')
+    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/[*_`#>]+/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+/**
+ * A passage for a figure the model gave no usable passage for, found in the source itself: the
+ * words around it, when it is written exactly once in running text. Table rows are left out (a
+ * rank column holds every small number), and so is any figure written more than once, as which
+ * one is meant cannot be told. "26" is not "2026", and a percentage is not a plain number.
+ */
+export function locateFigure(content: string, value: string | number | null | undefined): string | null {
+  const figure = firstFigure(value);
+  if (!figure) return null;
+  const percent = String(value).includes('%');
+  const hits: string[] = [];
+  for (const line of content.split('\n')) {
+    if (/^\s*\|/.test(line)) continue;
+    for (const sentence of plainLine(line).split(/(?<=[.!?。！？])\s+/)) {
+      for (const f of figuresIn(sentence)) {
+        if (!sameFigure(figure, f)) continue;
+        if (sentence.slice(f.index, f.index + f.length).endsWith('%') !== percent) continue;
+        const words = sentence.split(' ');
+        const at = sentence.slice(0, f.index).split(' ').length - 1;
+        hits.push(words.slice(Math.max(0, at - AROUND), at + AROUND + 1).join(' '));
+        if (hits.length > 1) return null;
+      }
+    }
+  }
+  const passage = hits[0];
+  return passage && evidenceStatus(content, passage, value) === 'ok' ? passage : null;
+}

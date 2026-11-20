@@ -149,3 +149,29 @@ describe('figures worked out from their own passage', () => {
     expect(figureCheck(src, quote, '50%')).toEqual({ status: 'noFigure' });
   });
 });
+
+describe('figures the model gave no passage for', () => {
+  const wiki = `This list comprises the world's largest companies by [consolidated revenue](https://en.wikipedia.org/wiki/Revenue), according to the 2026 *Fortune* Global 500 ranking, which covers fiscal years ending on or before 31 March 2026.[[2]](#cite_note-2) Among the 50 largest companies, 26 are in the [United States](https://x.y/US), 17 are in [Asia](https://x.y/Asia), and 7 are in [Europe](https://x.y/EU).[[2]](#cite_note-2)
+
+| Rank | Name | Revenue (USD millions) |
+| --- | --- | --- |
+| 17 | Toyota | 312,018 |
+| 26 | Cardinal Health | 226,827 |`;
+
+  it('finds a figure written once in running text, not in the table or in a year', () => {
+    const us = figureCheck(wiki, null, '26');
+    expect(us.status).toBe('ok');
+    expect(us.quote).toContain('26 are in the United States');
+    expect(figureCheck(wiki, null, '17').quote).toContain('17 are in Asia');
+  });
+
+  it('also when the model passage is wrong', () => {
+    expect(figureCheck(wiki, 'twenty-six companies are American ones', '26').status).toBe('ok');
+  });
+
+  it('leaves a figure written more than once, or not at all', () => {
+    expect(figureCheck(`${wiki}\nAnother 26 firms were left out.`, null, '26')).toEqual({ status: 'noQuote' });
+    expect(figureCheck(wiki, null, '26%')).toEqual({ status: 'noQuote' });
+    expect(figureCheck(wiki, null, '99')).toEqual({ status: 'noQuote' });
+  });
+});
