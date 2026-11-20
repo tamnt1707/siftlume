@@ -2,6 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import { defineComponent } from '@openuidev/react-lang';
 import { z } from 'zod/v4';
+import { POINT_QUOTE_HINT, PointSource } from './core';
 import { childProps } from './shared';
 
 export const ARGUMENT_STANCES = ['for', 'against'] as const;
@@ -9,17 +10,19 @@ export const ARGUMENT_STANCES = ['for', 'against'] as const;
 export const Argument = defineComponent({
   name: 'Argument',
   description:
-    'One argument about the main claim: stance "for" (supports it) or "against" (challenges it, including counter-arguments the source raises or answers), the point (max 14 words), optional evidence the source gives for it (max 15 words).',
+    'One argument about the main claim: stance "for" (supports it) or "against" (challenges it, including counter-arguments the source raises or answers), the point (max 14 words), optional evidence the source gives for it (max 15 words), and ' +
+    POINT_QUOTE_HINT.replace('says it', 'makes the point'),
   props: z.object({
     stance: z.enum(ARGUMENT_STANCES),
     point: z.string(),
     evidence: z.string().optional(),
+    quote: z.string().optional(),
   }),
   // Rendered by ArgumentMap, which splits arguments by stance.
   component: () => null,
 });
 
-type ArgumentProps = { stance?: string; point?: string; evidence?: string };
+type ArgumentProps = { stance?: string; point?: string; evidence?: string; quote?: string };
 
 export const ArgumentMap = defineComponent({
   name: 'ArgumentMap',
@@ -45,6 +48,9 @@ export const ArgumentMap = defineComponent({
               <li key={i}>
                 <span>{a.point}</span>
                 {a.evidence && <span className="g-argmap__evidence">{a.evidence}</span>}
+                <span className="g-point-source">
+                  <PointSource quote={a.quote} />
+                </span>
               </li>
             ))}
           </ul>

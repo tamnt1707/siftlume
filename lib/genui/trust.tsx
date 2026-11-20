@@ -2,6 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import { defineComponent } from '@openuidev/react-lang';
 import { z } from 'zod/v4';
+import { POINT_QUOTE_HINT, PointSource } from './core';
 
 export const RISK_LEVELS = ['high', 'medium', 'low'] as const;
 
@@ -50,11 +51,13 @@ export const CLAIM_STATUSES = ['supported', 'opinion', 'disputed', 'unsupported'
 export const Claim = defineComponent({
   name: 'Claim',
   description:
-    'One claim made in the source and how the source itself backs it: "supported" (data, studies or sources are given), "opinion" (stated as a view), "disputed" (the source reports disagreement), "unsupported" (asserted without evidence). Optional evidence: what the source offers, max 15 words.',
+    'One claim made in the source and how the source itself backs it: "supported" (data, studies or sources are given), "opinion" (stated as a view), "disputed" (the source reports disagreement), "unsupported" (asserted without evidence). Optional evidence: what the source offers, max 15 words. ' +
+    POINT_QUOTE_HINT.replace('says it', 'makes the claim'),
   props: z.object({
     claim: z.string(),
     status: z.enum(CLAIM_STATUSES),
     evidence: z.string().optional(),
+    quote: z.string().optional(),
   }),
   component: ({ props }) => {
     const { t } = useTranslation('session');
@@ -64,6 +67,9 @@ export const Claim = defineComponent({
         <span className="g-claim__status">{t(`genui.claim.${status}`)}</span>
         <span className="g-claim__text">{props.claim}</span>
         {props.evidence && <span className="g-claim__evidence">{props.evidence}</span>}
+        <span className="g-point-source">
+          <PointSource quote={props.quote} />
+        </span>
       </li>
     );
   },

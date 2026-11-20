@@ -276,6 +276,17 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Where a point comes from: "Show in page" or "Unverified" under a takeaway, event, claim or
+   argument. Empty (no quote given) takes no room. */
+.g-point-source {
+  display: flex;
+  margin-top: 2px;
+}
+
+.g-point-source:empty {
+  display: none;
+}
+
 /* ── Headings inside the summary ──────────────────────────── */
 
 .genui .g-heading {
