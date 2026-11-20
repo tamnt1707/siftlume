@@ -9,7 +9,7 @@ import { Alert02Icon, Calculator01Icon, Copy01Icon, HighlighterIcon, Idea01Icon 
 import { defineComponent, useIsStreaming, useTriggerAction } from '@openuidev/react-lang';
 import { z } from 'zod/v4';
 import { figureCheck, type FigureInput } from '@/lib/derived';
-import { useEvidence } from '@/lib/evidence';
+import { evidenceStatus, useEvidence } from '@/lib/evidence';
 import { copyText, customAction, highlightInPage } from './actions';
 
 /** A source figure a derived figure was worked out from (see lib/derived.ts). */
@@ -118,25 +118,50 @@ export function EvidenceMark({
   }
   if (check.status !== 'ok') {
     // Why, with the passage the model gave: a figure it counted reads differently from a misquote.
-    // Opened by a click, as a hover title is slow to show and never shows on touch.
     const why = t(`genui.unverifiedWhy.${check.status}`, {
       quote: quote?.trim() ?? '',
       inputs: given?.map((i) => i.value).join(', ') ?? '',
     });
-    return (
-      <details className="g-evidence g-why g-why--unverified">
-        <summary aria-label={`${t('genui.unverified')}: ${why}`}>
-          <HugeiconsIcon icon={Alert02Icon} size={12} strokeWidth={2} aria-hidden="true" />
-          {t('genui.unverified')}
-        </summary>
-        <div className="g-why__panel">
-          <p>{why}</p>
-        </div>
-      </details>
-    );
+    return <UnverifiedMark why={why} />;
   }
   return <ShowButton quote={check.quote ?? quote!} />;
 }
+
+/** "Unverified", opened by a click to say why: a hover title is slow to show and never shows on touch. */
+function UnverifiedMark({ why }: { why: string }) {
+  const { t } = useTranslation('session');
+  return (
+    <details className="g-evidence g-why g-why--unverified">
+      <summary aria-label={`${t('genui.unverified')}: ${why}`}>
+        <HugeiconsIcon icon={Alert02Icon} size={12} strokeWidth={2} aria-hidden="true" />
+        {t('genui.unverified')}
+      </summary>
+      <div className="g-why__panel">
+        <p>{why}</p>
+      </div>
+    </details>
+  );
+}
+
+/**
+ * Where a point (a takeaway, an event, a claim, an argument) comes from: "Show in page" when its
+ * passage is in the source word for word, "Unverified" with the reason when the passage given is
+ * not, and nothing when no passage was given (a point drawn from several places, or a model that
+ * does not write quotes): a summary of points should not read as a wall of warnings.
+ */
+export function PointSource({ quote }: { quote?: string | null }) {
+  const evidence = useEvidence();
+  const streaming = useIsStreaming();
+  const { t } = useTranslation('session');
+  if (!evidence || streaming || !quote?.trim()) return null;
+  const status = evidenceStatus(evidence.content, quote);
+  if (status === 'ok') return <ShowButton quote={quote} />;
+  return <UnverifiedMark why={t(`genui.unverifiedWhy.${status}`, { quote: quote.trim(), inputs: '' })} />;
+}
+
+/** How a point's quote is asked for, in the descriptions the model reads. */
+export const POINT_QUOTE_HINT =
+  'quote: the passage that says it, 5-25 words copied verbatim from the source, so the reader can find it in the page; omit it only for a point drawn from several places.';
 
 export const SummaryHero = defineComponent({
   name: 'SummaryHero',
@@ -204,15 +229,19 @@ export const KeyNumbers = defineComponent({
 
 export const Takeaway = defineComponent({
   name: 'Takeaway',
-  description: 'One key point: a short statement (max 12 words), optional one-line detail.',
+  description: `One key point: a short statement (max 12 words), optional one-line detail, and ${POINT_QUOTE_HINT}`,
   props: z.object({
     text: z.string(),
     detail: z.string().optional(),
+    quote: z.string().optional(),
   }),
   component: ({ props }) => (
     <li className="g-take">
       <span className="g-take__text">{props.text}</span>
       {props.detail && <span className="g-take__detail">{props.detail}</span>}
+      <span className="g-point-source">
+        <PointSource quote={props.quote} />
+      </span>
     </li>
   ),
 });
@@ -235,15 +264,21 @@ export const Takeaways = defineComponent({
 
 export const TimelineEvent = defineComponent({
   name: 'TimelineEvent',
-  description: 'One dated event: when (date, year or stage) and what happened (max 10 words).',
+  description: `One dated event: when (date, year or stage), what happened (max 10 words), and ${POINT_QUOTE_HINT}`,
   props: z.object({
     when: z.string(),
     what: z.string(),
+    quote: z.string().optional(),
   }),
   component: ({ props }) => (
     <li className="g-event">
       <span className="g-event__when">{props.when}</span>
-      <span className="g-event__what">{props.what}</span>
+      <span className="g-event__what">
+        {props.what}
+        <span className="g-point-source">
+          <PointSource quote={props.quote} />
+        </span>
+      </span>
     </li>
   ),
 });

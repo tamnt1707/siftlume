@@ -21,6 +21,6 @@ rankCap = TextContent("Asia grows fastest", "small-heavy")
 rank = HorizontalBarChart(["Asia", "Europe", "Americas"], [Series("Growth %", [26, 15, 11])])
 rankSrc = ChartSources([ChartPoint("Asia", "26%", "sales in Asia grew 26%"), ChartPoint("Europe", "15%", "Europe was up 15%"), ChartPoint("Americas", "11%", "the Americas added 11%")])
 takeaways = Takeaways([t1, t2])
-t1 = Takeaway("Cloud margin offsets hardware decline")
+t1 = Takeaway("Cloud margin offsets hardware decline", null, "higher cloud margins more than offset the decline in hardware")
 t2 = Takeaway("Guidance raised for Q4")
 followUps = FollowUpBlock([FollowUpItem("Why is hardware shrinking?"), FollowUpItem("What is the Q4 outlook?")])`;
