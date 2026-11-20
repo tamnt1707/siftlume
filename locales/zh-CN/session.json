@@ -175,7 +175,14 @@
       "outOf": "{{value}} / {{max}}"
     },
     "relatedQueries": "推荐问题",
-    "sources": "来源"
+    "sources": "来源",
+    "agreement": {
+      "heading": "各来源怎么说",
+      "agree": "一致",
+      "differ": "不同",
+      "only": "仅一处",
+      "elsewhere": "这段话出自来源 [{{found}}]，而不是 [{{source}}]：“{{quote}}”"
+    }
   },
   "refineHint": {
     "shorter": "只保留最重要的要点。",

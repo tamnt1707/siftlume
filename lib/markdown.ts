@@ -13,6 +13,7 @@ import {
   ROOT,
   SCENARIO_KINDS,
   STANCES,
+  VERDICTS,
   weightedScores,
 } from './library';
 import { t } from './i18n';
@@ -436,6 +437,21 @@ function render(node: unknown, level: number): string {
           .map(
             (x) =>
               `- **${str(x.who)}** (${t(`session:genui.stance.${pick(x.stance, STANCES, 'neutral')}`)}): ${str(x.view)}${x.quote ? ` “${str(x.quote)}”` : ''}`,
+          )
+          .join('\n')
+      );
+    case 'SourceAgreement':
+      return (
+        heading(p.heading || t('session:genui.agreement.heading')) +
+        list(p.points)
+          .map(props)
+          .map((x) =>
+            [
+              `- **${t(`session:genui.agreement.${pick(x.verdict, VERDICTS, 'only')}`)}**: ${str(x.point)}`,
+              ...list(x.sides)
+                .map(props)
+                .map((s) => `  - [${str(s.source)}] ${str(s.says)}${s.quote ? ` “${str(s.quote)}”` : ''}`),
+            ].join('\n'),
           )
           .join('\n')
       );

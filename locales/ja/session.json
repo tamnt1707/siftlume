@@ -175,7 +175,14 @@
       "outOf": "{{max}} 点中 {{value}} 点"
     },
     "relatedQueries": "おすすめの質問",
-    "sources": "出典"
+    "sources": "出典",
+    "agreement": {
+      "heading": "各ソースの主張",
+      "agree": "一致",
+      "differ": "相違",
+      "only": "1件のみ",
+      "elsewhere": "この箇所はソース [{{source}}] ではなく [{{found}}] にあります：「{{quote}}」"
+    }
   },
   "refineHint": {
     "shorter": "最も重要なポイントだけを残します。",

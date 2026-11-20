@@ -1274,6 +1274,100 @@
   color: var(--ink-2);
 }
 
+/* ── What the sources say (several documents) ─────────────── */
+
+.g-agreement > ul {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.g-agreement__counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 10px;
+  font-size: 11.5px;
+}
+
+.g-agreement__counts span {
+  padding: 2px 9px;
+  border-radius: var(--r-pill);
+  border: 1px solid color-mix(in srgb, var(--tone) 55%, transparent);
+  color: var(--tone);
+}
+
+.g-agree--agree {
+  --tone: var(--up);
+}
+
+.g-agree--differ {
+  --tone: var(--caution);
+}
+
+.g-agree--only {
+  --tone: var(--ink-3);
+}
+
+.g-agree {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 6px 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.g-agree__verdict {
+  grid-row: span 2;
+  align-self: start;
+  justify-self: start;
+  margin-top: 2px;
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  border: 1px solid color-mix(in srgb, var(--tone) 55%, transparent);
+  color: var(--tone);
+  font-size: 10px;
+}
+
+.g-agree__point {
+  font-family: var(--font-reading);
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.g-agree__sides {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.g-agree__sides > li {
+  padding-left: 10px;
+  border-left: 2px solid color-mix(in srgb, var(--tone) 45%, var(--line));
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.g-agree__source {
+  margin-right: 6px;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 12.5px;
+}
+
+.session--panel .g-agree {
+  grid-template-columns: 1fr;
+}
+
+.session--panel .g-agree__verdict {
+  grid-row: auto;
+}
+
 /* ── Status board ─────────────────────────────────────────── */
 
 .g-board > ul {

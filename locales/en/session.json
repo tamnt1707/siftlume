@@ -185,7 +185,14 @@
       "outOf": "{{value}} out of {{max}}"
     },
     "relatedQueries": "Suggested questions",
-    "sources": "Sources"
+    "sources": "Sources",
+    "agreement": {
+      "heading": "What the sources say",
+      "agree": "Agree",
+      "differ": "Differ",
+      "only": "Only one",
+      "elsewhere": "This passage is in source [{{found}}], not in [{{source}}]: “{{quote}}”"
+    }
   },
   "refineHint": {
     "shorter": "Keep only the most important points.",

@@ -128,7 +128,7 @@ export function EvidenceMark({
 }
 
 /** "Unverified", opened by a click to say why: a hover title is slow to show and never shows on touch. */
-function UnverifiedMark({ why }: { why: string }) {
+export function UnverifiedMark({ why }: { why: string }) {
   const { t } = useTranslation('session');
   return (
     <details className="g-evidence g-why g-why--unverified">

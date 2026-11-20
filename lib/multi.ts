@@ -114,24 +114,4 @@ export function combineSources(
   };
 }
 
-/** Index (0-based) of the document in a combined source that contains `quote`, or null. */
-export function partForQuote(content: string, quote: string): number | null {
-  const norm = (s: string) => s.replace(/\s+/g, ' ').trim().toLowerCase();
-  const words = norm(quote).split(' ');
-  const docs = content
-    .split(/^<document index="/m)
-    .slice(1)
-    .map(norm);
-  for (const needle of [words.join(' '), words.slice(0, 8).join(' '), words.slice(0, 4).join(' ')]) {
-    if (!needle) continue;
-    const i = docs.findIndex((d) => d.includes(needle));
-    if (i >= 0) return i;
-  }
-  return null;
-}
-
-/** The content of one document of a combined source (for finding a video moment). */
-export function partContent(content: string, index: number) {
-  const doc = content.split(/^<document index="/m)[index + 1] ?? '';
-  return doc.replace(/^[^\n]*\n/, '').replace(/\n<\/document>\s*$/, '');
-}
+export { partContent, partForQuote } from './documents';

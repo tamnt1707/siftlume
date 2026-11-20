@@ -32,7 +32,12 @@ import { library } from '../../lib/library';
 import { CHART_SUMMARY_EXAMPLE } from '../../lib/chart-example';
 import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from '../../lib/review-example';
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from '../../lib/domain-example';
-import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from '../../lib/analysis-example';
+import {
+  CODE_TUTORIAL_EXAMPLE,
+  DECISION_EXAMPLE,
+  POLICY_DEBATE_EXAMPLE,
+  SOURCES_COMPARED_EXAMPLE,
+} from '../../lib/analysis-example';
 import { DEFAULT_SETTINGS, type Settings } from '../../lib/settings';
 import { ARTICLE, SUMMARY } from './content';
 import { POSTS } from './posts-vi';
@@ -346,6 +351,26 @@ const COMPONENT_SETS: Record<string, string[]> = {
   analysis: [POLICY_DEBATE_EXAMPLE, DECISION_EXAMPLE, CODE_TUTORIAL_EXAMPLE],
   everyday: [PR_REVIEW_EXAMPLE, RECIPE_EXAMPLE, PRODUCT_EVENT_EXAMPLE],
   visual: [VISUAL_SUMMARY_EXAMPLE],
+  // The second copy cites outlet 1's words for outlet 3, to show the mismatch mark.
+  sources: [
+    SOURCES_COMPARED_EXAMPLE,
+    SOURCES_COMPARED_EXAMPLE.replace(
+      'a2s2 = SourceSide(3, "Analysts expect 5% at most", "independent analysts say the drop is unlikely to exceed 5 percent")',
+      'a2s2 = SourceSide(3, "Analysts expect 5% at most", "officials project a 15 percent drop in rush-hour traffic")',
+    ),
+  ],
+};
+
+/** `?set=sources`: three tabs combined, so the sides of SourceAgreement can be checked. */
+const SOURCES_EVIDENCE = {
+  canShow: true,
+  content: [
+    ['Council approves $9 congestion charge', 'https://www.citydaily.example/charge', 'From March, drivers will pay $9 a day to enter downtown from March 1. Officials project a 15 percent drop in rush-hour traffic. Residents with a permit get a 90 percent discount.'],
+    ['Retailers brace for the downtown fee', 'https://retailnews.example/fee', 'The council set a $9 daily fee on cars entering the downtown zone starting in March. Store owners warn that shoppers will simply drive to the malls outside the zone.'],
+    ['Will the charge cut traffic?', 'https://metro.example/analysis', 'After the $9 congestion fee approved on Friday, independent analysts say the drop is unlikely to exceed 5 percent.'],
+  ]
+    .map(([title, url, body], i) => `<document index="${i + 1}" title="${title}" url="${url}" type="webpage">\n${body}\n</document>`)
+    .join('\n\n'),
 };
 
 function Components() {
@@ -363,7 +388,12 @@ function Components() {
             <div className="session__main">
               <section className="summary">
                 {/* The app's wrapper, so its relabelled headings show too. */}
-                <GenUI response={program} isStreaming={false} onAction={() => {}} />
+                <GenUI
+                  response={program}
+                  isStreaming={false}
+                  onAction={() => {}}
+                  evidence={query.get('set') === 'sources' ? SOURCES_EVIDENCE : undefined}
+                />
               </section>
             </div>
           </div>
