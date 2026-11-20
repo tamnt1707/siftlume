@@ -5,7 +5,7 @@
  */
 import { useTranslation } from 'react-i18next';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { Alert02Icon, Calculator01Icon, Copy01Icon, HighlighterIcon, QuoteDownIcon } from '@hugeicons/core-free-icons';
+import { Alert02Icon, Calculator01Icon, Copy01Icon, HighlighterIcon, Idea01Icon } from '@hugeicons/core-free-icons';
 import { defineComponent, useIsStreaming, useTriggerAction } from '@openuidev/react-lang';
 import { z } from 'zod/v4';
 import { figureCheck, type FigureInput } from '@/lib/derived';
@@ -105,7 +105,7 @@ export function EvidenceMark({
     return (
       <details className="g-evidence g-why g-inferred">
         <summary title={t('genui.inferredWhy')}>
-          <HugeiconsIcon icon={QuoteDownIcon} size={12} strokeWidth={2} aria-hidden="true" />
+          <HugeiconsIcon icon={Idea01Icon} size={12} strokeWidth={2} aria-hidden="true" />
           {t('genui.inferred')}
         </summary>
         <div className="g-why__panel">
