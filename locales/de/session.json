@@ -27,7 +27,13 @@
     "tabGone": "Der ursprüngliche Tab wurde geschlossen oder hat die Seite gewechselt.",
     "copied": "Kopiert.",
     "playingFrom": "Wiedergabe ab {{time}}",
-    "momentNotFound": "Diese Stelle wurde im Video nicht gefunden."
+    "momentNotFound": "Diese Stelle wurde im Video nicht gefunden.",
+    "passagesHighlighted_one": "{{count}} Stelle auf der Seite markiert.",
+    "passagesInSource_one": "{{count}} Stelle im Quelltext markiert.",
+    "passagesHighlighted_other": "{{count}} Stellen auf der Seite markiert.",
+    "passagesInSource_other": "{{count}} Stellen im Quelltext markiert.",
+    "passagesNotFound": "Keine Stelle der Zusammenfassung auf der Seite gefunden.",
+    "passagesCleared": "Markierungen entfernt."
   },
   "warnings": {
     "invalidUi_one": "Das Modell hat {{count}} ungültige UI-Anweisung erzeugt; angezeigt wird, was dargestellt werden konnte.",
@@ -218,7 +224,10 @@
     },
     "madeWith": "Erstellt mit Siftlume",
     "asText": "Text",
-    "asTextTitle": "Diese Antwort als reinen Text zeigen (Diagramme werden Tabellen), ohne das Modell erneut zu fragen"
+    "asTextTitle": "Diese Antwort als reinen Text zeigen (Diagramme werden Tabellen), ohne das Modell erneut zu fragen",
+    "mark": "Markieren",
+    "markTitle": "Die Stellen der Zusammenfassung auf der Seite markieren",
+    "unmarkTitle": "Markierungen auf der Seite entfernen"
   },
   "export": {
     "value": "Wert",

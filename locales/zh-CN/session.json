@@ -27,7 +27,11 @@
     "tabGone": "原标签页已关闭或已跳转到其他页面。",
     "copied": "已复制。",
     "playingFrom": "从 {{time}} 开始播放",
-    "momentNotFound": "在视频中找不到这一段。"
+    "momentNotFound": "在视频中找不到这一段。",
+    "passagesHighlighted_other": "已在网页上标注 {{count}} 处段落。",
+    "passagesInSource_other": "已在原文中标注 {{count}} 处段落。",
+    "passagesNotFound": "在网页上未找到摘要的任何段落。",
+    "passagesCleared": "已清除标注。"
   },
   "warnings": {
     "invalidUi_other": "模型生成了 {{count}} 条无效的界面语句;仅显示可渲染的部分。",
@@ -208,7 +212,10 @@
     },
     "madeWith": "由 Siftlume 生成",
     "asText": "文本",
-    "asTextTitle": "以纯文本显示此回答（图表转为表格），无需再次请求模型"
+    "asTextTitle": "以纯文本显示此回答（图表转为表格），无需再次请求模型",
+    "mark": "标注",
+    "markTitle": "在网页上标注摘要所依据的段落",
+    "unmarkTitle": "清除网页上的标注"
   },
   "export": {
     "value": "数值",

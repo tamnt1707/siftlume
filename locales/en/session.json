@@ -27,7 +27,13 @@
     "tabGone": "The original tab was closed or navigated away.",
     "copied": "Copied.",
     "playingFrom": "Playing from {{time}}",
-    "momentNotFound": "Could not find that moment in the video."
+    "momentNotFound": "Could not find that moment in the video.",
+    "passagesHighlighted_one": "Highlighted {{count}} passage in the page.",
+    "passagesInSource_one": "Highlighted {{count}} passage in the source text.",
+    "passagesHighlighted_other": "Highlighted {{count}} passages in the page.",
+    "passagesInSource_other": "Highlighted {{count}} passages in the source text.",
+    "passagesNotFound": "None of the summary’s passages were found in the page.",
+    "passagesCleared": "Highlights cleared."
   },
   "warnings": {
     "invalidUi_one": "The model produced {{count}} invalid UI statement; showing what rendered.",
@@ -218,7 +224,10 @@
     },
     "madeWith": "Made with Siftlume",
     "asText": "Text",
-    "asTextTitle": "Show this answer as plain text (charts become tables), without asking the model again"
+    "asTextTitle": "Show this answer as plain text (charts become tables), without asking the model again",
+    "mark": "Highlight",
+    "markTitle": "Highlight the summary’s passages in the page",
+    "unmarkTitle": "Clear the highlights in the page"
   },
   "export": {
     "value": "Value",

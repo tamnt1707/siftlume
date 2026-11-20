@@ -27,7 +27,15 @@
     "tabGone": "La pestaña original se cerró o cambió de página.",
     "copied": "Copiado.",
     "playingFrom": "Reproduciendo desde {{time}}",
-    "momentNotFound": "No se encontró ese momento en el vídeo."
+    "momentNotFound": "No se encontró ese momento en el vídeo.",
+    "passagesHighlighted_one": "Se resaltó {{count}} pasaje en la página.",
+    "passagesInSource_one": "Se resaltó {{count}} pasaje en el texto fuente.",
+    "passagesHighlighted_many": "Se resaltaron {{count}} pasajes en la página.",
+    "passagesInSource_many": "Se resaltaron {{count}} pasajes en el texto fuente.",
+    "passagesHighlighted_other": "Se resaltaron {{count}} pasajes en la página.",
+    "passagesInSource_other": "Se resaltaron {{count}} pasajes en el texto fuente.",
+    "passagesNotFound": "No se encontró en la página ningún pasaje del resumen.",
+    "passagesCleared": "Resaltado quitado."
   },
   "warnings": {
     "invalidUi_one": "El modelo generó {{count}} instrucción de interfaz no válida; se muestra lo que se pudo renderizar.",
@@ -228,7 +236,10 @@
     },
     "madeWith": "Hecho con Siftlume",
     "asText": "Texto",
-    "asTextTitle": "Mostrar esta respuesta como texto (los gráficos pasan a tablas), sin volver a consultar al modelo"
+    "asTextTitle": "Mostrar esta respuesta como texto (los gráficos pasan a tablas), sin volver a consultar al modelo",
+    "mark": "Resaltar",
+    "markTitle": "Resaltar en la página los pasajes del resumen",
+    "unmarkTitle": "Quitar el resaltado de la página"
   },
   "export": {
     "value": "Valor",

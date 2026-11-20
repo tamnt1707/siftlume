@@ -7,8 +7,10 @@ import { createCsvToolProvider } from '@/lib/csv-tools';
 import { readStored, type QaTurn } from '@/lib/history';
 import { splitInline } from '@/lib/openui';
 import { programToMarkdown } from '@/lib/markdown';
-import { highlightInTab } from '@/lib/page';
-import { highlightQuote } from '@/lib/highlight-quote';
+import { clearHighlightsInTab, highlightAllInTab, highlightInTab } from '@/lib/page';
+import { clearHighlights, highlightQuote } from '@/lib/highlight-quote';
+import { summaryPassages } from '@/lib/passages';
+import { resolvePalette } from '@/lib/appearance';
 import { findMoment, formatTime, seekVideo, youTubeVideoId } from '@/lib/youtube';
 import { partContent, partForQuote } from '@/lib/multi';
 import type { Evidence } from '@/lib/evidence';
@@ -128,6 +130,71 @@ export function SessionView({
   const showInSource = (text: string) => {
     setSourceOpen(true);
     setSourceQuote(text);
+  };
+
+  // "Highlight on page": every passage the summary points to, marked at once in the reader's
+  // highlighter colour (the light one: pages are light), until clicked again.
+  const passages = useMemo(
+    () => (evidence && summary.content ? summaryPassages(summary.content, source.content) : []),
+    [evidence, summary.content, source.content],
+  );
+  const marker = useMemo(() => resolvePalette(settings.appearance, false).marker, [settings.appearance]);
+  const [markedTabs, setMarkedTabs] = useState<number[] | null>(null);
+  const [sourcePassages, setSourcePassages] = useState<string[] | null>(null);
+  useEffect(() => setMarkedTabs(null), [session.id]);
+  useEffect(() => {
+    if (!sourcePassages || !sourceOpen) return;
+    const id = requestAnimationFrame(() => {
+      const body = sourceBodyRef.current;
+      const found = body ? highlightQuote(sourcePassages, body, marker) : 0;
+      notify(found ? t('toast.passagesInSource', { count: found }) : t('toast.passagesNotFound'));
+      setMarkedTabs(found ? [] : null);
+      setSourcePassages(null);
+    });
+    return () => cancelAnimationFrame(id);
+  }, [sourcePassages, sourceOpen, marker, notify, t]);
+
+  const markPassages = async () => {
+    if (markedTabs) {
+      await Promise.all(markedTabs.map((id) => clearHighlightsInTab(id).catch(() => {})));
+      clearHighlights(); // the source text pane, in this page
+      setMarkedTabs(null);
+      return notify(t('toast.passagesCleared'));
+    }
+    // Each passage goes to the tab it was read from; passages without a live tab, to the source pane.
+    const byTab = new Map<number, string[]>();
+    const elsewhere: string[] = [];
+    for (const quote of passages) {
+      let target: { kind: string; tabId?: number } = source;
+      if (source.kind === 'multi' && source.parts) {
+        const i = partForQuote(source.content, quote);
+        target = (i === null ? undefined : source.parts[i]) ?? { kind: 'text' };
+      }
+      if (inPage(target.kind) && target.tabId) byTab.set(target.tabId, [...(byTab.get(target.tabId) ?? []), quote]);
+      else elsewhere.push(quote);
+    }
+    let found = 0;
+    const tabs: number[] = [];
+    for (const [tabId, list] of byTab) {
+      try {
+        const n = await highlightAllInTab(tabId, list, marker);
+        found += n;
+        if (n) tabs.push(tabId);
+      } catch {
+        elsewhere.push(...list); // the tab was closed
+      }
+    }
+    if (tabs.length) {
+      const tab = await browser.tabs.update(tabs[0]!, { active: true }).catch(() => undefined);
+      if (tab?.windowId !== undefined) await browser.windows.update(tab.windowId, { focused: true }).catch(() => {});
+      setMarkedTabs(tabs);
+      return notify(t('toast.passagesHighlighted', { count: found }));
+    }
+    if (elsewhere.length) {
+      setSourceOpen(true);
+      return setSourcePassages(elsewhere);
+    }
+    notify(t('toast.passagesNotFound'));
   };
 
   useEffect(() => {
@@ -278,6 +345,8 @@ export function SessionView({
       notify={notify}
       sourceOpen={sourceOpen}
       onToggleSource={() => setSourceOpen((v) => !v)}
+      marked={Boolean(markedTabs)}
+      onMark={source.kind === 'video' || !passages.length ? undefined : () => void markPassages()}
       asText={asText}
       onToggleText={() => setAsText((v) => !v)}
       onPrint={onPrint}

@@ -27,7 +27,15 @@
     "tabGone": "A aba original foi fechada ou mudou de página.",
     "copied": "Copiado.",
     "playingFrom": "Reproduzindo a partir de {{time}}",
-    "momentNotFound": "Não foi possível encontrar esse momento no vídeo."
+    "momentNotFound": "Não foi possível encontrar esse momento no vídeo.",
+    "passagesHighlighted_one": "{{count}} trecho destacado na página.",
+    "passagesInSource_one": "{{count}} trecho destacado no texto de origem.",
+    "passagesHighlighted_many": "{{count}} trechos destacados na página.",
+    "passagesInSource_many": "{{count}} trechos destacados no texto de origem.",
+    "passagesHighlighted_other": "{{count}} trechos destacados na página.",
+    "passagesInSource_other": "{{count}} trechos destacados no texto de origem.",
+    "passagesNotFound": "Nenhum trecho do resumo foi encontrado na página.",
+    "passagesCleared": "Destaques removidos."
   },
   "warnings": {
     "invalidUi_one": "O modelo gerou {{count}} instrução de interface inválida; mostrando o que foi possível renderizar.",
@@ -228,7 +236,10 @@
     },
     "madeWith": "Feito com o Siftlume",
     "asText": "Texto",
-    "asTextTitle": "Mostrar esta resposta como texto simples (gráficos viram tabelas), sem consultar o modelo de novo"
+    "asTextTitle": "Mostrar esta resposta como texto simples (gráficos viram tabelas), sem consultar o modelo de novo",
+    "mark": "Destacar",
+    "markTitle": "Destacar na página os trechos do resumo",
+    "unmarkTitle": "Limpar os destaques da página"
   },
   "export": {
     "value": "Valor",

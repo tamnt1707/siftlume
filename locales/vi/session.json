@@ -27,7 +27,11 @@
     "tabGone": "Tab gốc đã đóng hoặc đã chuyển sang trang khác.",
     "copied": "Đã sao chép.",
     "playingFrom": "Phát từ {{time}}",
-    "momentNotFound": "Không tìm thấy đoạn đó trong video."
+    "momentNotFound": "Không tìm thấy đoạn đó trong video.",
+    "passagesHighlighted_other": "Đã tô {{count}} đoạn trên trang.",
+    "passagesInSource_other": "Đã tô {{count}} đoạn trong văn bản nguồn.",
+    "passagesNotFound": "Không tìm thấy đoạn nào của bản tóm tắt trên trang.",
+    "passagesCleared": "Đã xóa phần tô."
   },
   "warnings": {
     "invalidUi_other": "Model tạo ra {{count}} câu lệnh giao diện không hợp lệ; đang hiển thị phần dựng được.",
@@ -208,7 +212,10 @@
     },
     "madeWith": "Tạo bằng Siftlume",
     "asText": "Văn bản",
-    "asTextTitle": "Hiển thị câu trả lời này dạng văn bản thuần (biểu đồ thành bảng), không cần gọi lại mô hình"
+    "asTextTitle": "Hiển thị câu trả lời này dạng văn bản thuần (biểu đồ thành bảng), không cần gọi lại mô hình",
+    "mark": "Tô trang",
+    "markTitle": "Tô các đoạn của bản tóm tắt ngay trên trang",
+    "unmarkTitle": "Xóa phần tô trên trang"
   },
   "export": {
     "value": "Giá trị",
