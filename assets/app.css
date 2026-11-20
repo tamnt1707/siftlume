@@ -3303,6 +3303,42 @@ button.ui-menu__item:focus-visible {
   font-weight: 500;
 }
 
+/* "You read about this before": earlier summaries on the same topic. */
+.related-reads {
+  margin: 6px 0 0;
+  color: var(--ink-2);
+  font-size: 13px;
+}
+
+.related-reads ul {
+  display: grid;
+  gap: 2px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.related-reads li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.related-reads .link {
+  overflow: hidden;
+  font-weight: 560;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.related-reads__date {
+  flex: none;
+  color: var(--ink-3);
+  font-size: 12px;
+}
+
 /* "You read this on …": what changed in the page since an earlier summary. */
 .whats-new__line {
   margin: 6px 0 0;
