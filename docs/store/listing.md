@@ -31,7 +31,7 @@ WHAT YOU CAN SUMMARIZE
 • Google Docs, Sheets and Slides you can open, including private ones, and PDFs in Google Drive; sheets get charts and filters, slides keep the speaker notes
 • Recipes, products, job postings and events laid out for what you need: ingredients and steps, price and what reviewers say, salary and requirements, date and tickets
 • GitHub pull requests: what changed and why, review status, risks, and a code review of the diff
-• Several open tabs at once, compared side by side
+• Several open tabs at once: where they agree, where they differ, and what only one says, each with its own passage
 • A page together with the pages it links to (Deep read)
 • Text you paste
 • Documents and spreadsheets you open from your computer
@@ -62,6 +62,7 @@ TOOLS
 • Highlight: every passage the summary draws on, marked at once in your highlighter color
 • Summarize a page again and see what changed since your last read
 • Search every past summary, or ask a question answered from what you have read
+• See earlier summaries on the same topic when you read something new
 
 YOUR AI, YOUR KEY
 Connect the AI provider you already use with your own API key, or run a model locally on your computer. Requests go straight from your browser to that provider. There is no Siftlume server.
