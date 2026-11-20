@@ -175,7 +175,14 @@
       "outOf": "{{value}} / {{max}}"
     },
     "relatedQueries": "推薦問題",
-    "sources": "來源"
+    "sources": "來源",
+    "agreement": {
+      "heading": "各來源怎麼說",
+      "agree": "一致",
+      "differ": "不同",
+      "only": "僅一處",
+      "elsewhere": "這段話出自來源 [{{found}}]，而不是 [{{source}}]：「{{quote}}」"
+    }
   },
   "refineHint": {
     "shorter": "只保留最重要的重點。",
@@ -282,5 +289,8 @@
     "report": "回報問題",
     "later": "稍後再說",
     "never": "不要再問"
+  },
+  "related": {
+    "title": "你之前讀過相關內容："
   }
 }

@@ -185,7 +185,14 @@
       "outOf": "{{value}} out of {{max}}"
     },
     "relatedQueries": "Suggested questions",
-    "sources": "Sources"
+    "sources": "Sources",
+    "agreement": {
+      "heading": "What the sources say",
+      "agree": "Agree",
+      "differ": "Differ",
+      "only": "Only one",
+      "elsewhere": "This passage is in source [{{found}}], not in [{{source}}]: “{{quote}}”"
+    }
   },
   "refineHint": {
     "shorter": "Keep only the most important points.",
@@ -294,5 +301,8 @@
     "report": "Report a problem",
     "later": "Later",
     "never": "Don't ask again"
+  },
+  "related": {
+    "title": "You read about this before:"
   }
 }

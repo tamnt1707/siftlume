@@ -31,6 +31,27 @@ const memory: Record<string, unknown> = {
 };
 /** ?review: enough summaries for the store review card under the summary. */
 if (q.has('review')) memory['local:reviewPrompt'] = { count: 5, askAt: 5, done: false };
+/** ?related: earlier summaries, two of them on the showcase report's topic (Acme's results). */
+if (q.has('related')) {
+  const day = 86_400_000;
+  const now = Date.UTC(2026, 10, 11, 9);
+  memory['local:historyIndex'] = [
+    ['showcase', 'Acme investor report', 'Acme revenue reached $4.2B in Q3; cloud grew while hardware shrank; margin 31%.', 0],
+    ['r1', 'Acme Q2 earnings call', 'Cloud revenue up again; hardware sales fell; Acme raised its margin guidance.', 92],
+    ['r2', 'Why hardware makers are moving to the cloud', 'Acme and rivals shift revenue from hardware to cloud subscriptions.', 30],
+    ['r3', 'Easy pancakes', 'Thin pancakes from flour, eggs and milk.', 3],
+    ['r4', 'Học máy cơ bản cho người mới', 'Mạng nơ-ron học từ dữ liệu.', 5],
+  ].map(([id, title, text, ago]) => ({
+    id,
+    title,
+    text,
+    kind: 'webpage',
+    qa: 0,
+    origin: `https://${id}.example`,
+    createdAt: now - (ago as number) * day,
+    updatedAt: now - (ago as number) * day,
+  }));
+}
 /** ?view=history: a few saved summaries for the search box. */
 if (q.get('view') === 'history') {
   const day = 86_400_000;

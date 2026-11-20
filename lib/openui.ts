@@ -10,7 +10,12 @@ import { DIAGRAM_SUMMARY_EXAMPLE } from './diagram-example';
 import { NEWS_ACTORS_EXAMPLE, REVIEW_SUMMARY_EXAMPLE } from './review-example';
 import { PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE } from './domain-example';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE, GUIDE_EXAMPLE } from './mode-example';
-import { CODE_TUTORIAL_EXAMPLE, DECISION_EXAMPLE, POLICY_DEBATE_EXAMPLE } from './analysis-example';
+import {
+  CODE_TUTORIAL_EXAMPLE,
+  DECISION_EXAMPLE,
+  POLICY_DEBATE_EXAMPLE,
+  SOURCES_COMPARED_EXAMPLE,
+} from './analysis-example';
 import { PR_REVIEW_EXAMPLE, RECIPE_EXAMPLE } from './component-example';
 import { customModeRule, MODE_QA_RULES, MODE_RULES, resolveMode, type AnalysisMode } from './modes';
 import type { ExtractedSource, SourceKind } from './extractors';
@@ -61,9 +66,13 @@ const MODE_EXAMPLES: Record<AnalysisMode, string[]> = {
   guide: [GUIDE_EXAMPLE, CODE_TUTORIAL_EXAMPLE, RECIPE_EXAMPLE, ACTION_EXAMPLE],
 };
 
-/** Pull requests: a code review leads critique and action (see PR_MODE_RULES). */
-function modeExamples(mode: AnalysisMode, kind: SourceKind) {
+/**
+ * Pull requests: a code review leads critique and action (see PR_MODE_RULES). Several sources
+ * compared (not a deep read, which completes one page): what they agree and differ on comes first.
+ */
+function modeExamples(mode: AnalysisMode, kind: SourceKind, compared: boolean) {
   if (kind === 'pr' && (mode === 'critique' || mode === 'action')) return [PR_REVIEW_EXAMPLE, CODE_TUTORIAL_EXAMPLE];
+  if (compared && (mode === 'summary' || mode === 'critique')) return [SOURCES_COMPARED_EXAMPLE, ...MODE_EXAMPLES[mode]];
   return MODE_EXAMPLES[mode];
 }
 
@@ -142,7 +151,7 @@ const KIND_RULES: Record<SourceKind, string> = {
     'Pass the pull request as the only item of Card sources and cite it as [1]. For SourceQuote and @HighlightInPage copy a short phrase verbatim from the description or a comment, never from the diff: clicking it highlights it in the pull request page.',
   ].join(' '),
   multi:
-    'The source is several documents (browser tabs, or a page and pages it links to), each wrapped in <document index title url type>. When the user says document 1 is the page they are reading, summarize document 1 and use the others to complete it: add what they say that document 1 only points to, and cite them. Otherwise combine and compare them: lead with what they agree on, then where they differ or contradict (Comparison for products, plans or options; Perspectives for viewpoints; ClaimCheck when they disagree on facts), then what only one of them covers. Say which document a point comes from (its site or a short title). List every document as Card sources in index order and cite them as [1], [2]… Documents with type="video" are YouTube transcripts led by [m:ss] timestamps: give the timestamp with points taken from them (e.g. "[2] at 12:34"). Omit SummaryHero source. For SourceQuote and @HighlightInPage copy a short phrase verbatim from one document: clicking it opens that tab.',
+    'The source is several documents (browser tabs, or a page and pages it links to), each wrapped in <document index title url type>. When the user says document 1 is the page they are reading, summarize document 1 and use the others to complete it: add what they say that document 1 only points to, and cite them. Otherwise combine and compare them: after SummaryHero, a SourceAgreement block lays out what they agree on, where they differ or contradict, and what only one of them covers, each side citing its document index and a verbatim quote from that same document; add Comparison for products, plans or options and Perspectives for viewpoints when they fit. Say which document a point comes from (its site or a short title). List every document as Card sources in index order and cite them as [1], [2]… Documents with type="video" are YouTube transcripts led by [m:ss] timestamps: give the timestamp with points taken from them (e.g. "[2] at 12:34"). Omit SummaryHero source. For SourceQuote and @HighlightInPage copy a short phrase verbatim from one document: clicking it opens that tab.',
   csv: 'The source is a CSV dataset. Describe what it contains, important columns, ranges, trends and outliers. Use Query("csv_group", ...) and Query("csv_rows", ...) for charts and tables instead of hard-coding numbers, and add a filter Form with a Select bound to a $variable when a text column has few distinct values. Do not use @HighlightInPage.',
 };
 
@@ -257,11 +266,12 @@ function cachedPrompt(key: string, build: () => string) {
  */
 export function buildSummaryPrompt(settings: Settings, source: ExtractedSource) {
   const { base: mode, custom } = resolveMode(settings.mode, settings.customModes, source);
-  const base = cachedPrompt(`summary:${mode}:${source.kind}:${!!source.csv}`, () =>
+  const compared = source.kind === 'multi' && !source.deep;
+  const base = cachedPrompt(`summary:${mode}:${source.kind}:${!!source.csv}:${compared}`, () =>
     library.prompt({
       ...basePromptOptions(),
       // Validated examples (pnpm check:examples), the mode's own first, after the library's own.
-      examples: [...(openuiChatPromptOptions.examples ?? []), ...modeExamples(mode, source.kind)],
+      examples: [...(openuiChatPromptOptions.examples ?? []), ...modeExamples(mode, source.kind, compared)],
       ...toolOptions(source),
       preamble:
         'You are a visual reading assistant. You turn the source content the user provides into a glanceable UI written in openui-lang (as little prose as possible), shaped by the analysis mode below, and you refine that UI when asked.',

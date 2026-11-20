@@ -29,6 +29,7 @@ import { ResultToolbar, readingMinutes } from './ResultToolbar';
 import { ReportLayout } from './ReportLayout';
 import { ReviewPrompt } from './ReviewPrompt';
 import { WhatsNew } from './WhatsNew';
+import { RelatedReads } from './RelatedReads';
 import { PROVIDERS, type Settings } from '@/lib/settings';
 import { Icon } from './Icon';
 import { SiftLoader } from './SiftLoader';
@@ -426,6 +427,7 @@ export function SessionView({
         ) : null}
         {source.truncated && <p className="hint">{t('truncated')}</p>}
         {summary.content && !busy && <WhatsNew session={session} />}
+        {summary.content && !busy && <RelatedReads session={session} onOpen={ctrl.open} />}
       </header>
 
       <div className="session__main">

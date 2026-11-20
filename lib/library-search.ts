@@ -178,3 +178,39 @@ export function pickForQuestion(entries: HistoryEntry[], question: string, max: 
   const recent = [...entries].sort((a, b) => b.updatedAt - a.updatedAt);
   return (picked.length ? picked : recent).slice(0, max);
 }
+
+/** Words a related summary must share with this one, among its distinctive words. */
+const MIN_SHARED = 3;
+/** Distinctive words of this summary used as the query. */
+const MAX_TERMS = 16;
+
+/**
+ * "You read about this before": earlier summaries on the same topic as `id`, most related first.
+ * The query is this summary's own distinctive words: those it shares with only a few of the
+ * others (a word in most summaries says nothing about the topic). Earlier reads of the same page
+ * are left out; What changed covers those.
+ */
+export function relatedReads(entries: HistoryEntry[], id: string, max = 3): HistoryEntry[] {
+  const self = entries.find((e) => e.id === id);
+  if (!self) return [];
+  const others = entries.filter((e) => e.id !== id && !(self.origin && e.origin === self.origin));
+  if (!others.length) return [];
+  const { docs } = indexOf(others);
+  const own = new Map<string, number>();
+  for (const w of tokenize(`${self.title} ${self.title} ${self.text}`)) {
+    if (!STOP.has(w) && !/^\d+$/.test(w)) own.set(w, (own.get(w) ?? 0) + 1);
+  }
+  const common = Math.max(2, Math.floor(others.length * 0.2));
+  const terms = [...own]
+    .map(([w, n]) => ({ w, n, df: docs.filter((d) => d.tf.has(w)).length }))
+    .filter((x) => x.df > 0 && x.df <= common)
+    .sort((a, b) => a.df - b.df || b.n - a.n)
+    .slice(0, MAX_TERMS)
+    .map((x) => x.w);
+  if (terms.length < MIN_SHARED) return [];
+  return rank(others, terms, false)
+    .filter((x) => x.matched >= MIN_SHARED)
+    .sort(best)
+    .slice(0, max)
+    .map((x) => x.entry);
+}

@@ -195,7 +195,14 @@
       "outOf": "{{value}} de {{max}}"
     },
     "relatedQueries": "Perguntas sugeridas",
-    "sources": "Fontes"
+    "sources": "Fontes",
+    "agreement": {
+      "heading": "O que as fontes dizem",
+      "agree": "Concordam",
+      "differ": "Divergem",
+      "only": "Só uma",
+      "elsewhere": "Este trecho está na fonte [{{found}}], não na [{{source}}]: “{{quote}}”"
+    }
   },
   "refineHint": {
     "shorter": "Mantém só os pontos mais importantes.",
@@ -306,5 +313,8 @@
     "report": "Relatar um problema",
     "later": "Mais tarde",
     "never": "Não perguntar de novo"
+  },
+  "related": {
+    "title": "Você já leu sobre isto:"
   }
 }

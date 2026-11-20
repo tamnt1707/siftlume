@@ -175,7 +175,14 @@
       "outOf": "{{max}}점 중 {{value}}점"
     },
     "relatedQueries": "추천 질문",
-    "sources": "출처"
+    "sources": "출처",
+    "agreement": {
+      "heading": "출처별 내용",
+      "agree": "일치",
+      "differ": "차이",
+      "only": "한 곳만",
+      "elsewhere": "이 구절은 출처 [{{source}}]가 아니라 [{{found}}]에 있습니다: “{{quote}}”"
+    }
   },
   "refineHint": {
     "shorter": "가장 중요한 내용만 남깁니다.",
@@ -282,5 +289,8 @@
     "report": "문제 신고",
     "later": "나중에",
     "never": "다시 묻지 않기"
+  },
+  "related": {
+    "title": "이 주제로 전에 읽은 글:"
   }
 }
