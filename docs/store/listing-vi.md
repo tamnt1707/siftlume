@@ -49,7 +49,7 @@ Chọn cách đọc và độ dài (ngắn, vừa, chi tiết, hoặc đầy đ�
 
 BỐ CỤC THEO NỘI DUNG
 • Số liệu thành biểu đồ, chọn theo dạng dữ liệu
-• Mỗi con số dẫn về đúng đoạn nó được lấy ra; số nào bài gốc không ghi nguyên văn thì bị đánh dấu Chưa xác minh, kèm lý do
+• Mỗi con số dẫn về đúng đoạn nó được lấy ra; tổng hay % thay đổi tự tính từ bài gốc thì hiện các số dùng để tính, số còn lại không có nguyên văn thì bị đánh dấu Chưa xác minh, kèm lý do
 • Bài đánh giá có kết luận kèm ưu và nhược điểm
 • Việc cần làm thành danh sách có thể đánh dấu
 • Quy trình và quyết định thành sơ đồ
