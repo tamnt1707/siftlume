@@ -335,6 +335,9 @@ kbd {
   background: transparent;
   color: var(--ink-2);
   font-weight: 520;
+  /* One line each ("Theo hệ thống" was three): the control then asks for the room its labels
+     need, and a wrapping row moves it to a line of its own instead. */
+  white-space: nowrap;
 }
 
 .segmented button.active {
