@@ -32,3 +32,4 @@ openwiki/.run.json
 xcuserdata/
 *.xcuserstate
 DerivedData/
+.omc
