@@ -50,6 +50,7 @@ Chọn cách đọc và độ dài (ngắn, vừa, chi tiết, hoặc đầy đ�
 BỐ CỤC THEO NỘI DUNG
 • Số liệu thành biểu đồ, chọn theo dạng dữ liệu
 • Mỗi con số dẫn về đúng đoạn nó được lấy ra; tổng hay % thay đổi tự tính từ bài gốc thì hiện các số dùng để tính, số còn lại không có nguyên văn thì bị đánh dấu Chưa xác minh, kèm lý do
+• Ý chính, sự kiện, nhận định và lập luận cũng dẫn về đúng đoạn của chúng
 • Bài đánh giá có kết luận kèm ưu và nhược điểm
 • Việc cần làm thành danh sách có thể đánh dấu
 • Quy trình và quyết định thành sơ đồ
@@ -66,6 +67,7 @@ CÔNG CỤ
 • Sao chép hoặc tải về dạng HTML hay Markdown, nghe đọc, in hoặc lưu PDF
 • Chia sẻ dạng ảnh: TL;DR và các số chính trên một tấm thẻ để đăng mạng xã hội
 • Bấm vào trích dẫn hoặc con số để nhảy tới đúng đoạn trong trang gốc, hoặc trong văn bản nguồn với PDF và tệp
+• Tô trang: đánh dấu cùng lúc mọi đoạn mà bản tóm tắt dựa vào, bằng màu bút dạ của bạn
 • Tóm tắt lại một trang và xem có gì thay đổi từ lần đọc trước
 • Tìm trong mọi bản tóm tắt đã đọc (gõ không dấu vẫn tìm được), hoặc hỏi AI dựa trên những gì bạn đã đọc
 
