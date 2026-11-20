@@ -24,6 +24,7 @@ import { Analogy, Misconception, Misconceptions } from './genui/explain';
 import { Argument, ArgumentMap, CauseEffect } from './genui/reasoning';
 import { Choice, Criterion, DecisionMatrix, Matrix2x2, Quadrant, Scenario, Scenarios } from './genui/decision';
 import { BeforeAfter, Perspective, Perspectives, Shift } from './genui/viewpoints';
+import { SourceAgreement, SourcePoint, SourceSide } from './genui/consensus';
 import { CalcStep, Calculation, CodeNote, CodeWalkthrough, Finding, Findings } from './genui/technical';
 import { EventCard, Ingredient, Ingredients, RatingBreakdown } from './genui/everyday';
 import { Branch, QrCode, Tree } from './genui/structure';
@@ -39,6 +40,7 @@ export { ACTION_STATUSES, CHANGE_TYPES } from './genui/project';
 export { ARGUMENT_STANCES } from './genui/reasoning';
 export { SCENARIO_KINDS, weightedScores } from './genui/decision';
 export { STANCES } from './genui/viewpoints';
+export { VERDICTS } from './genui/consensus';
 export { CALC_OPS, FINDING_SEVERITIES, lineRange } from './genui/technical';
 export { EVENT_STATUSES, formatQty } from './genui/everyday';
 export { qrSafe } from './genui/structure';
@@ -115,6 +117,7 @@ export const library = openuiChatLibrary.extend({
       { component: Scenarios, slots: CONTENT_SLOTS },
       { component: Matrix2x2, slots: CONTENT_SLOTS },
       { component: Perspectives, slots: CONTENT_SLOTS },
+      { component: SourceAgreement, slots: CONTENT_SLOTS },
       { component: BeforeAfter, slots: CONTENT_SLOTS },
       { component: Calculation, slots: CONTENT_SLOTS },
       { component: CodeWalkthrough, slots: CONTENT_SLOTS },
@@ -147,6 +150,8 @@ export const library = openuiChatLibrary.extend({
       Scenario,
       Quadrant,
       Perspective,
+      SourcePoint,
+      SourceSide,
       Shift,
       CalcStep,
       CodeNote,

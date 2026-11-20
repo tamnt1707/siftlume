@@ -195,7 +195,14 @@
       "outOf": "{{value}} sur {{max}}"
     },
     "relatedQueries": "Questions suggérées",
-    "sources": "Sources"
+    "sources": "Sources",
+    "agreement": {
+      "heading": "Ce que disent les sources",
+      "agree": "D’accord",
+      "differ": "Divergent",
+      "only": "Une seule",
+      "elsewhere": "Ce passage est dans la source [{{found}}], pas dans la [{{source}}] : « {{quote}} »"
+    }
   },
   "refineHint": {
     "shorter": "Garder uniquement les points essentiels.",

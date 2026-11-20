@@ -175,7 +175,14 @@
       "outOf": "{{value}} trên {{max}}"
     },
     "relatedQueries": "Câu hỏi gợi ý",
-    "sources": "Nguồn"
+    "sources": "Nguồn",
+    "agreement": {
+      "heading": "Các nguồn nói gì",
+      "agree": "Đồng ý",
+      "differ": "Khác nhau",
+      "only": "Chỉ một nguồn",
+      "elsewhere": "Đoạn này nằm ở nguồn [{{found}}], không phải nguồn [{{source}}]: “{{quote}}”"
+    }
   },
   "refineHint": {
     "shorter": "Chỉ giữ những ý quan trọng nhất.",

@@ -57,3 +57,20 @@ terms = Glossary([g1, g2])
 g1 = Term("Route", "A URL path plus the HTTP method it answers")
 g2 = Term("Middleware", "A function that runs on every request before the route")
 followUps = FollowUpBlock([FollowUpItem("How do I add a POST route?"), FollowUpItem("How do I test the API?")])`;
+
+/** Several tabs on one story, compared (SourceAgreement): the model's example for combined tabs. */
+export const SOURCES_COMPARED_EXAMPLE = `root = Card([hero, agreement, followUps], [{title: "Council approves $9 congestion charge", sourceName: "citydaily.example", url: "https://citydaily.example/charge"}, {title: "Retailers brace for the downtown fee", sourceName: "retailnews.example", url: "https://retailnews.example/fee"}, {title: "Will the charge cut traffic?", sourceName: "metro.example", url: "https://metro.example/analysis"}])
+hero = SummaryHero("Three outlets on the city's congestion charge", "All three confirm a $9 charge from March; they disagree on how much traffic it will cut.")
+agreement = SourceAgreement([a1, a2, a3, a4])
+a1 = SourcePoint("A $9 daily charge starts in March", "agree", [a1s1, a1s2, a1s3])
+a1s1 = SourceSide(1, "$9 a day for cars entering downtown from March", "drivers will pay $9 a day to enter downtown from March 1")
+a1s2 = SourceSide(2, "Same charge and start date", "a $9 daily fee on cars entering the downtown zone starting in March")
+a1s3 = SourceSide(3, "Confirms the $9 fee", "the $9 congestion fee approved on Friday")
+a2 = SourcePoint("How much traffic falls", "differ", [a2s1, a2s2])
+a2s1 = SourceSide(1, "City expects 15% less peak traffic", "officials project a 15 percent drop in rush-hour traffic")
+a2s2 = SourceSide(3, "Analysts expect 5% at most", "independent analysts say the drop is unlikely to exceed 5 percent")
+a3 = SourcePoint("Retailers fear lost shoppers", "only", [a3s1])
+a3s1 = SourceSide(2, "Retail group says shoppers will go to suburban malls", "shoppers will simply drive to the malls outside the zone")
+a4 = SourcePoint("Residents get a 90% discount", "only", [a4s1])
+a4s1 = SourceSide(1, "Permit holders pay 90% less", "residents with a permit get a 90 percent discount")
+followUps = FollowUpBlock([FollowUpItem("Why do the traffic estimates differ?"), FollowUpItem("Who is exempt from the charge?")])`;
