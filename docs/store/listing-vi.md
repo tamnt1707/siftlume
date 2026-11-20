@@ -26,6 +26,8 @@ Siftlume biến những trang dài thành bản tóm tắt bạn đọc lướt 
 
 Mở một bài báo, báo cáo hay trang tài liệu rồi bấm biểu tượng Siftlume. Bạn nhận được ý chính trong một dòng, các con số quan trọng và những điểm cần nhớ, kèm biểu đồ, dòng thời gian và sơ đồ khi nội dung cần đến. Sau đó bạn có thể hỏi thêm, câu trả lời chỉ dựa trên nội dung gốc.
 
+Mỗi con số và mỗi ý đều dẫn về đúng đoạn trong bài gốc, kiểm chứng bằng một cú bấm. Điều gì bài gốc không nói thì được đánh dấu, kèm lý do.
+
 TÓM TẮT ĐƯỢC GÌ
 • Trang bạn đang đọc, hoặc chỉ đoạn bạn bôi đen (chuột phải → Tóm tắt đoạn chọn)
 • Video YouTube, đọc từ phụ đề; bấm trích dẫn là phát đúng đoạn đó

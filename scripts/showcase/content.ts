@@ -39,3 +39,29 @@ quote = SourceQuote("sales grew 35 percent year over year", "The headline figure
 details = SectionBlock([SectionItem("risks", "Risks", [d1])], true)
 d1 = TextContent("Subsidy cuts in Europe could slow growth in 2026.")
 followUps = FollowUpBlock([FollowUpItem("Why is charging the main barrier?"), FollowUpItem("What happens in 2026?")])`;
+
+/**
+ * SUMMARY with the passage of every figure and point (`?view=compare&check`): the shot of
+ * Show in page and Highlight, with the article's passages marked.
+ */
+export const SUMMARY_CHECKED = SUMMARY.replace(
+  'n1 = KeyNumber("17M", "cars sold", "+35%")',
+  'n1 = KeyNumber("17M", "cars sold", "+35%", "reached a record 17 million in 2025")',
+)
+  .replace('n2 = KeyNumber("22%", "of new cars")', 'n2 = KeyNumber("22%", "of new cars", null, "roughly 22 percent of all new cars sold worldwide")')
+  .replace(
+    'n3 = KeyNumber("$90", "per kWh battery", "-12%")',
+    'n3 = KeyNumber("$90", "per kWh battery", "-12%", "dropped to around $90 in 2025, a 12 percent decline")',
+  )
+  .replace(
+    't1 = Takeaway("China buys 6 in 10 EVs", "Local brands compete hard on price")',
+    't1 = Takeaway("China buys 6 in 10 EVs", "Local brands compete hard on price", "about six in every ten electric cars sold")',
+  )
+  .replace(
+    't2 = Takeaway("EVs now cost the same as petrol cars")',
+    't2 = Takeaway("EVs now cost the same as petrol cars", null, "level with comparable petrol cars for the first time")',
+  )
+  .replace(
+    't3 = Takeaway("Charging access is the main barrier")',
+    't3 = Takeaway("Charging access is the main barrier", null, "That question is now the main barrier")',
+  );

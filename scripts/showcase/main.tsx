@@ -1,6 +1,6 @@
 import '../../lib/no-openui-devtools';
 import { SHOWCASE_CUSTOM_MODES } from './imports-stub';
-import type { ReactElement } from 'react';
+import { useEffect, useRef, type ReactElement } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Renderer } from '@openuidev/react-lang';
 import i18n from '../../lib/i18n/react';
@@ -12,6 +12,10 @@ import '../../assets/genui.css';
 import './showcase.css';
 import { ArrowExpand01Icon, ArrowUp02Icon, Clock01Icon, RefreshIcon, Settings02Icon } from '@hugeicons/core-free-icons';
 import { Icon } from '../../components/Icon';
+import { resolvePalette } from '../../lib/appearance';
+import { EvidenceContext } from '../../lib/evidence';
+import { highlightQuote } from '../../lib/highlight-quote';
+import { summaryPassages } from '../../lib/passages';
 import { Themed } from '../../components/Themed';
 import { SiftLoader } from '../../components/SiftLoader';
 import { SourcePicker } from '../../components/SourcePicker';
@@ -40,7 +44,7 @@ import {
   SOURCES_COMPARED_EXAMPLE,
 } from '../../lib/analysis-example';
 import { DEFAULT_SETTINGS, type Settings } from '../../lib/settings';
-import { ARTICLE, SUMMARY } from './content';
+import { ARTICLE, SUMMARY, SUMMARY_CHECKED } from './content';
 import { POSTS } from './posts-vi';
 
 const query = new URLSearchParams(location.search);
@@ -133,7 +137,23 @@ const Chips = () => (
 );
 
 /** Before / after: the original article next to the side panel summary. */
+/** `&check`: every passage of the summary marked in the article, as after Highlight. */
+const CHECK = query.has('check');
+const ARTICLE_TEXT = [ARTICLE.title, ARTICLE.dek, ...ARTICLE.paragraphs].join('\n\n');
+
 function Compare() {
+  const articleRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (!CHECK || !articleRef.current) return;
+    const marker = resolvePalette(settings.appearance, false).marker;
+    highlightQuote(summaryPassages(SUMMARY_CHECKED, ARTICLE_TEXT), articleRef.current, marker);
+    // The first passage scrolls into view; the shot starts at the top of the article.
+    articleRef.current.closest('.sc-browser')?.scrollTo(0, 0);
+    window.scrollTo(0, 0);
+  }, []);
+  const summary = (
+    <Renderer library={library} response={CHECK ? SUMMARY_CHECKED : SUMMARY} isStreaming={false} />
+  );
   return (
     <div className="sc-compare">
       <section className="sc-col">
@@ -147,7 +167,7 @@ function Compare() {
             <i />
             <span>{ARTICLE.url}</span>
           </div>
-          <article className="sc-article">
+          <article className="sc-article" ref={articleRef}>
             <p className="sc-site">{ARTICLE.site}</p>
             <p className="sc-section">{ARTICLE.section}</p>
             <h1>{ARTICLE.title}</h1>
@@ -179,7 +199,13 @@ function Compare() {
               <div className="session__main">
                 <section className="summary">
                   <div className="genui">
-                    <Renderer library={library} response={SUMMARY} isStreaming={false} />
+                    {CHECK ? (
+                      <EvidenceContext.Provider value={{ content: ARTICLE_TEXT, canShow: true }}>
+                        {summary}
+                      </EvidenceContext.Provider>
+                    ) : (
+                      summary
+                    )}
                   </div>
                 </section>
               </div>
@@ -347,6 +373,11 @@ function FullPage() {
  * `?set=analysis`: policy debate, decision and code tutorial (the analysis blocks).
  * `&panel` renders them at side-panel width.
  */
+const SOURCES_MISMATCH = SOURCES_COMPARED_EXAMPLE.replace(
+  'a2s2 = SourceSide(3, "Analysts expect 5% at most", "independent analysts say the drop is unlikely to exceed 5 percent")',
+  'a2s2 = SourceSide(3, "Analysts expect 5% at most", "officials project a 15 percent drop in rush-hour traffic")',
+);
+
 const COMPONENT_SETS: Record<string, string[]> = {
   default: [REVIEW_SUMMARY_EXAMPLE, NEWS_ACTORS_EXAMPLE],
   domain: [PRODUCT_COMPARE_EXAMPLE, RELEASE_NOTES_EXAMPLE, RESEARCH_PAPER_EXAMPLE],
@@ -355,13 +386,9 @@ const COMPONENT_SETS: Record<string, string[]> = {
   everyday: [PR_REVIEW_EXAMPLE, RECIPE_EXAMPLE, PRODUCT_EVENT_EXAMPLE],
   visual: [VISUAL_SUMMARY_EXAMPLE],
   // The second copy cites outlet 1's words for outlet 3, to show the mismatch mark.
-  sources: [
-    SOURCES_COMPARED_EXAMPLE,
-    SOURCES_COMPARED_EXAMPLE.replace(
-      'a2s2 = SourceSide(3, "Analysts expect 5% at most", "independent analysts say the drop is unlikely to exceed 5 percent")',
-      'a2s2 = SourceSide(3, "Analysts expect 5% at most", "officials project a 15 percent drop in rush-hour traffic")',
-    ),
-  ],
+  sources: [SOURCES_COMPARED_EXAMPLE, SOURCES_MISMATCH],
+  // The store shot: one column, with the mismatch mark.
+  'sources-one': [SOURCES_MISMATCH],
 };
 
 /** `?set=sources`: three tabs combined, so the sides of SourceAgreement can be checked. */
@@ -378,10 +405,24 @@ const SOURCES_EVIDENCE = {
 
 function Components() {
   const programs = COMPONENT_SETS[query.get('set') ?? 'default'] ?? COMPONENT_SETS.default!;
+  // The store shot shows why the misattributed passage is Unverified.
+  useEffect(() => {
+    if (query.get('set') !== 'sources-one') return;
+    const open = () => {
+      const why = document.querySelector<HTMLDetailsElement>('.g-why--unverified');
+      if (why) why.open = true;
+      else setTimeout(open, 100);
+    };
+    open();
+  }, []);
   const panel = query.has('panel');
   return (
     <Themed settings={settings} className="app app--page sc-components">
-      <main className="content sc-components__grid" style={{ gridTemplateColumns: `repeat(${programs.length}, 1fr)` }}>
+      <main className="content sc-components__grid" style={{
+          gridTemplateColumns: programs.length > 1 ? `repeat(${programs.length}, 1fr)` : 'minmax(0, 860px)',
+          justifyContent: 'center',
+        }}
+      >
         {programs.map((program, i) => (
           <div
             key={i}
@@ -395,7 +436,7 @@ function Components() {
                   response={program}
                   isStreaming={false}
                   onAction={() => {}}
-                  evidence={query.get('set') === 'sources' ? SOURCES_EVIDENCE : undefined}
+                  evidence={query.get('set')?.startsWith('sources') ? SOURCES_EVIDENCE : undefined}
                 />
               </section>
             </div>
@@ -483,15 +524,21 @@ const STORE_SHOTS: { title: string; sub: string; src: string; width: number }[] 
     width: 1360,
   },
   {
-    title: 'Numbers become charts. Questions get answers.',
-    sub: 'Charts picked from the shape of the data, plus follow-up questions answered only from the source.',
-    src: 'view=fullpage',
+    title: 'Check every figure and every point',
+    sub: 'Each one links to the passage it comes from. Highlight marks them all in the page at once.',
+    src: 'view=compare&check',
     width: 1360,
   },
   {
-    title: 'Made for the content you read',
-    sub: 'Verdicts and pros and cons for reviews, checklists for action items, who is who for the news.',
-    src: 'view=components',
+    title: 'Numbers become charts. Questions get answers.',
+    sub: 'Charts picked from the shape of the data, in light or dark, plus questions answered only from the source.',
+    src: 'view=fullpage&dark',
+    width: 1360,
+  },
+  {
+    title: 'Several tabs: where sources agree, and where they don’t',
+    sub: 'Each outlet’s position with its own passage, checked against that tab.',
+    src: 'view=components&set=sources-one',
     width: 1360,
   },
   {
@@ -499,12 +546,6 @@ const STORE_SHOTS: { title: string; sub: string; src: string; width: number }[] 
     sub: 'OpenAI, Claude, Gemini, OpenRouter, Groq and more, or a local model with Ollama. No Siftlume server.',
     src: 'view=settings&tab=ai',
     width: 1100,
-  },
-  {
-    title: 'Light, dark, and your own colors',
-    sub: 'Pick a color preset or your own pen and highlighter, in 12 interface languages.',
-    src: 'view=fullpage&dark',
-    width: 1360,
   },
 ];
 
