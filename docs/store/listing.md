@@ -94,7 +94,7 @@ Free and open source (MIT): https://github.com/tamnt1707/siftlume
 | Small promo tile (440×280)    | `promo-small-440x280.png`               |
 | Marquee promo tile (1400×560) | `promo-marquee-1400x560.png`            |
 
-**Official URL**: `https://siftlume.evup.cloud` (selectable once the Google account of the developer account owns the `evup.cloud` property in Search Console, which is verified). **Homepage URL**: `https://siftlume.evup.cloud`. **Support URL**: `https://github.com/tamnt1707/siftlume/issues`.
+**Official URL**: `https://siftlume.evup.cloud` (selectable once the Google account of the developer account owns the `evup.cloud` property in Search Console, which is verified). **Homepage URL**: `https://siftlume.evup.cloud`. **Support URL**: `https://github.com/tamnt1707/siftlume/issues`. **Contact email** (Account tab, shown on the listing): `contact@evup.cloud`.
 
 ## Privacy practices tab
 

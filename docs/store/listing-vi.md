@@ -126,6 +126,7 @@ Mọi người dùng thử và góp ý giúp mình, nhất là những loại tr
 - **Nhà phát triển**: TamNT
 - **Mã nguồn**: https://github.com/tamnt1707/siftlume
 - **Chính sách quyền riêng tư**: https://siftlume.evup.cloud/vi/privacy/ (bản tiếng Anh: https://siftlume.evup.cloud/privacy/)
+- **Liên hệ**: contact@evup.cloud
 - **Hỗ trợ và báo lỗi**: https://github.com/tamnt1707/siftlume/issues
 - **Ủng hộ**: https://ko-fi.com/tamnt
 - **Hình ảnh**: dùng `screenshot-1.png` … `screenshot-5.png` và `promo-marquee-1400x560.png` trong thư mục này. Video demo có lồng tiếng Việt.
