@@ -32,7 +32,7 @@ TÓM TẮT ĐƯỢC GÌ
 • Google Docs, Sheets và Slides bạn mở được, kể cả tài liệu riêng tư, và file PDF trên Google Drive; bảng tính có biểu đồ và bộ lọc, bài trình bày giữ cả ghi chú của người thuyết trình
 • Công thức nấu ăn, sản phẩm, tin tuyển dụng và sự kiện được trình bày đúng thứ bạn cần: nguyên liệu và các bước, giá và nhận xét của người mua, lương và yêu cầu, ngày giờ và vé
 • Pull request trên GitHub: đổi gì và vì sao, tình trạng review, rủi ro, và tự review phần code thay đổi
-• Nhiều tab đang mở cùng lúc, so sánh với nhau
+• Nhiều tab đang mở cùng lúc: chỗ các nguồn đồng ý, chỗ khác nhau và điều chỉ một nguồn nói, kèm đoạn trích của từng nguồn
 • Một trang cùng các trang nó liên kết tới (Đọc sâu)
 • Văn bản bạn dán vào
 • Tài liệu và bảng tính mở từ máy
@@ -70,6 +70,7 @@ CÔNG CỤ
 • Tô trang: đánh dấu cùng lúc mọi đoạn mà bản tóm tắt dựa vào, bằng màu bút dạ của bạn
 • Tóm tắt lại một trang và xem có gì thay đổi từ lần đọc trước
 • Tìm trong mọi bản tóm tắt đã đọc (gõ không dấu vẫn tìm được), hoặc hỏi AI dựa trên những gì bạn đã đọc
+• Gợi ý các bản tóm tắt cũ cùng chủ đề khi bạn đọc bài mới
 
 AI CỦA BẠN, KHÓA CỦA BẠN
 Kết nối nhà cung cấp AI bạn đang dùng bằng khóa API của riêng bạn, hoặc chạy model ngay trên máy, không cần khóa. Yêu cầu đi thẳng từ trình duyệt tới nhà cung cấp đó, không qua máy chủ nào của Siftlume.
