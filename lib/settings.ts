@@ -335,6 +335,18 @@ export async function getSettings(): Promise<Settings> {
   return normalizeSettings(await settingsItem.getValue());
 }
 
+/**
+ * The output language picked on a summary becomes the default for new ones: the setting is easy
+ * to miss in Settings → Summary, and picking it again on every summary wasted a run each time.
+ * Only that field is written; everything else stays as stored.
+ */
+export async function setDefaultLanguage(language: string) {
+  const stored = await settingsItem.getValue();
+  if (stored?.language === language) return false;
+  await settingsItem.setValue({ ...DEFAULT_SETTINGS, ...stored, language });
+  return true;
+}
+
 /** Match pattern for chrome.permissions, e.g. "https://api.openai.com/*". */
 export function originPattern(url: string): string | null {
   try {

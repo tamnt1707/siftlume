@@ -35,7 +35,8 @@
     "passagesHighlighted_other": "{{count}} passages surlignés dans la page.",
     "passagesInSource_other": "{{count}} passages surlignés dans le texte source.",
     "passagesNotFound": "Aucun passage du résumé trouvé dans la page.",
-    "passagesCleared": "Surlignage effacé."
+    "passagesCleared": "Surlignage effacé.",
+    "languageDefault": "Les nouveaux résumés utiliseront aussi cette langue. Modifiable dans Paramètres → Résumé."
   },
   "warnings": {
     "invalidUi_one": "Le modèle a produit {{count}} instruction d’interface invalide ; affichage de ce qui a pu être rendu.",

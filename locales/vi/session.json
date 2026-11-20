@@ -31,7 +31,8 @@
     "passagesHighlighted_other": "Đã tô {{count}} đoạn trên trang.",
     "passagesInSource_other": "Đã tô {{count}} đoạn trong văn bản nguồn.",
     "passagesNotFound": "Không tìm thấy đoạn nào của bản tóm tắt trên trang.",
-    "passagesCleared": "Đã xóa phần tô."
+    "passagesCleared": "Đã xóa phần tô.",
+    "languageDefault": "Các bản tóm tắt mới cũng sẽ dùng ngôn ngữ này. Đổi lại trong Cài đặt → Tóm tắt."
   },
   "warnings": {
     "invalidUi_other": "Model tạo ra {{count}} câu lệnh giao diện không hợp lệ; đang hiển thị phần dựng được.",

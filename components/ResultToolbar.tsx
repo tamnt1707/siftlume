@@ -17,7 +17,7 @@ import { OUTPUT_LANGUAGES, speechTagFor } from '@/lib/languages';
 import { markdownToSpeech, programToMarkdown } from '@/lib/markdown';
 import { summaryHtml } from '@/lib/export-html';
 import i18n from '@/lib/i18n';
-import type { Settings, SummaryLength } from '@/lib/settings';
+import { setDefaultLanguage, type Settings, type SummaryLength } from '@/lib/settings';
 import { Icon } from './Icon';
 import { Select } from './Select';
 import { AUTO, resolveMode } from '@/lib/modes';
@@ -180,7 +180,12 @@ export function ResultToolbar({
           value={language}
           disabled={busy}
           aria-label={t('settings:summary.outputLanguage')}
-          onChange={(value) => value !== language && ctrl.resummarize({ language: value })}
+          onChange={(value) => {
+            if (value === language) return;
+            ctrl.resummarize({ language: value });
+            // Also the default for new summaries (Settings → Summary shows it too).
+            void setDefaultLanguage(value).then((changed) => changed && notify(t('toast.languageDefault')));
+          }}
           options={[
             { value: 'auto', label: t('settings:summary.sameAsSource') },
             ...OUTPUT_LANGUAGES.map((l) => ({ value: l.name, label: l.label })),

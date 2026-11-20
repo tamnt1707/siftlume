@@ -35,7 +35,8 @@
     "passagesHighlighted_other": "{{count}} trechos destacados na página.",
     "passagesInSource_other": "{{count}} trechos destacados no texto de origem.",
     "passagesNotFound": "Nenhum trecho do resumo foi encontrado na página.",
-    "passagesCleared": "Destaques removidos."
+    "passagesCleared": "Destaques removidos.",
+    "languageDefault": "Os novos resumos também usarão este idioma. Altere em Configurações → Resumo."
   },
   "warnings": {
     "invalidUi_one": "O modelo gerou {{count}} instrução de interface inválida; mostrando o que foi possível renderizar.",

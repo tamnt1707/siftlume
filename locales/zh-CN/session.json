@@ -31,7 +31,8 @@
     "passagesHighlighted_other": "已在网页上标注 {{count}} 处段落。",
     "passagesInSource_other": "已在原文中标注 {{count}} 处段落。",
     "passagesNotFound": "在网页上未找到摘要的任何段落。",
-    "passagesCleared": "已清除标注。"
+    "passagesCleared": "已清除标注。",
+    "languageDefault": "新的摘要也会使用这种语言。可在 设置 → 摘要 中更改。"
   },
   "warnings": {
     "invalidUi_other": "模型生成了 {{count}} 条无效的界面语句;仅显示可渲染的部分。",
