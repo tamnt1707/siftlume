@@ -5,7 +5,7 @@ Everything to paste into the [Chrome Developer Dashboard](https://chrome.google.
 ## Package
 
 - Build: `pnpm check && pnpm zip`
-- Upload `.output/siftlume-<version>-chrome.zip` (0.8.0 now; 0.7.0 is the last published)
+- Upload `.output/siftlume-<version>-chrome.zip` (0.8.1 next; 0.8.0 is in review; 0.7.0 is the last published)
 - Before each update, bump `version` in `package.json`.
 
 ## Store listing tab
@@ -39,7 +39,7 @@ WHAT YOU CAN SUMMARIZE
 
 MADE FOR THE CONTENT
 • Numbers become charts, chosen from the shape of the data
-• Every figure links to the passage it comes from; one the source does not state word for word is marked Unverified, with the reason
+• Every figure links to the passage it comes from; a total or % change worked out from the source shows the figures it comes from, and anything else is marked Unverified, with the reason
 • Reviews get a verdict with pros and cons
 • Action items become a checklist you can tick
 • Processes and decisions become diagrams
