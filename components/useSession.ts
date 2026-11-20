@@ -7,6 +7,7 @@ import { extractTabs } from '@/lib/multi';
 import { deepSource, findLinks, linksAllowed, pickLinks } from '@/lib/deep';
 import { extractFile, truncate, type ExtractedSource } from '@/lib/extractors';
 import { keepChars } from '@/lib/longread';
+import { countSummary } from '@/lib/review-prompt';
 import { newId, readStored, saveSession, writeStored, type Session, type SessionOptions } from '@/lib/history';
 import { configProblem, type Settings } from '@/lib/settings';
 import { AUTO, type ModeId } from '@/lib/modes';
@@ -89,6 +90,7 @@ export function useSession(settings: Settings) {
           summary: writeStored(res.program, { note: res.prose }),
           updatedAt: Date.now(),
         });
+        void countSummary();
       } catch (e) {
         if (!ctrl.signal.aborted) setError(describeError(e, settingsRef.current));
       } finally {

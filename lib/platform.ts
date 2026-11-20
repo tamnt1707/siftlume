@@ -12,6 +12,9 @@ export const HAS_SIDE_PANEL = CHROMIUM;
 /** Chromium's _favicon endpoint for extension pages. */
 export const HAS_FAVICON_CACHE = CHROMIUM;
 
+/** A store listing people can review: the Chrome Web Store. */
+export const HAS_STORE_REVIEW = CHROMIUM;
+
 /** Right-click menu items. Safari on macOS has them; iOS has no context menu. */
 export const hasContextMenus = () => typeof browser.contextMenus?.create === 'function';
 
