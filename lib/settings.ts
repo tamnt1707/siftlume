@@ -336,14 +336,16 @@ export async function getSettings(): Promise<Settings> {
 }
 
 /**
- * The output language picked on a summary becomes the default for new ones: the setting is easy
- * to miss in Settings → Summary, and picking it again on every summary wasted a run each time.
- * Only that field is written; everything else stays as stored.
+ * The output language or length picked on a summary becomes the default for new ones (the start
+ * screen keeps its length the same way): the language is easy to miss in Settings → Summary, and
+ * picking either again on every summary cost a run each time. Only these fields are written;
+ * everything else stays as stored. The reading mode is not remembered: each run starts on auto.
+ * Returns whether anything changed.
  */
-export async function setDefaultLanguage(language: string) {
-  const stored = await settingsItem.getValue();
-  if (stored?.language === language) return false;
-  await settingsItem.setValue({ ...DEFAULT_SETTINGS, ...stored, language });
+export async function rememberLastUsed(patch: Partial<Pick<Settings, 'language' | 'length'>>) {
+  const stored = { ...DEFAULT_SETTINGS, ...(await settingsItem.getValue()) };
+  if (Object.entries(patch).every(([k, v]) => stored[k as keyof Settings] === v)) return false;
+  await settingsItem.setValue({ ...stored, ...patch });
   return true;
 }
 
