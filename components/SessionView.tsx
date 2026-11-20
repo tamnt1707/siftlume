@@ -27,6 +27,7 @@ import { REFINE_PROMPTS, type RefineId } from '@/lib/refine';
 import { GenUI, type GenUIAction } from './GenUI';
 import { ResultToolbar, readingMinutes } from './ResultToolbar';
 import { ReportLayout } from './ReportLayout';
+import { ReviewPrompt } from './ReviewPrompt';
 import { WhatsNew } from './WhatsNew';
 import { PROVIDERS, type Settings } from '@/lib/settings';
 import { Icon } from './Icon';
@@ -473,6 +474,7 @@ export function SessionView({
             </div>
           )}
           {!busy && !summary.content && !summary.context.note && <p className="muted">{t('noSummary')}</p>}
+          {!busy && summary.content && <ReviewPrompt />}
         </section>
 
         {summary.content && (

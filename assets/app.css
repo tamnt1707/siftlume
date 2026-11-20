@@ -3248,6 +3248,61 @@ button.ui-menu__item:focus-visible {
   font-size: 12.5px;
 }
 
+/* "Enjoying Siftlume?": the store review card under a finished summary, after a few summaries. */
+.review-prompt {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  font-size: 14px;
+}
+
+.review-prompt__icon {
+  flex: none;
+  margin-top: 1px;
+  color: var(--accent);
+}
+
+.review-prompt__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.review-prompt__body p {
+  margin: 2px 0 10px;
+  color: var(--ink-2);
+}
+
+.review-prompt__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-prompt__actions a.btn {
+  text-decoration: none;
+}
+
+.review-prompt__actions a.btn:not(.btn--primary) {
+  color: var(--ink);
+}
+
+.review-prompt__later {
+  display: inline-flex;
+  gap: 14px;
+  margin-left: 4px;
+  font-size: 13px;
+}
+
+.review-prompt__later .link {
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
 /* "You read this on …": what changed in the page since an earlier summary. */
 .whats-new__line {
   margin: 6px 0 0;

@@ -19,6 +19,7 @@ import { DeepRead } from '../../components/DeepRead';
 import { HistoryView } from '../../components/HistoryView';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../../lib/mode-example';
 import { SettingsForm } from '../../components/SettingsForm';
+import { ReviewPrompt } from '@/components/ReviewPrompt';
 import { ResultToolbar } from '../../components/ResultToolbar';
 import type { SessionController } from '../../components/useSession';
 import { PR_REVIEW_EXAMPLE, PRODUCT_EVENT_EXAMPLE, RECIPE_EXAMPLE } from '../../lib/component-example';
@@ -306,6 +307,8 @@ function FullPage() {
               <div className="genui">
                 <Renderer library={library} response={CHART_SUMMARY_EXAMPLE} isStreaming={false} />
               </div>
+              {/* `&review`: the store review card, as after a few summaries. */}
+              <ReviewPrompt />
             </section>
             <Chips />
           </div>

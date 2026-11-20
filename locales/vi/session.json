@@ -274,5 +274,13 @@
     "removed": "Đã bỏ",
     "more": "+{{n}} mục nữa",
     "partial": "Chỉ so sánh phần trang mà mỗi lần tóm tắt đã đọc."
+  },
+  "review": {
+    "title": "Bạn thấy Siftlume hữu ích?",
+    "text": "Nếu Siftlume giúp bạn đọc nhanh hơn, một đánh giá ngắn trên Chrome Web Store sẽ giúp người khác tìm thấy nó. Có gì chưa ổn? Hãy báo cho chúng tôi.",
+    "rate": "Đánh giá trên Chrome Web Store",
+    "report": "Báo lỗi",
+    "later": "Để sau",
+    "never": "Không hỏi nữa"
   }
 }

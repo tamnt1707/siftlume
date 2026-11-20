@@ -298,5 +298,13 @@
     "removed": "Supprimé",
     "more": "+{{n}} de plus",
     "partial": "Seule la partie de la page lue par chaque résumé est comparée."
+  },
+  "review": {
+    "title": "Siftlume vous plaît ?",
+    "text": "S'il vous fait gagner du temps de lecture, un court avis sur le Chrome Web Store aide d'autres personnes à le trouver. Quelque chose ne marche pas ? Dites-le-nous plutôt.",
+    "rate": "Noter sur le Chrome Web Store",
+    "report": "Signaler un problème",
+    "later": "Plus tard",
+    "never": "Ne plus demander"
   }
 }

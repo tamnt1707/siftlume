@@ -286,5 +286,13 @@
     "removed": "Entfernt",
     "more": "+{{n}} weitere",
     "partial": "Verglichen wird nur der Teil der Seite, den jede Zusammenfassung gelesen hat."
+  },
+  "review": {
+    "title": "Gefällt dir Siftlume?",
+    "text": "Wenn es dir Lesezeit spart, hilft eine kurze Bewertung im Chrome Web Store anderen, es zu finden. Funktioniert etwas nicht? Sag uns lieber Bescheid.",
+    "rate": "Im Chrome Web Store bewerten",
+    "report": "Problem melden",
+    "later": "Später",
+    "never": "Nicht mehr fragen"
   }
 }

@@ -29,6 +29,8 @@ const memory: Record<string, unknown> = {
     ...(q.has('local') ? { provider: 'browser' } : {}),
   },
 };
+/** ?review: enough summaries for the store review card under the summary. */
+if (q.has('review')) memory['local:reviewPrompt'] = { count: 5, askAt: 5, done: false };
 /** ?view=history: a few saved summaries for the search box. */
 if (q.get('view') === 'history') {
   const day = 86_400_000;

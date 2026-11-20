@@ -286,5 +286,13 @@
     "removed": "Removed",
     "more": "+{{n}} more",
     "partial": "Only the part of the page each summary read is compared."
+  },
+  "review": {
+    "title": "Enjoying Siftlume?",
+    "text": "If it saves you reading time, a short review on the Chrome Web Store helps others find it. Something not working? Tell us instead.",
+    "rate": "Rate on Chrome Web Store",
+    "report": "Report a problem",
+    "later": "Later",
+    "never": "Don't ask again"
   }
 }
