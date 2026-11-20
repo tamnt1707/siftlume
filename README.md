@@ -107,7 +107,7 @@ Safari has no side panel: results always open in a tab, and on a phone the resul
 
 ## Privacy
 
-Full policy: [tamnt1707.github.io/siftlume/privacy.html](https://tamnt1707.github.io/siftlume/privacy.html).
+Full policy: [siftlume.evup.cloud/privacy](https://siftlume.evup.cloud/privacy/) ([Tiếng Việt](https://siftlume.evup.cloud/vi/privacy/)).
 
 - API keys are stored only in this browser (`chrome.storage.local`) and are never synced.
 - Page content is sent only to the provider you configured, and only when you ask for a summary.
