@@ -283,7 +283,7 @@ function PostCompare() {
           Siftlume <span>tóm tắt tiếng Việt · {post.mode}</span>
         </p>
         <Themed settings={settings} className="app app--panel sc-panel">
-          <Topbar provider="Google" model="Gemini 2.5 Flash" />
+          <Topbar />
           <main className="content">
             <div className="session session--panel">
               <SourceRow title={host} panel saved={`Tiết kiệm ~${post.minutes - 2} phút`} />
