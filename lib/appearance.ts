@@ -49,6 +49,8 @@ export const DEFAULT_APPEARANCE: Appearance = {
 
 const SANS = '"Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif';
 const SERIF = '"Source Serif 4 Variable", Georgia, "Times New Roman", serif';
+/** The reading typefaces, by setting. */
+export const READING_FONTS: Record<ReadingFont, string> = { serif: SERIF, sans: SANS };
 
 // ── Color helpers ──────────────────────────────────────────────────────────────
 

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { isHex, PRESETS, type Appearance, type ColorMode } from '@/lib/appearance';
+import { isHex, PRESETS, READING_FONTS, type Appearance, type ColorMode } from '@/lib/appearance';
 
 interface Props {
   appearance: Appearance;
@@ -94,6 +94,8 @@ export function AppearancePanel({ appearance, mode, onChange, onModeChange }: Pr
                 key={f}
                 className={appearance.readingFont === f ? 'active' : ''}
                 onClick={() => onChange({ readingFont: f })}
+                // Each option in its own typeface: the difference shows before you pick it.
+                style={{ fontFamily: READING_FONTS[f] }}
               >
                 {t(`appearance.fonts.${f}`)}
               </button>
