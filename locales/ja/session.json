@@ -27,7 +27,11 @@
     "tabGone": "元のタブは閉じられたか、別のページに移動しました。",
     "copied": "コピーしました。",
     "playingFrom": "{{time}} から再生",
-    "momentNotFound": "動画内でその場面が見つかりませんでした。"
+    "momentNotFound": "動画内でその場面が見つかりませんでした。",
+    "passagesHighlighted_other": "ページ上の{{count}}か所をハイライトしました。",
+    "passagesInSource_other": "元のテキストの{{count}}か所をハイライトしました。",
+    "passagesNotFound": "要約の箇所がページ上に見つかりませんでした。",
+    "passagesCleared": "ハイライトを消去しました。"
   },
   "warnings": {
     "invalidUi_other": "モデルが無効なUI記述を {{count}} 件生成しました。表示できた部分のみ表示しています。",
@@ -208,7 +212,10 @@
     },
     "madeWith": "Siftlume で作成",
     "asText": "テキスト",
-    "asTextTitle": "この回答をプレーンテキストで表示（グラフは表になります）。モデルへの再リクエストはしません"
+    "asTextTitle": "この回答をプレーンテキストで表示（グラフは表になります）。モデルへの再リクエストはしません",
+    "mark": "ハイライト",
+    "markTitle": "要約の根拠となる箇所をページ上でハイライト",
+    "unmarkTitle": "ページのハイライトを消去"
   },
   "export": {
     "value": "値",

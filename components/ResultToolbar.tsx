@@ -6,6 +6,7 @@ import {
   Copy01Icon,
   Download04Icon,
   FileViewIcon,
+  HighlighterIcon,
   PrinterIcon,
   StopIcon,
   TextIcon,
@@ -62,6 +63,8 @@ export function ResultToolbar({
   asText,
   onToggleText,
   onPrint,
+  marked = false,
+  onMark,
 }: {
   ctrl: SessionController;
   session: Session;
@@ -77,6 +80,10 @@ export function ResultToolbar({
   onToggleText: () => void;
   /** Replaces window.print() where it does nothing (Chrome ignores it in the side panel). */
   onPrint?: () => void;
+  /** The summary's passages are highlighted in the page (or the source text). */
+  marked?: boolean;
+  /** Highlight them all, or clear them; absent when there is nothing to highlight (or a video). */
+  onMark?: () => void;
 }) {
   const { t } = useTranslation(['session', 'settings', 'common']);
   const [speaking, setSpeaking] = useState(false);
@@ -193,6 +200,18 @@ export function ResultToolbar({
       </button>
 
       <div className="result-toolbar__actions">
+        {onMark && (
+          <button
+            className={`tool-btn ${marked ? 'tool-btn--on' : ''}`}
+            disabled={!program || busy}
+            onClick={onMark}
+            aria-pressed={marked}
+            title={marked ? t('toolbar.unmarkTitle') : t('toolbar.markTitle')}
+          >
+            <Icon icon={HighlighterIcon} size={16} />
+            <span>{t('toolbar.mark')}</span>
+          </button>
+        )}
         <button className="tool-btn" disabled={!program} onClick={() => void copy()} title={t('toolbar.copy')}>
           <Icon icon={Copy01Icon} size={16} />
           <span>{t('toolbar.copyShort')}</span>

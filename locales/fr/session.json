@@ -27,7 +27,15 @@
     "tabGone": "L’onglet d’origine a été fermé ou a changé de page.",
     "copied": "Copié.",
     "playingFrom": "Lecture à partir de {{time}}",
-    "momentNotFound": "Ce moment est introuvable dans la vidéo."
+    "momentNotFound": "Ce moment est introuvable dans la vidéo.",
+    "passagesHighlighted_one": "{{count}} passage surligné dans la page.",
+    "passagesInSource_one": "{{count}} passage surligné dans le texte source.",
+    "passagesHighlighted_many": "{{count}} passages surlignés dans la page.",
+    "passagesInSource_many": "{{count}} passages surlignés dans le texte source.",
+    "passagesHighlighted_other": "{{count}} passages surlignés dans la page.",
+    "passagesInSource_other": "{{count}} passages surlignés dans le texte source.",
+    "passagesNotFound": "Aucun passage du résumé trouvé dans la page.",
+    "passagesCleared": "Surlignage effacé."
   },
   "warnings": {
     "invalidUi_one": "Le modèle a produit {{count}} instruction d’interface invalide ; affichage de ce qui a pu être rendu.",
@@ -228,7 +236,10 @@
     },
     "madeWith": "Créé avec Siftlume",
     "asText": "Texte",
-    "asTextTitle": "Afficher cette réponse en texte brut (les graphiques deviennent des tableaux), sans redemander au modèle"
+    "asTextTitle": "Afficher cette réponse en texte brut (les graphiques deviennent des tableaux), sans redemander au modèle",
+    "mark": "Surligner",
+    "markTitle": "Surligner dans la page les passages du résumé",
+    "unmarkTitle": "Effacer le surlignage de la page"
   },
   "export": {
     "value": "Valeur",

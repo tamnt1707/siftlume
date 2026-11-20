@@ -27,7 +27,11 @@
     "tabGone": "原分頁已關閉或已前往其他頁面。",
     "copied": "已複製。",
     "playingFrom": "從 {{time}} 開始播放",
-    "momentNotFound": "在影片中找不到這一段。"
+    "momentNotFound": "在影片中找不到這一段。",
+    "passagesHighlighted_other": "已在網頁上標註 {{count}} 處段落。",
+    "passagesInSource_other": "已在原文中標註 {{count}} 處段落。",
+    "passagesNotFound": "在網頁上找不到摘要的任何段落。",
+    "passagesCleared": "已清除標註。"
   },
   "warnings": {
     "invalidUi_other": "模型產生了 {{count}} 條無效的介面敘述;僅顯示可呈現的部分。",
@@ -208,7 +212,10 @@
     },
     "madeWith": "由 Siftlume 產生",
     "asText": "文字",
-    "asTextTitle": "以純文字顯示此回答（圖表轉為表格），不必再次請求模型"
+    "asTextTitle": "以純文字顯示此回答（圖表轉為表格），不必再次請求模型",
+    "mark": "標註",
+    "markTitle": "在網頁上標註摘要所依據的段落",
+    "unmarkTitle": "清除網頁上的標註"
   },
   "export": {
     "value": "數值",

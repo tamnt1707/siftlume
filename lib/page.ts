@@ -6,7 +6,7 @@ import { extractPullRequest, pullRequestRef } from './github';
 import { extractGoogleFile, googleFileRef } from './gdocs';
 import { getSettings } from './settings';
 import { readStructuredData } from './structured';
-import { highlightQuote } from './highlight-quote';
+import { clearHighlights, highlightQuote } from './highlight-quote';
 
 export async function getActiveTab() {
   const [tab] = await browser.tabs.query({ active: true, lastFocusedWindow: true });
@@ -93,4 +93,20 @@ export async function extractTab(tabId: number): Promise<ExtractedSource & { tab
 export async function highlightInTab(tabId: number, text: string): Promise<boolean> {
   const [injection] = await browser.scripting.executeScript({ target: { tabId }, args: [text], func: highlightQuote });
   return Boolean(injection?.result);
+}
+
+/** Highlights several passages in the original page at once, in the reader's highlighter colour,
+ * until clearHighlightsInTab. Resolves with how many were found. */
+export async function highlightAllInTab(tabId: number, texts: string[], color: string): Promise<number> {
+  const [injection] = await browser.scripting.executeScript({
+    target: { tabId },
+    args: [texts, null, color],
+    func: highlightQuote,
+  });
+  return Number(injection?.result ?? 0);
+}
+
+/** Removes the passages highlightAllInTab marked. */
+export async function clearHighlightsInTab(tabId: number): Promise<void> {
+  await browser.scripting.executeScript({ target: { tabId }, func: clearHighlights });
 }
