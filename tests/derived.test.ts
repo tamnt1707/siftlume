@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { amountOf, derivation, figureCheck, figuresInPassage } from '@/lib/derived';
 
@@ -173,5 +174,25 @@ describe('figures the model gave no passage for', () => {
     expect(figureCheck(`${wiki}\nAnother 26 firms were left out.`, null, '26')).toEqual({ status: 'noQuote' });
     expect(figureCheck(wiki, null, '26%')).toEqual({ status: 'noQuote' });
     expect(figureCheck(wiki, null, '99')).toEqual({ status: 'noQuote' });
+  });
+});
+
+// The Markdown Siftlume made from the Wikipedia page (2026-11-20), references and all: footnote
+// links with escaped brackets, link titles with parentheses, numbered references and their dates.
+describe('figures found on a real page', () => {
+  const page = readFileSync(new URL('./fixtures/wikipedia-largest-companies.md', import.meta.url), 'utf8');
+
+  it.each([
+    ['26', '26 are in the United States'],
+    ['17', '17 are in Asia'],
+    ['7', '7 are in Europe'],
+  ])('%s', (value, passage) => {
+    const check = figureCheck(page, null, value);
+    expect(check.status).toBe('ok');
+    expect(check.quote).toContain(passage);
+  });
+
+  it('leaves a figure written in several places', () => {
+    expect(figureCheck(page, null, '50').status).toBe('noQuote');
   });
 });
