@@ -1,6 +1,9 @@
-# GitHub Pages (Jekyll) for the project site: privacy policy and a short landing page.
+# GitHub Pages (Jekyll): the old project site. Its pages redirect to siftlume.evup.cloud, where
+# the landing page and the privacy policy now live (repository siftlume-cloud).
 title: Siftlume
 description: Summarize any page, keep what matters.
 theme: jekyll-theme-minimal
 exclude:
   - store/
+plugins:
+  - jekyll-redirect-from

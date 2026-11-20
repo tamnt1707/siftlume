@@ -89,7 +89,7 @@ Free and open source (MIT): https://github.com/tamnt1707/siftlume
 | Small promo tile (440×280)    | `promo-small-440x280.png`               |
 | Marquee promo tile (1400×560) | `promo-marquee-1400x560.png`            |
 
-**Official URL**: none (no verified site). **Homepage URL**: `https://github.com/tamnt1707/siftlume`. **Support URL**: `https://github.com/tamnt1707/siftlume/issues`.
+**Official URL**: `https://siftlume.evup.cloud` (selectable once the Google account of the developer account owns the `evup.cloud` property in Search Console, which is verified). **Homepage URL**: `https://siftlume.evup.cloud`. **Support URL**: `https://github.com/tamnt1707/siftlume/issues`.
 
 ## Privacy practices tab
 
@@ -133,7 +133,7 @@ Certify all three statements:
 
 Content sent to the provider the user configured is the item's single purpose (summarizing at the user's request), which the limited-use policy allows. Describe this in the policy, as done in the privacy policy below.
 
-**Privacy policy URL**: `https://tamnt1707.github.io/siftlume/privacy.html`
+**Privacy policy URL**: `https://siftlume.evup.cloud/privacy/` (the old `tamnt1707.github.io/siftlume/privacy.html` redirects there)
 
 ## Distribution tab
 
