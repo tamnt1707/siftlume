@@ -1,12 +1,14 @@
 /**
  * Prompt example for numeric sources: one chart per insight, each with a short caption,
- * using only values stated in the source, each figure with the passage it comes from.
+ * using only values stated in the source, each figure with the passage it comes from, and one
+ * figure worked out from two of them, with its inputs.
  * Validated against the library with the parser.
  */
 export const CHART_SUMMARY_EXAMPLE = `root = Card([hero, numbers, trendCap, trend, trendSrc, mixCap, mix, mixSrc, rankCap, rank, rankSrc, takeaways, followUps])
 hero = SummaryHero("Acme Q3 earnings", "Cloud drove 18% revenue growth while hardware kept shrinking.", "Acme investor report")
-numbers = KeyNumbers([r, m, c])
+numbers = KeyNumbers([r, m, c, g])
 r = KeyNumber("$4.2B", "revenue", "+18%", "Revenue reached $4.2B in the third quarter, up 18% from a year earlier")
+g = KeyNumber("+$0.8B", "revenue added since Q4 24", null, null, [{label: "Q4 24", value: "$3.4B", quote: "fourth-quarter revenue of $3.4B"}, {label: "Q3 25", value: "$4.2B", quote: "Revenue reached $4.2B in the third quarter"}])
 m = KeyNumber("31%", "operating margin", null, "operating margin improved to 31%")
 c = KeyNumber("1.2M", "active customers", "+9%", "we now serve 1.2M active customers")
 trendCap = TextContent("Revenue grew every quarter", "small-heavy")

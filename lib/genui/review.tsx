@@ -4,8 +4,9 @@ import { defineComponent, useStateField } from '@openuidev/react-lang';
 import { z } from 'zod/v4';
 import { HugeiconsIcon } from '@hugeicons/react';
 import { Alert02Icon, ArrowDown01Icon, FileSearchIcon } from '@hugeicons/core-free-icons';
-import { checkEvidence, figureRange, useEvidence } from '@/lib/evidence';
-import { EvidenceMark } from './core';
+import { figureCheck, isBacked, type FigureInput } from '@/lib/derived';
+import { figureRange, useEvidence } from '@/lib/evidence';
+import { EvidenceMark, figureInputs, INPUTS_HINT } from './core';
 import { childProps } from './shared';
 
 export const ProsCons = defineComponent({
@@ -78,12 +79,14 @@ export const Verdict = defineComponent({
 export const BarItem = defineComponent({
   name: 'BarItem',
   description:
-    'One bar: label, numeric value from the source, optional display text (e.g. "38%", "$1.2B"), and quote: the passage it comes from, 5-25 words copied verbatim from the source and containing the figure. A bar without a verbatim passage is marked unverified.',
+    'One bar: label, numeric value from the source, optional display text (e.g. "38%", "$1.2B"), and quote: the passage it comes from, 5-25 words copied verbatim from the source and containing the figure. A bar without a verbatim passage is marked unverified. ' +
+    INPUTS_HINT,
   props: z.object({
     label: z.string(),
     value: z.number(),
     display: z.string().optional(),
     quote: z.string().optional(),
+    inputs: figureInputs,
   }),
   // Rendered by BarList, which needs every value to scale the bars.
   component: () => null,
@@ -98,7 +101,13 @@ export const BarList = defineComponent({
     heading: z.string().optional(),
   }),
   component: ({ props }) => {
-    const items = childProps<{ label: string; value: number; display?: string; quote?: string }>(props.items);
+    const items = childProps<{
+      label: string;
+      value: number;
+      display?: string;
+      quote?: string;
+      inputs?: FigureInput[];
+    }>(props.items);
     const max = Math.max(...items.map((p) => Math.abs(p.value)), 0) || 1;
     return (
       <section className="g-bars">
@@ -111,7 +120,7 @@ export const BarList = defineComponent({
                 <span className="g-bar__fill" style={{ width: `${(Math.abs(p.value) / max) * 100}%` }} />
               </span>
               <span className="g-bar__value">{p.display ?? p.value}</span>
-              <EvidenceMark quote={p.quote} value={p.display ?? p.value} />
+              <EvidenceMark quote={p.quote} value={p.display ?? p.value} inputs={p.inputs} />
             </li>
           ))}
         </ul>
@@ -123,11 +132,13 @@ export const BarList = defineComponent({
 export const ChartPoint = defineComponent({
   name: 'ChartPoint',
   description:
-    'One charted value and where it comes from: its label (as on the chart), the value as written in the source (e.g. "$4.2B", "26%"), and quote: 5-25 words copied verbatim from the source that contain it.',
+    'One charted value and where it comes from: its label (as on the chart), the value as written in the source (e.g. "$4.2B", "26%"), and quote: 5-25 words copied verbatim from the source that contain it. ' +
+    INPUTS_HINT,
   props: z.object({
     label: z.string(),
     value: z.string(),
     quote: z.string().optional(),
+    inputs: figureInputs,
   }),
   // Rendered by ChartSources, which counts the unverified ones.
   component: () => null,
@@ -159,9 +170,11 @@ export const ChartSources = defineComponent({
   component: ({ props }) => {
     const { t } = useTranslation('session');
     const evidence = useEvidence();
-    const points = childProps<{ label: string; value: string; quote?: string }>(props.points);
+    const points = childProps<{ label: string; value: string; quote?: string; inputs?: FigureInput[] }>(props.points);
     if (!points.length) return null;
-    const unverified = evidence ? points.filter((p) => !checkEvidence(evidence.content, p.quote, p.value)).length : 0;
+    const unverified = evidence
+      ? points.filter((p) => !isBacked(figureCheck(evidence.content, p.quote, p.value, p.inputs).status)).length
+      : 0;
     return (
       <details className="g-chartsrc">
         <summary>
@@ -186,7 +199,7 @@ export const ChartSources = defineComponent({
             <li key={i}>
               <span className="g-chartsrc__label">{p.label}</span>
               <span className="g-chartsrc__value">{p.value}</span>
-              <EvidenceMark quote={p.quote} value={p.value} />
+              <EvidenceMark quote={p.quote} value={p.value} inputs={p.inputs} />
               {p.quote && <ChartQuote quote={p.quote} value={p.value} />}
             </li>
           ))}

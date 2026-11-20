@@ -34,6 +34,17 @@ const CJK = '\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}ー々、。
 const CJK_GAP = new RegExp(`(?<=[${CJK}]) | (?=[${CJK}])`, 'gu');
 
 /**
+ * A Markdown link: its text, then a target that may hold escaped parentheses and a title with
+ * its own ("…/Consolidation_\(business\) "Consolidation (business)""), as Wikipedia pages have.
+ */
+const LINK_TARGET = String.raw`\((?:\\.|"[^"]*"|[^)\\"])*\)`;
+const MD_LINK = new RegExp(String.raw`!?\[((?:\\.|[^\]\\])*)\]` + LINK_TARGET, 'g');
+/** A footnote link ("[\[2\]](…#cite_note-2)"). */
+const FOOTNOTE_LINK = new RegExp(String.raw`\[\\?\[[^\]\\]*\\?\]\]` + LINK_TARGET, 'g');
+/** Markdown escapes put back: "\[2\]" → "[2]". */
+const unescapeMd = (s: string) => s.replace(/\\([[\]()*_`#>.!\-+|~])/g, '$1');
+
+/**
  * Text as a reader sees it: no Markdown link targets, emphasis or table pipes, no transcript
  * timestamps, straight quotes, one space between words, lower case. Text pulled out of PDFs and
  * files is evened out too: full-width digits and letters (１９：００), ligatures (ﬁ), soft hyphens
@@ -43,7 +54,8 @@ export function normalizeText(s: string) {
   return s
     .normalize('NFKC')
     .replace(/[\u00ad\u200b-\u200d\u2060\ufeff]/g, '')
-    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(MD_LINK, '$1')
+    .replace(/\\(?=[[\]()*_`#>.!\-+|~])/g, '')
     .replace(/\[\d{1,2}:\d{2}(?::\d{2})?\]/g, ' ')
     .replace(/[*_`#>|~]+/g, ' ')
     .replace(/[‘’]/g, "'")
@@ -167,4 +179,61 @@ export function figureRange(quote: string, value: string | number | null | undef
   if (!figure) return null;
   const found = figuresIn(quote).find((f) => sameFigure(figure, f));
   return found ? [found.index, found.index + found.length] : null;
+}
+
+const MONTH =
+  '(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|januar|februar|märz|mai|juni|juli|oktober|dezember|janvier|février|mars|avril|juin|juillet|août|septembre|octobre|novembre|décembre|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|janeiro|fevereiro|março|maio|junho|julho|setembro|outubro|dezembro|tháng)';
+const MONTH_BEFORE = new RegExp(`(?<![\\p{L}])${MONTH}\\.?\\s$`, 'iu');
+const MONTH_AFTER = new RegExp(`^\\s(?:${MONTH})(?![\\p{L}])`, 'iu');
+
+/**
+ * A number that is not an amount: the ordinal of a numbered list ("26. ↑ Annual report"), a day
+ * next to its month ("26 February", "March 26"), or part of a date or range ("2026-11-12").
+ */
+function notAFigure(sentence: string, f: Figure) {
+  const before = sentence.slice(0, f.index);
+  const after = sentence.slice(f.index + f.length);
+  if (!before.trim() && /^[.)](?:\s|$)/.test(after)) return true;
+  if (MONTH_BEFORE.test(before) || MONTH_AFTER.test(after)) return true;
+  if (/[-/]$/.test(sentence.slice(f.index, f.index + 1)) && /\d$/.test(before)) return true;
+  return /^[-/]\d/.test(after);
+}
+
+/** Words kept on each side of a figure found in the source, for its passage. */
+const AROUND = 8;
+
+/** A line of Markdown as a reader sees it: no link targets, footnote links or emphasis. */
+const plainLine = (line: string) =>
+  unescapeMd(line.replace(FOOTNOTE_LINK, '').replace(MD_LINK, '$1'))
+    .replace(/[*_`#>]+/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+/**
+ * A passage for a figure the model gave no usable passage for, found in the source itself: the
+ * words around it, when it is written exactly once in running text. Table rows are left out (a
+ * rank column holds every small number), and so is any figure written more than once, as which
+ * one is meant cannot be told. "26" is not "2026", and a percentage is not a plain number.
+ */
+export function locateFigure(content: string, value: string | number | null | undefined): string | null {
+  const figure = firstFigure(value);
+  if (!figure) return null;
+  const percent = String(value).includes('%');
+  const hits: string[] = [];
+  for (const line of content.split('\n')) {
+    if (/^\s*\|/.test(line)) continue;
+    for (const sentence of plainLine(line).split(/(?<=[.!?。！？])\s+/)) {
+      for (const f of figuresIn(sentence)) {
+        if (!sameFigure(figure, f)) continue;
+        if (sentence.slice(f.index, f.index + f.length).endsWith('%') !== percent) continue;
+        if (notAFigure(sentence, f)) continue;
+        const words = sentence.split(' ');
+        const at = sentence.slice(0, f.index).split(' ').length - 1;
+        hits.push(words.slice(Math.max(0, at - AROUND), at + AROUND + 1).join(' '));
+        if (hits.length > 1) return null;
+      }
+    }
+  }
+  const passage = hits[0];
+  return passage && evidenceStatus(content, passage, value) === 'ok' ? passage : null;
 }

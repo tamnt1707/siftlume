@@ -44,8 +44,26 @@
       "noQuote": "No source passage was given for this figure. It may have been counted or worked out rather than stated in the source.",
       "short": "The passage given is too short to check: “{{quote}}”",
       "notFound": "This passage is not in the source word for word: “{{quote}}”",
-      "noFigure": "The passage is in the source but does not show this figure: “{{quote}}”"
+      "noFigure": "The passage is in the source but does not show this figure: “{{quote}}”",
+      "badInput": "It was worked out from figures that are not all in the source word for word.",
+      "mismatch": "It does not follow from the figures it was worked out from ({{inputs}})."
     },
+    "derived": "Derived",
+    "derivedWhy": "Not stated in the source: worked out from figures that are, and the arithmetic checks out.",
+    "derivedFrom": "Worked out from these figures in the source:",
+    "derivedOp": {
+      "rounded": "rounded",
+      "sum": "sum",
+      "average": "average",
+      "difference": "difference",
+      "ratio": "ratio",
+      "share": "share",
+      "change": "% change",
+      "product": "product"
+    },
+    "inferred": "Inferred",
+    "inferredWhy": "Not written as a number in the source: read from its words.",
+    "inferredFrom": "The source says this in words, not as a number:",
     "chartSources_one": "Where this number comes from",
     "chartSources_other": "Where these {{count}} numbers come from",
     "unverifiedCount_one": "{{count}} unverified",
