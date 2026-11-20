@@ -48,6 +48,8 @@ import { ARTICLE, SUMMARY, SUMMARY_CHECKED } from './content';
 import { POSTS } from './posts-vi';
 
 const query = new URLSearchParams(location.search);
+/** `&lang=vi`: the showcase's own labels in Vietnamese too (the sample content stays as written). */
+const VI = query.get('lang') === 'vi';
 const view = query.get('view') ?? 'compare';
 const dark = new URLSearchParams(location.search).has('dark');
 const settings: Settings = {
@@ -77,7 +79,7 @@ function Topbar({
       </span>
       {tools && <div className="topbar__tools">{tools}</div>}
       <nav>
-        {wide ? <span className="btn btn--sm">New</span> : null}
+        {wide ? <span className="btn btn--sm">{VI ? 'Mới' : 'New'}</span> : null}
         <span className="icon-btn">
           <Icon icon={Clock01Icon} />
         </span>
@@ -90,7 +92,7 @@ function Topbar({
   );
 }
 
-function SourceRow({ title, panel, saved = '~12 min saved' }: { title: string; panel?: boolean; saved?: string }) {
+function SourceRow({ title, panel, saved = VI ? 'Tiết kiệm ~12 phút' : '~12 min saved' }: { title: string; panel?: boolean; saved?: string }) {
   return (
     <header className="source">
       <div className="source__meta">
@@ -101,7 +103,7 @@ function SourceRow({ title, panel, saved = '~12 min saved' }: { title: string; p
       <div className="source__actions">
         <span className="tool-btn">
           <Icon icon={RefreshIcon} size={16} />
-          {!panel && <span>Summarize again</span>}
+          {!panel && <span>{VI ? 'Tóm tắt lại' : 'Summarize again'}</span>}
         </span>
         {panel && (
           <span className="tool-btn">
@@ -117,7 +119,7 @@ function SourceRow({ title, panel, saved = '~12 min saved' }: { title: string; p
 
 const Ask = () => (
   <div className="ask sc-ask">
-    <span className="input sc-placeholder">Ask anything about this…</span>
+    <span className="input sc-placeholder">{VI ? 'Hỏi bất cứ điều gì về nội dung này…' : 'Ask anything about this…'}</span>
     <span className="btn btn--primary btn--icon">
       <Icon icon={ArrowUp02Icon} />
     </span>
@@ -158,7 +160,7 @@ function Compare() {
     <div className="sc-compare">
       <section className="sc-col">
         <p className="sc-label">
-          Before <span>a 14-minute article</span>
+          {VI ? 'Trước' : 'Before'} <span>{VI ? 'một bài 14 phút đọc' : 'a 14-minute article'}</span>
         </p>
         <div className="sc-browser">
           <div className="sc-chrome">
@@ -189,7 +191,7 @@ function Compare() {
       </div>
       <section className="sc-col sc-col--after">
         <p className="sc-label">
-          After <span>Siftlume, in the side panel</span>
+          {VI ? 'Sau' : 'After'} <span>{VI ? 'Siftlume, trong side panel' : 'Siftlume, in the side panel'}</span>
         </p>
         <Themed settings={settings} className="app app--panel sc-panel">
           <Topbar />
@@ -348,13 +350,14 @@ function FullPage() {
           </div>
           <aside className="session__side">
             <section className="qa">
-              <h3 className="section-title">Questions</h3>
+              <h3 className="section-title">{VI ? 'Câu hỏi' : 'Questions'}</h3>
               <div className="qa__turn">
-                <div className="bubble">Why is hardware shrinking?</div>
+                <div className="bubble">{VI ? 'Vì sao mảng phần cứng giảm?' : 'Why is hardware shrinking?'}</div>
                 <div className="answer">
                   <p>
-                    Customers are moving from on-premise servers to cloud subscriptions, so hardware revenue fell for
-                    the fourth quarter in a row while cloud grew.
+                    {VI
+                      ? 'Khách hàng chuyển từ máy chủ tại chỗ sang thuê bao cloud, nên doanh thu phần cứng giảm quý thứ tư liên tiếp trong khi cloud tăng.'
+                      : 'Customers are moving from on-premise servers to cloud subscriptions, so hardware revenue fell for the fourth quarter in a row while cloud grew.'}
                   </p>
                 </div>
               </div>
@@ -646,7 +649,7 @@ function HistoryShot() {
     <Themed settings={settings} className="app app--page">
       <main className="content">
         <div className="narrow">
-          <h2 className="section-title">History</h2>
+          <h2 className="section-title">{VI ? 'Lịch sử' : 'History'}</h2>
           <HistoryView settings={settings} onOpen={() => {}} />
         </div>
       </main>
