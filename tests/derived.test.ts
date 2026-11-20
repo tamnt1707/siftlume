@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { amountOf, derivation, figureCheck } from '@/lib/derived';
+import { amountOf, derivation, figureCheck, figuresInPassage } from '@/lib/derived';
 
 const SOURCE = `Fourth-quarter revenue of $3.4B was followed by first-quarter revenue of $3.6B.
 Revenue reached $4.2B in the third quarter, up 18% from a year earlier.
@@ -97,7 +97,11 @@ describe('figureCheck', () => {
   });
 
   it('marks a figure worked out from quoted inputs as derived', () => {
-    expect(figureCheck(SOURCE, null, '+$0.8B', [q4, q3])).toEqual({ status: 'derived', op: 'difference' });
+    expect(figureCheck(SOURCE, null, '+$0.8B', [q4, q3])).toEqual({
+      status: 'derived',
+      op: 'difference',
+      inputs: [q4, q3],
+    });
   });
 
   it('is not derived when the arithmetic does not hold', () => {
@@ -113,5 +117,35 @@ describe('figureCheck', () => {
   it('keeps the plain reason without inputs', () => {
     expect(figureCheck(SOURCE, null, '$0.8B')).toEqual({ status: 'noQuote' });
     expect(figureCheck(SOURCE, null, '$0.8B', [])).toEqual({ status: 'noQuote' });
+  });
+});
+
+describe('figures worked out from their own passage', () => {
+  const src = 'Doanh thu quý 3 đạt 1.510 tỷ đồng. Doanh thu quý 4 đạt 1.870 tỷ đồng nhờ mùa mua sắm cuối năm.';
+
+  it('lists the figures of a passage, without years', () => {
+    expect(figuresInPassage('Công ty có 3.200 nhân viên vào cuối năm 2025, so với 2.800 nhân viên')).toEqual([
+      '3.200',
+      '2.800',
+    ]);
+    expect(figuresInPassage('quý 3 đạt 1.510 tỷ đồng')).toEqual(['3', '1.510 tỷ']);
+  });
+
+  it('derives a figure from two figures in a passage that does not show it', () => {
+    const quote = 'Doanh thu quý 3 đạt 1.510 tỷ đồng. Doanh thu quý 4 đạt 1.870 tỷ đồng';
+    expect(figureCheck(src, quote, '+23,8%')).toEqual({
+      status: 'derived',
+      op: 'change',
+      inputs: [
+        { value: '1.510 tỷ', quote },
+        { value: '1.870 tỷ', quote },
+      ],
+    });
+    expect(figureCheck(src, quote, '360 tỷ')).toMatchObject({ status: 'derived', op: 'difference' });
+  });
+
+  it('stays unverified when nothing in the passage gives it', () => {
+    const quote = 'Doanh thu quý 3 đạt 1.510 tỷ đồng. Doanh thu quý 4 đạt 1.870 tỷ đồng';
+    expect(figureCheck(src, quote, '50%')).toEqual({ status: 'noFigure' });
   });
 });

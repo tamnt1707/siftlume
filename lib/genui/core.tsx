@@ -66,41 +66,56 @@ export function EvidenceMark({
   // While streaming the passage may still be arriving: judge it once the program is complete.
   if (!evidence || streaming) return null;
   const given = Array.isArray(inputs) ? inputs.filter((i) => i && typeof i.value === 'string') : null;
-  const { status, op } = figureCheck(evidence.content, quote, value, given);
-  if (status === 'derived') {
+  const check = figureCheck(evidence.content, quote, value, given);
+  if (check.status === 'derived') {
+    const used = check.inputs ?? [];
+    // Figures found in the model's own passage share it: show it once, under them.
+    const shared = used.length > 1 && used.every((i) => i.quote === used[0]!.quote) ? used[0]!.quote : null;
     return (
-      <details className="g-evidence g-derived">
+      <details className="g-evidence g-why g-derived">
         <summary title={t('genui.derivedWhy')}>
           <HugeiconsIcon icon={Calculator01Icon} size={12} strokeWidth={2} aria-hidden="true" />
           {t('genui.derived')}
-          <span className="g-derived__op">· {t(`genui.derivedOp.${op!}`)}</span>
+          <span className="g-derived__op">· {t(`genui.derivedOp.${check.op!}`)}</span>
         </summary>
-        <div className="g-derived__panel">
+        <div className="g-why__panel">
           <p>{t('genui.derivedFrom')}</p>
           <ul>
-            {given!.map((i, k) => (
+            {used.map((i, k) => (
               <li key={k}>
                 {i.label && <span className="g-derived__label">{i.label}</span>}
                 <span className="g-derived__value">{i.value}</span>
-                <ShowButton quote={i.quote!} />
+                {!shared && <ShowButton quote={i.quote!} />}
               </li>
             ))}
           </ul>
+          {shared && (
+            <>
+              <q className="g-why__quote">{shared}</q>
+              <ShowButton quote={shared} />
+            </>
+          )}
         </div>
       </details>
     );
   }
-  if (status !== 'ok') {
+  if (check.status !== 'ok') {
     // Why, with the passage the model gave: a figure it counted reads differently from a misquote.
-    const why = t(`genui.unverifiedWhy.${status}`, {
+    // Opened by a click, as a hover title is slow to show and never shows on touch.
+    const why = t(`genui.unverifiedWhy.${check.status}`, {
       quote: quote?.trim() ?? '',
       inputs: given?.map((i) => i.value).join(', ') ?? '',
     });
     return (
-      <span className="g-evidence g-evidence--unverified" title={why} aria-label={`${t('genui.unverified')}: ${why}`}>
-        <HugeiconsIcon icon={Alert02Icon} size={12} strokeWidth={2} aria-hidden="true" />
-        {t('genui.unverified')}
-      </span>
+      <details className="g-evidence g-why g-why--unverified">
+        <summary aria-label={`${t('genui.unverified')}: ${why}`}>
+          <HugeiconsIcon icon={Alert02Icon} size={12} strokeWidth={2} aria-hidden="true" />
+          {t('genui.unverified')}
+        </summary>
+        <div className="g-why__panel">
+          <p>{why}</p>
+        </div>
+      </details>
     );
   }
   return <ShowButton quote={quote!} />;

@@ -31,6 +31,8 @@ export type FigureStatus = EvidenceStatus | 'derived' | 'badInput' | 'mismatch';
 export interface FigureCheck {
   status: FigureStatus;
   op?: DerivedOp;
+  /** For a derived figure: the inputs it was worked out from. */
+  inputs?: FigureInput[];
 }
 
 /** At most this many inputs are combined: a figure worked out from more is not checkable at a glance. */
@@ -58,6 +60,8 @@ const PERCENT_WORD = /^\s?(?:%|percent|per cent|phần trăm|prozent|por ciento|
 /** A figure as amounts: one per reading of its separators ("1.234" is 1234 or 1.234). */
 interface Amount {
   values: number[];
+  /** The figure as written, with its scale word or percent sign ("1.510 tỷ", "18%"). */
+  text: string;
   /** Half the last written digit, scaled: how far rounding can move it. */
   halfUnits: number[];
   percent: boolean;
@@ -87,7 +91,7 @@ function readings(body: string): [number, number][] {
 /** The first number in a figure as written, as amounts, or null without digits. */
 export function amountOf(value: string | number): Amount | null {
   if (typeof value === 'number') {
-    return Number.isFinite(value) ? { values: [value], halfUnits: [0], percent: false } : null;
+    return Number.isFinite(value) ? { values: [value], text: String(value), halfUnits: [0], percent: false } : null;
   }
   const text = value.normalize('NFKC');
   const m = text.match(NUMBER);
@@ -95,13 +99,17 @@ export function amountOf(value: string | number): Amount | null {
   const raw = m[0];
   const sign = /^[-−]/.test(raw) ? -1 : 1;
   const rest = text.slice(m.index + raw.length);
-  const percent = raw.endsWith('%') || PERCENT_WORD.test(rest);
+  const percentWord = raw.endsWith('%') ? null : rest.match(PERCENT_WORD);
+  const percent = raw.endsWith('%') || !!percentWord;
   const body = raw.replace(/^[+\-−]?[$€£¥]?/, '').replace(/%$/, '');
   let scale = 1;
+  let suffix = percentWord?.[0] ?? '';
   if (!percent) {
     for (const [re, mult] of [...SCALE_LETTER, ...SCALE_WORD]) {
-      if (re.test(rest)) {
+      const found = rest.match(re);
+      if (found) {
         scale = mult;
+        suffix = found[0];
         break;
       }
     }
@@ -109,6 +117,7 @@ export function amountOf(value: string | number): Amount | null {
   const read = readings(body);
   return {
     values: read.map(([n]) => sign * n * scale),
+    text: (raw + suffix).trim(),
     halfUnits: read.map(([, dec]) => 0.5 * 10 ** -dec * scale),
     percent,
   };
@@ -151,17 +160,18 @@ function results(xs: number[], inputsPercent: boolean[], targetPercent: boolean)
   return out;
 }
 
+/** How a figure follows from its inputs, and which of them it uses. */
+interface Derivation {
+  op: DerivedOp;
+  used: number[];
+}
+
 /**
- * How `value` follows from `inputs`, or null. A result counts when it rounds to the figure as
- * written (half its last digit, but no more than 10%: "$1B" is not $0.8B rounded), or is within
- * 0.5% of it; a sign the writer left out ("fell 12%") is forgiven.
+ * The op when `given` give `target`: a result counts when it rounds to the figure as written
+ * (half its last digit, but no more than 10%: "$1B" is not $0.8B rounded), or is within 0.5% of
+ * it; a sign the writer left out ("fell 12%") is forgiven.
  */
-export function derivation(value: string | number, inputs: (string | number)[]): DerivedOp | null {
-  if (!inputs.length || inputs.length > MAX_INPUTS) return null;
-  const target = amountOf(value);
-  const amounts = inputs.map(amountOf);
-  if (!target || amounts.some((a) => !a)) return null;
-  const given = amounts as Amount[];
+function matchOp(target: Amount, given: Amount[]): DerivedOp | null {
   const percents = given.map((a) => a.percent);
   for (const xs of combinations(given)) {
     for (const [op, r] of results(xs, percents, target.percent)) {
@@ -176,8 +186,50 @@ export function derivation(value: string | number, inputs: (string | number)[]):
 }
 
 /**
+ * How `value` follows from `inputs`, or null. With `pairs`, any two of them may be the ones it
+ * was worked out from (figures found in a passage, where the others are context).
+ */
+function derive(value: string | number, inputs: (string | number)[], pairs = false): Derivation | null {
+  if (!inputs.length || inputs.length > MAX_INPUTS) return null;
+  const target = amountOf(value);
+  const amounts = inputs.map(amountOf);
+  if (!target || amounts.some((a) => !a)) return null;
+  const given = amounts as Amount[];
+  const all = matchOp(target, given);
+  if (all) return { op: all, used: given.map((_, i) => i) };
+  if (!pairs) return null;
+  for (let a = 0; a < given.length; a++) {
+    for (let b = a + 1; b < given.length; b++) {
+      const op = matchOp(target, [given[a]!, given[b]!]);
+      if (op) return { op, used: [a, b] };
+    }
+  }
+  return null;
+}
+
+/** How `value` follows from `inputs`, or null. */
+export function derivation(value: string | number, inputs: (string | number)[]): DerivedOp | null {
+  return derive(value, inputs)?.op ?? null;
+}
+
+const NUMBERS = new RegExp(NUMBER.source, 'g');
+/** A bare year ("2025") is when, not how much: never an input. */
+const YEAR = /^(?:1[89]|20)\d\d$/;
+
+/** The figures written in a passage, each as it is written there; years left out. */
+export function figuresInPassage(passage: string): string[] {
+  const text = passage.normalize('NFKC');
+  return [...text.matchAll(NUMBERS)]
+    .filter((m) => !YEAR.test(m[0].trim()))
+    .map((m) => amountOf(text.slice(m.index))?.text)
+    .filter((x): x is string => !!x);
+}
+
+/**
  * Whether a figure is backed by the source: its own passage first; without one, the figures it
- * was worked out from, and the arithmetic.
+ * was worked out from, and the arithmetic. A passage that is in the source but does not show the
+ * figure may hold the figures it was worked out from ("Q3 1,510 … Q4 1,870" for "+23.8%"): those
+ * count as its inputs.
  */
 export function figureCheck(
   content: string,
@@ -186,13 +238,27 @@ export function figureCheck(
   inputs?: FigureInput[] | null,
 ): FigureCheck {
   const own = evidenceStatus(content, quote, value);
-  if (own === 'ok' || !inputs?.length || value === undefined || value === null) return { status: own };
-  if (inputs.some((i) => evidenceStatus(content, i.quote, i.value) !== 'ok')) return { status: 'badInput' };
-  const op = derivation(
-    value,
-    inputs.map((i) => i.value),
-  );
-  return op ? { status: 'derived', op } : { status: 'mismatch' };
+  if (own === 'ok' || value === undefined || value === null) return { status: own };
+  if (inputs?.length) {
+    if (inputs.some((i) => evidenceStatus(content, i.quote, i.value) !== 'ok')) return { status: 'badInput' };
+    const found = derive(
+      value,
+      inputs.map((i) => i.value),
+    );
+    return found ? { status: 'derived', op: found.op, inputs } : { status: 'mismatch' };
+  }
+  if (own === 'noFigure') {
+    const inPassage = figuresInPassage(quote!);
+    const found = derive(value, inPassage, true);
+    if (found) {
+      return {
+        status: 'derived',
+        op: found.op,
+        inputs: found.used.map((i) => ({ value: inPassage[i]!, quote: quote! })),
+      };
+    }
+  }
+  return { status: own };
 }
 
 /** Backed by the source, directly or worked out from it. */
