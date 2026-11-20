@@ -294,5 +294,8 @@
     "report": "Report a problem",
     "later": "Later",
     "never": "Don't ask again"
+  },
+  "related": {
+    "title": "You read about this before:"
   }
 }

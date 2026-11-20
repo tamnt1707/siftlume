@@ -282,5 +282,8 @@
     "report": "Báo lỗi",
     "later": "Để sau",
     "never": "Không hỏi nữa"
+  },
+  "related": {
+    "title": "Bạn từng đọc về chủ đề này:"
   }
 }

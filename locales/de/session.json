@@ -294,5 +294,8 @@
     "report": "Problem melden",
     "later": "Später",
     "never": "Nicht mehr fragen"
+  },
+  "related": {
+    "title": "Dazu hast du schon gelesen:"
   }
 }

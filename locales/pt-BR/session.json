@@ -306,5 +306,8 @@
     "report": "Relatar um problema",
     "later": "Mais tarde",
     "never": "Não perguntar de novo"
+  },
+  "related": {
+    "title": "Você já leu sobre isto:"
   }
 }

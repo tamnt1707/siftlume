@@ -20,6 +20,7 @@ import { HistoryView } from '../../components/HistoryView';
 import { ACTION_EXAMPLE, CRITIQUE_EXAMPLE, EXPLAIN_EXAMPLE } from '../../lib/mode-example';
 import { SettingsForm } from '../../components/SettingsForm';
 import { ReviewPrompt } from '@/components/ReviewPrompt';
+import { RelatedReads } from '@/components/RelatedReads';
 import { ResultToolbar } from '../../components/ResultToolbar';
 import type { SessionController } from '../../components/useSession';
 import { PR_REVIEW_EXAMPLE, PRODUCT_EVENT_EXAMPLE, RECIPE_EXAMPLE } from '../../lib/component-example';
@@ -99,6 +100,8 @@ function SourceRow({ title, panel, saved = '~12 min saved' }: { title: string; p
           </span>
         )}
       </div>
+      {/* `&related`: earlier summaries on the same topic (history from the stub). */}
+      {query.has('related') && <RelatedReads session={stubSession} onOpen={() => {}} />}
     </header>
   );
 }

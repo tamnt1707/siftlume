@@ -306,5 +306,8 @@
     "report": "Signaler un problème",
     "later": "Plus tard",
     "never": "Ne plus demander"
+  },
+  "related": {
+    "title": "Vous avez déjà lu sur ce sujet :"
   }
 }
