@@ -33,7 +33,8 @@
     "passagesHighlighted_other": "Highlighted {{count}} passages in the page.",
     "passagesInSource_other": "Highlighted {{count}} passages in the source text.",
     "passagesNotFound": "None of the summary’s passages were found in the page.",
-    "passagesCleared": "Highlights cleared."
+    "passagesCleared": "Highlights cleared.",
+    "languageDefault": "New summaries will use this language too. You can change it in Settings → Summary."
   },
   "warnings": {
     "invalidUi_one": "The model produced {{count}} invalid UI statement; showing what rendered.",

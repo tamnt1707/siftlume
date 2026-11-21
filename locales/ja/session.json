@@ -31,7 +31,8 @@
     "passagesHighlighted_other": "ページ上の{{count}}か所をハイライトしました。",
     "passagesInSource_other": "元のテキストの{{count}}か所をハイライトしました。",
     "passagesNotFound": "要約の箇所がページ上に見つかりませんでした。",
-    "passagesCleared": "ハイライトを消去しました。"
+    "passagesCleared": "ハイライトを消去しました。",
+    "languageDefault": "新しい要約もこの言語になります。設定 → 要約 で変更できます。"
   },
   "warnings": {
     "invalidUi_other": "モデルが無効なUI記述を {{count}} 件生成しました。表示できた部分のみ表示しています。",

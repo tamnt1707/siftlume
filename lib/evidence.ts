@@ -210,30 +210,77 @@ const plainLine = (line: string) =>
     .trim();
 
 /**
+ * A name with a version or a code in it, not an amount: "AGPL-3.0", "GPT-4o", "ISO-27001". It is
+ * looked up as written. Two letters or more, a digit, no spaces; a scale ("1.5bn") is an amount.
+ */
+const TERM = /^(?=.*\p{L}.*\p{L})(?=.*\d)[\p{L}\d.+_/-]+$/u;
+const isTerm = (value: string) => TERM.test(value) && !/^[$€£¥]?[\d.,]+(?:k|m|mm|b|bn|t|tn|tr)$/i.test(value);
+
+/** A table's separator row ("| --- | :--: |"). */
+const SEPARATOR_CELL = /^:?-{2,}:?$/;
+
+/**
  * A passage for a figure the model gave no usable passage for, found in the source itself: the
- * words around it, when it is written exactly once in running text. Table rows are left out (a
- * rank column holds every small number), and so is any figure written more than once, as which
- * one is meant cannot be told. "26" is not "2026", and a percentage is not a plain number.
+ * words around it, when it is written exactly once. Running text comes first. A table cell
+ * counts too when it says what the number is ("13 languages"); a cell holding only a number (a
+ * rank, a value column) does not, as every small number is in one. A figure written more than
+ * once is left alone, as which one is meant cannot be told. "26" is not "2026", and a percentage
+ * is not a plain number. A name such as "AGPL-3.0" is looked up as written instead.
  */
 export function locateFigure(content: string, value: string | number | null | undefined): string | null {
+  if (typeof value === 'string' && isTerm(value.trim())) return locateTerm(content, value.trim());
   const figure = firstFigure(value);
   if (!figure) return null;
   const percent = String(value).includes('%');
-  const hits: string[] = [];
-  for (const line of content.split('\n')) {
-    if (/^\s*\|/.test(line)) continue;
-    for (const sentence of plainLine(line).split(/(?<=[.!?。！？])\s+/)) {
-      for (const f of figuresIn(sentence)) {
-        if (!sameFigure(figure, f)) continue;
-        if (sentence.slice(f.index, f.index + f.length).endsWith('%') !== percent) continue;
-        if (notAFigure(sentence, f)) continue;
-        const words = sentence.split(' ');
-        const at = sentence.slice(0, f.index).split(' ').length - 1;
-        hits.push(words.slice(Math.max(0, at - AROUND), at + AROUND + 1).join(' '));
-        if (hits.length > 1) return null;
-      }
+  const inText: string[] = [];
+  const inTables: string[] = [];
+  /** Records the figure's occurrences in `text`; `inCell` says where a table cell runs. */
+  const scan = (text: string, hits: string[], inCell?: (at: number) => boolean) => {
+    for (const f of figuresIn(text)) {
+      if (!sameFigure(figure, f)) continue;
+      if (text.slice(f.index, f.index + f.length).endsWith('%') !== percent) continue;
+      if (notAFigure(text, f) || (inCell && !inCell(f.index))) continue;
+      const words = text.split(' ');
+      const at = text.slice(0, f.index).split(' ').length - 1;
+      hits.push(words.slice(Math.max(0, at - AROUND), at + AROUND + 1).join(' '));
     }
+  };
+  for (const line of content.split('\n')) {
+    if (/^\s*\|/.test(line)) {
+      const cells = line
+        .split('|')
+        .map(plainLine)
+        .filter((c) => c && !SEPARATOR_CELL.test(c));
+      // The row as one text (as the reader's text has it, without the pipes), and where each cell sits.
+      const text = cells.join(' ');
+      const spans: [number, number, boolean][] = [];
+      let at = 0;
+      for (const cell of cells) {
+        spans.push([at, at + cell.length, /\p{L}/u.test(cell.replace(NUMBER, ''))]);
+        at += cell.length + 1;
+      }
+      scan(text, inTables, (i) => spans.some(([a, b, words]) => words && i >= a && i < b));
+      continue;
+    }
+    for (const sentence of plainLine(line).split(/(?<=[.!?。！？])\s+/)) scan(sentence, inText);
   }
-  const passage = hits[0];
-  return passage && evidenceStatus(content, passage, value) === 'ok' ? passage : null;
+  const hits = inText.length ? inText : inTables;
+  if (hits.length !== 1) return null;
+  const passage = hits[0]!;
+  return evidenceStatus(content, passage, value) === 'ok' ? passage : null;
+}
+
+/** The words around the first place a name is written ("released under the AGPL-3.0 license"). */
+function locateTerm(content: string, term: string): string | null {
+  const needle = term.toLowerCase();
+  for (const line of content.split('\n')) {
+    const text = line.includes('|') ? line.split('|').map(plainLine).filter(Boolean).join(' ') : plainLine(line);
+    const index = text.toLowerCase().indexOf(needle);
+    if (index === -1) continue;
+    const words = text.split(' ');
+    const at = text.slice(0, index).split(' ').length - 1;
+    const passage = words.slice(Math.max(0, at - AROUND), at + AROUND + 1).join(' ');
+    if (evidenceStatus(content, passage, term) === 'ok') return passage;
+  }
+  return null;
 }

@@ -31,7 +31,8 @@
     "passagesHighlighted_other": "ไฮไลต์ {{count}} ตอนบนหน้าเว็บแล้ว",
     "passagesInSource_other": "ไฮไลต์ {{count}} ตอนในข้อความต้นฉบับแล้ว",
     "passagesNotFound": "ไม่พบข้อความของสรุปบนหน้าเว็บ",
-    "passagesCleared": "ล้างไฮไลต์แล้ว"
+    "passagesCleared": "ล้างไฮไลต์แล้ว",
+    "languageDefault": "สรุปใหม่จะใช้ภาษานี้ด้วย เปลี่ยนได้ที่ การตั้งค่า → การสรุป"
   },
   "warnings": {
     "invalidUi_other": "โมเดลสร้างคำสั่ง UI ที่ไม่ถูกต้อง {{count}} รายการ กำลังแสดงเฉพาะส่วนที่แสดงผลได้",

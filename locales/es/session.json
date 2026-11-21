@@ -35,7 +35,8 @@
     "passagesHighlighted_other": "Se resaltaron {{count}} pasajes en la página.",
     "passagesInSource_other": "Se resaltaron {{count}} pasajes en el texto fuente.",
     "passagesNotFound": "No se encontró en la página ningún pasaje del resumen.",
-    "passagesCleared": "Resaltado quitado."
+    "passagesCleared": "Resaltado quitado.",
+    "languageDefault": "Los nuevos resúmenes también usarán este idioma. Cámbialo en Ajustes → Resumen."
   },
   "warnings": {
     "invalidUi_one": "El modelo generó {{count}} instrucción de interfaz no válida; se muestra lo que se pudo renderizar.",

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Add01Icon, Clock01Icon, FileSearchIcon, Settings02Icon } from '@hugeicons/core-free-icons';
 import { Icon } from '@/components/Icon';
@@ -16,7 +16,7 @@ import { useSession } from '@/components/useSession';
 import { useSettings } from '@/components/useSettings';
 import { getSession, type Session } from '@/lib/history';
 import { openApp, takePanelRequest, takeRequest, watchPanelRequests, type PendingRequest } from '@/lib/pending';
-import { configProblem } from '@/lib/settings';
+import { configProblem, type Settings } from '@/lib/settings';
 import { requestLinksAccess } from '@/lib/deep';
 
 type View = 'main' | 'history' | 'settings';
@@ -54,6 +54,9 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
   const { t } = useTranslation(['common', 'errors', 'session']);
   const { settings, loaded } = useSettings();
   const ctrl = useSession(settings);
+  // Settings → Appearance while editing: the draft's mode and colors on the whole app.
+  const [look, setLook] = useState<Pick<Settings, 'theme' | 'appearance'> | null>(null);
+  const shown = useMemo(() => (look ? { ...settings, ...look } : settings), [settings, look]);
   const [view, setView] = useState<View>('main');
   const [toast, setToast] = useState<string | null>(null);
   const [toolbarSlot, setToolbarSlot] = useState<HTMLDivElement | null>(null);
@@ -214,7 +217,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
   };
 
   return (
-    <Themed settings={settings} className={`app ${compact ? 'app--panel' : 'app--page'}`}>
+    <Themed settings={shown} className={`app ${compact ? 'app--panel' : 'app--page'}`}>
       <header className="topbar">
         <button className="brand" onClick={goNew} title={t('actions.newSummary')}>
           {t('appName')}
@@ -291,6 +294,7 @@ export default function App({ surface = 'page' }: { surface?: 'page' | 'panel' }
             guardRef={settingsGuard}
             onClose={() => setView('main')}
             onReady={() => setView('main')}
+            onPreview={setLook}
           />
         ) : view === 'history' ? (
           <div className="narrow">

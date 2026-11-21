@@ -226,3 +226,44 @@ describe('figures the source says in words', () => {
     expect(figureCheck(page, 'There is no fee of any kind at all', '0').status).toBe('notFound');
   });
 });
+
+describe('figures and names found in the source when the model gave no passage', () => {
+  // A GitHub README: a features table whose row says what the number counts, and a licence line.
+  const README = [
+    '## Community features',
+    '',
+    '| Area | What you get |',
+    '| --- | --- |',
+    '| Product management | Kanban, table, timeline, and calendar views · cycles · custom fields |',
+    '| 13 languages | English · Українська · Русский · 简体中文 · 繁體中文 · Français |',
+    '',
+    '| Rank | Team | Points |',
+    '| --- | --- | --- |',
+    '| 1 | Kestrel | 13 |',
+    '| 2 | Osprey | 9 |',
+    '',
+    'It is open source under the AGPL-3.0 license, and Pro costs $240 a year.',
+  ].join('\n');
+
+  it('takes a table row whose cell says what the number counts', () => {
+    const found = figureCheck(README, null, '13');
+    expect(found.status).toBe('ok');
+    expect(found.quote).toContain('13 languages');
+  });
+
+  it('still skips cells holding only a number (ranks, scores)', () => {
+    expect(figureCheck(README, null, '9').status).toBe('noQuote');
+  });
+
+  it('prefers running text over a table', () => {
+    const src = `${README}\n\nThe app now speaks 13 languages, two more than last year.`;
+    expect(figureCheck(src, null, '13').quote).toContain('now speaks 13 languages');
+  });
+
+  it('looks up a name with a version as written', () => {
+    const found = figureCheck(README, null, 'AGPL-3.0');
+    expect(found.status).toBe('ok');
+    expect(found.quote).toContain('AGPL-3.0 license');
+    expect(figureCheck(README, null, 'GPL-2.0').status).toBe('noQuote');
+  });
+});

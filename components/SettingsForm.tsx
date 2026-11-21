@@ -70,6 +70,12 @@ interface SettingsFormProps {
    * right away, or first asks to save or discard unsaved edits.
    */
   guardRef?: MutableRefObject<((proceed: () => void) => void) | null>;
+  /**
+   * Embedded only: the draft's look (mode and appearance) while Settings is open, so the host can
+   * show it on the whole page before it is saved; null once Settings closes. The interface
+   * language is left out: it switches when saved.
+   */
+  onPreview?: (look: Pick<Settings, 'theme' | 'appearance'> | null) => void;
 }
 
 /** Leave-without-saving guard type, for hosts that pass `guardRef`. */
@@ -121,7 +127,14 @@ function KeyGuide({ id, open }: { id: GuideId; open: boolean }) {
  * Used by the options page and, embedded, by the side panel and result tab (gear button).
  * Edits are a draft until Save; the appearance preview follows the draft live.
  */
-export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onReady, guardRef }: SettingsFormProps) {
+export function SettingsForm({
+  embedded = false,
+  onClose,
+  initialTab = 'ai',
+  onReady,
+  guardRef,
+  onPreview,
+}: SettingsFormProps) {
   const { t } = useTranslation(['settings', 'common']);
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
   const [loaded, setLoaded] = useState(false);
@@ -164,6 +177,14 @@ export function SettingsForm({ embedded = false, onClose, initialTab = 'ai', onR
       setLoaded(true);
     });
   }, []);
+
+  // The draft's look on the whole page, not only on this form: choosing Light on a dark page
+  // otherwise turned only the settings card light until Save. Cancel restores the saved look.
+  const { theme, appearance } = settings;
+  useEffect(() => {
+    if (embedded && loaded) onPreview?.({ theme, appearance });
+  }, [embedded, loaded, theme, appearance, onPreview]);
+  useEffect(() => () => onPreview?.(null), [onPreview]);
 
   // Show the cached list for this provider immediately, then refresh it in the background.
   useEffect(() => {

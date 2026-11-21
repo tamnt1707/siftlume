@@ -33,7 +33,8 @@
     "passagesHighlighted_other": "{{count}} Stellen auf der Seite markiert.",
     "passagesInSource_other": "{{count}} Stellen im Quelltext markiert.",
     "passagesNotFound": "Keine Stelle der Zusammenfassung auf der Seite gefunden.",
-    "passagesCleared": "Markierungen entfernt."
+    "passagesCleared": "Markierungen entfernt.",
+    "languageDefault": "Neue Zusammenfassungen verwenden diese Sprache ebenfalls. Ändern unter Einstellungen → Zusammenfassung."
   },
   "warnings": {
     "invalidUi_one": "Das Modell hat {{count}} ungültige UI-Anweisung erzeugt; angezeigt wird, was dargestellt werden konnte.",

@@ -31,7 +31,8 @@
     "passagesHighlighted_other": "已在網頁上標註 {{count}} 處段落。",
     "passagesInSource_other": "已在原文中標註 {{count}} 處段落。",
     "passagesNotFound": "在網頁上找不到摘要的任何段落。",
-    "passagesCleared": "已清除標註。"
+    "passagesCleared": "已清除標註。",
+    "languageDefault": "新的摘要也會使用這種語言。可在 設定 → 摘要 中變更。"
   },
   "warnings": {
     "invalidUi_other": "模型產生了 {{count}} 條無效的介面敘述;僅顯示可呈現的部分。",

@@ -335,6 +335,20 @@ export async function getSettings(): Promise<Settings> {
   return normalizeSettings(await settingsItem.getValue());
 }
 
+/**
+ * The output language or length picked on a summary becomes the default for new ones (the start
+ * screen keeps its length the same way): the language is easy to miss in Settings → Summary, and
+ * picking either again on every summary cost a run each time. Only these fields are written;
+ * everything else stays as stored. The reading mode is not remembered: each run starts on auto.
+ * Returns whether anything changed.
+ */
+export async function rememberLastUsed(patch: Partial<Pick<Settings, 'language' | 'length'>>) {
+  const stored = { ...DEFAULT_SETTINGS, ...(await settingsItem.getValue()) };
+  if (Object.entries(patch).every(([k, v]) => stored[k as keyof Settings] === v)) return false;
+  await settingsItem.setValue({ ...stored, ...patch });
+  return true;
+}
+
 /** Match pattern for chrome.permissions, e.g. "https://api.openai.com/*". */
 export function originPattern(url: string): string | null {
   try {
